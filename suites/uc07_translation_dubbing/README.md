@@ -21,7 +21,7 @@ blurb) are translated English → Indic and Indic → English in 10 languages: h
 
 **B. Dubbing.** Each digit-free native-script reference sentence is synthesised with `bulbul:v3` (a voice chosen
 per language, called through the HTTP stream endpoint with mp3 output), with `gemini-3.8-flash-tts` (voice
-Kore, streaming) and with OpenAI `gpt-4o-mini-tts` (voice alloy, streaming mp3). Three STT judges then transcribe the audio: `saaras:v3`, `gemini-3.8-flash` and the vendor-neutral OpenAI `gpt-4o-transcribe`. The score is
+Kore, streaming) and with OpenAI `gpt-4o-mini-tts` (voice alloy, streaming mp3). `bulbul:v4-flash` (language-tagged voices, same stream endpoint) runs on the first 16 of those sentences, because its price is undocumented; compare it with v3 in the "matched subset" metrics. Three STT judges then transcribe the audio: `saaras:v3`, `gemini-3.8-flash` and the vendor-neutral OpenAI `gpt-4o-transcribe`. The score is
 character error rate against the text that was sent to the TTS. Both judges are reported because each may favour
 its own vendor's voice. The main set covers hi, bn, ta, te, mr, kn. A 3-sentence probe in ml, gu, pa, or checks
 language coverage.

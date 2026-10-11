@@ -46,3 +46,209 @@
 {"kind": "stt", "id": "b9", "system": "saaras:v4", "cond": "clean", "audio_s": 6.87075, "hyp": "মাঝের নম্বর 9874563210-এ ₹199 রিচার্জ করে দাও।", "ms": 1930.8900833129883}
 {"kind": "stt", "id": "b10", "system": "saaras:v4", "cond": "clean", "audio_s": 1.68, "hyp": "জলের বিল মিটিয়ে দাও।", "ms": 2595.6640243530273}
 {"kind": "stt", "id": "b11", "system": "saaras:v4", "cond": "clean", "audio_s": 3.8906875, "hyp": "আড়াই হাজার টাকা ঋণাত দরেit ভাইভ্যালী পাঠাও।", "ms": 1850.8238792419434}
+{"kind": "stt", "id": "b12", "system": "saaras:v4", "cond": "clean", "audio_s": 2.52, "hyp": "এইচপি গ্যাসের একটা সিলিন্ডার বুক করো।", "ms": 2554.5430183410645}
+{"kind": "stt", "id": "h2", "system": "saaras:v4", "cond": "phone", "audio_s": 1.6, "hyp": "बिजली का बिल भर दो।", "ms": 333.1949710845947}
+{"kind": "stt", "id": "b8", "system": "saaras:v4", "cond": "clean", "audio_s": 1.96, "hyp": "সাড়ে তিনশো টাকা রিচার্জ করো।", "ms": 8922.35279083252}
+{"kind": "stt", "id": "h3", "system": "saaras:v4", "cond": "phone", "audio_s": 4.648125, "hyp": "9876543210 पर ₹500 भेज दो।", "ms": 4556.751012802124}
+{"kind": "stt", "id": "h4", "system": "saaras:v4", "cond": "phone", "audio_s": 2.6, "hyp": "मेरे बैंक खाते में कितना पैसा है?", "ms": 2161.5729331970215}
+{"kind": "stt", "id": "h5", "system": "saaras:v4", "cond": "phone", "audio_s": 2.125125, "hyp": "इंडियन का गैस सिलेंडर बुक कर दो।", "ms": 2113.4331226348877}
+{"kind": "stt", "id": "h7", "system": "saaras:v4", "cond": "phone", "audio_s": 2.850625, "hyp": "डीटीएच का बिल 450 रुपये भर दो।", "ms": 374.0859031677246}
+{"kind": "stt", "id": "h8", "system": "saaras:v4", "cond": "phone", "audio_s": 3.36, "hyp": "रमेश @ ओकी एक्सिस को ढाई हज़ार रुपये भेजो।", "ms": 2008.4478855133057}
+{"kind": "stt", "id": "x1", "system": "saaras:v4", "cond": "phone", "audio_s": 2.28, "hyp": "मेरा 299 वाला रिचार्ज कर दो।", "ms": 2412.968158721924}
+{"kind": "stt", "id": "h6", "system": "saaras:v4", "cond": "phone", "audio_s": 6.72, "hyp": "मम्मी के नंबर 9123456780 पर 239 का रिचार्ज करो।", "ms": 9709.148168563843}
+{"kind": "stt", "id": "x3", "system": "saaras:v4", "cond": "phone", "audio_s": 2.36, "hyp": "क्रेडिट कार्ड का बैलेंस कितना बचा है?", "ms": 337.28671073913574}
+{"kind": "stt", "id": "x2", "system": "saaras:v4", "cond": "phone", "audio_s": 5.28, "hyp": "भाई डेढ़ हज़ार भेज दो 9988776655 पे।", "ms": 4577.410936355591}
+{"kind": "stt", "id": "x5", "system": "saaras:v4", "cond": "phone", "audio_s": 3.2, "hyp": "ब्रॉडबैंड का बिल पे करना है 799 का।", "ms": 1841.235876083374}
+{"kind": "stt", "id": "x6", "system": "saaras:v4", "cond": "phone", "audio_s": 1.72, "hyp": "वॉलेट में कितने पैसे हैं?", "ms": 327.82912254333496}
+{"kind": "stt", "id": "x7", "system": "saaras:v4", "cond": "phone", "audio_s": 3.8, "hyp": "सवा सौ रुपये भेजो शॉपकीपर @ YBL को।", "ms": 5932.133913040161}
+{"kind": "stt", "id": "x8", "system": "saaras:v4", "cond": "phone", "audio_s": 3.24, "hyp": "पाइप्ड गैस का बिल भर दो, 612 रुपये।", "ms": 2190.8910274505615}
+{"kind": "stt", "id": "t1", "system": "saaras:v4", "cond": "phone", "audio_s": 4.23475, "hyp": "என் நம்பருக்கு 349 ரூபாய் ரீசார்ஜ் பண்ணுங்க.", "ms": 1711.3969326019287}
+{"kind": "stt", "id": "t2", "system": "saaras:v4", "cond": "phone", "audio_s": 1.8, "hyp": "கரண்ட் பில் கட்டுங்க.", "ms": 324.91016387939453}
+{"kind": "stt", "id": "h1", "system": "saaras:v4", "cond": "phone", "audio_s": 2.64125, "hyp": "मेरा 299 वाला रिचार्ज कर दो।", "ms": 35439.921855926514}
+{"kind": "stt", "id": "t4", "system": "saaras:v4", "cond": "phone", "audio_s": 2.0, "hyp": "பாரத் கேஸ் சிலிண்டர் புக் பண்ணுங்க.", "ms": 4872.05696105957}
+{"kind": "stt", "id": "t5", "system": "saaras:v4", "cond": "phone", "audio_s": 2.922875, "hyp": "என் பேங்க் அக்கவுண்டில் எவ்வளவு பேலன்ஸ் இருக்கு?", "ms": 707.817792892456}
+{"kind": "stt", "id": "t6", "system": "saaras:v4", "cond": "phone", "audio_s": 2.84, "hyp": "தண்ணி பில் ₹180 கட்டிடு.", "ms": 1666.694164276123}
+{"kind": "stt", "id": "t7", "system": "saaras:v4", "cond": "phone", "audio_s": 7.188875, "hyp": "அம்மா நம்பர் 944556677110099 ரீசார்ஜ் பண்ணு.", "ms": 463.9730453491211}
+{"kind": "stt", "id": "b1", "system": "saaras:v4", "cond": "phone", "audio_s": 3.44, "hyp": "আমার নম্বরে ২৯৯ টাকার রিচার্জ করে দাও।", "ms": 1939.1529560089111}
+{"kind": "stt", "id": "b2", "system": "saaras:v4", "cond": "phone", "audio_s": 1.62225, "hyp": "ইলেকট্রিক বিল দিয়ে দাও।", "ms": 1902.4221897125244}
+{"kind": "stt", "id": "b3", "system": "saaras:v4", "cond": "phone", "audio_s": 6.52, "hyp": "9830012345 নম্বরে ₹500 পাঠাও।", "ms": 402.8589725494385}
+{"kind": "stt", "id": "b4", "system": "saaras:v4", "cond": "phone", "audio_s": 2.342875, "hyp": "ইঞ্জিনিয়ার 200 শিলিং আর বুস্ট করো।", "ms": 1892.8136825561523}
+{"kind": "stt", "id": "b5", "system": "saaras:v4", "cond": "phone", "audio_s": 2.24, "hyp": "ক্রেডিট কার্ডে কত ব্যালেন্স আছে?", "ms": 2533.712148666382}
+{"kind": "stt", "id": "x4", "system": "saaras:v4", "cond": "phone", "audio_s": 2.6, "hyp": "एचपी गैस के दो सिलेंडर बुक कर दो।", "ms": 35673.01893234253}
+{"kind": "stt", "id": "b7", "system": "saaras:v4", "cond": "phone", "audio_s": 3.8, "hyp": "দীপাক @ পেটিএম-এ দেড় হাজার টাকা পাঠাও।", "ms": 2703.3417224884033}
+{"kind": "stt", "id": "h9", "system": "saaras:v4", "cond": "phone", "audio_s": 5.572875, "hyp": "पौने दो हज़ार नौ रुपये आठ एक दो तीन चार पाँच छः सात शून्य पर ट्रांसफर करो।", "ms": 512.6359462738037}
+{"kind": "stt", "id": "h10", "system": "saaras:v4", "cond": "phone", "audio_s": 6.4, "hyp": "साढ़े तीन सौ वाला रिचार्ज मेरे भाई के 9090909090 पर कर दो।", "ms": 2347.8431701660156}
+{"kind": "stt", "id": "h11", "system": "saaras:v4", "cond": "phone", "audio_s": 2.376875, "hyp": "भारत गैस के तीन सिलेंडर चाहिए।", "ms": 1895.212173461914}
+{"kind": "stt", "id": "h12", "system": "saaras:v4", "cond": "phone", "audio_s": 1.84, "hyp": "पोस्टपेड बिल चुका दो।", "ms": 326.47204399108887}
+{"kind": "stt", "id": "h13", "system": "saaras:v4", "cond": "phone", "audio_s": 3.070875, "hyp": "नल का बिल एक हज़ार दो सौ पचास रुपये भर दो।", "ms": 357.96594619750977}
+{"kind": "stt", "id": "x9", "system": "saaras:v4", "cond": "phone", "audio_s": 2.16, "hyp": "पौने तीन सौ का रिचार्ज करो।", "ms": 2405.6918621063232}
+{"kind": "stt", "id": "x10", "system": "saaras:v4", "cond": "phone", "audio_s": 3.48, "hyp": "साढ़े चार हज़ार भेज दो प्रिया.एसबीआई पे।", "ms": 385.3790760040283}
+{"kind": "stt", "id": "x11", "system": "saaras:v4", "cond": "phone", "audio_s": 2.12, "hyp": "मोबाइल का पोस्टपेड बिल भरना है।", "ms": 1745.5329895019531}
+{"kind": "stt", "id": "x12", "system": "saaras:v4", "cond": "phone", "audio_s": 2.88, "hyp": "इंडियन वाला सिलेंडर बुक करो, एक ही चाहिए।", "ms": 345.24083137512207}
+{"kind": "stt", "id": "t3", "system": "saaras:v4", "cond": "phone", "audio_s": 5.2015, "hyp": "ஒன்பது எட்டு ஏழு ஆறு ஐந்து பூஜ்ஜியம் ஒன்று இருந்து மூன்று முப்பத்தி ஆயிரம் ரூபாய் அனுப்புங்கள்.", "ms": 35869.667053222656}
+{"kind": "stt", "id": "t8", "system": "saaras:v4", "cond": "phone", "audio_s": 6.10925, "hyp": "₹1500 9840012344 அனுப்பு.", "ms": 1761.8060111999512}
+{"kind": "stt", "id": "x13", "system": "saaras:v4", "cond": "phone", "audio_s": 2.6, "hyp": "टाटा प्ले का 350 का बिल भर दो।", "ms": 2077.763080596924}
+{"kind": "stt", "id": "t9", "system": "saaras:v4", "cond": "phone", "audio_s": 2.24, "hyp": "இண்டேன் சிலிண்டர் ரெண்டு புக் பண்ணு.", "ms": 355.4859161376953}
+{"kind": "stt", "id": "t11", "system": "saaras:v4", "cond": "phone", "audio_s": 3.08, "hyp": "ஈபி பில் கட்டணும் ₹2340.", "ms": 1705.4178714752197}
+{"kind": "stt", "id": "b6", "system": "saaras:v4", "cond": "phone", "audio_s": 3.631625, "hyp": "জজ বেয়ার্ডের বিল ৬৯৯ টাকা, ডিজে দাওদ।", "ms": 19238.41905593872}
+{"kind": "stt", "id": "t10", "system": "saaras:v4", "cond": "phone", "audio_s": 2.253625, "hyp": "வாலட்ல எவ்வளவு காசு இருக்கு?", "ms": 9267.774820327759}
+{"kind": "stt", "id": "b9", "system": "saaras:v4", "cond": "phone", "audio_s": 6.87075, "hyp": "মাঝে নম্বর 9874563210-এ ₹199 রিচার্জ করে দাও।", "ms": 438.3738040924072}
+{"kind": "stt", "id": "b10", "system": "saaras:v4", "cond": "phone", "audio_s": 1.68, "hyp": "জলের বিল মিটিয়ে দাও।", "ms": 2162.6601219177246}
+{"kind": "stt", "id": "b11", "system": "saaras:v4", "cond": "phone", "audio_s": 3.89075, "hyp": "আড়াই হাজার টাকা ঋণ আজ এইচওয়াইওয়াই ব্যানি পাঠাও।", "ms": 5425.061225891113}
+{"kind": "stt", "id": "b12", "system": "saaras:v4", "cond": "phone", "audio_s": 2.52, "hyp": "এইচপি গ্যাসের একটা সিলিন্ডার বুক করো।", "ms": 2333.2526683807373}
+{"kind": "stt", "id": "t12", "system": "saaras:v4", "cond": "phone", "audio_s": 1.89525, "hyp": "ஏர்டெல் போஸ்ட் பே பில் கட்டு.", "ms": 17735.018014907837}
+{"kind": "stt", "id": "h2", "system": "saaras:v3", "cond": "clean", "audio_s": 1.6, "hyp": "बिजली का बिल भर दो।", "ms": 331.906795501709}
+{"kind": "stt", "id": "h1", "system": "saaras:v3", "cond": "clean", "audio_s": 2.64125, "hyp": "मेरा ₹299 वाला रिचार्ज कर दो।", "ms": 352.9551029205322}
+{"kind": "stt", "id": "h4", "system": "saaras:v3", "cond": "clean", "audio_s": 2.6, "hyp": "मेरे बैंक खाते में कितना पैसा है?", "ms": 346.9409942626953}
+{"kind": "stt", "id": "h3", "system": "saaras:v3", "cond": "clean", "audio_s": 4.648125, "hyp": "नौ आठ सात छह पाँच चार तीन दो एक शून्य पर पाँच सौ रुपये भेज दो।", "ms": 454.2992115020752}
+{"kind": "stt", "id": "h5", "system": "saaras:v3", "cond": "clean", "audio_s": 2.125125, "hyp": "इंजन का गैस सिलेंडर बुक कर दो।", "ms": 391.11971855163574}
+{"kind": "stt", "id": "h6", "system": "saaras:v3", "cond": "clean", "audio_s": 6.72, "hyp": "मम्मी के नंबर नाइन वन टू थ्री फोर फाइव सिक्स सेवन एट ज़ीरो पर टू थर्टी नाइन का रीचार्ज करो।", "ms": 492.279052734375}
+{"kind": "stt", "id": "h7", "system": "saaras:v3", "cond": "clean", "audio_s": 2.850625, "hyp": "डीटीएच का बिल ₹450 भर दो।", "ms": 353.226900100708}
+{"kind": "stt", "id": "h8", "system": "saaras:v3", "cond": "clean", "audio_s": 3.36, "hyp": "रमेश @okaxis को ढाई हज़ार रुपये भेजो।", "ms": 397.28689193725586}
+{"kind": "stt", "id": "x1", "system": "saaras:v3", "cond": "clean", "audio_s": 2.28, "hyp": "मेरा टू नाइनटी नाइन वाला रिचार्ज कर दो।", "ms": 345.89195251464844}
+{"kind": "stt", "id": "x3", "system": "saaras:v3", "cond": "clean", "audio_s": 2.36, "hyp": "क्रेडिट कार्ड का बैलेंस कितना बचा है?", "ms": 346.9550609588623}
+{"kind": "stt", "id": "x2", "system": "saaras:v3", "cond": "clean", "audio_s": 5.28, "hyp": "भाई, डेढ़ हज़ार भेज दो नाइन नाइन एट एट सेवन सेवन सिक्स सिक्स फाइव फाइव पे।", "ms": 470.59130668640137}
+{"kind": "stt", "id": "b8", "system": "saaras:v4", "cond": "phone", "audio_s": 1.96, "hyp": "সাড়ে তিনশো টাকা রিচার্জ করো।", "ms": 19075.66809654236}
+{"kind": "stt", "id": "x4", "system": "saaras:v3", "cond": "clean", "audio_s": 2.6, "hyp": "एचपी गैस के दो सिलेंडर बुक कर दो।", "ms": 356.16207122802734}
+{"kind": "stt", "id": "x5", "system": "saaras:v3", "cond": "clean", "audio_s": 3.2, "hyp": "ब्रॉडबैंड का बिल पे करना है सात सौ निन्यानवे का।", "ms": 385.38193702697754}
+{"kind": "stt", "id": "x6", "system": "saaras:v3", "cond": "clean", "audio_s": 1.72, "hyp": "वॉलेट में कितने पैसे हैं?", "ms": 330.625057220459}
+{"kind": "stt", "id": "x7", "system": "saaras:v3", "cond": "clean", "audio_s": 3.8, "hyp": "सवा सौ रुपये भेजो शॉपकीपर @ वाईबीएल को।", "ms": 408.6132049560547}
+{"kind": "stt", "id": "x8", "system": "saaras:v3", "cond": "clean", "audio_s": 3.24, "hyp": "पाइप्ड गैस का बिल भर दो छः सौ बारह रुपये।", "ms": 409.4891548156738}
+{"kind": "stt", "id": "t1", "system": "saaras:v3", "cond": "clean", "audio_s": 4.23475, "hyp": "என் நம்பருக்கு ₹349 ரீசார்ஜ் பண்ணுங்க.", "ms": 388.8583183288574}
+{"kind": "stt", "id": "t2", "system": "saaras:v3", "cond": "clean", "audio_s": 1.8, "hyp": "கரண்ட் பில் கட்டுங்க.", "ms": 320.2188014984131}
+{"kind": "stt", "id": "t3", "system": "saaras:v3", "cond": "clean", "audio_s": 5.2014375, "hyp": "ஒன்பது எட்டு ஏழு ஆறு ஐந்து பூஜ்ஜியம் ஒன்று இருந்து மூன்றுக்கு ஆயிரம் ரூபாய் அனுப்புங்க.", "ms": 468.2440757751465}
+{"kind": "stt", "id": "t4", "system": "saaras:v3", "cond": "clean", "audio_s": 2.0, "hyp": "பாரத் கேஸ் சிலிண்டர் புக் பண்ணுங்க.", "ms": 363.2690906524658}
+{"kind": "stt", "id": "t5", "system": "saaras:v3", "cond": "clean", "audio_s": 2.9228125, "hyp": "என் பேங்க் அக்கவுண்ட்ல எவ்வளவு பேலன்ஸ் இருக்கு?", "ms": 359.6611022949219}
+{"kind": "stt", "id": "t6", "system": "saaras:v3", "cond": "clean", "audio_s": 2.84, "hyp": "தண்ணி பில் நூற்றி எண்பது ரூபாய் கட்டிடு.", "ms": 368.8797950744629}
+{"kind": "stt", "id": "b1", "system": "saaras:v3", "cond": "clean", "audio_s": 3.44, "hyp": "আমার নম্বরে ২৯৯ টাকার রিচার্জ করে দাও।", "ms": 398.3430862426758}
+{"kind": "stt", "id": "t7", "system": "saaras:v3", "cond": "clean", "audio_s": 7.1888125, "hyp": "அம்மா நம்பர் ஒன்பது நானகு நானகு ஐந்து ஐந்து ஆறு ஆறு எல்லு எல்லு ஒக்கு ஒன்று நூறு தொண்ணூற்று ஒன்பது ரீசார்ஜ் பண்ணு.", "ms": 567.0170783996582}
+{"kind": "stt", "id": "b2", "system": "saaras:v3", "cond": "clean", "audio_s": 1.6221875, "hyp": "ইলেকট্রিক বিল দিয়ে দাও।", "ms": 326.70092582702637}
+{"kind": "stt", "id": "b3", "system": "saaras:v3", "cond": "clean", "audio_s": 6.52, "hyp": "৯৮৩০০১২৩৪৫ নম্বরে ৫০০ টাকা পাঠাও।", "ms": 422.88684844970703}
+{"kind": "stt", "id": "b4", "system": "saaras:v3", "cond": "clean", "audio_s": 2.3428125, "hyp": "ইঞ্জেনের দুটো সিলিন্ডার বুক করো।", "ms": 365.0193214416504}
+{"kind": "stt", "id": "b5", "system": "saaras:v3", "cond": "clean", "audio_s": 2.24, "hyp": "ক্রেডিট কার্ডে কত ব্যালেন্স আছে?", "ms": 394.8488235473633}
+{"kind": "stt", "id": "b6", "system": "saaras:v3", "cond": "clean", "audio_s": 3.631625, "hyp": "ব্রড ব্যান্ডের বিল ৬৯৯ টাকা দি যে দাও।", "ms": 420.1512336730957}
+{"kind": "stt", "id": "b7", "system": "saaras:v3", "cond": "clean", "audio_s": 3.8, "hyp": "দীপাক@পেটিএম এ ₹1500 পাঠাও।", "ms": 413.4390354156494}
+{"kind": "stt", "id": "h9", "system": "saaras:v3", "cond": "clean", "audio_s": 5.5728125, "hyp": "पौने दो हज़ार नौ रुपये आठ एक दो तीन चार पाँच छह सात शून्य पर ट्रांसफ़र करो।", "ms": 481.08696937561035}
+{"kind": "stt", "id": "h11", "system": "saaras:v3", "cond": "clean", "audio_s": 2.376875, "hyp": "भारत गैस के तीन सिलेंडर चाहिए।", "ms": 371.9959259033203}
+{"kind": "stt", "id": "h12", "system": "saaras:v3", "cond": "clean", "audio_s": 1.84, "hyp": "पोस्टपेड बिल चुका दो।", "ms": 328.85122299194336}
+{"kind": "stt", "id": "h10", "system": "saaras:v3", "cond": "clean", "audio_s": 6.4, "hyp": "साढ़े तीन सौ वाला रिचार्ज मेरे भाई के नाइन ज़ीरो नाइन ज़ीरो नाइन ज़ीरो नाइन ज़ीरो नाइन ज़ीरो पर कर दो।", "ms": 509.7012519836426}
+{"kind": "stt", "id": "h13", "system": "saaras:v3", "cond": "clean", "audio_s": 3.070875, "hyp": "नल का बिल ₹1250 भर दो।", "ms": 344.9289798736572}
+{"kind": "stt", "id": "x9", "system": "saaras:v3", "cond": "clean", "audio_s": 2.16, "hyp": "पौने तीन सौ का रिचार्ज करो।", "ms": 356.4491271972656}
+{"kind": "stt", "id": "x10", "system": "saaras:v3", "cond": "clean", "audio_s": 3.48, "hyp": "साढ़े चार हज़ार भेज दो प्रिया.एसबीआई पे।", "ms": 406.1729907989502}
+{"kind": "stt", "id": "x11", "system": "saaras:v3", "cond": "clean", "audio_s": 2.12, "hyp": "मोबाइल का पोस्टपेड बिल भरना है।", "ms": 349.3633270263672}
+{"kind": "stt", "id": "x12", "system": "saaras:v3", "cond": "clean", "audio_s": 2.88, "hyp": "इंडेन वाला सिलेंडर बुक करो, एक ही चाहिए।", "ms": 370.2573776245117}
+{"kind": "stt", "id": "x13", "system": "saaras:v3", "cond": "clean", "audio_s": 2.6, "hyp": "टाटा प्ले का तीन सौ पचास का बिल भर दो।", "ms": 397.19510078430176}
+{"kind": "stt", "id": "t8", "system": "saaras:v3", "cond": "clean", "audio_s": 6.10925, "hyp": "ஆயிரத்து ஐநூறு ரூபாய் ஒன்பது எட்டு நானகு பூஜ்ஜியம் பூஜ்ஜியம் ஒன்று இருந்து முன்று நானகு நக்கு அனுப்பு", "ms": 499.2718696594238}
+{"kind": "stt", "id": "t9", "system": "saaras:v3", "cond": "clean", "audio_s": 2.24, "hyp": "இன்டென் சிலிண்டர் ரெண்டு புக் பண்ணு.", "ms": 366.75190925598145}
+{"kind": "stt", "id": "t10", "system": "saaras:v3", "cond": "clean", "audio_s": 2.2535625, "hyp": "வாலெட்ல எவ்வளவு காசு இருக்கு?", "ms": 346.07791900634766}
+{"kind": "stt", "id": "t11", "system": "saaras:v3", "cond": "clean", "audio_s": 3.08, "hyp": "ஈபி பில் கட்டணும் ரெண்டாயிரத்தி முன்னூத்தி நாற்பது ரூபாய்", "ms": 395.24126052856445}
+{"kind": "stt", "id": "b8", "system": "saaras:v3", "cond": "clean", "audio_s": 1.96, "hyp": "সাড়ে তিনশো টাকা রিচার্জ করো।", "ms": 337.5811576843262}
+{"kind": "stt", "id": "t12", "system": "saaras:v3", "cond": "clean", "audio_s": 1.89525, "hyp": "Airtel Postpaid Bill கட்டு", "ms": 726.4409065246582}
+{"kind": "stt", "id": "b10", "system": "saaras:v3", "cond": "clean", "audio_s": 1.68, "hyp": "জলের বিল মিটিয়ে দাও।", "ms": 379.39000129699707}
+{"kind": "stt", "id": "b9", "system": "saaras:v3", "cond": "clean", "audio_s": 6.87075, "hyp": "মাঝে নম্বর ৯৮৭৪৫৬৩২১০১৯৯ টাকার রিচার্জও করে দাও।", "ms": 474.51210021972656}
+{"kind": "stt", "id": "b11", "system": "saaras:v3", "cond": "clean", "audio_s": 3.8906875, "hyp": "আড়াই হাজার টাকা রিনোয়াত দরে ইতবাই ভয়ালি পাঠাও।", "ms": 418.4541702270508}
+{"kind": "stt", "id": "b12", "system": "saaras:v3", "cond": "clean", "audio_s": 2.52, "hyp": "এইচপি গ্যাসের একটা সিলিন্ডার বুক করো।", "ms": 369.124174118042}
+{"kind": "stt", "id": "h1", "system": "saaras:v3", "cond": "phone", "audio_s": 2.64125, "hyp": "मेरा दो सौ निन्यानवे वाला रिचार्ज कर दो।", "ms": 357.66077041625977}
+{"kind": "stt", "id": "h2", "system": "saaras:v3", "cond": "phone", "audio_s": 1.6, "hyp": "बिजली का बिल भर दो।", "ms": 363.400936126709}
+{"kind": "stt", "id": "h4", "system": "saaras:v3", "cond": "phone", "audio_s": 2.6, "hyp": "मेरे बैंक खाते में कितना पैसा है?", "ms": 381.2708854675293}
+{"kind": "stt", "id": "h3", "system": "saaras:v3", "cond": "phone", "audio_s": 4.648125, "hyp": "नौ आठ सात छह पाँच चार तीन दो एक शून्य पर पाँच सौ रुपये भेज दो।", "ms": 463.8803005218506}
+{"kind": "stt", "id": "h7", "system": "saaras:v3", "cond": "phone", "audio_s": 2.850625, "hyp": "डीटीएच का बिल चार्ज ₹450 भर दो।", "ms": 377.6998519897461}
+{"kind": "stt", "id": "h6", "system": "saaras:v3", "cond": "phone", "audio_s": 6.72, "hyp": "मम्मी के नंबर ९१२३४५६७८० पर २३९ का रिचार्ज करो।", "ms": 462.23998069763184}
+{"kind": "stt", "id": "h5", "system": "saaras:v3", "cond": "phone", "audio_s": 2.125125, "hyp": "इंजन का जैक सिलेंडर बुस्ट कर दो।", "ms": 850.2042293548584}
+{"kind": "stt", "id": "h8", "system": "saaras:v3", "cond": "phone", "audio_s": 3.36, "hyp": "रमेश एट द रेट ओके एक्सिस को ₹2500 भेजो।", "ms": 425.2140522003174}
+{"kind": "stt", "id": "x3", "system": "saaras:v3", "cond": "phone", "audio_s": 2.36, "hyp": "क्रेडिट कार्ड का बैलेंस कितना बचा है?", "ms": 339.6317958831787}
+{"kind": "stt", "id": "x4", "system": "saaras:v3", "cond": "phone", "audio_s": 2.6, "hyp": "एचपी गैस के दो सिलेंडर बुक कर दो।", "ms": 372.01571464538574}
+{"kind": "stt", "id": "x1", "system": "saaras:v3", "cond": "phone", "audio_s": 2.28, "hyp": "मेरा ₹299 वाला रिचार्ज कर दो।", "ms": 2039.3078327178955}
+{"kind": "stt", "id": "x5", "system": "saaras:v3", "cond": "phone", "audio_s": 3.2, "hyp": "ब्रॉडबैंड का बिल पे करना है ₹799 का।", "ms": 1798.0260848999023}
+{"kind": "stt", "id": "x6", "system": "saaras:v3", "cond": "phone", "audio_s": 1.72, "hyp": "वॉलेट में कितने पैसे हैं?", "ms": 2480.0779819488525}
+{"kind": "stt", "id": "x8", "system": "saaras:v3", "cond": "phone", "audio_s": 3.24, "hyp": "पाइप्ड गैस का बिल भर दो ₹612।", "ms": 2684.1681003570557}
+{"kind": "stt", "id": "t1", "system": "saaras:v3", "cond": "phone", "audio_s": 4.23475, "hyp": "என் நம்பருக்கு முன்று நூறு நாலப்பத்து ஒன்பது ரூபாய் ரீசார்ஜ் பண்ணுங்க.", "ms": 432.3611259460449}
+{"kind": "stt", "id": "t2", "system": "saaras:v3", "cond": "phone", "audio_s": 1.8, "hyp": "கரண்ட் பில் கட்டுங்க.", "ms": 328.6259174346924}
+{"kind": "stt", "id": "t3", "system": "saaras:v3", "cond": "phone", "audio_s": 5.2015, "hyp": "ஒன்பது எட்டு ஏழு ஆறு ஐந்து பூஜ்ஜியம் ஒன்று இருந்து மூன்று முத்தி ஆயிரம் ரூபாய் அனுப்புங்க.", "ms": 2181.6437244415283}
+{"kind": "stt", "id": "t4", "system": "saaras:v3", "cond": "phone", "audio_s": 2.0, "hyp": "பாரத் கேஸ் சிலிண்டர் புக் பண்ணுங்க", "ms": 350.18205642700195}
+{"kind": "stt", "id": "t5", "system": "saaras:v3", "cond": "phone", "audio_s": 2.922875, "hyp": "என் பெங்க் அக்கவுண்ட்டில் எவ்வளவு பேலன்ஸ் இருக்குது?", "ms": 2485.322952270508}
+{"kind": "stt", "id": "x7", "system": "saaras:v3", "cond": "phone", "audio_s": 3.8, "hyp": "₹125 भेजो शॉपकीपर @ वाईबीएल को।", "ms": 10402.817010879517}
+{"kind": "stt", "id": "t7", "system": "saaras:v3", "cond": "phone", "audio_s": 7.188875, "hyp": "அம்மா நம்பர் ஒன்பது நான்கு நான்கு ஐந்து ஐந்து ஆறு ஆறு ஏழு ஏழு ஒட்டு ஒன்று நூறு தொண்ணூற்றி ஒன்பது ரீசார்ஜ் பண்ணு", "ms": 562.359094619751}
+{"kind": "stt", "id": "t6", "system": "saaras:v3", "cond": "phone", "audio_s": 2.84, "hyp": "தண்ணி பில் நூற்றி எண்பது ரூபாய் கட்டிடு", "ms": 4997.4987506866455}
+{"kind": "stt", "id": "x2", "system": "saaras:v3", "cond": "phone", "audio_s": 5.28, "hyp": "भाई डेढ़ हज़ार भेज दो नाइन नाइन एट एट सेवन सेवन सिक्स सिक्स फाइव फाइव पे।", "ms": 18938.18998336792}
+{"kind": "stt", "id": "b2", "system": "saaras:v3", "cond": "phone", "audio_s": 1.62225, "hyp": "ইলেকট্রিক বিল ডিজে ডাউন।", "ms": 2273.7770080566406}
+{"kind": "stt", "id": "b3", "system": "saaras:v3", "cond": "phone", "audio_s": 6.52, "hyp": "নয় আট তিন শূন্য শূন্য এক দুই তিন চার পাঁচ নম্বরে পাঁচশো টাকা পাঠাও।", "ms": 2313.494920730591}
+{"kind": "stt", "id": "b5", "system": "saaras:v3", "cond": "phone", "audio_s": 2.24, "hyp": "ক্রেডিট কার্ডে কত ব্যালেন্স আছে?", "ms": 334.54203605651855}
+{"kind": "stt", "id": "b4", "system": "saaras:v3", "cond": "phone", "audio_s": 2.342875, "hyp": "ইঞ্জিনিয়ার দুশো শিলিন্দার বুজ করো।", "ms": 1820.6088542938232}
+{"kind": "stt", "id": "b6", "system": "saaras:v3", "cond": "phone", "audio_s": 3.631625, "hyp": "জগ ব্যান্ডের বিল ৬৯৯ টাকা বিজে দাউ।", "ms": 1982.469081878662}
+{"kind": "stt", "id": "h9", "system": "saaras:v3", "cond": "phone", "audio_s": 5.572875, "hyp": "पौने दो हज़ार नौ रुपये आठ एक दो तीन चार पाँच छह सात शून्य पर ट्रांसफर करो।", "ms": 472.58901596069336}
+{"kind": "stt", "id": "h10", "system": "saaras:v3", "cond": "phone", "audio_s": 6.4, "hyp": "साढ़े तीन सौ वाला रिचार्ज मेरे भाई के नाइन ज़ीरो नाइन ज़ीरो नाइन ज़ीरो नाइन ज़ीरो नाइन ज़ीरो पर कर दो।", "ms": 540.6668186187744}
+{"kind": "stt", "id": "b7", "system": "saaras:v3", "cond": "phone", "audio_s": 3.8, "hyp": "দীপক @ পেটিএম এ ₹1500 পাঠাও।", "ms": 5192.646741867065}
+{"kind": "stt", "id": "h11", "system": "saaras:v3", "cond": "phone", "audio_s": 2.376875, "hyp": "भारत जांच के तीन सिलेंडर चाहिए।", "ms": 2514.3721103668213}
+{"kind": "stt", "id": "h13", "system": "saaras:v3", "cond": "phone", "audio_s": 3.070875, "hyp": "नल का बिल एक हज़ार दो सौ पचास रुपये भर दो।", "ms": 755.3279399871826}
+{"kind": "stt", "id": "h12", "system": "saaras:v3", "cond": "phone", "audio_s": 1.84, "hyp": "पोस्ट पेड बिल चुका दो।", "ms": 1907.8741073608398}
+{"kind": "stt", "id": "x9", "system": "saaras:v3", "cond": "phone", "audio_s": 2.16, "hyp": "पौने तीन सौ का रिचार्ज करो।", "ms": 2116.4650917053223}
+{"kind": "stt", "id": "x11", "system": "saaras:v3", "cond": "phone", "audio_s": 2.12, "hyp": "मोबाइल का पोस्टपेड बिल भरना है।", "ms": 1826.3580799102783}
+{"kind": "stt", "id": "b1", "system": "saaras:v3", "cond": "phone", "audio_s": 3.44, "hyp": "আমার নম্বরে ২৯৯ টাকার রিচার্জ করে দাও।", "ms": 19802.71601676941}
+{"kind": "stt", "id": "x13", "system": "saaras:v3", "cond": "phone", "audio_s": 2.6, "hyp": "टाटा प्ले का ₹350 का बिल भर दो।", "ms": 354.30288314819336}
+{"kind": "stt", "id": "t8", "system": "saaras:v3", "cond": "phone", "audio_s": 6.10925, "hyp": "ஆயிரத்து ஐந்நூறு ரூபாய் ஒன்பது எட்டு நான்கு புஜ்ஜியம் புஜ்ஜியம் ஒன்று இருந்து முன்று நான்கு நக்கு அனுப்பு", "ms": 513.2410526275635}
+{"kind": "stt", "id": "t9", "system": "saaras:v3", "cond": "phone", "audio_s": 2.24, "hyp": "இந்தியன் சிலிண்டர் ரெண்டு புக் பண்ணு.", "ms": 1868.520975112915}
+{"kind": "stt", "id": "t10", "system": "saaras:v3", "cond": "phone", "audio_s": 2.253625, "hyp": "வாலெட்ல எவ்வளவு காசு இருக்கு?", "ms": 340.40093421936035}
+{"kind": "stt", "id": "x12", "system": "saaras:v3", "cond": "phone", "audio_s": 2.88, "hyp": "इंदेन वाला सिलेंडर बुक करो, एक ही चाहिए।", "ms": 4838.697910308838}
+{"kind": "stt", "id": "t11", "system": "saaras:v3", "cond": "phone", "audio_s": 3.08, "hyp": "ஈபி பில் கட்டணும் இரண்டாயிரத்தி முன்னூற்றி நாற்பது ரூபாய்", "ms": 1766.181230545044}
+{"kind": "stt", "id": "b8", "system": "saaras:v3", "cond": "phone", "audio_s": 1.96, "hyp": "সাড়ে তিনশো টাকা রিচার্জ করো।", "ms": 389.94717597961426}
+{"kind": "stt", "id": "b9", "system": "saaras:v3", "cond": "phone", "audio_s": 6.87075, "hyp": "মাঝে নম্বর নয় আট সাত চার পাঁচ ছয় তিন দুই এক শূন্য একশো নিরানব্বই টাকার রিচার্জও করে দাও।", "ms": 2226.0758876800537}
+{"kind": "stt", "id": "b10", "system": "saaras:v3", "cond": "phone", "audio_s": 1.68, "hyp": "জলের বিল মিটিয়ে দাও।", "ms": 332.14426040649414}
+{"kind": "stt", "id": "b11", "system": "saaras:v3", "cond": "phone", "audio_s": 3.89075, "hyp": "আড়াই হাজার টাকা রিনোভা দরে ই বাই ভ এল ই পাঠাও।", "ms": 452.899694442749}
+{"kind": "stt", "id": "b12", "system": "saaras:v3", "cond": "phone", "audio_s": 2.52, "hyp": "এইচপি গ্যাসের একটা সিলিন্ডার বুক করো।", "ms": 2474.876880645752}
+{"kind": "stt", "id": "t12", "system": "saaras:v3", "cond": "phone", "audio_s": 1.89525, "hyp": "ஏர்டெல் போஸ்ட் பில் கட்டு", "ms": 9977.03504562378}
+{"kind": "stt", "id": "h1", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.64125, "hyp": "मेरा 299 वाला रिचार्ज कर दो", "ms": 2775.0799655914307, "in_tok": 103, "out_tok": 9}
+{"kind": "stt", "id": "x10", "system": "saaras:v3", "cond": "phone", "audio_s": 3.48, "hyp": "साढ़े चार हज़ार भेज दो प्रिया डॉट एसबीआई पे।", "ms": 18973.17600250244}
+{"kind": "stt", "id": "h3", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 4.648125, "hyp": "9 8 7 6 5 4 3 2 1 0 पर ₹500 भेज दो", "ms": 2430.018186569214, "in_tok": 153, "out_tok": 26}
+{"kind": "stt", "id": "h2", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 1.6, "hyp": "बिजली का बिल भर दो", "ms": 3147.291898727417, "in_tok": 76, "out_tok": 6}
+{"kind": "stt", "id": "h4", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.6, "hyp": "मेरे बैंक खाते में कितना पैसा है", "ms": 3035.7589721679688, "in_tok": 101, "out_tok": 7}
+{"kind": "stt", "id": "h5", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.125125, "hyp": "इंडियन का गैस सिलेंडर बुक कर दो", "ms": 2673.1767654418945, "in_tok": 90, "out_tok": 7}
+{"kind": "stt", "id": "h7", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.850625, "hyp": "DTH का बिल ₹450 भर दो", "ms": 2301.3830184936523, "in_tok": 108, "out_tok": 10}
+{"kind": "stt", "id": "h6", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 6.72, "hyp": "मम्मी के नंबर 9123456780 पर 239 का रिचार्ज करो", "ms": 3966.618061065674, "in_tok": 204, "out_tok": 23}
+{"kind": "stt", "id": "h8", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 3.36, "hyp": "रमेश@okaxis को ₹2500 भेजो", "ms": 2599.597215652466, "in_tok": 120, "out_tok": 13}
+{"kind": "stt", "id": "x1", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.28, "hyp": "mera 299 wala recharge kar do", "ms": 2867.6037788391113, "in_tok": 98, "out_tok": 9}
+{"kind": "stt", "id": "x2", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 5.28, "hyp": "Bhai 1500 bhej do 9988776655 pe", "ms": 2850.039005279541, "in_tok": 173, "out_tok": 22}
+{"kind": "stt", "id": "x3", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.36, "hyp": "credit card ka balance kitna bacha hai", "ms": 2595.7610607147217, "in_tok": 100, "out_tok": 9}
+{"kind": "stt", "id": "x4", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.6, "hyp": "HP gas ke do cylinder book kar do", "ms": 2499.650001525879, "in_tok": 106, "out_tok": 8}
+{"kind": "stt", "id": "x5", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 3.2, "hyp": "broadband ka bill pay karna hai 799 ka", "ms": 2651.8938541412354, "in_tok": 121, "out_tok": 12}
+{"kind": "stt", "id": "x6", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 1.72, "hyp": "wallet mein kitne paise hain", "ms": 2323.498010635376, "in_tok": 84, "out_tok": 6}
+{"kind": "stt", "id": "x7", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 3.8, "hyp": "Sawa ₹100 bhejo shopkeeper@ybl ko", "ms": 3053.769826889038, "in_tok": 136, "out_tok": 14}
+{"kind": "stt", "id": "x8", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 3.24, "hyp": "Piped gas ka bill bhar do 612 rupaye", "ms": 2913.031816482544, "in_tok": 122, "out_tok": 13}
+{"kind": "stt", "id": "t1", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 4.23475, "hyp": "என் நம்பருக்கு 349 ரூபாய் ரீசார்ஜ் பண்ணுங்க", "ms": 2556.4961433410645, "in_tok": 142, "out_tok": 14}
+{"kind": "stt", "id": "t2", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 1.8, "hyp": "கரண்ட் பில் கட்டுங்க", "ms": 2597.966194152832, "in_tok": 81, "out_tok": 6}
+{"kind": "stt", "id": "t3", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 5.2014375, "hyp": "987650123க்கு 1000 ரூபாய் அனுப்புங்க", "ms": 2177.2279739379883, "in_tok": 167, "out_tok": 19}
+{"kind": "stt", "id": "t4", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.0, "hyp": "பாரத் கேஸ் சிலிண்டர் புக் பண்ணுங்க", "ms": 3233.720064163208, "in_tok": 86, "out_tok": 13}
+{"kind": "stt", "id": "t6", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.84, "hyp": "தண்ணி பில் 180 ரூபாய் கட்டிடு", "ms": 2521.759033203125, "in_tok": 107, "out_tok": 12}
+{"kind": "stt", "id": "t5", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.9228125, "hyp": "என் பேங்க் அக்கவுண்ட்ல எவ்வளவு பேலன்ஸ் இருக்கு", "ms": 2723.5429286956787, "in_tok": 110, "out_tok": 12}
+{"kind": "stt", "id": "b1", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 3.44, "hyp": "আমার নম্বরে ২৯৯ টাকার রিচার্জ করে দাও", "ms": 2796.24080657959, "in_tok": 122, "out_tok": 10}
+{"kind": "stt", "id": "t7", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 7.1888125, "hyp": "", "ms": 4284.219741821289, "in_tok": 216, "out_tok": null}
+{"kind": "stt", "id": "b2", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 1.6221875, "hyp": "electric bill dibe daw", "ms": 3112.685203552246, "in_tok": 77, "out_tok": 5}
+{"kind": "stt", "id": "b3", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 6.52, "hyp": "9830012345 নম্বরে 500 টাকা পাঠাও", "ms": 2310.731887817383, "in_tok": 199, "out_tok": 19}
+{"kind": "stt", "id": "b4", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.3428125, "hyp": "ইন্ডেনের দুটো সিলিন্ডার বুক করো", "ms": 2903.4812450408936, "in_tok": 95, "out_tok": 9}
+{"kind": "stt", "id": "b5", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.24, "hyp": "ক্রেডিট কার্ডে কত ব্যালেন্স আছে", "ms": 2617.741107940674, "in_tok": 93, "out_tok": 9}
+{"kind": "stt", "id": "b6", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 3.631625, "hyp": "ব্রডব্যান্ডের বিল 699 টাকা দিয়ে দাও", "ms": 2629.6749114990234, "in_tok": 127, "out_tok": 13}
+{"kind": "stt", "id": "b7", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 3.8, "hyp": "দীপক@paytm এ দেড় হাজার টাকা পাঠাও", "ms": 2752.770185470581, "in_tok": 131, "out_tok": 12}
+{"kind": "stt", "id": "h9", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 5.5728125, "hyp": "पौने ₹2009 8 1 2 3 4 5 6 7 0 पर ट्रांसफर करो", "ms": 3054.1129112243652, "in_tok": 176, "out_tok": 28}
+{"kind": "stt", "id": "h10", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 6.4, "hyp": "350 वाला रिचार्ज मेरे भाई के 9090909090 पर कर दो", "ms": 2447.8859901428223, "in_tok": 196, "out_tok": 22}
+{"kind": "stt", "id": "h11", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.376875, "hyp": "भारत गैस के तीन सिलेंडर चाहिए", "ms": 2659.1579914093018, "in_tok": 96, "out_tok": 6}
+{"kind": "stt", "id": "h12", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 1.84, "hyp": "Postpaid bill chuka do", "ms": 3061.4490509033203, "in_tok": 82, "out_tok": 6}
+{"kind": "stt", "id": "h13", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 3.070875, "hyp": "नल का बिल ₹1250 भर दो", "ms": 2463.2089138031006, "in_tok": 113, "out_tok": 10}
+{"kind": "stt", "id": "x9", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.16, "hyp": "paune 300 ka recharge karo", "ms": 2541.1531925201416, "in_tok": 95, "out_tok": 9}
+{"kind": "stt", "id": "x10", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 3.48, "hyp": "4500 bhej do Priya.sbi pe", "ms": 2504.237651824951, "in_tok": 128, "out_tok": 12}
+{"kind": "stt", "id": "x11", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.12, "hyp": "mobile ka postpaid bill bharna hai", "ms": 2798.2189655303955, "in_tok": 94, "out_tok": 7}
+{"kind": "stt", "id": "x12", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.88, "hyp": "Indane wala cylinder book karo ek hi chahiye", "ms": 2860.9259128570557, "in_tok": 113, "out_tok": 9}
+{"kind": "stt", "id": "x13", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.6, "hyp": "Tata Play ka 350 ka bill bhar do", "ms": 3974.4980335235596, "in_tok": 106, "out_tok": 11}
+{"kind": "stt", "id": "t8", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 6.10925, "hyp": "1500 ரூபாய் 984001234 நக்கு அனுப்பு", "ms": 3048.9768981933594, "in_tok": 189, "out_tok": 19}
+{"kind": "stt", "id": "t9", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.24, "hyp": "Indian cylinder rendu book pannu", "ms": 3029.9782752990723, "in_tok": 93, "out_tok": 6}
+{"kind": "stt", "id": "t10", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.2535625, "hyp": "வாலட்ல எவ்வளவு காசு இருக்கு", "ms": 2514.5859718322754, "in_tok": 93, "out_tok": 8}
+{"kind": "stt", "id": "t11", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 3.08, "hyp": "ஈபி பில் கட்டணும் ₹2340", "ms": 3395.623207092285, "in_tok": 113, "out_tok": 11}
+{"kind": "stt", "id": "t12", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 1.89525, "hyp": "Airtel postpaid bill kattu", "ms": 2584.700107574463, "in_tok": 84, "out_tok": 7}
+{"kind": "stt", "id": "b8", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 1.96, "hyp": "৩৫০ টাকা রিচার্জ করো", "ms": 2500.07700920105, "in_tok": 85, "out_tok": 6}
+{"kind": "stt", "id": "b10", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 1.68, "hyp": "জলের বিল মিটিয়ে দাও", "ms": 2591.905117034912, "in_tok": 78, "out_tok": 6}
+{"kind": "stt", "id": "b9", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 6.87075, "hyp": "মায়ের নম্বর 9874563210 এ 199 টাকার রিচার্জ করে দাও", "ms": 3248.901844024658, "in_tok": 208, "out_tok": 24}
+{"kind": "stt", "id": "b11", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 3.8906875, "hyp": "আড়াই হাজার টাকা রিনোভাত দরেই বৈভব এলিপাঠাও", "ms": 2501.8386840820312, "in_tok": 134, "out_tok": 18}
+{"kind": "stt", "id": "b12", "system": "gemini-3.8-flash-audio", "cond": "clean", "audio_s": 2.52, "hyp": "এইচপি গ্যাসের একটা সিলিন্ডার বুক করো", "ms": 2647.197961807251, "in_tok": 99, "out_tok": 9}
+{"kind": "stt", "id": "h1", "system": "gemini-3.8-flash-audio", "cond": "phone", "audio_s": 2.64125, "hyp": "मेरा 299 वाला रिचार्ज कर दो", "ms": 2416.7048931121826, "in_tok": 103, "out_tok": 9}
+{"kind": "stt", "id": "h2", "system": "gemini-3.8-flash-audio", "cond": "phone", "audio_s": 1.6, "hyp": "बिजली का बिल भर दो", "ms": 3660.45880317688, "in_tok": 76, "out_tok": 6}
+{"kind": "stt", "id": "h4", "system": "gemini-3.8-flash-audio", "cond": "phone", "audio_s": 2.6, "hyp": "मेरे बैंक खाते में कितना पैसा है?", "ms": 2496.3459968566895, "in_tok": 101, "out_tok": 8}
+{"kind": "stt", "id": "h3", "system": "gemini-3.8-flash-audio", "cond": "phone", "audio_s": 4.648125, "hyp": "9 8 7 6 5 4 3 2 1 0 पर ₹500 भेज दो", "ms": 2846.6267585754395, "in_tok": 153, "out_tok": 26}

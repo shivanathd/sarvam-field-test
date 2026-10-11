@@ -1112,3 +1112,34 @@
 23:38:19 sarvam-docai-extract kyc_form_ml_03 photo 8754ms
 23:38:21 sarvam-docai-extract kyc_form_ml_04 photo 6478ms
 23:38:26 sarvam-docai-extract gst_invoice_hi_01 clean 8841ms
+23:38:27 sarvam-docai-extract gst_invoice_ta_01 clean 6487ms
+23:38:28 sarvam-docai-extract gst_invoice_gu_01 clean 8882ms
+23:38:31 sarvam-docai-extract kyc_form_hi_01 clean 5315ms
+23:38:34 sarvam-docai-extract kyc_form_ml_01 clean 6492ms
+23:38:36 sarvam-docai-extract land_7_12_mr_01 clean 7780ms
+23:38:36 sarvam-docai-extract patta_ta_01 clean 5333ms
+23:38:40 sarvam-docai-extract electricity_bill_kn_01 clean 6472ms
+23:38:43 sarvam-docai-extract ration_card_bn_01 clean 6487ms
+23:38:43 sarvam-docai-extract electricity_bill_te_01 clean 6542ms
+23:38:45 sarvam-docai-extract ration_card_hi_01 clean 5378ms
+23:38:50 sarvam-docai-extract gst_invoice_hi_02 clean 7646ms
+23:38:51 sarvam-docai-extract kyc_form_hi_02 clean 8824ms
+23:38:52 sarvam-docai-extract land_7_12_mr_02 clean 6519ms
+23:38:57 sarvam-docai-extract patta_ta_02 clean 6492ms
+23:38:58 sarvam-docai-extract electricity_bill_kn_02 clean 6506ms
+23:39:00 sarvam-docai-extract gst_invoice_hi_03 clean 7710ms
+23:39:03 sarvam-docai-extract gst_invoice_hi_04 clean 6545ms
+23:39:06 sarvam-docai-extract gst_invoice_gu_02 clean 6547ms
+23:39:07 sarvam-docai-extract gst_invoice_hi_05 clean 8846ms
+23:39:11 sarvam-docai-extract gst_invoice_gu_03 clean 7650ms
+23:39:13 sarvam-docai-extract gst_invoice_gu_04 clean 6494ms
+23:39:15 sarvam-docai-extract gst_invoice_ta_02 clean 7674ms
+23:39:18 sarvam-docai-extract kyc_form_hi_03 clean 5338ms
+23:39:19 sarvam-docai-extract gst_invoice_ta_03 clean 7646ms
+23:39:20 sarvam-docai-extract kyc_form_hi_04 clean 5326ms
+23:39:24 sarvam-docai-extract kyc_form_ml_02 clean 5372ms
+23:39:26 sarvam-docai-extract kyc_form_hi_05 clean 7660ms
+23:39:26 sarvam-docai-extract kyc_form_ml_03 clean 6492ms
+23:39:30 sarvam-docai-extract kyc_form_ml_04 clean 6481ms
+23:39:31 wrote results
+23:41:22 wrote results

@@ -5,7 +5,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 OUT=${1:-../sarvam-field-test-public}
 rm -rf "$OUT" && mkdir -p "$OUT"
-rsync -a --exclude-from=.gitignore --exclude '.git/' ./ "$OUT/"
+rsync -a --exclude-from=.gitignore --exclude '.git/' --exclude '.venv' ./ "$OUT/"
 cd "$OUT"
 (LC_ALL=C grep -rIl "$HOME" . || true) | while read -r f; do perl -pi -e "s#\Q$HOME\E#~#g" "$f"; done
 (LC_ALL=C grep -rIl "$(whoami)" . || true) | while read -r f; do perl -pi -e "s#$(whoami)#user#g" "$f"; done

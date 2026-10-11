@@ -36,3 +36,8 @@
 21:40:55 stt: 0 saaras + 0 gemini + 700 openai jobs
 21:50:14 == step score
 21:52:51 == step score
+23:38:46 == step stt
+23:38:46 stt: 350 saaras + 0 gemini + 0 openai jobs
+23:39:36 job failed, will retry on rerun: 429 {"error":{"message":"Rate limit exceeded.","code":"rate_limit_exceeded_error","request_id":"20261011_577c9057-bd65-4655-9411-3ace60170ada"}}
+23:39:37 job failed, will retry on rerun: 429 {"error":{"message":"Rate limit exceeded.","code":"rate_limit_exceeded_error","request_id":"20261011_8779ceb2-6d75-4fbb-861c-f0f920629f7e"}}
+23:41:28 job failed, will retry on rerun: 429 {"error":{"message":"Rate limit exceeded.","code":"rate_limit_exceeded_error","request_id":"20261011_d75f900f-5b77-457e-877d-504a434a08a3"}}

@@ -1,2 +1,3 @@
 23:38:19 synth done 70
 23:38:25 stt jobs 560
+23:39:00 stt job failed, rerun retries: 429 {"error":{"message":"Rate limit exceeded.","code":"rate_limit_exceeded_error","request_id":"20261011_58210890-2706-406b-8496-d64052981477"}}

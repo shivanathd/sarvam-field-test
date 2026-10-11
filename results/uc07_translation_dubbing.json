@@ -37,6 +37,7 @@
   "qwen3-30b-local",
   "mayura:v1-colloquial",
   "bulbul:v3",
+  "bulbul:v4-flash",
   "gemini-3.8-flash-tts",
   "openai:gpt-4o-mini-tts",
   "openai:gpt-4o-transcribe"
@@ -529,6 +530,12 @@
      "hi": 0.023615662529314328,
      "n": 156
     },
+    "bulbul:v4-flash": {
+     "mean": 0.024711063408199535,
+     "lo": 0.018052681534307564,
+     "hi": 0.03246047991761778,
+     "n": 96
+    },
     "gemini-3.8-flash-tts": {
      "mean": 0.01854564217830524,
      "lo": 0.01452240374275755,
@@ -553,6 +560,12 @@
      "lo": 0.04138311129989265,
      "hi": 0.11185089265008716,
      "n": 156
+    },
+    "bulbul:v4-flash": {
+     "mean": 0.10390545905324912,
+     "lo": 0.05489027712018415,
+     "hi": 0.1612112286973906,
+     "n": 96
     },
     "gemini-3.8-flash-tts": {
      "mean": 0.059025924960514904,
@@ -579,6 +592,12 @@
      "hi": 0.05842372317586254,
      "n": 156
     },
+    "bulbul:v4-flash": {
+     "mean": 0.05140928712515371,
+     "lo": 0.033776074534882745,
+     "hi": 0.07713275031174618,
+     "n": 96
+    },
     "gemini-3.8-flash-tts": {
      "mean": 0.03482647384826866,
      "lo": 0.029071221517144936,
@@ -594,6 +613,99 @@
    }
   },
   {
+   "name": "Dubbing CER, judge=saaras:v3, bulbul:v4-flash matched subset (16 sentences x 6 langs)",
+   "higher_is_better": false,
+   "unit": "CER (0-1+)",
+   "values": {
+    "bulbul:v3": {
+     "mean": 0.01952986178532757,
+     "lo": 0.013487899582145427,
+     "hi": 0.026372694501668143,
+     "n": 96
+    },
+    "bulbul:v4-flash": {
+     "mean": 0.024711063408199535,
+     "lo": 0.018052681534307564,
+     "hi": 0.03246047991761778,
+     "n": 96
+    },
+    "gemini-3.8-flash-tts": {
+     "mean": 0.017529102901638928,
+     "lo": 0.012365272501726482,
+     "hi": 0.024146903092240355,
+     "n": 96
+    },
+    "openai:gpt-4o-mini-tts": {
+     "mean": 0.022565261813953782,
+     "lo": 0.01634609671731888,
+     "hi": 0.030372144843643856,
+     "n": 96
+    }
+   }
+  },
+  {
+   "name": "Dubbing CER, judge=gemini-3.8-flash, bulbul:v4-flash matched subset (16 sentences x 6 langs)",
+   "higher_is_better": false,
+   "unit": "CER (0-1+)",
+   "values": {
+    "bulbul:v3": {
+     "mean": 0.09500549624674857,
+     "lo": 0.04716580110690132,
+     "hi": 0.1515835744161714,
+     "n": 96
+    },
+    "bulbul:v4-flash": {
+     "mean": 0.10390545905324912,
+     "lo": 0.05489027712018415,
+     "hi": 0.1612112286973906,
+     "n": 96
+    },
+    "gemini-3.8-flash-tts": {
+     "mean": 0.08138235138960749,
+     "lo": 0.039964715085785675,
+     "hi": 0.13121331296623873,
+     "n": 96
+    },
+    "openai:gpt-4o-mini-tts": {
+     "mean": 0.0760209894596111,
+     "lo": 0.036072055686086256,
+     "hi": 0.11894689277394592,
+     "n": 96
+    }
+   }
+  },
+  {
+   "name": "Dubbing CER, judge=openai:gpt-4o-transcribe, bulbul:v4-flash matched subset (16 sentences x 6 langs)",
+   "higher_is_better": false,
+   "unit": "CER (0-1+)",
+   "values": {
+    "bulbul:v3": {
+     "mean": 0.03683701561441268,
+     "lo": 0.02930675699050629,
+     "hi": 0.04570985869628633,
+     "n": 96
+    },
+    "bulbul:v4-flash": {
+     "mean": 0.05140928712515371,
+     "lo": 0.033776074534882745,
+     "hi": 0.07713275031174618,
+     "n": 96
+    },
+    "gemini-3.8-flash-tts": {
+     "mean": 0.03615496919714118,
+     "lo": 0.02774956209526741,
+     "hi": 0.04544730685385288,
+     "n": 96
+    },
+    "openai:gpt-4o-mini-tts": {
+     "mean": 0.05323515380466181,
+     "lo": 0.036756614906682326,
+     "hi": 0.07719288127845882,
+     "n": 96
+    }
+   }
+  },
+  {
    "name": "TTS time to first audio byte",
    "higher_is_better": false,
    "unit": "ms",
@@ -603,6 +715,12 @@
      "lo": 379.13235945579333,
      "hi": 519.7540414639009,
      "n": 156
+    },
+    "bulbul:v4-flash": {
+     "mean": 313.9198422431946,
+     "lo": 310.0793982545535,
+     "hi": 319.13767258326214,
+     "n": 96
     },
     "gemini-3.8-flash-tts": {
      "mean": 1136.2518087411538,
@@ -629,6 +747,12 @@
      "hi": 1837.40252103561,
      "n": 156
     },
+    "bulbul:v4-flash": {
+     "mean": 1485.340880850951,
+     "lo": 1426.2271746993065,
+     "hi": 1548.4560852249463,
+     "n": 96
+    },
     "gemini-3.8-flash-tts": {
      "mean": 2857.037528967246,
      "lo": 2792.2258973121643,
@@ -653,6 +777,12 @@
      "lo": 7.268403976975406,
      "hi": 7.791690214547357,
      "n": 156
+    },
+    "bulbul:v4-flash": {
+     "mean": 7.718367346938776,
+     "lo": 7.32734693877551,
+     "hi": 8.137142857142857,
+     "n": 96
     },
     "gemini-3.8-flash-tts": {
      "mean": 7.027435897435898,
@@ -937,51 +1067,61 @@
   "Dubbing CER judge=saaras:v3": {
    "hi": {
     "bulbul:v3": 0.011,
+    "bulbul:v4-flash": 0.021,
     "gemini-3.8-flash-tts": 0.012,
     "openai:gpt-4o-mini-tts": 0.011
    },
    "bn": {
     "bulbul:v3": 0.024,
+    "bulbul:v4-flash": 0.039,
     "gemini-3.8-flash-tts": 0.019,
     "openai:gpt-4o-mini-tts": 0.023
    },
    "ta": {
     "bulbul:v3": 0.017,
+    "bulbul:v4-flash": 0.029,
     "gemini-3.8-flash-tts": 0.017,
     "openai:gpt-4o-mini-tts": 0.031
    },
    "te": {
     "bulbul:v3": 0.02,
+    "bulbul:v4-flash": 0.018,
     "gemini-3.8-flash-tts": 0.021,
     "openai:gpt-4o-mini-tts": 0.025
    },
    "mr": {
     "bulbul:v3": 0.014,
+    "bulbul:v4-flash": 0.014,
     "gemini-3.8-flash-tts": 0.018,
     "openai:gpt-4o-mini-tts": 0.021
    },
    "kn": {
     "bulbul:v3": 0.023,
+    "bulbul:v4-flash": 0.026,
     "gemini-3.8-flash-tts": 0.024,
     "openai:gpt-4o-mini-tts": 0.032
    },
    "ml": {
     "bulbul:v3": 0.024,
+    "bulbul:v4-flash": 0.041,
     "gemini-3.8-flash-tts": 0.041,
     "openai:gpt-4o-mini-tts": 0.054
    },
    "gu": {
     "bulbul:v3": 0.0,
+    "bulbul:v4-flash": 0.0,
     "gemini-3.8-flash-tts": 0.013,
     "openai:gpt-4o-mini-tts": 0.004
    },
    "pa": {
     "bulbul:v3": 0.012,
+    "bulbul:v4-flash": 0.004,
     "gemini-3.8-flash-tts": 0.0,
     "openai:gpt-4o-mini-tts": 0.013
    },
    "or": {
     "bulbul:v3": 0.025,
+    "bulbul:v4-flash": 0.027,
     "gemini-3.8-flash-tts": 0.011,
     "openai:gpt-4o-mini-tts": 0.015
    }
@@ -989,51 +1129,61 @@
   "Dubbing CER judge=gemini-3.8-flash": {
    "hi": {
     "bulbul:v3": 0.057,
+    "bulbul:v4-flash": 0.122,
     "gemini-3.8-flash-tts": 0.044,
     "openai:gpt-4o-mini-tts": 0.012
    },
    "bn": {
     "bulbul:v3": 0.107,
+    "bulbul:v4-flash": 0.104,
     "gemini-3.8-flash-tts": 0.063,
     "openai:gpt-4o-mini-tts": 0.037
    },
    "ta": {
     "bulbul:v3": 0.139,
+    "bulbul:v4-flash": 0.164,
     "gemini-3.8-flash-tts": 0.065,
     "openai:gpt-4o-mini-tts": 0.141
    },
    "te": {
     "bulbul:v3": 0.02,
+    "bulbul:v4-flash": 0.015,
     "gemini-3.8-flash-tts": 0.028,
     "openai:gpt-4o-mini-tts": 0.06
    },
    "mr": {
     "bulbul:v3": 0.054,
+    "bulbul:v4-flash": 0.071,
     "gemini-3.8-flash-tts": 0.018,
     "openai:gpt-4o-mini-tts": 0.05
    },
    "kn": {
     "bulbul:v3": 0.06,
+    "bulbul:v4-flash": 0.147,
     "gemini-3.8-flash-tts": 0.137,
     "openai:gpt-4o-mini-tts": 0.099
    },
    "ml": {
     "bulbul:v3": 0.047,
+    "bulbul:v4-flash": 0.024,
     "gemini-3.8-flash-tts": 0.044,
     "openai:gpt-4o-mini-tts": 0.021
    },
    "gu": {
     "bulbul:v3": 0.009,
+    "bulbul:v4-flash": 0.01,
     "gemini-3.8-flash-tts": 0.021,
     "openai:gpt-4o-mini-tts": 0.012
    },
    "pa": {
     "bulbul:v3": 0.016,
+    "bulbul:v4-flash": 0.031,
     "gemini-3.8-flash-tts": 0.016,
     "openai:gpt-4o-mini-tts": 0.012
    },
    "or": {
     "bulbul:v3": 0.037,
+    "bulbul:v4-flash": 0.046,
     "gemini-3.8-flash-tts": 0.024,
     "openai:gpt-4o-mini-tts": 0.016
    }
@@ -1041,51 +1191,61 @@
   "Dubbing CER judge=openai:gpt-4o-transcribe": {
    "hi": {
     "bulbul:v3": 0.053,
+    "bulbul:v4-flash": 0.026,
     "gemini-3.8-flash-tts": 0.019,
     "openai:gpt-4o-mini-tts": 0.049
    },
    "bn": {
     "bulbul:v3": 0.041,
+    "bulbul:v4-flash": 0.072,
     "gemini-3.8-flash-tts": 0.035,
     "openai:gpt-4o-mini-tts": 0.04
    },
    "ta": {
     "bulbul:v3": 0.045,
+    "bulbul:v4-flash": 0.044,
     "gemini-3.8-flash-tts": 0.033,
     "openai:gpt-4o-mini-tts": 0.05
    },
    "te": {
     "bulbul:v3": 0.041,
+    "bulbul:v4-flash": 0.087,
     "gemini-3.8-flash-tts": 0.043,
     "openai:gpt-4o-mini-tts": 0.05
    },
    "mr": {
     "bulbul:v3": 0.031,
+    "bulbul:v4-flash": 0.042,
     "gemini-3.8-flash-tts": 0.033,
     "openai:gpt-4o-mini-tts": 0.048
    },
    "kn": {
     "bulbul:v3": 0.047,
+    "bulbul:v4-flash": 0.037,
     "gemini-3.8-flash-tts": 0.046,
     "openai:gpt-4o-mini-tts": 0.06
    },
    "ml": {
     "bulbul:v3": 0.084,
+    "bulbul:v4-flash": 0.121,
     "gemini-3.8-flash-tts": 0.119,
     "openai:gpt-4o-mini-tts": 0.067
    },
    "gu": {
     "bulbul:v3": 0.027,
+    "bulbul:v4-flash": 0.075,
     "gemini-3.8-flash-tts": 0.045,
     "openai:gpt-4o-mini-tts": 0.062
    },
    "pa": {
     "bulbul:v3": 0.028,
+    "bulbul:v4-flash": 0.044,
     "gemini-3.8-flash-tts": 0.035,
     "openai:gpt-4o-mini-tts": 0.043
    },
    "or": {
     "bulbul:v3": 0.058,
+    "bulbul:v4-flash": 0.23,
     "gemini-3.8-flash-tts": 0.038,
     "openai:gpt-4o-mini-tts": 0.09
    }
@@ -1145,6 +1305,12 @@
    "p95_ms": 2335.9737396240234,
    "ttfb_p50_ms": 358.5197925567627,
    "ttfb_p95_ms": 538.1669998168945
+  },
+  "bulbul:v4-flash": {
+   "p50_ms": 1492.809772491455,
+   "p95_ms": 1968.8546657562256,
+   "ttfb_p50_ms": 310.19115447998047,
+   "ttfb_p95_ms": 350.5699634552002
   },
   "gemini-3.8-flash-tts": {
    "p50_ms": 2885.849952697754,
@@ -1290,6 +1456,16 @@
    "cost_inr": 45.94,
    "cost_per_10k_chars": "INR 30 (Sarvam list price, bulbul:v3)"
   },
+  "bulbul:v4-flash": {
+   "calls": 108,
+   "chars": 9976,
+   "audio_s": 836.5,
+   "in_tok": 0,
+   "out_tok": 0,
+   "errors": 0,
+   "cost_inr_if_v3_price": 29.93,
+   "cost_per_10k_chars": "not on the Sarvam pricing page at test time; v3 price used as upper bound"
+  },
   "gemini-3.8-flash-tts": {
    "calls": 168,
    "chars": 15312,
@@ -1311,23 +1487,23 @@
    "cost_usd_per_10k_chars_approx": 0.225
   },
   "judge:saaras:v3": {
-   "calls": 504,
-   "audio_s": 3839.8,
+   "calls": 612,
+   "audio_s": 4676.3,
    "in_tok": 0,
    "out_tok": 0
   },
   "judge:gemini-3.8-flash": {
-   "calls": 504,
+   "calls": 612,
    "audio_s": 0,
-   "in_tok": 104221,
-   "out_tok": 13335
+   "in_tok": 126911,
+   "out_tok": 16225
   },
   "judge:openai:gpt-4o-transcribe": {
-   "calls": 504,
-   "audio_s": 3839.8,
+   "calls": 612,
+   "audio_s": 4676.3,
    "in_tok": 0,
    "out_tok": 0,
-   "cost_usd_approx": 0.384
+   "cost_usd_approx": 0.468
   }
  },
  "extra": {
@@ -1335,6 +1511,11 @@
    "hi": {
     "bulbul:v3": {
      "ok": 26,
+     "refused": 0,
+     "documented": true
+    },
+    "bulbul:v4-flash": {
+     "ok": 16,
      "refused": 0,
      "documented": true
     },
@@ -1355,6 +1536,11 @@
      "refused": 0,
      "documented": true
     },
+    "bulbul:v4-flash": {
+     "ok": 16,
+     "refused": 0,
+     "documented": true
+    },
     "gemini-3.8-flash-tts": {
      "ok": 26,
      "refused": 0,
@@ -1369,6 +1555,11 @@
    "ta": {
     "bulbul:v3": {
      "ok": 26,
+     "refused": 0,
+     "documented": true
+    },
+    "bulbul:v4-flash": {
+     "ok": 16,
      "refused": 0,
      "documented": true
     },
@@ -1389,6 +1580,11 @@
      "refused": 0,
      "documented": true
     },
+    "bulbul:v4-flash": {
+     "ok": 16,
+     "refused": 0,
+     "documented": true
+    },
     "gemini-3.8-flash-tts": {
      "ok": 26,
      "refused": 0,
@@ -1403,6 +1599,11 @@
    "mr": {
     "bulbul:v3": {
      "ok": 26,
+     "refused": 0,
+     "documented": true
+    },
+    "bulbul:v4-flash": {
+     "ok": 16,
      "refused": 0,
      "documented": true
     },
@@ -1423,6 +1624,11 @@
      "refused": 0,
      "documented": true
     },
+    "bulbul:v4-flash": {
+     "ok": 16,
+     "refused": 0,
+     "documented": true
+    },
     "gemini-3.8-flash-tts": {
      "ok": 26,
      "refused": 0,
@@ -1440,6 +1646,11 @@
      "refused": 0,
      "documented": true
     },
+    "bulbul:v4-flash": {
+     "ok": 3,
+     "refused": 0,
+     "documented": false
+    },
     "gemini-3.8-flash-tts": {
      "ok": 3,
      "refused": 0,
@@ -1453,6 +1664,11 @@
    },
    "gu": {
     "bulbul:v3": {
+     "ok": 3,
+     "refused": 0,
+     "documented": true
+    },
+    "bulbul:v4-flash": {
      "ok": 3,
      "refused": 0,
      "documented": true
@@ -1474,6 +1690,11 @@
      "refused": 0,
      "documented": true
     },
+    "bulbul:v4-flash": {
+     "ok": 3,
+     "refused": 0,
+     "documented": true
+    },
     "gemini-3.8-flash-tts": {
      "ok": 3,
      "refused": 0,
@@ -1490,6 +1711,11 @@
      "ok": 3,
      "refused": 0,
      "documented": true
+    },
+    "bulbul:v4-flash": {
+     "ok": 3,
+     "refused": 0,
+     "documented": false
     },
     "gemini-3.8-flash-tts": {
      "ok": 3,
@@ -1516,11 +1742,23 @@
     "pa": "simran",
     "or": "pooja"
    },
+   "bulbul:v4-flash": {
+    "hi": "ritu_hi_edtech",
+    "bn": "roopa_bn_conversational",
+    "ta": "vijay_ta_narration",
+    "te": "kavitha_te_narration",
+    "mr": "ritu_mr_narration",
+    "kn": "suchitra_kn_narration",
+    "ml": "ritu_hi_edtech",
+    "gu": "pooja_gu_conversational",
+    "pa": "harpreet_pa_narration",
+    "or": "ritu_hi_edtech"
+   },
    "gemini-3.8-flash-tts": "Kore",
    "openai:gpt-4o-mini-tts": "alloy"
   },
   "frontier_subset": "first 3 sentence ids x 10 langs, both directions, think on: 1669, 1672, 1701",
-  "openai_judge_no_language_hint": 18,
+  "openai_judge_no_language_hint": 24,
   "en2xx_wrong_script_outputs": {
    "sarvam-translate:v1": 0,
    "mayura:v1": 0,
@@ -1534,8 +1772,8 @@
    "sarvam-30b-local": 9,
    "qwen3-30b-local": 0
   },
-  "gemini_judge_blocked_calls": 20,
-  "sarvam_spend_inr_estimate": 328.3
+  "gemini_judge_blocked_calls": 27,
+  "sarvam_spend_inr_estimate": 365.2
  },
  "examples": [
   {
@@ -1694,6 +1932,18 @@
     "openai:gpt-4o-mini-tts -> openai:gpt-4o-transcribe": {
      "transcript": "காவல் துறை மேற்பார்வையாளர் சந்திரசேகர சோளங்கி குற்றம் சாட்டப்பட்டவர்கள் நீதிமன்றத்தில் முகத்தை மூடியவர் தோன்றினார்.",
      "cer": 0.058
+    },
+    "bulbul:v4-flash -> saaras:v3": {
+     "transcript": "காவல்துறை மேற்பார்வையாளர் சந்திரசேகர சோலங்கி குற்றம் சாட்டப்பட்டவர்கள் நீதிமன்றத்தில் முகத்தை மூடியவாறு தோன்றினர்.",
+     "cer": 0.01
+    },
+    "bulbul:v4-flash -> gemini-3.8-flash": {
+     "transcript": "காவல்துறை கண்காணிப்பாளர் சந்திரசேகர் சோலங்கி குற்றம் சாட்டப்பட்டவர்கள் நீதிமன்றத்தில் முகத்தை மூடியவாறு தோன்றினர்",
+     "cer": 0.106
+    },
+    "bulbul:v4-flash -> openai:gpt-4o-transcribe": {
+     "transcript": "காவல் துறை மேற்பார்வையாளர் சந்திரசேகர சோலங்கி குற்றம் சாட்டப்பட்டவர்கள் நீதிமன்றத்தில் முகத்தை மூடிய வாறு தோன்றினார்.",
+     "cer": 0.019
     }
    }
   },
@@ -1737,6 +1987,18 @@
     "openai:gpt-4o-mini-tts -> openai:gpt-4o-transcribe": {
      "transcript": "সাবধান হন, কাপড় যাতে খুব গরম না হয়ে যায়। এতে সংকোচন হতে পারে বা ক্ষেত্রে বিশেষে জ্বলে যেতে পারে।",
      "cer": 0.051
+    },
+    "bulbul:v4-flash -> saaras:v3": {
+     "transcript": "সাবধান হন কাপড় যাতে খুব গরম না হয়ে যায় এতে সংকোচন হতে পারে বা ক্ষেত্রবিশেষে জ্বলেও যেতে পারে",
+     "cer": 0.025
+    },
+    "bulbul:v4-flash -> gemini-3.8-flash": {
+     "transcript": "সাবধান হন কাপড় যাতে খুব গরম না হয়ে যায়। এতে সংকোচন হতে পারে বা ক্ষেত্র বিশেষে জ্বলে ও যেতে পারে।",
+     "cer": 0.025
+    },
+    "bulbul:v4-flash -> openai:gpt-4o-transcribe": {
+     "transcript": "সাবধান হন, কাপড় যাতে খুব গরম না হয়ে যায়। এতে সংকুচিত হতে পারে বা ক্ষেত্রবিশেষে জলেও যেতে পারে।",
+     "cer": 0.089
     }
    }
   }
@@ -1750,6 +2012,7 @@
   "Dubbing intelligibility (26 sentences x 6 languages per TTS, three STT judges): bulbul:v3 and gemini-3.8-flash-tts are statistically tied, and gpt-4o-mini-tts is slightly behind. CER with saaras:v3 as judge: bulbul 1.8%, Gemini 1.9%, OpenAI 2.4%. With the vendor-neutral gpt-4o-transcribe as judge: Gemini 3.5%, bulbul 4.3%, OpenAI 5.0%, CIs overlapping. With Gemini as judge, counting its refusals as failures: Gemini 5.9%, OpenAI 6.7%, bulbul 7.3%. Without the refusals those three are 2.8%, 2.3% and 2.3%.",
   "Judge bias is small and not consistent. The neutral OpenAI judge slightly favours Gemini TTS. Saaras slightly favours bulbul. The Gemini judge refused bulbul audio most often (8 refusals vs 5 for its own TTS), and once refusals are excluded it scores bulbul and OpenAI best. Every TTS stays under about 5% CER with every judge.",
   "Bulbul is fastest to first audio. Streaming TTFB p50 is 357 ms for bulbul, 991 ms for gpt-4o-mini-tts and 1154 ms for Gemini TTS. The full clip arrives at p50 1.69 s, 2.06 s and 2.89 s respectively. In a 2-call spot check, Bulbul's non-streaming REST endpoint took 5.8-7.6 s for the same text, so use the stream endpoint.",
+  "bulbul:v4-flash is Sarvam's faster TTS, not its clearer one. On the matched subset (16 sentences x 6 languages) it starts audio sooner than bulbul:v3: TTFB p50 310 ms vs 359 ms, p95 351 ms vs 538 ms. The full clip arrives at p50 1.49 s vs 1.69 s. It is not more intelligible. Round-trip CER, v4-flash vs v3: saaras judge 2.5% vs 2.0%, gpt-4o-transcribe judge 5.1% vs 3.7%, Gemini judge (refusals counted as failures) 10.4% vs 9.5%. All three point the same way, but the CIs overlap. Its voices are language-specific and style-tagged (e.g. ritu_hi_edtech, suchitra_kn_narration). There is no Malayalam or Odia voice, but the API accepts a Hindi voice for ml-IN and od-IN and the audio was intelligible: saaras CER 4.1% (ml) and 2.7% (or). Assamese voices are listed, but as-IN returns 'request beta access'. The Tamil voices are all male.",
   "TTS cost per 10k characters: bulbul:v3 INR 30 (list price). gpt-4o-mini-tts about US$0.23, estimated from audio minutes at about $0.015/min. Gemini TTS used about 19.4k audio output tokens; no Gemini price is assumed. All three TTS produced audio in all 10 languages tested.",
   "The local 30B models trail the APIs on the 8-sentence subset. Into Indian languages, sarvam-30b-local scores 37.8 and qwen3-30b-local 36.0, against about 45-50 for the cloud systems. Into English they score 55.2 and 53.4, close to mayura. sarvam-30b-local returned the English source untranslated in 9 of 80 English->Indic items (e.g. 'Lions are the most social cats...' in bn, ta, kn, pa), and added an unrequested extra paragraph once. Qwen3 always produced the target script."
  ],
@@ -1759,10 +2022,11 @@
   "Test-set sizes are small. Price-matched systems ran 32 sentences x 10 languages x 2 directions (320 items per direction); the size was capped by the Sarvam translate price. Frontier models (thinking on) ran only sentence ids 1669, 1672 and 1701 x 10 languages x 2 directions (30 pairs per direction). Local models ran the first 8 sentences, because the shared llama-server was saturated (p95 latency up to 99 s). Compare systems only within the subset metrics.",
   "LLM systems got a plain one-line translation prompt with no glossary. Before scoring, every system's output is cut to its first paragraph, so an unrequested 'Explanation' section does not count against chrF; this mattered for one sarvam-30b-local reply. Sarvam-30B runs with thinking off by prefilling an empty think block.",
   "Dubbing measures intelligibility only, not naturalness, prosody, voice/gender fit or pronunciation of English loanwords. Sentences containing digits were excluded (26 remained). Voices: bulbul one named voice per language, Gemini Kore, OpenAI alloy plus a one-line 'read in <language>' instruction.",
+  "bulbul:v4-flash ran on 16 of the 26 dubbing sentences (96 main-set clips plus the 12-clip probe). Its price was not on the Sarvam pricing page, so the INR 40 budget was sized at the v3 price as an upper bound: about INR 30 for TTS plus about INR 7 for saaras judging. Compare v3 and v4-flash only in the 'matched subset' metrics. v4-flash voices were chosen per language from the API's validation-error list, and ml/or used ritu_hi_edtech because no native voice exists. Voice choice is not the same as for v3, so part of any CER gap may come from the voice. The Gemini judge refused 7 of 108 v4-flash clips, and those are counted as failures.",
   "Gemini-judge refusals count as failures (CER 1.0): 20 of 504 benign transcription requests were blocked with BlockedReason.OTHER (bulbul 8, OpenAI 7, Gemini 5). This inflates the Gemini-judge CERs, and the finding also gives the numbers without refusals. gpt-4o-transcribe rejected the language hints 'pa' and 'or' (HTTP 400), so those 18 clips were transcribed without a hint.",
   "During the run, Sarvam credits ran out once and many calls hit the shared 429 rate limit. Failed calls were retried and none are scored.",
   "Spend for this suite: Sarvam about INR 328 (translate 231, bulbul 46, saaras about 32, 105b 1.4). OpenAI tokens and audio are recorded in usage; the TTS and transcribe estimates come to about US$0.73, and the chat models used a few cents. OpenRouter cost about US$0.09 as reported."
  ],
- "verdict": "For localising formal English content into Indian languages, use sarvam-translate:v1. It was the most accurate system into Indian languages in 8 of 10 languages, and on a small subset no frontier model (gemini-pro, gpt-5.5, claude-sonnet-5.5) did better. Its lead over mayura:v1 and gemini-3.8-flash is only about 2 chrF, and it costs about 80x more per item than prompting sarvam-105b, so high-volume, lower-stakes copy can go through 105b or a price-matched model. For Indian languages into English (customer feedback, regional documents), use gemini-3.8-flash or claude-haiku-5.5. They lead sarvam-translate by 10-12 chrF, and sarvam-translate makes meaning-changing errors in that direction. Use mayura's colloquial mode only when you want code-mixed copy. For dubbing, bulbul:v3, gemini-3.8-flash-tts and gpt-4o-mini-tts are all intelligible in all 10 languages, with bulbul and Gemini slightly ahead. Bulbul starts playback about 3x sooner (357 ms) and has a simple per-character rupee price, so it is the best default for interactive voice and a fine choice for batch voice-overs. The self-hosted 30B models are not ready for production translation into Indian languages.",
- "updated": "2026-10-11 21:48:33"
+ "verdict": "For localising formal English content into Indian languages, use sarvam-translate:v1. It was the most accurate system into Indian languages in 8 of 10 languages, and on a small subset no frontier model (gemini-pro, gpt-5.5, claude-sonnet-5.5) did better. Its lead over mayura:v1 and gemini-3.8-flash is only about 2 chrF, and it costs about 80x more per item than prompting sarvam-105b, so high-volume, lower-stakes copy can go through 105b or a price-matched model. For Indian languages into English (customer feedback, regional documents), use gemini-3.8-flash or claude-haiku-5.5. They lead sarvam-translate by 10-12 chrF, and sarvam-translate makes meaning-changing errors in that direction. Use mayura's colloquial mode only when you want code-mixed copy. For dubbing, bulbul:v3, gemini-3.8-flash-tts and gpt-4o-mini-tts are all intelligible in all 10 languages, with bulbul and Gemini slightly ahead. Bulbul starts playback about 3x sooner (357 ms) and has a simple per-character rupee price, so it is the best default for interactive voice and a fine choice for batch voice-overs. bulbul:v4-flash cuts about 50 ms off the median time to first audio (and about 190 ms at p95) but was slightly less intelligible on every judge, so prefer v3 for voice-overs and consider v4-flash only where the lowest latency matters most. The self-hosted 30B models are not ready for production translation into Indian languages.",
+ "updated": "2026-10-11 23:39:32"
 }

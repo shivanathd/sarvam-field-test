@@ -4,10 +4,19 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from common.bench import bootstrap_ci, pctl
-from run import (CHEAP_IMG, CONDS, FRONTIER_IMG, FRONTIER_SET, G_EXT, G_IMG, G_OCR, S_EXT, UC, VISION,
-                 field_match, text_scores)
+from difflib import SequenceMatcher
 
-FIELD_SYS = [S_EXT, G_EXT, G_IMG] + CHEAP_IMG + FRONTIER_IMG
+from run import (CHEAP_IMG, CONDS, DOCAI, FRONTIER_IMG, FRONTIER_SET, G_EXT, G_IMG, G_OCR, S_EXT, UC, VISION,
+                 field_match, norm_field, text_scores)
+
+FIELD_SYS = [S_EXT, DOCAI, G_EXT, G_IMG] + CHEAP_IMG + FRONTIER_IMG
+
+
+def invented(gold, pred):
+    """A wrong, non-empty value that shares under half its characters with the gold value: not a one-character
+    misread but a different name, number or ID (e.g. a firm name that is not on the page)."""
+    p = norm_field(pred)
+    return bool(p) and not field_match(gold, pred) and SequenceMatcher(None, norm_field(gold), p).ratio() < 0.5
 TEXT_SYS = [VISION, G_OCR]
 NOTES = Path(__file__).with_name("notes.json")
 INR_105B = (15 / 1e6, 60 / 1e6)  # list price per input / output token
@@ -27,9 +36,11 @@ def build(golds, raws):
                 if not r:
                     continue
                 pred = r.get("fields") if isinstance(r.get("fields"), dict) else {}
+                pred = {k: (v.get("value") if isinstance(v, dict) else v) for k, v in pred.items()}
                 hits = {k: field_match(v, pred.get(k)) for k, v in g["fields"].items()}
                 page[(s, c)][g["id"]] = {"acc": sum(hits.values()) / len(hits), "all": all(hits.values()),
-                                         "hits": hits}
+                                         "hits": hits, "invented": sum(invented(v, pred.get(k))
+                                                                       for k, v in g["fields"].items())}
                 for k, ok in hits.items():
                     if not ok:
                         field_err[(s, c)][f"{g['doc_type']}.{k}"] += 1
@@ -53,6 +64,16 @@ def build(golds, raws):
         metric("gold-word recall (order-free)", TEXT_SYS, "word_recall", True, "fraction of gold words", c)
 
     fset = set(FRONTIER_SET)  # like-for-like: every field system on the fixed 30 frontier images
+    cset = {(i, "clean") for i, _ in FRONTIER_SET}  # the same 30 pages, clean render (Document AI's clean set)
+    for key, name, unit in (("acc", "field exact-match accuracy", "fraction of fields"),
+                            ("all", "pages with every field correct", "fraction of pages")):
+        metrics.append({"name": f"{name} (clean render of the 30 frontier-subset pages)", "higher_is_better": True,
+                        "unit": unit, "values": {s: bootstrap_ci([float(page[(s, c)][i][key]) for i, c in cset
+                                                                  if i in page[(s, c)]]) for s in FIELD_SYS}})
+    metrics.append({"name": "invented values per page (frontier subset: 16 harsh + 14 phone photos)",
+                    "higher_is_better": False, "unit": "wrong values sharing <50% of characters with the gold value",
+                    "values": {s: bootstrap_ci([float(page[(s, c)][i]["invented"]) for i, c in fset
+                                                if i in page[(s, c)]]) for s in FIELD_SYS}})
     for key, name, unit in (("acc", "field exact-match accuracy", "fraction of fields"),
                             ("all", "pages with every field correct", "fraction of pages")):
         metrics.append({"name": f"{name} (frontier subset: 16 harsh + 14 phone photos)", "higher_is_better": True,
