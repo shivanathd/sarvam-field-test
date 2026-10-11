@@ -35,6 +35,18 @@ for uc, d in b.R.items():
     datasets.append(f"| [{d.get('title', uc)}](#{uc.replace('_', '-')}) | {ds.get('n', '')} | "
                     f"{'Authored for this benchmark' if ds.get('synthetic') else 'Public'} | {ds.get('license', '')} |")
 
+sc_i, co_i = b.intelligence()
+intel = []
+for c, sc in sorted(sc_i.items(), key=lambda kv: -sum(v for v, _, _ in kv[1].values()) / len(kv[1])):
+    if len(sc) < 5: continue
+    idx = sum(v for v, _, _ in sc.values()) / len(sc)
+    cs = [co_i.get(c, {}).get(uc) for uc in sc]; cs = [x for x in cs if x is not None]
+    local = "local" in c
+    sub = any(n < 0.8 * mx for _, n, mx in sc.values())
+    intel.append(f"| {b.pretty(c)}{' (subsets)' if sub else ''} | {idx:.0%} | "
+                 f"{'own hardware' if local else ('₹{:,.0f}'.format(sum(cs) / len(cs)) if cs else '–')} |")
+usemap_md = "\n".join(f"| {job} | {who} | {use} | [{int(uc[2:4])}](#{uc.replace('_', '-')}) |" for job, who, use, uc, _ in b.USEMAP)
+
 uc_blocks = []
 for i, (uc, d) in enumerate(b.R.items(), 1):
     ds = d.get("dataset", {})
@@ -126,6 +138,27 @@ flowchart TD
 - **Chat, Q&A, clinical notes, code:** price-matched cloud models were more accurate. Sarvam-105B closes part of the gap with thinking on, at 5–46 s per answer, and sometimes returns nothing.
 - **Self-hosting:** Qwen3-30B was more accurate than Sarvam-30B (84% vs 63% on business tasks); Sarvam-30B was faster and much cheaper to feed Indian text.
 - **Token cost of Indian text:** Sarvam's tokenizer is cheapest (1.55x the English count), then Gemini (1.89x), OpenAI (2.10x), Claude (3.44x), Qwen3 (5.89x).
+
+---
+
+## Cost and intelligence
+
+Accuracy is the average of seven text tests (policy Q&A, clinical medications, crop advice, WhatsApp orders, legal summaries,
+business text, coding). Cost is measured: tokens each model actually used, thinking and repair attempts included, times
+October 2026 list prices at ₹{b.USD_INR}/US$.
+
+| Model | Average accuracy | API cost per 1,000 tasks |
+|---|---|---|
+{chr(10).join(intel)}
+
+Claude Haiku 5.5 was the best value; Sarvam-105B cost about the same but was about 10 points less accurate; Gemini 3.8 Flash
+bought the last 9 points for about 4x the cost. Gemini 3.8 Flash prices are promotional until 31 Dec 2026 and double after.
+
+## Use-case map
+
+| Job | Who needs it | Recommended | Evidence |
+|---|---|---|---|
+{usemap_md}
 
 ---
 

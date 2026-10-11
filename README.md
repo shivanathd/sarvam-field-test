@@ -35,7 +35,7 @@ on fixed 30-item subsets and are reported inside each suite rather than here.
 | Test | Best Sarvam | Best rival | Result |
 |---|---|---|---|
 | [Hinglish support calls: numbers captured](#uc01-voice-support) | Saaras v3 codemix mode **81%** | Gemini 3.8 Flash **94%** | ▼ Sarvam behind |
-| [Helpline speech in 13 languages: word error rate](#uc02-helpline-stt) | Saaras v3 transcribe mode **0.23** | Gemini 3.8 Flash **0.21** | = Level |
+| [Helpline speech in 13 languages: word error rate](#uc02-helpline-stt) | saaras:v4 transcribe mode **0.21** | Gemini 3.8 Flash **0.21** | = Level |
 | [Documents from bad phone photos: fields right](#uc03-documents) | Sarvam Vision+Sarvam-105B **92%** | Claude Sonnet 5.5 **96%** | = Level |
 | [Q&A over Indian-language policies: correct](#uc04-indic-rag) | Sarvam-105B · thinking **96%** | Gemini 3.8 Flash **100%** | ▼ Sarvam behind |
 | [Clinical notes: drug + dose + frequency exact](#uc05-clinical-notes) | Sarvam-105B **92%** | Gemini 3.8 Flash **100%** | ▼ Sarvam behind |
@@ -74,6 +74,57 @@ flowchart TD
 - **Chat, Q&A, clinical notes, code:** price-matched cloud models were more accurate. Sarvam-105B closes part of the gap with thinking on, at 5–46 s per answer, and sometimes returns nothing.
 - **Self-hosting:** Qwen3-30B was more accurate than Sarvam-30B (84% vs 63% on business tasks); Sarvam-30B was faster and much cheaper to feed Indian text.
 - **Token cost of Indian text:** Sarvam's tokenizer is cheapest (1.55x the English count), then Gemini (1.89x), OpenAI (2.10x), Claude (3.44x), Qwen3 (5.89x).
+
+---
+
+## Cost and intelligence
+
+Accuracy is the average of seven text tests (policy Q&A, clinical medications, crop advice, WhatsApp orders, legal summaries,
+business text, coding). Cost is measured: tokens each model actually used, thinking and repair attempts included, times
+October 2026 list prices at ₹96.61/US$.
+
+| Model | Average accuracy | API cost per 1,000 tasks |
+|---|---|---|
+| Gemini 3.8 Flash | 99% | ₹152 |
+| Gemini Pro (subsets) | 99% | ₹1,713 |
+| GPT-5.5 (subsets) | 99% | ₹1,340 |
+| Claude Sonnet 5.5 (subsets) | 98% | ₹839 |
+| GPT-5.4 mini | 91% | ₹139 |
+| Claude Haiku 5.5 | 90% | ₹35 |
+| Sarvam-105B · thinking | 83% | ₹293 |
+| Sarvam-105B | 80% | ₹35 |
+| Qwen3-30B (self-hosted) (subsets) | 72% | own hardware |
+| Sarvam-30B (self-hosted) (subsets) | 51% | own hardware |
+
+Claude Haiku 5.5 was the best value; Sarvam-105B cost about the same but was about 10 points less accurate; Gemini 3.8 Flash
+bought the last 9 points for about 4x the cost. Gemini 3.8 Flash prices are promotional until 31 Dec 2026 and double after.
+
+## Use-case map
+
+| Job | Who needs it | Recommended | Evidence |
+|---|---|---|---|
+| EMI and collections reminder calls | Banks, NBFCs | All-Sarvam voice stack; confirm amounts with a Gemini 3.8 Flash transcript | [1](#uc01-voice-support) |
+| Inbound support calls in regional languages | Telecom, D2C | Saaras → GPT-5.4 mini or Claude Haiku 5.5 → Bulbul | [1](#uc01-voice-support) |
+| Citizen grievance and scheme helplines | Government | Saaras for transcripts; check Sindhi and Assamese separately | [2](#uc02-helpline-stt) |
+| Call-centre QA and analytics | BPO, insurance | Saaras batch with speaker labels | [2](#uc02-helpline-stt) |
+| KYC and account-opening documents | Banks, fintech | Gemini 3.8 Flash or Claude Sonnet 5.5 on the image; human review for poor photos | [3](#uc03-documents) |
+| GST invoice capture | Accounts payable, SMEs | Gemini 3.8 Flash on the image; Sarvam Document AI on clean scans | [3](#uc03-documents) |
+| Land-record digitisation | State governments | Gemini or Claude on the image; reject fields the model cannot read | [3](#uc03-documents) |
+| HR and policy assistant in Indian languages | Enterprises | Gemini Embedding 2 retrieval + Gemini 3.8 Flash answers | [4](#uc04-indic-rag) |
+| Insurance claim questions | Insurers, TPAs | Same RAG stack; test answers in the user's script | [4](#uc04-indic-rag) |
+| OPD doctor scribe | Clinics, healthtech | Gemini 3.8 Flash straight on the consultation audio | [5](#uc05-clinical-notes) |
+| Krishi advisory helpline | Agritech, FPOs | Cloud model that refuses out-of-scope questions; offline only with thinking on | [6](#uc06-offline-agri) |
+| Course and training localisation | Edtech, L&D | Sarvam-Translate into Indian languages + Bulbul voice-over | [7](#uc07-translation-dubbing) |
+| Product catalogue translation | E-commerce | Sarvam-Translate into Indian languages; Gemini into English | [7](#uc07-translation-dubbing) |
+| WhatsApp orders and voice notes | Quick commerce, kirana | Gemini 3.8 Flash for order extraction | [8](#uc08-quick-commerce) |
+| Name and address transliteration | Logistics | Gemini 3.8 Flash; Sarvam's transliterate API is weak on Tamil | [8](#uc08-quick-commerce) |
+| Judgment and order translation | Courts, legal-tech | Sarvam-105B or GPT-5.4 mini; never Mayura for amounts | [9](#uc09-legal) |
+| Plain-language summaries for litigants | Legal aid | Gemini 3.8 Flash or GPT-5.4 mini | [9](#uc09-legal) |
+| Ticket triage and CRM notes | SaaS support | GPT-5.4 mini or Claude Haiku 5.5 | [10](#uc10-selfhost-business) |
+| On-premise processing of regulated data | Banks, hospitals | Qwen3-30B self-hosted; Sarvam-30B if speed and token cost matter more | [10](#uc10-selfhost-business) |
+| Coding copilot for Indian business logic | Fintech, ERP vendors | Gemini 3.8 Flash or Claude Haiku 5.5 | [11](#uc11-bharat-code) |
+| Voice-assistant actions (recharge, bill pay) | Wallets, telecom | Sarvam-105B or Gemini tool calling; validate amounts before paying | [11](#uc11-bharat-code) |
+| Budgeting Indian-text-heavy workloads | Any | Sarvam's tokenizer is cheapest; Claude uses 3.4× the English token count | [12](#uc12-token-tax) |
 
 ---
 
@@ -209,18 +260,18 @@ Every `results/<suite>.json` holds `metrics` (per-system `mean`, `lo`, `hi`, `n`
 
 > A bank, telecom or insurer handling Hinglish/Tanglish/Manglish/Benglish/Kanglish calls: which speech-to-text gets the caller's card digits, amounts, dates and phone numbers right, and which voice-agent stack answers fastest?
 
-**Verdict.** For capturing what a collections or card-services call actually needs — the digits — use gemini-3.8-flash as the transcriber or add a number-normalisation step after saaras: Gemini got 94% of amounts, card digits, dates and phone numbers exactly, saaras:v3 codemix 74-81%, gpt-4o-transcribe ~60%, hosted whisper-1 ~50%. Use saaras:v3 codemix (not transcribe) when latency matters: it returns in ~0.6 s versus 1.2 s (gpt-4o-transcribe) and 3.9 s (Gemini), and has the lowest CER on phone-line audio. For the full voice loop, Sarvam's speech ends (saaras + bulbul, ~0.9 s combined) are the fastest available; sarvam-105b is the fastest reply LLM at p50 and the most reliable at answering in the caller's language, while gpt-5.4-mini gives steadier tail latency but often switches Dravidian/Bengali callers to Hindi or English. The all-Gemini stack is the most accurate on numbers but takes ~6.8 s to start speaking. Do not use Whisper (local or hosted) for code-mixed Indian calls.
+**Verdict.** For capturing what a collections or card-services call actually needs — the digits — use gemini-3.8-flash as the transcriber or add a number-normalisation step after Sarvam: Gemini got 94% of amounts, card digits, dates and phone numbers exactly; saaras:v3 codemix 74-81%; the newer saaras:v4 codemix only 39-46% because it spells numbers out as words (v4 transcribe 60-64%); gpt-4o-transcribe ~60%; hosted whisper-1 ~50%. If you adopt saaras:v4 for its cleaner code-mix text (lower WER, consistent Latin for English words), budget an inverse-text-normalisation step — without it, v4 is a regression for numeric data. For the full voice loop, Sarvam's stack is the fastest available: the v4 stack (saaras:v4 + sarvam-105b + bulbul:v4-flash) starts speaking in ~1.1 s p50 (v3 stack 1.5 s, OpenAI 3.2 s, Gemini 6.8 s), and sarvam-105b is the fastest reply LLM and the most reliable at answering in the caller's language. Do not use Whisper (local or hosted) for code-mixed Indian calls.
 
 <details><summary>Findings, caveats and files</summary>
 
 **Findings**
 
 - Entity accuracy (what a bank needs: card last-4, amounts, dates, phone and claim numbers, 100 entities): gemini-3.8-flash 0.94 [0.89-0.98] on both clean and phone-line audio; saaras:v3 codemix 0.74 [0.65-0.83] clean / 0.81 [0.73-0.88] phone; gpt-4o-transcribe 0.61 / 0.57; whisper-1 (hosted Whisper) 0.50 / 0.51; saaras:v3 transcribe 0.43 / 0.46; local whisper-large-v3-turbo 0.24 / 0.26.
+- saaras:v4 (released 25 Sep 2026) vs v3 on the same clips. Codemix mode: v4 follows the code-mix script convention almost always (1/160 outputs without Latin vs 48/160 for v3) and has lower WER on clean audio (0.27 [0.22-0.33] vs 0.38; phone tie 0.30), but it writes numbers as words far more often, so entity accuracy FALLS: 0.46 clean / 0.39 phone vs v3's 0.74 / 0.81. Numbers-as-words misses per 100 entities: v4 codemix 50 clean / 57 phone vs v3 15 / 11 (e.g. ml: '₹18,000' -> 'പതിനെണ്ണായിരം രൂപ'). Transcribe mode improves: v4 entity accuracy 0.60 / 0.64 vs v3 0.43 / 0.46, numbers-as-words 35 / 31 vs 51 / 52. Best-of-two-references WER: v4 transcribe 0.24 / 0.28 vs v3 0.39 / 0.43. Neither v4 mode reaches gemini-3.8-flash on digits (0.94).
+- saaras:v4 latency per utterance: p50 0.49-0.51 s (v3 0.61-0.65 s) but a heavier tail, p95 2.8-5.3 s vs ~0.9 s for v3, measured while other agents were rate-limiting the shared account.
 - Most saaras misses are formatting, not hearing: in codemix mode 15 of 26 clean misses (11 of 19 phone) had no digits at all — the number came back as words (e.g. hi02 'बारह हज़ार चार सौ निन्यानवे', 'सेवन थ्री ज़ीरो सिक्स'). Codemix mode is not applied consistently: 48/160 codemix outputs contain no Latin letters at all, i.e. it fell back to transcribe-style output. Transcribe mode writes numbers as words almost always (51 of 57 misses). Add inverse text normalisation before using saaras output for account data.
 - Gemini never wrote a number as words (0 such misses); its 6 misses were genuinely wrong digits. It does not follow the script convention reliably either: 59/160 Gemini outputs had no Latin letters (English loanwords written in native script).
 - Word error rate is convention-bound. Against the code-mix reference, saaras codemix and Gemini tie on clean audio (0.38 vs 0.36) and saaras codemix is better on phone audio (0.30 [0.24-0.36] vs 0.35 [0.31-0.39]); CER on phone audio 0.24 vs 0.37. Scoring each output against whichever reference convention suits it better (code-mix or all-native script, no transliteration), Gemini is lower: 0.17-0.18 vs saaras codemix 0.25.
-- Phone-line degradation (8 kHz, 300-3400 Hz, mu-law, 20 dB SNR) barely hurt any API system; saaras codemix even scored better on phone than clean, which reflects run-to-run variation in its number formatting rather than a real benefit.
-- Whisper is not usable for code-mixed Indian calls. Local whisper-large-v3-turbo: WER 0.80 (per-clip capped at 1), entity accuracy 0.24, repetition loops on noisy audio, Malayalam answered in Devanagari on 15 of 32 clips even with language='ml'. Hosted whisper-1 is somewhat better (WER 0.72, entities 0.50) but rejects language='bn' and 'ml' outright (HTTP 400 'Language 'bn' is not supported.'), so Benglish and Manglish ran on auto-detect.
 
 **Caveats**
 
@@ -240,18 +291,18 @@ Every `results/<suite>.json` holds `metrics` (per-system `mean`, `lo`, `hi`, `n`
 
 > A state or national citizen helpline takes calls in many Indian languages: which speech-to-text works in all of them, and how bad is its weakest language?
 
-**Verdict.** For a multi-language citizen helpline, saaras:v3 is the strongest default: lowest WER in 12 of the 13 comparable languages (several near-ties), macro CER about half of Gemini's and gpt-4o-transcribe's, every clip transcribed, and answers in under a second. Plan for its two gaps: it writes Sindhi only in Devanagari, and it accepts at most 30 s per REST call. Gemini-3.8-flash (worst language Assamese 0.31) and gpt-4o-transcribe (worst Nepali 0.42, never blocks, 1.4 s) are the credible alternatives and both handle Arabic-script Sindhi; Gemini silently returned nothing for about 3% of clips. Whisper — hosted whisper-1 or local large-v3-turbo — is not fit for an Indian helpline: it rejects or mis-scripts six of the fourteen languages.
+**Verdict.** For a multi-language citizen helpline, Sarvam's saaras is the strongest choice, and saaras:v4 is now the best version: lowest WER in 11 of the 13 comparable languages, macro WER 0.149 vs 0.170 for v3, 0.21 for Gemini and 0.27 for gpt-4o-transcribe, macro CER under half of Gemini's, every clip transcribed. Plan for its gaps: Sindhi only in Devanagari, a 30 s cap per REST call, and (in this run) a slower tail than v3 — keep v3 as a fallback if p95 latency matters. Gemini-3.8-flash and gpt-4o-transcribe are credible alternatives that also handle Arabic-script Sindhi; Gemini silently returned nothing for about 3% of clips. Whisper — hosted whisper-1 or local large-v3-turbo — is not fit for an Indian helpline.
 
 <details><summary>Findings, caveats and files</summary>
 
 **Findings**
 
 - In the 13 languages where its output script matches FLEURS, saaras:v3 has the lowest WER in 12 (all except Urdu; Nepali 0.271 vs 0.272 and Telugu 0.170 vs 0.173 are ties; on CER Gemini wins Telugu, Marathi and Urdu): macro WER 0.17 / CER 0.052 vs gemini-3.8-flash 0.21 / 0.090, gpt-4o-transcribe 0.27 / 0.090, whisper-1 (hosted) 0.79 / 0.54 and whisper-large-v3-turbo (local) 0.75 / 0.45. Biggest saaras leads: Assamese 0.16 vs 0.31, Malayalam 0.17 vs 0.27, Punjabi 0.15 vs 0.23 (Gemini figures include its blocked clips).
+- saaras:v4 transcribe improves on v3 on read speech: macro WER over the 13 comparable languages 0.149 [0.135-0.164] vs 0.170 [0.154-0.185], CER 0.044 vs 0.052; lowest WER of all systems in 11 of 13 languages (exceptions: Malayalam, where v3 is better, 0.167 vs 0.185, and Urdu, where Gemini is best). Worst comparable language Nepali 0.24 vs v3 0.27. Biggest gains: Telugu 0.17 -> 0.12 WER (CER 0.058 -> 0.017), Urdu 0.18 -> 0.14, Marathi 0.16 -> 0.13. Sindhi is still written in Devanagari only (25/25 clips), so Arabic-script Sindhi remains unavailable from Sarvam.
+- saaras:v4 was slower per clip than v3 in this run: p50 1.9 s / p95 10.2 s (RTF 0.21) vs 0.87 / 2.3 s, measured under shared-account 429 pressure (4 of 350 calls needed a rerun after rate-limit backoff).
 - Worst language: saaras Nepali 0.27 [0.22-0.33], Gemini Assamese 0.31 [0.21-0.42], Whisper Malayalam 1.00. Gemini's worst-language CI overlaps saaras's, so on read speech the two are close on the weakest language; Whisper is not.
 - gpt-4o-transcribe is the most robust OpenAI option and the only system besides Gemini that writes every language, including Sindhi, in the reference script: WER worst language Nepali 0.42 [0.32-0.53], best CER of all systems on Tamil (0.091), zero blocked clips, p50 1.4 s (RTF 0.12). Its WER trails saaras in 12 of 13 comparable languages (it wins only Urdu, and on CER also Tamil); the gap is mostly word boundaries and spelling choices — its macro CER (0.090) equals Gemini's.
 - Sindhi: saaras:v3 (language_code sd-IN) writes Sindhi in Devanagari, FLEURS uses Perso-Arabic script, so it scores WER 0.996 here. The Devanagari text reads as a faithful transcript (e.g. 'होस्टाइल माहौल वारे कोर्स…' for 'هوسٽائل ماحول واري ڪورس…'), so this is a script choice, not deafness — but a helpline that needs Arabic-script Sindhi cannot get it from saaras. Gemini handles Sindhi in Arabic script at WER 0.21.
-- Gemini returned no transcript at all for 20 of 350 clips on the first try (prompt blocked, block_reason OTHER) and for 11 (3.1%) even after three attempts, spread over 7 languages (Assamese 3, Punjabi 2, Malayalam 2, Bengali, Tamil, Kannada, Odia 1 each). On the clips it did transcribe, its macro WER is 0.185. A helpline using Gemini needs a fallback for blocked audio.
-- Hosted whisper-1 rejects language codes bn, te, gu, pa ('Language 'bn' is not supported.', HTTP 400) and has no Odia, so those ran on auto-detect; it then wrote Bengali, Gujarati, Malayalam, Odia, Punjabi and Sindhi mostly in the wrong script, and Assamese/Telugu at CER >= 0.5. Only Hindi (0.30) and Urdu (0.24) are usable — no better than the local model.
 
 **Caveats**
 
@@ -271,18 +322,18 @@ Every `results/<suite>.json` holds `metrics` (per-system `mean`, `lo`, `hi`, `n`
 
 > Can I digitise Indian-language business documents (GST invoices, KYC forms, land records, utility bills, ration cards) into correct structured fields, from clean scans and from phone photos, and which stack should I use?
 
-**Verdict.** For clean scans and ordinary phone photos of Indian-script business documents, any of these stacks reads about 99.5% of fields correctly. Choose on cost, latency and where the data may go. The all-Sarvam pipeline (Vision plus sarvam-105b) costs about ₹0.52 per page and runs on an Indian provider. Gemini on the image is faster at p95 (8.7 s vs 33.5 s) and simpler, since it needs no job API. Poor photos are the exception. There, Gemini on the image was clearly more robust (93% of fields and 56% of pages fully right, against 86% and 25%), and Sarvam Vision sometimes wrote fluent text that was not on the page, occasionally in the wrong script. So if your intake is mostly phone photos taken by customers or field staff, use Gemini, or put an image-quality gate and a re-capture step in front of Sarvam Vision. With either stack, validate IDs such as PAN and GSTIN by format and checksum. Among the added comparators, claude-sonnet-5.5 was the most accurate on bad photos, and claude-haiku-5.5 matched the leaders on clean and normal photos at about $0.37 per 1,000 pages. OpenAI's gpt-5.4-mini and gpt-5.5 misread or invented Indic-script values far more often in this test, so don't use them for this job without validation.
+**Verdict.** For clean scans and ordinary phone photos of Indian-script business documents, any of these stacks reads about 99.5% of fields correctly. Choose on cost, latency and where the data may go. The all-Sarvam pipeline (Vision plus sarvam-105b) costs about ₹0.52 per page and runs on an Indian provider. Gemini on the image is faster at p95 (8.7 s vs 33.5 s) and simpler, since it needs no job API. Poor photos are the exception. There, Gemini on the image was clearly more robust (93% of fields and 56% of pages fully right, against 86% and 25%), and Sarvam Vision sometimes wrote fluent text that was not on the page, occasionally in the wrong script. So if your intake is mostly phone photos taken by customers or field staff, use Gemini, or put an image-quality gate and a re-capture step in front of Sarvam Vision. With either stack, validate IDs such as PAN and GSTIN by format and checksum. Among the added comparators, claude-sonnet-5.5 was the most accurate on bad photos, and claude-haiku-5.5 matched the leaders on clean and normal photos at about $0.37 per 1,000 pages. OpenAI's gpt-5.4-mini and gpt-5.5 misread or invented Indic-script values far more often in this test, so don't use them for this job without validation. Sarvam's newer Document AI Extract (Vision 1.5) was no more accurate than the legacy Digitization + sarvam-105b pipeline on these pages, and it still invents some values on bad photos, with high confidence. It is, however, simpler to call and has a much tighter latency tail (p95 8.8 s vs 33.5 s), at about twice the price (₹1 vs ₹0.52 per page).
 
 <details><summary>Findings, caveats and files</summary>
 
 **Findings**
 
+- API version: every 'sarvam-vision' result here uses the legacy Document Digitization job API (/doc-digitization/job/v1, OCR to markdown), which Sarvam has marked legacy since 18 Aug 2026. The newer Document AI Extract (/doc-ai/v1/job/extract, Sarvam Vision 1.5, field schema in and JSON out in one job) is reported separately as 'sarvam-docai-extract'. It ran on the 30-page frontier subset (16 harsh + 14 phone photos) plus the clean render of the same 30 pages: 60 images at ₹1 per page.
 - Clean scans and ordinary phone photos are essentially solved by all three stacks. Field exact-match: clean 99.5% (Sarvam Vision + sarvam-105b), 99.5% (Sarvam Vision + Gemini), 99.6% (Gemini on the image). Phone photo: 99.3% / 99.5% / 99.3%. The CIs overlap completely (60 pages, 783 fields each). Pages with every field correct: 93-95% clean, 92-93% photo.
 - Bad photos separate the stacks. On the 16-page harsh subset (6 deg tilt, strong skew, hand shadow, noise, 0.55x resolution, JPEG q 22-30), Gemini on the image kept 92.8% of fields [87.2, 97.2] and got 56% of pages fully right. The Sarvam pipeline kept 85.6% [78.5, 92.1] and 25% of pages. Swapping sarvam-105b for Gemini as the extractor on the same Vision text only moved this to 86.5%, so the gap is OCR, not extraction.
 - Text accuracy tells the same story. Order-free CER for Sarvam Vision vs Gemini OCR is 0.020 vs 0.023 clean and 0.015 vs 0.004 photo, then 0.193 vs 0.028 on harsh photos (gold-word recall 0.84 vs 0.95). The harsh-photo CER by script for Vision is worst in Tamil (0.32), Bengali (0.21) and Devanagari (0.20).
 - On degraded pages Sarvam Vision writes fluent text that is not on the page. The Tamil patta header 'மாதிரி ஆவணம்' (sample document) came out as 'எதிரி ஆயுதம் - தற்காப்பு' (enemy weapon - defence). A line of Kannada about Belagavi district appeared inside the Tamil page. The 7/12 subtitle '(पिकांची नोंदवही)' became '(पिंपरी चिंचवड)', a real Pune place name, and sarvam-105b then put that into the taluka field. During the smoke test, a Kannada line on a mixed-script page also came back in Bengali script.
 - Handwriting-style PANs expose character confusions. Sarvam Vision misread I/1 and O/0 in 3 of 10 KYC forms (e.g. FADPQ1032L read as FADPQI032L, HLOPM1790W as HLOPM179OW), the same way on clean and photo pages. Gemini got 1 of 10 wrong. A PAN or GSTIN format and checksum check would catch these, whichever OCR you use.
-- Latency per page, p50 / p95: Sarvam Vision job 5.9 s / 25.3 s (the job API queues; one job per page), Vision + sarvam-105b 9.2 s / 33.5 s, Gemini on the image 5.0 s / 8.7 s.
 
 **Caveats**
 

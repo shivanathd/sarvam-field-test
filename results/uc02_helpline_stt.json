@@ -28,6 +28,7 @@
  },
  "systems": [
   "saaras:v3-transcribe",
+  "saaras:v4-transcribe",
   "gemini-3.8-flash",
   "whisper-large-v3-turbo",
   "whisper-1",
@@ -43,6 +44,12 @@
      "mean": 0.2285179107137769,
      "lo": 0.20227159224508387,
      "hi": 0.2546262477815587,
+     "n": 350
+    },
+    "saaras:v4-transcribe": {
+     "mean": 0.20973339920085815,
+     "lo": 0.18342477654103245,
+     "hi": 0.23681373084332774,
      "n": 350
     },
     "gemini-3.8-flash": {
@@ -82,6 +89,12 @@
      "hi": 0.1470279763245684,
      "n": 350
     },
+    "saaras:v4-transcribe": {
+     "mean": 0.11192513913455154,
+     "lo": 0.08551892182597604,
+     "hi": 0.13920365788432423,
+     "n": 350
+    },
     "gemini-3.8-flash": {
      "mean": 0.09109416514647653,
      "lo": 0.07004129534916799,
@@ -116,6 +129,12 @@
     "saaras:v3-transcribe": {
      "mean": 0.9955555555555555,
      "lo": 0.9866666666666667,
+     "hi": 1.0,
+     "n": 25
+    },
+    "saaras:v4-transcribe": {
+     "mean": 0.998,
+     "lo": 0.9940000000000001,
      "hi": 1.0,
      "n": 25
     },
@@ -156,6 +175,12 @@
      "hi": 0.33354204818628025,
      "n": 25
     },
+    "saaras:v4-transcribe": {
+     "mean": 0.24335088346245148,
+     "lo": 0.18107712419798014,
+     "hi": 0.31704261860200444,
+     "n": 25
+    },
     "gemini-3.8-flash": {
      "mean": 0.30767976668441066,
      "lo": 0.21218023239230668,
@@ -193,6 +218,12 @@
      "hi": 0.0,
      "n": 350
     },
+    "saaras:v4-transcribe": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 350
+    },
     "gemini-3.8-flash": {
      "mean": 0.03142857142857143,
      "lo": 0.014285714285714285,
@@ -224,6 +255,7 @@
   "WER": {
    "Hindi": {
     "saaras:v3-transcribe": 0.0846,
+    "saaras:v4-transcribe": 0.0735,
     "gemini-3.8-flash": 0.1368,
     "whisper-large-v3-turbo": 0.2835,
     "whisper-1": 0.3,
@@ -231,6 +263,7 @@
    },
    "Bengali": {
     "saaras:v3-transcribe": 0.1308,
+    "saaras:v4-transcribe": 0.1014,
     "gemini-3.8-flash": 0.1566,
     "whisper-large-v3-turbo": 0.786,
     "whisper-1": 0.9572,
@@ -238,6 +271,7 @@
    },
    "Tamil": {
     "saaras:v3-transcribe": 0.2373,
+    "saaras:v4-transcribe": 0.2114,
     "gemini-3.8-flash": 0.3042,
     "whisper-large-v3-turbo": 0.6176,
     "whisper-1": 0.5504,
@@ -245,6 +279,7 @@
    },
    "Telugu": {
     "saaras:v3-transcribe": 0.17,
+    "saaras:v4-transcribe": 0.1202,
     "gemini-3.8-flash": 0.173,
     "whisper-large-v3-turbo": 0.7357,
     "whisper-1": 0.8283,
@@ -252,6 +287,7 @@
    },
    "Malayalam": {
     "saaras:v3-transcribe": 0.1674,
+    "saaras:v4-transcribe": 0.1849,
     "gemini-3.8-flash": 0.274,
     "whisper-large-v3-turbo": 1.0,
     "whisper-1": 0.9976,
@@ -259,6 +295,7 @@
    },
    "Kannada": {
     "saaras:v3-transcribe": 0.1666,
+    "saaras:v4-transcribe": 0.1639,
     "gemini-3.8-flash": 0.1818,
     "whisper-large-v3-turbo": 0.7016,
     "whisper-1": 0.7083,
@@ -266,6 +303,7 @@
    },
    "Marathi": {
     "saaras:v3-transcribe": 0.159,
+    "saaras:v4-transcribe": 0.1312,
     "gemini-3.8-flash": 0.1797,
     "whisper-large-v3-turbo": 0.7581,
     "whisper-1": 0.8144,
@@ -273,6 +311,7 @@
    },
    "Gujarati": {
     "saaras:v3-transcribe": 0.132,
+    "saaras:v4-transcribe": 0.1188,
     "gemini-3.8-flash": 0.1444,
     "whisper-large-v3-turbo": 0.7086,
     "whisper-1": 0.9481,
@@ -280,6 +319,7 @@
    },
    "Punjabi": {
     "saaras:v3-transcribe": 0.148,
+    "saaras:v4-transcribe": 0.135,
     "gemini-3.8-flash": 0.2335,
     "whisper-large-v3-turbo": 0.9945,
     "whisper-1": 0.9732,
@@ -287,6 +327,7 @@
    },
    "Odia": {
     "saaras:v3-transcribe": 0.1962,
+    "saaras:v4-transcribe": 0.1763,
     "gemini-3.8-flash": 0.2335,
     "whisper-large-v3-turbo": 1.0,
     "whisper-1": 0.9981,
@@ -294,6 +335,7 @@
    },
    "Assamese": {
     "saaras:v3-transcribe": 0.157,
+    "saaras:v4-transcribe": 0.1376,
     "gemini-3.8-flash": 0.3077,
     "whisper-large-v3-turbo": 1.0,
     "whisper-1": 0.9784,
@@ -301,6 +343,7 @@
    },
    "Urdu": {
     "saaras:v3-transcribe": 0.1839,
+    "saaras:v4-transcribe": 0.1408,
     "gemini-3.8-flash": 0.1367,
     "whisper-large-v3-turbo": 0.2136,
     "whisper-1": 0.2354,
@@ -308,6 +351,7 @@
    },
    "Nepali": {
     "saaras:v3-transcribe": 0.2707,
+    "saaras:v4-transcribe": 0.2434,
     "gemini-3.8-flash": 0.2721,
     "whisper-large-v3-turbo": 0.9143,
     "whisper-1": 0.9521,
@@ -315,6 +359,7 @@
    },
    "Sindhi": {
     "saaras:v3-transcribe": 0.9956,
+    "saaras:v4-transcribe": 0.998,
     "gemini-3.8-flash": 0.2145,
     "whisper-large-v3-turbo": 0.9527,
     "whisper-1": 0.9746,
@@ -324,6 +369,7 @@
   "CER": {
    "Hindi": {
     "saaras:v3-transcribe": 0.0297,
+    "saaras:v4-transcribe": 0.027,
     "gemini-3.8-flash": 0.0729,
     "whisper-large-v3-turbo": 0.0999,
     "whisper-1": 0.1157,
@@ -331,6 +377,7 @@
    },
    "Bengali": {
     "saaras:v3-transcribe": 0.0209,
+    "saaras:v4-transcribe": 0.0205,
     "gemini-3.8-flash": 0.0858,
     "whisper-large-v3-turbo": 0.3013,
     "whisper-1": 0.8031,
@@ -338,6 +385,7 @@
    },
    "Tamil": {
     "saaras:v3-transcribe": 0.1165,
+    "saaras:v4-transcribe": 0.0898,
     "gemini-3.8-flash": 0.1665,
     "whisper-large-v3-turbo": 0.1674,
     "whisper-1": 0.1926,
@@ -345,6 +393,7 @@
    },
    "Telugu": {
     "saaras:v3-transcribe": 0.0579,
+    "saaras:v4-transcribe": 0.0173,
     "gemini-3.8-flash": 0.0184,
     "whisper-large-v3-turbo": 0.2893,
     "whisper-1": 0.5611,
@@ -352,6 +401,7 @@
    },
    "Malayalam": {
     "saaras:v3-transcribe": 0.0334,
+    "saaras:v4-transcribe": 0.0364,
     "gemini-3.8-flash": 0.107,
     "whisper-large-v3-turbo": 0.9742,
     "whisper-1": 0.9712,
@@ -359,6 +409,7 @@
    },
    "Kannada": {
     "saaras:v3-transcribe": 0.0373,
+    "saaras:v4-transcribe": 0.0394,
     "gemini-3.8-flash": 0.0977,
     "whisper-large-v3-turbo": 0.1582,
     "whisper-1": 0.2656,
@@ -366,6 +417,7 @@
    },
    "Marathi": {
     "saaras:v3-transcribe": 0.0418,
+    "saaras:v4-transcribe": 0.0286,
     "gemini-3.8-flash": 0.0401,
     "whisper-large-v3-turbo": 0.2181,
     "whisper-1": 0.2629,
@@ -373,6 +425,7 @@
    },
    "Gujarati": {
     "saaras:v3-transcribe": 0.038,
+    "saaras:v4-transcribe": 0.0441,
     "gemini-3.8-flash": 0.0419,
     "whisper-large-v3-turbo": 0.3363,
     "whisper-1": 0.7826,
@@ -380,6 +433,7 @@
    },
    "Punjabi": {
     "saaras:v3-transcribe": 0.0396,
+    "saaras:v4-transcribe": 0.0357,
     "gemini-3.8-flash": 0.1271,
     "whisper-large-v3-turbo": 0.9729,
     "whisper-1": 0.9288,
@@ -387,6 +441,7 @@
    },
    "Odia": {
     "saaras:v3-transcribe": 0.0691,
+    "saaras:v4-transcribe": 0.0638,
     "gemini-3.8-flash": 0.0967,
     "whisper-large-v3-turbo": 0.9994,
     "whisper-1": 0.9988,
@@ -394,6 +449,7 @@
    },
    "Assamese": {
     "saaras:v3-transcribe": 0.0433,
+    "saaras:v4-transcribe": 0.0459,
     "gemini-3.8-flash": 0.1711,
     "whisper-large-v3-turbo": 1.0,
     "whisper-1": 0.7369,
@@ -401,6 +457,7 @@
    },
    "Urdu": {
     "saaras:v3-transcribe": 0.0748,
+    "saaras:v4-transcribe": 0.059,
     "gemini-3.8-flash": 0.0556,
     "whisper-large-v3-turbo": 0.0846,
     "whisper-1": 0.0961,
@@ -408,6 +465,7 @@
    },
    "Nepali": {
     "saaras:v3-transcribe": 0.0756,
+    "saaras:v4-transcribe": 0.0595,
     "gemini-3.8-flash": 0.0911,
     "whisper-large-v3-turbo": 0.2907,
     "whisper-1": 0.3516,
@@ -415,6 +473,7 @@
    },
    "Sindhi": {
     "saaras:v3-transcribe": 1.0,
+    "saaras:v4-transcribe": 1.0,
     "gemini-3.8-flash": 0.1035,
     "whisper-large-v3-turbo": 0.8389,
     "whisper-1": 0.931,
@@ -426,6 +485,10 @@
     "saaras:v3-transcribe": [
      0.0582,
      0.1138
+    ],
+    "saaras:v4-transcribe": [
+     0.0469,
+     0.1043
     ],
     "gemini-3.8-flash": [
      0.0813,
@@ -449,6 +512,10 @@
      0.0904,
      0.1785
     ],
+    "saaras:v4-transcribe": [
+     0.0702,
+     0.1378
+    ],
     "gemini-3.8-flash": [
      0.0822,
      0.2579
@@ -470,6 +537,10 @@
     "saaras:v3-transcribe": [
      0.1625,
      0.3267
+    ],
+    "saaras:v4-transcribe": [
+     0.1387,
+     0.3047
     ],
     "gemini-3.8-flash": [
      0.201,
@@ -493,6 +564,10 @@
      0.0969,
      0.2572
     ],
+    "saaras:v4-transcribe": [
+     0.0699,
+     0.1766
+    ],
     "gemini-3.8-flash": [
      0.1214,
      0.2284
@@ -514,6 +589,10 @@
     "saaras:v3-transcribe": [
      0.1206,
      0.2162
+    ],
+    "saaras:v4-transcribe": [
+     0.1383,
+     0.2332
     ],
     "gemini-3.8-flash": [
      0.1848,
@@ -537,6 +616,10 @@
      0.1153,
      0.2193
     ],
+    "saaras:v4-transcribe": [
+     0.1143,
+     0.2171
+    ],
     "gemini-3.8-flash": [
      0.0993,
      0.2855
@@ -558,6 +641,10 @@
     "saaras:v3-transcribe": [
      0.1174,
      0.201
+    ],
+    "saaras:v4-transcribe": [
+     0.0876,
+     0.1875
     ],
     "gemini-3.8-flash": [
      0.1291,
@@ -581,6 +668,10 @@
      0.0871,
      0.1788
     ],
+    "saaras:v4-transcribe": [
+     0.0812,
+     0.1566
+    ],
     "gemini-3.8-flash": [
      0.1048,
      0.188
@@ -602,6 +693,10 @@
     "saaras:v3-transcribe": [
      0.1102,
      0.1905
+    ],
+    "saaras:v4-transcribe": [
+     0.1022,
+     0.1702
     ],
     "gemini-3.8-flash": [
      0.1441,
@@ -625,6 +720,10 @@
      0.1493,
      0.2445
     ],
+    "saaras:v4-transcribe": [
+     0.1241,
+     0.2294
+    ],
     "gemini-3.8-flash": [
      0.1634,
      0.322
@@ -646,6 +745,10 @@
     "saaras:v3-transcribe": [
      0.1157,
      0.1991
+    ],
+    "saaras:v4-transcribe": [
+     0.0933,
+     0.1898
     ],
     "gemini-3.8-flash": [
      0.2122,
@@ -669,6 +772,10 @@
      0.156,
      0.2105
     ],
+    "saaras:v4-transcribe": [
+     0.1155,
+     0.1651
+    ],
     "gemini-3.8-flash": [
      0.1061,
      0.1687
@@ -690,6 +797,10 @@
     "saaras:v3-transcribe": [
      0.2151,
      0.3335
+    ],
+    "saaras:v4-transcribe": [
+     0.1811,
+     0.317
     ],
     "gemini-3.8-flash": [
      0.1899,
@@ -713,6 +824,10 @@
      0.9867,
      1.0
     ],
+    "saaras:v4-transcribe": [
+     0.994,
+     1.0
+    ],
     "gemini-3.8-flash": [
      0.1551,
      0.2766
@@ -734,6 +849,7 @@
   "output in correct script": {
    "Hindi": {
     "saaras:v3-transcribe": 1.0,
+    "saaras:v4-transcribe": 1.0,
     "gemini-3.8-flash": 1.0,
     "whisper-large-v3-turbo": 1.0,
     "whisper-1": 1.0,
@@ -741,6 +857,7 @@
    },
    "Bengali": {
     "saaras:v3-transcribe": 1.0,
+    "saaras:v4-transcribe": 1.0,
     "gemini-3.8-flash": 0.96,
     "whisper-large-v3-turbo": 0.96,
     "whisper-1": 0.32,
@@ -748,6 +865,7 @@
    },
    "Tamil": {
     "saaras:v3-transcribe": 1.0,
+    "saaras:v4-transcribe": 1.0,
     "gemini-3.8-flash": 0.96,
     "whisper-large-v3-turbo": 1.0,
     "whisper-1": 1.0,
@@ -755,6 +873,7 @@
    },
    "Telugu": {
     "saaras:v3-transcribe": 1.0,
+    "saaras:v4-transcribe": 1.0,
     "gemini-3.8-flash": 1.0,
     "whisper-large-v3-turbo": 0.92,
     "whisper-1": 0.6,
@@ -762,6 +881,7 @@
    },
    "Malayalam": {
     "saaras:v3-transcribe": 1.0,
+    "saaras:v4-transcribe": 1.0,
     "gemini-3.8-flash": 0.92,
     "whisper-large-v3-turbo": 0.08,
     "whisper-1": 0.04,
@@ -769,6 +889,7 @@
    },
    "Kannada": {
     "saaras:v3-transcribe": 1.0,
+    "saaras:v4-transcribe": 1.0,
     "gemini-3.8-flash": 0.96,
     "whisper-large-v3-turbo": 1.0,
     "whisper-1": 0.92,
@@ -776,6 +897,7 @@
    },
    "Marathi": {
     "saaras:v3-transcribe": 1.0,
+    "saaras:v4-transcribe": 1.0,
     "gemini-3.8-flash": 1.0,
     "whisper-large-v3-turbo": 1.0,
     "whisper-1": 1.0,
@@ -783,6 +905,7 @@
    },
    "Gujarati": {
     "saaras:v3-transcribe": 1.0,
+    "saaras:v4-transcribe": 1.0,
     "gemini-3.8-flash": 1.0,
     "whisper-large-v3-turbo": 0.88,
     "whisper-1": 0.4,
@@ -790,6 +913,7 @@
    },
    "Punjabi": {
     "saaras:v3-transcribe": 1.0,
+    "saaras:v4-transcribe": 1.0,
     "gemini-3.8-flash": 0.92,
     "whisper-large-v3-turbo": 0.08,
     "whisper-1": 0.12,
@@ -797,6 +921,7 @@
    },
    "Odia": {
     "saaras:v3-transcribe": 1.0,
+    "saaras:v4-transcribe": 1.0,
     "gemini-3.8-flash": 0.96,
     "whisper-large-v3-turbo": 0.0,
     "whisper-1": 0.0,
@@ -804,6 +929,7 @@
    },
    "Assamese": {
     "saaras:v3-transcribe": 1.0,
+    "saaras:v4-transcribe": 1.0,
     "gemini-3.8-flash": 0.88,
     "whisper-large-v3-turbo": 0.0,
     "whisper-1": 0.6,
@@ -811,6 +937,7 @@
    },
    "Urdu": {
     "saaras:v3-transcribe": 1.0,
+    "saaras:v4-transcribe": 1.0,
     "gemini-3.8-flash": 1.0,
     "whisper-large-v3-turbo": 1.0,
     "whisper-1": 1.0,
@@ -818,6 +945,7 @@
    },
    "Nepali": {
     "saaras:v3-transcribe": 1.0,
+    "saaras:v4-transcribe": 1.0,
     "gemini-3.8-flash": 1.0,
     "whisper-large-v3-turbo": 0.96,
     "whisper-1": 0.92,
@@ -825,6 +953,7 @@
    },
    "Sindhi": {
     "saaras:v3-transcribe": 0.0,
+    "saaras:v4-transcribe": 0.0,
     "gemini-3.8-flash": 1.0,
     "whisper-large-v3-turbo": 0.32,
     "whisper-1": 0.12,
@@ -848,6 +977,24 @@
     "mean": 0.2707202519230578,
     "lo": 0.2151081229025293,
     "hi": 0.33354204818628025,
+    "n": 25
+   }
+  },
+  "saaras:v4-transcribe": {
+   "worst_wer_language": "Sindhi",
+   "wer": {
+    "mean": 0.998,
+    "lo": 0.9940000000000001,
+    "hi": 1.0,
+    "n": 25
+   },
+   "worst_cer_language": "Sindhi",
+   "cer": 1.0,
+   "worst_wer_language_scorable_script": "Nepali",
+   "wer_scorable_script": {
+    "mean": 0.24335088346245148,
+    "lo": 0.18107712419798014,
+    "hi": 0.31704261860200444,
     "n": 25
    }
   },
@@ -931,6 +1078,12 @@
    ],
    "cer_at_least_0.5": []
   },
+  "saaras:v4-transcribe": {
+   "other_script_than_reference": [
+    "Sindhi"
+   ],
+   "cer_at_least_0.5": []
+  },
   "gemini-3.8-flash": {
    "other_script_than_reference": [],
    "cer_at_least_0.5": []
@@ -970,6 +1123,11 @@
    "p95_ms": 2330.6028842926025,
    "real_time_factor": 0.091
   },
+  "saaras:v4-transcribe": {
+   "p50_ms": 1898.5459804534912,
+   "p95_ms": 10176.450967788696,
+   "real_time_factor": 0.206
+  },
   "gemini-3.8-flash": {
    "p50_ms": 3856.2309741973877,
    "p95_ms": 6991.045951843262,
@@ -1000,7 +1158,17 @@
    "final_errors": 0,
    "transient_error_records": 74,
    "first_pass_empty": 0,
-   "inr_at_list_price": 36.29
+   "inr_at_v3_list_price": 36.29
+  },
+  "saaras:v4-transcribe": {
+   "calls": 350,
+   "audio_s": 4354.2,
+   "in_tok": 0,
+   "out_tok": 0,
+   "final_errors": 0,
+   "transient_error_records": 0,
+   "first_pass_empty": 0,
+   "inr_at_v3_list_price": 36.29
   },
   "gemini-3.8-flash": {
    "calls": 350,
@@ -1069,6 +1237,11 @@
      "hyp": "இது வேதியல் pH என அழைக்கப்படுகிறது நீங்கள் சிவப்பு முட்டைக்கோஸ் சாற்றைப் பயன்படுத்தி ஒரு குறியீட்டையே உருவாக்கலாம்.",
      "wer": 0.154,
      "cer": 0.058
+    },
+    "saaras:v4-transcribe": {
+     "hyp": "இது வேதியியல் pH என அழைக்கப்படுகிறது. நீங்கள் சிவப்பு முட்டைக்கோஸ் சாற்றைப் பயன்படுத்தி ஒரு குறிகாட்டியைக் உருவாக்கலாம்.",
+     "wer": 0.077,
+     "cer": 0.019
     }
    }
   },
@@ -1100,6 +1273,11 @@
     "gpt-4o-transcribe": {
      "hyp": "ଯେଉଁ ଯୁଗରେ ଘଟଣାଗୁଡ଼ିକ ଘଟିଥିଲା, ତାହାକୁ ସାଧାରଣତଃ ଏକାଦଶ, ଦ୍ୱାଦଶ ଏବଂ ତ୍ରୟୋଦଶ ଶତାବ୍ଦୀରେ ଖିଷ୍ଟପୂର୍ବ ହଜାରରୁ ତେରୋଶରେ ଇଉରୋପୀୟ ଇତିହାସର ଉଚ୍ଚ ମଧ୍ୟଯୁଗ ବୋଲି କୁହାଯାଏ।",
      "wer": 0.429,
+     "cer": 0.36
+    },
+    "saaras:v4-transcribe": {
+     "hyp": "ଯେଉଁ ଯୁଗରେ ଘଟଣାଗୁଡ଼ିକ ଘଟିଥିଲା ତାହାକୁ ସାଧାରଣତଃ ଏକାଦଶ, ଦ୍ଵାଦଶ ଏବଂ ତ୍ରୟୋଦଶ ଶତାବ୍ଦୀରେ ଖ୍ରୀଷ୍ଟପୂର୍ବ ହଜାରରୁ ତେରଶହରେ ୟୁରୋପୀୟ ଇତିହାସର ଉଚ୍ଚ ମଧ୍ୟଯୁଗ ବୋଲି କୁହାଯାଏ।",
+     "wer": 0.381,
      "cer": 0.36
     }
    }
@@ -1133,6 +1311,11 @@
      "hyp": "প্ৰতিবেদনত ৰিৰাকৰ কাৰ্য্যকালৰ বৰ্তমানৰ প্ৰতিটো নীতিৰ অতি বেছি সমালোচনা কৰা হৈছে আৰু ইয়াৰ ততালিকে নিৰ্দিষ্ট সলনি কৰাৰ বাবে অনুৰোধ জনোৱা হৈছে।",
      "wer": 0.238,
      "cer": 0.117
+    },
+    "saaras:v4-transcribe": {
+     "hyp": "প্ৰতিবেদনটোত ইৰাকৰ কাৰ্যপালিকাৰ বৰ্তমানৰ প্ৰতিটো নীতিৰ অতি বেছি সমালোচনা কৰা হৈছে আৰু ইয়াত ততালিকে নিৰ্দেশ সলনি কৰাৰ বাবে অনুৰোধ জনোৱা হৈছে।",
+     "wer": 0.0,
+     "cer": 0.0
     }
    }
   },
@@ -1165,6 +1348,11 @@
      "hyp": "ان کے دور میں خفیف تلوث ایسا مسئلہ نہیں تھا جیسا کہ وہ آج ہے۔ ان کی سکونت ایسے شہروں یا حوضات میں ہے جہاں تک بآسانی پہنچا جا سکتا ہے، بہ نسبت ان مقامات کے جو ماڈرن زمانے میں تعمیر کیے گئے۔",
      "wer": 0.114,
      "cer": 0.021
+    },
+    "saaras:v4-transcribe": {
+     "hyp": "ان کے دور میں خفیف تلوعس ایسا مسئلہ نہیں تھا جیسا کہ وہ آج ہے ان کی سکونت ایسے شہروں یا حوضات میں ہے جہاں تک بآسانی پہنچا جا سکتا ہے بہ نسبت ان مقامات کے جو ماڈرن زمانے میں تعمیر کیے گئے",
+     "wer": 0.136,
+     "cer": 0.035
     }
    }
   },
@@ -1197,12 +1385,19 @@
      "hyp": "Hostile ماحول واري ڪورس لاءِ، انٽرنيٽ جي هڪ گولا ممڪن طور تي ڪنهن مقامي ڪمپني جو پتو ڏي ميا ڪري.",
      "wer": 0.263,
      "cer": 0.176
+    },
+    "saaras:v4-transcribe": {
+     "hyp": "होस्टाइल माहौल वारे कोर्स लाइ इंटरनेट जी हिकु ॻोल्हा मुमकिन तौर ते कंहिं मक़ामी कंपनी जो पतो मुहैया कंदी।",
+     "wer": 1.0,
+     "cer": 1.0
     }
    }
   }
  ],
  "findings": [
   "In the 13 languages where its output script matches FLEURS, saaras:v3 has the lowest WER in 12 (all except Urdu; Nepali 0.271 vs 0.272 and Telugu 0.170 vs 0.173 are ties; on CER Gemini wins Telugu, Marathi and Urdu): macro WER 0.17 / CER 0.052 vs gemini-3.8-flash 0.21 / 0.090, gpt-4o-transcribe 0.27 / 0.090, whisper-1 (hosted) 0.79 / 0.54 and whisper-large-v3-turbo (local) 0.75 / 0.45. Biggest saaras leads: Assamese 0.16 vs 0.31, Malayalam 0.17 vs 0.27, Punjabi 0.15 vs 0.23 (Gemini figures include its blocked clips).",
+  "saaras:v4 transcribe improves on v3 on read speech: macro WER over the 13 comparable languages 0.149 [0.135-0.164] vs 0.170 [0.154-0.185], CER 0.044 vs 0.052; lowest WER of all systems in 11 of 13 languages (exceptions: Malayalam, where v3 is better, 0.167 vs 0.185, and Urdu, where Gemini is best). Worst comparable language Nepali 0.24 vs v3 0.27. Biggest gains: Telugu 0.17 -> 0.12 WER (CER 0.058 -> 0.017), Urdu 0.18 -> 0.14, Marathi 0.16 -> 0.13. Sindhi is still written in Devanagari only (25/25 clips), so Arabic-script Sindhi remains unavailable from Sarvam.",
+  "saaras:v4 was slower per clip than v3 in this run: p50 1.9 s / p95 10.2 s (RTF 0.21) vs 0.87 / 2.3 s, measured under shared-account 429 pressure (4 of 350 calls needed a rerun after rate-limit backoff).",
   "Worst language: saaras Nepali 0.27 [0.22-0.33], Gemini Assamese 0.31 [0.21-0.42], Whisper Malayalam 1.00. Gemini's worst-language CI overlaps saaras's, so on read speech the two are close on the weakest language; Whisper is not.",
   "gpt-4o-transcribe is the most robust OpenAI option and the only system besides Gemini that writes every language, including Sindhi, in the reference script: WER worst language Nepali 0.42 [0.32-0.53], best CER of all systems on Tamil (0.091), zero blocked clips, p50 1.4 s (RTF 0.12). Its WER trails saaras in 12 of 13 comparable languages (it wins only Urdu, and on CER also Tamil); the gap is mostly word boundaries and spelling choices — its macro CER (0.090) equals Gemini's.",
   "Sindhi: saaras:v3 (language_code sd-IN) writes Sindhi in Devanagari, FLEURS uses Perso-Arabic script, so it scores WER 0.996 here. The Devanagari text reads as a faithful transcript (e.g. 'होस्टाइल माहौल वारे कोर्स…' for 'هوسٽائل ماحول واري ڪورس…'), so this is a script choice, not deafness — but a helpline that needs Arabic-script Sindhi cannot get it from saaras. Gemini handles Sindhi in Arabic script at WER 0.21.",
@@ -1222,6 +1417,6 @@
   "Gemini's blocked clips count as WER 1.0. FLEURS sentences come from Wikipedia, so the block may be a recitation/content filter that real calls would trigger less often — unverified.",
   "Whisper latency was measured on a shared Mac whose GPU was also serving other benchmark jobs."
  ],
- "verdict": "For a multi-language citizen helpline, saaras:v3 is the strongest default: lowest WER in 12 of the 13 comparable languages (several near-ties), macro CER about half of Gemini's and gpt-4o-transcribe's, every clip transcribed, and answers in under a second. Plan for its two gaps: it writes Sindhi only in Devanagari, and it accepts at most 30 s per REST call. Gemini-3.8-flash (worst language Assamese 0.31) and gpt-4o-transcribe (worst Nepali 0.42, never blocks, 1.4 s) are the credible alternatives and both handle Arabic-script Sindhi; Gemini silently returned nothing for about 3% of clips. Whisper — hosted whisper-1 or local large-v3-turbo — is not fit for an Indian helpline: it rejects or mis-scripts six of the fourteen languages.",
- "updated": "2026-10-11 21:53:03"
+ "verdict": "For a multi-language citizen helpline, Sarvam's saaras is the strongest choice, and saaras:v4 is now the best version: lowest WER in 11 of the 13 comparable languages, macro WER 0.149 vs 0.170 for v3, 0.21 for Gemini and 0.27 for gpt-4o-transcribe, macro CER under half of Gemini's, every clip transcribed. Plan for its gaps: Sindhi only in Devanagari, a 30 s cap per REST call, and (in this run) a slower tail than v3 — keep v3 as a fallback if p95 latency matters. Gemini-3.8-flash and gpt-4o-transcribe are credible alternatives that also handle Arabic-script Sindhi; Gemini silently returned nothing for about 3% of clips. Whisper — hosted whisper-1 or local large-v3-turbo — is not fit for an Indian helpline.",
+ "updated": "2026-10-11 23:46:03"
 }

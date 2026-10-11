@@ -46,11 +46,12 @@ fields right, how fast, and at what cost?
 ## Systems
 | name | what it is |
 |---|---|
-| `sarvam-vision` | Sarvam Vision document intelligence, run as a job with markdown output (scored on text only) |
+| `sarvam-vision` | Sarvam's **legacy** Document Digitization job API (`/doc-digitization/job/v1`, marked legacy since Aug 2026), run as a job with markdown output (scored on text only) |
 | `sarvam-vision+sarvam-105b` | Vision markdown, then field JSON from `sarvam-105b` with thinking off: the all-Sarvam pipeline |
 | `sarvam-vision+gemini-3.8-flash` | the same markdown, with Gemini doing the extraction (isolates OCR quality from extraction quality) |
 | `gemini-3.8-flash` | the page image sent straight to Gemini, which returns the same JSON schema |
 | `gemini-3.8-flash-ocr` | the page image sent to Gemini for a plain transcription (for text accuracy against the same gold) |
+| `sarvam-docai-extract` | Sarvam Document AI Extract (`POST /doc-ai/v1/job/extract`, Sarvam Vision 1.5): image plus the field schema as JSON in a single job, then poll `/job/{id}/status` and `GET /job/{id}/results`. It runs on the 30 frontier-subset images plus the clean render of the same 30 pages (60 images, ₹1 per page). |
 | `openai:gpt-5.4-mini`, `or:anthropic/claude-haiku-5.5` | price-matched tier, sent the image directly (OpenAI chat format, image as a data URI) with the same JSON schema, think off, on all 136 images |
 | `gemini-pro-latest`, `openai:gpt-5.5`, `or:anthropic/claude-sonnet-5.5` | frontier ceiling, think on, on a fixed 30 images: the 16 harsh photos plus the phone photos of the first 14 other pages (`FRONTIER_SET` in run.py) |
 
@@ -86,4 +87,5 @@ per-page latency and isolates failures.
   poll and download.
 - **Cost per 1,000 pages.** Sarvam Vision ₹0.50 per page plus sarvam-105b tokens at list price. For Gemini, tokens
   per 1,000 pages are recorded but not priced.
+- **Invented values per page.** Wrong values that share under 50% of their characters with the gold value: a different name, number or ID rather than a one-character misread.
 - **Breakdowns** by script, by document type, and the most-missed fields per system.

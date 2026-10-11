@@ -136,7 +136,9 @@ def build(golds, raws):
             cost[s_]["usd_per_1000_pages"] = round(1000 * use[s_]["cost_usd"] / n, 2)
     usage["_cost_per_1000_pages"] = cost
     usage["_openrouter_cost_usd"] = round(sum(use[s_]["cost_usd"] for s_ in CHEAP_IMG + FRONTIER_IMG), 4)
-    usage["_sarvam_spend_inr_this_run"] = round(0.5 * use[VISION]["pages"] + ext["in_tok"] * INR_105B[0]
+    cost[DOCAI] = {"inr_per_1000_pages": 1000.0, "basis": "Document AI Extract ₹1/page list price"}
+    usage["_sarvam_spend_inr_this_run"] = round(0.5 * use[VISION]["pages"] + 1.0 * use[DOCAI]["pages"]
+                                                + ext["in_tok"] * INR_105B[0]
                                                 + ext["out_tok"] * INR_105B[1], 2)
 
     # examples: pages where the pipelines disagree most on the harsh-photo condition

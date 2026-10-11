@@ -18,6 +18,7 @@ A helpline is judged by the language it serves worst, so the **worst-language sc
 | system | how it is called |
 |---|---|
 | `saaras:v3-transcribe` | Sarvam `/speech-to-text`, `mode=transcribe`, `language_code` given (Odia = `od-IN`) |
+| `saaras:v4-transcribe` | same, `model=saaras:v4` |
 | `gemini-3.8-flash` | audio inline, "Transcribe this {language} speech verbatim in {script} script", thinking off |
 | `whisper-large-v3-turbo` | local, `transformers` on Apple MPS fp16, language forced; Whisper has no Odia, so Odia runs with auto-detect |
 | `whisper-1` | OpenAI hosted Whisper, `language` given; the API rejects bn/te/gu/pa (and has no Odia), which then run on auto-detect |

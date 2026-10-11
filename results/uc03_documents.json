@@ -550,8 +550,8 @@
     },
     "sarvam-docai-extract": {
      "mean": 0.9664529914529915,
-     "lo": 0.9461538461538461,
-     "hi": 0.9846153846153847,
+     "lo": 0.9480769230769232,
+     "hi": 0.9844017094017093,
      "n": 30
     },
     "sarvam-vision+gemini-3.8-flash": {
@@ -568,8 +568,8 @@
     },
     "openai:gpt-5.4-mini": {
      "mean": 0.9242590742590743,
-     "lo": 0.8927655677655678,
-     "hi": 0.9522893772893772,
+     "lo": 0.8935203685203685,
+     "hi": 0.9523643023643024,
      "n": 30
     },
     "or:anthropic/claude-haiku-5.5": {
@@ -630,7 +630,7 @@
     "openai:gpt-5.4-mini": {
      "mean": 0.36666666666666664,
      "lo": 0.2,
-     "hi": 0.5333333333333333,
+     "hi": 0.5666666666666667,
      "n": 30
     },
     "or:anthropic/claude-haiku-5.5": {
@@ -679,7 +679,7 @@
     "sarvam-vision+gemini-3.8-flash": {
      "mean": 0.1,
      "lo": 0.0,
-     "hi": 0.23333333333333334,
+     "hi": 0.2,
      "n": 30
     },
     "gemini-3.8-flash": {
@@ -690,8 +690,8 @@
     },
     "openai:gpt-5.4-mini": {
      "mean": 0.9,
-     "lo": 0.4666666666666667,
-     "hi": 1.4,
+     "lo": 0.43333333333333335,
+     "hi": 1.4333333333333333,
      "n": 30
     },
     "or:anthropic/claude-haiku-5.5": {
@@ -708,7 +708,7 @@
     },
     "openai:gpt-5.5": {
      "mean": 0.7,
-     "lo": 0.3333333333333333,
+     "lo": 0.3,
      "hi": 1.1333333333333333,
      "n": 30
     },
@@ -727,56 +727,56 @@
    "values": {
     "sarvam-vision+sarvam-105b": {
      "mean": 0.917954267954268,
-     "lo": 0.8700077700077701,
-     "hi": 0.9584970584970586,
+     "lo": 0.8680930180930181,
+     "hi": 0.957919857919858,
      "n": 30
     },
     "sarvam-docai-extract": {
      "mean": 0.8894272394272394,
-     "lo": 0.8417998667998668,
-     "hi": 0.9281746031746032,
+     "lo": 0.8432595182595183,
+     "hi": 0.9285159285159285,
      "n": 30
     },
     "sarvam-vision+gemini-3.8-flash": {
      "mean": 0.9231129981129982,
-     "lo": 0.8779109779109778,
-     "hi": 0.9605533355533356,
+     "lo": 0.8751665001665002,
+     "hi": 0.95998445998446,
      "n": 30
     },
     "gemini-3.8-flash": {
      "mean": 0.9564907314907315,
-     "lo": 0.9246003996003995,
-     "hi": 0.9825702075702075,
+     "lo": 0.9221500721500722,
+     "hi": 0.9831168831168832,
      "n": 30
     },
     "openai:gpt-5.4-mini": {
      "mean": 0.7322399822399822,
-     "lo": 0.6363886113886114,
-     "hi": 0.8219058719058718,
+     "lo": 0.6367687867687868,
+     "hi": 0.8216727716727716,
      "n": 30
     },
     "or:anthropic/claude-haiku-5.5": {
      "mean": 0.8668664668664668,
-     "lo": 0.7796092796092796,
-     "hi": 0.934004884004884,
+     "lo": 0.7810966810966811,
+     "hi": 0.9391330891330891,
      "n": 30
     },
     "gemini-pro-latest": {
      "mean": 0.9340936840936841,
-     "lo": 0.905910755910756,
-     "hi": 0.9627566877566878,
+     "lo": 0.9045510045510046,
+     "hi": 0.9601925851925852,
      "n": 30
     },
     "openai:gpt-5.5": {
      "mean": 0.7902458652458653,
-     "lo": 0.6983183483183484,
-     "hi": 0.873046398046398,
+     "lo": 0.7024142524142524,
+     "hi": 0.8737789987789988,
      "n": 30
     },
     "or:anthropic/claude-sonnet-5.5": {
      "mean": 0.9638861138861139,
-     "lo": 0.935059385059385,
-     "hi": 0.9886363636363636,
+     "lo": 0.9346320346320346,
+     "hi": 0.9888500388500389,
      "n": 30
     }
    }
@@ -1955,10 +1955,14 @@
      "out_tok": 345567
     },
     "usd_per_1000_pages": 7.13
+   },
+   "sarvam-docai-extract": {
+    "inr_per_1000_pages": 1000.0,
+    "basis": "Document AI Extract ₹1/page list price"
    }
   },
   "_openrouter_cost_usd": 0.2636,
-  "_sarvam_spend_inr_this_run": 70.85
+  "_sarvam_spend_inr_this_run": 130.85
  },
  "examples": [
   {
@@ -2474,6 +2478,7 @@
   }
  ],
  "findings": [
+  "API version: every 'sarvam-vision' result here uses the legacy Document Digitization job API (/doc-digitization/job/v1, OCR to markdown), which Sarvam has marked legacy since 18 Aug 2026. The newer Document AI Extract (/doc-ai/v1/job/extract, Sarvam Vision 1.5, field schema in and JSON out in one job) is reported separately as 'sarvam-docai-extract'. It ran on the 30-page frontier subset (16 harsh + 14 phone photos) plus the clean render of the same 30 pages: 60 images at ₹1 per page.",
   "Clean scans and ordinary phone photos are essentially solved by all three stacks. Field exact-match: clean 99.5% (Sarvam Vision + sarvam-105b), 99.5% (Sarvam Vision + Gemini), 99.6% (Gemini on the image). Phone photo: 99.3% / 99.5% / 99.3%. The CIs overlap completely (60 pages, 783 fields each). Pages with every field correct: 93-95% clean, 92-93% photo.",
   "Bad photos separate the stacks. On the 16-page harsh subset (6 deg tilt, strong skew, hand shadow, noise, 0.55x resolution, JPEG q 22-30), Gemini on the image kept 92.8% of fields [87.2, 97.2] and got 56% of pages fully right. The Sarvam pipeline kept 85.6% [78.5, 92.1] and 25% of pages. Swapping sarvam-105b for Gemini as the extractor on the same Vision text only moved this to 86.5%, so the gap is OCR, not extraction.",
   "Text accuracy tells the same story. Order-free CER for Sarvam Vision vs Gemini OCR is 0.020 vs 0.023 clean and 0.015 vs 0.004 photo, then 0.193 vs 0.028 on harsh photos (gold-word recall 0.84 vs 0.95). The harsh-photo CER by script for Vision is worst in Tamil (0.32), Bengali (0.21) and Devanagari (0.20).",
@@ -2483,7 +2488,11 @@
   "Cost per 1,000 pages: the Sarvam pipeline is ₹521 (Vision ₹500 at ₹0.50/page, plus ₹20.9 of sarvam-105b tokens). Gemini on the image uses about 1.30M input and 0.19M output tokens per 1,000 pages; multiply by your Gemini rate. Running Vision + Gemini costs Vision's ₹500 plus about 0.62M/0.19M Gemini tokens.",
   "Sarvam Vision API quirks. Insufficient credits return HTTP 400 'Insufficient credits for 1 pages' from /start, not 402 as on chat. Uploads must be a PDF or a ZIP, so a single photo has to be zipped. The status payload names the input 'document.pdf' even for a ZIP. Output is a ZIP holding document.md (tables as HTML <table>/<br/>, not pipe markdown) plus metadata/page_NNN.json with block coordinates and reading order. The job needs a language code, so a mixed-language intake also needs language detection first.",
   "Price-matched cloud tier on the image, field accuracy clean / photo / harsh: claude-haiku-5.5 (via OpenRouter) scored 99.7% / 98.8% / 76.4%. openai:gpt-5.4-mini scored 89.1% / 83.3% / 56.1%, with only 30% of clean pages fully correct. Its errors are genuine misreads of Indic names and numbers; on clean pages it got patta owner names wrong on 10 of 10. Latency p50: gpt-5.4-mini 1.4 s, haiku 2.9 s. Cost: haiku about $0.37 per 1,000 pages (OpenRouter usage.cost); gpt-5.4-mini uses about 2.3M input tokens per 1,000 pages.",
-  "Frontier ceiling, think on, on the fixed 30 images (16 harsh plus 14 phone photos), field accuracy:\n- claude-sonnet-5.5: 96.4% [93.4, 98.7], 77% of pages fully correct.\n- gemini-3.8-flash (think off): 95.6%.\n- gemini-pro-latest: 93.4%.\n- Sarvam Vision + Gemini: 92.3%.\n- Sarvam Vision + 105b: 91.8%.\n- claude-haiku-5.5: 86.7%.\n- openai:gpt-5.5: 79.0%.\n- gpt-5.4-mini: 73.2%.\nOn harsh photos only, gpt-5.5 kept 61% of fields. It produced fluent but invented firm names and GSTINs (for example 'महाराष्ट्र इलेक्ट्रॉनिक्स' for 'महालक्ष्मी एंटरप्राइजेज') rather than leaving fields null. So the most expensive model is not the safest on bad photos."
+  "Frontier ceiling, think on, on the fixed 30 images (16 harsh plus 14 phone photos), field accuracy:\n- claude-sonnet-5.5: 96.4% [93.4, 98.7], 77% of pages fully correct.\n- gemini-3.8-flash (think off): 95.6%.\n- gemini-pro-latest: 93.4%.\n- Sarvam Vision + Gemini: 92.3%.\n- Sarvam Vision + 105b: 91.8%.\n- claude-haiku-5.5: 86.7%.\n- openai:gpt-5.5: 79.0%.\n- gpt-5.4-mini: 73.2%.\nOn harsh photos only, gpt-5.5 kept 61% of fields. It produced fluent but invented firm names and GSTINs (for example 'महाराष्ट्र इलेक्ट्रॉनिक्स' for 'महालक्ष्मी एंटरप्राइजेज') rather than leaving fields null. So the most expensive model is not the safest on bad photos.",
+  "Sarvam Document AI Extract against the legacy pipeline (Digitization + sarvam-105b) on the same images:\n- Strict field accuracy: 96.6% vs 99.0% clean (30 pages), 82.6% vs 85.6% harsh (16), 88.9% vs 91.8% on the frontier subset.\n- Pages fully correct: 67% vs 87% clean, 13% vs 25% harsh.\n- Most of the clean-page gap is one formatting difference: for 'last 4 digits of Aadhaar', Extract returned the whole masked string 'XXXX XXXX 6564' on 9 of 9 clean KYC forms. My schema descriptions added 'copy exactly as printed', which may have pushed it that way. Counting those as correct, Extract matches the legacy pipeline: 99.0% clean, 84.1% harsh, 91.3% on the frontier subset. So Vision 1.5 Extract is not more accurate than the legacy path here.\n- Gemini on the image is still ahead: 99.7% clean, 92.8% harsh.",
+  "Extract still invents values on bad photos, but less wildly. Invented values (wrong values sharing under 50% of characters with the gold) on the frontier subset: Extract 0.13 per page, legacy pipeline 0.17, Gemini 3.8 Flash 0.03, Claude Sonnet 0.03. The worst legacy cases are gone: a form heading as the village name, and 'पिंपरी चिंचवड' as the taluka. What remains is a different block name ('प्रिथिव' for 'मिश्रिख'), a taluka 'शिमन' for 'शिरूर', and HSN '86001' for '8539'. All of these came with confidence 0.90-1.0.",
+  "Extract's per-field confidence is only weakly useful as a review flag. Below 0.8 it flagged 13 of 55 wrong values, along with 35 of 733 correct ones. Most errors carry confidence 0.99-1.0, so it cannot replace format and checksum validation.",
+  "Extract is faster and far more predictable than the legacy job API: p50 7.6 s and p95 8.8 s per page, against 9.2 s and 33.5 s for Digitization + 105b. It costs ₹1 per page (₹1,000 per 1,000 pages) against about ₹521 for the legacy pipeline. The API is simpler too: one multipart POST with the file and a JSON-string schema, then poll status, then GET results. No presigned upload and no ZIP are needed, since PNG and JPEG are accepted directly."
  ],
  "caveats": [
   "The documents are synthetic, computer-rendered pages with system fonts. There are no real stamps, signatures, carbon copies, printer artefacts, folds or Indic handwriting; the 'handwriting' is a Latin handwriting-style font, used only for KYC entries. Real scans will score lower than the clean condition here.",
@@ -2492,8 +2501,9 @@
   "There is one extraction prompt, shared by all systems, and Gemini ran with thinking off. Exact match is strict: names must stay in the printed script, while numbers compare by value and Indic digits are folded to ASCII.",
   "Reading order on forms is ambiguous, so the text metric is an order-free CER (described in the README). It does not measure whether the reading order is correct.",
   "Gemini prices are not recorded here. Its cost is reported in tokens only.",
-  "Frontier models ran only on the 30-image subset, and their thinking budgets were the provider defaults (gpt-5.5 reasoning_effort medium, Gemini dynamic, Claude reasoning enabled). OpenAI images went in as data URIs with default detail. OpenAI prices are not recorded, so only tokens are reported."
+  "Frontier models ran only on the 30-image subset, and their thinking budgets were the provider defaults (gpt-5.5 reasoning_effort medium, Gemini dynamic, Claude reasoning enabled). OpenAI images went in as data URIs with default detail. OpenAI prices are not recorded, so only tokens are reported.",
+  "Document AI Extract ran on 60 images only (the 30 frontier-subset pages, clean and degraded), with field descriptions taken from the same schema used for the other systems plus 'Copy exactly as printed, in the original script'. More specific descriptions (as Sarvam's docs advise) could change its numbers."
  ],
- "verdict": "For clean scans and ordinary phone photos of Indian-script business documents, any of these stacks reads about 99.5% of fields correctly. Choose on cost, latency and where the data may go. The all-Sarvam pipeline (Vision plus sarvam-105b) costs about ₹0.52 per page and runs on an Indian provider. Gemini on the image is faster at p95 (8.7 s vs 33.5 s) and simpler, since it needs no job API. Poor photos are the exception. There, Gemini on the image was clearly more robust (93% of fields and 56% of pages fully right, against 86% and 25%), and Sarvam Vision sometimes wrote fluent text that was not on the page, occasionally in the wrong script. So if your intake is mostly phone photos taken by customers or field staff, use Gemini, or put an image-quality gate and a re-capture step in front of Sarvam Vision. With either stack, validate IDs such as PAN and GSTIN by format and checksum. Among the added comparators, claude-sonnet-5.5 was the most accurate on bad photos, and claude-haiku-5.5 matched the leaders on clean and normal photos at about $0.37 per 1,000 pages. OpenAI's gpt-5.4-mini and gpt-5.5 misread or invented Indic-script values far more often in this test, so don't use them for this job without validation.",
- "updated": "2026-10-11 23:41:22"
+ "verdict": "For clean scans and ordinary phone photos of Indian-script business documents, any of these stacks reads about 99.5% of fields correctly. Choose on cost, latency and where the data may go. The all-Sarvam pipeline (Vision plus sarvam-105b) costs about ₹0.52 per page and runs on an Indian provider. Gemini on the image is faster at p95 (8.7 s vs 33.5 s) and simpler, since it needs no job API. Poor photos are the exception. There, Gemini on the image was clearly more robust (93% of fields and 56% of pages fully right, against 86% and 25%), and Sarvam Vision sometimes wrote fluent text that was not on the page, occasionally in the wrong script. So if your intake is mostly phone photos taken by customers or field staff, use Gemini, or put an image-quality gate and a re-capture step in front of Sarvam Vision. With either stack, validate IDs such as PAN and GSTIN by format and checksum. Among the added comparators, claude-sonnet-5.5 was the most accurate on bad photos, and claude-haiku-5.5 matched the leaders on clean and normal photos at about $0.37 per 1,000 pages. OpenAI's gpt-5.4-mini and gpt-5.5 misread or invented Indic-script values far more often in this test, so don't use them for this job without validation. Sarvam's newer Document AI Extract (Vision 1.5) was no more accurate than the legacy Digitization + sarvam-105b pipeline on these pages, and it still invents some values on bad photos, with high confidence. It is, however, simpler to call and has a much tighter latency tail (p95 8.8 s vs 33.5 s), at about twice the price (₹1 vs ₹0.52 per page).",
+ "updated": "2026-10-11 23:42:14"
 }

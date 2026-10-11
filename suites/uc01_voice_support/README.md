@@ -30,6 +30,7 @@ phone and claim numbers right, and which voice-agent stack answers fast enough t
 |---|---|
 | `saaras:v3-codemix` | Sarvam `/speech-to-text`, `mode=codemix`, `language_code` given |
 | `saaras:v3-transcribe` | same, `mode=transcribe` |
+| `saaras:v4-codemix`, `saaras:v4-transcribe` | same endpoint, `model=saaras:v4` (released 25 Sep 2026) |
 | `gemini-3.8-flash` | audio inline, prompted for the same code-mix convention, thinking off |
 | `whisper-large-v3-turbo` | local, `transformers` pipeline on Apple MPS fp16, language forced |
 | `whisper-1` | OpenAI hosted Whisper, `language` given; the API rejects `bn` and `ml`, so those fall back to auto-detect |
@@ -38,6 +39,7 @@ phone and claim numbers right, and which voice-agent stack answers fast enough t
 | `agent-gemini` | gemini STT -> `gemini-3.8-flash` (think off) -> `gemini-3.8-flash-tts` streaming |
 | `agent-openai` | `gpt-4o-transcribe` -> `openai:gpt-5.4-mini` (reasoning none) -> `gpt-4o-mini-tts` streamed PCM |
 | `agent-sarvam-speech+gpt-5.4-mini` | saaras codemix -> `openai:gpt-5.4-mini` -> bulbul:v3 (only the LLM swapped) |
+| `agent-sarvam-v4` | saaras:v4 codemix -> `sarvam-105b` -> `bulbul:v4-flash` HTTP stream (per-language v4 voices; Malayalam has none, so the API default is used) |
 | `agent-sarvam-speech+claude-haiku-5.5` | saaras codemix -> `or:anthropic/claude-haiku-5.5` (OpenRouter, reasoning off) -> bulbul:v3 |
 
 ## How to run

@@ -117,8 +117,8 @@
  },
  "t3": {
   "voice": "say:Vani",
-  "spoken_text": "9 8 7 6 5 0 1 2 3 4-க்கு ஆயிரம் ரூபாய் அனுப்புங்க",
-  "audio_s": 5.2
+  "spoken_text": "9 8 7 6 5 0 1 2 3 4 என்ற நம்பருக்கு ஆயிரம் ரூபாய் அனுப்புங்க",
+  "audio_s": 6.29
  },
  "t4": {
   "voice": "gemini:Puck",
@@ -141,8 +141,8 @@
  },
  "t7": {
   "voice": "say:Vani",
-  "spoken_text": "அம்மா நம்பர் 9 4 4 5 5 6 6 7 7 8-க்கு 199 ரீசார்ஜ் பண்ணு",
-  "audio_s": 7.19
+  "spoken_text": "அம்மா நம்பர் 9 4 4 5 5 6 6 7 7 8, அதுக்கு 199 ரூபாய் ரீசார்ஜ் பண்ணு",
+  "audio_s": 8.38
  },
  "b1": {
   "voice": "gemini:Leda",
@@ -189,8 +189,8 @@
  },
  "h9": {
   "voice": "say:Lekha",
-  "spoken_text": "पौने दो हज़ार रुपये 9 8 1 2 3 4 5 6 7 0 पर ट्रांसफर करो",
-  "audio_s": 5.57
+  "spoken_text": "9 8 1 2 3 4 5 6 7 0 पर पौने दो हज़ार रुपये ट्रांसफर करो",
+  "audio_s": 5.61
  },
  "h10": {
   "voice": "gemini:Puck",
@@ -225,10 +225,10 @@
  },
  "x10": {
   "voice": "gemini:Kore",
-  "spoken_text": "saadhe chaar hazaar bhej do priya.s at the rate oksbi pe",
-  "audio_s": 3.48,
+  "spoken_text": "saadhe chaar hazaar bhej do priya dot s at the rate oksbi pe",
+  "audio_s": 4.64,
   "in_tok": 22,
-  "out_tok": 87
+  "out_tok": 116
  },
  "x11": {
   "voice": "gemini:Puck",
@@ -253,8 +253,8 @@
  },
  "t8": {
   "voice": "say:Vani",
-  "spoken_text": "ஆயிரத்து ஐநூறு ரூபாய் 9 8 4 0 0 1 2 3 4 5-க்கு அனுப்பு",
-  "audio_s": 6.11
+  "spoken_text": "ஆயிரத்து ஐநூறு ரூபாய் 9 8 4 0 0 1 2 3 4 5 என்ற நம்பருக்கு அனுப்பு",
+  "audio_s": 7.04
  },
  "t9": {
   "voice": "gemini:Leda",
@@ -300,9 +300,11 @@
   "out_tok": 42
  },
  "b11": {
-  "voice": "say:Piya",
+  "voice": "gemini:Leda",
   "spoken_text": "আড়াই হাজার টাকা rina at the rate ybl-এ পাঠাও",
-  "audio_s": 3.89
+  "audio_s": 3.52,
+  "in_tok": 16,
+  "out_tok": 88
  },
  "b12": {
   "voice": "gemini:Puck",

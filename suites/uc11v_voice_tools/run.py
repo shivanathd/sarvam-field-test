@@ -39,12 +39,22 @@ _gc = None
 
 
 def spoken(text):
-    """How a person says it: phone numbers digit by digit, '@' as Indians say it ('at the rate')."""
+    """How a person says it: phone numbers digit by digit, UPI IDs as 'priya dot s at the rate oksbi'."""
     s = re.sub(r"[0-9০-৯]{10}", lambda m: " ".join(m.group(0)), text)
+    s = re.sub(r"(\w+)\.(\w+)@", r"\1 dot \2@", s)
     return s.replace("@", " at the rate ")
 
 
-CASES = [{"id": c[0], "lang": c[1], "text": c[2], "spoken": spoken(c[2]), "tool": c[3], "args": c[4]} for c in T.CASES]
+# Audit (all four ASR systems agreed on the clean clip, so the TTS, not the ASR, was wrong) -> reworded or re-voiced:
+SPOKEN_OVERRIDE = {
+    "h9": "9 8 1 2 3 4 5 6 7 0 पर पौने दो हज़ार रुपये ट्रांसफर करो",  # `say` Lekha moved a phone digit before "रुपये"
+    "t3": "9 8 7 6 5 0 1 2 3 4 என்ற நம்பருக்கு ஆயிரம் ரூபாய் அனுப்புங்க",  # Vani swallowed the last digit before "-க்கு"
+    "t7": "அம்மா நம்பர் 9 4 4 5 5 6 6 7 7 8, அதுக்கு 199 ரூபாய் ரீசார்ஜ் பண்ணு",  # Vani garbled "8-க்கு 199"
+    "t8": "ஆயிரத்து ஐநூறு ரூபாய் 9 8 4 0 0 1 2 3 4 5 என்ற நம்பருக்கு அனுப்பு",  # same Vani suffix issue
+}
+VOICE_OVERRIDE = {"b11": "gemini:Leda"}  # the Bengali `say` voice cannot pronounce the English UPI ID "rina at the rate ybl"
+CASES = [{"id": c[0], "lang": c[1], "text": c[2], "spoken": SPOKEN_OVERRIDE.get(c[0], spoken(c[2])), "tool": c[3], "args": c[4]}
+         for c in T.CASES]
 
 
 def gclient():
@@ -85,10 +95,12 @@ def synth():
     meta = json.loads(meta_p.read_text()) if meta_p.exists() else {}
     jobs = []
     for i, c in enumerate(CASES):
-        if c["id"] in meta and wav(c["id"], "phone").exists():
-            continue
         say = c["lang"] in SAY_VOICE and i % 2 == 0
-        jobs.append((c, "say:" + SAY_VOICE[c["lang"]] if say else "gemini:" + GEM_VOICES[i % len(GEM_VOICES)]))
+        voice = VOICE_OVERRIDE.get(c["id"]) or ("say:" + SAY_VOICE[c["lang"]] if say else "gemini:" + GEM_VOICES[i % len(GEM_VOICES)])
+        m = meta.get(c["id"])
+        if m and m["spoken_text"] == c["spoken"] and m["voice"] == voice and wav(c["id"], "phone").exists():
+            continue
+        jobs.append((c, voice))
 
     def one(job):
         c, voice = job

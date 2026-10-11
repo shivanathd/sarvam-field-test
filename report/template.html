@@ -105,6 +105,10 @@ figcaption .dir { color: var(--muted); font-size: 0.8rem; }
 .chart .bar.local { fill: url(#hatch) ; stroke-width: 1.5; }
 .chart .bar.local.v-sarvam { stroke: var(--v-sarvam); } .chart .bar.local.v-open { stroke: var(--v-open); } .chart .bar.local.v-openai { stroke: var(--v-openai); }
 .chart .bar.sub { opacity: 0.55; }
+.chart .dot { stroke: var(--card); stroke-width: 2; } .chart .dot.local { fill: url(#hatch); stroke-width: 2; } .chart .dot.sub { opacity: 0.55; }
+.chart .dot.local.v-sarvam { stroke: var(--v-sarvam); } .chart .dot.local.v-open { stroke: var(--v-open); }
+.chart .lab.small { font-size: 12px; } .chart .strip { fill: var(--rule); opacity: 0.35; }
+table.usemap th { font-weight: 600; } table.usemap td:nth-child(4) { text-align: center; }
 .note { font-size: 0.85rem; color: var(--muted); margin-top: 6px; }
 details.tbl { margin-top: 4px; font-size: 0.85rem; }
 details summary { cursor: pointer; color: var(--muted); }
@@ -150,7 +154,7 @@ pre { background: var(--card); border: 1px solid var(--rule); border-radius: 6px
   <p class="lbl">Report</p>
   <ol>
     <li><a href="#answer">Short answer</a></li><li><a href="#scorecard">Scorecard</a></li>
-    <li><a href="#patterns">What cuts across</a></li><li><a href="#how">How it was run</a></li>
+    <li><a href="#patterns">What cuts across</a></li><li><a href="#usemap">Use-case map</a></li><li><a href="#how">How it was run</a></li>
   </ol>
   <p class="lbl">Use cases</p>
   <ol>
@@ -162,7 +166,7 @@ pre { background: var(--card); border: 1px solid var(--rule); border-radius: 6px
     <li><a href="#uc11_bharat_code">11 · Bharat Code</a></li><li><a href="#uc12_token_tax">12 · Token tax</a></li>
   </ol>
   <p class="lbl">Reference</p>
-  <ol><li><a href="#quirks">API quirks</a></li><li><a href="#cost">Cost</a></li><li><a href="#repro">Reproduce</a></li><li><a href="#files">Code & logs</a></li></ol>
+  <ol><li><a href="#quirks">API quirks</a></li><li><a href="#cost">Cost &amp; intelligence</a></li><li><a href="#repro">Reproduce</a></li><li><a href="#files">Code & logs</a></li></ol>
 </nav>
 
 <main>
@@ -224,6 +228,13 @@ pre { background: var(--card); border: 1px solid var(--rule); border-radius: 6px
   <p>Asked in English about a Hindi or Tamil document, most models answered in the document's script: GPT-5.4 mini replied in English 7% of the time and Sarvam-105B 11%. Romanised questions (Hinglish, Tanglish) got a romanised reply from no price-matched model more than 69% of the time. Only the frontier models matched the user every time.</p>
 </section>
 
+<section id="usemap">
+  <p class="eyebrow">Use-case map</p>
+  <h2>Indian business jobs this evidence covers</h2>
+  <p class="prose" style="margin-top:12px">Each row points to the test that backs it. Costs are the measured API cost per 1,000 tasks for the recommended model in that test.</p>
+  {{USEMAP}}
+</section>
+
 <section id="how">
   <p class="eyebrow">Method</p>
   <h2>How it was run</h2>
@@ -273,10 +284,12 @@ pre { background: var(--card); border: 1px solid var(--rule); border-radius: 6px
   </ul>
 </section>
 
-<section id="cost" class="prose">
-  <p class="eyebrow">Cost</p>
-  <h2>What the benchmark cost to run</h2>
-  <p style="margin-top:12px">About <b>₹1,200 of Sarvam credit</b> at list prices (₹1,500 topped up), a few US dollars of OpenAI usage (recorded as tokens), <b>US$3.75 on OpenRouter</b> for Claude, and a few million Gemini tokens. Sarvam's translation APIs were the single biggest line: about ₹300 for 150,000 characters of legal text, which Sarvam-105B translated just as faithfully for about ₹2. List prices used: speech-to-text ₹30 per audio hour (₹45 with speaker labels), Sarvam-105B ₹15 / ₹60 per million input / output tokens, Bulbul ₹30 per 10,000 characters, Sarvam Vision ₹0.50 per page, translation about ₹20 per 10,000 characters.</p>
+<section id="cost">
+  <p class="eyebrow">Cost and intelligence</p>
+  <h2>What each model costs, and what you get for it</h2>
+  <p class="prose" style="margin-top:12px">Costs are measured: the tokens each model actually used in these tests (thinking and repair attempts included) multiplied by October 2026 list prices. Accuracy is the average of seven text tests that every price-matched model ran in full.</p>
+  <div class="charts">{{COST}}</div>
+  <p class="prose note">This whole benchmark cost about ₹1,200 of Sarvam credit, a few US dollars of OpenAI usage, about US$3.75 on OpenRouter for Claude, and a few million Gemini tokens.</p>
 </section>
 
 <section id="repro" class="prose">

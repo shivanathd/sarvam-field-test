@@ -32,6 +32,7 @@ PRETTY = [
     (r"^audio:", ""), (r"^agent-", "stack: "),
     (r"or:anthropic/claude-haiku-5\.5", "Claude Haiku 5.5"), (r"or:anthropic/claude-sonnet-5\.5", "Claude Sonnet 5.5"),
     (r"(or:)?anthropic/", ""), (r"openai:", ""),
+    (r"claude-haiku-5\.5", "Claude Haiku 5.5"), (r"claude-sonnet-5\.5", "Claude Sonnet 5.5"), (r"^gemini-pro(?=$| )", "Gemini Pro"),
     (r"gpt-5\.4-mini", "GPT-5.4 mini"), (r"gpt-5\.5", "GPT-5.5"), (r"gpt-4o-mini-tts", "GPT-4o mini TTS"),
     (r"gpt-4o-transcribe", "GPT-4o transcribe"), (r"whisper-1", "Whisper (OpenAI API)"),
     (r"whisper-large-v3-turbo", "Whisper large-v3-turbo (local)"),
@@ -363,12 +364,201 @@ def files_json():
     return json.dumps(out, ensure_ascii=False).replace("</", "<\\/")
 
 
+# ---------- cost & intelligence (list prices, October 2026) ----------
+USD_INR = 96.61  # RBI reference rate, 9 Oct 2026
+# INR per 1M tokens (input, output incl. thinking). Sources: Sarvam changelog 10 Oct 2026; OpenRouter list prices;
+# Google Gemini API pricing page. gemini-pro-latest is priced as Gemini 3.1 Pro (the page does not say which it resolves to).
+PRICE = {
+    "sarvam-105b": (15, 60), "gemini-3.8-flash": (0.75 * USD_INR, 3.75 * USD_INR), "gpt-5.4-mini": (0.75 * USD_INR, 4.5 * USD_INR),
+    "claude-haiku-5.5": (0.10 * USD_INR, 0.50 * USD_INR), "gemini-pro": (2 * USD_INR, 12 * USD_INR),
+    "gpt-5.5": (5 * USD_INR, 30 * USD_INR), "claude-sonnet-5.5": (2 * USD_INR, 10 * USD_INR),
+}
+TEXT_TESTS = [  # (suite, metric) used for the intelligence index: all higher-is-better, full sets
+    ("uc04_indic_rag", "answer_correct_rag"), ("uc05_clinical_notes", "medication_exact_drug_dose_freq"),
+    ("uc06_offline_agri", "grounded_correct"), ("uc08_quick_commerce", "A: exact whole-order accuracy"),
+    ("uc09_legal", "key-fact recall (litigant summary)"), ("uc10_selfhost_business", "overall_all_correct"),
+    ("uc11_bharat_code", "pass@1 (single shot)")]
+
+
+def canon(s):
+    """Normalise system names across suites: 'A:or:anthropic/claude-haiku-5.5 [x]' -> 'claude-haiku-5.5'."""
+    s = re.sub(r"^[AB]:", "", s)
+    s = re.sub(r"\s*\[.*?\]$", "", s)
+    s = re.sub(r"^(openai:|or:anthropic/|or:)", "", s).replace("-nothink", "")
+    s = s.replace("gemini-pro-latest", "gemini-pro")
+    if re.match(r"(gemini-pro|gpt-5\.5|claude-sonnet-5\.5)", s):
+        s = re.sub(r"-think$", "", s)  # frontier models always ran with thinking
+    return s
+
+
+def price_key(c):
+    base = re.sub(r"(-think.*|-t0.*|\(.*)$", "", c).strip()
+    return base if base in PRICE else None
+
+
+def cost_inr(c, u):
+    k = price_key(c)
+    if not k or not u: return None
+    out = (u.get("out_tok") or 0) + ((u.get("reasoning_tok") or 0) if k.startswith("gemini") else 0)
+    pin, pout = PRICE[k]
+    return ((u.get("in_tok") or 0) * pin + out * pout) / 1e6
+
+
+def intelligence():
+    scores, costs = {}, {}
+    for uc, name in TEXT_TESTS:
+        m = metric(uc, name)
+        maxn = max((v.get("n") or 0) for v in m["values"].values() if isinstance(v, dict))
+        keep = {"uc08_quick_commerce": lambda k: k.startswith("A:"),  # order extraction, not transliteration
+                "uc09_legal": lambda k: k.endswith("[litigant summary]")}.get(uc, lambda k: True)
+        usage = {canon(k): v for k, v in (R[uc].get("usage") or {}).items() if isinstance(v, dict) and keep(k)}
+        for s, v in m["values"].items():
+            if not isinstance(v, dict) or v.get("mean") is None: continue
+            c = canon(s)
+            if c.endswith("(16k cap)") or "empties rerun" in c or c.endswith("-t0") or c.endswith("-t0.7"): continue
+            scores.setdefault(c, {})[uc] = (v["mean"], v.get("n") or 0, maxn)
+            u = usage.get(c)
+            ci = cost_inr(c, u)
+            if ci is not None and (v.get("n") or u.get("calls")):
+                costs.setdefault(c, {})[uc] = ci / (v.get("n") or u.get("calls")) * 1000  # ₹ per 1,000 tasks
+    return scores, costs
+
+
+def cost_section():
+    scores, costs = intelligence()
+    pts = []
+    for c, sc in scores.items():
+        if len(sc) < 5: continue  # needs most of the seven tests
+        sub = any(n < 0.8 * mx for _, n, mx in sc.values())
+        idx = sum(v for v, _, _ in sc.values()) / len(sc)
+        cs = [costs.get(c, {}).get(uc) for uc in sc]
+        cs = [x for x in cs if x is not None]
+        local = "local" in c or "cpu" in c
+        pts.append({"c": c, "idx": idx, "cost": (sum(cs) / len(cs)) if cs and not local else None, "local": local,
+                    "sub": sub, "k": len(sc)})
+    # scatter: log10 cost on x; self-hosted shown in a separate strip at the left
+    W, H, L, T, B = 760, 420, 150, 20, 50
+    xs = [p["cost"] for p in pts if p["cost"]]
+    lo, hi = math.floor(math.log10(min(xs))), math.ceil(math.log10(max(xs)))
+    X = lambda v: L + (math.log10(v) - lo) / (hi - lo) * (W - L - 30)
+    Y = lambda v: T + (1 - (v - 0.2) / 0.8) * (H - T - B)
+    g = []
+    for t in (0.2, 0.4, 0.6, 0.8, 1.0):
+        g.append(f'<line x1="{L}" x2="{W - 30}" y1="{Y(t):.1f}" y2="{Y(t):.1f}" class="grid"/><text x="{L - 8}" y="{Y(t) + 4:.1f}" class="tick" text-anchor="end">{t:.0%}</text>')
+    for e in range(lo, hi + 1):
+        g.append(f'<line x1="{X(10 ** e):.1f}" x2="{X(10 ** e):.1f}" y1="{T}" y2="{H - B}" class="grid"/><text x="{X(10 ** e):.1f}" y="{H - B + 18}" class="tick" text-anchor="middle">₹{10 ** e:,.0f}</text>'.replace("₹0", "₹0"))
+    g.append(f'<rect x="10" y="{T}" width="{L - 70}" height="{H - T - B}" class="strip"/><text x="{(L - 60) / 2 + 10:.0f}" y="{H - B + 18}" class="tick" text-anchor="middle">own hardware</text>')
+    g.append(f'<text x="{(L + W - 30) / 2:.0f}" y="{H - 8}" class="tick" text-anchor="middle">API cost per 1,000 tasks (₹, log scale, measured tokens × list price)</text>')
+    order = {id(p): j for j, p in enumerate(sorted([p for p in pts if p["cost"]], key=lambda p: p["cost"]))}
+    for i, p in enumerate(sorted(pts, key=lambda p: p["idx"])):
+        x = X(p["cost"]) if p["cost"] else 30 + (i % 2) * 34
+        y = Y(p["idx"])
+        dy = (-12 if order.get(id(p), i) % 2 else 16) if p["idx"] > 0.95 else 4  # stagger labels in the crowded top band
+        tip = f'{pretty(p["c"])}: {p["idx"]:.0%} average across {p["k"]} text tests' + (f', ₹{p["cost"]:,.1f} per 1,000 tasks' if p["cost"] else ", self-hosted") + (" (frontier: 30-item subsets)" if p["sub"] else "")
+        g.append(f'<g class="row" data-tip="{E(tip)}"><circle cx="{x:.1f}" cy="{y:.1f}" r="12" class="hit"/>'
+                 f'<circle cx="{x:.1f}" cy="{y:.1f}" r="6.5" class="dot v-{vendor(p["c"])}{" local" if p["local"] else ""}{" sub" if p["sub"] else ""}"/>'
+                 f'<text x="{x + 10:.1f}" y="{y + dy:.1f}" class="lab small">{E(pretty(p["c"]))}</text></g>')
+    avg = {p["c"]: p for p in pts}
+    def a(c): return avg[c]["idx"], avg[c]["cost"]
+    hk, fl, sv = a("claude-haiku-5.5"), a("gemini-3.8-flash"), a("sarvam-105b")
+    r = [a(c)[1] / fl[1] for c in ("gemini-pro", "gpt-5.5", "claude-sonnet-5.5") if c in avg and a(c)[1]]
+    summary = (f'<p class="prose"><b>Best value:</b> Claude Haiku 5.5 averaged {hk[0]:.0%} at about ₹{hk[1]:,.0f} per 1,000 tasks. '
+               f'Sarvam-105B cost about the same (₹{sv[1]:,.0f}) but averaged {sv[0]:.0%}. Gemini 3.8 Flash reached {fl[0]:.0%} for about '
+               f'₹{fl[1]:,.0f}, {fl[1] / hk[1]:.1f}× Haiku\'s cost. Frontier models matched Flash on accuracy at '
+               f'{min(r):.0f}–{max(r):.0f}× its cost.</p>')
+    scatter = summary + (f'<figure class="chart"><figcaption><b>Intelligence against cost: average accuracy on seven text tests</b>'
+               f'<span class="dir">up and to the left is better</span></figcaption><div class="scroll"><svg viewBox="0 0 {W + 120} {H}" role="img" '
+               f'aria-label="Accuracy against cost per 1,000 tasks">{"".join(g)}</svg></div>'
+               '<p class="note">Tests: policy Q&amp;A, clinical medications, crop advice, WhatsApp orders, legal summaries, business text, coding. '
+               'Frontier models (faded) ran on 30-item subsets of some tests. Self-hosted models have no per-call price; their cost is the hardware.</p></figure>')
+
+    # cost per 1,000 tasks table
+    systems = sorted({c for c in costs if len(costs[c]) >= 3}, key=lambda c: (vendor(c) != "sarvam", sum(costs[c].values()) / len(costs[c])))
+    head = "".join(f'<th><span class="sw v-{vendor(c)}"></span>{E(pretty(c))}</th>' for c in systems)
+    rows = []
+    for uc, name in TEXT_TESTS:
+        vals = [costs.get(c, {}).get(uc) for c in systems]
+        nums = [v for v in vals if v is not None]
+        if not nums: continue
+        lo2, hi2 = math.log10(min(nums)), math.log10(max(nums))
+        cells = "".join('<td class="na">–</td>' if v is None else
+                        f'<td style="--t:{(0 if hi2 == lo2 else (1 - (math.log10(v) - lo2) / (hi2 - lo2))) * 70:.0f}%">₹{v:,.1f}</td>' for v in vals)
+        rows.append(f"<tr><th>{E(R[uc]['title'][:48])}</th>{cells}</tr>")
+    costtab = (f'<figure class="heat"><figcaption><b>API cost per 1,000 tasks, by use case (₹)</b><span class="dir">darker = cheaper within each row; '
+               f'includes thinking tokens and repair attempts</span></figcaption><div class="scroll"><table><thead><tr><th></th>{head}</tr></thead>'
+               f'<tbody>{"".join(rows)}</tbody></table></div></figure>')
+
+    # price per token and per lakh Indian-language sentences
+    tax = R["uc12_token_tax"]["table"]
+    indic = [r for r in tax if r["lang"] != "English"]
+    tokcol = {"sarvam-105b": "sarvam_tok", "gemini-3.8-flash": "gemini_tok", "gpt-5.4-mini": "openai_tok", "claude-haiku-5.5": "claude_tok",
+              "gemini-pro": "gemini_tok", "gpt-5.5": "openai_tok", "claude-sonnet-5.5": "claude_tok"}
+    prow = []
+    for k, (pin, pout) in sorted(PRICE.items(), key=lambda kv: kv[1][0]):
+        toks = sum(r[tokcol[k]] for r in indic if r.get(tokcol[k])) / len([r for r in indic if r.get(tokcol[k])])
+        lakh = toks * 1e5 * pin / 1e6
+        prow.append(f'<tr><th><span class="sw v-{vendor(k)}"></span>{E(pretty(k))}</th><td>₹{pin:,.1f}</td><td>₹{pout:,.1f}</td>'
+                    f'<td>{toks:.1f}</td><td>₹{lakh:,.2f}</td></tr>')
+    ptab = ('<figure class="heat plain"><figcaption><b>Price per token, and what it costs to send Indian-language text</b>'
+            f'<span class="dir">₹ per 1M tokens at ₹{USD_INR}/US$ (RBI, 9 Oct 2026)</span></figcaption><div class="scroll"><table><thead><tr><th>Model</th>'
+            '<th>Input ₹/1M</th><th>Output ₹/1M</th><th>Tokens per Indian sentence</th><th>₹ to send 1 lakh sentences</th></tr></thead><tbody>'
+            + "".join(prow) + '</tbody></table></div><p class="note">Tokens per sentence: average over 14 Indian languages of the same FLEURS sentences (use case 12). '
+            'Gemini 3.8 Flash prices are promotional until 31 Dec 2026 and double from 1 Jan 2027. Gemini Pro priced as Gemini 3.1 Pro. '
+            'Sarvam-105B: Sarvam changelog, 10 Oct 2026. Others: OpenRouter and Google list prices.</p></figure>')
+    units = ('<figure class="heat plain"><figcaption><b>Speech, voice and document unit prices</b><span class="dir">list prices, October 2026</span></figcaption>'
+             '<div class="scroll"><table><thead><tr><th>Job</th><th>Sarvam</th><th>Rival</th></tr></thead><tbody>'
+             '<tr><th>Speech-to-text</th><td>Saaras ₹30 per audio hour (₹45 with speaker labels)</td><td>Gemini 3.8 Flash bills audio as input tokens at $0.75/1M</td></tr>'
+             f'<tr><th>Text-to-speech</th><td>Bulbul ₹3 per 1,000 characters</td><td>Gemini Flash TTS $9 per 1M audio tokens; measured about 19,400 audio tokens per 10,000 characters ≈ ₹{19400 * 9 / 1e6 * USD_INR / 10:.1f} per 1,000 characters</td></tr>'
+             '<tr><th>Documents</th><td>Document AI Extract ₹1 per page; Digitise ₹0.50 per page</td><td>Gemini / Claude bill the page image as input tokens</td></tr>'
+             '<tr><th>Translation</th><td>Sarvam-Translate / Mayura by character (about ₹2 per 1,000 characters billed in this run); Sarvam-105B by token, about 80× cheaper for the same legal text</td><td>LLM token prices above</td></tr>'
+             '<tr><th>Voice bot, all-Sarvam</th><td>₹1.56 per conversation-minute (speech ₹0.23, model ₹0.015, voice ₹1.32)</td><td>–</td></tr>'
+             '</tbody></table></div></figure>')
+    return scatter + costtab + ptab + units
+
+
+USEMAP = [  # (job, who, use, evidence suite, model whose measured cost to show)
+    ("EMI and collections reminder calls", "Banks, NBFCs", "All-Sarvam voice stack; confirm amounts with a Gemini 3.8 Flash transcript", "uc01_voice_support", None),
+    ("Inbound support calls in regional languages", "Telecom, D2C", "Saaras → GPT-5.4 mini or Claude Haiku 5.5 → Bulbul", "uc01_voice_support", None),
+    ("Citizen grievance and scheme helplines", "Government", "Saaras for transcripts; check Sindhi and Assamese separately", "uc02_helpline_stt", None),
+    ("Call-centre QA and analytics", "BPO, insurance", "Saaras batch with speaker labels", "uc02_helpline_stt", None),
+    ("KYC and account-opening documents", "Banks, fintech", "Gemini 3.8 Flash or Claude Sonnet 5.5 on the image; human review for poor photos", "uc03_documents", None),
+    ("GST invoice capture", "Accounts payable, SMEs", "Gemini 3.8 Flash on the image; Sarvam Document AI on clean scans", "uc03_documents", None),
+    ("Land-record digitisation", "State governments", "Gemini or Claude on the image; reject fields the model cannot read", "uc03_documents", None),
+    ("HR and policy assistant in Indian languages", "Enterprises", "Gemini Embedding 2 retrieval + Gemini 3.8 Flash answers", "uc04_indic_rag", "gemini-3.8-flash"),
+    ("Insurance claim questions", "Insurers, TPAs", "Same RAG stack; test answers in the user's script", "uc04_indic_rag", "gpt-5.4-mini"),
+    ("OPD doctor scribe", "Clinics, healthtech", "Gemini 3.8 Flash straight on the consultation audio", "uc05_clinical_notes", "gemini-3.8-flash"),
+    ("Krishi advisory helpline", "Agritech, FPOs", "Cloud model that refuses out-of-scope questions; offline only with thinking on", "uc06_offline_agri", "gemini-3.8-flash"),
+    ("Course and training localisation", "Edtech, L&D", "Sarvam-Translate into Indian languages + Bulbul voice-over", "uc07_translation_dubbing", None),
+    ("Product catalogue translation", "E-commerce", "Sarvam-Translate into Indian languages; Gemini into English", "uc07_translation_dubbing", None),
+    ("WhatsApp orders and voice notes", "Quick commerce, kirana", "Gemini 3.8 Flash for order extraction", "uc08_quick_commerce", "gemini-3.8-flash"),
+    ("Name and address transliteration", "Logistics", "Gemini 3.8 Flash; Sarvam's transliterate API is weak on Tamil", "uc08_quick_commerce", None),
+    ("Judgment and order translation", "Courts, legal-tech", "Sarvam-105B or GPT-5.4 mini; never Mayura for amounts", "uc09_legal", None),
+    ("Plain-language summaries for litigants", "Legal aid", "Gemini 3.8 Flash or GPT-5.4 mini", "uc09_legal", "gemini-3.8-flash"),
+    ("Ticket triage and CRM notes", "SaaS support", "GPT-5.4 mini or Claude Haiku 5.5", "uc10_selfhost_business", "claude-haiku-5.5"),
+    ("On-premise processing of regulated data", "Banks, hospitals", "Qwen3-30B self-hosted; Sarvam-30B if speed and token cost matter more", "uc10_selfhost_business", None),
+    ("Coding copilot for Indian business logic", "Fintech, ERP vendors", "Gemini 3.8 Flash or Claude Haiku 5.5", "uc11_bharat_code", "claude-haiku-5.5"),
+    ("Voice-assistant actions (recharge, bill pay)", "Wallets, telecom", "Sarvam-105B or Gemini tool calling; validate amounts before paying", "uc11_bharat_code", None),
+    ("Budgeting Indian-text-heavy workloads", "Any", "Sarvam's tokenizer is cheapest; Claude uses 3.4× the English token count", "uc12_token_tax", None),
+]
+
+
+def usemap():
+    _, costs = intelligence()
+    rows = []
+    for job, who, use, uc, model in USEMAP:
+        c = costs.get(model, {}).get(uc) if model else None
+        rows.append(f'<tr><th>{E(job)}</th><td>{E(who)}</td><td>{E(use)}</td><td><a href="#{uc}">{int(uc[2:4])}</a></td>'
+                    f'<td>{"₹%s per 1,000" % format(round(c, 1), ",") if c else "see section"}</td></tr>')
+    return ('<div class="scroll"><table class="usemap"><thead><tr><th>Job</th><th>Who needs it</th><th>Recommended</th><th>Evidence</th>'
+            '<th>Measured API cost</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table></div>")
+
+
 if __name__ == "__main__":
     sc_rows, tally, sections = body()
     tpl = (ROOT / "report" / "template.html").read_text()
     out = (tpl.replace("{{SCORECARD}}", sc_rows).replace("{{SECTIONS}}", sections)
            .replace("{{LEAD}}", str(tally["lead"])).replace("{{LEVEL}}", str(tally["level"])).replace("{{BEHIND}}", str(tally["behind"]))
-           .replace("{{NROWS}}", str(len(SC))))
+           .replace("{{NROWS}}", str(len(SC))).replace("{{COST}}", cost_section()).replace("{{USEMAP}}", usemap()))
     extra = ROOT / "report" / "extra.html"
     out = out.replace("{{EXTRA}}", extra.read_text() if extra.exists() else "")
     files = files_json()
