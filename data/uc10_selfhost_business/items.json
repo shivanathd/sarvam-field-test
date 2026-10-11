@@ -1,0 +1,1656 @@
+{
+ "synthetic": true,
+ "how_made": "Builds data/uc10_selfhost_business/items.json: 150 synthetic customer-support / back-office texts.\n\n5 tasks x 5 scenarios x 6 languages (Hindi, Marathi, Tamil, Telugu, Bengali, Hinglish). Each scenario was written by\nhand in every language (not machine translated); order ids, amounts, dates, invoice numbers and GSTINs are filled in\nper language from a seeded RNG so every item has its own checkable gold. All people, companies and ids are fictional.\nGSTINs have a valid checksum but are random and labelled SAMPLE in the text.",
+ "items": [
+  {
+   "id": "triage-0-hi",
+   "task": "triage",
+   "lang": "hi",
+   "text": "मैंने UPI से ₹29,899 का पेमेंट किया, पैसे मेरे खाते से कट गए लेकिन ऐप में ऑर्डर 'पेमेंट फेल' दिखा रहा है। कृपया जल्दी देखिए।",
+   "gold": {
+    "intent": "payment_failed",
+    "urgency": 3,
+    "language": "hi"
+   }
+  },
+  {
+   "id": "triage-0-mr",
+   "task": "triage",
+   "lang": "mr",
+   "text": "मी UPI ने ₹41,949 भरले, माझ्या खात्यातून पैसे कट झाले पण ॲपमध्ये ऑर्डर 'पेमेंट फेल' दाखवत आहे. कृपया लवकर बघा.",
+   "gold": {
+    "intent": "payment_failed",
+    "urgency": 3,
+    "language": "mr"
+   }
+  },
+  {
+   "id": "triage-0-ta",
+   "task": "triage",
+   "lang": "ta",
+   "text": "UPI மூலம் ₹33,799 செலுத்தினேன், என் கணக்கிலிருந்து பணம் போய்விட்டது, ஆனால் ஆப்பில் ஆர்டர் 'பேமெண்ட் ஃபெயில்' என்று காட்டுகிறது. தயவுசெய்து சீக்கிரம் பாருங்கள்.",
+   "gold": {
+    "intent": "payment_failed",
+    "urgency": 3,
+    "language": "ta"
+   }
+  },
+  {
+   "id": "triage-0-te",
+   "task": "triage",
+   "lang": "te",
+   "text": "UPI ద్వారా ₹25,399 చెల్లించాను, నా ఖాతా నుండి డబ్బులు కట్ అయ్యాయి కానీ యాప్‌లో ఆర్డర్ 'పేమెంట్ ఫెయిల్' అని చూపిస్తోంది. దయచేసి త్వరగా చూడండి.",
+   "gold": {
+    "intent": "payment_failed",
+    "urgency": 3,
+    "language": "te"
+   }
+  },
+  {
+   "id": "triage-0-bn",
+   "task": "triage",
+   "lang": "bn",
+   "text": "UPI দিয়ে ₹38,499 পেমেন্ট করেছি, আমার অ্যাকাউন্ট থেকে টাকা কেটে গেছে কিন্তু অ্যাপে অর্ডার 'পেমেন্ট ফেল' দেখাচ্ছে। দয়া করে তাড়াতাড়ি দেখুন।",
+   "gold": {
+    "intent": "payment_failed",
+    "urgency": 3,
+    "language": "bn"
+   }
+  },
+  {
+   "id": "triage-0-hinglish",
+   "task": "triage",
+   "lang": "hinglish",
+   "text": "Maine UPI se ₹44,349 pay kiya, account se paise kat gaye lekin app mein order 'payment failed' dikha raha hai. Please jaldi check karo.",
+   "gold": {
+    "intent": "payment_failed",
+    "urgency": 3,
+    "language": "hinglish"
+   }
+  },
+  {
+   "id": "triage-1-hi",
+   "task": "triage",
+   "lang": "hi",
+   "text": "मेरा ऑर्डर SK57658257 पिछले हफ्ते आना था, अभी तक नहीं आया। ट्रैकिंग भी अपडेट नहीं हो रही। बताइए कब तक आएगा?",
+   "gold": {
+    "intent": "delivery_delay",
+    "urgency": 2,
+    "language": "hi"
+   }
+  },
+  {
+   "id": "triage-1-mr",
+   "task": "triage",
+   "lang": "mr",
+   "text": "माझी ऑर्डर SK45208143 मागच्या आठवड्यात यायला हवी होती, अजून आली नाही. ट्रॅकिंगही अपडेट होत नाहीये. कधी येईल ते सांगा.",
+   "gold": {
+    "intent": "delivery_delay",
+    "urgency": 2,
+    "language": "mr"
+   }
+  },
+  {
+   "id": "triage-1-ta",
+   "task": "triage",
+   "lang": "ta",
+   "text": "என் ஆர்டர் SK50682079 கடந்த வாரமே வந்திருக்க வேண்டும், இன்னும் வரவில்லை. டிராக்கிங்கும் அப்டேட் ஆகவில்லை. எப்போது வரும் என்று சொல்லுங்கள்.",
+   "gold": {
+    "intent": "delivery_delay",
+    "urgency": 2,
+    "language": "ta"
+   }
+  },
+  {
+   "id": "triage-1-te",
+   "task": "triage",
+   "lang": "te",
+   "text": "నా ఆర్డర్ SK71327894 గత వారమే రావాల్సింది, ఇంకా రాలేదు. ట్రాకింగ్ కూడా అప్‌డేట్ కావడం లేదు. ఎప్పుడు వస్తుందో చెప్పండి.",
+   "gold": {
+    "intent": "delivery_delay",
+    "urgency": 2,
+    "language": "te"
+   }
+  },
+  {
+   "id": "triage-1-bn",
+   "task": "triage",
+   "lang": "bn",
+   "text": "আমার অর্ডার SK92319332 গত সপ্তাহে আসার কথা ছিল, এখনও আসেনি। ট্র্যাকিংও আপডেট হচ্ছে না। কবে আসবে জানান।",
+   "gold": {
+    "intent": "delivery_delay",
+    "urgency": 2,
+    "language": "bn"
+   }
+  },
+  {
+   "id": "triage-1-hinglish",
+   "task": "triage",
+   "lang": "hinglish",
+   "text": "Mera order SK10544272 pichle hafte aana tha, abhi tak nahi aaya. Tracking bhi update nahi ho rahi. Kab tak aayega batao?",
+   "gold": {
+    "intent": "delivery_delay",
+    "urgency": 2,
+    "language": "hinglish"
+   }
+  },
+  {
+   "id": "triage-2-hi",
+   "task": "triage",
+   "lang": "hi",
+   "text": "इस मिक्सर ग्राइंडर के साथ वारंटी मिलती है क्या? कितने साल की है?",
+   "gold": {
+    "intent": "product_question",
+    "urgency": 1,
+    "language": "hi"
+   }
+  },
+  {
+   "id": "triage-2-mr",
+   "task": "triage",
+   "lang": "mr",
+   "text": "या मिक्सर ग्राइंडरसोबत वॉरंटी मिळते का? किती वर्षांची आहे?",
+   "gold": {
+    "intent": "product_question",
+    "urgency": 1,
+    "language": "mr"
+   }
+  },
+  {
+   "id": "triage-2-ta",
+   "task": "triage",
+   "lang": "ta",
+   "text": "இந்த மிக்ஸர் கிரைண்டருக்கு வாரண்டி உண்டா? எத்தனை வருடம்?",
+   "gold": {
+    "intent": "product_question",
+    "urgency": 1,
+    "language": "ta"
+   }
+  },
+  {
+   "id": "triage-2-te",
+   "task": "triage",
+   "lang": "te",
+   "text": "ఈ మిక్సర్ గ్రైండర్‌కి వారంటీ ఉందా? ఎన్ని సంవత్సరాలు?",
+   "gold": {
+    "intent": "product_question",
+    "urgency": 1,
+    "language": "te"
+   }
+  },
+  {
+   "id": "triage-2-bn",
+   "task": "triage",
+   "lang": "bn",
+   "text": "এই মিক্সার গ্রাইন্ডারের সাথে কি ওয়ারেন্টি পাওয়া যায়? কত বছরের?",
+   "gold": {
+    "intent": "product_question",
+    "urgency": 1,
+    "language": "bn"
+   }
+  },
+  {
+   "id": "triage-2-hinglish",
+   "task": "triage",
+   "lang": "hinglish",
+   "text": "Is mixer grinder ke saath warranty milti hai kya? Kitne saal ki hai?",
+   "gold": {
+    "intent": "product_question",
+    "urgency": 1,
+    "language": "hinglish"
+   }
+  },
+  {
+   "id": "triage-3-hi",
+   "task": "triage",
+   "lang": "hi",
+   "text": "ऑर्डर SK91426837 में प्रेशर कुकर आया, उसका ढक्कन पिचका हुआ है। मुझे इसकी जगह नया चाहिए।",
+   "gold": {
+    "intent": "damaged_item",
+    "urgency": 2,
+    "language": "hi"
+   }
+  },
+  {
+   "id": "triage-3-mr",
+   "task": "triage",
+   "lang": "mr",
+   "text": "ऑर्डर SK20864867 मध्ये प्रेशर कुकर आला, त्याचे झाकण चेपलेले आहे. मला त्याऐवजी नवीन हवा आहे.",
+   "gold": {
+    "intent": "damaged_item",
+    "urgency": 2,
+    "language": "mr"
+   }
+  },
+  {
+   "id": "triage-3-ta",
+   "task": "triage",
+   "lang": "ta",
+   "text": "ஆர்டர் SK60220893-இல் வந்த பிரஷர் குக்கரின் மூடி நசுங்கி இருக்கிறது. எனக்கு மாற்றாக புதியது வேண்டும்.",
+   "gold": {
+    "intent": "damaged_item",
+    "urgency": 2,
+    "language": "ta"
+   }
+  },
+  {
+   "id": "triage-3-te",
+   "task": "triage",
+   "lang": "te",
+   "text": "ఆర్డర్ SK22966215లో వచ్చిన ప్రెషర్ కుక్కర్ మూత సొట్టపోయి ఉంది. నాకు దాని బదులు కొత్తది కావాలి.",
+   "gold": {
+    "intent": "damaged_item",
+    "urgency": 2,
+    "language": "te"
+   }
+  },
+  {
+   "id": "triage-3-bn",
+   "task": "triage",
+   "lang": "bn",
+   "text": "অর্ডার SK35625668-এ প্রেশার কুকার এসেছে, ঢাকনাটা তোবড়ানো। আমার বদলে নতুন একটা চাই।",
+   "gold": {
+    "intent": "damaged_item",
+    "urgency": 2,
+    "language": "bn"
+   }
+  },
+  {
+   "id": "triage-3-hinglish",
+   "task": "triage",
+   "lang": "hinglish",
+   "text": "Order SK69808395 mein pressure cooker aaya, uska dhakkan pichka hua hai. Mujhe replacement chahiye.",
+   "gold": {
+    "intent": "damaged_item",
+    "urgency": 2,
+    "language": "hinglish"
+   }
+  },
+  {
+   "id": "triage-4-hi",
+   "task": "triage",
+   "lang": "hi",
+   "text": "मैं अपने अकाउंट में लॉगिन नहीं कर पा रहा, OTP नहीं आ रहा। कल GST फाइलिंग की आखिरी तारीख है और मुझे आज ही इनवॉइस डाउनलोड करना है।",
+   "gold": {
+    "intent": "account_access",
+    "urgency": 3,
+    "language": "hi"
+   }
+  },
+  {
+   "id": "triage-4-mr",
+   "task": "triage",
+   "lang": "mr",
+   "text": "मला माझ्या अकाउंटमध्ये लॉगिन करता येत नाही, OTP येत नाही. उद्या GST फायलिंगची शेवटची तारीख आहे आणि मला आजच इनव्हॉइस डाउनलोड करायचे आहे.",
+   "gold": {
+    "intent": "account_access",
+    "urgency": 3,
+    "language": "mr"
+   }
+  },
+  {
+   "id": "triage-4-ta",
+   "task": "triage",
+   "lang": "ta",
+   "text": "என் அக்கவுண்டில் லாகின் செய்ய முடியவில்லை, OTP வரவில்லை. நாளை GST ஃபைலிங் கடைசி நாள், இன்றே இன்வாய்ஸ் டவுன்லோட் செய்ய வேண்டும்.",
+   "gold": {
+    "intent": "account_access",
+    "urgency": 3,
+    "language": "ta"
+   }
+  },
+  {
+   "id": "triage-4-te",
+   "task": "triage",
+   "lang": "te",
+   "text": "నా అకౌంట్‌లో లాగిన్ కాలేకపోతున్నాను, OTP రావడం లేదు. రేపు GST ఫైలింగ్‌కు చివరి తేదీ, ఈరోజే ఇన్‌వాయిస్ డౌన్‌లోడ్ చేయాలి.",
+   "gold": {
+    "intent": "account_access",
+    "urgency": 3,
+    "language": "te"
+   }
+  },
+  {
+   "id": "triage-4-bn",
+   "task": "triage",
+   "lang": "bn",
+   "text": "আমি আমার অ্যাকাউন্টে লগইন করতে পারছি না, OTP আসছে না। কাল GST ফাইলিংয়ের শেষ তারিখ, আজই ইনভয়েস ডাউনলোড করতে হবে।",
+   "gold": {
+    "intent": "account_access",
+    "urgency": 3,
+    "language": "bn"
+   }
+  },
+  {
+   "id": "triage-4-hinglish",
+   "task": "triage",
+   "lang": "hinglish",
+   "text": "Apne account mein login nahi ho raha, OTP nahi aa raha. Kal GST filing ki last date hai aur mujhe aaj hi invoice download karna hai.",
+   "gold": {
+    "intent": "account_access",
+    "urgency": 3,
+    "language": "hinglish"
+   }
+  },
+  {
+   "id": "crm-0-hi",
+   "task": "crm",
+   "lang": "hi",
+   "text": "मैंने 8 जून को ऑर्डर SK20727356 से ₹13,749 की साड़ी मंगाई थी। लाल रंग ऑर्डर किया था पर हरे रंग की आई है। यह बिल्कुल ठीक नहीं है।",
+   "gold": {
+    "order_id": "SK20727356",
+    "amount": 13749,
+    "date": "2026-06-08",
+    "issue_re": "colou?r|green|wrong (item|saree|product)"
+   }
+  },
+  {
+   "id": "crm-0-mr",
+   "task": "crm",
+   "lang": "mr",
+   "text": "मी 13 ऑगस्ट रोजी ऑर्डर SK88228664 मधून ₹8,449 ची साडी मागवली होती. लाल रंग ऑर्डर केला होता पण हिरव्या रंगाची आली. हे अजिबात बरोबर नाही.",
+   "gold": {
+    "order_id": "SK88228664",
+    "amount": 8449,
+    "date": "2026-08-13",
+    "issue_re": "colou?r|green|wrong (item|saree|product)"
+   }
+  },
+  {
+   "id": "crm-0-ta",
+   "task": "crm",
+   "lang": "ta",
+   "text": "28 ஜூலை அன்று ஆர்டர் SK76539817 மூலம் ₹34,799 மதிப்புள்ள புடவை ஆர்டர் செய்தேன். சிவப்பு நிறம் கேட்டேன், ஆனால் பச்சை நிறம் வந்திருக்கிறது. இது சரியில்லை.",
+   "gold": {
+    "order_id": "SK76539817",
+    "amount": 34799,
+    "date": "2026-07-28",
+    "issue_re": "colou?r|green|wrong (item|saree|product)"
+   }
+  },
+  {
+   "id": "crm-0-te",
+   "task": "crm",
+   "lang": "te",
+   "text": "24 ఏప్రిల్న ఆర్డర్ SK80511799 ద్వారా ₹46,949 విలువైన చీర ఆర్డర్ చేశాను. ఎరుపు రంగు ఆర్డర్ చేస్తే ఆకుపచ్చ రంగు వచ్చింది. ఇది అస్సలు సరికాదు.",
+   "gold": {
+    "order_id": "SK80511799",
+    "amount": 46949,
+    "date": "2026-04-24",
+    "issue_re": "colou?r|green|wrong (item|saree|product)"
+   }
+  },
+  {
+   "id": "crm-0-bn",
+   "task": "crm",
+   "lang": "bn",
+   "text": "আমি 17 মে তারিখে অর্ডার SK74772743-এ ₹31,149 দামের একটা শাড়ি অর্ডার করেছিলাম। লাল রং চেয়েছিলাম কিন্তু সবুজ রঙের এসেছে। এটা একদম ঠিক না।",
+   "gold": {
+    "order_id": "SK74772743",
+    "amount": 31149,
+    "date": "2026-05-17",
+    "issue_re": "colou?r|green|wrong (item|saree|product)"
+   }
+  },
+  {
+   "id": "crm-0-hinglish",
+   "task": "crm",
+   "lang": "hinglish",
+   "text": "Maine 3 August ko order SK32321622 se ₹25,399 ki saree mangwayi thi. Red colour order kiya tha par green aayi hai. Yeh bilkul theek nahi hai.",
+   "gold": {
+    "order_id": "SK32321622",
+    "amount": 25399,
+    "date": "2026-08-03",
+    "issue_re": "colou?r|green|wrong (item|saree|product)"
+   }
+  },
+  {
+   "id": "crm-1-hi",
+   "task": "crm",
+   "lang": "hi",
+   "text": "13 अगस्त को ऑर्डर SK28221475 के लिए मेरे कार्ड से ₹21,849 दो बार कट गए। एक बार का पैसा वापस कीजिए।",
+   "gold": {
+    "order_id": "SK28221475",
+    "amount": 21849,
+    "date": "2026-08-13",
+    "issue_re": "twice|double|duplicate|two times|charged 2|2 times"
+   }
+  },
+  {
+   "id": "crm-1-mr",
+   "task": "crm",
+   "lang": "mr",
+   "text": "19 सप्टेंबर रोजी ऑर्डर SK56872926 साठी माझ्या कार्डमधून ₹27,899 दोनदा कापले गेले. एका वेळचे पैसे परत करा.",
+   "gold": {
+    "order_id": "SK56872926",
+    "amount": 27899,
+    "date": "2026-09-19",
+    "issue_re": "twice|double|duplicate|two times|charged 2|2 times"
+   }
+  },
+  {
+   "id": "crm-1-ta",
+   "task": "crm",
+   "lang": "ta",
+   "text": "16 ஜூலை அன்று ஆர்டர் SK32252821-க்காக என் கார்டில் இருந்து ₹28,949 இரண்டு முறை எடுக்கப்பட்டது. ஒரு முறை பணத்தை திருப்பித் தாருங்கள்.",
+   "gold": {
+    "order_id": "SK32252821",
+    "amount": 28949,
+    "date": "2026-07-16",
+    "issue_re": "twice|double|duplicate|two times|charged 2|2 times"
+   }
+  },
+  {
+   "id": "crm-1-te",
+   "task": "crm",
+   "lang": "te",
+   "text": "4 ఆగస్టున ఆర్డర్ SK65723669 కోసం నా కార్డు నుండి ₹42,749 రెండుసార్లు కట్ అయ్యాయి. ఒకసారి డబ్బులు తిరిగి ఇవ్వండి.",
+   "gold": {
+    "order_id": "SK65723669",
+    "amount": 42749,
+    "date": "2026-08-04",
+    "issue_re": "twice|double|duplicate|two times|charged 2|2 times"
+   }
+  },
+  {
+   "id": "crm-1-bn",
+   "task": "crm",
+   "lang": "bn",
+   "text": "28 জানুয়ারি তারিখে অর্ডার SK10379893-এর জন্য আমার কার্ড থেকে ₹22,799 দুবার কেটেছে। একবারের টাকা ফেরত দিন।",
+   "gold": {
+    "order_id": "SK10379893",
+    "amount": 22799,
+    "date": "2026-01-28",
+    "issue_re": "twice|double|duplicate|two times|charged 2|2 times"
+   }
+  },
+  {
+   "id": "crm-1-hinglish",
+   "task": "crm",
+   "lang": "hinglish",
+   "text": "3 September ko order SK16787785 ke liye mere card se ₹18,249 do baar kat gaye. Ek baar ka paisa wapas karo.",
+   "gold": {
+    "order_id": "SK16787785",
+    "amount": 18249,
+    "date": "2026-09-03",
+    "issue_re": "twice|double|duplicate|two times|charged 2|2 times"
+   }
+  },
+  {
+   "id": "crm-2-hi",
+   "task": "crm",
+   "lang": "hi",
+   "text": "मैंने ऑर्डर SK24597038 के जूते लौटा दिए थे। आपने 5 फ़रवरी तक ₹31,449 का रिफंड देने को कहा था, पर अभी तक पैसा नहीं आया।",
+   "gold": {
+    "order_id": "SK24597038",
+    "amount": 31449,
+    "date": "2026-02-05",
+    "issue_re": "refund"
+   }
+  },
+  {
+   "id": "crm-2-mr",
+   "task": "crm",
+   "lang": "mr",
+   "text": "मी ऑर्डर SK75103027 चे बूट परत केले होते. तुम्ही 27 ऑगस्ट पर्यंत ₹7,449 चा रिफंड देऊ असे सांगितले होते, पण अजून पैसे आले नाहीत.",
+   "gold": {
+    "order_id": "SK75103027",
+    "amount": 7449,
+    "date": "2026-08-27",
+    "issue_re": "refund"
+   }
+  },
+  {
+   "id": "crm-2-ta",
+   "task": "crm",
+   "lang": "ta",
+   "text": "ஆர்டர் SK68587489 ஷூக்களை திருப்பி அனுப்பினேன். 28 ஆகஸ்ட்-க்குள் ₹39,999 ரீஃபண்ட் தருவதாகச் சொன்னீர்கள், ஆனால் இன்னும் பணம் வரவில்லை.",
+   "gold": {
+    "order_id": "SK68587489",
+    "amount": 39999,
+    "date": "2026-08-28",
+    "issue_re": "refund"
+   }
+  },
+  {
+   "id": "crm-2-te",
+   "task": "crm",
+   "lang": "te",
+   "text": "ఆర్డర్ SK56067463 షూస్ తిరిగి పంపించాను. 15 సెప్టెంబర్ లోపు ₹37,499 రీఫండ్ ఇస్తామన్నారు, కానీ ఇంకా డబ్బులు రాలేదు.",
+   "gold": {
+    "order_id": "SK56067463",
+    "amount": 37499,
+    "date": "2026-09-15",
+    "issue_re": "refund"
+   }
+  },
+  {
+   "id": "crm-2-bn",
+   "task": "crm",
+   "lang": "bn",
+   "text": "অর্ডার SK71504732-এর জুতো ফেরত দিয়েছিলাম। আপনারা 26 মে-এর মধ্যে ₹21,999 রিফান্ড দেবেন বলেছিলেন, কিন্তু এখনও টাকা আসেনি।",
+   "gold": {
+    "order_id": "SK71504732",
+    "amount": 21999,
+    "date": "2026-05-26",
+    "issue_re": "refund"
+   }
+  },
+  {
+   "id": "crm-2-hinglish",
+   "task": "crm",
+   "lang": "hinglish",
+   "text": "Maine order SK79748107 ke shoes return kar diye the. Aapne 21 June tak ₹46,899 ka refund dene ko bola tha, par abhi tak paisa nahi aaya.",
+   "gold": {
+    "order_id": "SK79748107",
+    "amount": 46899,
+    "date": "2026-06-21",
+    "issue_re": "refund"
+   }
+  },
+  {
+   "id": "crm-3-hi",
+   "task": "crm",
+   "lang": "hi",
+   "text": "5 सितंबर को ₹16,849 का मोबाइल फोन ऑर्डर किया था (ऑर्डर SK41855565)। आज डिब्बा आया तो अंदर फोन था ही नहीं, डिब्बा खाली था।",
+   "gold": {
+    "order_id": "SK41855565",
+    "amount": 16849,
+    "date": "2026-09-05",
+    "issue_re": "empty|missing|no phone|without (the |a )?phone|not (inside|in the box|included)|did not contain|didn.t contain"
+   }
+  },
+  {
+   "id": "crm-3-mr",
+   "task": "crm",
+   "lang": "mr",
+   "text": "22 जानेवारी रोजी ₹33,249 चा मोबाईल फोन ऑर्डर केला होता (ऑर्डर SK36250075). आज बॉक्स आला तर आत फोनच नव्हता, बॉक्स रिकामा होता.",
+   "gold": {
+    "order_id": "SK36250075",
+    "amount": 33249,
+    "date": "2026-01-22",
+    "issue_re": "empty|missing|no phone|without (the |a )?phone|not (inside|in the box|included)|did not contain|didn.t contain"
+   }
+  },
+  {
+   "id": "crm-3-ta",
+   "task": "crm",
+   "lang": "ta",
+   "text": "1 ஆகஸ்ட் அன்று ₹15,499 மதிப்புள்ள மொபைல் போன் ஆர்டர் செய்தேன் (ஆர்டர் SK25619707). இன்று பெட்டி வந்தது, ஆனால் உள்ளே போன் இல்லை, பெட்டி காலியாக இருந்தது.",
+   "gold": {
+    "order_id": "SK25619707",
+    "amount": 15499,
+    "date": "2026-08-01",
+    "issue_re": "empty|missing|no phone|without (the |a )?phone|not (inside|in the box|included)|did not contain|didn.t contain"
+   }
+  },
+  {
+   "id": "crm-3-te",
+   "task": "crm",
+   "lang": "te",
+   "text": "28 జూలైన ₹37,099 విలువైన మొబైల్ ఫోన్ ఆర్డర్ చేశాను (ఆర్డర్ SK43090109). ఈరోజు బాక్స్ వచ్చింది కానీ లోపల ఫోన్ లేదు, బాక్స్ ఖాళీగా ఉంది.",
+   "gold": {
+    "order_id": "SK43090109",
+    "amount": 37099,
+    "date": "2026-07-28",
+    "issue_re": "empty|missing|no phone|without (the |a )?phone|not (inside|in the box|included)|did not contain|didn.t contain"
+   }
+  },
+  {
+   "id": "crm-3-bn",
+   "task": "crm",
+   "lang": "bn",
+   "text": "3 মে তারিখে ₹30,899 দামের একটা মোবাইল ফোন অর্ডার করেছিলাম (অর্ডার SK16205675)। আজ বাক্স এল, কিন্তু ভেতরে ফোন নেই, বাক্সটা খালি।",
+   "gold": {
+    "order_id": "SK16205675",
+    "amount": 30899,
+    "date": "2026-05-03",
+    "issue_re": "empty|missing|no phone|without (the |a )?phone|not (inside|in the box|included)|did not contain|didn.t contain"
+   }
+  },
+  {
+   "id": "crm-3-hinglish",
+   "task": "crm",
+   "lang": "hinglish",
+   "text": "25 September ko ₹42,149 ka mobile phone order kiya tha (order SK24173838). Aaj box aaya to andar phone tha hi nahi, box khaali tha.",
+   "gold": {
+    "order_id": "SK24173838",
+    "amount": 42149,
+    "date": "2026-09-25",
+    "issue_re": "empty|missing|no phone|without (the |a )?phone|not (inside|in the box|included)|did not contain|didn.t contain"
+   }
+  },
+  {
+   "id": "crm-4-hi",
+   "task": "crm",
+   "lang": "hi",
+   "text": "मैंने 6 मई के लिए AC सर्विस बुक की थी और ₹24,749 एडवांस दिए थे (बुकिंग SK99926054)। टेक्नीशियन आया ही नहीं।",
+   "gold": {
+    "order_id": "SK99926054",
+    "amount": 24749,
+    "date": "2026-05-06",
+    "issue_re": "no.?show|did ?n.?t (come|arrive|show|turn|visit)|not (come|arrive|show|turn|visit)|never (came|arrived|showed|turned|visited)|failed to (arrive|come|show|visit|turn)|absent"
+   }
+  },
+  {
+   "id": "crm-4-mr",
+   "task": "crm",
+   "lang": "mr",
+   "text": "मी 12 मार्च साठी AC सर्व्हिस बुक केली होती आणि ₹20,849 ॲडव्हान्स दिले होते (बुकिंग SK89877367). टेक्निशियन आलाच नाही.",
+   "gold": {
+    "order_id": "SK89877367",
+    "amount": 20849,
+    "date": "2026-03-12",
+    "issue_re": "no.?show|did ?n.?t (come|arrive|show|turn|visit)|not (come|arrive|show|turn|visit)|never (came|arrived|showed|turned|visited)|failed to (arrive|come|show|visit|turn)|absent"
+   }
+  },
+  {
+   "id": "crm-4-ta",
+   "task": "crm",
+   "lang": "ta",
+   "text": "12 ஏப்ரல் அன்று AC சர்வீஸ் புக் செய்து ₹4,399 அட்வான்ஸ் கட்டினேன் (புக்கிங் SK34500660). டெக்னீஷியன் வரவே இல்லை.",
+   "gold": {
+    "order_id": "SK34500660",
+    "amount": 4399,
+    "date": "2026-04-12",
+    "issue_re": "no.?show|did ?n.?t (come|arrive|show|turn|visit)|not (come|arrive|show|turn|visit)|never (came|arrived|showed|turned|visited)|failed to (arrive|come|show|visit|turn)|absent"
+   }
+  },
+  {
+   "id": "crm-4-te",
+   "task": "crm",
+   "lang": "te",
+   "text": "14 ఏప్రిల్కి AC సర్వీస్ బుక్ చేసి ₹5,249 అడ్వాన్స్ కట్టాను (బుకింగ్ SK37877379). టెక్నీషియన్ అసలు రాలేదు.",
+   "gold": {
+    "order_id": "SK37877379",
+    "amount": 5249,
+    "date": "2026-04-14",
+    "issue_re": "no.?show|did ?n.?t (come|arrive|show|turn|visit)|not (come|arrive|show|turn|visit)|never (came|arrived|showed|turned|visited)|failed to (arrive|come|show|visit|turn)|absent"
+   }
+  },
+  {
+   "id": "crm-4-bn",
+   "task": "crm",
+   "lang": "bn",
+   "text": "15 মে তারিখের জন্য AC সার্ভিস বুক করেছিলাম আর ₹37,299 অ্যাডভান্স দিয়েছিলাম (বুকিং SK80122670)। টেকনিশিয়ান আসেইনি।",
+   "gold": {
+    "order_id": "SK80122670",
+    "amount": 37299,
+    "date": "2026-05-15",
+    "issue_re": "no.?show|did ?n.?t (come|arrive|show|turn|visit)|not (come|arrive|show|turn|visit)|never (came|arrived|showed|turned|visited)|failed to (arrive|come|show|visit|turn)|absent"
+   }
+  },
+  {
+   "id": "crm-4-hinglish",
+   "task": "crm",
+   "lang": "hinglish",
+   "text": "Maine 15 July ke liye AC service book ki thi aur ₹38,399 advance diye the (booking SK99130412). Technician aaya hi nahi.",
+   "gold": {
+    "order_id": "SK99130412",
+    "amount": 38399,
+    "date": "2026-07-15",
+    "issue_re": "no.?show|did ?n.?t (come|arrive|show|turn|visit)|not (come|arrive|show|turn|visit)|never (came|arrived|showed|turned|visited)|failed to (arrive|come|show|visit|turn)|absent"
+   }
+  },
+  {
+   "id": "reply-0-hi",
+   "task": "reply",
+   "lang": "hi",
+   "text": "ऑर्डर SK45687128 में गलत साइज़ के जूते आए हैं। मुझे पूरा रिफंड चाहिए और परेशानी के लिए ₹500 मुआवज़ा भी।",
+   "gold": {
+    "refund_days": 7,
+    "order_id": "SK45687128"
+   }
+  },
+  {
+   "id": "reply-0-mr",
+   "task": "reply",
+   "lang": "mr",
+   "text": "ऑर्डर SK94190319 मध्ये चुकीच्या साइजचे बूट आले. मला पूर्ण रिफंड हवा आहे आणि त्रासाबद्दल ₹500 नुकसानभरपाई पण.",
+   "gold": {
+    "refund_days": 7,
+    "order_id": "SK94190319"
+   }
+  },
+  {
+   "id": "reply-0-ta",
+   "task": "reply",
+   "lang": "ta",
+   "text": "ஆர்டர் SK66891962-இல் தவறான சைஸ் ஷூ வந்திருக்கிறது. எனக்கு முழு ரீஃபண்ட் வேண்டும், சிரமத்துக்கு ₹500 இழப்பீடும் வேண்டும்.",
+   "gold": {
+    "refund_days": 7,
+    "order_id": "SK66891962"
+   }
+  },
+  {
+   "id": "reply-0-te",
+   "task": "reply",
+   "lang": "te",
+   "text": "ఆర్డర్ SK61250050లో తప్పు సైజ్ షూస్ వచ్చాయి. నాకు పూర్తి రీఫండ్ కావాలి, ఇబ్బందికి ₹500 పరిహారం కూడా కావాలి.",
+   "gold": {
+    "refund_days": 7,
+    "order_id": "SK61250050"
+   }
+  },
+  {
+   "id": "reply-0-bn",
+   "task": "reply",
+   "lang": "bn",
+   "text": "অর্ডার SK66843635-এ ভুল সাইজের জুতো এসেছে। আমার পুরো রিফান্ড চাই, আর ঝামেলার জন্য ₹500 ক্ষতিপূরণও চাই।",
+   "gold": {
+    "refund_days": 7,
+    "order_id": "SK66843635"
+   }
+  },
+  {
+   "id": "reply-0-hinglish",
+   "task": "reply",
+   "lang": "hinglish",
+   "text": "Order SK17415502 mein galat size ke shoes aaye hain. Mujhe full refund chahiye aur pareshani ke liye ₹500 compensation bhi.",
+   "gold": {
+    "refund_days": 7,
+    "order_id": "SK17415502"
+   }
+  },
+  {
+   "id": "reply-1-hi",
+   "task": "reply",
+   "lang": "hi",
+   "text": "मेरा ऑर्डर SK71320558 एक हफ्ता देर से आया। मुझे कैशबैक चाहिए, वरना मैं सामान लौटा दूँगा।",
+   "gold": {
+    "refund_days": 10,
+    "order_id": "SK71320558"
+   }
+  },
+  {
+   "id": "reply-1-mr",
+   "task": "reply",
+   "lang": "mr",
+   "text": "माझी ऑर्डर SK47914441 एक आठवडा उशिरा आली. मला कॅशबॅक हवा आहे, नाहीतर मी सामान परत करीन.",
+   "gold": {
+    "refund_days": 10,
+    "order_id": "SK47914441"
+   }
+  },
+  {
+   "id": "reply-1-ta",
+   "task": "reply",
+   "lang": "ta",
+   "text": "என் ஆர்டர் SK77027145 ஒரு வாரம் தாமதமாக வந்தது. எனக்கு கேஷ்பேக் வேண்டும், இல்லையென்றால் பொருளை திருப்பி அனுப்புவேன்.",
+   "gold": {
+    "refund_days": 10,
+    "order_id": "SK77027145"
+   }
+  },
+  {
+   "id": "reply-1-te",
+   "task": "reply",
+   "lang": "te",
+   "text": "నా ఆర్డర్ SK69276680 ఒక వారం ఆలస్యంగా వచ్చింది. నాకు క్యాష్‌బ్యాక్ కావాలి, లేకపోతే వస్తువు తిరిగి పంపిస్తాను.",
+   "gold": {
+    "refund_days": 10,
+    "order_id": "SK69276680"
+   }
+  },
+  {
+   "id": "reply-1-bn",
+   "task": "reply",
+   "lang": "bn",
+   "text": "আমার অর্ডার SK47186466 এক সপ্তাহ দেরিতে এসেছে। আমার ক্যাশব্যাক চাই, নইলে জিনিসটা ফেরত দেব।",
+   "gold": {
+    "refund_days": 10,
+    "order_id": "SK47186466"
+   }
+  },
+  {
+   "id": "reply-1-hinglish",
+   "task": "reply",
+   "lang": "hinglish",
+   "text": "Mera order SK74022942 ek hafta late aaya. Mujhe cashback chahiye, warna main saamaan return kar dunga.",
+   "gold": {
+    "refund_days": 10,
+    "order_id": "SK74022942"
+   }
+  },
+  {
+   "id": "reply-2-hi",
+   "task": "reply",
+   "lang": "hi",
+   "text": "जो ब्लूटूथ स्पीकर लिया था (ऑर्डर SK82451681), वह कुछ ही दिनों में बंद हो गया। क्या मैं इसे लौटा सकता हूँ? और पैसे ठीक किस तारीख तक वापस आएँगे?",
+   "gold": {
+    "refund_days": 15,
+    "order_id": "SK82451681"
+   }
+  },
+  {
+   "id": "reply-2-mr",
+   "task": "reply",
+   "lang": "mr",
+   "text": "घेतलेला ब्लूटूथ स्पीकर (ऑर्डर SK64392657) काही दिवसांतच बंद पडला. मी तो परत करू शकतो का? आणि पैसे नक्की कोणत्या तारखेपर्यंत परत येतील?",
+   "gold": {
+    "refund_days": 15,
+    "order_id": "SK64392657"
+   }
+  },
+  {
+   "id": "reply-2-ta",
+   "task": "reply",
+   "lang": "ta",
+   "text": "வாங்கிய ப்ளூடூத் ஸ்பீக்கர் (ஆர்டர் SK65800243) சில நாட்களிலேயே வேலை செய்யவில்லை. இதை திருப்பி அனுப்பலாமா? பணம் சரியாக எந்த தேதிக்குள் வரும்?",
+   "gold": {
+    "refund_days": 15,
+    "order_id": "SK65800243"
+   }
+  },
+  {
+   "id": "reply-2-te",
+   "task": "reply",
+   "lang": "te",
+   "text": "కొన్న బ్లూటూత్ స్పీకర్ (ఆర్డర్ SK51093958) కొన్ని రోజుల్లోనే పనిచేయడం ఆగిపోయింది. దీన్ని తిరిగి ఇవ్వవచ్చా? డబ్బులు సరిగ్గా ఏ తేదీలోగా వస్తాయి?",
+   "gold": {
+    "refund_days": 15,
+    "order_id": "SK51093958"
+   }
+  },
+  {
+   "id": "reply-2-bn",
+   "task": "reply",
+   "lang": "bn",
+   "text": "যে ব্লুটুথ স্পিকারটা কিনেছিলাম (অর্ডার SK53231157), সেটা কয়েক দিনের মধ্যেই বন্ধ হয়ে গেছে। এটা কি ফেরত দিতে পারি? আর টাকা ঠিক কোন তারিখের মধ্যে ফেরত আসবে?",
+   "gold": {
+    "refund_days": 15,
+    "order_id": "SK53231157"
+   }
+  },
+  {
+   "id": "reply-2-hinglish",
+   "task": "reply",
+   "lang": "hinglish",
+   "text": "Jo bluetooth speaker liya tha (order SK60195106), woh kuch hi dino mein band ho gaya. Kya main ise return kar sakta hoon? Aur paise exactly kis date tak wapas aayenge?",
+   "gold": {
+    "refund_days": 15,
+    "order_id": "SK60195106"
+   }
+  },
+  {
+   "id": "reply-3-hi",
+   "task": "reply",
+   "lang": "hi",
+   "text": "मैंने जो ड्रेस मँगाई थी (ऑर्डर SK32619766), वह पसंद नहीं आई। क्या इसे वापस कर सकती हूँ? रिफंड जल्दी दे दीजिए।",
+   "gold": {
+    "refund_days": 30,
+    "order_id": "SK32619766"
+   }
+  },
+  {
+   "id": "reply-3-mr",
+   "task": "reply",
+   "lang": "mr",
+   "text": "मी मागवलेला ड्रेस (ऑर्डर SK17156350) आवडला नाही. तो परत करू शकते का? रिफंड लवकर द्या.",
+   "gold": {
+    "refund_days": 30,
+    "order_id": "SK17156350"
+   }
+  },
+  {
+   "id": "reply-3-ta",
+   "task": "reply",
+   "lang": "ta",
+   "text": "நான் ஆர்டர் செய்த டிரெஸ் (ஆர்டர் SK35733192) பிடிக்கவில்லை. இதை திருப்பி அனுப்பலாமா? ரீஃபண்டை சீக்கிரம் தாருங்கள்.",
+   "gold": {
+    "refund_days": 30,
+    "order_id": "SK35733192"
+   }
+  },
+  {
+   "id": "reply-3-te",
+   "task": "reply",
+   "lang": "te",
+   "text": "నేను ఆర్డర్ చేసిన డ్రెస్ (ఆర్డర్ SK89649760) నచ్చలేదు. దీన్ని తిరిగి ఇవ్వొచ్చా? రీఫండ్ త్వరగా ఇవ్వండి.",
+   "gold": {
+    "refund_days": 30,
+    "order_id": "SK89649760"
+   }
+  },
+  {
+   "id": "reply-3-bn",
+   "task": "reply",
+   "lang": "bn",
+   "text": "যে ড্রেসটা অর্ডার করেছিলাম (অর্ডার SK55546030), সেটা পছন্দ হয়নি। এটা কি ফেরত দিতে পারি? রিফান্ড তাড়াতাড়ি দিন।",
+   "gold": {
+    "refund_days": 30,
+    "order_id": "SK55546030"
+   }
+  },
+  {
+   "id": "reply-3-hinglish",
+   "task": "reply",
+   "lang": "hinglish",
+   "text": "Jo dress order ki thi (order SK85708396), woh pasand nahi aayi. Kya ise return kar sakti hoon? Refund jaldi de do.",
+   "gold": {
+    "refund_days": 30,
+    "order_id": "SK85708396"
+   }
+  },
+  {
+   "id": "reply-4-hi",
+   "task": "reply",
+   "lang": "hi",
+   "text": "अगर कल तक मेरे ₹33,999 वापस नहीं आए तो मैं ट्विटर पर आपकी कंपनी के बारे में लिखूँगा। ऑर्डर SK16396015।",
+   "gold": {
+    "refund_days": 7,
+    "order_id": "SK16396015"
+   }
+  },
+  {
+   "id": "reply-4-mr",
+   "task": "reply",
+   "lang": "mr",
+   "text": "उद्यापर्यंत माझे ₹19,049 परत आले नाहीत तर मी ट्विटरवर तुमच्या कंपनीबद्दल लिहीन. ऑर्डर SK85857071.",
+   "gold": {
+    "refund_days": 7,
+    "order_id": "SK85857071"
+   }
+  },
+  {
+   "id": "reply-4-ta",
+   "task": "reply",
+   "lang": "ta",
+   "text": "நாளைக்குள் என் ₹32,999 திரும்ப வரவில்லை என்றால் உங்கள் நிறுவனத்தைப் பற்றி ட்விட்டரில் எழுதுவேன். ஆர்டர் SK90686173.",
+   "gold": {
+    "refund_days": 7,
+    "order_id": "SK90686173"
+   }
+  },
+  {
+   "id": "reply-4-te",
+   "task": "reply",
+   "lang": "te",
+   "text": "రేపటిలోగా నా ₹6,349 తిరిగి రాకపోతే మీ కంపెనీ గురించి ట్విట్టర్‌లో రాస్తాను. ఆర్డర్ SK31170928.",
+   "gold": {
+    "refund_days": 7,
+    "order_id": "SK31170928"
+   }
+  },
+  {
+   "id": "reply-4-bn",
+   "task": "reply",
+   "lang": "bn",
+   "text": "কালকের মধ্যে আমার ₹37,349 ফেরত না এলে আমি টুইটারে আপনাদের কোম্পানির কথা লিখব। অর্ডার SK14179369।",
+   "gold": {
+    "refund_days": 7,
+    "order_id": "SK14179369"
+   }
+  },
+  {
+   "id": "reply-4-hinglish",
+   "task": "reply",
+   "lang": "hinglish",
+   "text": "Agar kal tak mere ₹4,849 wapas nahi aaye to main Twitter pe aapki company ke baare mein likhunga. Order SK56889724.",
+   "gold": {
+    "refund_days": 7,
+    "order_id": "SK56889724"
+   }
+  },
+  {
+   "id": "escalate-0-hi",
+   "task": "escalate",
+   "lang": "hi",
+   "text": "आज ऑर्डर SK87563009 मिल गया, पैकिंग बहुत अच्छी थी और समय पर आया। धन्यवाद!",
+   "gold": {
+    "sentiment": "positive",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-0-mr",
+   "task": "escalate",
+   "lang": "mr",
+   "text": "आज ऑर्डर SK29529883 मिळाली, पॅकिंग खूप छान होती आणि वेळेवर आली. धन्यवाद!",
+   "gold": {
+    "sentiment": "positive",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-0-ta",
+   "task": "escalate",
+   "lang": "ta",
+   "text": "இன்று ஆர்டர் SK73190815 கிடைத்தது, பேக்கிங் மிக நன்றாக இருந்தது, சரியான நேரத்தில் வந்தது. நன்றி!",
+   "gold": {
+    "sentiment": "positive",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-0-te",
+   "task": "escalate",
+   "lang": "te",
+   "text": "ఈరోజు ఆర్డర్ SK69312844 అందింది, ప్యాకింగ్ చాలా బాగుంది, సమయానికి వచ్చింది. ధన్యవాదాలు!",
+   "gold": {
+    "sentiment": "positive",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-0-bn",
+   "task": "escalate",
+   "lang": "bn",
+   "text": "আজ অর্ডার SK66851876 পেয়েছি, প্যাকিং খুব ভালো ছিল আর সময়মতো এসেছে। ধন্যবাদ!",
+   "gold": {
+    "sentiment": "positive",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-0-hinglish",
+   "task": "escalate",
+   "lang": "hinglish",
+   "text": "Aaj order SK78828911 mil gaya, packing bahut achhi thi aur time pe aaya. Thank you!",
+   "gold": {
+    "sentiment": "positive",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-1-hi",
+   "task": "escalate",
+   "lang": "hi",
+   "text": "आपसे खरीदा चार्जर लगाते ही उसमें से चिंगारी निकली और मेरा हाथ जल गया। यह बहुत खतरनाक है।",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": true
+   }
+  },
+  {
+   "id": "escalate-1-mr",
+   "task": "escalate",
+   "lang": "mr",
+   "text": "तुमच्याकडून घेतलेला चार्जर लावताच त्यातून ठिणगी आली आणि माझा हात भाजला. हे खूप धोकादायक आहे.",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": true
+   }
+  },
+  {
+   "id": "escalate-1-ta",
+   "task": "escalate",
+   "lang": "ta",
+   "text": "உங்களிடம் வாங்கிய சார்ஜரை போட்டவுடன் தீப்பொறி வந்து என் கை சுட்டுவிட்டது. இது மிகவும் ஆபத்தானது.",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": true
+   }
+  },
+  {
+   "id": "escalate-1-te",
+   "task": "escalate",
+   "lang": "te",
+   "text": "మీ దగ్గర కొన్న ఛార్జర్ పెట్టగానే నిప్పురవ్వలు వచ్చి నా చేయి కాలింది. ఇది చాలా ప్రమాదకరం.",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": true
+   }
+  },
+  {
+   "id": "escalate-1-bn",
+   "task": "escalate",
+   "lang": "bn",
+   "text": "আপনাদের থেকে কেনা চার্জারটা লাগাতেই স্পার্ক করল আর আমার হাত পুড়ে গেল। এটা খুব বিপজ্জনক।",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": true
+   }
+  },
+  {
+   "id": "escalate-1-hinglish",
+   "task": "escalate",
+   "lang": "hinglish",
+   "text": "Aapse kharida charger lagate hi usme se spark nikla aur mera haath jal gaya. Yeh bahut dangerous hai.",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": true
+   }
+  },
+  {
+   "id": "escalate-2-hi",
+   "task": "escalate",
+   "lang": "hi",
+   "text": "ऑर्डर SK34907727 का रिफंड अब तक नहीं मिला। अगर इस हफ्ते नहीं मिला तो मैं उपभोक्ता अदालत में शिकायत दर्ज करूँगा।",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": true
+   }
+  },
+  {
+   "id": "escalate-2-mr",
+   "task": "escalate",
+   "lang": "mr",
+   "text": "ऑर्डर SK90270204 चा रिफंड अजून मिळाला नाही. या आठवड्यात मिळाला नाही तर मी ग्राहक न्यायालयात तक्रार करेन.",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": true
+   }
+  },
+  {
+   "id": "escalate-2-ta",
+   "task": "escalate",
+   "lang": "ta",
+   "text": "ஆர்டர் SK56350466 ரீஃபண்ட் இன்னும் கிடைக்கவில்லை. இந்த வாரத்துக்குள் கிடைக்கவில்லை என்றால் நுகர்வோர் நீதிமன்றத்தில் புகார் செய்வேன்.",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": true
+   }
+  },
+  {
+   "id": "escalate-2-te",
+   "task": "escalate",
+   "lang": "te",
+   "text": "ఆర్డర్ SK31851906 రీఫండ్ ఇంకా రాలేదు. ఈ వారంలో రాకపోతే వినియోగదారుల కోర్టులో ఫిర్యాదు చేస్తాను.",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": true
+   }
+  },
+  {
+   "id": "escalate-2-bn",
+   "task": "escalate",
+   "lang": "bn",
+   "text": "অর্ডার SK72844322-এর রিফান্ড এখনও পাইনি। এই সপ্তাহে না পেলে আমি কনজিউমার কোর্টে অভিযোগ করব।",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": true
+   }
+  },
+  {
+   "id": "escalate-2-hinglish",
+   "task": "escalate",
+   "lang": "hinglish",
+   "text": "Order SK33233925 ka refund ab tak nahi mila. Is hafte nahi mila to main consumer court mein complaint karunga.",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": true
+   }
+  },
+  {
+   "id": "escalate-3-hi",
+   "task": "escalate",
+   "lang": "hi",
+   "text": "कृपया ऑर्डर SK66457041 का डिलीवरी पता बदलकर मेरे ऑफिस का पता कर दीजिए। पता प्रोफ़ाइल में सेव है।",
+   "gold": {
+    "sentiment": "neutral",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-3-mr",
+   "task": "escalate",
+   "lang": "mr",
+   "text": "कृपया ऑर्डर SK62608695 चा डिलिव्हरी पत्ता बदलून माझ्या ऑफिसचा पत्ता करा. पत्ता प्रोफाइलमध्ये सेव्ह आहे.",
+   "gold": {
+    "sentiment": "neutral",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-3-ta",
+   "task": "escalate",
+   "lang": "ta",
+   "text": "தயவுசெய்து ஆர்டர் SK25888509-இன் டெலிவரி முகவரியை என் அலுவலக முகவரிக்கு மாற்றுங்கள். முகவரி ப்ரொஃபைலில் சேமிக்கப்பட்டுள்ளது.",
+   "gold": {
+    "sentiment": "neutral",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-3-te",
+   "task": "escalate",
+   "lang": "te",
+   "text": "దయచేసి ఆర్డర్ SK95738039 డెలివరీ అడ్రస్‌ను నా ఆఫీసు అడ్రస్‌కు మార్చండి. అడ్రస్ ప్రొఫైల్‌లో సేవ్ అయి ఉంది.",
+   "gold": {
+    "sentiment": "neutral",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-3-bn",
+   "task": "escalate",
+   "lang": "bn",
+   "text": "দয়া করে অর্ডার SK97180221-এর ডেলিভারি ঠিকানা বদলে আমার অফিসের ঠিকানা করে দিন। ঠিকানাটা প্রোফাইলে সেভ করা আছে।",
+   "gold": {
+    "sentiment": "neutral",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-3-hinglish",
+   "task": "escalate",
+   "lang": "hinglish",
+   "text": "Please order SK80036548 ka delivery address change karke mere office ka address kar do. Address profile mein saved hai.",
+   "gold": {
+    "sentiment": "neutral",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-4-hi",
+   "task": "escalate",
+   "lang": "hi",
+   "text": "आज का खाना बिल्कुल ठंडा आया और दाल में नमक बहुत ज़्यादा था। बहुत निराशा हुई।",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-4-mr",
+   "task": "escalate",
+   "lang": "mr",
+   "text": "आजचे जेवण पूर्ण थंड आले आणि डाळीत मीठ खूप जास्त होते. खूप निराशा झाली.",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-4-ta",
+   "task": "escalate",
+   "lang": "ta",
+   "text": "இன்றைய சாப்பாடு முழுவதும் ஆறிப்போய் வந்தது, பருப்பில் உப்பு அதிகமாக இருந்தது. மிகவும் ஏமாற்றமாக இருந்தது.",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-4-te",
+   "task": "escalate",
+   "lang": "te",
+   "text": "ఈరోజు భోజనం పూర్తిగా చల్లగా వచ్చింది, పప్పులో ఉప్పు చాలా ఎక్కువగా ఉంది. చాలా నిరాశ కలిగింది.",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-4-bn",
+   "task": "escalate",
+   "lang": "bn",
+   "text": "আজকের খাবার একদম ঠান্ডা এসেছে আর ডালে নুন খুব বেশি ছিল। খুব হতাশ হলাম।",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": false
+   }
+  },
+  {
+   "id": "escalate-4-hinglish",
+   "task": "escalate",
+   "lang": "hinglish",
+   "text": "Aaj ka khana bilkul thanda aaya aur dal mein namak bahut zyada tha. Bahut disappointing tha.",
+   "gold": {
+    "sentiment": "negative",
+    "escalate": false
+   }
+  },
+  {
+   "id": "extract-0-hi",
+   "task": "extract",
+   "lang": "hi",
+   "text": "नमस्ते, श्री लक्ष्मी ट्रेडर्स की ओर से इनवॉइस संख्या SLT876 संलग्न है। GSTIN: 36MLWFS2032K1ZT (SAMPLE – परीक्षण हेतु)। माल का मूल्य ₹1,65,400, GST 18% ₹29,772, कुल देय राशि ₹1,95,172। कृपया 11 नवंबर 2026 तक भुगतान करें।",
+   "gold": {
+    "invoice_no": "SLT876",
+    "gstin": "36MLWFS2032K1ZT",
+    "total_inr": 195172,
+    "due_date": "2026-11-11"
+   }
+  },
+  {
+   "id": "extract-0-mr",
+   "task": "extract",
+   "lang": "mr",
+   "text": "नमस्कार, श्री लक्ष्मी ट्रेडर्सकडून इनव्हॉइस क्रमांक INV2118 सोबत जोडला आहे. GSTIN: 07ABXFF1610X1ZF (SAMPLE – चाचणीसाठी). मालाची किंमत ₹2,40,900, GST 18% ₹43,362, एकूण देय रक्कम ₹2,84,262. कृपया 5 ऑक्टोबर 2026 पर्यंत पैसे भरा.",
+   "gold": {
+    "invoice_no": "INV2118",
+    "gstin": "07ABXFF1610X1ZF",
+    "total_inr": 284262,
+    "due_date": "2026-10-05"
+   }
+  },
+  {
+   "id": "extract-0-ta",
+   "task": "extract",
+   "lang": "ta",
+   "text": "வணக்கம், ஸ்ரீ லட்சுமி டிரேடர்ஸ் சார்பில் இன்வாய்ஸ் எண் AL/26-27/7559 இணைக்கப்பட்டுள்ளது. GSTIN: 19LFBFN7751E1ZM (SAMPLE – சோதனைக்காக). பொருட்களின் மதிப்பு ₹21,050, GST 18% ₹3,789, மொத்தம் செலுத்த வேண்டியது ₹24,839. தயவுசெய்து 19 நவம்பர் 2026-க்குள் பணம் செலுத்தவும்.",
+   "gold": {
+    "invoice_no": "AL/26-27/7559",
+    "gstin": "19LFBFN7751E1ZM",
+    "total_inr": 24839,
+    "due_date": "2026-11-19"
+   }
+  },
+  {
+   "id": "extract-0-te",
+   "task": "extract",
+   "lang": "te",
+   "text": "నమస్కారం, శ్రీ లక్ష్మి ట్రేడర్స్ తరఫున ఇన్‌వాయిస్ నంబర్ INV8899 జత చేశాము. GSTIN: 07DKYFW5094W1ZR (SAMPLE – పరీక్ష కోసం). సరుకు విలువ ₹64,400, GST 18% ₹11,592, మొత్తం చెల్లించాల్సింది ₹75,992. దయచేసి 25 అక్టోబర్ 2026 లోగా చెల్లించండి.",
+   "gold": {
+    "invoice_no": "INV8899",
+    "gstin": "07DKYFW5094W1ZR",
+    "total_inr": 75992,
+    "due_date": "2026-10-25"
+   }
+  },
+  {
+   "id": "extract-0-bn",
+   "task": "extract",
+   "lang": "bn",
+   "text": "নমস্কার, শ্রী লক্ষ্মী ট্রেডার্সের পক্ষ থেকে ইনভয়েস নম্বর SLT5110 সংযুক্ত করা হলো। GSTIN: 24YPEFA5817K1ZZ (SAMPLE – পরীক্ষার জন্য)। মালের দাম ₹24,650, GST 18% ₹4,437, মোট প্রদেয় ₹29,087। অনুগ্রহ করে 7 অক্টোবর 2026-এর মধ্যে পেমেন্ট করুন।",
+   "gold": {
+    "invoice_no": "SLT5110",
+    "gstin": "24YPEFA5817K1ZZ",
+    "total_inr": 29087,
+    "due_date": "2026-10-07"
+   }
+  },
+  {
+   "id": "extract-0-hinglish",
+   "task": "extract",
+   "lang": "hinglish",
+   "text": "Namaste, Shri Lakshmi Traders ki taraf se invoice number SLT5649 attach hai. GSTIN: 24SXRFE0796F1ZF (SAMPLE – testing ke liye). Maal ki value ₹12,850, GST 18% ₹2,313, total payable ₹15,163. Please 23 December 2026 tak payment kar dijiye.",
+   "gold": {
+    "invoice_no": "SLT5649",
+    "gstin": "24SXRFE0796F1ZF",
+    "total_inr": 15163,
+    "due_date": "2026-12-23"
+   }
+  },
+  {
+   "id": "extract-1-hi",
+   "task": "extract",
+   "lang": "hi",
+   "text": "स्मरण पत्र: गणेश पैकेजिंग का बिल MT5299, दिनांक 13 सितंबर 2026, अभी तक बकाया है। कुल राशि ₹1,72,575 (₹1,46,250 + GST ₹26,325)। भुगतान की अंतिम तिथि 11 दिसंबर 2026 है। विक्रेता GSTIN 29EBQFB5880N1ZC (SAMPLE)।",
+   "gold": {
+    "invoice_no": "MT5299",
+    "gstin": "29EBQFB5880N1ZC",
+    "total_inr": 172575,
+    "due_date": "2026-12-11"
+   }
+  },
+  {
+   "id": "extract-1-mr",
+   "task": "extract",
+   "lang": "mr",
+   "text": "आठवण: गणेश पॅकेजिंगचे बिल MT1584, दिनांक 8 जुलै 2026, अजून थकित आहे. एकूण रक्कम ₹1,78,711 (₹1,51,450 + GST ₹27,261). पैसे भरण्याची शेवटची तारीख 22 डिसेंबर 2026 आहे. विक्रेता GSTIN 07DCMFR6422W1ZZ (SAMPLE).",
+   "gold": {
+    "invoice_no": "MT1584",
+    "gstin": "07DCMFR6422W1ZZ",
+    "total_inr": 178711,
+    "due_date": "2026-12-22"
+   }
+  },
+  {
+   "id": "extract-1-ta",
+   "task": "extract",
+   "lang": "ta",
+   "text": "நினைவூட்டல்: கணேஷ் பேக்கேஜிங் பில் MT6422, தேதி 7 ஜூலை 2026, இன்னும் நிலுவையில் உள்ளது. மொத்தத் தொகை ₹77,231 (₹65,450 + GST ₹11,781). பணம் செலுத்த கடைசி நாள் 22 நவம்பர் 2026. விற்பனையாளர் GSTIN 07GCTFE9982C1ZK (SAMPLE).",
+   "gold": {
+    "invoice_no": "MT6422",
+    "gstin": "07GCTFE9982C1ZK",
+    "total_inr": 77231,
+    "due_date": "2026-11-22"
+   }
+  },
+  {
+   "id": "extract-1-te",
+   "task": "extract",
+   "lang": "te",
+   "text": "రిమైండర్: గణేష్ ప్యాకేజింగ్ బిల్లు SLT4161, తేదీ 22 మార్చి 2026, ఇంకా బకాయి ఉంది. మొత్తం ₹2,21,250 (₹1,87,500 + GST ₹33,750). చెల్లింపుకు చివరి తేదీ 21 నవంబర్ 2026. విక్రేత GSTIN 09LKUFJ2076M1ZO (SAMPLE).",
+   "gold": {
+    "invoice_no": "SLT4161",
+    "gstin": "09LKUFJ2076M1ZO",
+    "total_inr": 221250,
+    "due_date": "2026-11-21"
+   }
+  },
+  {
+   "id": "extract-1-bn",
+   "task": "extract",
+   "lang": "bn",
+   "text": "অনুস্মারক: গণেশ প্যাকেজিংয়ের বিল INV6949, তারিখ 14 জানুয়ারি 2026, এখনও বকেয়া। মোট টাকা ₹2,86,150 (₹2,42,500 + GST ₹43,650)। পেমেন্টের শেষ তারিখ 28 অক্টোবর 2026। বিক্রেতার GSTIN 27PCDFR2168C1ZW (SAMPLE)।",
+   "gold": {
+    "invoice_no": "INV6949",
+    "gstin": "27PCDFR2168C1ZW",
+    "total_inr": 286150,
+    "due_date": "2026-10-28"
+   }
+  },
+  {
+   "id": "extract-1-hinglish",
+   "task": "extract",
+   "lang": "hinglish",
+   "text": "Reminder: Ganesh Packaging ka bill SLT6552, dated 4 July 2026, abhi tak pending hai. Total amount ₹42,834 (₹36,300 + GST ₹6,534). Payment ki last date 27 November 2026 hai. Seller GSTIN 33AQQFV7648X1ZQ (SAMPLE).",
+   "gold": {
+    "invoice_no": "SLT6552",
+    "gstin": "33AQQFV7648X1ZQ",
+    "total_inr": 42834,
+    "due_date": "2026-11-27"
+   }
+  },
+  {
+   "id": "extract-2-hi",
+   "task": "extract",
+   "lang": "hi",
+   "text": "आनंद लॉजिस्टिक्स – भाड़ा बिल नं. KOS-480। भाड़ा ₹2,35,950, GST ₹42,471, कुल ₹2,78,421। GSTIN 33STMFR4233M1ZD (SAMPLE)। भुगतान 15 दिसंबर 2026 तक करें। किसी सवाल के लिए 98765 43210 पर कॉल करें।",
+   "gold": {
+    "invoice_no": "KOS-480",
+    "gstin": "33STMFR4233M1ZD",
+    "total_inr": 278421,
+    "due_date": "2026-12-15"
+   }
+  },
+  {
+   "id": "extract-2-mr",
+   "task": "extract",
+   "lang": "mr",
+   "text": "आनंद लॉजिस्टिक्स – भाडे बिल क्र. SLT565. भाडे ₹14,750, GST ₹2,655, एकूण ₹17,405. GSTIN 24FQLFB8300E1ZT (SAMPLE). 6 नोव्हेंबर 2026 पर्यंत पैसे भरा. काही प्रश्न असल्यास 98765 43210 वर कॉल करा.",
+   "gold": {
+    "invoice_no": "SLT565",
+    "gstin": "24FQLFB8300E1ZT",
+    "total_inr": 17405,
+    "due_date": "2026-11-06"
+   }
+  },
+  {
+   "id": "extract-2-ta",
+   "task": "extract",
+   "lang": "ta",
+   "text": "ஆனந்த் லாஜிஸ்டிக்ஸ் – சரக்குக் கட்டண பில் எண் MT4019. கட்டணம் ₹1,47,450, GST ₹26,541, மொத்தம் ₹1,73,991. GSTIN 09DSYFS4558P1ZQ (SAMPLE). 5 அக்டோபர் 2026-க்குள் செலுத்தவும். சந்தேகங்களுக்கு 98765 43210 என்ற எண்ணை அழைக்கவும்.",
+   "gold": {
+    "invoice_no": "MT4019",
+    "gstin": "09DSYFS4558P1ZQ",
+    "total_inr": 173991,
+    "due_date": "2026-10-05"
+   }
+  },
+  {
+   "id": "extract-2-te",
+   "task": "extract",
+   "lang": "te",
+   "text": "ఆనంద్ లాజిస్టిక్స్ – రవాణా ఛార్జీల బిల్లు నం. SLT9617. ఛార్జీ ₹1,99,000, GST ₹35,820, మొత్తం ₹2,34,820. GSTIN 27GTLFK3096Z1ZP (SAMPLE). 3 నవంబర్ 2026 లోగా చెల్లించండి. సందేహాలుంటే 98765 43210కి కాల్ చేయండి.",
+   "gold": {
+    "invoice_no": "SLT9617",
+    "gstin": "27GTLFK3096Z1ZP",
+    "total_inr": 234820,
+    "due_date": "2026-11-03"
+   }
+  },
+  {
+   "id": "extract-2-bn",
+   "task": "extract",
+   "lang": "bn",
+   "text": "আনন্দ লজিস্টিকস – ভাড়ার বিল নং INV8151। ভাড়া ₹1,62,750, GST ₹29,295, মোট ₹1,92,045। GSTIN 33BTJFS1913W1ZF (SAMPLE)। 19 অক্টোবর 2026-এর মধ্যে পেমেন্ট করুন। কোনো প্রশ্ন থাকলে 98765 43210 নম্বরে ফোন করুন।",
+   "gold": {
+    "invoice_no": "INV8151",
+    "gstin": "33BTJFS1913W1ZF",
+    "total_inr": 192045,
+    "due_date": "2026-10-19"
+   }
+  },
+  {
+   "id": "extract-2-hinglish",
+   "task": "extract",
+   "lang": "hinglish",
+   "text": "Anand Logistics – freight bill no. MT6006. Bhaada ₹1,74,850, GST ₹31,473, total ₹2,06,323. GSTIN 29RYEFG9082G1Z8 (SAMPLE). 24 October 2026 tak payment karein. Koi sawaal ho to 98765 43210 pe call karein.",
+   "gold": {
+    "invoice_no": "MT6006",
+    "gstin": "29RYEFG9082G1Z8",
+    "total_inr": 206323,
+    "due_date": "2026-10-24"
+   }
+  },
+  {
+   "id": "extract-3-hi",
+   "task": "extract",
+   "lang": "hi",
+   "text": "कावेरी ऑफिस स्पेसेज़: अक्टूबर महीने का किराया इनवॉइस AL/26-27/9641। किराया ₹2,49,000, GST (18%) ₹44,820, कुल ₹2,93,820। देय तिथि: 11 नवंबर 2026। हमारा GSTIN 07WFRFH6678D1Z0 (SAMPLE) है।",
+   "gold": {
+    "invoice_no": "AL/26-27/9641",
+    "gstin": "07WFRFH6678D1Z0",
+    "total_inr": 293820,
+    "due_date": "2026-11-11"
+   }
+  },
+  {
+   "id": "extract-3-mr",
+   "task": "extract",
+   "lang": "mr",
+   "text": "कावेरी ऑफिस स्पेसेस: ऑक्टोबर महिन्याचे भाडे इनव्हॉइस MT5681. भाडे ₹25,650, GST (18%) ₹4,617, एकूण ₹30,267. देय तारीख: 9 ऑक्टोबर 2026. आमचा GSTIN 24KTMFE5921A1ZH (SAMPLE) आहे.",
+   "gold": {
+    "invoice_no": "MT5681",
+    "gstin": "24KTMFE5921A1ZH",
+    "total_inr": 30267,
+    "due_date": "2026-10-09"
+   }
+  },
+  {
+   "id": "extract-3-ta",
+   "task": "extract",
+   "lang": "ta",
+   "text": "காவேரி ஆபீஸ் ஸ்பேசஸ்: அக்டோபர் மாத வாடகை இன்வாய்ஸ் AL/26-27/1185. வாடகை ₹10,900, GST (18%) ₹1,962, மொத்தம் ₹12,862. செலுத்த வேண்டிய தேதி: 16 அக்டோபர் 2026. எங்கள் GSTIN 27FCLFJ2078B1Z7 (SAMPLE).",
+   "gold": {
+    "invoice_no": "AL/26-27/1185",
+    "gstin": "27FCLFJ2078B1Z7",
+    "total_inr": 12862,
+    "due_date": "2026-10-16"
+   }
+  },
+  {
+   "id": "extract-3-te",
+   "task": "extract",
+   "lang": "te",
+   "text": "కావేరి ఆఫీస్ స్పేసెస్: అక్టోబర్ నెల అద్దె ఇన్‌వాయిస్ GP9802. అద్దె ₹2,26,650, GST (18%) ₹40,797, మొత్తం ₹2,67,447. చెల్లింపు తేదీ: 12 డిసెంబర్ 2026. మా GSTIN 09EQZFL5144W1ZT (SAMPLE).",
+   "gold": {
+    "invoice_no": "GP9802",
+    "gstin": "09EQZFL5144W1ZT",
+    "total_inr": 267447,
+    "due_date": "2026-12-12"
+   }
+  },
+  {
+   "id": "extract-3-bn",
+   "task": "extract",
+   "lang": "bn",
+   "text": "কাবেরী অফিস স্পেসেস: অক্টোবর মাসের ভাড়ার ইনভয়েস INV2563। ভাড়া ₹1,55,750, GST (18%) ₹28,035, মোট ₹1,83,785। প্রদানের তারিখ: 9 অক্টোবর 2026। আমাদের GSTIN 09TVFFA7564F1ZM (SAMPLE)।",
+   "gold": {
+    "invoice_no": "INV2563",
+    "gstin": "09TVFFA7564F1ZM",
+    "total_inr": 183785,
+    "due_date": "2026-10-09"
+   }
+  },
+  {
+   "id": "extract-3-hinglish",
+   "task": "extract",
+   "lang": "hinglish",
+   "text": "Kaveri Office Spaces: October mahine ka rent invoice KOS-4937. Rent ₹2,40,950, GST (18%) ₹43,371, total ₹2,84,321. Due date: 2 October 2026. Hamara GSTIN 29MQMFK4135C1Z5 (SAMPLE) hai.",
+   "gold": {
+    "invoice_no": "KOS-4937",
+    "gstin": "29MQMFK4135C1Z5",
+    "total_inr": 284321,
+    "due_date": "2026-10-02"
+   }
+  },
+  {
+   "id": "extract-4-hi",
+   "task": "extract",
+   "lang": "hi",
+   "text": "मीरा टेक्सटाइल्स से: पिछला बिल ₹2,100 का आपने चुका दिया है, धन्यवाद। नया इनवॉइस MT5646: कपड़ा ₹98,850 + GST ₹17,793 = ₹1,16,643, 14 दिसंबर 2026 तक देय। GSTIN 24QVYFB5577K1Z1 (SAMPLE)।",
+   "gold": {
+    "invoice_no": "MT5646",
+    "gstin": "24QVYFB5577K1Z1",
+    "total_inr": 116643,
+    "due_date": "2026-12-14"
+   }
+  },
+  {
+   "id": "extract-4-mr",
+   "task": "extract",
+   "lang": "mr",
+   "text": "मीरा टेक्सटाइल्सकडून: मागील ₹80,750 चे बिल तुम्ही भरले आहे, धन्यवाद. नवीन इनव्हॉइस MT4587: कापड ₹1,94,100 + GST ₹34,938 = ₹2,29,038, 11 नोव्हेंबर 2026 पर्यंत देय. GSTIN 33DLDFC1463F1Z9 (SAMPLE).",
+   "gold": {
+    "invoice_no": "MT4587",
+    "gstin": "33DLDFC1463F1Z9",
+    "total_inr": 229038,
+    "due_date": "2026-11-11"
+   }
+  },
+  {
+   "id": "extract-4-ta",
+   "task": "extract",
+   "lang": "ta",
+   "text": "மீரா டெக்ஸ்டைல்ஸ்: முந்தைய ₹60,000 பில்லை செலுத்தியதற்கு நன்றி. புதிய இன்வாய்ஸ் MT2102: துணி ₹67,850 + GST ₹12,213 = ₹80,063, 24 டிசம்பர் 2026-க்குள் செலுத்த வேண்டும். GSTIN 24FLAFL7370V1ZT (SAMPLE).",
+   "gold": {
+    "invoice_no": "MT2102",
+    "gstin": "24FLAFL7370V1ZT",
+    "total_inr": 80063,
+    "due_date": "2026-12-24"
+   }
+  },
+  {
+   "id": "extract-4-te",
+   "task": "extract",
+   "lang": "te",
+   "text": "మీరా టెక్స్‌టైల్స్: గత ₹43,650 బిల్లు చెల్లించినందుకు ధన్యవాదాలు. కొత్త ఇన్‌వాయిస్ MT5199: బట్ట ₹2,09,900 + GST ₹37,782 = ₹2,47,682, 16 అక్టోబర్ 2026 లోగా చెల్లించాలి. GSTIN 07UKBFN2260R1ZU (SAMPLE).",
+   "gold": {
+    "invoice_no": "MT5199",
+    "gstin": "07UKBFN2260R1ZU",
+    "total_inr": 247682,
+    "due_date": "2026-10-16"
+   }
+  },
+  {
+   "id": "extract-4-bn",
+   "task": "extract",
+   "lang": "bn",
+   "text": "মীরা টেক্সটাইলস: আগের ₹83,950-এর বিল মিটিয়ে দেওয়ার জন্য ধন্যবাদ। নতুন ইনভয়েস AL/26-27/6336: কাপড় ₹1,14,450 + GST ₹20,601 = ₹1,35,051, 23 ডিসেম্বর 2026-এর মধ্যে দিতে হবে। GSTIN 27HLTFH5990U1Z2 (SAMPLE)।",
+   "gold": {
+    "invoice_no": "AL/26-27/6336",
+    "gstin": "27HLTFH5990U1Z2",
+    "total_inr": 135051,
+    "due_date": "2026-12-23"
+   }
+  },
+  {
+   "id": "extract-4-hinglish",
+   "task": "extract",
+   "lang": "hinglish",
+   "text": "Meera Textiles: pichhla ₹4,950 ka bill clear karne ke liye thanks. Naya invoice INV7520: kapda ₹1,12,900 + GST ₹20,322 = ₹1,33,222, 24 November 2026 tak due hai. GSTIN 09MYAFG2993Y1ZK (SAMPLE).",
+   "gold": {
+    "invoice_no": "INV7520",
+    "gstin": "09MYAFG2993Y1ZK",
+    "total_inr": 133222,
+    "due_date": "2026-11-24"
+   }
+  }
+ ]
+}

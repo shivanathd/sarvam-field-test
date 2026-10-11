@@ -1,0 +1,2078 @@
+{
+ "uc": "uc06_offline_agri",
+ "title": "Offline crop advisory",
+ "business_question": "Can an open-weight model running on a local box (no internet, possibly no GPU) answer farmers' questions correctly from an advisory sheet, in their own language and script?",
+ "dataset": {
+  "name": "uc06 advisory sheet + farmer questions",
+  "source": "authored for this benchmark (make_data.py, advisory_sheet.md)",
+  "license": "CC-BY-4.0 (this repo)",
+  "n": 70,
+  "languages": [
+   "Hindi",
+   "Marathi",
+   "Kannada",
+   "Telugu",
+   "Tamil",
+   "Punjabi"
+  ],
+  "synthetic": true,
+  "how_made": "770-word English advisory sheet (paddy, cotton, soybean, wheat, a clearly FICTIONAL seed scheme, spraying rules) modelled on typical package-of-practice figures; 30 facts x (native script + romanised) = 60 in-scope questions, 5 per language per script, plus 10 out-of-scope questions; gold = the number(s) from the sheet."
+ },
+ "systems": [
+  "sarvam-30b-local-nothink",
+  "sarvam-30b-local-think",
+  "qwen3-30b-local-nothink",
+  "qwen3-30b-local-think",
+  "sarvam-30b-cpu-nothink",
+  "qwen3-30b-cpu-nothink",
+  "sarvam-105b",
+  "gemini-3.8-flash",
+  "openai:gpt-5.4-mini",
+  "or:anthropic/claude-haiku-5.5",
+  "gemini-pro-latest-think",
+  "openai:gpt-5.5-think",
+  "or:anthropic/claude-sonnet-5.5-think"
+ ],
+ "metrics": [
+  {
+   "name": "overall_pass_subset30",
+   "higher_is_better": true,
+   "unit": "overall pass on the fixed 30-question subset (10 OOS + 20 in-scope) - compare frontier here",
+   "values": {
+    "sarvam-30b-local-nothink": {
+     "mean": 0.5,
+     "lo": 0.3333333333333333,
+     "hi": 0.6666666666666666,
+     "n": 30
+    },
+    "sarvam-30b-local-think": {
+     "mean": 0.6,
+     "lo": 0.43333333333333335,
+     "hi": 0.7666666666666667,
+     "n": 30
+    },
+    "qwen3-30b-local-nothink": {
+     "mean": 0.4,
+     "lo": 0.23333333333333334,
+     "hi": 0.5666666666666667,
+     "n": 30
+    },
+    "qwen3-30b-local-think": {
+     "mean": 0.6,
+     "lo": 0.43333333333333335,
+     "hi": 0.7666666666666667,
+     "n": 30
+    },
+    "sarvam-30b-cpu-nothink": {
+     "mean": 0.5333333333333333,
+     "lo": 0.36666666666666664,
+     "hi": 0.7,
+     "n": 30
+    },
+    "qwen3-30b-cpu-nothink": {
+     "mean": 0.43333333333333335,
+     "lo": 0.26666666666666666,
+     "hi": 0.6,
+     "n": 30
+    },
+    "sarvam-105b": {
+     "mean": 0.9,
+     "lo": 0.7666666666666667,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9333333333333333,
+     "lo": 0.8333333333333334,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.7,
+     "lo": 0.5333333333333333,
+     "hi": 0.8666666666666667,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.7,
+     "lo": 0.5333333333333333,
+     "hi": 0.8666666666666667,
+     "n": 30
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    }
+   }
+  },
+  {
+   "name": "oos_refusal_subset30",
+   "higher_is_better": true,
+   "unit": "same as oos_refusal (all 10 OOS are in the subset)",
+   "values": {
+    "sarvam-30b-local-nothink": {
+     "mean": 0.1,
+     "lo": 0.0,
+     "hi": 0.3,
+     "n": 10
+    },
+    "sarvam-30b-local-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "qwen3-30b-local-nothink": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 10
+    },
+    "qwen3-30b-local-think": {
+     "mean": 0.9,
+     "lo": 0.7,
+     "hi": 1.0,
+     "n": 10
+    },
+    "sarvam-30b-cpu-nothink": {
+     "mean": 0.1,
+     "lo": 0.0,
+     "hi": 0.3,
+     "n": 10
+    },
+    "qwen3-30b-cpu-nothink": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 10
+    },
+    "sarvam-105b": {
+     "mean": 0.8,
+     "lo": 0.5,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    }
+   }
+  },
+  {
+   "name": "grounded_correct_subset30",
+   "higher_is_better": true,
+   "unit": "grounded correct on the subset's 20 in-scope questions",
+   "values": {
+    "sarvam-30b-local-nothink": {
+     "mean": 0.7,
+     "lo": 0.5,
+     "hi": 0.9,
+     "n": 20
+    },
+    "sarvam-30b-local-think": {
+     "mean": 0.65,
+     "lo": 0.45,
+     "hi": 0.85,
+     "n": 20
+    },
+    "qwen3-30b-local-nothink": {
+     "mean": 0.65,
+     "lo": 0.45,
+     "hi": 0.85,
+     "n": 20
+    },
+    "qwen3-30b-local-think": {
+     "mean": 0.65,
+     "lo": 0.45,
+     "hi": 0.85,
+     "n": 20
+    },
+    "sarvam-30b-cpu-nothink": {
+     "mean": 0.75,
+     "lo": 0.55,
+     "hi": 0.9,
+     "n": 20
+    },
+    "qwen3-30b-cpu-nothink": {
+     "mean": 0.7,
+     "lo": 0.5,
+     "hi": 0.9,
+     "n": 20
+    },
+    "sarvam-105b": {
+     "mean": 0.95,
+     "lo": 0.85,
+     "hi": 1.0,
+     "n": 20
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.65,
+     "lo": 0.45,
+     "hi": 0.85,
+     "n": 20
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.6,
+     "lo": 0.4,
+     "hi": 0.8,
+     "n": 20
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    }
+   }
+  },
+  {
+   "name": "grounded_correct",
+   "higher_is_better": true,
+   "unit": "share of 60 in-scope answers with every gold number and no refusal",
+   "values": {
+    "sarvam-30b-local-nothink": {
+     "mean": 0.7333333333333333,
+     "lo": 0.6166666666666667,
+     "hi": 0.8333333333333334,
+     "n": 60
+    },
+    "sarvam-30b-local-think": {
+     "mean": 0.7333333333333333,
+     "lo": 0.6166666666666667,
+     "hi": 0.85,
+     "n": 60
+    },
+    "qwen3-30b-local-nothink": {
+     "mean": 0.6833333333333333,
+     "lo": 0.5666666666666667,
+     "hi": 0.8,
+     "n": 60
+    },
+    "qwen3-30b-local-think": {
+     "mean": 0.7666666666666667,
+     "lo": 0.6666666666666666,
+     "hi": 0.8666666666666667,
+     "n": 60
+    },
+    "sarvam-30b-cpu-nothink": {
+     "mean": 0.7333333333333333,
+     "lo": 0.6166666666666667,
+     "hi": 0.8333333333333334,
+     "n": 60
+    },
+    "qwen3-30b-cpu-nothink": {
+     "mean": 0.7333333333333333,
+     "lo": 0.6166666666666667,
+     "hi": 0.85,
+     "n": 60
+    },
+    "sarvam-105b": {
+     "mean": 0.95,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 60
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 60
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.75,
+     "lo": 0.65,
+     "hi": 0.85,
+     "n": 60
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.7,
+     "lo": 0.5833333333333334,
+     "hi": 0.8166666666666667,
+     "n": 60
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    }
+   }
+  },
+  {
+   "name": "reply_language_correct",
+   "higher_is_better": true,
+   "unit": "share of all 70 answers in the farmer's language+script",
+   "values": {
+    "sarvam-30b-local-nothink": {
+     "mean": 0.9571428571428572,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 70
+    },
+    "sarvam-30b-local-think": {
+     "mean": 0.7571428571428571,
+     "lo": 0.6571428571428571,
+     "hi": 0.8571428571428571,
+     "n": 70
+    },
+    "qwen3-30b-local-nothink": {
+     "mean": 0.9,
+     "lo": 0.8142857142857143,
+     "hi": 0.9714285714285714,
+     "n": 70
+    },
+    "qwen3-30b-local-think": {
+     "mean": 0.8571428571428571,
+     "lo": 0.7714285714285715,
+     "hi": 0.9285714285714286,
+     "n": 70
+    },
+    "sarvam-30b-cpu-nothink": {
+     "mean": 0.9571428571428572,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 70
+    },
+    "qwen3-30b-cpu-nothink": {
+     "mean": 0.8571428571428571,
+     "lo": 0.7714285714285715,
+     "hi": 0.9285714285714286,
+     "n": 70
+    },
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 70
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9571428571428572,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 70
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.7857142857142857,
+     "lo": 0.6857142857142857,
+     "hi": 0.8714285714285714,
+     "n": 70
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.8714285714285714,
+     "lo": 0.7857142857142857,
+     "hi": 0.9428571428571428,
+     "n": 70
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    }
+   }
+  },
+  {
+   "name": "oos_refusal",
+   "higher_is_better": true,
+   "unit": "share of 10 out-of-scope questions answered NOT_IN_SHEET",
+   "values": {
+    "sarvam-30b-local-nothink": {
+     "mean": 0.1,
+     "lo": 0.0,
+     "hi": 0.3,
+     "n": 10
+    },
+    "sarvam-30b-local-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "qwen3-30b-local-nothink": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 10
+    },
+    "qwen3-30b-local-think": {
+     "mean": 0.9,
+     "lo": 0.7,
+     "hi": 1.0,
+     "n": 10
+    },
+    "sarvam-30b-cpu-nothink": {
+     "mean": 0.1,
+     "lo": 0.0,
+     "hi": 0.3,
+     "n": 10
+    },
+    "qwen3-30b-cpu-nothink": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 10
+    },
+    "sarvam-105b": {
+     "mean": 0.8,
+     "lo": 0.5,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    }
+   }
+  },
+  {
+   "name": "oos_refusal_lenient",
+   "higher_is_better": true,
+   "unit": "share of out-of-scope questions refused with the code OR redirected to the KVK helpline",
+   "values": {
+    "sarvam-30b-local-nothink": {
+     "mean": 0.3,
+     "lo": 0.1,
+     "hi": 0.6,
+     "n": 10
+    },
+    "sarvam-30b-local-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "qwen3-30b-local-nothink": {
+     "mean": 0.4,
+     "lo": 0.1,
+     "hi": 0.7,
+     "n": 10
+    },
+    "qwen3-30b-local-think": {
+     "mean": 0.9,
+     "lo": 0.7,
+     "hi": 1.0,
+     "n": 10
+    },
+    "sarvam-30b-cpu-nothink": {
+     "mean": 0.2,
+     "lo": 0.0,
+     "hi": 0.5,
+     "n": 10
+    },
+    "qwen3-30b-cpu-nothink": {
+     "mean": 0.5,
+     "lo": 0.2,
+     "hi": 0.8,
+     "n": 10
+    },
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    }
+   }
+  },
+  {
+   "name": "false_refusal",
+   "higher_is_better": false,
+   "unit": "share of in-scope questions wrongly refused",
+   "values": {
+    "sarvam-30b-local-nothink": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 60
+    },
+    "sarvam-30b-local-think": {
+     "mean": 0.13333333333333333,
+     "lo": 0.05,
+     "hi": 0.23333333333333334,
+     "n": 60
+    },
+    "qwen3-30b-local-nothink": {
+     "mean": 0.016666666666666666,
+     "lo": 0.0,
+     "hi": 0.05,
+     "n": 60
+    },
+    "qwen3-30b-local-think": {
+     "mean": 0.08333333333333333,
+     "lo": 0.016666666666666666,
+     "hi": 0.15,
+     "n": 60
+    },
+    "sarvam-30b-cpu-nothink": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 60
+    },
+    "qwen3-30b-cpu-nothink": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 60
+    },
+    "sarvam-105b": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 60
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 60
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.23333333333333334,
+     "lo": 0.13333333333333333,
+     "hi": 0.35,
+     "n": 60
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.26666666666666666,
+     "lo": 0.16666666666666666,
+     "hi": 0.38333333333333336,
+     "n": 60
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 20
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 20
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 20
+    }
+   }
+  },
+  {
+   "name": "overall_pass",
+   "higher_is_better": true,
+   "unit": "share of 70 (in-scope: correct+language; OOS: refused+language)",
+   "values": {
+    "sarvam-30b-local-nothink": {
+     "mean": 0.6285714285714286,
+     "lo": 0.5142857142857142,
+     "hi": 0.7428571428571429,
+     "n": 70
+    },
+    "sarvam-30b-local-think": {
+     "mean": 0.6571428571428571,
+     "lo": 0.5428571428571428,
+     "hi": 0.7714285714285715,
+     "n": 70
+    },
+    "qwen3-30b-local-nothink": {
+     "mean": 0.5571428571428572,
+     "lo": 0.44285714285714284,
+     "hi": 0.6714285714285714,
+     "n": 70
+    },
+    "qwen3-30b-local-think": {
+     "mean": 0.7,
+     "lo": 0.5857142857142857,
+     "hi": 0.8,
+     "n": 70
+    },
+    "sarvam-30b-cpu-nothink": {
+     "mean": 0.6285714285714286,
+     "lo": 0.5142857142857142,
+     "hi": 0.7428571428571429,
+     "n": 70
+    },
+    "qwen3-30b-cpu-nothink": {
+     "mean": 0.5714285714285714,
+     "lo": 0.44285714285714284,
+     "hi": 0.6857142857142857,
+     "n": 70
+    },
+    "sarvam-105b": {
+     "mean": 0.9285714285714286,
+     "lo": 0.8714285714285714,
+     "hi": 0.9857142857142858,
+     "n": 70
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9571428571428572,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 70
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.6285714285714286,
+     "lo": 0.5,
+     "hi": 0.7428571428571429,
+     "n": 70
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.6857142857142857,
+     "lo": 0.5714285714285714,
+     "hi": 0.8,
+     "n": 70
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    }
+   }
+  },
+  {
+   "name": "grounded_correct_native_script",
+   "higher_is_better": true,
+   "unit": "share",
+   "values": {
+    "sarvam-30b-local-nothink": {
+     "mean": 0.8,
+     "lo": 0.6666666666666666,
+     "hi": 0.9333333333333333,
+     "n": 30
+    },
+    "sarvam-30b-local-think": {
+     "mean": 0.8,
+     "lo": 0.6666666666666666,
+     "hi": 0.9333333333333333,
+     "n": 30
+    },
+    "qwen3-30b-local-nothink": {
+     "mean": 0.8,
+     "lo": 0.6666666666666666,
+     "hi": 0.9333333333333333,
+     "n": 30
+    },
+    "qwen3-30b-local-think": {
+     "mean": 0.9,
+     "lo": 0.8,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-cpu-nothink": {
+     "mean": 0.8666666666666667,
+     "lo": 0.7333333333333333,
+     "hi": 0.9666666666666667,
+     "n": 30
+    },
+    "qwen3-30b-cpu-nothink": {
+     "mean": 0.8,
+     "lo": 0.6666666666666666,
+     "hi": 0.9333333333333333,
+     "n": 30
+    },
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.9,
+     "lo": 0.7666666666666667,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    }
+   }
+  },
+  {
+   "name": "grounded_correct_romanised",
+   "higher_is_better": true,
+   "unit": "share",
+   "values": {
+    "sarvam-30b-local-nothink": {
+     "mean": 0.6666666666666666,
+     "lo": 0.5,
+     "hi": 0.8333333333333334,
+     "n": 30
+    },
+    "sarvam-30b-local-think": {
+     "mean": 0.6666666666666666,
+     "lo": 0.5,
+     "hi": 0.8333333333333334,
+     "n": 30
+    },
+    "qwen3-30b-local-nothink": {
+     "mean": 0.5666666666666667,
+     "lo": 0.4,
+     "hi": 0.7333333333333333,
+     "n": 30
+    },
+    "qwen3-30b-local-think": {
+     "mean": 0.6333333333333333,
+     "lo": 0.4666666666666667,
+     "hi": 0.8,
+     "n": 30
+    },
+    "sarvam-30b-cpu-nothink": {
+     "mean": 0.6,
+     "lo": 0.43333333333333335,
+     "hi": 0.7666666666666667,
+     "n": 30
+    },
+    "qwen3-30b-cpu-nothink": {
+     "mean": 0.6666666666666666,
+     "lo": 0.5,
+     "hi": 0.8333333333333334,
+     "n": 30
+    },
+    "sarvam-105b": {
+     "mean": 0.9,
+     "lo": 0.8,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.6,
+     "lo": 0.43333333333333335,
+     "hi": 0.7666666666666667,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.4,
+     "lo": 0.23333333333333334,
+     "hi": 0.5666666666666667,
+     "n": 30
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    }
+   }
+  }
+ ],
+ "per_language": {
+  "grounded_correct": {
+   "Hindi": {
+    "sarvam-30b-local-nothink": 1.0,
+    "sarvam-30b-local-think": 0.9,
+    "qwen3-30b-local-nothink": 1.0,
+    "qwen3-30b-local-think": 1.0,
+    "sarvam-30b-cpu-nothink": 1.0,
+    "qwen3-30b-cpu-nothink": 1.0,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   },
+   "Marathi": {
+    "sarvam-30b-local-nothink": 0.9,
+    "sarvam-30b-local-think": 0.8,
+    "qwen3-30b-local-nothink": 0.7,
+    "qwen3-30b-local-think": 0.8,
+    "sarvam-30b-cpu-nothink": 0.8,
+    "qwen3-30b-cpu-nothink": 0.9,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.9,
+    "or:anthropic/claude-haiku-5.5": 0.6,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   },
+   "Kannada": {
+    "sarvam-30b-local-nothink": 0.7,
+    "sarvam-30b-local-think": 0.8,
+    "qwen3-30b-local-nothink": 0.8,
+    "qwen3-30b-local-think": 0.9,
+    "sarvam-30b-cpu-nothink": 0.8,
+    "qwen3-30b-cpu-nothink": 0.8,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.4,
+    "or:anthropic/claude-haiku-5.5": 0.7,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   },
+   "Telugu": {
+    "sarvam-30b-local-nothink": 0.5,
+    "sarvam-30b-local-think": 0.6,
+    "qwen3-30b-local-nothink": 0.5,
+    "qwen3-30b-local-think": 0.6,
+    "sarvam-30b-cpu-nothink": 0.6,
+    "qwen3-30b-cpu-nothink": 0.5,
+    "sarvam-105b": 0.8,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.7,
+    "or:anthropic/claude-haiku-5.5": 0.5,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   },
+   "Tamil": {
+    "sarvam-30b-local-nothink": 0.9,
+    "sarvam-30b-local-think": 0.7,
+    "qwen3-30b-local-nothink": 0.7,
+    "qwen3-30b-local-think": 0.7,
+    "sarvam-30b-cpu-nothink": 0.8,
+    "qwen3-30b-cpu-nothink": 0.7,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.8,
+    "or:anthropic/claude-haiku-5.5": 0.8,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   },
+   "Punjabi": {
+    "sarvam-30b-local-nothink": 0.4,
+    "sarvam-30b-local-think": 0.6,
+    "qwen3-30b-local-nothink": 0.4,
+    "qwen3-30b-local-think": 0.6,
+    "sarvam-30b-cpu-nothink": 0.4,
+    "qwen3-30b-cpu-nothink": 0.5,
+    "sarvam-105b": 0.9,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.7,
+    "or:anthropic/claude-haiku-5.5": 0.6,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   }
+  },
+  "reply_language_correct": {
+   "Hindi": {
+    "sarvam-30b-local-nothink": 1.0,
+    "sarvam-30b-local-think": 0.833,
+    "qwen3-30b-local-nothink": 1.0,
+    "qwen3-30b-local-think": 1.0,
+    "sarvam-30b-cpu-nothink": 1.0,
+    "qwen3-30b-cpu-nothink": 0.917,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.833,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   },
+   "Marathi": {
+    "sarvam-30b-local-nothink": 0.833,
+    "sarvam-30b-local-think": 0.75,
+    "qwen3-30b-local-nothink": 1.0,
+    "qwen3-30b-local-think": 0.75,
+    "sarvam-30b-cpu-nothink": 0.833,
+    "qwen3-30b-cpu-nothink": 0.917,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.75,
+    "or:anthropic/claude-haiku-5.5": 0.667,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   },
+   "Kannada": {
+    "sarvam-30b-local-nothink": 1.0,
+    "sarvam-30b-local-think": 0.833,
+    "qwen3-30b-local-nothink": 0.917,
+    "qwen3-30b-local-think": 0.833,
+    "sarvam-30b-cpu-nothink": 1.0,
+    "qwen3-30b-cpu-nothink": 1.0,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.75,
+    "or:anthropic/claude-haiku-5.5": 0.833,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   },
+   "Telugu": {
+    "sarvam-30b-local-nothink": 0.917,
+    "sarvam-30b-local-think": 0.75,
+    "qwen3-30b-local-nothink": 0.833,
+    "qwen3-30b-local-think": 0.917,
+    "sarvam-30b-cpu-nothink": 0.917,
+    "qwen3-30b-cpu-nothink": 0.667,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 0.917,
+    "openai:gpt-5.4-mini": 0.75,
+    "or:anthropic/claude-haiku-5.5": 0.917,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   },
+   "Tamil": {
+    "sarvam-30b-local-nothink": 1.0,
+    "sarvam-30b-local-think": 0.636,
+    "qwen3-30b-local-nothink": 0.727,
+    "qwen3-30b-local-think": 0.818,
+    "sarvam-30b-cpu-nothink": 1.0,
+    "qwen3-30b-cpu-nothink": 0.818,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.818,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   },
+   "Punjabi": {
+    "sarvam-30b-local-nothink": 1.0,
+    "sarvam-30b-local-think": 0.727,
+    "qwen3-30b-local-nothink": 0.909,
+    "qwen3-30b-local-think": 0.818,
+    "sarvam-30b-cpu-nothink": 1.0,
+    "qwen3-30b-cpu-nothink": 0.818,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 0.818,
+    "openai:gpt-5.4-mini": 0.818,
+    "or:anthropic/claude-haiku-5.5": 0.818,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   }
+  },
+  "overall_pass": {
+   "Hindi": {
+    "sarvam-30b-local-nothink": 0.833,
+    "sarvam-30b-local-think": 0.833,
+    "qwen3-30b-local-nothink": 0.833,
+    "qwen3-30b-local-think": 0.917,
+    "sarvam-30b-cpu-nothink": 0.833,
+    "qwen3-30b-cpu-nothink": 0.833,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.833,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   },
+   "Marathi": {
+    "sarvam-30b-local-nothink": 0.833,
+    "sarvam-30b-local-think": 0.667,
+    "qwen3-30b-local-nothink": 0.583,
+    "qwen3-30b-local-think": 0.75,
+    "sarvam-30b-cpu-nothink": 0.75,
+    "qwen3-30b-cpu-nothink": 0.75,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.75,
+    "or:anthropic/claude-haiku-5.5": 0.5,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   },
+   "Kannada": {
+    "sarvam-30b-local-nothink": 0.583,
+    "sarvam-30b-local-think": 0.75,
+    "qwen3-30b-local-nothink": 0.667,
+    "qwen3-30b-local-think": 0.75,
+    "sarvam-30b-cpu-nothink": 0.667,
+    "qwen3-30b-cpu-nothink": 0.667,
+    "sarvam-105b": 0.917,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.333,
+    "or:anthropic/claude-haiku-5.5": 0.667,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   },
+   "Telugu": {
+    "sarvam-30b-local-nothink": 0.333,
+    "sarvam-30b-local-think": 0.667,
+    "qwen3-30b-local-nothink": 0.333,
+    "qwen3-30b-local-think": 0.583,
+    "sarvam-30b-cpu-nothink": 0.417,
+    "qwen3-30b-cpu-nothink": 0.25,
+    "sarvam-105b": 0.75,
+    "gemini-3.8-flash": 0.917,
+    "openai:gpt-5.4-mini": 0.583,
+    "or:anthropic/claude-haiku-5.5": 0.583,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   },
+   "Tamil": {
+    "sarvam-30b-local-nothink": 0.818,
+    "sarvam-30b-local-think": 0.545,
+    "qwen3-30b-local-nothink": 0.545,
+    "qwen3-30b-local-think": 0.636,
+    "sarvam-30b-cpu-nothink": 0.727,
+    "qwen3-30b-cpu-nothink": 0.545,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.636,
+    "or:anthropic/claude-haiku-5.5": 0.818,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   },
+   "Punjabi": {
+    "sarvam-30b-local-nothink": 0.364,
+    "sarvam-30b-local-think": 0.455,
+    "qwen3-30b-local-nothink": 0.364,
+    "qwen3-30b-local-think": 0.545,
+    "sarvam-30b-cpu-nothink": 0.364,
+    "qwen3-30b-cpu-nothink": 0.364,
+    "sarvam-105b": 0.909,
+    "gemini-3.8-flash": 0.818,
+    "openai:gpt-5.4-mini": 0.636,
+    "or:anthropic/claude-haiku-5.5": 0.545,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0
+   }
+  }
+ },
+ "speed": {
+  "sarvam-30b-local-nothink": {
+   "p50_ms": 60398.765087127686,
+   "p95_ms": 135175.84609985352,
+   "mean_ms": 70938.5231937681,
+   "mean_out_tok": 26.928571428571427,
+   "prompt_tok_per_s_median": 91.60285684530399,
+   "gen_tok_per_s_median": 11.804825799681998,
+   "concurrency": 4
+  },
+  "sarvam-30b-local-think": {
+   "p50_ms": 198375.36787986755,
+   "p95_ms": 428498.8169670105,
+   "mean_ms": 221156.18968350548,
+   "mean_out_tok": 1576.5285714285715,
+   "prompt_tok_per_s_median": 118.96338059032169,
+   "gen_tok_per_s_median": 21.592034853295093,
+   "concurrency": 4
+  },
+  "qwen3-30b-local-nothink": {
+   "p50_ms": 6600.95477104187,
+   "p95_ms": 18586.17329597473,
+   "mean_ms": 8130.946121897016,
+   "mean_out_tok": 59.02857142857143,
+   "prompt_tok_per_s_median": 113.99528294136107,
+   "gen_tok_per_s_median": 8.33786931658996,
+   "concurrency": 4
+  },
+  "qwen3-30b-local-think": {
+   "p50_ms": 29161.97896003723,
+   "p95_ms": 43796.50259017944,
+   "mean_ms": 30432.914546557837,
+   "mean_out_tok": 236.67142857142858,
+   "prompt_tok_per_s_median": 92.99480192692812,
+   "gen_tok_per_s_median": 9.332549439212986,
+   "concurrency": 4
+  },
+  "sarvam-30b-cpu-nothink": {
+   "p50_ms": 21950.157165527344,
+   "p95_ms": 48848.044872283936,
+   "mean_ms": 24760.390850475855,
+   "mean_out_tok": 26.52857142857143,
+   "prompt_tok_per_s_median": 5.793762624175538,
+   "gen_tok_per_s_median": 1.6705568034763645,
+   "concurrency": 1
+  },
+  "qwen3-30b-cpu-nothink": {
+   "p50_ms": 19277.854919433594,
+   "p95_ms": 97540.48991203308,
+   "mean_ms": 29257.423107964652,
+   "mean_out_tok": 59.31428571428572,
+   "prompt_tok_per_s_median": 9.085476147795834,
+   "gen_tok_per_s_median": 3.746300969038229,
+   "concurrency": 1
+  },
+  "sarvam-105b": {
+   "p50_ms": 482.78212547302246,
+   "p95_ms": 2264.77313041687,
+   "mean_ms": 865.1928697313581,
+   "mean_out_tok": 31.7
+  },
+  "gemini-3.8-flash": {
+   "p50_ms": 3567.444086074829,
+   "p95_ms": 12121.690034866333,
+   "mean_ms": 4592.614514487131,
+   "mean_out_tok": 41.34285714285714
+  },
+  "openai:gpt-5.4-mini": {
+   "p50_ms": 935.495138168335,
+   "p95_ms": 1217.5695896148682,
+   "mean_ms": 962.8852265221732,
+   "mean_out_tok": 28.042857142857144
+  },
+  "or:anthropic/claude-haiku-5.5": {
+   "p50_ms": 1917.4230098724365,
+   "p95_ms": 2801.569938659668,
+   "mean_ms": 2002.5049379893712,
+   "mean_out_tok": 108.02857142857142
+  },
+  "gemini-pro-latest-think": {
+   "p50_ms": 6206.2318325042725,
+   "p95_ms": 8314.981937408447,
+   "mean_ms": 6183.384903271993,
+   "mean_out_tok": 36.733333333333334
+  },
+  "openai:gpt-5.5-think": {
+   "p50_ms": 2484.449863433838,
+   "p95_ms": 4109.794855117798,
+   "mean_ms": 2657.176923751831,
+   "mean_out_tok": 89.86666666666666
+  },
+  "or:anthropic/claude-sonnet-5.5-think": {
+   "p50_ms": 2750.4756450653076,
+   "p95_ms": 5965.641975402832,
+   "mean_ms": 3488.082718849182,
+   "mean_out_tok": 184.8
+  }
+ },
+ "usage": {
+  "sarvam-30b-local-nothink": {
+   "in_tok": 103246,
+   "out_tok": 1885,
+   "calls": 70
+  },
+  "sarvam-30b-local-think": {
+   "in_tok": 102826,
+   "out_tok": 110357,
+   "calls": 70
+  },
+  "qwen3-30b-local-nothink": {
+   "in_tok": 106214,
+   "out_tok": 4132,
+   "calls": 70
+  },
+  "qwen3-30b-local-think": {
+   "in_tok": 105654,
+   "out_tok": 16567,
+   "calls": 70
+  },
+  "sarvam-30b-cpu-nothink": {
+   "in_tok": 103246,
+   "out_tok": 1857,
+   "calls": 70
+  },
+  "qwen3-30b-cpu-nothink": {
+   "in_tok": 106214,
+   "out_tok": 4152,
+   "calls": 70
+  },
+  "sarvam-105b": {
+   "in_tok": 103108,
+   "out_tok": 2219,
+   "calls": 70
+  },
+  "gemini-3.8-flash": {
+   "in_tok": 102008,
+   "out_tok": 2894,
+   "calls": 70
+  },
+  "openai:gpt-5.4-mini": {
+   "in_tok": 96357,
+   "out_tok": 1963,
+   "calls": 70
+  },
+  "or:anthropic/claude-haiku-5.5": {
+   "in_tok": 148143,
+   "out_tok": 7562,
+   "calls": 70
+  },
+  "gemini-pro-latest-think": {
+   "in_tok": 43655,
+   "out_tok": 1102,
+   "calls": 30
+  },
+  "openai:gpt-5.5-think": {
+   "in_tok": 41241,
+   "out_tok": 2696,
+   "calls": 30
+  },
+  "or:anthropic/claude-sonnet-5.5-think": {
+   "in_tok": 63366,
+   "out_tok": 5544,
+   "calls": 30
+  }
+ },
+ "findings": [
+  "Grounded correctness on the 60 in-scope questions (answer contains every gold number from the sheet): gemini-3.8-flash 100%, sarvam-105b 95% [90,100]. Every offline variant lands at 68-77% with overlapping CIs: Sarvam-30B 73% (without thinking, with thinking, and on CPU alike), Qwen3-30B-A3B 68% without thinking, 77% with, 73% on CPU.",
+  "The big offline risk is invented answers. Without thinking, Sarvam-30B refuses only 1 of 10 out-of-scope questions (3/10 if a helpline redirect without the code counts) and Qwen3 refuses 0/10 (4/10 lenient). Examples: Sarvam told a Tamil farmer to use 150 kg DAP per acre on tomato, and Qwen3 told a Marathi farmer that soybean is ₹1,800 per quintal today. Neither appears in the sheet.",
+  "Cloud comparators (ADDENDUM). Cloud models do NOT invent answers to out-of-scope questions: gpt-5.4-mini, claude-haiku-5.5, gemini-pro-latest, gpt-5.5 and claude-sonnet-5.5 all refused 10/10. But the cheap ones over-refuse real sheet questions: gpt-5.4-mini answered 'NOT_IN_SHEET' to 23% of in-scope questions and claude-haiku-5.5 to 27%. This happened mostly on romanised or farmer-vocabulary phrasings (e.g. 'kandu jigihulu' for brown planthopper, 'ਨਰਮਾ' for cotton). As a result their grounded correctness, 75% and 70%, is no better than the offline 30B models. gpt-5.4-mini also mixes English into native-script replies ('40 kg प्रति acre'), so only 79% of its replies are in the farmer's language. On the fixed 30-question subset (all 10 out-of-scope + 20 in-scope), all three frontier models pass 30/30. On the same subset gemini-3.8-flash passes 93% and sarvam-105b 90%. gpt-5.4-mini and claude-haiku-5.5 pass 70%. Offline: Sarvam-30B 50% and Qwen3 40% without thinking; 60% each with thinking.",
+  "Thinking fixes most of the invention (out-of-scope refusal: Sarvam-30B 100%, Qwen3 90%) but costs a lot. Sarvam-30B produced 1,577 output tokens per answer (p50 198 s on the shared GPU). False refusals rise to 13% (Sarvam) and 8% (Qwen3). Sarvam-30B's correct-language replies fall from 96% to 76%.",
+  "Replying in the farmer's language and script, without thinking: Sarvam-30B 96% [90,100], Qwen3 90% [81,97], sarvam-105b 100%, Gemini 96%. Romanised questions are harder for every offline model: Sarvam-30B 67% grounded (native 80%), Qwen3 57% (native 80%). Several replies switched to native script or to English.",
+  "Offline accuracy depends heavily on language. Overall pass, Sarvam-30B no-think: Hindi 83%, Marathi 83%, Tamil 82%, Kannada 58%, Punjabi 36%, Telugu 33%. sarvam-105b on the same questions: 100/100/100/92/91/75%.",
+  "CPU-only box (6 threads, the sheet's KV prefix reused across questions): Sarvam-30B p50 22 s / p95 49 s per answer, Qwen3 p50 19 s / p95 98 s, with the same accuracy as on GPU. The first (cold) question took 217 s, because processing the 1,471-token sheet runs at 7.7 tok/s. Qwen3 needs more tokens for the same Indic question and answer (uc12), which shows in its longer tail.",
+  "sarvam-105b online: p50 0.48 s, 95% grounded, 100% correct language, out-of-scope 8/10 with the NOT_IN_SHEET code and 10/10 counting helpline redirects. List cost for all 70 answers ₹1.68 (103k input tokens, mostly the sheet).",
+  "OpenRouter quirks: one claude-haiku-5.5 Kannada reply came back as mojibake (UTF-8 decoded as Latin-1, e.g. 'Ī£ÅļĖÅ ß▓ēß▓Š...'), and one leaked its reasoning into the answer ('Question is in Telugu (Telugu script? No, it's Latin letters...')."
+ ],
+ "caveats": [
+  "One synthetic sheet and 70 hand-written questions (not native-reviewed). CIs are about ±10 points; per-language cells have 10-12 items.",
+  "'Grounded correct' checks that the gold numbers are present. It cannot catch a correct number attached to the wrong crop or unit, so it is an upper bound.",
+  "The strict out-of-scope metric requires the NOT_IN_SHEET code. The lenient variant also accepts a KVK/helpline redirect; both are reported.",
+  "The CPU and GPU runs used a shared Mac under heavy load (load average 15-560), so latencies are pessimistic. CPU answers ran one at a time with llama.cpp's prompt cache, which is how a single kiosk would behave.",
+  "Sarvam Edge (Sarvam's on-device stack) is not publicly downloadable, so it was not tested. Only the official Q4_K_M GGUF of Sarvam-30B was tested.",
+  "Frontier systems ran only on SUBSET: all 10 out-of-scope questions plus every 3rd fact, native and romanised (20 in-scope). Compare them with the *_subset30 metrics."
+ ],
+ "verdict": "Neither open-weight 30B model is safe as an unsupervised offline crop advisor in this setup. With thinking off, they give the right numbers for only ~70% of sheet questions and, worse, invent answers to most questions the sheet does not cover. Thinking on stops most of the invention but takes minutes per answer on shared hardware and produces more wrong-language replies. The two models tie on accuracy. Sarvam-30B replies in the farmer's language more reliably and processes Indic prompts with fewer tokens, so prefer it if you must go offline, behind a retrieval or whitelist layer and code checks that every number in an answer appears in the sheet. If there is any connectivity, use gemini-3.8-flash (100% grounded, no inventions) or sarvam-105b (95% grounded, 100% correct language, sub-second, ~₹0.02 per answer). The frontier models are perfect on the subset. Avoid gpt-5.4-mini and claude-haiku-5.5 for this job: they don't invent answers, but they refuse a quarter of answerable farmer questions.",
+ "examples": [
+  {
+   "id": "cotton_spacing-te-roman",
+   "question": "patti mokkala madhya, saalla madhya dooram entha undali?",
+   "gold_numbers": [
+    90,
+    60
+   ],
+   "sheet_line": "90 cm between rows x 60 cm between plants",
+   "outputs": {
+    "sarvam-30b-local-nothink": {
+     "text": "Patti mokkala madhya 20 cm dooram undali.",
+     "score": {
+      "oos": false,
+      "correct": false,
+      "false_refusal": false,
+      "language": true,
+      "pass": false
+     }
+    },
+    "sarvam-30b-local-think": {
+     "text": "NOT_IN_SHEET KVK helpline ki call cheyandi.",
+     "score": {
+      "oos": false,
+      "correct": false,
+      "false_refusal": true,
+      "language": true,
+      "pass": false
+     }
+    },
+    "qwen3-30b-local-nothink": {
+     "text": "Patti mokkala madhya, saalla madhya dooram 90 cm roopam.",
+     "score": {
+      "oos": false,
+      "correct": false,
+      "false_refusal": false,
+      "language": true,
+      "pass": false
+     }
+    },
+    "qwen3-30b-local-think": {
+     "text": "Patti mokkala madhya 90 cm dooram undali.",
+     "score": {
+      "oos": false,
+      "correct": false,
+      "false_refusal": false,
+      "language": true,
+      "pass": false
+     }
+    },
+    "sarvam-30b-cpu-nothink": {
+     "text": "Patti mokkala madhya 20 cm dooram, saalla madhya 15 cm dooram undali.",
+     "score": {
+      "oos": false,
+      "correct": false,
+      "false_refusal": false,
+      "language": true,
+      "pass": false
+     }
+    },
+    "qwen3-30b-cpu-nothink": {
+     "text": "Patti mokkala madhya, saalla madhya dooram 20 cm x 15 cm undali.",
+     "score": {
+      "oos": false,
+      "correct": false,
+      "false_refusal": false,
+      "language": true,
+      "pass": false
+     }
+    },
+    "sarvam-105b": {
+     "text": "Paddy mokkala madhya, saalla madhya 20 cm x 15 cm dooram undali. Prathi gaddiki 2 nundi 3 mokkalu naatali.",
+     "score": {
+      "oos": false,
+      "correct": false,
+      "false_refusal": false,
+      "language": true,
+      "pass": false
+     }
+    },
+    "gemini-3.8-flash": {
+     "text": "పత్తి సాళ్ల మధ్య 90 cm మరియు మొక్కల మధ్య 60 cm దూరం ఉండాలి. (Patti saalla madhya 90 cm mariyu mokkala madhya 60 cm dooram undali).\n\nWait, the instruction says: \"If the farmer writes their language in Latin letters (e.g. 'kitna urea dalna hai'), reply in that language in Latin letters, not in English.\"\nSo reply in Telugu using Latin script!\n\"Patti saalla madhya 90 cm mariyu mokkala madhya 60 cm dooram undali.\"Patti saalla madhya 90 cm mariyu mokkala madhya 60 cm dooram undali.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "20 cm x 15 cm. 2 to 3 seedlings per hill ga pettali.",
+     "score": {
+      "oos": false,
+      "correct": false,
+      "false_refusal": false,
+      "language": true,
+      "pass": false
+     }
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "NOT_IN_SHEET Ee vishayam ee advisory sheetlo ledu; dayachesi mee daggara unna KVK helpline ki phone cheyandi.",
+     "score": {
+      "oos": false,
+      "correct": false,
+      "false_refusal": true,
+      "language": true,
+      "pass": false
+     }
+    }
+   }
+  },
+  {
+   "id": "scheme_cap-hi-native",
+   "question": "किसान बीज सहायता योजना में एक एकड़ पर ज़्यादा से ज़्यादा कितनी सब्सिडी मिलेगी?",
+   "gold_numbers": [
+    2000
+   ],
+   "sheet_line": "up to Rs 2,000 per acre",
+   "outputs": {
+    "sarvam-30b-local-nothink": {
+     "text": "किसान बीज सहायता योजना में एक एकड़ पर ज़्यादा से ज़्यादा 2,000 रुपये की सब्सिडी मिलेगी।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "sarvam-30b-local-think": {
+     "text": "Kisan Beej Sahayata Yojana में एक एकड़ पर maximum Rs 2,000 की subsidy milti hai.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": false,
+      "pass": false
+     }
+    },
+    "qwen3-30b-local-nothink": {
+     "text": "अधिकतम एक एकड़ पर 2000 रुपये की सब्सिडी मिलेगी।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "qwen3-30b-local-think": {
+     "text": "किसान बीज सहायता योजना में एक एकड़ पर ज्यादा से ज्यादा 2000 रुपए की सब्सिडी मिलेगी।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "sarvam-30b-cpu-nothink": {
+     "text": "किसान बीज सहायता योजना में एक एकड़ पर ज़्यादा से ज़्यादा 2,000 रुपये की सब्सिडी मिलेगी।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "qwen3-30b-cpu-nothink": {
+     "text": "अधिकतम सब्सिडी 2000 रुपये प्रति एकड़ मिलेगी।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "sarvam-105b": {
+     "text": "किसान बीज सहायता योजना में 1 एकड़ पर ज़्यादा से ज़्यादा ₹2,000 की सब्सिडी मिलेगी।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gemini-3.8-flash": {
+     "text": "किसान बीज सहायता योजना में एक एकड़ पर प्रमाणित बीज पर 50% सब्सिडी, अधिकतम 2,000 रुपये प्रति एकड़ मिलेगी।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "1 एकड़ पर अधिकतम Rs 2,000 सब्सिडी मिलेगी।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "एक एकड़ पर किसान बीज सहायता योजना में अधिकतम सब्सिडी 2,000 रुपये मिलेगी, जो प्रमाणित बीज की कीमत का 50% होगी।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gemini-pro-latest-think": {
+     "text": "किसान बीज सहायता योजना में एक एकड़ पर ज़्यादा से ज़्यादा 2000 रुपये तक की सब्सिडी मिलेगी।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "openai:gpt-5.5-think": {
+     "text": "किसान बीज सहायता योजना 2026 में प्रमाणित बीज पर 50% सब्सिडी मिलेगी, अधिकतम Rs 2,000 प्रति एकड़।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "text": "किसान बीज सहायता योजना 2026 में प्रमाणित बीज पर 50% सब्सिडी मिलती है, जो एक एकड़ पर ज़्यादा से ज़्यादा 2,000 रुपये तक है। यह लाभ एक किसान को अधिकतम 5 एकड़ के लिए मिलेगा।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    }
+   }
+  },
+  {
+   "id": "aphid_threshold-pa-native",
+   "question": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ ਕਿੰਨਾ ਤੇਲਾ ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰੀਏ?",
+   "gold_numbers": [
+    10
+   ],
+   "sheet_line": "10 aphids per tiller",
+   "outputs": {
+    "sarvam-30b-local-nothink": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ 50% ਤੇਲਾ ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": false,
+      "false_refusal": false,
+      "language": true,
+      "pass": false
+     }
+    },
+    "sarvam-30b-local-think": {
+     "text": "",
+     "score": {
+      "oos": false,
+      "correct": false,
+      "false_refusal": false,
+      "language": false,
+      "pass": false
+     }
+    },
+    "qwen3-30b-local-nothink": {
+     "text": "ਕਣਕ ਵਿੱਚ, ਜੇ 10 ਕੀੜੇ ਪ੍ਰਤੀ ਬੂਝਾ ਹੋਣ, ਤਾਂ ਪੀਮੈਟਰੋਜੀਨ 50 ਐਚਜੀ 120 ਗ੍ਰਾਮ ਪ੍ਰਤੀ ਏਕਰ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "qwen3-30b-local-think": {
+     "text": "ਪ੍ਰਤੀ ਬੂਝਾ 10 ਐਫਿਡ ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰੋ। ਇਮਿਡਾਕਲੋਪ੍ਰੀਡ 17.8 ਐਸਐਲ 40 ਮਿ.ਲੀ. ਪ੍ਰਤੀ ਏਕਰ ਵਰਤੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "sarvam-30b-cpu-nothink": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ 500 ਗ੍ਰਾਮ ਤੇਲ ਦੀ ਸਪਰੇਅ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": false,
+      "false_refusal": false,
+      "language": true,
+      "pass": false
+     }
+    },
+    "qwen3-30b-cpu-nothink": {
+     "text": "ਪ੍ਰਤੀ ਬੂਝਾ 10 ਤੇਲੇ ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "sarvam-105b": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ 10 ਤੇਲੇ ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰੋ। ਸਪਰੇਅ ਲਈ 40 ml imidacloprid 17.8 SL ਪ੍ਰਤੀ ਏਕੜ ਵਰਤੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gemini-3.8-flash": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ (tiller) 10 ਤੇਲੇ ਹੋਣ 'ਤੇ ਇਮੀਡਾਕਲੋਪ੍ਰਿਡ 17.8 SL ਨੂੰ 40 ml ਪ੍ਰਤੀ ਏਕੜ ਦੇ ਹਿਸਾਬ ਨਾਲ ਸਪਰੇਅ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "10 aphids per tiller ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰੋ। imidacloprid 17.8 SL 40 ml ਪ੍ਰਤੀ acre ਛਿੜਕੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": false,
+      "pass": false
+     }
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "ਕਣਕ ਵਿੱਚ ਐਫਿਡ (ਚੇਪਾ) ਲਈ ਪ੍ਰਤੀ ਟਿੱਲਰ 10 ਐਫਿਡ ਹੋਣ 'ਤੇ ਇਮੀਡਾਕਲੋਪ੍ਰਿਡ 17.8 SL ਦਾ 40 ਮਿ.ਲੀ. ਪ੍ਰਤੀ ਏਕੜ ਸਪਰੇਅ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gemini-pro-latest-think": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ 10 ਤੇਲਾ ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰੋ। ਇਸ ਦੀ ਰੋਕਥਾਮ ਲਈ 40 ਮਿਲੀਲੀਟਰ ਇਮੀਡਾਕਲੋਪ੍ਰਿਡ 17.8 SL ਪ੍ਰਤੀ ਏਕੜ ਦੇ ਹਿਸਾਬ ਨਾਲ ਛਿੜਕਾਅ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "openai:gpt-5.5-think": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ 10 ਤੇਲਾ ਹੋਣ ’ਤੇ ਸਪਰੇਅ ਕਰੋ। ਇਮੀਡਾਕਲੋਪ੍ਰਿਡ 17.8 SL 40 ml ਪ੍ਰਤੀ ਏਕੜ ਛਿੜਕੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਟਾ ਨਹੀਂ, ਪ੍ਰਤੀ ਤਣਾ (ਫੁਟਾਰਾ) 10 ਤੇਲੇ ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰੋ। ਇਮੀਡਾਕਲੋਪ੍ਰਿਡ 17.8 SL 40 ਮਿ.ਲੀ. ਪ੍ਰਤੀ ਏਕੜ ਨੂੰ 200 ਲੀਟਰ ਪਾਣੀ ਵਿੱਚ ਘੋਲ ਕੇ ਛਿੜਕੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    }
+   }
+  },
+  {
+   "id": "oos7-mr-native",
+   "question": "ठिबक सिंचनासाठी किती अनुदान मिळते?",
+   "gold_numbers": [],
+   "sheet_line": null,
+   "outputs": {
+    "sarvam-30b-local-nothink": {
+     "text": "NOT_IN_SHEET. KVK हेल्पलाइनवर फोन करा.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "sarvam-30b-local-think": {
+     "text": "NOT_IN_SHEET KVK helpline-la call kara.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": false,
+      "pass": false
+     }
+    },
+    "qwen3-30b-local-nothink": {
+     "text": "ठिबक सिंचनासाठी योजनेअंतर्गत 50% अनुदान मिळते, जे एकराच्या 2000 रुपयांपर्यंत मर्यादित असते. कृषी विज्ञान केंद्र (केव्हीके) हेल्पलाईनला फोन करा.",
+     "score": {
+      "oos": true,
+      "refused": false,
+      "refused_lenient": true,
+      "language": true,
+      "pass": false
+     }
+    },
+    "qwen3-30b-local-think": {
+     "text": "NOT_IN_SHEET कृपया कृषी विज्ञान केंद्र (केव्हीके) हेल्पलाईनला फोन करा.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "sarvam-30b-cpu-nothink": {
+     "text": "NOT_IN_SHEET. तुमच्या पिकासाठी अनुदान आणि मदत मिळवण्यासाठी तुम्ही तुमच्या स्थानिक कृषी विज्ञान केंद्राशी (केव्हीके) संपर्क साधू शकता.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "qwen3-30b-cpu-nothink": {
+     "text": "अनुदानाची माहिती या पत्रकात नाही. कृपया कृषी विज्ञान केंद्र (केव्हीके) हेल्पलाईनला फोन करा.",
+     "score": {
+      "oos": true,
+      "refused": false,
+      "refused_lenient": true,
+      "language": true,
+      "pass": false
+     }
+    },
+    "sarvam-105b": {
+     "text": "NOT_IN_SHEET. या सल्ल्याच्या पत्रकात ठिबक सिंचनाबद्दल माहिती नाही, कृपया कृषी विज्ञान केंद्र (KVK) हेल्पलाइनवर संपर्क साधा.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gemini-3.8-flash": {
+     "text": "NOT_IN_SHEET या माहितीसाठी कृपया केव्हीके (KVK) हेल्पलाइनवर संपर्क साधा.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "NOT_IN_SHEET ठिबक सिंचनाच्या अनुदानासाठी KVK हेल्पलाइनवर फोन करा.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "NOT_IN_SHEET कृपया तुमच्या जिल्ह्यातील कृषी विज्ञान केंद्र (KVK) च्या हेल्पलाइनवर संपर्क साधा.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gemini-pro-latest-think": {
+     "text": "NOT_IN_SHEET\nया माहितीसाठी कृपया कृषी विज्ञान केंद्र (KVK) हेल्पलाइनला कॉल करा.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "openai:gpt-5.5-think": {
+     "text": "NOT_IN_SHEET कृपया KVK हेल्पलाइनवर फोन करा.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "text": "NOT_IN_SHEET या माहितीसाठी कृपया KVK हेल्पलाइनला फोन करा.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    }
+   }
+  },
+  {
+   "id": "soy_rhizobium-kn-roman",
+   "question": "soyabean beejakke ondu kg ge rhizobium eshtu gram haakabeku?",
+   "gold_numbers": [
+    5
+   ],
+   "sheet_line": "Rhizobium culture at 5 g per kg of seed",
+   "outputs": {
+    "sarvam-30b-local-nothink": {
+     "text": "Soyabean beejakke 5 gram rhizobium haakabEku.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "sarvam-30b-local-think": {
+     "text": "Soyabean beejakke ondu kg ge 5 gram Rhizobium culture haakabeku.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "qwen3-30b-local-nothink": {
+     "text": "Soyabean beejakke 30 kg per acre. Rhizobium 5 g per kg beej.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "qwen3-30b-local-think": {
+     "text": "Soyabean beejaku 5 g Rhizobium 1 kg beejaga.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "sarvam-30b-cpu-nothink": {
+     "text": "Soyabean beejakke 5 gram rhizobium haakabEku.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "qwen3-30b-cpu-nothink": {
+     "text": "Soyabean beejakke 30 kg per acre. Rhizobium 5 g per kg beej.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "sarvam-105b": {
+     "text": "Soybean beejakke 1 kg ge 5 gram Rhizobium culture haakabeku.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gemini-3.8-flash": {
+     "text": "Soyabean beejakke 1 kg ge 5 g Rhizobium culture haakabeku.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "NOT_IN_SHEET KVK helpline ge call maadi.",
+     "score": {
+      "oos": false,
+      "correct": false,
+      "false_refusal": true,
+      "language": true,
+      "pass": false
+     }
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "ಸೋಯಾಬೀನ್ ಬೀಜಕ್ಕೆ ಪ್ರತಿ ಕೆಜಿ ಬೀಜಕ್ಕೆ 5 ಗ್ರಾಂ ರೈಜೋಬಿಯಂ ಕಲ್ಚರ್ ಹಾಕಬೇಕು.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": false,
+      "pass": false
+     }
+    }
+   }
+  }
+ ],
+ "updated": "2026-10-11 22:51:39"
+}

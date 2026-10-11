@@ -1,0 +1,120 @@
+{
+ "request_id": "20261011_32c4621c-0c09-44a1-9834-1ea70d37d33e",
+ "transcript": "Yeah, what's up? What is the complaint? Doctor, I have been having to urinate frequently for a month. I also wake up three or four times at night. Have you checked your sugar? Yes, on an empty stomach, the sugar level came to 168. Fasting sugar 168 means it is high. Your weight is 72 kilos. BP is 128 by 82. You have type 2 diabetes. I take Metformin 500 mg. One each in the morning and at night after meals, and I will also start Glimepiride along with it. Doctor, I forgot to tell you one thing. I am allergic to sulfa medicines. I had a rash on my body. It's good that you told me. Then I won't give Glyburide. Just keep Metformin 500 milligrams on and off in the morning and night. This medicine has to be taken regularly, don't stop it. What else to do? Walk for half an hour every day. Eat less sweets. If you feel dizzy or sweat a lot, then your sugar might have dropped. Eat sugar immediately. If you have a wound on your foot and it is not healing, then show it immediately. When to come again? Bring the fasting sugar and HbA1c report after one month. Okay, doctor.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Yeah, what's up?",
+    "start_time_seconds": 0.25,
+    "end_time_seconds": 1.47,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "What is the complaint?",
+    "start_time_seconds": 2.51,
+    "end_time_seconds": 3.41,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor, I have been having to urinate frequently for a month. I also wake up three or four times at night.",
+    "start_time_seconds": 4.39,
+    "end_time_seconds": 13.49,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Have you checked your sugar?",
+    "start_time_seconds": 14.23,
+    "end_time_seconds": 15.53,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Yes, on an empty stomach, the sugar level came to 168.",
+    "start_time_seconds": 16.19,
+    "end_time_seconds": 21.01,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Fasting sugar 168 means it is high.",
+    "start_time_seconds": 22.11,
+    "end_time_seconds": 25.65,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Your weight is 72 kilos. BP is 128 by 82.",
+    "start_time_seconds": 26.89,
+    "end_time_seconds": 32.03,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "You have type 2 diabetes.",
+    "start_time_seconds": 33.73,
+    "end_time_seconds": 36.19,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "I take Metformin 500 mg. One each in the morning and at night after meals, and I will also start Glimepiride along with it.",
+    "start_time_seconds": 37.27,
+    "end_time_seconds": 46.43,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor, I forgot to tell you one thing. I am allergic to sulfa medicines. I had a rash on my body.",
+    "start_time_seconds": 47.01,
+    "end_time_seconds": 55.85,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "It's good that you told me. Then I won't give Glyburide. Just keep Metformin 500 milligrams on and off in the morning and night. This medicine has to be taken regularly, don't stop it.",
+    "start_time_seconds": 57.11,
+    "end_time_seconds": 69.79,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "What else to do?",
+    "start_time_seconds": 70.51,
+    "end_time_seconds": 71.89,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Walk for half an hour every day. Eat less sweets. If you feel dizzy or sweat a lot, then your sugar might have dropped. Eat sugar immediately. If you have a wound on your foot and it is not healing, then show it immediately.",
+    "start_time_seconds": 72.93,
+    "end_time_seconds": 87.61,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "When to come again?",
+    "start_time_seconds": 88.53,
+    "end_time_seconds": 89.89,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Bring the fasting sugar and HbA1c report after one month.",
+    "start_time_seconds": 90.31,
+    "end_time_seconds": 95.87,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Okay, doctor.",
+    "start_time_seconds": 96.75,
+    "end_time_seconds": 97.87,
+    "speaker_id": "0"
+   }
+  ]
+ },
+ "language_code": "mr-IN",
+ "language_probability": null,
+ "audio_hash": "65e49787eb10cd2e9ffe110db227b54f",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_1f7b1dcd-e234-440a-8992-7b7e39488049",
+  "elapsed_s": 10.856954097747803,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "translate",
+   "language_code": "mr-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

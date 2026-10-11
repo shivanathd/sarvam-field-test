@@ -1,0 +1,132 @@
+{
+ "request_id": "20261011_09dec39c-eff8-4656-bffd-cfef9cd1913b",
+ "transcript": "ഫാത്തിമ വരൂ. ഇപ്പോൾ. ട്രൈച്ചി ഐ. മുപ്പത്തിരണ്ട് ആഴ്ചയായി doctor-എ. മൂന്ന് ദിവസമായി ചെറിയ തലവേദനയും കാലിൽ നീരുമുണ്ട്. കുഞ്ഞിൻ്റെ അനക്കം നന്നായി അറിയുന്നുണ്ടോ? ഉണ്ട്. നന്നായി അനങ്ങുന്നുണ്ട്. EP 142/92 ആണ്. കുറച്ചു കൂടുതലാണ്. Pulsar 88. 68 kg. ഇത് gestational hypertension ആണ്. ഗർഭകാലത്ത് വരുന്ന BP. ഡോക്ടറെ കല്യാണത്തിന് മുമ്പ് എനിക്ക് BPക്ക് Telmisartan തന്നിരുന്നു. അത് വീട്ടിലുണ്ട്. അത് കഴിക്കട്ടെ? വേണ്ട. ഒരിക്കലും വേണ്ട. ഗർഭകാലത്ത് Telmisartan കുഞ്ഞിന് ദോഷമാണ്. പകരം Labetalol 100 mg ദിവസം 2 നേരം രാവിലെയും രാത്രിയും. ഇത് സ്ഥിരമായി കഴിക്കണം. ശരി. എനിക്ക് ഒരു മരുന്നിനോടും അലർജിയില്ല. നല്ലത്. Calcium 500 mg രണ്ട് നേരം കഴിക്കുന്നത് തുടരണം. വേറെ എന്തെങ്കിലും ശ്രദ്ധിക്കണോ? കഠിനമായ തലവേദന, കാഴ്ച മങ്ങൽ, കുഞ്ഞിൻ്റെ അനക്കം കുറയുക, രക്തസ്രാവം. ഇതിൽ ഏതെങ്കിലും ഉണ്ടായാൽ ഉടനെ labor room-ൽ വരണം. ശരി Doctor-എ. ഇനി എപ്പോൾ? ഒരാഴ്ച കഴിഞ്ഞ് urine protein test ചെയ്തിട്ട് വരൂ.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "ഫാത്തിമ വരൂ.",
+    "start_time_seconds": 0.25,
+    "end_time_seconds": 2.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ഇപ്പോൾ.",
+    "start_time_seconds": 2.89,
+    "end_time_seconds": 3.73,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ട്രൈച്ചി ഐ.",
+    "start_time_seconds": 3.73,
+    "end_time_seconds": 4.71,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "മുപ്പത്തിരണ്ട് ആഴ്ചയായി doctor-എ. മൂന്ന് ദിവസമായി ചെറിയ തലവേദനയും കാലിൽ നീരുമുണ്ട്.",
+    "start_time_seconds": 5.97,
+    "end_time_seconds": 13.95,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "കുഞ്ഞിൻ്റെ അനക്കം നന്നായി അറിയുന്നുണ്ടോ?",
+    "start_time_seconds": 14.85,
+    "end_time_seconds": 17.85,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ഉണ്ട്. നന്നായി അനങ്ങുന്നുണ്ട്.",
+    "start_time_seconds": 18.95,
+    "end_time_seconds": 21.31,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "EP 142/92 ആണ്. കുറച്ചു കൂടുതലാണ്.",
+    "start_time_seconds": 22.59,
+    "end_time_seconds": 27.83,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Pulsar 88.",
+    "start_time_seconds": 28.95,
+    "end_time_seconds": 30.47,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "68 kg.",
+    "start_time_seconds": 32.49,
+    "end_time_seconds": 33.47,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ഇത് gestational hypertension ആണ്. ഗർഭകാലത്ത് വരുന്ന BP.",
+    "start_time_seconds": 34.73,
+    "end_time_seconds": 39.71,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ഡോക്ടറെ കല്യാണത്തിന് മുമ്പ് എനിക്ക് BPക്ക് Telmisartan തന്നിരുന്നു. അത് വീട്ടിലുണ്ട്. അത് കഴിക്കട്ടെ?",
+    "start_time_seconds": 40.33,
+    "end_time_seconds": 49.21,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "വേണ്ട. ഒരിക്കലും വേണ്ട. ഗർഭകാലത്ത് Telmisartan കുഞ്ഞിന് ദോഷമാണ്. പകരം Labetalol 100 mg ദിവസം 2 നേരം രാവിലെയും രാത്രിയും. ഇത് സ്ഥിരമായി കഴിക്കണം.",
+    "start_time_seconds": 50.33,
+    "end_time_seconds": 66.71,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ശരി. എനിക്ക് ഒരു മരുന്നിനോടും അലർജിയില്ല.",
+    "start_time_seconds": 67.55,
+    "end_time_seconds": 71.77,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "നല്ലത്. Calcium 500 mg രണ്ട് നേരം കഴിക്കുന്നത് തുടരണം.",
+    "start_time_seconds": 72.67,
+    "end_time_seconds": 78.21,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "വേറെ എന്തെങ്കിലും ശ്രദ്ധിക്കണോ?",
+    "start_time_seconds": 78.91,
+    "end_time_seconds": 81.07,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "കഠിനമായ തലവേദന, കാഴ്ച മങ്ങൽ, കുഞ്ഞിൻ്റെ അനക്കം കുറയുക, രക്തസ്രാവം. ഇതിൽ ഏതെങ്കിലും ഉണ്ടായാൽ ഉടനെ labor room-ൽ വരണം.",
+    "start_time_seconds": 81.59,
+    "end_time_seconds": 92.77,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ശരി Doctor-എ. ഇനി എപ്പോൾ?",
+    "start_time_seconds": 93.97,
+    "end_time_seconds": 96.77,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ഒരാഴ്ച കഴിഞ്ഞ് urine protein test ചെയ്തിട്ട് വരൂ.",
+    "start_time_seconds": 97.63,
+    "end_time_seconds": 101.13,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "ml-IN",
+ "language_probability": null,
+ "audio_hash": "f08e6d8dff94564ec6c33b812fe0b01e",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_b1595ae2-2fbc-4a11-99fd-fab3ad46016d",
+  "elapsed_s": 11.323115110397339,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "codemix",
+   "language_code": "ml-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

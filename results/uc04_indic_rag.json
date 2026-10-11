@@ -1,0 +1,2599 @@
+{
+ "uc": "uc04_indic_rag",
+ "title": "Q&A over company documents in Indian languages (RAG)",
+ "business_question": "Employees and customers ask questions (in their own language, in English, or in romanised WhatsApp-style text) over company documents written in Indian languages. Which model answers correctly, in the user's language, and says 'not in the documents' instead of guessing?",
+ "dataset": {
+  "name": "uc04 synthetic Indian-language policy documents",
+  "source": "authored for this benchmark",
+  "license": "CC-BY-4.0 (this repo)",
+  "n": 132,
+  "n_answerable": 108,
+  "n_unanswerable": 24,
+  "n_chunks": 39,
+  "frontier_subset_qids": [
+   "bank_ml-f1-english",
+   "bank_ml-f2-native",
+   "bank_ml-f3-romanised",
+   "bank_ml-f5-native",
+   "bank_ml-f6-romanised",
+   "bank_ml-f7-english",
+   "bank_ml-f8-romanised",
+   "hosp_kn-f1-english",
+   "hosp_kn-f2-native",
+   "hosp_kn-f3-romanised",
+   "hosp_kn-f5-native",
+   "hosp_kn-f6-romanised",
+   "hosp_kn-u2-native",
+   "hr_hi-f1-english",
+   "hr_hi-f2-native",
+   "hr_hi-f3-romanised",
+   "hr_hi-f5-native",
+   "hr_hi-f6-romanised",
+   "hr_hi-f7-native",
+   "ins_ta-f1-english",
+   "ins_ta-f2-native",
+   "ins_ta-f3-romanised",
+   "ins_ta-f5-native",
+   "ins_ta-f6-romanised",
+   "ins_ta-f7-english",
+   "ins_ta-f8-romanised",
+   "pds_mr-f1-english",
+   "pds_mr-f2-native",
+   "pds_mr-f3-romanised",
+   "pds_mr-f5-native",
+   "pds_mr-f6-romanised",
+   "pds_mr-u2-native",
+   "telecom_bn-f1-english",
+   "telecom_bn-f2-native",
+   "telecom_bn-f3-romanised",
+   "telecom_bn-f5-native",
+   "telecom_bn-f6-romanised",
+   "telecom_bn-u1-native"
+  ],
+  "local_subset": "rag condition, all 132 questions (no oracle condition)",
+  "languages": [
+   "Bengali",
+   "Hindi",
+   "Kannada",
+   "Malayalam",
+   "Marathi",
+   "Tamil"
+  ],
+  "synthetic": true,
+  "how_made": "6 fictional policy documents (HR/Hindi, health insurance/Tamil, bank charges/Malayalam, telecom/Bengali, ration PDS/Marathi, hospital billing/Kannada) written by an LLM author (Claude) with invented numbers, split into 150-250 word sections (= chunks). 36 answerable facts x 3 question forms (native script, English, romanised code-mix) + 12 unanswerable facts x 2 forms. Every gold answer was machine-checked to occur in exactly its gold chunk and in no other chunk of that document."
+ },
+ "systems": [
+  "gemini-embedding-2",
+  "sarvam-105b",
+  "sarvam-105b-think",
+  "sarvam-105b-conversations",
+  "gemini-3.8-flash",
+  "openai:gpt-5.4-mini",
+  "or:anthropic/claude-haiku-5.5",
+  "gemini-pro-latest-think",
+  "openai:gpt-5.5-think",
+  "or:anthropic/claude-sonnet-5.5-think",
+  "sarvam-30b-local",
+  "qwen3-30b-local"
+ ],
+ "metrics": [
+  {
+   "name": "retrieval_recall_at5",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "gemini-embedding-2": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 108
+    }
+   },
+   "by_form": {
+    "native": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 36
+    },
+    "english": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 36
+    },
+    "romanised": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 36
+    },
+    "all": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 108
+    }
+   }
+  },
+  {
+   "name": "retrieval_recall_at1",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "gemini-embedding-2": {
+     "mean": 0.9814814814814815,
+     "lo": 0.9537037037037037,
+     "hi": 1.0,
+     "n": 108
+    }
+   },
+   "by_form": {
+    "native": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 36
+    },
+    "english": {
+     "mean": 0.9722222222222222,
+     "lo": 0.9166666666666666,
+     "hi": 1.0,
+     "n": 36
+    },
+    "romanised": {
+     "mean": 0.9722222222222222,
+     "lo": 0.9166666666666666,
+     "hi": 1.0,
+     "n": 36
+    },
+    "all": {
+     "mean": 0.9814814814814815,
+     "lo": 0.9537037037037037,
+     "hi": 1.0,
+     "n": 108
+    }
+   }
+  },
+  {
+   "name": "answer_correct_rag",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.6666666666666666,
+     "lo": 0.5833333333333334,
+     "hi": 0.7592592592592593,
+     "n": 108
+    },
+    "sarvam-105b-think": {
+     "mean": 0.9629629629629629,
+     "lo": 0.9166666666666666,
+     "hi": 0.9907407407407407,
+     "n": 108
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.5185185185185185,
+     "lo": 0.42592592592592593,
+     "hi": 0.6111111111111112,
+     "n": 108
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 108
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.9907407407407407,
+     "lo": 0.9722222222222222,
+     "hi": 1.0,
+     "n": 108
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9351851851851852,
+     "lo": 0.8888888888888888,
+     "hi": 0.9814814814814815,
+     "n": 108
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.2962962962962963,
+     "lo": 0.21296296296296297,
+     "hi": 0.3888888888888889,
+     "n": 108
+    },
+    "qwen3-30b-local": {
+     "mean": 0.9444444444444444,
+     "lo": 0.8981481481481481,
+     "hi": 0.9814814814814815,
+     "n": 108
+    }
+   },
+   "values_local_subset": {
+    "sarvam-105b": {
+     "mean": 0.6666666666666666,
+     "lo": 0.5833333333333334,
+     "hi": 0.7592592592592593,
+     "n": 108
+    },
+    "sarvam-105b-think": {
+     "mean": 0.9629629629629629,
+     "lo": 0.9166666666666666,
+     "hi": 0.9907407407407407,
+     "n": 108
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.5185185185185185,
+     "lo": 0.42592592592592593,
+     "hi": 0.6111111111111112,
+     "n": 108
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 108
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.9907407407407407,
+     "lo": 0.9722222222222222,
+     "hi": 1.0,
+     "n": 108
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9351851851851852,
+     "lo": 0.8888888888888888,
+     "hi": 0.9814814814814815,
+     "n": 108
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.2962962962962963,
+     "lo": 0.21296296296296297,
+     "hi": 0.3888888888888889,
+     "n": 108
+    },
+    "qwen3-30b-local": {
+     "mean": 0.9444444444444444,
+     "lo": 0.8981481481481481,
+     "hi": 0.9814814814814815,
+     "n": 108
+    }
+   },
+   "values_frontier_subset": {
+    "sarvam-105b": {
+     "mean": 0.7666666666666667,
+     "lo": 0.6,
+     "hi": 0.9,
+     "n": 30
+    },
+    "sarvam-105b-think": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.5333333333333333,
+     "lo": 0.36666666666666664,
+     "hi": 0.7,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9333333333333333,
+     "lo": 0.8333333333333334,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.16666666666666666,
+     "lo": 0.03333333333333333,
+     "hi": 0.3,
+     "n": 30
+    },
+    "qwen3-30b-local": {
+     "mean": 0.9,
+     "lo": 0.7666666666666667,
+     "hi": 1.0,
+     "n": 30
+    }
+   },
+   "by_form": {
+    "native": {
+     "sarvam-105b": 0.6111111111111112,
+     "sarvam-105b-think": 0.9722222222222222,
+     "sarvam-105b-conversations": 0.5833333333333334,
+     "gemini-3.8-flash": 1.0,
+     "openai:gpt-5.4-mini": 1.0,
+     "or:anthropic/claude-haiku-5.5": 0.9444444444444444,
+     "gemini-pro-latest-think": 1.0,
+     "openai:gpt-5.5-think": 1.0,
+     "or:anthropic/claude-sonnet-5.5-think": 0.9166666666666666,
+     "sarvam-30b-local": 0.2777777777777778,
+     "qwen3-30b-local": 1.0
+    },
+    "english": {
+     "sarvam-105b": 0.6388888888888888,
+     "sarvam-105b-think": 0.9722222222222222,
+     "sarvam-105b-conversations": 0.5277777777777778,
+     "gemini-3.8-flash": 1.0,
+     "openai:gpt-5.4-mini": 0.9722222222222222,
+     "or:anthropic/claude-haiku-5.5": 0.9166666666666666,
+     "gemini-pro-latest-think": 1.0,
+     "openai:gpt-5.5-think": 1.0,
+     "or:anthropic/claude-sonnet-5.5-think": 1.0,
+     "sarvam-30b-local": 0.3333333333333333,
+     "qwen3-30b-local": 0.9444444444444444
+    },
+    "romanised": {
+     "sarvam-105b": 0.75,
+     "sarvam-105b-think": 0.9444444444444444,
+     "sarvam-105b-conversations": 0.4444444444444444,
+     "gemini-3.8-flash": 1.0,
+     "openai:gpt-5.4-mini": 1.0,
+     "or:anthropic/claude-haiku-5.5": 0.9444444444444444,
+     "gemini-pro-latest-think": 1.0,
+     "openai:gpt-5.5-think": 0.9166666666666666,
+     "or:anthropic/claude-sonnet-5.5-think": 1.0,
+     "sarvam-30b-local": 0.2777777777777778,
+     "qwen3-30b-local": 0.8888888888888888
+    }
+   }
+  },
+  {
+   "name": "answer_correct_oracle",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.6203703703703703,
+     "lo": 0.5370370370370371,
+     "hi": 0.7129629629629629,
+     "n": 108
+    },
+    "sarvam-105b-think": {
+     "mean": 0.9629629629629629,
+     "lo": 0.9259259259259259,
+     "hi": 0.9907407407407407,
+     "n": 108
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.7222222222222222,
+     "lo": 0.6296296296296297,
+     "hi": 0.8055555555555556,
+     "n": 108
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 108
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.9907407407407407,
+     "lo": 0.9722222222222222,
+     "hi": 1.0,
+     "n": 108
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9351851851851852,
+     "lo": 0.8888888888888888,
+     "hi": 0.9722222222222222,
+     "n": 108
+    },
+    "gemini-pro-latest-think": {
+     "mean": null,
+     "lo": null,
+     "hi": null,
+     "n": 0
+    },
+    "openai:gpt-5.5-think": {
+     "mean": null,
+     "lo": null,
+     "hi": null,
+     "n": 0
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": null,
+     "lo": null,
+     "hi": null,
+     "n": 0
+    },
+    "sarvam-30b-local": {
+     "mean": null,
+     "lo": null,
+     "hi": null,
+     "n": 0
+    },
+    "qwen3-30b-local": {
+     "mean": null,
+     "lo": null,
+     "hi": null,
+     "n": 0
+    }
+   },
+   "by_form": {
+    "native": {
+     "sarvam-105b": 0.7222222222222222,
+     "sarvam-105b-think": 0.9444444444444444,
+     "sarvam-105b-conversations": 0.7777777777777778,
+     "gemini-3.8-flash": 1.0,
+     "openai:gpt-5.4-mini": 1.0,
+     "or:anthropic/claude-haiku-5.5": 0.9444444444444444,
+     "gemini-pro-latest-think": null,
+     "openai:gpt-5.5-think": null,
+     "or:anthropic/claude-sonnet-5.5-think": null,
+     "sarvam-30b-local": null,
+     "qwen3-30b-local": null
+    },
+    "english": {
+     "sarvam-105b": 0.5833333333333334,
+     "sarvam-105b-think": 0.9444444444444444,
+     "sarvam-105b-conversations": 0.6388888888888888,
+     "gemini-3.8-flash": 1.0,
+     "openai:gpt-5.4-mini": 0.9722222222222222,
+     "or:anthropic/claude-haiku-5.5": 1.0,
+     "gemini-pro-latest-think": null,
+     "openai:gpt-5.5-think": null,
+     "or:anthropic/claude-sonnet-5.5-think": null,
+     "sarvam-30b-local": null,
+     "qwen3-30b-local": null
+    },
+    "romanised": {
+     "sarvam-105b": 0.5555555555555556,
+     "sarvam-105b-think": 1.0,
+     "sarvam-105b-conversations": 0.75,
+     "gemini-3.8-flash": 1.0,
+     "openai:gpt-5.4-mini": 1.0,
+     "or:anthropic/claude-haiku-5.5": 0.8611111111111112,
+     "gemini-pro-latest-think": null,
+     "openai:gpt-5.5-think": null,
+     "or:anthropic/claude-sonnet-5.5-think": null,
+     "sarvam-30b-local": null,
+     "qwen3-30b-local": null
+    }
+   }
+  },
+  {
+   "name": "gold_present_ignoring_tag_rag",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.9814814814814815,
+     "lo": 0.9537037037037037,
+     "hi": 1.0,
+     "n": 108
+    },
+    "sarvam-105b-think": {
+     "mean": 0.9907407407407407,
+     "lo": 0.9722222222222222,
+     "hi": 1.0,
+     "n": 108
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.9629629629629629,
+     "lo": 0.9259259259259259,
+     "hi": 0.9907407407407407,
+     "n": 108
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 108
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.9907407407407407,
+     "lo": 0.9722222222222222,
+     "hi": 1.0,
+     "n": 108
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9722222222222222,
+     "lo": 0.9351851851851852,
+     "hi": 1.0,
+     "n": 108
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.8518518518518519,
+     "lo": 0.7870370370370371,
+     "hi": 0.9166666666666666,
+     "n": 108
+    },
+    "qwen3-30b-local": {
+     "mean": 0.9444444444444444,
+     "lo": 0.8981481481481481,
+     "hi": 0.9814814814814815,
+     "n": 108
+    }
+   },
+   "values_local_subset": {
+    "sarvam-105b": {
+     "mean": 0.9814814814814815,
+     "lo": 0.9537037037037037,
+     "hi": 1.0,
+     "n": 108
+    },
+    "sarvam-105b-think": {
+     "mean": 0.9907407407407407,
+     "lo": 0.9722222222222222,
+     "hi": 1.0,
+     "n": 108
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.9629629629629629,
+     "lo": 0.9259259259259259,
+     "hi": 0.9907407407407407,
+     "n": 108
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 108
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.9907407407407407,
+     "lo": 0.9722222222222222,
+     "hi": 1.0,
+     "n": 108
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9722222222222222,
+     "lo": 0.9351851851851852,
+     "hi": 1.0,
+     "n": 108
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.8518518518518519,
+     "lo": 0.7870370370370371,
+     "hi": 0.9166666666666666,
+     "n": 108
+    },
+    "qwen3-30b-local": {
+     "mean": 0.9444444444444444,
+     "lo": 0.8981481481481481,
+     "hi": 0.9814814814814815,
+     "n": 108
+    }
+   },
+   "values_frontier_subset": {
+    "sarvam-105b": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-105b-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-105b-conversations": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.8666666666666667,
+     "lo": 0.7333333333333333,
+     "hi": 0.9666666666666667,
+     "n": 30
+    },
+    "qwen3-30b-local": {
+     "mean": 0.9,
+     "lo": 0.7666666666666667,
+     "hi": 1.0,
+     "n": 30
+    }
+   }
+  },
+  {
+   "name": "reply_in_user_language_rag",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.47107438016528924,
+     "lo": 0.38016528925619836,
+     "hi": 0.5619834710743802,
+     "n": 121
+    },
+    "sarvam-105b-think": {
+     "mean": 0.7954545454545454,
+     "lo": 0.7272727272727273,
+     "hi": 0.8636363636363636,
+     "n": 132
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.5075757575757576,
+     "lo": 0.42424242424242425,
+     "hi": 0.5984848484848485,
+     "n": 132
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.8636363636363636,
+     "lo": 0.803030303030303,
+     "hi": 0.9242424242424242,
+     "n": 132
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.4621212121212121,
+     "lo": 0.3787878787878788,
+     "hi": 0.553030303030303,
+     "n": 132
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.6893939393939394,
+     "lo": 0.6136363636363636,
+     "hi": 0.7651515151515151,
+     "n": 132
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 38
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 38
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 38
+    },
+    "sarvam-30b-local": {
+     "mean": 0.47580645161290325,
+     "lo": 0.3870967741935484,
+     "hi": 0.5645161290322581,
+     "n": 124
+    },
+    "qwen3-30b-local": {
+     "mean": 0.47244094488188976,
+     "lo": 0.3858267716535433,
+     "hi": 0.5590551181102362,
+     "n": 127
+    }
+   },
+   "values_local_subset": {
+    "sarvam-105b": {
+     "mean": 0.47107438016528924,
+     "lo": 0.38016528925619836,
+     "hi": 0.5619834710743802,
+     "n": 121
+    },
+    "sarvam-105b-think": {
+     "mean": 0.7954545454545454,
+     "lo": 0.7272727272727273,
+     "hi": 0.8636363636363636,
+     "n": 132
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.5075757575757576,
+     "lo": 0.42424242424242425,
+     "hi": 0.5984848484848485,
+     "n": 132
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.8636363636363636,
+     "lo": 0.803030303030303,
+     "hi": 0.9242424242424242,
+     "n": 132
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.4621212121212121,
+     "lo": 0.3787878787878788,
+     "hi": 0.553030303030303,
+     "n": 132
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.6893939393939394,
+     "lo": 0.6136363636363636,
+     "hi": 0.7651515151515151,
+     "n": 132
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 38
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 38
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 38
+    },
+    "sarvam-30b-local": {
+     "mean": 0.47580645161290325,
+     "lo": 0.3870967741935484,
+     "hi": 0.5645161290322581,
+     "n": 124
+    },
+    "qwen3-30b-local": {
+     "mean": 0.47244094488188976,
+     "lo": 0.3858267716535433,
+     "hi": 0.5590551181102362,
+     "n": 127
+    }
+   },
+   "values_frontier_subset": {
+    "sarvam-105b": {
+     "mean": 0.5714285714285714,
+     "lo": 0.4,
+     "hi": 0.7428571428571429,
+     "n": 35
+    },
+    "sarvam-105b-think": {
+     "mean": 0.868421052631579,
+     "lo": 0.7368421052631579,
+     "hi": 0.9736842105263158,
+     "n": 38
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.5789473684210527,
+     "lo": 0.42105263157894735,
+     "hi": 0.7368421052631579,
+     "n": 38
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.7631578947368421,
+     "lo": 0.631578947368421,
+     "hi": 0.8947368421052632,
+     "n": 38
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.5789473684210527,
+     "lo": 0.42105263157894735,
+     "hi": 0.7368421052631579,
+     "n": 38
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.7631578947368421,
+     "lo": 0.631578947368421,
+     "hi": 0.8947368421052632,
+     "n": 38
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 38
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 38
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 38
+    },
+    "sarvam-30b-local": {
+     "mean": 0.5555555555555556,
+     "lo": 0.4166666666666667,
+     "hi": 0.7222222222222222,
+     "n": 36
+    },
+    "qwen3-30b-local": {
+     "mean": 0.5526315789473685,
+     "lo": 0.39473684210526316,
+     "hi": 0.7105263157894737,
+     "n": 38
+    }
+   },
+   "by_form": {
+    "native": {
+     "sarvam-105b": 1.0,
+     "sarvam-105b-think": 1.0,
+     "sarvam-105b-conversations": 0.9791666666666666,
+     "gemini-3.8-flash": 1.0,
+     "openai:gpt-5.4-mini": 1.0,
+     "or:anthropic/claude-haiku-5.5": 1.0,
+     "gemini-pro-latest-think": 1.0,
+     "openai:gpt-5.5-think": 1.0,
+     "or:anthropic/claude-sonnet-5.5-think": 1.0,
+     "sarvam-30b-local": 1.0,
+     "qwen3-30b-local": 0.9777777777777777
+    },
+    "english": {
+     "sarvam-105b": 0.10526315789473684,
+     "sarvam-105b-think": 0.8809523809523809,
+     "sarvam-105b-conversations": 0.16666666666666666,
+     "gemini-3.8-flash": 0.9523809523809523,
+     "openai:gpt-5.4-mini": 0.07142857142857142,
+     "or:anthropic/claude-haiku-5.5": 0.3333333333333333,
+     "gemini-pro-latest-think": 1.0,
+     "openai:gpt-5.5-think": 1.0,
+     "or:anthropic/claude-sonnet-5.5-think": 1.0,
+     "sarvam-30b-local": 0.05,
+     "qwen3-30b-local": 0.4
+    },
+    "romanised": {
+     "sarvam-105b": 0.23076923076923078,
+     "sarvam-105b-think": 0.47619047619047616,
+     "sarvam-105b-conversations": 0.30952380952380953,
+     "gemini-3.8-flash": 0.6190476190476191,
+     "openai:gpt-5.4-mini": 0.23809523809523808,
+     "or:anthropic/claude-haiku-5.5": 0.6904761904761905,
+     "gemini-pro-latest-think": 1.0,
+     "openai:gpt-5.5-think": 1.0,
+     "or:anthropic/claude-sonnet-5.5-think": 1.0,
+     "sarvam-30b-local": 0.3076923076923077,
+     "qwen3-30b-local": 0.0
+    }
+   }
+  },
+  {
+   "name": "unanswerable_refused_rag",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.9583333333333334,
+     "lo": 0.875,
+     "hi": 1.0,
+     "n": 24
+    },
+    "sarvam-105b-think": {
+     "mean": 0.9166666666666666,
+     "lo": 0.7916666666666666,
+     "hi": 1.0,
+     "n": 24
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.9166666666666666,
+     "lo": 0.7916666666666666,
+     "hi": 1.0,
+     "n": 24
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9166666666666666,
+     "lo": 0.7916666666666666,
+     "hi": 1.0,
+     "n": 24
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.875,
+     "lo": 0.75,
+     "hi": 1.0,
+     "n": 24
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9166666666666666,
+     "lo": 0.7916666666666666,
+     "hi": 1.0,
+     "n": 24
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.875,
+     "lo": 0.625,
+     "hi": 1.0,
+     "n": 8
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.875,
+     "lo": 0.625,
+     "hi": 1.0,
+     "n": 8
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.875,
+     "lo": 0.625,
+     "hi": 1.0,
+     "n": 8
+    },
+    "sarvam-30b-local": {
+     "mean": 0.7916666666666666,
+     "lo": 0.625,
+     "hi": 0.9583333333333334,
+     "n": 24
+    },
+    "qwen3-30b-local": {
+     "mean": 0.625,
+     "lo": 0.4166666666666667,
+     "hi": 0.7916666666666666,
+     "n": 24
+    }
+   },
+   "values_local_subset": {
+    "sarvam-105b": {
+     "mean": 0.9583333333333334,
+     "lo": 0.875,
+     "hi": 1.0,
+     "n": 24
+    },
+    "sarvam-105b-think": {
+     "mean": 0.9166666666666666,
+     "lo": 0.7916666666666666,
+     "hi": 1.0,
+     "n": 24
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.9166666666666666,
+     "lo": 0.7916666666666666,
+     "hi": 1.0,
+     "n": 24
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9166666666666666,
+     "lo": 0.7916666666666666,
+     "hi": 1.0,
+     "n": 24
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.875,
+     "lo": 0.75,
+     "hi": 1.0,
+     "n": 24
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9166666666666666,
+     "lo": 0.7916666666666666,
+     "hi": 1.0,
+     "n": 24
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.875,
+     "lo": 0.625,
+     "hi": 1.0,
+     "n": 8
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.875,
+     "lo": 0.625,
+     "hi": 1.0,
+     "n": 8
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.875,
+     "lo": 0.625,
+     "hi": 1.0,
+     "n": 8
+    },
+    "sarvam-30b-local": {
+     "mean": 0.7916666666666666,
+     "lo": 0.625,
+     "hi": 0.9583333333333334,
+     "n": 24
+    },
+    "qwen3-30b-local": {
+     "mean": 0.625,
+     "lo": 0.4166666666666667,
+     "hi": 0.7916666666666666,
+     "n": 24
+    }
+   },
+   "values_frontier_subset": {
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 8
+    },
+    "sarvam-105b-think": {
+     "mean": 0.875,
+     "lo": 0.625,
+     "hi": 1.0,
+     "n": 8
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.875,
+     "lo": 0.625,
+     "hi": 1.0,
+     "n": 8
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.875,
+     "lo": 0.625,
+     "hi": 1.0,
+     "n": 8
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.75,
+     "lo": 0.375,
+     "hi": 1.0,
+     "n": 8
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.875,
+     "lo": 0.625,
+     "hi": 1.0,
+     "n": 8
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.875,
+     "lo": 0.625,
+     "hi": 1.0,
+     "n": 8
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.875,
+     "lo": 0.625,
+     "hi": 1.0,
+     "n": 8
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.875,
+     "lo": 0.625,
+     "hi": 1.0,
+     "n": 8
+    },
+    "sarvam-30b-local": {
+     "mean": 0.875,
+     "lo": 0.625,
+     "hi": 1.0,
+     "n": 8
+    },
+    "qwen3-30b-local": {
+     "mean": 0.375,
+     "lo": 0.0,
+     "hi": 0.75,
+     "n": 8
+    }
+   }
+  },
+  {
+   "name": "false_refusal_rag",
+   "higher_is_better": false,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.32407407407407407,
+     "lo": 0.23148148148148148,
+     "hi": 0.4074074074074074,
+     "n": 108
+    },
+    "sarvam-105b-think": {
+     "mean": 0.027777777777777776,
+     "lo": 0.0,
+     "hi": 0.06481481481481481,
+     "n": 108
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.4722222222222222,
+     "lo": 0.37962962962962965,
+     "hi": 0.5648148148148148,
+     "n": 108
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 108
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 108
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.046296296296296294,
+     "lo": 0.009259259259259259,
+     "hi": 0.08333333333333333,
+     "n": 108
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.6388888888888888,
+     "lo": 0.5462962962962963,
+     "hi": 0.7314814814814815,
+     "n": 108
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 108
+    }
+   },
+   "values_local_subset": {
+    "sarvam-105b": {
+     "mean": 0.32407407407407407,
+     "lo": 0.23148148148148148,
+     "hi": 0.4074074074074074,
+     "n": 108
+    },
+    "sarvam-105b-think": {
+     "mean": 0.027777777777777776,
+     "lo": 0.0,
+     "hi": 0.06481481481481481,
+     "n": 108
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.4722222222222222,
+     "lo": 0.37962962962962965,
+     "hi": 0.5648148148148148,
+     "n": 108
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 108
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 108
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.046296296296296294,
+     "lo": 0.009259259259259259,
+     "hi": 0.08333333333333333,
+     "n": 108
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.6388888888888888,
+     "lo": 0.5462962962962963,
+     "hi": 0.7314814814814815,
+     "n": 108
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 108
+    }
+   },
+   "values_frontier_subset": {
+    "sarvam-105b": {
+     "mean": 0.2,
+     "lo": 0.06666666666666667,
+     "hi": 0.36666666666666664,
+     "n": 30
+    },
+    "sarvam-105b-think": {
+     "mean": 0.03333333333333333,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 30
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.4666666666666667,
+     "lo": 0.3,
+     "hi": 0.6333333333333333,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.03333333333333333,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 30
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.7333333333333333,
+     "lo": 0.5666666666666667,
+     "hi": 0.8666666666666667,
+     "n": 30
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    }
+   }
+  },
+  {
+   "name": "hallucinated_number_rate_rag",
+   "higher_is_better": false,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 132
+    },
+    "sarvam-105b-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 132
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 132
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 132
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 132
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 132
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    },
+    "sarvam-30b-local": {
+     "mean": 0.015151515151515152,
+     "lo": 0.0,
+     "hi": 0.03787878787878788,
+     "n": 132
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 132
+    }
+   },
+   "values_local_subset": {
+    "sarvam-105b": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 132
+    },
+    "sarvam-105b-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 132
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 132
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 132
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 132
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 132
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    },
+    "sarvam-30b-local": {
+     "mean": 0.015151515151515152,
+     "lo": 0.0,
+     "hi": 0.03787878787878788,
+     "n": 132
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 132
+    }
+   },
+   "values_frontier_subset": {
+    "sarvam-105b": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    },
+    "sarvam-105b-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    },
+    "sarvam-30b-local": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 38
+    }
+   }
+  },
+  {
+   "name": "hallucinated_number_rate_unanswerable",
+   "higher_is_better": false,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 24
+    },
+    "sarvam-105b-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 24
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 24
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 24
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 24
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 24
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    },
+    "sarvam-30b-local": {
+     "mean": 0.041666666666666664,
+     "lo": 0.0,
+     "hi": 0.125,
+     "n": 24
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 24
+    }
+   },
+   "values_local_subset": {
+    "sarvam-105b": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 24
+    },
+    "sarvam-105b-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 24
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 24
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 24
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 24
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 24
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    },
+    "sarvam-30b-local": {
+     "mean": 0.041666666666666664,
+     "lo": 0.0,
+     "hi": 0.125,
+     "n": 24
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 24
+    }
+   },
+   "values_frontier_subset": {
+    "sarvam-105b": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    },
+    "sarvam-105b-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    },
+    "sarvam-105b-conversations": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    },
+    "openai:gpt-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    },
+    "sarvam-30b-local": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 8
+    }
+   }
+  }
+ ],
+ "per_language": {
+  "answer_correct_rag": {
+   "Bengali": {
+    "sarvam-105b": 0.5555555555555556,
+    "sarvam-105b-think": 0.9444444444444444,
+    "sarvam-105b-conversations": 0.4444444444444444,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0,
+    "sarvam-30b-local": 0.16666666666666666,
+    "qwen3-30b-local": 1.0
+   },
+   "Hindi": {
+    "sarvam-105b": 0.5,
+    "sarvam-105b-think": 0.9444444444444444,
+    "sarvam-105b-conversations": 0.3333333333333333,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0,
+    "sarvam-30b-local": 0.2777777777777778,
+    "qwen3-30b-local": 1.0
+   },
+   "Kannada": {
+    "sarvam-105b": 0.9444444444444444,
+    "sarvam-105b-think": 1.0,
+    "sarvam-105b-conversations": 0.8333333333333334,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.9444444444444444,
+    "or:anthropic/claude-haiku-5.5": 0.9444444444444444,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0,
+    "sarvam-30b-local": 0.5,
+    "qwen3-30b-local": 0.8888888888888888
+   },
+   "Malayalam": {
+    "sarvam-105b": 0.5555555555555556,
+    "sarvam-105b-think": 0.8888888888888888,
+    "sarvam-105b-conversations": 0.3333333333333333,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 0.8333333333333334,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 0.8,
+    "sarvam-30b-local": 0.4444444444444444,
+    "qwen3-30b-local": 0.8888888888888888
+   },
+   "Marathi": {
+    "sarvam-105b": 0.5555555555555556,
+    "sarvam-105b-think": 1.0,
+    "sarvam-105b-conversations": 0.6111111111111112,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 0.8333333333333334,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 0.8,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0,
+    "sarvam-30b-local": 0.2222222222222222,
+    "qwen3-30b-local": 0.8888888888888888
+   },
+   "Tamil": {
+    "sarvam-105b": 0.8888888888888888,
+    "sarvam-105b-think": 1.0,
+    "sarvam-105b-conversations": 0.5555555555555556,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0,
+    "sarvam-30b-local": 0.16666666666666666,
+    "qwen3-30b-local": 1.0
+   }
+  },
+  "retrieval_recall_at5": {
+   "Bengali": {
+    "gemini-embedding-2": 1.0
+   },
+   "Hindi": {
+    "gemini-embedding-2": 1.0
+   },
+   "Kannada": {
+    "gemini-embedding-2": 1.0
+   },
+   "Malayalam": {
+    "gemini-embedding-2": 1.0
+   },
+   "Marathi": {
+    "gemini-embedding-2": 1.0
+   },
+   "Tamil": {
+    "gemini-embedding-2": 1.0
+   }
+  },
+  "reply_in_user_language_rag": {
+   "Bengali": {
+    "sarvam-105b": 0.35,
+    "sarvam-105b-think": 0.6818181818181818,
+    "sarvam-105b-conversations": 0.45454545454545453,
+    "gemini-3.8-flash": 0.8181818181818182,
+    "openai:gpt-5.4-mini": 0.4090909090909091,
+    "or:anthropic/claude-haiku-5.5": 0.5909090909090909,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0,
+    "sarvam-30b-local": 0.4090909090909091,
+    "qwen3-30b-local": 0.55
+   },
+   "Hindi": {
+    "sarvam-105b": 0.42105263157894735,
+    "sarvam-105b-think": 0.9090909090909091,
+    "sarvam-105b-conversations": 0.45454545454545453,
+    "gemini-3.8-flash": 0.9545454545454546,
+    "openai:gpt-5.4-mini": 0.6363636363636364,
+    "or:anthropic/claude-haiku-5.5": 0.9090909090909091,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0,
+    "sarvam-30b-local": 0.5,
+    "qwen3-30b-local": 0.38095238095238093
+   },
+   "Kannada": {
+    "sarvam-105b": 0.5,
+    "sarvam-105b-think": 0.7727272727272727,
+    "sarvam-105b-conversations": 0.5454545454545454,
+    "gemini-3.8-flash": 0.7727272727272727,
+    "openai:gpt-5.4-mini": 0.45454545454545453,
+    "or:anthropic/claude-haiku-5.5": 0.5454545454545454,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0,
+    "sarvam-30b-local": 0.6190476190476191,
+    "qwen3-30b-local": 0.47619047619047616
+   },
+   "Malayalam": {
+    "sarvam-105b": 0.5789473684210527,
+    "sarvam-105b-think": 0.7727272727272727,
+    "sarvam-105b-conversations": 0.5454545454545454,
+    "gemini-3.8-flash": 0.7727272727272727,
+    "openai:gpt-5.4-mini": 0.4090909090909091,
+    "or:anthropic/claude-haiku-5.5": 0.7272727272727273,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0,
+    "sarvam-30b-local": 0.5625,
+    "qwen3-30b-local": 0.5714285714285714
+   },
+   "Marathi": {
+    "sarvam-105b": 0.45454545454545453,
+    "sarvam-105b-think": 0.8181818181818182,
+    "sarvam-105b-conversations": 0.45454545454545453,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.36363636363636365,
+    "or:anthropic/claude-haiku-5.5": 0.6818181818181818,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0,
+    "sarvam-30b-local": 0.36363636363636365,
+    "qwen3-30b-local": 0.45454545454545453
+   },
+   "Tamil": {
+    "sarvam-105b": 0.5238095238095238,
+    "sarvam-105b-think": 0.8181818181818182,
+    "sarvam-105b-conversations": 0.5909090909090909,
+    "gemini-3.8-flash": 0.8636363636363636,
+    "openai:gpt-5.4-mini": 0.5,
+    "or:anthropic/claude-haiku-5.5": 0.6818181818181818,
+    "gemini-pro-latest-think": 1.0,
+    "openai:gpt-5.5-think": 1.0,
+    "or:anthropic/claude-sonnet-5.5-think": 1.0,
+    "sarvam-30b-local": 0.42857142857142855,
+    "qwen3-30b-local": 0.4090909090909091
+   }
+  }
+ },
+ "speed": {
+  "sarvam-105b": {
+   "p50_ms": 557.8110218048096,
+   "p95_ms": 5275.885105133057
+  },
+  "sarvam-105b-think": {
+   "p50_ms": 4850.602865219116,
+   "p95_ms": 12820.168256759644
+  },
+  "sarvam-105b-conversations": {
+   "p50_ms": 427.74486541748047,
+   "p95_ms": 4610.728979110718
+  },
+  "gemini-3.8-flash": {
+   "p50_ms": 2754.2033195495605,
+   "p95_ms": 5191.037893295288
+  },
+  "openai:gpt-5.4-mini": {
+   "p50_ms": 1070.9209442138672,
+   "p95_ms": 1366.3620948791504
+  },
+  "or:anthropic/claude-haiku-5.5": {
+   "p50_ms": 1924.2660999298096,
+   "p95_ms": 2671.4470386505127
+  },
+  "gemini-pro-latest-think": {
+   "p50_ms": 6093.881845474243,
+   "p95_ms": 7943.422794342041
+  },
+  "openai:gpt-5.5-think": {
+   "p50_ms": 2524.627923965454,
+   "p95_ms": 4141.6661739349365
+  },
+  "or:anthropic/claude-sonnet-5.5-think": {
+   "p50_ms": 3045.3450679779053,
+   "p95_ms": 7190.3839111328125
+  },
+  "sarvam-30b-local": {
+   "p50_ms": 2799.2098331451416,
+   "p95_ms": 183600.58903694153
+  },
+  "qwen3-30b-local": {
+   "p50_ms": 12992.533922195435,
+   "p95_ms": 19823.50206375122
+  }
+ },
+ "usage": {
+  "sarvam-105b": {
+   "in_tok": 313191,
+   "out_tok": 6319,
+   "reasoning_tok": 0,
+   "calls": 240,
+   "cost_usd": null
+  },
+  "sarvam-105b-think": {
+   "in_tok": 312231,
+   "out_tok": 227350,
+   "reasoning_tok": 220613,
+   "calls": 240,
+   "cost_usd": null
+  },
+  "sarvam-105b-conversations": {
+   "in_tok": 313191,
+   "out_tok": 6092,
+   "reasoning_tok": 0,
+   "calls": 240,
+   "cost_usd": null
+  },
+  "gemini-3.8-flash": {
+   "in_tok": 329715,
+   "out_tok": 7222,
+   "reasoning_tok": 3959,
+   "calls": 240,
+   "cost_usd": null
+  },
+  "openai:gpt-5.4-mini": {
+   "in_tok": 377836,
+   "out_tok": 8074,
+   "reasoning_tok": 0,
+   "calls": 240,
+   "cost_usd": null
+  },
+  "or:anthropic/claude-haiku-5.5": {
+   "in_tok": 1002239,
+   "out_tok": 27635,
+   "reasoning_tok": 0,
+   "calls": 240,
+   "cost_usd": 0.114
+  },
+  "gemini-pro-latest-think": {
+   "in_tok": 77168,
+   "out_tok": 1050,
+   "reasoning_tok": 18794,
+   "calls": 38,
+   "cost_usd": null
+  },
+  "openai:gpt-5.5-think": {
+   "in_tok": 89506,
+   "out_tok": 3074,
+   "reasoning_tok": 1771,
+   "calls": 38,
+   "cost_usd": null
+  },
+  "or:anthropic/claude-sonnet-5.5-think": {
+   "in_tok": 235037,
+   "out_tok": 6795,
+   "reasoning_tok": 1498,
+   "calls": 38,
+   "cost_usd": 0.538
+  },
+  "sarvam-30b-local": {
+   "in_tok": 256251,
+   "out_tok": 4017,
+   "reasoning_tok": 0,
+   "calls": 132,
+   "cost_usd": null
+  },
+  "qwen3-30b-local": {
+   "in_tok": 910785,
+   "out_tok": 10572,
+   "reasoning_tok": 0,
+   "calls": 132,
+   "cost_usd": null
+  },
+  "gemini-embedding-2": {
+   "chars": 55392,
+   "texts": 171
+  }
+ },
+ "findings": [
+  "Retrieval was not the bottleneck. gemini-embedding-2 put the gold chunk in the top 5 for 108/108 answerable questions (recall@1 0.98), the same for native-script, English and romanised questions. Cross-script search works with the task written into the text (gemini-embedding-2 has no task_type). The corpus is small, though: 39 chunks, each document in a different language.",
+  "Answer correctness on the full 108 answerable questions (top-5 retrieval): gemini-3.8-flash 1.00, gpt-5.4-mini 0.99, sarvam-105b with thinking 0.96, claude-haiku-5.5 0.94, sarvam-105b with thinking off 0.67, sarvam-105b-conversations 0.52. On the 30-question frontier subset: gemini-pro-latest 1.00, gpt-5.5 0.97, claude-sonnet-5.5 0.97.",
+  "sarvam-105b with thinking off finds the right number almost every time (gold value present in 98% of replies, 96% for -conversations). It then appends the [NOT_FOUND] tag to 32% of correct answers (47% for -conversations), apparently because some of the 5 excerpts come from other documents. One reply says the answer is in the Periyar bank document, then tags it as not found because it is absent from the Surma Telecom excerpt. A bot that routes on the tag would hide about a third of correct answers. With reasoning on, false refusals fall to 3% and correctness rises to 0.96, at about 8x the latency (p50 4.9 s vs 0.6 s) and 220k reasoning tokens for 240 calls.",
+  "The oracle condition gives the gold chunk alone, and sarvam-105b with thinking off still scores 0.62. Its errors come from generation and instruction-following, not retrieval. The other systems score the same with or without retrieval.",
+  "Replying in the user's language is the biggest gap. For native-script questions every system replies in that script (98-100%). For English questions about an Indic document, most models answer in the document's language. Share of English questions answered in English: gpt-5.4-mini 0.07, sarvam-105b 0.11, sarvam-105b-conversations 0.17, claude-haiku-5.5 0.33, sarvam-105b with thinking 0.88, gemini-3.8-flash 0.95, all three frontier models 1.00.",
+  "Self-hosted models (llama.cpp Q4_K_M, thinking off, all 132 questions, rag condition): qwen3-30b-local answered 0.94 of the 108 answerable questions correctly, but refused only 0.62 of the unanswerable ones and replied in Latin script to 0 of 38 romanised questions. sarvam-30b-local found the gold value in 0.85 of replies, but appended [NOT_FOUND] to 64% of answerable questions (correct 0.30). It answered English questions in English only 5% of the time, refused 0.79 of the unanswerable questions, and is the only system that invented numbers (2 of 132 replies; for example, it made up a ₹1,500 ambulance charge for an unanswerable Kanglish question). sarvam-30b-local is not usable for this task without heavy prompt or format work.",
+  "Tokenizer cost limits what one machine can serve. The same RAG prompts average 1,900 tokens on Sarvam's tokenizer (105B and 30B), 1,960 on Gemini, 2,320 on gpt-5.4-mini, 5,670 on claude-haiku-5.5 and 6,580 on Qwen3. A Kannada hospital RAG prompt that Sarvam fits in about 1.9k tokens takes 10,088 on Qwen3. On our shared server (32k context split across 4 slots, 8k each) all 14 Kannada prompts overflowed. We reran them on a dedicated 16k-context server so the scores are not distorted; there qwen3 got 0.89 of the Kannada questions right. The lesson: on the same hardware, Qwen3 has 3-5x less context headroom per user for Indic documents than Sarvam.",
+  "Romanised questions (Hinglish, Tanglish, Manglish, Banglish, Kanglish, romanised Marathi) mostly get native-script replies. Share answered in Latin script: gpt-5.4-mini 0.24, sarvam-105b 0.23, sarvam-105b-conversations 0.31, sarvam-105b with thinking 0.48, gemini-3.8-flash 0.62, claude-haiku-5.5 0.69, frontier models 1.00. On a WhatsApp help-desk most users who type romanised text will get a reply in a script they did not use.",
+  "Unanswerable questions were refused 88-96% of the time by every system, and no system put an invented number in a reply (hallucinated-number rate 0.00 everywhere). Almost all the failures are one question: a Tamil insurance customer asks about dental cover, and retrieval returns the Hindi HR policy of a different company, which covers dental up to ₹6,500. 8 of 9 cloud systems quoted that ₹6,500 as if it were the insurer's rule (gpt-5.5, claude-sonnet-5.5, gemini-pro-latest, gemini-3.8-flash, gpt-5.4-mini, claude-haiku-5.5, sarvam-105b with thinking, -conversations). sarvam-105b with thinking off named the other company and tagged the answer not found, which is the right call. The general lesson is cross-source contamination: scope retrieval to the right organisation or tenant, because the models will not do it for you.",
+  "Speed for one RAG answer, p50/p95: sarvam-105b 0.6/5.3 s, -conversations 0.4/4.6 s, gpt-5.4-mini 1.1/1.4 s, claude-haiku-5.5 1.9/2.7 s, gemini-3.8-flash 2.8/5.2 s, sarvam-105b with thinking 4.9/12.8 s.",
+  "Tokenizer cost differs by provider: the same 240 Indic-language prompts were 313k input tokens on sarvam-105b, 330k on gemini-3.8-flash, 378k on gpt-5.4-mini and 1,002k on claude-haiku-5.5 (3.2x Sarvam)."
+ ],
+ "caveats": [
+  "The data is synthetic: 6 documents and 132 questions written by an LLM author (Claude). Each gold answer was checked by machine against its chunk, but no native speaker has reviewed the language quality.",
+  "The task is easy for strong models (several score 1.00), so the differences between systems are about instruction-following (the [NOT_FOUND] tag, reply language) more than reading comprehension. Harder multi-hop or arithmetic questions were deliberately left out.",
+  "The [NOT_FOUND] tag is our prompt's way to detect refusals. A system that answers correctly and still adds the tag is scored as refusing, because a bot routing on the tag would treat it that way. The lenient metric gold_present_ignoring_tag_rag ignores the tag.",
+  "The reply-language check uses the dominant script, so a romanised question expects a Latin-script reply. A native-script reply to a romanised question may be acceptable to some users.",
+  "Only 24 unanswerable questions (12 facts in 2 forms each), so refusal-rate CIs are wide, and one cross-document item accounts for most of the failures.",
+  "Frontier models ran on a 38-question subset (30 evenly spaced over sorted qids, plus 8 unanswerable), listed in dataset.frontier_subset_qids. Compare them using values_frontier_subset.",
+  "Local models ran the rag condition on all 132 questions, with no oracle condition. The 14 qwen3-30b-local Kannada prompts that overflowed the shared server's 8k slot were rerun on a temporary dedicated llama-server (-c 16384 -np 1) with the same model and settings. sarvam-30b-local runs with reasoning off via bench.chat's empty-think prefill; its 12 calls made before that fix are excluded. Local latency reflects a shared, loaded Mac and is not a hardware benchmark."
+ ],
+ "verdict": "For an Indian-language document help-desk, retrieval with gemini-embedding-2 is solved at this scale. Pick the generator for instruction-following. gemini-3.8-flash is the best default in the price-matched tier: 100% correct, 95% English replies to English questions, but only 62% romanised replies to romanised questions. sarvam-105b is fast (0.6 s) and cheap, and nearly always finds the right figure. With thinking off, though, it marks a third of its correct answers as not found and answers English questions in the document's language, so run it with reasoning on (0.96 correct, 3% false refusals, about 5 s) or don't use a refusal tag. Skip sarvam-105b-conversations for this task. gpt-5.4-mini is accurate but almost never answers in the user's language. If users write romanised or English text against Indic documents and language matching matters, only the frontier models (gemini-pro-latest, gpt-5.5, claude-sonnet-5.5) got it right every time on our subset. Whatever the model, scope retrieval to the right organisation: almost every model will quote another company's policy if retrieval hands it one. For on-premise use, qwen3-30b-local reads Indic documents well but over-answers when the documents don't contain the answer and overflows an 8k context on Kannada. sarvam-30b-local tokenizes Indic text efficiently but needs work on its refusal behaviour before it is usable.",
+ "examples": [
+  {
+   "qid": "telecom_bn-f2-english",
+   "lang": "Bengali",
+   "form": "english",
+   "question": "What internet speed will I get once my daily data quota is used up?",
+   "gold": [
+    "64"
+   ],
+   "answerable": true,
+   "gold_chunk": "telecom_bn#s2",
+   "retrieved": [
+    "telecom_bn#s2",
+    "telecom_bn#s5",
+    "telecom_bn#s3",
+    "telecom_bn#s6",
+    "telecom_bn#s1"
+   ],
+   "outputs": {
+    "sarvam-105b": {
+     "text": "আপনার দৈনিক ডেটা সীমা শেষ হয়ে গেলে ইন্টারনেটের গতি কমে ৬৪ Kbps হয়ে যাবে। [NOT_FOUND]",
+     "refused": true,
+     "lang_match": false,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": false
+    },
+    "sarvam-105b-think": {
+     "text": "\nOnce your daily data quota is used up, the internet speed will reduce to **64 Kbps**. The data limit will be renewed at midnight.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "sarvam-105b-conversations": {
+     "text": "দৈনিক ডেটা সীমা শেষ হয়ে গেলে ইন্টারনেটের গতি কমে ৬৪ Kbps হয়ে যাবে। [NOT_FOUND]",
+     "refused": true,
+     "lang_match": false,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": false
+    },
+    "gemini-3.8-flash": {
+     "text": "Once your daily data limit is exhausted, the internet speed will reduce to 64 Kbps until it resets at midnight.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "দৈনিক ডেটা সীমা শেষ হয়ে গেলে ইন্টারনেটের গতি কমে ৬৪ Kbps হয়ে যাবে।",
+     "refused": false,
+     "lang_match": false,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "দৈনিক ডেটা সীমা শেষ হয়ে গেলে ইন্টারনেটের গতি কমে ৬৪ Kbps হয়ে যাবে, এবং মধ্যরাতে সীমা আবার পূর্ণ হবে।",
+     "refused": false,
+     "lang_match": false,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "sarvam-30b-local": {
+     "text": "ডেটা কোটা শেষ হয়ে গেলে ইন্টারনেটের গতি কমে 64 Kbps হয়ে যাবে। [NOT_FOUND]",
+     "refused": true,
+     "lang_match": false,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": false
+    },
+    "qwen3-30b-local": {
+     "text": "Once your daily data quota is used up, the internet speed will reduce to 64 Kbps.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    }
+   }
+  },
+  {
+   "qid": "ins_ta-f5-romanised",
+   "lang": "Tamil",
+   "form": "romanised",
+   "question": "appa 63 vayasula policy eduthaaru, co-pay evlo percent?",
+   "gold": [
+    "20"
+   ],
+   "answerable": true,
+   "gold_chunk": "ins_ta#s4",
+   "retrieved": [
+    "ins_ta#s4",
+    "ins_ta#s5",
+    "ins_ta#s6",
+    "ins_ta#s1",
+    "ins_ta#s7"
+   ],
+   "outputs": {
+    "sarvam-105b": {
+     "text": "61 வயது அல்லது அதற்கு மேல் உள்ளவர்களுக்கு ஒவ்வொரு உரிமைகோரலிலும் 20% இணைப் பணம் (co-payment) பொருந்தும்.",
+     "refused": false,
+     "lang_match": false,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "sarvam-105b-think": {
+     "text": "\nகாவேரி ஹெல்த் இன்சூரன்ஸ் பாலிசியில் 61 வயது அல்லது அதற்கு மேல் உள்ளவர்களுக்கு ஒவ்வொரு உரிமைகோரலிலும் **20%** இணைப் பணம் (co-payment) பொருந்தும்.",
+     "refused": false,
+     "lang_match": false,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "sarvam-105b-conversations": {
+     "text": "Policy edukkumbothu 61 vayathu allathu atharku mel ullavargalukku ovvoru claim-ilum 20% co-payment porundhum.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "gemini-3.8-flash": {
+     "text": "Policy edukkumbodhu 61 vayasu alladhu adharku mel ullavargalukku, ovvoru urimaikoralilum (claim) 20% co-payment porundhum.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "63 வயதில் பாலிசி எடுத்தவர்களுக்கு ஒவ்வொரு உரிமைகோரலிலும் 20% இணைப் பணம் (co-payment) பொருந்தும்.",
+     "refused": false,
+     "lang_match": false,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "Appa 61 vayasu illa adhukku mela irundhaal, policy eduthappo co-payment 20% (ellaa claim-kkum) — adhaavadhu approved amount-la 20%-ai policyholder thaan kattanum. [Excerpt 1]",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "sarvam-30b-local": {
+     "text": "61 வயது அல்லது அதற்கு மேற்பட்டவர்களுக்கு, ஒவ்வொரு கோரிக்கையிலும் (claim) 20% இணை-கட்டணம் (co-payment) பொருந்தும். [NOT_FOUND]",
+     "refused": true,
+     "lang_match": false,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": false
+    },
+    "qwen3-30b-local": {
+     "text": "63 வயது உள்ளவர்களுக்கு, ஒவ்வொரு உரிமைகோரலிலும் 20% இணைப் பணம் (co-payment) பொருந்தும்.",
+     "refused": false,
+     "lang_match": false,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    }
+   }
+  },
+  {
+   "qid": "ins_ta-f7-english",
+   "lang": "Tamil",
+   "form": "english",
+   "question": "How much is covered for dental treatment under OPD?",
+   "gold": [],
+   "answerable": false,
+   "gold_chunk": null,
+   "retrieved": [
+    "hr_hi#s5",
+    "ins_ta#s5",
+    "ins_ta#s4",
+    "ins_ta#s2",
+    "hosp_kn#s4"
+   ],
+   "outputs": {
+    "sarvam-105b": {
+     "text": "सुरभि टेक्सटाइल्स प्रा. लि. के अनुसार, ओपीडी (OPD) में दंत चिकित्सा के लिए प्रतिपूर्ति ₹6,500 तक है। [NOT_FOUND]",
+     "refused": true,
+     "lang_match": false,
+     "halluc_nums": []
+    },
+    "sarvam-105b-think": {
+     "text": "\nUnder OPD, dental treatment is covered up to ₹6,500 per year.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": []
+    },
+    "sarvam-105b-conversations": {
+     "text": "सुरभि टेक्सटाइल्स प्रा. लि. की नीति के अनुसार, दंत चिकित्सा के लिए वर्ष में ₹6,500 तक की राशि ओपीडी सीमा के भीतर मान्य है।",
+     "refused": false,
+     "lang_match": false,
+     "halluc_nums": []
+    },
+    "gemini-3.8-flash": {
+     "text": "Under the OPD limit, an amount of up to ₹6,500 per year is covered for dental treatment.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": []
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "दंत चिकित्सा के लिए वर्ष में ₹6,500 तक की राशि ओपीडी सीमा के भीतर ही मान्य है।",
+     "refused": false,
+     "lang_match": false,
+     "halluc_nums": []
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "Surabhi Textiles की OPD चिकित्सा प्रतिपूर्ति नीति के अनुसार, दंत चिकित्सा के लिए वर्ष में ₹6,500 तक की राशि मान्य है, और यह ₹18,500 की कुल वार्षिक OPD सीमा के भीतर ही आती है।",
+     "refused": false,
+     "lang_match": false,
+     "halluc_nums": []
+    },
+    "gemini-pro-latest-think": {
+     "text": "Under OPD, dental treatment is covered up to ₹6,500 per year.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": []
+    },
+    "openai:gpt-5.5-think": {
+     "text": "Dental treatment is covered up to ₹6,500 per year, within the OPD limit.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": []
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "text": "The user asks in English. Excerpt 1 says dental treatment is covered up to ₹6,500 per year, within the OPD limit.\n\nDental treatment is covered up to ₹6,500 per year, and this amount falls within (not in addition to) the overall annual OPD limit of ₹18,500.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": []
+    },
+    "sarvam-30b-local": {
+     "text": "₹4,200 प्रति वर्ष.",
+     "refused": false,
+     "lang_match": false,
+     "halluc_nums": []
+    },
+    "qwen3-30b-local": {
+     "text": "ओपीडी के भीतर दंत चिकित्सा के लिए वार्षिक सीमा ₹6,500 तक है।",
+     "refused": false,
+     "lang_match": false,
+     "halluc_nums": []
+    }
+   }
+  },
+  {
+   "qid": "hr_hi-f2-romanised",
+   "lang": "Hindi",
+   "form": "romanised",
+   "question": "OPD bills ka saal ka reimbursement limit kitna hai?",
+   "gold": [
+    "18500"
+   ],
+   "answerable": true,
+   "gold_chunk": "hr_hi#s5",
+   "retrieved": [
+    "hr_hi#s5",
+    "hr_hi#s6",
+    "ins_ta#s4",
+    "ins_ta#s5",
+    "ins_ta#s3"
+   ],
+   "outputs": {
+    "sarvam-105b": {
+     "text": "OPD bill ke reimbursement ki saalana limit ₹18,500 hai.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "sarvam-105b-think": {
+     "text": "\nOPD bills ki prati varshik reimbursement limit ₹18,500 prati karmachari hai.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "sarvam-105b-conversations": {
+     "text": "Surabhi Textiles ki OPD prati-rashi ki saalana seema ₹18,500 hai. [NOT_FOUND]",
+     "refused": true,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": false
+    },
+    "gemini-3.8-flash": {
+     "text": "OPD upchar ke kharch ki pratipoorti ke liye pratyek karmachari ki varshik seema ₹18,500 hai.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "OPD bills ka saal ka reimbursement limit ₹18,500 hai.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "OPD bills ke liye Surabhi Textiles ki policy mein har karmchari ki saalana reimbursement limit ₹18,500 hai, jismein karmchari, jeevansathi, do aashrit bachche aur aashrit maata-pita shaamil hain.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "sarvam-30b-local": {
+     "text": "Surabhi Textiles Pvt. Ltd. — Leave & Reimbursement Policy 2026 — Medical Reimbursement: ₹18,500 per year.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "qwen3-30b-local": {
+     "text": "वर्ष में ओपीडी बिल के लिए अधिकतम प्रतिपूर्ति सीमा ₹18,500 है।",
+     "refused": false,
+     "lang_match": false,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    }
+   }
+  },
+  {
+   "qid": "bank_ml-f1-english",
+   "lang": "Malayalam",
+   "form": "english",
+   "question": "What is the penalty if my cheque bounces due to insufficient balance?",
+   "gold": [
+    "590"
+   ],
+   "answerable": true,
+   "gold_chunk": "bank_ml#s5",
+   "retrieved": [
+    "bank_ml#s5",
+    "bank_ml#s2",
+    "bank_ml#s7",
+    "bank_ml#s3",
+    "pds_mr#s6"
+   ],
+   "outputs": {
+    "sarvam-105b": {
+     "text": "നിങ്ങളുടെ ചെക്ക് മതിയായ തുക ഇല്ലാത്തതിനാൽ മടങ്ങിയാൽ ഓരോ ചെക്കിനും ₹590 ഈടാക്കും.",
+     "refused": false,
+     "lang_match": false,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "sarvam-105b-think": {
+     "text": "\nIf a cheque bounces due to insufficient balance, ₹590 will be charged for each cheque.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "sarvam-105b-conversations": {
+     "text": "അക്കൗണ്ടിൽ മതിയായ തുക ഇല്ലാത്തതിനാൽ ചെക്ക് മടങ്ങിയാൽ ഓരോ ചെക്കിനും ₹590 ഈടാക്കും.",
+     "refused": false,
+     "lang_match": false,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "gemini-3.8-flash": {
+     "text": "If a cheque bounces due to insufficient balance in the account, a penalty of ₹590 will be charged per cheque.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "₹590 per cheque.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "If your cheque bounces due to insufficient balance (cheque return), the charge is ₹590 per cheque, as per Excerpt 1 of the Periyar Co-operative Bank service charges list 2026-27.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "gemini-pro-latest-think": {
+     "text": "If your cheque bounces due to insufficient balance, a penalty of ₹590 will be charged per cheque.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "openai:gpt-5.5-think": {
+     "text": "The penalty is ₹590 per cheque if it bounces due to insufficient balance.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "or:anthropic/claude-sonnet-5.5-think": {
+     "text": "If your cheque is returned because of insufficient funds in your account, Periyar Co-operative Bank charges ₹590 per cheque. For technical reasons such as a signature mismatch, the charge is ₹150.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "sarvam-30b-local": {
+     "text": "₹590.",
+     "refused": false,
+     "lang_match": null,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    },
+    "qwen3-30b-local": {
+     "text": "If a cheque bounces due to insufficient balance, ₹590 will be charged per cheque.",
+     "refused": false,
+     "lang_match": true,
+     "halluc_nums": [],
+     "gold_present": true,
+     "correct": true
+    }
+   }
+  }
+ ],
+ "updated": "2026-10-11 23:04:01"
+}

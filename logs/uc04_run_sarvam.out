@@ -1,0 +1,31 @@
+20:26:32 39 chunks, 132 questions, embeddings new: {'calls_new': 0, 'chars_new': 0}
+20:26:33 720 calls to make for ['sarvam-105b', 'sarvam-105b-think', 'sarvam-105b-conversations']
+20:26:33 0 sarvam-105b bank_ml-f1-native rag അക്കൗണ്ടിൽ മതിയായ തുക ഇല്ലാത്തതിനാൽ ചെക്ക് മടങ്ങിയാൽ ഓരോ ചെക്കിനും ₹590 പിഴ ഈടാക
+20:26:48 50 sarvam-105b hr_hi-f3-native rag आप M2 ग्रेड में हैं, तो आपको होटल के लिए प्रति रात्रि ₹3,800 तक का किराया मिलेगा
+20:27:56 100 sarvam-105b pds_mr-f5-native rag बीमार या बुजुर्ग लाभार्थींसाठी प्रतिनिधी नेमण्यासाठी विहित अर्ज PDS-NOM-3 भरावा 
+20:27:56 150 sarvam-105b hosp_kn-f1-native oracle ಅಪ್ಪನನ್ನು ICUಗೆ ದಾಖಲಿಸುವಾಗ ₹40,000 ಮುಂಗಡ ಹಣ ಕಟ್ಟಬೇಕು.
+20:28:21 200 sarvam-105b ins_ta-f5-romanised oracle 63 vayasula policy eduthaalum co-pay 20% thaan. [NOT_FOUND]
+20:30:07 250 sarvam-105b-think bank_ml-f4-english rag 
+The charge for branch RTGS above ₹5 lakh is ₹49.50.
+20:31:00 300 sarvam-105b-think hr_hi-f6-english rag 
+The new leave and reimbursement policy comes into effect on 1 April 2026.
+20:32:44 350 sarvam-105b-think telecom_bn-f1-native rag 
+₹৩৪৯-এর 'সুরমা প্লাস' প্ল্যানের মেয়াদ ৫৬ দিন।
+20:33:51 400 sarvam-105b-think hosp_kn-f4-english oracle 
+You must vacate the room within 90 minutes after paying the final bill.
+20:35:46 450 sarvam-105b-think pds_mr-f3-native oracle 
+अंत्योदय शिधापत्रिकाधारकाला दरमहा कुल ३४ किलो धान्य मिलते.
+20:36:00 500 sarvam-105b-conversations bank_ml-f8-native rag [NOT_FOUND] വിദേശത്ത് ഡെബിറ്റ് കാർഡ് ഉപയോഗിക്കുമ്പോഴുള്ള ഫോറെക്സ് മാർക്കപ്പ് ശതമ
+20:36:06 550 sarvam-105b-conversations ins_ta-f2-english rag கண்புரை அறுவை சிகிச்சைக்கு ஒரு கண்ணுக்கு அதிகபட்சம் ₹42,000 வழங்கப்படும்.
+20:37:04 600 sarvam-105b-conversations telecom_bn-f4-english rag ভুল নম্বরে রিচার্জের রিফান্ডের জন্য ফর্ম SRM-RF-04 পূরণ করতে হবে। [NOT_FOUND]
+20:37:10 650 sarvam-105b-conversations hr_hi-f1-romanised oracle अधिकतम संचित शेष 45 दिन तक हो सकता है। [NOT_FOUND]
+20:37:44 700 sarvam-105b-conversations pds_mr-f6-english oracle तुम्ही प्रथम संबंधित तालुका पुरवठा निरीक्षक यांच्याकडे तक्रार करावी.
+20:38:02 retrieval_recall_at5 {'gemini-embedding-2': (1.0, 108)}
+20:38:02 retrieval_recall_at1 {'gemini-embedding-2': (0.981, 108)}
+20:38:02 answer_correct_rag {'sarvam-105b': (0.667, 108), 'sarvam-105b-think': (0.963, 108), 'sarvam-105b-conversations': (0.519, 108), 'gemini-3.8-flash': (1.0, 108), 'sarvam-30b-local': (0.714, 7)}
+20:38:02 answer_correct_oracle {'sarvam-105b': (0.62, 108), 'sarvam-105b-think': (0.963, 108), 'sarvam-105b-conversations': (0.722, 108), 'gemini-3.8-flash': (1.0, 108), 'sarvam-30b-local': (None, 0)}
+20:38:02 reply_in_user_language_rag {'sarvam-105b': (0.432, 132), 'sarvam-105b-think': (0.795, 132), 'sarvam-105b-conversations': (0.508, 132), 'gemini-3.8-flash': (0.864, 132), 'sarvam-30b-local': (0.818, 11)}
+20:38:02 unanswerable_refused_rag {'sarvam-105b': (0.958, 24), 'sarvam-105b-think': (0.917, 24), 'sarvam-105b-conversations': (0.917, 24), 'gemini-3.8-flash': (0.917, 24), 'sarvam-30b-local': (1.0, 4)}
+20:38:02 false_refusal_rag {'sarvam-105b': (0.324, 108), 'sarvam-105b-think': (0.028, 108), 'sarvam-105b-conversations': (0.472, 108), 'gemini-3.8-flash': (0.0, 108), 'sarvam-30b-local': (0.286, 7)}
+20:38:02 hallucinated_number_rate_rag {'sarvam-105b': (0.0, 132), 'sarvam-105b-think': (0.0, 132), 'sarvam-105b-conversations': (0.0, 132), 'gemini-3.8-flash': (0.0, 132), 'sarvam-30b-local': (0.0, 11)}
+20:38:02 hallucinated_number_rate_unanswerable {'sarvam-105b': (0.0, 24), 'sarvam-105b-think': (0.0, 24), 'sarvam-105b-conversations': (0.0, 24), 'gemini-3.8-flash': (0.0, 24), 'sarvam-30b-local': (0.0, 4)}

@@ -1,0 +1,144 @@
+{
+ "request_id": "20261011_53e43e0e-ca60-4435-aa85-518fcd1196cc",
+ "transcript": "Come, sit down. What is the problem? Doctor, I have had a fever and cough for five days. The phlegm is yellow. Is there any relief? Chest pain? There is no shortness of breath. When coughing, there is a slight pain in the chest. Okay, let me see. Temperature 100. Pulse 102 ₹290. I can hear some crackles in the left lung. This is a lower respiratory tract infection. Oh no! Will a pill be needed? Needed. Oglandin 625 mg, two times a day, five days. Doctor, I forgot to mention one thing. I am allergic to penicillin. Once before, my whole body itched and swelled. It is good to say. But Augmentin is not needed. That is penicillin group. Instead, Azithromycin 500 mg, one time a day, three days. For fever, Paracetamol 650 mg, three times a day, three days should be taken. Anything else to note? Drink plenty of warm water. If you experience shortness of breath, increased chest pain, or blood in the phlegm, get well soon. Okay, Doctor. Now. Should come. Come back after taking a chest X-ray in 3 days.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Come, sit down. What is the problem?",
+    "start_time_seconds": 0.43,
+    "end_time_seconds": 3.47,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor, I have had a fever and cough for five days. The phlegm is yellow.",
+    "start_time_seconds": 4.23,
+    "end_time_seconds": 11.79,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Is there any relief? Chest pain?",
+    "start_time_seconds": 12.71,
+    "end_time_seconds": 15.53,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "There is no shortness of breath. When coughing, there is a slight pain in the chest.",
+    "start_time_seconds": 16.55,
+    "end_time_seconds": 22.15,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay, let me see.",
+    "start_time_seconds": 23.25,
+    "end_time_seconds": 25.03,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Temperature 100.",
+    "start_time_seconds": 26.49,
+    "end_time_seconds": 28.79,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Pulse 102",
+    "start_time_seconds": 30.85,
+    "end_time_seconds": 33.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "₹290.",
+    "start_time_seconds": 34.39,
+    "end_time_seconds": 35.83,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "I can hear some crackles in the left lung. This is a lower respiratory tract infection. Oh no!",
+    "start_time_seconds": 37.63,
+    "end_time_seconds": 48.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Will a pill be needed?",
+    "start_time_seconds": 48.45,
+    "end_time_seconds": 50.49,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Needed.",
+    "start_time_seconds": 51.63,
+    "end_time_seconds": 52.19,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Oglandin 625 mg, two times a day, five days.",
+    "start_time_seconds": 53.21,
+    "end_time_seconds": 58.59,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor, I forgot to mention one thing. I am allergic to penicillin. Once before, my whole body itched and swelled.",
+    "start_time_seconds": 59.69,
+    "end_time_seconds": 70.69,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "It is good to say. But Augmentin is not needed. That is penicillin group. Instead, Azithromycin 500 mg, one time a day, three days. For fever, Paracetamol 650 mg, three times a day, three days should be taken.",
+    "start_time_seconds": 71.57,
+    "end_time_seconds": 90.17,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Anything else to note?",
+    "start_time_seconds": 90.79,
+    "end_time_seconds": 92.89,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Drink plenty of warm water. If you experience shortness of breath, increased chest pain, or blood in the phlegm, get well soon.",
+    "start_time_seconds": 93.83,
+    "end_time_seconds": 104.45,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Okay, Doctor.",
+    "start_time_seconds": 104.45,
+    "end_time_seconds": 105.55,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Now.",
+    "start_time_seconds": 105.55,
+    "end_time_seconds": 107.19,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Should come.",
+    "start_time_seconds": 107.19,
+    "end_time_seconds": 107.87,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Come back after taking a chest X-ray in 3 days.",
+    "start_time_seconds": 108.75,
+    "end_time_seconds": 112.31,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "ml-IN",
+ "language_probability": null,
+ "audio_hash": "ae4033095efe3cbf0dffe9a6cfa728ac",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_31142ffd-8c9f-4229-ac32-f1fb9b2b1c6d",
+  "elapsed_s": 10.822964191436768,
+  "params": {
+   "model": "saaras:v3",
+   "mode": "translate",
+   "language_code": "ml-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

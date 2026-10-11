@@ -1,0 +1,119 @@
+{
+ "id": "d24",
+ "pair": "ta-en",
+ "lang": "Tamil",
+ "style": "native",
+ "topic": "paediatrics",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "வாங்க, பாப்பாவுக்கு என்ன?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "டாக்டர், இவ நிலா, எட்டு வயசு. ரெண்டு வாரமா ராத்திரில ஆசனவாய் பக்கத்துல ரொம்ப அரிக்குதுன்னு தூங்க மாட்டேங்குறா. சாப்பாடும் சரியா சாப்பிடறதில்ல."
+  },
+  {
+   "speaker": "doctor",
+   "text": "வயிறு வலி, வாந்தி இருக்கா?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "லேசா வயிறு வலிக்குதுன்னு சொல்றா. வாந்தி இல்ல."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Weight 24 kilo, temperature 98.6, pulse 90. இது pinworm, அதாவது நூல்புழு தொற்று."
+  },
+  {
+   "speaker": "attendant",
+   "text": "டாக்டர், பசி எடுக்க ஒரு appetite syrup குடுங்க. பக்கத்து வீட்டு குழந்தைக்கு Cyproheptadine குடுத்தாங்க."
+  },
+  {
+   "speaker": "doctor",
+   "text": "அது வேண்டாம். புழு போனா பசி தானா வரும். பாப்பாவுக்கு ஏதாவது மருந்துக்கு allergy இருக்கா?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "இல்ல டாக்டர்."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Albendazole 400 mg, ஒரே ஒரு மாத்திரை, இன்னைக்கு ராத்திரி சாப்பாட்டுக்கு அப்புறம் மென்னு சாப்பிடணும். வீட்டுல எல்லாருக்கும் இதே மாதிரி ஒரு dose குடுங்க."
+  },
+  {
+   "speaker": "attendant",
+   "text": "வேற என்ன பண்ணணும்?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "நகம் வெட்டி வைங்க, சாப்பிடறதுக்கு முன்னாடி கை கழுவணும், bedsheet வெந்நீர்ல துவைங்க. மலத்துல ரத்தம் வந்தா, இல்லைன்னா கடுமையான வயிறு வலியோட வாந்தி வந்தா உடனே வாங்க."
+  },
+  {
+   "speaker": "attendant",
+   "text": "சரி டாக்டர்."
+  },
+  {
+   "speaker": "doctor",
+   "text": "ரெண்டு வாரம் கழிச்சு காட்டுங்க."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "itching around anus",
+   "perianal itching",
+   "anal itching",
+   "night-time itching"
+  ],
+  "duration": {
+   "value": 2,
+   "unit": "weeks"
+  },
+  "vitals": {
+   "weight_kg": 24,
+   "temp_f": 98.6,
+   "pulse": 90
+  },
+  "diagnosis": [
+   "pinworm infection",
+   "pinworm",
+   "threadworm",
+   "enterobiasis",
+   "worm infestation"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "albendazole",
+     "zentel"
+    ],
+    "dose": "400 mg",
+    "frequency": "OD",
+    "duration_days": 1
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "blood in stool",
+    "bloody stool"
+   ],
+   [
+    "severe abdominal pain with vomiting",
+    "severe abdominal pain",
+    "vomiting"
+   ]
+  ],
+  "follow_up": [
+   "2 weeks",
+   "two weeks",
+   "after 2 weeks"
+  ],
+  "not_prescribed": [
+   "cyproheptadine"
+  ]
+ },
+ "trap": "Mother asks for Cyproheptadine appetite syrup; refused."
+}

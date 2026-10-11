@@ -1,0 +1,118 @@
+{
+ "id": "d23",
+ "pair": "ta-en",
+ "lang": "Tamil",
+ "style": "native",
+ "topic": "diabetes",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "காதர் பாய், வாங்க. என்ன பிரச்சனை?"
+  },
+  {
+   "speaker": "patient",
+   "text": "டாக்டர், ஒரு வாரமா திடீர் திடீர்னு வியர்த்து கொட்டுது, கை நடுங்குது, தலை சுத்துது. சாயங்காலம் தான் அதிகம்."
+  },
+  {
+   "speaker": "doctor",
+   "text": "இப்போ என்ன மருந்து சாப்பிடுறீங்க?"
+  },
+  {
+   "speaker": "patient",
+   "text": "Glimepiride 2 mg காலையில, Metformin 500 காலையும் ராத்திரியும்."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Fasting sugar 76 தான், weight 64 kilo, BP 130 by 76. சாப்பாடு சரியா சாப்பிடுறீங்களா?"
+  },
+  {
+   "speaker": "patient",
+   "text": "நோன்பு மாதம் ஆரம்பிச்சதுல இருந்து மதியம் சாப்பிடறதில்ல."
+  },
+  {
+   "speaker": "doctor",
+   "text": "அதான் காரணம். இது type 2 diabetes-ல வர்ற hypoglycemia, sugar குறையறது. Glimepiride-ஐ குறைக்கணும், இனிமே Glimepiride 1 mg மட்டும், காலையில ஒரு தடவை. Metformin 500 mg காலையும் ராத்திரியும் அப்படியே தொடருங்க."
+  },
+  {
+   "speaker": "patient",
+   "text": "எனக்கு எந்த மருந்துக்கும் allergy இல்ல."
+  },
+  {
+   "speaker": "doctor",
+   "text": "சரி. எப்போவும் பாக்கெட்ல சர்க்கரை வெச்சுக்கோங்க. நடுக்கம் வந்தா உடனே சாப்பிடுங்க. சர்க்கரை சாப்பிட்டும் சரியாகலைன்னா, மயக்கம் வந்தா, இல்லைன்னா நெஞ்சு வலி வந்தா உடனே hospital வாங்க."
+  },
+  {
+   "speaker": "patient",
+   "text": "சரி டாக்டர்."
+  },
+  {
+   "speaker": "doctor",
+   "text": "ரெண்டு வாரம் sugar chart எழுதிட்டு வாங்க."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "sweating episodes",
+   "tremors",
+   "giddiness",
+   "low sugar episodes",
+   "hypoglycemia"
+  ],
+  "duration": {
+   "value": 1,
+   "unit": "weeks"
+  },
+  "vitals": {
+   "blood_sugar": 76,
+   "weight_kg": 64,
+   "bp": "130/76"
+  },
+  "diagnosis": [
+   "hypoglycemia",
+   "hypoglycaemia",
+   "type 2 diabetes with hypoglycemia",
+   "drug-induced hypoglycemia"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "glimepiride",
+     "amaryl"
+    ],
+    "dose": "1 mg",
+    "frequency": "OD",
+    "duration_days": null
+   },
+   {
+    "drug": [
+     "metformin",
+     "glycomet"
+    ],
+    "dose": "500 mg",
+    "frequency": "BD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "unconscious",
+    "fainting",
+    "loss of consciousness",
+    "not improving with sugar"
+   ],
+   [
+    "chest pain"
+   ]
+  ],
+  "follow_up": [
+   "2 weeks",
+   "two weeks",
+   "after 2 weeks"
+  ],
+  "not_prescribed": []
+ },
+ "trap": "Glimepiride reduced from 2 mg to 1 mg (old dose is not gold)."
+}

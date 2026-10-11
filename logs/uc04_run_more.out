@@ -1,0 +1,26 @@
+20:47:47 39 chunks, 132 questions, embeddings new: {'calls_new': 0, 'chars_new': 0}
+20:47:47 570 calls to make for ['openai:gpt-5.4-mini', 'or:anthropic/claude-haiku-5.5', 'gemini-pro-latest-think', 'openai:gpt-5.5-think', 'or:anthropic/claude-sonnet-5.5-think']
+20:47:48 0 openai:gpt-5.4-mini bank_ml-f1-native rag ബാലൻസ് ഇല്ലാതെ ചെക്ക് മടങ്ങിയാൽ ഓരോ ചെക്കിനും ₹590 ഈടാക്കും.
+20:48:03 50 openai:gpt-5.4-mini hr_hi-f3-native rag M2 ग्रेड के लिए होटल ठहरने का खर्च अधिकतम ₹3,800 प्रति रात्रि तक मान्य है।
+20:48:19 100 openai:gpt-5.4-mini pds_mr-f5-native rag विहित अर्ज **PDS-NOM-3** भरावा लागतो. मंजुरीनंतर प्रतिनिधीचा आधार क्रमांक शिधापत
+20:48:31 150 openai:gpt-5.4-mini hosp_kn-f1-native oracle ICU ದಾಖಲಾತಿಗೆ ಮುಂಗಡ ಠೇವಣಿ ₹40,000.
+20:48:43 200 openai:gpt-5.4-mini ins_ta-f5-romanised oracle 63 vayasula policy எடுத்தவர்களுக்கு ஒவ்வொரு உரிமைகோரலிலும் **20% co-payment** பொ
+20:49:08 250 or:anthropic/claude-haiku-5.5 bank_ml-f4-english rag Branch RTGS transfers of ₹5 lakh and above are charged ₹49.50, so an ₹8 lakh RTG
+20:49:28 300 or:anthropic/claude-haiku-5.5 hr_hi-f6-english rag The new leave and reimbursement policy (STPL/HR/2026/07) comes into effect from 
+20:49:51 350 or:anthropic/claude-haiku-5.5 telecom_bn-f1-native rag ৩৪৯ টাকার 'সুরমা প্লাস' প্ল্যানের মেয়াদ ৫৬ দিন।
+20:50:12 400 or:anthropic/claude-haiku-5.5 hosp_kn-f4-english oracle ಅಂತಿಮ ಬಿಲ್ ಪಾವತಿಯಾದ ನಂತರ ನೀವು 90 ನಿಮಿಷಗಳೊಳಗೆ ಕೊಠಡಿಯನ್ನು ಖಾಲಿ ಮಾಡಬೇಕು; ಇಲ್ಲದಿದ್ದರ
+20:50:40 450 or:anthropic/claude-haiku-5.5 pds_mr-f3-native oracle अंत्योदय शिधापत्रिकेवर दरमहा प्रति शिधापत्रिका एकूण ३४ किलो धान्य मिळते, ज्यामध्
+20:51:19 500 gemini-pro-latest-think pds_mr-f1-english rag The revised ration card rules will come into force from 15 May 2026.
+20:52:01 550 or:anthropic/claude-sonnet-5.5-think hr_hi-f1-english rag The user wrote in English, so reply in English.
+
+The total accumulated earned le
+20:52:32 retrieval_recall_at5 {'gemini-embedding-2': (1.0, 108)}
+20:52:32 retrieval_recall_at1 {'gemini-embedding-2': (0.981, 108)}
+20:52:32 answer_correct_rag {'sarvam-105b': (0.667, 108), 'sarvam-105b-think': (0.963, 108), 'sarvam-105b-conversations': (0.519, 108), 'gemini-3.8-flash': (1.0, 108), 'openai:gpt-5.4-mini': (0.991, 108), 'or:anthropic/claude-haiku-5.5': (0.935, 108), 'gemini-pro-latest-think': (1.0, 30), 'openai:gpt-5.5-think': (0.967, 30), 'or:anthropic/claude-sonnet-5.5-think': (0.967, 30), 'sarvam-30b-local': (0.583, 12)}
+20:52:32 answer_correct_oracle {'sarvam-105b': (0.62, 108), 'sarvam-105b-think': (0.963, 108), 'sarvam-105b-conversations': (0.722, 108), 'gemini-3.8-flash': (1.0, 108), 'openai:gpt-5.4-mini': (0.991, 108), 'or:anthropic/claude-haiku-5.5': (0.935, 108), 'gemini-pro-latest-think': (None, 0), 'openai:gpt-5.5-think': (None, 0), 'or:anthropic/claude-sonnet-5.5-think': (None, 0), 'sarvam-30b-local': (None, 0)}
+20:52:32 gold_present_ignoring_tag_rag {'sarvam-105b': (0.981, 108), 'sarvam-105b-think': (0.991, 108), 'sarvam-105b-conversations': (0.963, 108), 'gemini-3.8-flash': (1.0, 108), 'openai:gpt-5.4-mini': (0.991, 108), 'or:anthropic/claude-haiku-5.5': (0.972, 108), 'gemini-pro-latest-think': (1.0, 30), 'openai:gpt-5.5-think': (0.967, 30), 'or:anthropic/claude-sonnet-5.5-think': (0.967, 30), 'sarvam-30b-local': (0.917, 12)}
+20:52:32 reply_in_user_language_rag {'sarvam-105b': (0.471, 121), 'sarvam-105b-think': (0.795, 132), 'sarvam-105b-conversations': (0.508, 132), 'gemini-3.8-flash': (0.864, 132), 'openai:gpt-5.4-mini': (0.462, 132), 'or:anthropic/claude-haiku-5.5': (0.689, 132), 'gemini-pro-latest-think': (1.0, 30), 'openai:gpt-5.5-think': (1.0, 30), 'or:anthropic/claude-sonnet-5.5-think': (1.0, 30), 'sarvam-30b-local': (0.933, 15)}
+20:52:32 unanswerable_refused_rag {'sarvam-105b': (0.958, 24), 'sarvam-105b-think': (0.917, 24), 'sarvam-105b-conversations': (0.917, 24), 'gemini-3.8-flash': (0.917, 24), 'openai:gpt-5.4-mini': (0.875, 24), 'or:anthropic/claude-haiku-5.5': (0.917, 24), 'gemini-pro-latest-think': (None, 0), 'openai:gpt-5.5-think': (None, 0), 'or:anthropic/claude-sonnet-5.5-think': (None, 0), 'sarvam-30b-local': (1.0, 4)}
+20:52:32 false_refusal_rag {'sarvam-105b': (0.324, 108), 'sarvam-105b-think': (0.028, 108), 'sarvam-105b-conversations': (0.472, 108), 'gemini-3.8-flash': (0.0, 108), 'openai:gpt-5.4-mini': (0.0, 108), 'or:anthropic/claude-haiku-5.5': (0.046, 108), 'gemini-pro-latest-think': (0.0, 30), 'openai:gpt-5.5-think': (0.0, 30), 'or:anthropic/claude-sonnet-5.5-think': (0.0, 30), 'sarvam-30b-local': (0.417, 12)}
+20:52:32 hallucinated_number_rate_rag {'sarvam-105b': (0.0, 132), 'sarvam-105b-think': (0.0, 132), 'sarvam-105b-conversations': (0.0, 132), 'gemini-3.8-flash': (0.0, 132), 'openai:gpt-5.4-mini': (0.0, 132), 'or:anthropic/claude-haiku-5.5': (0.0, 132), 'gemini-pro-latest-think': (0.0, 30), 'openai:gpt-5.5-think': (0.0, 30), 'or:anthropic/claude-sonnet-5.5-think': (0.0, 30), 'sarvam-30b-local': (0.0, 16)}
+20:52:32 hallucinated_number_rate_unanswerable {'sarvam-105b': (0.0, 24), 'sarvam-105b-think': (0.0, 24), 'sarvam-105b-conversations': (0.0, 24), 'gemini-3.8-flash': (0.0, 24), 'openai:gpt-5.4-mini': (0.0, 24), 'or:anthropic/claude-haiku-5.5': (0.0, 24), 'gemini-pro-latest-think': (None, 0), 'openai:gpt-5.5-think': (None, 0), 'or:anthropic/claude-sonnet-5.5-think': (None, 0), 'sarvam-30b-local': (0.0, 4)}

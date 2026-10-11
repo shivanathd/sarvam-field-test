@@ -1,0 +1,121 @@
+{
+ "id": "d22",
+ "pair": "ta-en",
+ "lang": "Tamil",
+ "style": "native",
+ "topic": "fever",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "கார்த்திக், வாங்க. என்ன ஆச்சு?"
+  },
+  {
+   "speaker": "patient",
+   "text": "டாக்டர், நாலு நாளா காய்ச்சல், உடம்பு முழுக்க வலி, கண்ணுக்கு பின்னாடி வலிக்குது."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Blood test பாத்தேன். Dengue NS1 positive, platelet 88000. Temperature 100.2, pulse தொண்ணூற்று இரண்டு, BP 106 by 68. இது dengue fever."
+  },
+  {
+   "speaker": "patient",
+   "text": "வலி தாங்க முடியாம Brufen சாப்பிட்டேன் டாக்டர்."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Brufen உடனே நிறுத்துங்க. Dengue-ல அது ரத்தப்போக்கை அதிகமாக்கும். ஏதாவது மருந்துக்கு allergy?"
+  },
+  {
+   "speaker": "patient",
+   "text": "இல்ல டாக்டர். Platelet ஏத்த ஊசி போடணுமா?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "இப்போ வேண்டாம், 88000 இருக்கு. Paracetamol 650 mg மட்டும், ஒரு நாளைக்கு மூணு வேளை, அஞ்சு நாள். வேற வலி மாத்திரை எதுவும் வேண்டாம்."
+  },
+  {
+   "speaker": "patient",
+   "text": "சாப்பாடு?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "நிறைய தண்ணி, இளநீர், கஞ்சி குடிங்க. ஈறுல ரத்தம் வந்தா, மலம் கருப்பா போனா, கடுமையான வயிறு வலி, நிக்காத வாந்தி, இல்லைன்னா எழுந்திரிக்கும்போது தலைசுத்தினா உடனே hospital வாங்க."
+  },
+  {
+   "speaker": "patient",
+   "text": "சரி டாக்டர்."
+  },
+  {
+   "speaker": "doctor",
+   "text": "நாளைக்கு மறுபடியும் platelet count பாத்துட்டு வாங்க."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "fever",
+   "body pain",
+   "retro-orbital pain",
+   "pain behind eyes"
+  ],
+  "duration": {
+   "value": 4,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 100.2,
+   "pulse": 92,
+   "bp": "106/68"
+  },
+  "diagnosis": [
+   "dengue",
+   "dengue fever"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "paracetamol",
+     "dolo"
+    ],
+    "dose": "650 mg",
+    "frequency": "TDS",
+    "duration_days": 5
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "bleeding gums",
+    "gum bleeding"
+   ],
+   [
+    "black stool",
+    "malena",
+    "melena"
+   ],
+   [
+    "severe abdominal pain"
+   ],
+   [
+    "persistent vomiting",
+    "vomiting"
+   ],
+   [
+    "dizziness",
+    "giddiness on standing"
+   ]
+  ],
+  "follow_up": [
+   "tomorrow",
+   "1 day",
+   "next day",
+   "after 1 day"
+  ],
+  "not_prescribed": [
+   "ibuprofen",
+   "brufen"
+  ]
+ },
+ "trap": "Patient took Brufen; stopped. Pulse said in Tamil words."
+}

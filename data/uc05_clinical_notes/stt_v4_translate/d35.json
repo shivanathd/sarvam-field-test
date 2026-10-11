@@ -1,0 +1,126 @@
+{
+ "request_id": "20261011_e341ac52-44e2-452c-aa43-5315eef4bcf1",
+ "transcript": "Doctor, my daughter's ear has been hurting for two days. She was crying all night. She is six years old. Do you have a fever? Yes, there is a slight fever. The temperature is 100.8. I am looking for work. The eardrum has turned red. This is acute otitis media, which means an ear infection. She is not allergic to any medicine. I am giving Amoxicillin syrup, 5 ml three times a day. Wait, what is her weight? Just measured, twenty kilos. Then for 20 kg, 5 ml will be less. Give Amoxicillin syrup 7.5 ml three times a day for seven days completely. What? And only give 6 ml of paracetamol syrup if there is a fever or earache. Any more worries? If pus comes from the ear, the fever doesn't subside, or if the neck becomes stiff, then bring them immediately. When to show it again? Show it again in five days.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Doctor, my daughter's ear has been hurting for two days. She was crying all night. She is six years old.",
+    "start_time_seconds": 0.01,
+    "end_time_seconds": 9.93,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Do you have a fever?",
+    "start_time_seconds": 11.05,
+    "end_time_seconds": 12.01,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Yes, there is a slight fever.",
+    "start_time_seconds": 12.71,
+    "end_time_seconds": 14.85,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "The temperature is 100.8.",
+    "start_time_seconds": 15.61,
+    "end_time_seconds": 18.43,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "I am looking for work.",
+    "start_time_seconds": 20.03,
+    "end_time_seconds": 21.09,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "The eardrum has turned red. This is acute otitis media, which means an ear infection.",
+    "start_time_seconds": 23.29,
+    "end_time_seconds": 31.03,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "She is not allergic to any medicine.",
+    "start_time_seconds": 32.07,
+    "end_time_seconds": 34.95,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "I am giving Amoxicillin syrup, 5 ml three times a day. Wait, what is her weight?",
+    "start_time_seconds": 35.87,
+    "end_time_seconds": 43.35,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Just measured, twenty kilos.",
+    "start_time_seconds": 43.87,
+    "end_time_seconds": 46.31,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Then for 20 kg, 5 ml will be less.",
+    "start_time_seconds": 47.67,
+    "end_time_seconds": 50.89,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Give Amoxicillin syrup 7.5 ml three times a day for seven days completely.",
+    "start_time_seconds": 51.95,
+    "end_time_seconds": 60.03,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "What?",
+    "start_time_seconds": 59.55,
+    "end_time_seconds": 59.75,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "And only give 6 ml of paracetamol syrup if there is a fever or earache.",
+    "start_time_seconds": 61.51,
+    "end_time_seconds": 67.21,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Any more worries?",
+    "start_time_seconds": 68.41,
+    "end_time_seconds": 69.79,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "If pus comes from the ear, the fever doesn't subside, or if the neck becomes stiff, then bring them immediately.",
+    "start_time_seconds": 71.13,
+    "end_time_seconds": 78.43,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "When to show it again?",
+    "start_time_seconds": 79.75,
+    "end_time_seconds": 81.47,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Show it again in five days.",
+    "start_time_seconds": 81.89,
+    "end_time_seconds": 83.53,
+    "speaker_id": "0"
+   }
+  ]
+ },
+ "language_code": "mr-IN",
+ "language_probability": null,
+ "audio_hash": "66eba47485bfad5804498aff824f4b98",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_1f7b1dcd-e234-440a-8992-7b7e39488049",
+  "elapsed_s": 11.033347129821777,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "translate",
+   "language_code": "mr-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

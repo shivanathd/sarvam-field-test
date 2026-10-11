@@ -1,0 +1,139 @@
+{
+ "id": "d28",
+ "pair": "bn-en",
+ "lang": "Bengali",
+ "style": "native",
+ "topic": "fever",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "বসুন। কদিন ধরে শরীর খারাপ?"
+  },
+  {
+   "speaker": "patient",
+   "text": "6 দিন ধরে জ্বর, ডাক্তারবাবু। বিকেলের দিকে বাড়ে, পেটে অস্বস্তি, খিদে নেই।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "কোনো ওষুধ খেয়েছেন?"
+  },
+  {
+   "speaker": "patient",
+   "text": "দোকান থেকে ciprofloxacin দিয়েছিল, 2 দিন খেয়েছি, কমেনি।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ওটা আর খাবেন না, বন্ধ করুন। Temperature এখন 102, pulse 88, BP 110/70। আপনার Widal আর blood culture report দেখলাম, typhoid, মানে enteric fever।"
+  },
+  {
+   "speaker": "patient",
+   "text": "আমার কিন্তু sulpha জাতীয় ওষুধে allergy আছে, আগে খেয়ে গা ফুলে গিয়েছিল।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ঠিক আছে, লিখে রাখছি। যে ওষুধ দিচ্ছি তাতে sulpha নেই। Cefixime 200 mg, সকালে একটা রাতে একটা, 14 দিন পুরো course করবেন, মাঝপথে বন্ধ করবেন না।"
+  },
+  {
+   "speaker": "patient",
+   "text": "জ্বরের জন্য কী খাব?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Paracetamol 500 mg, জ্বর 100-এর বেশি হলে তবেই খাবেন। দিনে চারবারের বেশি নয়।"
+  },
+  {
+   "speaker": "patient",
+   "text": "খাওয়াদাওয়া কেমন হবে?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "সহজপাচ্য খাবার, ফোটানো জল। আর যদি পেটে খুব ব্যথা হয়, কালো পায়খানা হয় বা রক্ত বমি হয়, সঙ্গে সঙ্গে hospital-এ আসবেন।"
+  },
+  {
+   "speaker": "patient",
+   "text": "আবার কবে আসব?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "5 দিন পরে দেখাবেন।"
+  },
+  {
+   "speaker": "patient",
+   "text": "ধন্যবাদ ডাক্তারবাবু।"
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "fever"
+  ],
+  "duration": {
+   "value": 6,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 102,
+   "pulse": 88,
+   "bp": "110/70"
+  },
+  "diagnosis": [
+   "typhoid",
+   "enteric fever",
+   "typhoid fever"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "cefixime"
+    ],
+    "dose": "200 mg",
+    "frequency": "BD",
+    "duration_days": 14
+   },
+   {
+    "drug": [
+     "paracetamol"
+    ],
+    "dose": "500 mg",
+    "frequency": "SOS",
+    "duration_days": null
+   }
+  ],
+  "allergies": [
+   [
+    "sulfa",
+    "sulpha",
+    "sulphonamide",
+    "sulfonamide"
+   ]
+  ],
+  "red_flags": [
+   [
+    "severe abdominal pain",
+    "abdominal pain",
+    "stomach pain"
+   ],
+   [
+    "black stools",
+    "black stool",
+    "melena",
+    "malena"
+   ],
+   [
+    "vomiting blood",
+    "blood in vomit",
+    "haematemesis",
+    "hematemesis"
+   ]
+  ],
+  "follow_up": [
+   "5 days",
+   "after 5 days"
+  ],
+  "not_prescribed": [
+   "ciprofloxacin"
+  ]
+ },
+ "trap": "Self-medicated ciprofloxacin is stopped, not prescribed."
+}

@@ -1,0 +1,329 @@
+<title>Sarvam Field Test</title>
+<meta name="description" content="Sarvam AI against Google, OpenAI, Anthropic and self-hosted open weights on 12 real Indian business jobs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..800&family=Anek+Devanagari:wght@500;700&family=Anek+Tamil:wght@500;700&family=Hind:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: field report — sticky use-case index on wide screens, one reading column with full-width charts. */
+:root {
+  --paper: #f2f4f6;      /* cool report paper */
+  --card: #ffffff;
+  --ink: #15202b;
+  --muted: #566372;
+  --rule: #d5dce4;
+  --accent: #c4501f;     /* Sarvam's vendor colour, used as the page accent */
+  --v-sarvam: #eb6834; --v-google: #2a78d6; --v-openai: #1baf7a; --v-anthropic: #eda100; --v-open: #6250d6; --v-other: #8a96a3;
+  --lead: #137a4b; --level: #566372; --behind: #b4302b;
+  --heat: #2a78d6;
+  --display: "Anek Latin", "Anek Devanagari", "Anek Tamil", system-ui, sans-serif;
+  --body: "Hind", "Anek Devanagari", "Anek Tamil", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #0f151c; --card: #161f29; --ink: #e5ebf1; --muted: #9daab8; --rule: #2a3643; --accent: #f08155;
+    --v-sarvam: #d95926; --v-google: #3987e5; --v-openai: #199e70; --v-anthropic: #c98500; --v-open: #9085e9;
+    --lead: #4cc28a; --level: #9daab8; --behind: #f07a74; --heat: #3987e5;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0f151c; --card: #161f29; --ink: #e5ebf1; --muted: #9daab8; --rule: #2a3643; --accent: #f08155;
+  --v-sarvam: #d95926; --v-google: #3987e5; --v-openai: #199e70; --v-anthropic: #c98500; --v-open: #9085e9;
+  --lead: #4cc28a; --level: #9daab8; --behind: #f07a74; --heat: #3987e5;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 400 16.5px/1.6 var(--body); margin: 0; padding-inline: 20px; }
+a { color: var(--accent); }
+a:focus-visible, summary:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+code, .mono { font-family: var(--mono); font-size: 0.86em; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; line-height: 1.12; margin: 0; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 700; font-stretch: 92%; }
+h3 { font-size: 1.05rem; font-weight: 700; letter-spacing: 0.01em; margin-bottom: 0.4rem; }
+p { margin: 0 0 0.8rem; }
+.wrap { max-width: 1240px; margin-inline: auto; display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 48px; padding-block: 40px 80px; }
+nav.idx { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); align-self: start; font-size: 0.9rem; }
+nav.idx ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px; counter-reset: n; }
+nav.idx a { color: var(--muted); text-decoration: none; display: block; padding: 3px 0 3px 10px; border-left: 2px solid var(--rule); }
+nav.idx a:hover { color: var(--ink); border-left-color: var(--accent); }
+nav.idx .lbl { font: 600 0.72rem/1 var(--display); letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); margin: 18px 0 8px; }
+main { min-width: 0; display: grid; gap: 64px; }
+.eyebrow { font: 600 0.75rem/1 var(--display); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: flex; gap: 10px; align-items: center; margin-bottom: 10px; }
+
+/* hero */
+.hero h1 { font-size: clamp(2.6rem, 7vw, 5.2rem); font-weight: 800; font-stretch: 78%; letter-spacing: -0.01em; }
+.hero h1 span { color: var(--accent); }
+.hero .lede { font-size: 1.2rem; max-width: 62ch; margin-top: 14px; color: var(--ink); }
+.tally { display: flex; flex-wrap: wrap; gap: 28px; margin: 26px 0 8px; font-family: var(--display); }
+.tally div { display: grid; }
+.tally b { font-size: 2.6rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.tally span { color: var(--muted); font-size: 0.9rem; }
+.tally .lead b { color: var(--lead); } .tally .behind b { color: var(--behind); }
+.slips { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 26px; }
+.slip { background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; display: grid; gap: 6px; }
+.slip .in { font: 600 1.25rem/1.25 var(--display); }
+.slip .out { font: 500 1.05rem/1.3 var(--display); color: var(--behind); text-decoration: line-through; text-decoration-thickness: 1px; }
+.slip .why { font-size: 0.85rem; color: var(--muted); }
+
+/* prose blocks */
+.prose { max-width: 72ch; }
+.uses { display: grid; gap: 0; border-top: 1px solid var(--rule); }
+.uses > div { display: grid; grid-template-columns: minmax(150px, 0.8fr) 2fr; gap: 18px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.uses dt { font: 700 1rem/1.3 var(--display); }
+.uses dd { margin: 0; }
+.uses dd b { font-weight: 600; }
+
+/* tables */
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+thead th { font: 600 0.72rem/1.2 var(--display); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.score th a { color: var(--ink); text-decoration: none; }
+.score th a:hover { color: var(--accent); }
+.sw { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; vertical-align: baseline; }
+.v-sarvam { background: var(--v-sarvam); fill: var(--v-sarvam); } .v-google { background: var(--v-google); fill: var(--v-google); }
+.v-openai { background: var(--v-openai); fill: var(--v-openai); } .v-anthropic { background: var(--v-anthropic); fill: var(--v-anthropic); }
+.v-open { background: var(--v-open); fill: var(--v-open); } .v-other { background: var(--v-other); fill: var(--v-other); }
+.pill { display: inline-block; font: 600 0.72rem/1 var(--display); letter-spacing: 0.04em; padding: 4px 8px; border-radius: 99px; border: 1px solid currentColor; white-space: nowrap; }
+.pill.lead { color: var(--lead); } .pill.level { color: var(--level); } .pill.behind { color: var(--behind); }
+.pill.lead::before { content: "▲ "; } .pill.behind::before { content: "▼ "; } .pill.level::before { content: "= "; }
+.scroll { overflow-x: auto; }
+
+/* charts */
+.charts { display: grid; gap: 28px; }
+figure { margin: 0; }
+figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; margin-bottom: 8px; font-size: 0.95rem; }
+figcaption .dir { color: var(--muted); font-size: 0.8rem; }
+.chart svg { width: 100%; min-width: 560px; height: auto; display: block; font-family: var(--body); }
+.chart .lab { fill: var(--ink); font-size: 13px; }
+.chart .val { fill: var(--ink); font-size: 12.5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.chart .tick { fill: var(--muted); font-size: 11px; }
+.chart .grid { stroke: var(--rule); stroke-width: 1; }
+.chart .ci { stroke: var(--ink); stroke-width: 1.4; opacity: 0.7; }
+.chart .hit { fill: transparent; }
+.chart .row:hover .hit { fill: var(--rule); opacity: 0.35; }
+.chart .bar.local { fill: url(#hatch) ; stroke-width: 1.5; }
+.chart .bar.local.v-sarvam { stroke: var(--v-sarvam); } .chart .bar.local.v-open { stroke: var(--v-open); } .chart .bar.local.v-openai { stroke: var(--v-openai); }
+.chart .bar.sub { opacity: 0.55; }
+.note { font-size: 0.85rem; color: var(--muted); margin-top: 6px; }
+details.tbl { margin-top: 4px; font-size: 0.85rem; }
+details summary { cursor: pointer; color: var(--muted); }
+.heat td { --t: 0%; background: color-mix(in oklab, var(--heat) var(--t), var(--card)); }
+.heat td.na { color: var(--muted); }
+.heat table { background: var(--card); }
+.heat.plain td { background: var(--card); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.85rem; color: var(--muted); }
+
+/* use-case sections */
+section.uc { display: grid; gap: 22px; scroll-margin-top: 20px; }
+section.uc .q { font-size: 1.15rem; max-width: 70ch; margin-top: 10px; }
+section.uc .meta { font-size: 0.82rem; color: var(--muted); }
+.verdict { background: var(--card); border: 1px solid var(--rule); border-left: 3px solid var(--accent); padding: 14px 18px; border-radius: 4px; max-width: 80ch; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.cols ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 0.92rem; }
+ul.cav { color: var(--muted); }
+.src { font-size: 0.8rem; color: var(--muted); }
+.quirks { columns: 2 340px; column-gap: 32px; font-size: 0.92rem; padding-left: 18px; }
+.quirks li { break-inside: avoid; margin-bottom: 8px; }
+.diagram img { width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 6px; background: var(--card); }
+.diagram .dark { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .diagram .light { display: none; } :root:not([data-theme="light"]) .diagram .dark { display: block; } }
+:root[data-theme="dark"] .diagram .light { display: none; } :root[data-theme="dark"] .diagram .dark { display: block; }
+pre { background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 14px; overflow-x: auto; font: 0.82rem/1.5 var(--mono); }
+#tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--paper); font-size: 0.82rem; padding: 6px 9px; border-radius: 4px; max-width: 340px; display: none; z-index: 10; }
+.files { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 16px; }
+.files select { width: 100%; font: inherit; padding: 6px; background: var(--card); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; }
+.files pre { max-height: 560px; margin: 0; }
+.files button { font: 600 0.8rem var(--display); background: var(--card); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; padding: 6px 10px; cursor: pointer; margin-top: 8px; }
+@media (max-width: 1020px) { .wrap { grid-template-columns: 1fr; } nav.idx { position: static; } nav.idx ol { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); } }
+@media (max-width: 720px) { .cols, .files, .uses > div { grid-template-columns: 1fr; } .uses > div { gap: 2px; } body { font-size: 16px; } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+<rect width="6" height="6" fill="var(--card)"/><rect width="2.4" height="6" fill="var(--muted)" opacity="0.55"/></pattern></defs></svg>
+<div id="tip" role="tooltip"></div>
+
+<div class="wrap">
+<nav class="idx" aria-label="Contents">
+  <p class="lbl">Report</p>
+  <ol>
+    <li><a href="#answer">Short answer</a></li><li><a href="#scorecard">Scorecard</a></li>
+    <li><a href="#patterns">What cuts across</a></li><li><a href="#how">How it was run</a></li>
+  </ol>
+  <p class="lbl">Use cases</p>
+  <ol>
+    <li><a href="#uc01_voice_support">1 · Voice support calls</a></li><li><a href="#uc02_helpline_stt">2 · Helpline speech</a></li>
+    <li><a href="#uc03_documents">3 · KYC & documents</a></li><li><a href="#uc04_indic_rag">4 · Policy Q&amp;A</a></li>
+    <li><a href="#uc05_clinical_notes">5 · Clinical notes</a></li><li><a href="#uc06_offline_agri">6 · Offline crop advice</a></li>
+    <li><a href="#uc07_translation_dubbing">7 · Translation & dubbing</a></li><li><a href="#uc08_quick_commerce">8 · WhatsApp orders</a></li>
+    <li><a href="#uc09_legal">9 · Legal</a></li><li><a href="#uc10_selfhost_business">10 · Self-hosting</a></li>
+    <li><a href="#uc11_bharat_code">11 · Bharat Code</a></li><li><a href="#uc12_token_tax">12 · Token tax</a></li>
+  </ol>
+  <p class="lbl">Reference</p>
+  <ol><li><a href="#quirks">API quirks</a></li><li><a href="#cost">Cost</a></li><li><a href="#repro">Reproduce</a></li><li><a href="#files">Code & logs</a></li></ol>
+</nav>
+
+<main>
+<header class="hero">
+  <p class="eyebrow">Independent benchmark · October 2026 · <a href="https://github.com/shivanathd/sarvam-field-test">open source on GitHub</a></p>
+  <h1>Sarvam <span>Field Test</span></h1>
+  <p class="lede">Sarvam AI's speech, translation, document and chat models against Google Gemini, OpenAI, Anthropic Claude and self-hosted open weights, on twelve jobs Indian businesses actually do. Every test has known answers, so scoring is automatic and no model grades another.</p>
+  <div class="tally" aria-label="Head-to-head tally">
+    <div class="lead"><b>{{LEAD}}</b><span>Sarvam leads</span></div>
+    <div><b>{{LEVEL}}</b><span>level</span></div>
+    <div class="behind"><b>{{BEHIND}}</b><span>Sarvam behind</span></div>
+    <div><b>{{NROWS}}</b><span>head-to-heads, best Sarvam system vs best rival at the same scale</span></div>
+  </div>
+  <div class="slips" aria-label="Real errors from the test runs">
+    <div class="slip"><span class="why">Legal translation, Mayura</span><span class="in">₹25.5 crore</span><span class="out">5 करोड़</span><span class="why">Every decimal crore amount lost its whole part (10 of 10).</span></div>
+    <div class="slip"><span class="why">Transliteration, Sarvam API</span><span class="in">Kavitha</span><span class="out">கவிதை</span><span class="why">A name became the Tamil word for "poem".</span></div>
+    <div class="slip"><span class="why">Clinic audio, Saaras translate</span><span class="in">100.8 °F</span><span class="out">108 °F</span><span class="why">A fever reading turned into a fatal temperature.</span></div>
+    <div class="slip"><span class="why">Bad photo, GPT-5.5</span><span class="in">महालक्ष्मी एंटरप्राइजेज</span><span class="out">महाराष्ट्र इलेक्ट्रॉनिक्स</span><span class="why">Invented a plausible firm name instead of leaving the field empty.</span></div>
+  </div>
+</header>
+
+<section id="answer" class="prose">
+  <p class="eyebrow">The short answer</p>
+  <h2>What to use for which job</h2>
+  <p style="margin-top:12px">Sarvam is the specialist pick for Indian speech and for translating <em>into</em> Indian languages. For reasoning over text, documents and code, a price-matched Gemini, OpenAI or Claude model was more accurate in every test.</p>
+  <dl class="uses">
+    <div><dt>Speech recognition, Indian languages</dt><dd><b>Saaras v3.</b> Lowest word error rate in 12 of 13 languages and about 4× faster than Gemini. For calls where amounts and account digits matter, Gemini 3.8 Flash captured them exactly 94% of the time against Saaras's 81%, because Saaras often spells numbers out as words.</dd></div>
+    <div><dt>Real-time voice bot</dt><dd><b>All-Sarvam stack</b> (Saaras → Sarvam-105B → Bulbul): first audio in about 1.5 s, replies in the caller's language 19 of 20 times, ₹1.56 per conversation-minute. The all-Gemini stack read numbers back more accurately but took about 6.8 s.</dd></div>
+    <div><dt>Text-to-speech</dt><dd><b>Bulbul v3.</b> As intelligible as Gemini and OpenAI voices across 10 languages, with the fastest first audio.</dd></div>
+    <div><dt>Translating into Indian languages</dt><dd><b>Sarvam-Translate</b> (best in 8 of 10 languages). Avoid <b>Mayura</b> for anything with numbers. Translating <em>into English</em>: Gemini 3.8 Flash, Claude Haiku or GPT-5.4 mini, all well ahead of Sarvam.</dd></div>
+    <div><dt>KYC, invoices, land records</dt><dd><b>Gemini 3.8 Flash</b> or <b>Claude Sonnet 5.5</b> on the image. Clean scans are a tie at about 99.5% for everyone; on bad phone photos Sarvam Vision invented fluent text that was not on the page, and OpenAI models misread Indian-script names.</dd></div>
+    <div><dt>Chat, Q&amp;A, business text</dt><dd><b>Gemini 3.8 Flash</b> or <b>GPT-5.4 mini</b>. Sarvam-105B gets close only with thinking on, which costs 5–20 s per answer and sometimes returns nothing.</dd></div>
+    <div><dt>Clinical notes</dt><dd><b>Gemini 3.8 Flash</b>, on the text or straight on the audio. No cloud model invented a medicine in 40 consultations.</dd></div>
+    <div><dt>Coding agents</dt><dd><b>Gemini 3.8 Flash</b> passed all 160 task-language items first try, <b>Claude Haiku 5.5</b> 99% and <b>GPT-5.4 mini</b> 92–98%. Sarvam-105B passed 56–69%, and none of the Aadhaar-checksum tasks.</dd></div>
+    <div><dt>Data must stay on your servers</dt><dd><b>Qwen3-30B</b> over Sarvam-30B for accuracy (84% vs 63% on business tasks). Sarvam-30B is faster per token and much cheaper to feed Indian text, but ignores format instructions. Neither refuses out-of-scope questions without thinking on.</dd></div>
+  </dl>
+</section>
+
+<section id="scorecard">
+  <p class="eyebrow">Scorecard</p>
+  <h2>Best Sarvam system against the best rival</h2>
+  <p class="prose" style="margin-top:12px">Each row is a test's headline metric. "Rival" is the best non-Sarvam system that ran on the same full test set; frontier models that ran only on 30-item subsets are left out here and shown in each section. <b>Level</b> means the two 95% confidence intervals overlap or the scores are under 2% apart.</p>
+  <div class="scroll"><table class="score"><thead><tr><th>Test</th><th>Best Sarvam</th><th>Best rival</th><th>Result</th></tr></thead><tbody>{{SCORECARD}}</tbody></table></div>
+  <div class="legend" style="margin-top:12px"><span><span class="sw v-sarvam"></span>Sarvam</span><span><span class="sw v-google"></span>Google</span><span><span class="sw v-openai"></span>OpenAI</span><span><span class="sw v-anthropic"></span>Anthropic</span><span><span class="sw v-open"></span>Open weights (Qwen)</span><span>Hatched bars: self-hosted on the test Mac · faded bars: ran on a smaller subset</span></div>
+</section>
+
+<section id="patterns" class="prose">
+  <p class="eyebrow">What cuts across the twelve tests</p>
+  <h2>Five patterns</h2>
+  <h3 style="margin-top:18px">1. Sarvam-105B's thinking mode is a gamble</h3>
+  <p>With thinking off (<code>reasoning_effort: null</code>) Sarvam-105B answers in about 0.5–1.5 s. With thinking on it is more accurate on structured tasks, but answers take 5–46 s and the reasoning length is unpredictable: 29% of coding calls and 16 of 80 legal summaries came back empty because reasoning used the whole token budget, and you still pay for those tokens. Setting <code>"low"</code> did not reduce thinking. Leave at least 16k output tokens of headroom if you turn it on.</p>
+  <h3>2. Self-hosted Sarvam-30B knows the facts but not the format</h3>
+  <p>Sarvam removed Sarvam-30B from its API, so self-hosting the open weights is the only way to use it. On this Mac it ran faster than Qwen3-30B (about 27 vs 19 tokens/s) and needed less memory, but it labelled Tamil, Telugu and Bengali tickets as "Hinglish", wrote CRM notes in the wrong language, appended unrequested explanations, and invented answers to out-of-scope questions. Its thinking cannot be switched off through the chat API; only pre-filling an empty <code>&lt;think&gt;&lt;/think&gt;</code> works.</p>
+  <h3>3. Sarvam's tokenizer is the cheapest way to send Indian text</h3>
+  <p>The same sentence costs 1.55× its English token count on Sarvam's tokenizer, 1.89× on Gemini's, 2.10× on OpenAI's, 3.44× on Claude's and 5.89× on Qwen3's. Sarvam's vocabulary is Gemma's with about 22,800 slots re-assigned to Indian scripts, so the saving is largest on Odia, Telugu, Kannada, Malayalam, Gujarati and Punjabi.</p>
+  <h3>4. Under stress, models invent rather than leave blanks</h3>
+  <p>On badly photographed documents Sarvam Vision wrote fluent text that was not on the page, and GPT-5.5 invented firm names and GST numbers. Sarvam-105B without thinking added deadline dates and totals it had computed itself to 9% of legal summaries. Every cloud model refused all ten out-of-scope farming questions; both self-hosted models invented answers such as 150 kg of DAP per acre for a crop the sheet never covered.</p>
+  <h3>5. Answering in the user's language is still unsolved</h3>
+  <p>Asked in English about a Hindi or Tamil document, most models answered in the document's script: GPT-5.4 mini replied in English 7% of the time and Sarvam-105B 11%. Romanised questions (Hinglish, Tanglish) got a romanised reply from no price-matched model more than 69% of the time. Only the frontier models matched the user every time.</p>
+</section>
+
+<section id="how">
+  <p class="eyebrow">Method</p>
+  <h2>How it was run</h2>
+  <div class="prose" style="margin-top:12px">
+  <p>Six parallel agents built and ran the twelve suites on one Apple M5 Max (128 GB) between 19:30 and 23:30 IST on 11 October 2026, sharing one Python library for API clients, scoring and result files. Systems were called through their official APIs; Claude through OpenRouter; Sarvam-30B and Qwen3-30B through llama.cpp on the same Mac.</p>
+  <ul>
+    <li><b>Known answers only.</b> Every item has a gold answer (a number, code, label, fact list or reference text) and is scored by code. No model judges another's free text. Where speech or translation quality needed a reference, public datasets (FLEURS/FLORES, CC-BY 4.0) or round-trip transcription by two or three different vendors' transcribers were used.</li>
+    <li><b>Mostly synthetic, realistic data.</b> Invoices, KYC forms, WhatsApp orders, policies, consultations and legal passages were written for this benchmark, with fake people and clearly marked sample IDs. None were reviewed by native speakers; treat absolute scores as indicative and the comparisons as the result.</li>
+    <li><b>Same inputs, both modes.</b> Sarvam-105B ran with thinking off and on; Gemini Flash with thinking off (and on where it mattered). Frontier models (Gemini Pro, GPT-5.5, Claude Sonnet 5.5) ran on fixed 30-item subsets to show the ceiling.</li>
+    <li><b>Uncertainty shown.</b> 95% bootstrap confidence intervals on every score; hover any bar for its interval and sample size.</li>
+    <li><b>Sandboxed code.</b> Model-written code ran only inside a macOS sandbox with no network, no reads of the home folder and no writes outside a temporary folder.</li>
+    <li><b>Resumable and auditable.</b> Every model output is kept in <code>results/raw/*.jsonl</code>; reruns only call the API for missing items.</li>
+  </ul>
+  </div>
+  {{EXTRA}}
+</section>
+
+{{SECTIONS}}
+
+<section id="quirks">
+  <p class="eyebrow">For developers</p>
+  <h2>API quirks we hit</h2>
+  <ul class="quirks" style="margin-top:14px">
+    <li>Sarvam-30B returns "deprecated" on the API; only <code>sarvam-105b</code> and <code>sarvam-105b-conversations</code> remain.</li>
+    <li>Sarvam-105B: <code>reasoning_effort: "low"</code> still spent about 1,300 reasoning tokens on a one-line task; <code>null</code> turns thinking off.</li>
+    <li>Sarvam-105B thinking can return <code>content: null</code> after spending the whole budget, with no visible reasoning either.</li>
+    <li>Out of credits: chat returns HTTP 402 <code>insufficient_quota_error</code>; Sarvam Vision's <code>/start</code> returns HTTP 400 "Insufficient credits", so a 402-only check misses it.</li>
+    <li>Sarvam Vision accepts only PDF or ZIP uploads (wrap an image in a one-file ZIP) and returns a ZIP with markdown whose tables are HTML.</li>
+    <li>Saaras batch names output files <code>0.json</code>, <code>1.json</code>… by upload order, so two jobs downloaded into one folder overwrite each other. Map outputs through the job status instead.</li>
+    <li>The Saaras batch endpoint is documented two ways; <code>/speech-to-text/job/v1</code> with a <code>job_parameters</code> body works.</li>
+    <li>Saaras codemix mode returned no Latin letters at all in 30% of outputs, and wrote numbers as words ("बारह हज़ार").</li>
+    <li>Saaras writes Sindhi in Devanagari only; FLEURS and most Sindhi users expect Perso-Arabic script.</li>
+    <li>Bulbul's REST response holds audio in an <code>audios</code> list; its streaming endpoint delivered complete audio about 3× faster than REST.</li>
+    <li>Odia's language code is <code>od-IN</code>. Mayura accepts at most 1,000 characters per request.</li>
+    <li>Sarvam's chat endpoint accepts OpenAI-style <code>tools</code> and returns <code>tool_calls</code>.</li>
+    <li>Sarvam API <code>prompt_tokens</code> equals the open tokenizer's count plus 14 tokens per request.</li>
+    <li>Sarvam-30B GGUF ignores <code>enable_thinking: false</code>, <code>reasoning_effort</code> and <code>&lt;|nothink|&gt;</code>; prefill an empty <code>&lt;think&gt;&lt;/think&gt;</code> via <code>/completion</code>.</li>
+    <li>Gemini 3.8 Flash refused 3–6% of harmless audio clips with <code>BlockedReason.OTHER</code>, and still reported thought tokens on most calls with <code>thinking_budget: 0</code>.</li>
+    <li><code>gemini-embedding-2</code> does not support <code>task_type</code>, and a list of strings in one request returns one merged embedding.</li>
+    <li>Gemini Pro and Claude Sonnet 5.5 cannot turn thinking off.</li>
+    <li>Gemini TTS multi-speaker needs <code>speech_metadata.speaker</code> on every text part; a plain "Doctor: …" script returns HTTP 400.</li>
+    <li>OpenAI <code>whisper-1</code> rejects <code>bn</code>, <code>ml</code>, <code>te</code>, <code>gu</code> and <code>pa</code> as language hints; <code>gpt-4o-transcribe</code> rejects <code>pa</code> and <code>or</code>.</li>
+    <li>Through OpenRouter, Claude's content filter blocked four ordinary news sentences (one about Ebola) with no token usage returned.</li>
+    <li>A Gemini Python client call can hang indefinitely without an explicit <code>HttpOptions(timeout=…)</code>.</li>
+    <li>OpenAI rejects function tools combined with <code>reasoning_effort</code> on <code>/v1/chat/completions</code> for GPT-5.4 mini; use <code>/v1/responses</code>.</li>
+    <li>On <code>/v1/responses</code>, function tools default to <code>strict: true</code>, making every argument required: GPT models then sent <code>amount: 0</code> for "pay the full bill" (74% exact). With <code>strict: false</code> they scored 100%.</li>
+  </ul>
+</section>
+
+<section id="cost" class="prose">
+  <p class="eyebrow">Cost</p>
+  <h2>What the benchmark cost to run</h2>
+  <p style="margin-top:12px">About <b>₹1,200 of Sarvam credit</b> at list prices (₹1,500 topped up), a few US dollars of OpenAI usage (recorded as tokens), <b>US$3.75 on OpenRouter</b> for Claude, and a few million Gemini tokens. Sarvam's translation APIs were the single biggest line: about ₹300 for 150,000 characters of legal text, which Sarvam-105B translated just as faithfully for about ₹2. List prices used: speech-to-text ₹30 per audio hour (₹45 with speaker labels), Sarvam-105B ₹15 / ₹60 per million input / output tokens, Bulbul ₹30 per 10,000 characters, Sarvam Vision ₹0.50 per page, translation about ₹20 per 10,000 characters.</p>
+</section>
+
+<section id="repro" class="prose">
+  <p class="eyebrow">Reproduce</p>
+  <h2>Run it yourself</h2>
+  <pre>git clone https://github.com/shivanathd/sarvam-field-test
+cd sarvam-field-test
+cp .env.example .env        # SARVAM_API_KEY, GOOGLE_API_KEY, OPENAI_API_KEY, OPENROUTER_API_KEY
+python3 -m venv .venv &amp;&amp; .venv/bin/pip install -r requirements.txt
+scripts/serve_local.sh      # optional: self-hosted Sarvam-30B and Qwen3-30B via llama.cpp
+.venv/bin/python suites/uc08_quick_commerce/run.py api   # any suite; reruns skip finished items
+.venv/bin/python report/build_report.py                  # rebuild this page from results/</pre>
+  <p>Everything is open source at <a href="https://github.com/shivanathd/sarvam-field-test">github.com/shivanathd/sarvam-field-test</a>: every script, test set, result and raw model output, so the report rebuilds without any API key.</p>
+</section>
+
+<section id="files">
+  <p class="eyebrow">Code & logs</p>
+  <h2>Every script and run log</h2>
+  <p class="prose" style="margin-top:12px">The full source of every suite, the shared library and this report's builder, plus the tail of each run log. Home-folder paths are shortened to <code>~</code>; no keys appear anywhere. Browse the same files, the test data and every raw output on <a href="https://github.com/shivanathd/sarvam-field-test">GitHub</a>.</p>
+  <div class="files">
+    <div><label for="fsel" class="eyebrow">File</label><select id="fsel" size="18"></select><button id="fcopy" type="button">Copy file</button></div>
+    <pre id="fview" tabindex="0"></pre>
+  </div>
+</section>
+</main>
+</div>
+
+<script type="application/json" id="srcdata">{{FILES}}</script>
+<script>
+(() => {
+  const tip = document.getElementById('tip');
+  document.addEventListener('mousemove', e => {
+    const g = e.target.closest('[data-tip]');
+    if (!g) { tip.style.display = 'none'; return; }
+    tip.textContent = g.dataset.tip; tip.style.display = 'block';
+    const x = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 8);
+    tip.style.left = x + 'px'; tip.style.top = (e.clientY + 16) + 'px';
+  });
+  const files = JSON.parse(document.getElementById('srcdata').textContent || '{}');
+  const sel = document.getElementById('fsel'), view = document.getElementById('fview');
+  Object.keys(files).forEach(k => sel.add(new Option(k, k)));
+  sel.addEventListener('change', () => { view.textContent = files[sel.value]; });
+  if (sel.options.length) { sel.selectedIndex = 0; view.textContent = files[sel.value]; }
+  document.getElementById('fcopy').addEventListener('click', async e => {
+    try { await navigator.clipboard.writeText(view.textContent); e.target.textContent = 'Copied'; }
+    catch { const r = document.createRange(); r.selectNodeContents(view); getSelection().removeAllRanges(); getSelection().addRange(r); e.target.textContent = 'Selected: press ⌘C'; }
+    setTimeout(() => e.target.textContent = 'Copy file', 2000);
+  });
+})();
+</script>

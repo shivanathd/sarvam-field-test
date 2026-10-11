@@ -1,0 +1,144 @@
+{
+ "request_id": "20261011_3e043a61-fada-4713-a1f3-13a4bc254402",
+ "transcript": "വരൂ ഇരിക്കൂ എന്താണ് പ്രശ്നം? ഡോക്ടറെ അഞ്ചു ദിവസമായി പനിയും ചുമയും ഉണ്ട് കഫത്തിന് മഞ്ഞ നിറമാണ്. ശ്വാസം മുട്ടുന്നുണ്ടോ? നെഞ്ചുവേദന? ശ്വാസംമുട്ടലില്ല ചുമയ്ക്കുമ്പോൾ നെഞ്ചിൽ ചെറിയ വേദനയുണ്ട്. ശരി നോക്കട്ടെ. temperature നൂറ് point Pulse നൂറ്റിരണ്ട്. 295. ഇടതുവശത്തെ lung-ൽ കുറച്ച് crackles കേൾക്കുന്നുണ്ട്. ഇതൊരു lower respiratory tract infection ആണ്. അപ്പോ... ഗുളിക വേണ്ടി വരുമോ? വേണം. Augmentin 625 mg ദിവസം രണ്ട് നേരം അഞ്ച് ദിവസം. ഡോക്ടറെ ഒരു കാര്യം പറയാൻ മറന്നു എനിക്ക് penicillin അലർജിയാണ് മുമ്പൊരിക്കൽ ദേഹം മുഴുവൻ ചൊറിഞ്ഞു തടിച്ചു. പറഞ്ഞത് നന്നായി. എങ്കിൽ Augmentin വേണ്ട. അത് penicillin group-ആണ്. പകരം Azithromycin 500 mg ദിവസം ഒരു നേരം 3 ദിവസം. പനിക്ക് Paracetamol 650 mg ദിവസം 3 നേരം 3 ദിവസം കഴിക്കണം. വേറെ എന്തെങ്കിലും ശ്രദ്ധിക്കണോ? ചൂടുവെള്ളം ധാരാളം കുടിക്കുക. ശ്വാസംമുട്ടൽ വന്നാലോ നെഞ്ചുവേദന കൂടിയാലോ കഫത്തിൽ രക്തം കണ്ടാലോ ഉടനെ വരണം. ശരി Doctor-എ. ഇനി എപ്പോൾ? വരണം. മൂന്ന് ദിവസം കഴിഞ്ഞ് ഒരു chest X-ray എടുത്തിട്ട് വരൂ.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "വരൂ ഇരിക്കൂ എന്താണ് പ്രശ്നം?",
+    "start_time_seconds": 0.43,
+    "end_time_seconds": 3.47,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ഡോക്ടറെ അഞ്ചു ദിവസമായി പനിയും ചുമയും ഉണ്ട് കഫത്തിന് മഞ്ഞ നിറമാണ്.",
+    "start_time_seconds": 4.23,
+    "end_time_seconds": 11.79,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ശ്വാസം മുട്ടുന്നുണ്ടോ? നെഞ്ചുവേദന?",
+    "start_time_seconds": 12.71,
+    "end_time_seconds": 15.53,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ശ്വാസംമുട്ടലില്ല ചുമയ്ക്കുമ്പോൾ നെഞ്ചിൽ ചെറിയ വേദനയുണ്ട്.",
+    "start_time_seconds": 16.55,
+    "end_time_seconds": 22.15,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ശരി നോക്കട്ടെ.",
+    "start_time_seconds": 23.25,
+    "end_time_seconds": 25.03,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "temperature നൂറ് point",
+    "start_time_seconds": 26.49,
+    "end_time_seconds": 28.79,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Pulse നൂറ്റിരണ്ട്.",
+    "start_time_seconds": 30.85,
+    "end_time_seconds": 33.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "295.",
+    "start_time_seconds": 34.39,
+    "end_time_seconds": 35.83,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ഇടതുവശത്തെ lung-ൽ കുറച്ച് crackles കേൾക്കുന്നുണ്ട്. ഇതൊരു lower respiratory tract infection ആണ്. അപ്പോ...",
+    "start_time_seconds": 37.63,
+    "end_time_seconds": 48.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ഗുളിക വേണ്ടി വരുമോ?",
+    "start_time_seconds": 48.45,
+    "end_time_seconds": 50.49,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "വേണം.",
+    "start_time_seconds": 51.63,
+    "end_time_seconds": 52.19,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Augmentin 625 mg ദിവസം രണ്ട് നേരം അഞ്ച് ദിവസം.",
+    "start_time_seconds": 53.21,
+    "end_time_seconds": 58.59,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ഡോക്ടറെ ഒരു കാര്യം പറയാൻ മറന്നു എനിക്ക് penicillin അലർജിയാണ് മുമ്പൊരിക്കൽ ദേഹം മുഴുവൻ ചൊറിഞ്ഞു തടിച്ചു.",
+    "start_time_seconds": 59.69,
+    "end_time_seconds": 70.69,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "പറഞ്ഞത് നന്നായി. എങ്കിൽ Augmentin വേണ്ട. അത് penicillin group-ആണ്. പകരം Azithromycin 500 mg ദിവസം ഒരു നേരം 3 ദിവസം. പനിക്ക് Paracetamol 650 mg ദിവസം 3 നേരം 3 ദിവസം കഴിക്കണം.",
+    "start_time_seconds": 71.57,
+    "end_time_seconds": 90.17,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "വേറെ എന്തെങ്കിലും ശ്രദ്ധിക്കണോ?",
+    "start_time_seconds": 90.79,
+    "end_time_seconds": 92.89,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ചൂടുവെള്ളം ധാരാളം കുടിക്കുക. ശ്വാസംമുട്ടൽ വന്നാലോ നെഞ്ചുവേദന കൂടിയാലോ കഫത്തിൽ രക്തം കണ്ടാലോ ഉടനെ വരണം.",
+    "start_time_seconds": 93.83,
+    "end_time_seconds": 104.45,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ശരി Doctor-എ.",
+    "start_time_seconds": 104.45,
+    "end_time_seconds": 105.55,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ഇനി എപ്പോൾ?",
+    "start_time_seconds": 105.55,
+    "end_time_seconds": 107.19,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "വരണം.",
+    "start_time_seconds": 107.19,
+    "end_time_seconds": 107.87,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "മൂന്ന് ദിവസം കഴിഞ്ഞ് ഒരു chest X-ray എടുത്തിട്ട് വരൂ.",
+    "start_time_seconds": 108.75,
+    "end_time_seconds": 112.31,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "ml-IN",
+ "language_probability": null,
+ "audio_hash": "ae4033095efe3cbf0dffe9a6cfa728ac",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_b1595ae2-2fbc-4a11-99fd-fab3ad46016d",
+  "elapsed_s": 10.950837135314941,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "codemix",
+   "language_code": "ml-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

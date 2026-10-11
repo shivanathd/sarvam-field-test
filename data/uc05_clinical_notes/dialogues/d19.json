@@ -1,0 +1,131 @@
+{
+ "id": "d19",
+ "pair": "ta-en",
+ "lang": "Tamil",
+ "style": "native",
+ "topic": "paediatrics",
+ "audio_subset": true,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "வாங்கம்மா, குழந்தைக்கு என்ன?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "டாக்டர், இவன் கவின், மூணு வயசு. ரெண்டு நாளா காய்ச்சல், கையிலயும் கால்லயும் சின்ன சின்ன கொப்புளம் வந்திருக்கு. வாயில புண்ணு, சாப்பிட மாட்டேங்குறான்."
+  },
+  {
+   "speaker": "doctor",
+   "text": "பாக்கலாம். Temperature 100.4, weight 13 kilo. உள்ளங்கை, உள்ளங்கால், வாயில கொப்புளங்கள் இருக்கு. இது hand foot mouth disease, வைரஸ் காய்ச்சல்."
+  },
+  {
+   "speaker": "attendant",
+   "text": "டாக்டர், சீக்கிரம் சரியாக ஒரு antibiotic குடுங்க, Amoxicillin மாதிரி."
+  },
+  {
+   "speaker": "doctor",
+   "text": "இல்லம்மா, இது வைரஸ், Amoxicillin வேலை செய்யாது. Antibiotic வேண்டாம். ஒரு வாரத்துல தானா சரியாயிடும்."
+  },
+  {
+   "speaker": "attendant",
+   "text": "சரி டாக்டர். இவனுக்கு எந்த மருந்துக்கும் allergy இல்ல."
+  },
+  {
+   "speaker": "doctor",
+   "text": "காய்ச்சலுக்கு Paracetamol syrup 4 ml, காய்ச்சல் இருக்கும்போது மட்டும், ஒரு நாளைக்கு நாலு தடவைக்கு மேல வேண்டாம், மூணு நாள். அரிப்புக்கு Cetirizine syrup 2.5 ml, ராத்திரி தூங்கறதுக்கு முன்னாடி, அஞ்சு நாள்."
+  },
+  {
+   "speaker": "attendant",
+   "text": "சாப்பாடு என்ன குடுக்கலாம்?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "குளிர்ந்த பால், இளநீர், கஞ்சி குடுங்க. காரம் வேண்டாம். பள்ளிக்கூடம் ஒரு வாரம் அனுப்ப வேண்டாம்."
+  },
+  {
+   "speaker": "attendant",
+   "text": "சரி."
+  },
+  {
+   "speaker": "doctor",
+   "text": "எட்டு மணி நேரத்துக்கு மேல சிறுநீர் போகலைன்னா, ரொம்ப சோர்ந்து தூங்கிட்டே இருந்தா, இல்லைன்னா வலிப்பு வந்தா உடனே தூக்கிட்டு வாங்க."
+  },
+  {
+   "speaker": "attendant",
+   "text": "திரும்ப எப்போ காட்டணும்?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "மூணு நாள் கழிச்சு காட்டுங்க."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "fever",
+   "rash",
+   "blisters on hands and feet",
+   "mouth ulcers"
+  ],
+  "duration": {
+   "value": 2,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 100.4,
+   "weight_kg": 13
+  },
+  "diagnosis": [
+   "hand foot mouth disease",
+   "hfmd",
+   "hand, foot and mouth disease",
+   "viral infection"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "paracetamol",
+     "calpol"
+    ],
+    "dose": "4 ml",
+    "frequency": "SOS",
+    "duration_days": 3
+   },
+   {
+    "drug": [
+     "cetirizine"
+    ],
+    "dose": "2.5 ml",
+    "frequency": "HS",
+    "duration_days": 5
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "no urine",
+    "not passing urine",
+    "reduced urine"
+   ],
+   [
+    "very drowsy",
+    "lethargic",
+    "drowsiness"
+   ],
+   [
+    "convulsion",
+    "seizure",
+    "fits"
+   ]
+  ],
+  "follow_up": [
+   "3 days",
+   "three days",
+   "after 3 days"
+  ],
+  "not_prescribed": [
+   "amoxicillin"
+  ]
+ },
+ "trap": "Mother asks for Amoxicillin; refused."
+}

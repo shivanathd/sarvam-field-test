@@ -1,0 +1,764 @@
+{
+ "synthetic": true,
+ "how_made": "Builds data/uc06_offline_agri/questions.json: 60 in-scope farmer questions + 10 out-of-scope ones.\n\n30 facts from advisory_sheet.md, 5 per language (Hindi, Marathi, Kannada, Telugu, Tamil, Punjabi); each fact is asked\nonce in native script and once romanised (how many farmers actually type on phones). Gold = the number(s) the answer\nmust contain, taken from the sheet. Hand-written; synthetic.",
+ "questions": [
+  {
+   "id": "paddy_urea-hi-native",
+   "lang": "hi",
+   "script": "native",
+   "q": "धान में एक एकड़ में कुल कितना यूरिया डालना है?",
+   "gold": [
+    90
+   ],
+   "sheet": "Urea 90 kg in total",
+   "oos": false
+  },
+  {
+   "id": "paddy_urea-hi-roman",
+   "lang": "hi",
+   "script": "roman",
+   "q": "dhaan mein ek acre mein kul kitna urea daalna hai?",
+   "gold": [
+    90
+   ],
+   "sheet": "Urea 90 kg in total",
+   "oos": false
+  },
+  {
+   "id": "pbw_traps-hi-native",
+   "lang": "hi",
+   "script": "native",
+   "q": "कपास में गुलाबी सुंडी के लिए एक एकड़ में कितने फेरोमोन ट्रैप लगाएँ?",
+   "gold": [
+    4
+   ],
+   "sheet": "install 4 pheromone traps per acre",
+   "oos": false
+  },
+  {
+   "id": "pbw_traps-hi-roman",
+   "lang": "hi",
+   "script": "roman",
+   "q": "kapas mein gulabi sundi ke liye ek acre mein kitne pheromone trap lagayein?",
+   "gold": [
+    4
+   ],
+   "sheet": "install 4 pheromone traps per acre",
+   "oos": false
+  },
+  {
+   "id": "wheat_seed_timely-hi-native",
+   "lang": "hi",
+   "script": "native",
+   "q": "गेहूँ की समय पर बुवाई के लिए प्रति एकड़ कितना बीज चाहिए?",
+   "gold": [
+    40
+   ],
+   "sheet": "timely sowing 40 kg per acre",
+   "oos": false
+  },
+  {
+   "id": "wheat_seed_timely-hi-roman",
+   "lang": "hi",
+   "script": "roman",
+   "q": "gehun ki samay par buvai ke liye prati acre kitna beej chahiye?",
+   "gold": [
+    40
+   ],
+   "sheet": "timely sowing 40 kg per acre",
+   "oos": false
+  },
+  {
+   "id": "scheme_cap-hi-native",
+   "lang": "hi",
+   "script": "native",
+   "q": "किसान बीज सहायता योजना में एक एकड़ पर ज़्यादा से ज़्यादा कितनी सब्सिडी मिलेगी?",
+   "gold": [
+    2000
+   ],
+   "sheet": "up to Rs 2,000 per acre",
+   "oos": false
+  },
+  {
+   "id": "scheme_cap-hi-roman",
+   "lang": "hi",
+   "script": "roman",
+   "q": "kisan beej sahayata yojana mein ek acre par zyada se zyada kitni subsidy milegi?",
+   "gold": [
+    2000
+   ],
+   "sheet": "up to Rs 2,000 per acre",
+   "oos": false
+  },
+  {
+   "id": "soy_seed-hi-native",
+   "lang": "hi",
+   "script": "native",
+   "q": "सोयाबीन का बीज एक एकड़ में कितना लगेगा?",
+   "gold": [
+    30
+   ],
+   "sheet": "Seed rate: 30 kg per acre",
+   "oos": false
+  },
+  {
+   "id": "soy_seed-hi-roman",
+   "lang": "hi",
+   "script": "roman",
+   "q": "soybean ka beej ek acre mein kitna lagega?",
+   "gold": [
+    30
+   ],
+   "sheet": "Seed rate: 30 kg per acre",
+   "oos": false
+  },
+  {
+   "id": "cotton_packets-mr-native",
+   "lang": "mr",
+   "script": "native",
+   "q": "कापसाच्या बीटी बियाण्याची एकरी किती पाकिटे लागतात?",
+   "gold": [
+    2
+   ],
+   "sheet": "2 packets (450 g each) per acre",
+   "oos": false
+  },
+  {
+   "id": "cotton_packets-mr-roman",
+   "lang": "mr",
+   "script": "roman",
+   "q": "kapsachya BT biyanyachi ekari kiti pakite lagtat?",
+   "gold": [
+    2
+   ],
+   "sheet": "2 packets (450 g each) per acre",
+   "oos": false
+  },
+  {
+   "id": "cotton_rain-mr-native",
+   "lang": "mr",
+   "script": "native",
+   "q": "कापसाची पेरणी किती मिलीमीटर पाऊस झाल्यावर करावी?",
+   "gold": [
+    75,
+    100
+   ],
+   "sheet": "after 75 to 100 mm of cumulative rainfall",
+   "oos": false
+  },
+  {
+   "id": "cotton_rain-mr-roman",
+   "lang": "mr",
+   "script": "roman",
+   "q": "kapsachi perni kiti millimeter paus zalyavar karavi?",
+   "gold": [
+    75,
+    100
+   ],
+   "sheet": "after 75 to 100 mm of cumulative rainfall",
+   "oos": false
+  },
+  {
+   "id": "soy_row-mr-native",
+   "lang": "mr",
+   "script": "native",
+   "q": "सोयाबीनच्या दोन ओळींमध्ये किती अंतर ठेवायचे?",
+   "gold": [
+    45
+   ],
+   "sheet": "Row spacing 45 cm",
+   "oos": false
+  },
+  {
+   "id": "soy_row-mr-roman",
+   "lang": "mr",
+   "script": "roman",
+   "q": "soybeanchya don olinmadhye kiti antar thevayche?",
+   "gold": [
+    45
+   ],
+   "sheet": "Row spacing 45 cm",
+   "oos": false
+  },
+  {
+   "id": "girdle_dose-mr-native",
+   "lang": "mr",
+   "script": "native",
+   "q": "सोयाबीनवर चक्री भुंगा आला तर थायक्लोप्रिड एकरी किती मिली फवारायचे?",
+   "gold": [
+    300
+   ],
+   "sheet": "thiacloprid 21.7 SC at 300 ml per acre",
+   "oos": false
+  },
+  {
+   "id": "girdle_dose-mr-roman",
+   "lang": "mr",
+   "script": "roman",
+   "q": "soybeanvar chakri bhunga ala tar thiacloprid ekari kiti ml favarayche?",
+   "gold": [
+    300
+   ],
+   "sheet": "thiacloprid 21.7 SC at 300 ml per acre",
+   "oos": false
+  },
+  {
+   "id": "scheme_acres-mr-native",
+   "lang": "mr",
+   "script": "native",
+   "q": "बियाणे सहाय्य योजनेत जास्तीत जास्त किती एकरांसाठी अनुदान मिळते?",
+   "gold": [
+    5
+   ],
+   "sheet": "for at most 5 acres per farmer",
+   "oos": false
+  },
+  {
+   "id": "scheme_acres-mr-roman",
+   "lang": "mr",
+   "script": "roman",
+   "q": "biyane sahayya yojanet jastit jast kiti ekransathi anudan milte?",
+   "gold": [
+    5
+   ],
+   "sheet": "for at most 5 acres per farmer",
+   "oos": false
+  },
+  {
+   "id": "paddy_seed-kn-native",
+   "lang": "kn",
+   "script": "native",
+   "q": "ನಾಟಿ ಭತ್ತಕ್ಕೆ ಎಕರೆಗೆ ಎಷ್ಟು ಕೆಜಿ ಬೀಜ ಬೇಕು?",
+   "gold": [
+    8
+   ],
+   "sheet": "transplanted paddy 8 kg per acre",
+   "oos": false
+  },
+  {
+   "id": "paddy_seed-kn-roman",
+   "lang": "kn",
+   "script": "roman",
+   "q": "naati bhattakke ekarege eshtu kg beeja beku?",
+   "gold": [
+    8
+   ],
+   "sheet": "transplanted paddy 8 kg per acre",
+   "oos": false
+  },
+  {
+   "id": "bph_threshold-kn-native",
+   "lang": "kn",
+   "script": "native",
+   "q": "ಭತ್ತದಲ್ಲಿ ಕಂದು ಜಿಗಿಹುಳು ಒಂದು ಗುಣಿಗೆ ಎಷ್ಟು ಇದ್ದಾಗ ಔಷಧಿ ಸಿಂಪಡಿಸಬೇಕು?",
+   "gold": [
+    10
+   ],
+   "sheet": "10 hoppers per hill",
+   "oos": false
+  },
+  {
+   "id": "bph_threshold-kn-roman",
+   "lang": "kn",
+   "script": "roman",
+   "q": "bhattadalli kandu jigihulu ondu gunige eshtu iddaga aushadhi simpadisabeku?",
+   "gold": [
+    10
+   ],
+   "sheet": "10 hoppers per hill",
+   "oos": false
+  },
+  {
+   "id": "cotton_ssp-kn-native",
+   "lang": "kn",
+   "script": "native",
+   "q": "ಹತ್ತಿಗೆ ಎಕರೆಗೆ ಎಷ್ಟು ಕೆಜಿ ಎಸ್‌ಎಸ್‌ಪಿ ಹಾಕಬೇಕು?",
+   "gold": [
+    150
+   ],
+   "sheet": "SSP 150 kg",
+   "oos": false
+  },
+  {
+   "id": "cotton_ssp-kn-roman",
+   "lang": "kn",
+   "script": "roman",
+   "q": "hattige ekarege eshtu kg SSP haakabeku?",
+   "gold": [
+    150
+   ],
+   "sheet": "SSP 150 kg",
+   "oos": false
+  },
+  {
+   "id": "soy_rhizobium-kn-native",
+   "lang": "kn",
+   "script": "native",
+   "q": "ಸೋಯಾಬೀನ್ ಬೀಜಕ್ಕೆ ಒಂದು ಕೆಜಿಗೆ ರೈಜೋಬಿಯಂ ಎಷ್ಟು ಗ್ರಾಂ ಹಾಕಬೇಕು?",
+   "gold": [
+    5
+   ],
+   "sheet": "Rhizobium culture at 5 g per kg of seed",
+   "oos": false
+  },
+  {
+   "id": "soy_rhizobium-kn-roman",
+   "lang": "kn",
+   "script": "roman",
+   "q": "soyabean beejakke ondu kg ge rhizobium eshtu gram haakabeku?",
+   "gold": [
+    5
+   ],
+   "sheet": "Rhizobium culture at 5 g per kg of seed",
+   "oos": false
+  },
+  {
+   "id": "spray_water-kn-native",
+   "lang": "kn",
+   "script": "native",
+   "q": "ಔಷಧಿ ಸಿಂಪಡಣೆಗೆ ಎಕರೆಗೆ ಎಷ್ಟು ಲೀಟರ್ ನೀರು ಬಳಸಬೇಕು?",
+   "gold": [
+    200
+   ],
+   "sheet": "200 litres of water per acre",
+   "oos": false
+  },
+  {
+   "id": "spray_water-kn-roman",
+   "lang": "kn",
+   "script": "roman",
+   "q": "aushadhi simpadanege ekarege eshtu litre neeru balasabeku?",
+   "gold": [
+    200
+   ],
+   "sheet": "200 litres of water per acre",
+   "oos": false
+  },
+  {
+   "id": "paddy_seedling_age-te-native",
+   "lang": "te",
+   "script": "native",
+   "q": "వరి నాట్లకు నారు ఎన్ని రోజుల వయసులో ఉండాలి?",
+   "gold": [
+    21,
+    25
+   ],
+   "sheet": "seedlings 21 to 25 days old",
+   "oos": false
+  },
+  {
+   "id": "paddy_seedling_age-te-roman",
+   "lang": "te",
+   "script": "roman",
+   "q": "vari naatlaku naaru enni rojula vayasulo undali?",
+   "gold": [
+    21,
+    25
+   ],
+   "sheet": "seedlings 21 to 25 days old",
+   "oos": false
+  },
+  {
+   "id": "paddy_zinc-te-native",
+   "lang": "te",
+   "script": "native",
+   "q": "వరికి ఎకరానికి ఎంత జింక్ సల్ఫేట్ వేయాలి?",
+   "gold": [
+    10
+   ],
+   "sheet": "zinc sulphate 10 kg",
+   "oos": false
+  },
+  {
+   "id": "paddy_zinc-te-roman",
+   "lang": "te",
+   "script": "roman",
+   "q": "variki ekaraniki entha zinc sulphate veyali?",
+   "gold": [
+    10
+   ],
+   "sheet": "zinc sulphate 10 kg",
+   "oos": false
+  },
+  {
+   "id": "cotton_spacing-te-native",
+   "lang": "te",
+   "script": "native",
+   "q": "పత్తి మొక్కల మధ్య, సాళ్ల మధ్య దూరం ఎంత ఉండాలి?",
+   "gold": [
+    90,
+    60
+   ],
+   "sheet": "90 cm between rows x 60 cm between plants",
+   "oos": false
+  },
+  {
+   "id": "cotton_spacing-te-roman",
+   "lang": "te",
+   "script": "roman",
+   "q": "patti mokkala madhya, saalla madhya dooram entha undali?",
+   "gold": [
+    90,
+    60
+   ],
+   "sheet": "90 cm between rows x 60 cm between plants",
+   "oos": false
+  },
+  {
+   "id": "whitefly_threshold-te-native",
+   "lang": "te",
+   "script": "native",
+   "q": "పత్తిలో ఆకుకు ఎన్ని తెల్లదోమలు ఉంటే మందు కొట్టాలి?",
+   "gold": [
+    8,
+    10
+   ],
+   "sheet": "8 to 10 adults per leaf",
+   "oos": false
+  },
+  {
+   "id": "whitefly_threshold-te-roman",
+   "lang": "te",
+   "script": "roman",
+   "q": "pattilo aakuku enni telladomalu unte mandu kottali?",
+   "gold": [
+    8,
+    10
+   ],
+   "sheet": "8 to 10 adults per leaf",
+   "oos": false
+  },
+  {
+   "id": "scheme_deadline-te-native",
+   "lang": "te",
+   "script": "native",
+   "q": "విత్తన సహాయ పథకానికి ఖరీఫ్ పంటలకు దరఖాస్తు చివరి తేదీ ఎప్పుడు?",
+   "gold": [
+    31
+   ],
+   "sheet": "by 31 July 2026 for kharif crops",
+   "oos": false
+  },
+  {
+   "id": "scheme_deadline-te-roman",
+   "lang": "te",
+   "script": "roman",
+   "q": "vittana sahaya pathakaniki kharif pantalaku darakhastu chivari tedi eppudu?",
+   "gold": [
+    31
+   ],
+   "sheet": "by 31 July 2026 for kharif crops",
+   "oos": false
+  },
+  {
+   "id": "stemborer_dose-ta-native",
+   "lang": "ta",
+   "script": "native",
+   "q": "நெல்லில் தண்டு துளைப்பானுக்கு குளோரான்ட்ரானிலிப்ரோல் ஏக்கருக்கு எவ்வளவு மில்லி தெளிக்க வேண்டும்?",
+   "gold": [
+    60
+   ],
+   "sheet": "chlorantraniliprole 18.5 SC at 60 ml per acre",
+   "oos": false
+  },
+  {
+   "id": "stemborer_dose-ta-roman",
+   "lang": "ta",
+   "script": "roman",
+   "q": "nellil thandu thulaippanukku chlorantraniliprole ekkarukku evvalavu ml thelikka vendum?",
+   "gold": [
+    60
+   ],
+   "sheet": "chlorantraniliprole 18.5 SC at 60 ml per acre",
+   "oos": false
+  },
+  {
+   "id": "cotton_urea-ta-native",
+   "lang": "ta",
+   "script": "native",
+   "q": "பருத்திக்கு ஏக்கருக்கு மொத்தம் எவ்வளவு யூரியா போட வேண்டும்?",
+   "gold": [
+    100
+   ],
+   "sheet": "Urea 100 kg in total",
+   "oos": false
+  },
+  {
+   "id": "cotton_urea-ta-roman",
+   "lang": "ta",
+   "script": "roman",
+   "q": "paruthikku ekkarukku mottham evvalavu urea poda vendum?",
+   "gold": [
+    100
+   ],
+   "sheet": "Urea 100 kg in total",
+   "oos": false
+  },
+  {
+   "id": "soy_dap-ta-native",
+   "lang": "ta",
+   "script": "native",
+   "q": "சோயாபீனுக்கு ஏக்கருக்கு எவ்வளவு டிஏபி போட வேண்டும்?",
+   "gold": [
+    50
+   ],
+   "sheet": "DAP 50 kg",
+   "oos": false
+  },
+  {
+   "id": "soy_dap-ta-roman",
+   "lang": "ta",
+   "script": "roman",
+   "q": "soyabeanukku ekkarukku evvalavu DAP poda vendum?",
+   "gold": [
+    50
+   ],
+   "sheet": "DAP 50 kg",
+   "oos": false
+  },
+  {
+   "id": "wheat_first_irrigation-ta-native",
+   "lang": "ta",
+   "script": "native",
+   "q": "கோதுமைக்கு விதைத்து எத்தனை நாளில் முதல் தண்ணீர் பாய்ச்ச வேண்டும்?",
+   "gold": [
+    21
+   ],
+   "sheet": "first irrigation ... 21 days after sowing",
+   "oos": false
+  },
+  {
+   "id": "wheat_first_irrigation-ta-roman",
+   "lang": "ta",
+   "script": "roman",
+   "q": "kothumaikku vidhaithu ethanai naalil mudhal thanneer paaycha vendum?",
+   "gold": [
+    21
+   ],
+   "sheet": "first irrigation ... 21 days after sowing",
+   "oos": false
+  },
+  {
+   "id": "rust_dose-ta-native",
+   "lang": "ta",
+   "script": "native",
+   "q": "கோதுமையில் மஞ்சள் துரு வந்தால் ப்ரோபிகோனசோல் ஏக்கருக்கு எவ்வளவு மில்லி?",
+   "gold": [
+    200
+   ],
+   "sheet": "propiconazole 25 EC at 200 ml per acre",
+   "oos": false
+  },
+  {
+   "id": "rust_dose-ta-roman",
+   "lang": "ta",
+   "script": "roman",
+   "q": "kothumaiyil manjal thuru vandhal propiconazole ekkarukku evvalavu ml?",
+   "gold": [
+    200
+   ],
+   "sheet": "propiconazole 25 EC at 200 ml per acre",
+   "oos": false
+  },
+  {
+   "id": "wheat_seed_late-pa-native",
+   "lang": "pa",
+   "script": "native",
+   "q": "ਪਿਛੇਤੀ ਕਣਕ ਲਈ ਪ੍ਰਤੀ ਏਕੜ ਕਿੰਨਾ ਬੀਜ ਚਾਹੀਦਾ ਹੈ?",
+   "gold": [
+    50
+   ],
+   "sheet": "late sowing 50 kg per acre",
+   "oos": false
+  },
+  {
+   "id": "wheat_seed_late-pa-roman",
+   "lang": "pa",
+   "script": "roman",
+   "q": "pichheti kanak layi prati ekad kinna beej chahida hai?",
+   "gold": [
+    50
+   ],
+   "sheet": "late sowing 50 kg per acre",
+   "oos": false
+  },
+  {
+   "id": "wheat_urea-pa-native",
+   "lang": "pa",
+   "script": "native",
+   "q": "ਕਣਕ ਨੂੰ ਪ੍ਰਤੀ ਏਕੜ ਕੁੱਲ ਕਿੰਨਾ ਯੂਰੀਆ ਪਾਉਣਾ ਹੈ?",
+   "gold": [
+    110
+   ],
+   "sheet": "Urea 110 kg in total",
+   "oos": false
+  },
+  {
+   "id": "wheat_urea-pa-roman",
+   "lang": "pa",
+   "script": "roman",
+   "q": "kanak nu prati ekad kull kinna urea pauna hai?",
+   "gold": [
+    110
+   ],
+   "sheet": "Urea 110 kg in total",
+   "oos": false
+  },
+  {
+   "id": "aphid_threshold-pa-native",
+   "lang": "pa",
+   "script": "native",
+   "q": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ ਕਿੰਨਾ ਤੇਲਾ ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰੀਏ?",
+   "gold": [
+    10
+   ],
+   "sheet": "10 aphids per tiller",
+   "oos": false
+  },
+  {
+   "id": "aphid_threshold-pa-roman",
+   "lang": "pa",
+   "script": "roman",
+   "q": "kanak vich prati boojha kinna tela hon te spray kariye?",
+   "gold": [
+    10
+   ],
+   "sheet": "10 aphids per tiller",
+   "oos": false
+  },
+  {
+   "id": "soy_weedfree-pa-native",
+   "lang": "pa",
+   "script": "native",
+   "q": "ਸੋਇਆਬੀਨ ਨੂੰ ਬਿਜਾਈ ਤੋਂ ਬਾਅਦ ਕਿੰਨੇ ਦਿਨ ਨਦੀਨ ਮੁਕਤ ਰੱਖਣਾ ਹੈ?",
+   "gold": [
+    45
+   ],
+   "sheet": "weed-free for the first 45 days",
+   "oos": false
+  },
+  {
+   "id": "soy_weedfree-pa-roman",
+   "lang": "pa",
+   "script": "roman",
+   "q": "soyabean nu bijai ton baad kinne din nadeen mukat rakhna hai?",
+   "gold": [
+    45
+   ],
+   "sheet": "weed-free for the first 45 days",
+   "oos": false
+  },
+  {
+   "id": "cotton_mop-pa-native",
+   "lang": "pa",
+   "script": "native",
+   "q": "ਨਰਮੇ ਨੂੰ ਪ੍ਰਤੀ ਏਕੜ ਕਿੰਨਾ ਪੋਟਾਸ਼ (MOP) ਪਾਈਏ?",
+   "gold": [
+    40
+   ],
+   "sheet": "MOP 40 kg",
+   "oos": false
+  },
+  {
+   "id": "cotton_mop-pa-roman",
+   "lang": "pa",
+   "script": "roman",
+   "q": "narme nu prati ekad kinna potash (MOP) paiye?",
+   "gold": [
+    40
+   ],
+   "sheet": "MOP 40 kg",
+   "oos": false
+  },
+  {
+   "id": "oos0-hi-native",
+   "lang": "hi",
+   "script": "native",
+   "q": "सेब के बगीचे में कौन सी खाद डालें?",
+   "gold": [],
+   "sheet": null,
+   "oos": true
+  },
+  {
+   "id": "oos1-mr-roman",
+   "lang": "mr",
+   "script": "roman",
+   "q": "aajcha soybean cha bajarbhav kay ahe?",
+   "gold": [],
+   "sheet": null,
+   "oos": true
+  },
+  {
+   "id": "oos2-kn-native",
+   "lang": "kn",
+   "script": "native",
+   "q": "ನಾಳೆ ನಮ್ಮ ಊರಲ್ಲಿ ಮಳೆ ಬರುತ್ತದೆಯೇ?",
+   "gold": [],
+   "sheet": null,
+   "oos": true
+  },
+  {
+   "id": "oos3-te-native",
+   "lang": "te",
+   "script": "native",
+   "q": "ట్రాక్టర్ లోన్‌కి వడ్డీ రేటు ఎంత?",
+   "gold": [],
+   "sheet": null,
+   "oos": true
+  },
+  {
+   "id": "oos4-ta-native",
+   "lang": "ta",
+   "script": "native",
+   "q": "தக்காளிக்கு ஏக்கருக்கு எவ்வளவு உரம் போட வேண்டும்?",
+   "gold": [],
+   "sheet": null,
+   "oos": true
+  },
+  {
+   "id": "oos5-pa-native",
+   "lang": "pa",
+   "script": "native",
+   "q": "ਮੇਰੀ ਗਾਂ ਦੁੱਧ ਘੱਟ ਦੇ ਰਹੀ ਹੈ, ਕੀ ਕਰਾਂ?",
+   "gold": [],
+   "sheet": null,
+   "oos": true
+  },
+  {
+   "id": "oos6-hi-roman",
+   "lang": "hi",
+   "script": "roman",
+   "q": "ganne mein ek acre mein kitna urea dalna hai?",
+   "gold": [],
+   "sheet": null,
+   "oos": true
+  },
+  {
+   "id": "oos7-mr-native",
+   "lang": "mr",
+   "script": "native",
+   "q": "ठिबक सिंचनासाठी किती अनुदान मिळते?",
+   "gold": [],
+   "sheet": null,
+   "oos": true
+  },
+  {
+   "id": "oos8-kn-roman",
+   "lang": "kn",
+   "script": "roman",
+   "q": "PM-Kisan kantu yavaga barutte?",
+   "gold": [],
+   "sheet": null,
+   "oos": true
+  },
+  {
+   "id": "oos9-te-roman",
+   "lang": "te",
+   "script": "roman",
+   "q": "mirchi pantaku ekaraniki entha DAP veyali?",
+   "gold": [],
+   "sheet": null,
+   "oos": true
+  }
+ ]
+}

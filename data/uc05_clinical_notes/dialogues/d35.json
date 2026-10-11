@@ -1,0 +1,123 @@
+{
+ "id": "d35",
+ "pair": "mr-en",
+ "lang": "Marathi",
+ "style": "native",
+ "topic": "paediatrics",
+ "audio_subset": true,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "attendant",
+   "text": "डॉक्टर, माझ्या मुलीचा कान 2 दिवसांपासून दुखतोय, रात्रभर रडत होती. ती 6 वर्षांची आहे."
+  },
+  {
+   "speaker": "doctor",
+   "text": "ताप आहे का?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "हो, थोडा ताप आहे."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Temperature शंभर पूर्णांक आठ आहे. कान बघतो... कानाचा पडदा लाल झालाय. हे acute otitis media आहे, म्हणजे कानाचं infection."
+  },
+  {
+   "speaker": "attendant",
+   "text": "तिला कोणत्याही औषधाची allergy नाही."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Amoxicillin syrup देतो, 5 ml दिवसातून तीन वेळा... थांबा, तिचं weight किती आहे?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "आत्ताच मोजलं, 20 kg."
+  },
+  {
+   "speaker": "doctor",
+   "text": "मग 20 kg साठी 5 ml कमी पडेल. Amoxicillin syrup 7.5 ml, दिवसातून तीन वेळा, 7 दिवस पूर्ण द्या."
+  },
+  {
+   "speaker": "doctor",
+   "text": "आणि ताप आला किंवा कान दुखला तरच paracetamol syrup 6 ml द्या."
+  },
+  {
+   "speaker": "attendant",
+   "text": "अजून काही काळजी?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "कानातून पू आला, ताप उतरत नसेल, किंवा मान ताठ झाली तर लगेच घेऊन या."
+  },
+  {
+   "speaker": "attendant",
+   "text": "पुन्हा कधी दाखवायचं?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "5 दिवसांनी परत दाखवा."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "ear pain",
+   "earache"
+  ],
+  "duration": {
+   "value": 2,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 100.8,
+   "weight_kg": 20
+  },
+  "diagnosis": [
+   "acute otitis media",
+   "otitis media",
+   "ear infection"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "amoxicillin"
+    ],
+    "dose": "7.5 ml",
+    "frequency": "TDS",
+    "duration_days": 7
+   },
+   {
+    "drug": [
+     "paracetamol"
+    ],
+    "dose": "6 ml",
+    "frequency": "SOS",
+    "duration_days": null
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "ear discharge",
+    "pus from ear",
+    "discharge"
+   ],
+   [
+    "persistent fever",
+    "fever not reducing",
+    "high fever"
+   ],
+   [
+    "neck stiffness",
+    "stiff neck"
+   ]
+  ],
+  "follow_up": [
+   "5 days",
+   "after 5 days"
+  ],
+  "not_prescribed": []
+ },
+ "trap": "Amoxicillin dose corrected from 5 ml to 7.5 ml after weighing; temperature spoken in words."
+}

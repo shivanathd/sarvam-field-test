@@ -1,0 +1,444 @@
+{
+ "paddy_urea-hi-native": {
+  "voice": "say:Lekha",
+  "text": "धान में एक एकड़ में कुल कितना यूरिया डालना है?",
+  "audio_s": 3.13
+ },
+ "paddy_urea-hi-roman": {
+  "voice": "gemini:Fenrir",
+  "text": "धान में एक एकड़ में कुल कितना यूरिया डालना है?",
+  "audio_s": 2.92,
+  "in_tok": 14,
+  "out_tok": 73
+ },
+ "pbw_traps-hi-native": {
+  "voice": "say:Lekha",
+  "text": "कपास में गुलाबी सुंडी के लिए एक एकड़ में कितने फेरोमोन ट्रैप लगाएँ?",
+  "audio_s": 4.56
+ },
+ "pbw_traps-hi-roman": {
+  "voice": "gemini:Kore",
+  "text": "कपास में गुलाबी सुंडी के लिए एक एकड़ में कितने फेरोमोन ट्रैप लगाएँ?",
+  "audio_s": 4.96,
+  "in_tok": 21,
+  "out_tok": 124
+ },
+ "wheat_seed_timely-hi-native": {
+  "voice": "say:Lekha",
+  "text": "गेहूँ की समय पर बुवाई के लिए प्रति एकड़ कितना बीज चाहिए?",
+  "audio_s": 3.84
+ },
+ "wheat_seed_timely-hi-roman": {
+  "voice": "gemini:Fenrir",
+  "text": "गेहूँ की समय पर बुवाई के लिए प्रति एकड़ कितना बीज चाहिए?",
+  "audio_s": 4.44,
+  "in_tok": 17,
+  "out_tok": 112
+ },
+ "scheme_cap-hi-native": {
+  "voice": "say:Lekha",
+  "text": "किसान बीज सहायता योजना में एक एकड़ पर ज़्यादा से ज़्यादा कितनी सब्सिडी मिलेगी?",
+  "audio_s": 5.47
+ },
+ "scheme_cap-hi-roman": {
+  "voice": "gemini:Kore",
+  "text": "किसान बीज सहायता योजना में एक एकड़ पर ज़्यादा से ज़्यादा कितनी सब्सिडी मिलेगी?",
+  "audio_s": 6.2,
+  "in_tok": 16,
+  "out_tok": 155
+ },
+ "soy_seed-hi-native": {
+  "voice": "say:Lekha",
+  "text": "सोयाबीन का बीज एक एकड़ में कितना लगेगा?",
+  "audio_s": 2.92
+ },
+ "soy_seed-hi-roman": {
+  "voice": "gemini:Puck",
+  "text": "सोयाबीन का बीज एक एकड़ में कितना लगेगा?",
+  "audio_s": 3.16,
+  "in_tok": 12,
+  "out_tok": 79
+ },
+ "cotton_packets-mr-native": {
+  "voice": "gemini:Leda",
+  "text": "कापसाच्या बीटी बियाण्याची एकरी किती पाकिटे लागतात?",
+  "audio_s": 3.6,
+  "in_tok": 19,
+  "out_tok": 90
+ },
+ "cotton_packets-mr-roman": {
+  "voice": "gemini:Puck",
+  "text": "कापसाच्या बीटी बियाण्याची एकरी किती पाकिटे लागतात?",
+  "audio_s": 3.6,
+  "in_tok": 19,
+  "out_tok": 90
+ },
+ "cotton_rain-mr-native": {
+  "voice": "gemini:Charon",
+  "text": "कापसाची पेरणी किती मिलीमीटर पाऊस झाल्यावर करावी?",
+  "audio_s": 3.44,
+  "in_tok": 14,
+  "out_tok": 86
+ },
+ "cotton_rain-mr-roman": {
+  "voice": "gemini:Fenrir",
+  "text": "कापसाची पेरणी किती मिलीमीटर पाऊस झाल्यावर करावी?",
+  "audio_s": 3.6,
+  "in_tok": 14,
+  "out_tok": 90
+ },
+ "soy_row-mr-native": {
+  "voice": "gemini:Kore",
+  "text": "सोयाबीनच्या दोन ओळींमध्ये किती अंतर ठेवायचे?",
+  "audio_s": 3.84,
+  "in_tok": 15,
+  "out_tok": 96
+ },
+ "soy_row-mr-roman": {
+  "voice": "gemini:Charon",
+  "text": "सोयाबीनच्या दोन ओळींमध्ये किती अंतर ठेवायचे?",
+  "audio_s": 3.44,
+  "in_tok": 15,
+  "out_tok": 86
+ },
+ "girdle_dose-mr-native": {
+  "voice": "gemini:Puck",
+  "text": "सोयाबीनवर चक्री भुंगा आला तर थायक्लोप्रिड एकरी किती मिली फवारायचे?",
+  "audio_s": 4.56,
+  "in_tok": 25,
+  "out_tok": 114
+ },
+ "girdle_dose-mr-roman": {
+  "voice": "gemini:Aoede",
+  "text": "सोयाबीनवर चक्री भुंगा आला तर थायक्लोप्रिड एकरी किती मिली फवारायचे?",
+  "audio_s": 5.04,
+  "in_tok": 25,
+  "out_tok": 126
+ },
+ "scheme_acres-mr-native": {
+  "voice": "gemini:Charon",
+  "text": "बियाणे सहाय्य योजनेत जास्तीत जास्त किती एकरांसाठी अनुदान मिळते?",
+  "audio_s": 4.52,
+  "in_tok": 18,
+  "out_tok": 113
+ },
+ "scheme_acres-mr-roman": {
+  "voice": "gemini:Fenrir",
+  "text": "बियाणे सहाय्य योजनेत जास्तीत जास्त किती एकरांसाठी अनुदान मिळते?",
+  "audio_s": 4.28,
+  "in_tok": 18,
+  "out_tok": 107
+ },
+ "paddy_seed-kn-native": {
+  "voice": "say:Soumya",
+  "text": "ನಾಟಿ ಭತ್ತಕ್ಕೆ ಎಕರೆಗೆ ಎಷ್ಟು ಕೆಜಿ ಬೀಜ ಬೇಕು?",
+  "audio_s": 3.46
+ },
+ "paddy_seed-kn-roman": {
+  "voice": "gemini:Kore",
+  "text": "ನಾಟಿ ಭತ್ತಕ್ಕೆ ಎಕರೆಗೆ ಎಷ್ಟು ಕೆಜಿ ಬೀಜ ಬೇಕು?",
+  "audio_s": 4.6,
+  "in_tok": 18,
+  "out_tok": 115
+ },
+ "bph_threshold-kn-native": {
+  "voice": "say:Soumya",
+  "text": "ಭತ್ತದಲ್ಲಿ ಕಂದು ಜಿಗಿಹುಳು ಒಂದು ಗುಣಿಗೆ ಎಷ್ಟು ಇದ್ದಾಗ ಔಷಧಿ ಸಿಂಪಡಿಸಬೇಕು?",
+  "audio_s": 5.33
+ },
+ "bph_threshold-kn-roman": {
+  "voice": "gemini:Fenrir",
+  "text": "ಭತ್ತದಲ್ಲಿ ಕಂದು ಜಿಗಿಹುಳು ಒಂದು ಗುಣಿಗೆ ಎಷ್ಟು ಇದ್ದಾಗ ಔಷಧಿ ಸಿಂಪಡಿಸಬೇಕು?",
+  "audio_s": 5.44,
+  "in_tok": 25,
+  "out_tok": 136
+ },
+ "cotton_ssp-kn-native": {
+  "voice": "say:Soumya",
+  "text": "ಹತ್ತಿಗೆ ಎಕರೆಗೆ ಎಷ್ಟು ಕೆಜಿ ಎಸ್‌ಎಸ್‌ಪಿ ಹಾಕಬೇಕು?",
+  "audio_s": 3.52
+ },
+ "cotton_ssp-kn-roman": {
+  "voice": "gemini:Fenrir",
+  "text": "ಹತ್ತಿಗೆ ಎಕರೆಗೆ ಎಷ್ಟು ಕೆಜಿ ಎಸ್‌ಎಸ್‌ಪಿ ಹಾಕಬೇಕು?",
+  "audio_s": 3.32,
+  "in_tok": 19,
+  "out_tok": 83
+ },
+ "soy_rhizobium-kn-native": {
+  "voice": "say:Soumya",
+  "text": "ಸೋಯಾಬೀನ್ ಬೀಜಕ್ಕೆ ಒಂದು ಕೆಜಿಗೆ ರೈಜೋಬಿಯಂ ಎಷ್ಟು ಗ್ರಾಂ ಹಾಕಬೇಕು?",
+  "audio_s": 4.56
+ },
+ "soy_rhizobium-kn-roman": {
+  "voice": "gemini:Puck",
+  "text": "ಸೋಯಾಬೀನ್ ಬೀಜಕ್ಕೆ ಒಂದು ಕೆಜಿಗೆ ರೈಜೋಬಿಯಂ ಎಷ್ಟು ಗ್ರಾಂ ಹಾಕಬೇಕು?",
+  "audio_s": 4.88,
+  "in_tok": 27,
+  "out_tok": 122
+ },
+ "spray_water-kn-native": {
+  "voice": "say:Soumya",
+  "text": "ಔಷಧಿ ಸಿಂಪಡಣೆಗೆ ಎಕರೆಗೆ ಎಷ್ಟು ಲೀಟರ್ ನೀರು ಬಳಸಬೇಕು?",
+  "audio_s": 4.05
+ },
+ "spray_water-kn-roman": {
+  "voice": "gemini:Aoede",
+  "text": "ಔಷಧಿ ಸಿಂಪಡಣೆಗೆ ಎಕರೆಗೆ ಎಷ್ಟು ಲೀಟರ್ ನೀರು ಬಳಸಬೇಕು?",
+  "audio_s": 4.08,
+  "in_tok": 22,
+  "out_tok": 102
+ },
+ "paddy_seedling_age-te-native": {
+  "voice": "say:Geeta",
+  "text": "వరి నాట్లకు నారు ఎన్ని రోజుల వయసులో ఉండాలి?",
+  "audio_s": 3.31
+ },
+ "paddy_seedling_age-te-roman": {
+  "voice": "gemini:Kore",
+  "text": "వరి నాట్లకు నారు ఎన్ని రోజుల వయసులో ఉండాలి?",
+  "audio_s": 4.0,
+  "in_tok": 16,
+  "out_tok": 100
+ },
+ "paddy_zinc-te-native": {
+  "voice": "say:Geeta",
+  "text": "వరికి ఎకరానికి ఎంత జింక్ సల్ఫేట్ వేయాలి?",
+  "audio_s": 3.42
+ },
+ "paddy_zinc-te-roman": {
+  "voice": "gemini:Puck",
+  "text": "వరికి ఎకరానికి ఎంత జింక్ సల్ఫేట్ వేయాలి?",
+  "audio_s": 3.36,
+  "in_tok": 19,
+  "out_tok": 84
+ },
+ "cotton_spacing-te-native": {
+  "voice": "say:Geeta",
+  "text": "పత్తి మొక్కల మధ్య, సాళ్ల మధ్య దూరం ఎంత ఉండాలి?",
+  "audio_s": 3.99
+ },
+ "cotton_spacing-te-roman": {
+  "voice": "gemini:Puck",
+  "text": "పత్తి మొక్కల మధ్య, సాళ్ల మధ్య దూరం ఎంత ఉండాలి?",
+  "audio_s": 3.96,
+  "in_tok": 16,
+  "out_tok": 99
+ },
+ "whitefly_threshold-te-native": {
+  "voice": "say:Geeta",
+  "text": "పత్తిలో ఆకుకు ఎన్ని తెల్లదోమలు ఉంటే మందు కొట్టాలి?",
+  "audio_s": 3.94
+ },
+ "whitefly_threshold-te-roman": {
+  "voice": "gemini:Charon",
+  "text": "పత్తిలో ఆకుకు ఎన్ని తెల్లదోమలు ఉంటే మందు కొట్టాలి?",
+  "audio_s": 3.52,
+  "in_tok": 22,
+  "out_tok": 88
+ },
+ "scheme_deadline-te-native": {
+  "voice": "say:Geeta",
+  "text": "విత్తన సహాయ పథకానికి ఖరీఫ్ పంటలకు దరఖాస్తు చివరి తేదీ ఎప్పుడు?",
+  "audio_s": 5.23
+ },
+ "scheme_deadline-te-roman": {
+  "voice": "gemini:Kore",
+  "text": "విత్తన సహాయ పథకానికి ఖరీఫ్ పంటలకు దరఖాస్తు చివరి తేదీ ఎప్పుడు?",
+  "audio_s": 4.76,
+  "in_tok": 22,
+  "out_tok": 119
+ },
+ "stemborer_dose-ta-native": {
+  "voice": "say:Vani",
+  "text": "நெல்லில் தண்டு துளைப்பானுக்கு குளோரான்ட்ரானிலிப்ரோல் ஏக்கருக்கு எவ்வளவு மில்லி தெளிக்க வேண்டும்?",
+  "audio_s": 5.3
+ },
+ "stemborer_dose-ta-roman": {
+  "voice": "gemini:Leda",
+  "text": "நெல்லில் தண்டு துளைப்பானுக்கு குளோரான்ட்ரானிலிப்ரோல் ஏக்கருக்கு எவ்வளவு மில்லி தெளிக்க வேண்டும்?",
+  "audio_s": 5.52,
+  "in_tok": 29,
+  "out_tok": 138
+ },
+ "cotton_urea-ta-native": {
+  "voice": "say:Vani",
+  "text": "பருத்திக்கு ஏக்கருக்கு மொத்தம் எவ்வளவு யூரியா போட வேண்டும்?",
+  "audio_s": 3.53
+ },
+ "cotton_urea-ta-roman": {
+  "voice": "gemini:Aoede",
+  "text": "பருத்திக்கு ஏக்கருக்கு மொத்தம் எவ்வளவு யூரியா போட வேண்டும்?",
+  "audio_s": 4.2,
+  "in_tok": 14,
+  "out_tok": 105
+ },
+ "soy_dap-ta-native": {
+  "voice": "say:Vani",
+  "text": "சோயாபீனுக்கு ஏக்கருக்கு எவ்வளவு டிஏபி போட வேண்டும்?",
+  "audio_s": 3.51
+ },
+ "soy_dap-ta-roman": {
+  "voice": "gemini:Leda",
+  "text": "சோயாபீனுக்கு ஏக்கருக்கு எவ்வளவு டிஏபி போட வேண்டும்?",
+  "audio_s": 3.8,
+  "in_tok": 14,
+  "out_tok": 95
+ },
+ "wheat_first_irrigation-ta-native": {
+  "voice": "say:Vani",
+  "text": "கோதுமைக்கு விதைத்து எத்தனை நாளில் முதல் தண்ணீர் பாய்ச்ச வேண்டும்?",
+  "audio_s": 4.02
+ },
+ "wheat_first_irrigation-ta-roman": {
+  "voice": "gemini:Leda",
+  "text": "கோதுமைக்கு விதைத்து எத்தனை நாளில் முதல் தண்ணீர் பாய்ச்ச வேண்டும்?",
+  "audio_s": 5.0,
+  "in_tok": 15,
+  "out_tok": 125
+ },
+ "rust_dose-ta-native": {
+  "voice": "say:Vani",
+  "text": "கோதுமையில் மஞ்சள் துரு வந்தால் ப்ரோபிகோனசோல் ஏக்கருக்கு எவ்வளவு மில்லி?",
+  "audio_s": 4.44
+ },
+ "rust_dose-ta-roman": {
+  "voice": "gemini:Fenrir",
+  "text": "கோதுமையில் மஞ்சள் துரு வந்தால் ப்ரோபிகோனசோல் ஏக்கருக்கு எவ்வளவு மில்லி?",
+  "audio_s": 5.08,
+  "in_tok": 21,
+  "out_tok": 127
+ },
+ "wheat_seed_late-pa-native": {
+  "voice": "gemini:Fenrir",
+  "text": "ਪਿਛੇਤੀ ਕਣਕ ਲਈ ਪ੍ਰਤੀ ਏਕੜ ਕਿੰਨਾ ਬੀਜ ਚਾਹੀਦਾ ਹੈ?",
+  "audio_s": 3.24,
+  "in_tok": 28,
+  "out_tok": 81
+ },
+ "wheat_seed_late-pa-roman": {
+  "voice": "gemini:Kore",
+  "text": "ਪਿਛੇਤੀ ਕਣਕ ਲਈ ਪ੍ਰਤੀ ਏਕੜ ਕਿੰਨਾ ਬੀਜ ਚਾਹੀਦਾ ਹੈ?",
+  "audio_s": 3.68,
+  "in_tok": 28,
+  "out_tok": 92
+ },
+ "wheat_urea-pa-native": {
+  "voice": "gemini:Aoede",
+  "text": "ਕਣਕ ਨੂੰ ਪ੍ਰਤੀ ਏਕੜ ਕੁੱਲ ਕਿੰਨਾ ਯੂਰੀਆ ਪਾਉਣਾ ਹੈ?",
+  "audio_s": 3.36,
+  "in_tok": 27,
+  "out_tok": 84
+ },
+ "wheat_urea-pa-roman": {
+  "voice": "gemini:Leda",
+  "text": "ਕਣਕ ਨੂੰ ਪ੍ਰਤੀ ਏਕੜ ਕੁੱਲ ਕਿੰਨਾ ਯੂਰੀਆ ਪਾਉਣਾ ਹੈ?",
+  "audio_s": 3.52,
+  "in_tok": 27,
+  "out_tok": 88
+ },
+ "aphid_threshold-pa-native": {
+  "voice": "gemini:Kore",
+  "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ ਕਿੰਨਾ ਤੇਲਾ ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰੀਏ?",
+  "audio_s": 4.2,
+  "in_tok": 28,
+  "out_tok": 105
+ },
+ "aphid_threshold-pa-roman": {
+  "voice": "gemini:Charon",
+  "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ ਕਿੰਨਾ ਤੇਲਾ ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰੀਏ?",
+  "audio_s": 3.36,
+  "in_tok": 28,
+  "out_tok": 84
+ },
+ "soy_weedfree-pa-native": {
+  "voice": "gemini:Puck",
+  "text": "ਸੋਇਆਬੀਨ ਨੂੰ ਬਿਜਾਈ ਤੋਂ ਬਾਅਦ ਕਿੰਨੇ ਦਿਨ ਨਦੀਨ ਮੁਕਤ ਰੱਖਣਾ ਹੈ?",
+  "audio_s": 3.68,
+  "in_tok": 33,
+  "out_tok": 92
+ },
+ "soy_weedfree-pa-roman": {
+  "voice": "gemini:Aoede",
+  "text": "ਸੋਇਆਬੀਨ ਨੂੰ ਬਿਜਾਈ ਤੋਂ ਬਾਅਦ ਕਿੰਨੇ ਦਿਨ ਨਦੀਨ ਮੁਕਤ ਰੱਖਣਾ ਹੈ?",
+  "audio_s": 4.4,
+  "in_tok": 33,
+  "out_tok": 111
+ },
+ "cotton_mop-pa-native": {
+  "voice": "gemini:Charon",
+  "text": "ਨਰਮੇ ਨੂੰ ਪ੍ਰਤੀ ਏਕੜ ਕਿੰਨਾ ਪੋਟਾਸ਼ (MOP) ਪਾਈਏ?",
+  "audio_s": 3.56,
+  "in_tok": 28,
+  "out_tok": 89
+ },
+ "cotton_mop-pa-roman": {
+  "voice": "gemini:Fenrir",
+  "text": "ਨਰਮੇ ਨੂੰ ਪ੍ਰਤੀ ਏਕੜ ਕਿੰਨਾ ਪੋਟਾਸ਼ (MOP) ਪਾਈਏ?",
+  "audio_s": 2.96,
+  "in_tok": 28,
+  "out_tok": 74
+ },
+ "oos0-hi-native": {
+  "voice": "say:Lekha",
+  "text": "सेब के बगीचे में कौन सी खाद डालें?",
+  "audio_s": 2.52
+ },
+ "oos1-mr-roman": {
+  "voice": "gemini:Fenrir",
+  "text": "आजचा सोयाबीनचा बाजारभाव काय आहे?",
+  "audio_s": 2.48,
+  "in_tok": 11,
+  "out_tok": 62
+ },
+ "oos2-kn-native": {
+  "voice": "say:Soumya",
+  "text": "ನಾಳೆ ನಮ್ಮ ಊರಲ್ಲಿ ಮಳೆ ಬರುತ್ತದೆಯೇ?",
+  "audio_s": 2.55
+ },
+ "oos3-te-native": {
+  "voice": "say:Geeta",
+  "text": "ట్రాక్టర్ లోన్‌కి వడ్డీ రేటు ఎంత?",
+  "audio_s": 2.34
+ },
+ "oos4-ta-native": {
+  "voice": "say:Vani",
+  "text": "தக்காளிக்கு ஏக்கருக்கு எவ்வளவு உரம் போட வேண்டும்?",
+  "audio_s": 3.1
+ },
+ "oos5-pa-native": {
+  "voice": "gemini:Fenrir",
+  "text": "ਮੇਰੀ ਗਾਂ ਦੁੱਧ ਘੱਟ ਦੇ ਰਹੀ ਹੈ, ਕੀ ਕਰਾਂ?",
+  "audio_s": 3.32,
+  "in_tok": 21,
+  "out_tok": 83
+ },
+ "oos6-hi-roman": {
+  "voice": "gemini:Puck",
+  "text": "गन्ने में एक एकड़ में कितना यूरिया डालना है?",
+  "audio_s": 3.16,
+  "in_tok": 14,
+  "out_tok": 79
+ },
+ "oos7-mr-native": {
+  "voice": "gemini:Charon",
+  "text": "ठिबक सिंचनासाठी किती अनुदान मिळते?",
+  "audio_s": 2.72,
+  "in_tok": 12,
+  "out_tok": 68
+ },
+ "oos8-kn-roman": {
+  "voice": "gemini:Leda",
+  "text": "ಪಿಎಂ-ಕಿಸಾನ್ ಕಂತು ಯಾವಾಗ ಬರುತ್ತೆ?",
+  "audio_s": 2.8,
+  "in_tok": 14,
+  "out_tok": 70
+ },
+ "oos9-te-roman": {
+  "voice": "gemini:Kore",
+  "text": "మిర్చి పంటకు ఎకరానికి ఎంత డీఏపీ వేయాలి?",
+  "audio_s": 3.28,
+  "in_tok": 17,
+  "out_tok": 82
+ }
+}

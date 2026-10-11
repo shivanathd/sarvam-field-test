@@ -1,0 +1,126 @@
+{
+ "request_id": "20261011_ce7c98bd-9cab-4b2f-9d70-b348a32f71f6",
+ "transcript": "Hello, please come in. What is the child's name and age? Aarav is four years old. He has had a cough and cold for two days, and also has a fever. How much fever is there? Any difficulty breathing at night? I went until 101 at night. My breath is fine, just my nose remains blocked. Right now the temperature is 100.6. Oxygen, meaning SPO2, is 98 percent. Great. I have weighed 16 kilos. Doctor, the elder son had an Azithral bottle lying in the house. I gave him one dose last night. No, stop that. This is a viral infection, an upper respiratory tract infection. There is no need for antibiotics in this. Don't give antibiotics without asking. Yes, it's fine. He/she doesn't have any medicine for the allergy. Okay. For fever, Paracetamol syrup, Calpol 250, 5 ml, only when the fever is above 100, not more than four times a day, for three days. For a cold, Cetirizine syrup, 2.5 ml, five days before going to sleep at night. He is eating less, what should I do? Keep giving water and lentil water little by little. If the breath is fast, the ribs are moving, the child stops drinking water, or if there is a seizure, bring them immediately to the emergency. Yes, I understood. Then when did you come? Show it after 3 days, even if the fever persists.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Hello, please come in.",
+    "start_time_seconds": 0.39,
+    "end_time_seconds": 2.05,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "What is the child's name and age?",
+    "start_time_seconds": 3.15,
+    "end_time_seconds": 5.31,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Aarav is four years old. He has had a cough and cold for two days, and also has a fever.",
+    "start_time_seconds": 6.27,
+    "end_time_seconds": 13.45,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "How much fever is there? Any difficulty breathing at night?",
+    "start_time_seconds": 14.39,
+    "end_time_seconds": 18.51,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "I went until 101 at night. My breath is fine, just my nose remains blocked.",
+    "start_time_seconds": 19.23,
+    "end_time_seconds": 25.67,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Right now the temperature is 100.6. Oxygen, meaning SPO2, is 98 percent. Great.",
+    "start_time_seconds": 26.61,
+    "end_time_seconds": 35.39,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "I have weighed 16 kilos.",
+    "start_time_seconds": 36.45,
+    "end_time_seconds": 37.67,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor, the elder son had an Azithral bottle lying in the house. I gave him one dose last night.",
+    "start_time_seconds": 38.13,
+    "end_time_seconds": 47.61,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "No, stop that. This is a viral infection, an upper respiratory tract infection. There is no need for antibiotics in this. Don't give antibiotics without asking.",
+    "start_time_seconds": 48.63,
+    "end_time_seconds": 61.25,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Yes, it's fine. He/she doesn't have any medicine for the allergy.",
+    "start_time_seconds": 62.23,
+    "end_time_seconds": 67.39,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay.",
+    "start_time_seconds": 68.23,
+    "end_time_seconds": 68.91,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "For fever, Paracetamol syrup, Calpol 250, 5 ml, only when the fever is above 100, not more than four times a day, for three days. For a cold, Cetirizine syrup, 2.5 ml, five days before going to sleep at night.",
+    "start_time_seconds": 69.99,
+    "end_time_seconds": 87.69,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "He is eating less, what should I do?",
+    "start_time_seconds": 88.33,
+    "end_time_seconds": 91.43,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Keep giving water and lentil water little by little. If the breath is fast, the ribs are moving, the child stops drinking water, or if there is a seizure, bring them immediately to the emergency.",
+    "start_time_seconds": 92.39,
+    "end_time_seconds": 106.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Yes, I understood.",
+    "start_time_seconds": 106.97,
+    "end_time_seconds": 108.21,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Then when did you come?",
+    "start_time_seconds": 109.23,
+    "end_time_seconds": 110.09,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Show it after 3 days, even if the fever persists.",
+    "start_time_seconds": 110.81,
+    "end_time_seconds": 113.97,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "hi-IN",
+ "language_probability": null,
+ "audio_hash": "a2963df3f9c1b1b566b3d6a92df681f4",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_a47e4c0b-ef10-4768-bffe-b9978f06cb78",
+  "elapsed_s": 11.585730075836182,
+  "params": {
+   "model": "saaras:v3",
+   "mode": "translate",
+   "language_code": "hi-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

@@ -1,0 +1,126 @@
+{
+ "request_id": "20261011_25d2438b-c48c-4129-989e-887fe1d7e41f",
+ "transcript": "ലീലാമേ വരൂ. എന്തിന്റെ വിശേഷം? ഡോക്ടറെ പത്ത് ദിവസായി രാവിലെ എഴുന്നേൽക്കുമ്പോൾ തലവേദനയാണ് ചിലപ്പോൾ നെഞ്ചിടിപ്പ് പതുക്കെയാണെന്ന് തോന്നും. ഇപ്പോൾ ഏതൊക്കെ ഗുളികയാ കഴിക്കുന്നത്? Amlodipine അഞ്ച് milligram രാവിലെ ഒന്ന് പിന്നെ Atenolol അൻപത് milligram രാത്രി. നോക്കട്ടെ. BP 158/94 ആണ്. Pulse 56 മാത്രമേ ഉള്ളൂ. അത് കുറവാണ്. Weight 66 kg. അത് പ്രശ്നമാണോ Dr-ഏ? pulse കുറയാൻ കാരണം atenolol ആവാം. അതുകൊണ്ട് atenolol ഇന്നുമുതൽ നിർത്തണം. ഏതെങ്കിലും മരുന്നിനോട് allergy ഉണ്ടോ? ഇല്ല Doctor-എ ഒന്നിനോടുമില്ല. ശരി. BP ഇപ്പോഴും control-ൽ അല്ല. ഇത് uncontrolled hypertension ആണ്. രണ്ടും സ്ഥിരമായി കഴിക്കണം. ഉപ്പ് കുറയ്ക്കണോ? തീർച്ചയായും അച്ചാറും പപ്പടവും കുറയ്ക്കണം. നെഞ്ചുവേദന വന്നാലോ ഒരു വശം തളർന്നാലോ സംസാരം കുഴഞ്ഞാലോ തലകറങ്ങി വീണാലോ ഉടനെ ആശുപത്രിയിൽ വരണം. ശരി. അടുത്തത് എപ്പോഴാണ്? രണ്ടാഴ്ച കഴിഞ്ഞോര്. വീട്ടില്. B. നോക്കി എഴുതിക്കൊണ്ട്.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "ലീലാമേ വരൂ. എന്തിന്റെ വിശേഷം?",
+    "start_time_seconds": 0.53,
+    "end_time_seconds": 3.51,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ഡോക്ടറെ പത്ത് ദിവസായി രാവിലെ എഴുന്നേൽക്കുമ്പോൾ തലവേദനയാണ് ചിലപ്പോൾ നെഞ്ചിടിപ്പ് പതുക്കെയാണെന്ന് തോന്നും.",
+    "start_time_seconds": 4.69,
+    "end_time_seconds": 15.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ഇപ്പോൾ ഏതൊക്കെ ഗുളികയാ കഴിക്കുന്നത്?",
+    "start_time_seconds": 16.07,
+    "end_time_seconds": 18.79,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Amlodipine അഞ്ച് milligram രാവിലെ ഒന്ന് പിന്നെ Atenolol അൻപത് milligram രാത്രി.",
+    "start_time_seconds": 19.69,
+    "end_time_seconds": 27.81,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "നോക്കട്ടെ.",
+    "start_time_seconds": 28.77,
+    "end_time_seconds": 29.39,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "BP 158/94 ആണ്. Pulse 56 മാത്രമേ ഉള്ളൂ. അത് കുറവാണ്. Weight 66 kg.",
+    "start_time_seconds": 31.23,
+    "end_time_seconds": 42.69,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "അത് പ്രശ്നമാണോ Dr-ഏ?",
+    "start_time_seconds": 43.37,
+    "end_time_seconds": 45.37,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "pulse കുറയാൻ കാരണം atenolol ആവാം. അതുകൊണ്ട് atenolol ഇന്നുമുതൽ നിർത്തണം. ഏതെങ്കിലും മരുന്നിനോട് allergy ഉണ്ടോ?",
+    "start_time_seconds": 46.63,
+    "end_time_seconds": 56.37,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ഇല്ല Doctor-എ ഒന്നിനോടുമില്ല.",
+    "start_time_seconds": 57.15,
+    "end_time_seconds": 59.39,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ശരി. BP ഇപ്പോഴും control-ൽ അല്ല. ഇത് uncontrolled hypertension ആണ്.",
+    "start_time_seconds": 60.29,
+    "end_time_seconds": 68.47,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "രണ്ടും സ്ഥിരമായി കഴിക്കണം.",
+    "start_time_seconds": 77.77,
+    "end_time_seconds": 79.29,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ഉപ്പ് കുറയ്ക്കണോ?",
+    "start_time_seconds": 80.25,
+    "end_time_seconds": 81.59,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "തീർച്ചയായും അച്ചാറും പപ്പടവും കുറയ്ക്കണം. നെഞ്ചുവേദന വന്നാലോ ഒരു വശം തളർന്നാലോ സംസാരം കുഴഞ്ഞാലോ തലകറങ്ങി വീണാലോ ഉടനെ ആശുപത്രിയിൽ വരണം.",
+    "start_time_seconds": 82.49,
+    "end_time_seconds": 97.61,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ശരി. അടുത്തത് എപ്പോഴാണ്?",
+    "start_time_seconds": 98.63,
+    "end_time_seconds": 101.25,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "രണ്ടാഴ്ച കഴിഞ്ഞോര്. വീട്ടില്.",
+    "start_time_seconds": 102.25,
+    "end_time_seconds": 104.89,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "B.",
+    "start_time_seconds": 104.89,
+    "end_time_seconds": 105.19,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "നോക്കി എഴുതിക്കൊണ്ട്.",
+    "start_time_seconds": 105.19,
+    "end_time_seconds": 106.65,
+    "speaker_id": "0"
+   }
+  ]
+ },
+ "language_code": "ml-IN",
+ "language_probability": null,
+ "audio_hash": "760d0dfa123422e672507f1d54001efd",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_b1595ae2-2fbc-4a11-99fd-fab3ad46016d",
+  "elapsed_s": 11.136283159255981,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "codemix",
+   "language_code": "ml-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

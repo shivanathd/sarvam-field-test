@@ -1,0 +1,2560 @@
+{
+ "uc": "uc08_quick_commerce",
+ "title": "Code-mixed quick-commerce orders and product/place-name transliteration",
+ "business_question": "Can a model turn code-mixed WhatsApp/quick-commerce order and search messages into a correct structured order, and write Indian names in native script correctly?",
+ "dataset": {
+  "name": "uc08 hand-authored orders (100) + transliteration names (100)",
+  "source": "authored for this benchmark (suites/uc08_quick_commerce/build_data.py)",
+  "license": "CC-BY 4.0",
+  "n": 200,
+  "languages": [
+   "bn-beng",
+   "bn-rom",
+   "en",
+   "en-mix",
+   "hi-deva",
+   "hi-rom",
+   "kn-knda",
+   "kn-rom",
+   "mr-deva",
+   "mr-rom",
+   "ta-rom",
+   "ta-tamil",
+   "hi",
+   "ta",
+   "bn",
+   "mr"
+  ],
+  "synthetic": true,
+  "how_made": "Orders: 100 messages written to mimic how Indians type on WhatsApp (romanised and native-script Hindi/Tamil/Bengali/Marathi/Kannada, English, native digits, typos, corrections, negation, brands, local units), 86 orders + 14 searches, gold JSON against an 80-item catalog. Translit: 25 well-known place/person/brand names per language with standard native spellings (accepted variants listed)."
+ },
+ "systems": [
+  "sarvam-105b",
+  "sarvam-105b-think",
+  "sarvam-105b-think(16k cap)",
+  "gemini-3.8-flash",
+  "openai:gpt-5.4-mini",
+  "or:anthropic/claude-haiku-5.5",
+  "gemini-pro-latest",
+  "openai:gpt-5.5",
+  "or:anthropic/claude-sonnet-5.5",
+  "sarvam-30b-local",
+  "qwen3-30b-local",
+  "sarvam-transliterate"
+ ],
+ "metrics": [
+  {
+   "name": "A: item F1 (name+qty/unit+brand all correct)",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.85,
+     "lo": 0.7825,
+     "hi": 0.9108333333333333,
+     "n": 100
+    },
+    "sarvam-105b-think": {
+     "mean": 0.9316666666666668,
+     "lo": 0.885,
+     "hi": 0.9716666666666667,
+     "n": 100
+    },
+    "sarvam-105b-think(16k cap)": {
+     "mean": 0.9506666666666667,
+     "lo": 0.9116666666666667,
+     "hi": 0.9816666666666667,
+     "n": 100
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9866666666666667,
+     "lo": 0.9633333333333333,
+     "hi": 1.0,
+     "n": 100
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.8866666666666667,
+     "lo": 0.835,
+     "hi": 0.935,
+     "n": 100
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9179999999999999,
+     "lo": 0.868,
+     "hi": 0.9613333333333334,
+     "n": 100
+    },
+    "gemini-pro-latest": {
+     "mean": 0.9888888888888889,
+     "lo": 0.9666666666666667,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.9722222222222222,
+     "lo": 0.9333333333333333,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.5018867924528302,
+     "lo": 0.3886792452830189,
+     "hi": 0.6132075471698113,
+     "n": 53
+    },
+    "qwen3-30b-local": {
+     "mean": 0.6226666666666667,
+     "lo": 0.5226666666666666,
+     "hi": 0.7246666666666667,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "A: item F1 (catalog name only)",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.9808333333333333,
+     "lo": 0.965,
+     "hi": 0.9933333333333333,
+     "n": 100
+    },
+    "sarvam-105b-think": {
+     "mean": 0.9566666666666667,
+     "lo": 0.9133333333333333,
+     "hi": 0.99,
+     "n": 100
+    },
+    "sarvam-105b-think(16k cap)": {
+     "mean": 0.9846666666666667,
+     "lo": 0.9593333333333334,
+     "hi": 1.0,
+     "n": 100
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.9516666666666667,
+     "lo": 0.9116666666666667,
+     "hi": 0.9833333333333333,
+     "n": 100
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.973,
+     "lo": 0.945,
+     "hi": 0.9933333333333333,
+     "n": 100
+    },
+    "gemini-pro-latest": {
+     "mean": 0.9888888888888889,
+     "lo": 0.9666666666666667,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.9888888888888889,
+     "lo": 0.9666666666666667,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.619496855345912,
+     "lo": 0.5062893081761006,
+     "hi": 0.7276729559748428,
+     "n": 53
+    },
+    "qwen3-30b-local": {
+     "mean": 0.716,
+     "lo": 0.6146666666666667,
+     "hi": 0.8126666666666666,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "A: exact whole-order accuracy",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.71,
+     "lo": 0.62,
+     "hi": 0.8,
+     "n": 100
+    },
+    "sarvam-105b-think": {
+     "mean": 0.9,
+     "lo": 0.84,
+     "hi": 0.95,
+     "n": 100
+    },
+    "sarvam-105b-think(16k cap)": {
+     "mean": 0.91,
+     "lo": 0.85,
+     "hi": 0.96,
+     "n": 100
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.98,
+     "lo": 0.95,
+     "hi": 1.0,
+     "n": 100
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.77,
+     "lo": 0.69,
+     "hi": 0.85,
+     "n": 100
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.85,
+     "lo": 0.78,
+     "hi": 0.91,
+     "n": 100
+    },
+    "gemini-pro-latest": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.9333333333333333,
+     "lo": 0.8333333333333334,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.09433962264150944,
+     "lo": 0.018867924528301886,
+     "hi": 0.18867924528301888,
+     "n": 53
+    },
+    "qwen3-30b-local": {
+     "mean": 0.36,
+     "lo": 0.24,
+     "hi": 0.5,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "A: item F1 strict, frontier 30-message subset (all systems)",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.8,
+     "lo": 0.6666666666666666,
+     "hi": 0.9222222222222223,
+     "n": 30
+    },
+    "sarvam-105b-think": {
+     "mean": 0.9055555555555556,
+     "lo": 0.8,
+     "hi": 0.9888888888888889,
+     "n": 30
+    },
+    "sarvam-105b-think(16k cap)": {
+     "mean": 0.9388888888888889,
+     "lo": 0.85,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9555555555555556,
+     "lo": 0.8777777777777778,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.7944444444444444,
+     "lo": 0.6666666666666666,
+     "hi": 0.9055555555555556,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9388888888888889,
+     "lo": 0.8555555555555556,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-pro-latest": {
+     "mean": 0.9888888888888889,
+     "lo": 0.9666666666666667,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.9722222222222222,
+     "lo": 0.9333333333333333,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.46349206349206346,
+     "lo": 0.2873015873015873,
+     "hi": 0.6460317460317461,
+     "n": 21
+    },
+    "qwen3-30b-local": {
+     "mean": 0.625,
+     "lo": 0.45,
+     "hi": 0.7833333333333333,
+     "n": 20
+    }
+   }
+  },
+  {
+   "name": "A: exact whole-order accuracy, frontier 30-message subset (all systems)",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.6333333333333333,
+     "lo": 0.4666666666666667,
+     "hi": 0.8,
+     "n": 30
+    },
+    "sarvam-105b-think": {
+     "mean": 0.8333333333333334,
+     "lo": 0.7,
+     "hi": 0.9666666666666667,
+     "n": 30
+    },
+    "sarvam-105b-think(16k cap)": {
+     "mean": 0.8666666666666667,
+     "lo": 0.7333333333333333,
+     "hi": 0.9666666666666667,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9333333333333333,
+     "lo": 0.8333333333333334,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.6333333333333333,
+     "lo": 0.43333333333333335,
+     "hi": 0.8,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9,
+     "lo": 0.8,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-pro-latest": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.9333333333333333,
+     "lo": 0.8333333333333334,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.14285714285714285,
+     "lo": 0.0,
+     "hi": 0.2857142857142857,
+     "n": 21
+    },
+    "qwen3-30b-local": {
+     "mean": 0.35,
+     "lo": 0.15,
+     "hi": 0.55,
+     "n": 20
+    }
+   }
+  },
+  {
+   "name": "A: empty reply rate",
+   "higher_is_better": false,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 100
+    },
+    "sarvam-105b-think": {
+     "mean": 0.03,
+     "lo": 0.0,
+     "hi": 0.07,
+     "n": 100
+    },
+    "sarvam-105b-think(16k cap)": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 100
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 100
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 100
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 100
+    },
+    "gemini-pro-latest": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 53
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "A: item F1 strict, 50-message subset (all systems)",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.885,
+     "lo": 0.815,
+     "hi": 0.9466666666666668,
+     "n": 50
+    },
+    "sarvam-105b-think": {
+     "mean": 0.9533333333333333,
+     "lo": 0.9,
+     "hi": 0.9933333333333333,
+     "n": 50
+    },
+    "sarvam-105b-think(16k cap)": {
+     "mean": 0.9633333333333333,
+     "lo": 0.9233333333333333,
+     "hi": 0.9933333333333333,
+     "n": 50
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9933333333333333,
+     "lo": 0.98,
+     "hi": 1.0,
+     "n": 50
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.88,
+     "lo": 0.8166666666666668,
+     "hi": 0.94,
+     "n": 50
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9626666666666667,
+     "lo": 0.9266666666666667,
+     "hi": 0.9933333333333333,
+     "n": 50
+    },
+    "gemini-pro-latest": {
+     "mean": 0.9833333333333334,
+     "lo": 0.95,
+     "hi": 1.0,
+     "n": 20
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.9583333333333334,
+     "lo": 0.8916666666666666,
+     "hi": 1.0,
+     "n": 20
+    },
+    "sarvam-30b-local": {
+     "mean": 0.512,
+     "lo": 0.4013333333333333,
+     "hi": 0.624,
+     "n": 50
+    },
+    "qwen3-30b-local": {
+     "mean": 0.6226666666666667,
+     "lo": 0.5226666666666666,
+     "hi": 0.7246666666666667,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "A: exact whole-order accuracy, 50-message subset (all systems)",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.7,
+     "lo": 0.56,
+     "hi": 0.82,
+     "n": 50
+    },
+    "sarvam-105b-think": {
+     "mean": 0.9,
+     "lo": 0.82,
+     "hi": 0.98,
+     "n": 50
+    },
+    "sarvam-105b-think(16k cap)": {
+     "mean": 0.9,
+     "lo": 0.82,
+     "hi": 0.98,
+     "n": 50
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.98,
+     "lo": 0.94,
+     "hi": 1.0,
+     "n": 50
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.72,
+     "lo": 0.6,
+     "hi": 0.84,
+     "n": 50
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.88,
+     "lo": 0.78,
+     "hi": 0.96,
+     "n": 50
+    },
+    "gemini-pro-latest": {
+     "mean": 0.95,
+     "lo": 0.85,
+     "hi": 1.0,
+     "n": 20
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.9,
+     "lo": 0.75,
+     "hi": 1.0,
+     "n": 20
+    },
+    "sarvam-30b-local": {
+     "mean": 0.1,
+     "lo": 0.02,
+     "hi": 0.18,
+     "n": 50
+    },
+    "qwen3-30b-local": {
+     "mean": 0.36,
+     "lo": 0.24,
+     "hi": 0.5,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "A: pincode accuracy",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "sarvam-105b-think": {
+     "mean": 0.97,
+     "lo": 0.93,
+     "hi": 1.0,
+     "n": 100
+    },
+    "sarvam-105b-think(16k cap)": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "gemini-pro-latest": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.6415094339622641,
+     "lo": 0.5094339622641509,
+     "hi": 0.7735849056603774,
+     "n": 53
+    },
+    "qwen3-30b-local": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "A: payment accuracy",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "sarvam-105b-think": {
+     "mean": 0.97,
+     "lo": 0.93,
+     "hi": 1.0,
+     "n": 100
+    },
+    "sarvam-105b-think(16k cap)": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "gemini-pro-latest": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.6792452830188679,
+     "lo": 0.5471698113207547,
+     "hi": 0.7924528301886793,
+     "n": 53
+    },
+    "qwen3-30b-local": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "A: slot accuracy",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.94,
+     "lo": 0.89,
+     "hi": 0.98,
+     "n": 100
+    },
+    "sarvam-105b-think": {
+     "mean": 0.96,
+     "lo": 0.92,
+     "hi": 0.99,
+     "n": 100
+    },
+    "sarvam-105b-think(16k cap)": {
+     "mean": 0.99,
+     "lo": 0.97,
+     "hi": 1.0,
+     "n": 100
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.97,
+     "lo": 0.93,
+     "hi": 1.0,
+     "n": 100
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.98,
+     "lo": 0.95,
+     "hi": 1.0,
+     "n": 100
+    },
+    "gemini-pro-latest": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.3018867924528302,
+     "lo": 0.18867924528301888,
+     "hi": 0.41509433962264153,
+     "n": 53
+    },
+    "qwen3-30b-local": {
+     "mean": 0.84,
+     "lo": 0.72,
+     "hi": 0.94,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "A: JSON validity rate",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "sarvam-105b-think": {
+     "mean": 0.97,
+     "lo": 0.93,
+     "hi": 1.0,
+     "n": 100
+    },
+    "sarvam-105b-think(16k cap)": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 100
+    },
+    "gemini-pro-latest": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 53
+    },
+    "qwen3-30b-local": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "B: transliteration exact match",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-transliterate": {
+     "mean": 0.88,
+     "lo": 0.81,
+     "hi": 0.94,
+     "n": 100
+    },
+    "sarvam-105b": {
+     "mean": 0.89,
+     "lo": 0.82,
+     "hi": 0.95,
+     "n": 100
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.99,
+     "lo": 0.97,
+     "hi": 1.0,
+     "n": 100
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.96,
+     "lo": 0.92,
+     "hi": 0.99,
+     "n": 100
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.97,
+     "lo": 0.93,
+     "hi": 1.0,
+     "n": 100
+    },
+    "gemini-pro-latest": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.4,
+     "lo": 0.26,
+     "hi": 0.54,
+     "n": 50
+    },
+    "qwen3-30b-local": {
+     "mean": 0.66,
+     "lo": 0.54,
+     "hi": 0.8,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "B: transliteration CER",
+   "higher_is_better": false,
+   "unit": "CER",
+   "values": {
+    "sarvam-transliterate": {
+     "mean": 0.04186605551311434,
+     "lo": 0.016761904761904763,
+     "hi": 0.07169614209320092,
+     "n": 100
+    },
+    "sarvam-105b": {
+     "mean": 0.0189485236985237,
+     "lo": 0.007615190365190365,
+     "hi": 0.034098096348096345,
+     "n": 100
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0025,
+     "lo": 0.0,
+     "hi": 0.0075,
+     "n": 100
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.006282679738562091,
+     "lo": 0.000588235294117647,
+     "hi": 0.015727124183006536,
+     "n": 100
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.005714285714285714,
+     "lo": 0.0,
+     "hi": 0.013928571428571427,
+     "n": 100
+    },
+    "gemini-pro-latest": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.23629326229326228,
+     "lo": 0.15413264513264513,
+     "hi": 0.3441153291153291,
+     "n": 50
+    },
+    "qwen3-30b-local": {
+     "mean": 0.07078210678210678,
+     "lo": 0.035444444444444445,
+     "hi": 0.1087070707070707,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "B: transliteration exact match, 50-name subset (all systems)",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-transliterate": {
+     "mean": 0.86,
+     "lo": 0.76,
+     "hi": 0.94,
+     "n": 50
+    },
+    "sarvam-105b": {
+     "mean": 0.82,
+     "lo": 0.72,
+     "hi": 0.92,
+     "n": 50
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.98,
+     "lo": 0.94,
+     "hi": 1.0,
+     "n": 50
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.96,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 50
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.96,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gemini-pro-latest": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "sarvam-30b-local": {
+     "mean": 0.4,
+     "lo": 0.26,
+     "hi": 0.54,
+     "n": 50
+    },
+    "qwen3-30b-local": {
+     "mean": 0.66,
+     "lo": 0.54,
+     "hi": 0.8,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "B: transliteration exact match, frontier 30-name subset (all systems)",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-transliterate": {
+     "mean": 0.8666666666666667,
+     "lo": 0.7333333333333333,
+     "hi": 0.9666666666666667,
+     "n": 30
+    },
+    "sarvam-105b": {
+     "mean": 0.8666666666666667,
+     "lo": 0.7333333333333333,
+     "hi": 0.9666666666666667,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-pro-latest": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.45,
+     "lo": 0.25,
+     "hi": 0.65,
+     "n": 20
+    },
+    "qwen3-30b-local": {
+     "mean": 0.85,
+     "lo": 0.7,
+     "hi": 1.0,
+     "n": 20
+    }
+   }
+  }
+ ],
+ "per_language": {
+  "A: item F1 strict by message language": {
+   "bn-beng": {
+    "sarvam-105b": 1.0,
+    "sarvam-105b-think": 1.0,
+    "sarvam-105b-think(16k cap)": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 1.0,
+    "qwen3-30b-local": 0.75
+   },
+   "bn-rom": {
+    "sarvam-105b": 0.917,
+    "sarvam-105b-think": 0.938,
+    "sarvam-105b-think(16k cap)": 0.938,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.938,
+    "or:anthropic/claude-haiku-5.5": 0.792,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.625,
+    "qwen3-30b-local": 0.292
+   },
+   "en": {
+    "sarvam-105b": 0.778,
+    "sarvam-105b-think": 0.833,
+    "sarvam-105b-think(16k cap)": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.833,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.444,
+    "qwen3-30b-local": 0.778
+   },
+   "en-mix": {
+    "sarvam-105b": 0.917,
+    "sarvam-105b-think": 0.75,
+    "sarvam-105b-think(16k cap)": 0.875,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.444,
+    "qwen3-30b-local": 0.5
+   },
+   "hi-deva": {
+    "sarvam-105b": 0.778,
+    "sarvam-105b-think": 0.889,
+    "sarvam-105b-think(16k cap)": 0.933,
+    "gemini-3.8-flash": 0.852,
+    "openai:gpt-5.4-mini": 0.963,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.75,
+    "qwen3-30b-local": 0.667
+   },
+   "hi-rom": {
+    "sarvam-105b": 0.861,
+    "sarvam-105b-think": 0.97,
+    "sarvam-105b-think(16k cap)": 0.97,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.843,
+    "or:anthropic/claude-haiku-5.5": 0.939,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 0.944,
+    "sarvam-30b-local": 0.328,
+    "qwen3-30b-local": 0.708
+   },
+   "kn-knda": {
+    "sarvam-105b": 1.0,
+    "sarvam-105b-think": 1.0,
+    "sarvam-105b-think(16k cap)": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 1.0,
+    "qwen3-30b-local": 0.833
+   },
+   "kn-rom": {
+    "sarvam-105b": 0.833,
+    "sarvam-105b-think": 1.0,
+    "sarvam-105b-think(16k cap)": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.833,
+    "or:anthropic/claude-haiku-5.5": 0.85,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.642,
+    "qwen3-30b-local": 0.45
+   },
+   "mr-deva": {
+    "sarvam-105b": 1.0,
+    "sarvam-105b-think": 1.0,
+    "sarvam-105b-think(16k cap)": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": null,
+    "openai:gpt-5.5": null,
+    "or:anthropic/claude-sonnet-5.5": null,
+    "sarvam-30b-local": 1.0,
+    "qwen3-30b-local": 1.0
+   },
+   "mr-rom": {
+    "sarvam-105b": 1.0,
+    "sarvam-105b-think": 1.0,
+    "sarvam-105b-think(16k cap)": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.938,
+    "or:anthropic/claude-haiku-5.5": 0.938,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.333,
+    "qwen3-30b-local": 0.542
+   },
+   "ta-rom": {
+    "sarvam-105b": 0.705,
+    "sarvam-105b-think": 0.788,
+    "sarvam-105b-think(16k cap)": 0.788,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.773,
+    "or:anthropic/claude-haiku-5.5": 0.742,
+    "gemini-pro-latest": 0.917,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 0.917,
+    "sarvam-30b-local": 0.36,
+    "qwen3-30b-local": 0.5
+   },
+   "ta-tamil": {
+    "sarvam-105b": 0.625,
+    "sarvam-105b-think": 1.0,
+    "sarvam-105b-think(16k cap)": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.75,
+    "qwen3-30b-local": 0.75
+   }
+  },
+  "A: exact order by message language": {
+   "bn-beng": {
+    "sarvam-105b": 1.0,
+    "sarvam-105b-think": 1.0,
+    "sarvam-105b-think(16k cap)": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.0,
+    "qwen3-30b-local": 0.5
+   },
+   "bn-rom": {
+    "sarvam-105b": 0.625,
+    "sarvam-105b-think": 0.875,
+    "sarvam-105b-think(16k cap)": 0.875,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.75,
+    "or:anthropic/claude-haiku-5.5": 0.5,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.0,
+    "qwen3-30b-local": 0.0
+   },
+   "en": {
+    "sarvam-105b": 0.667,
+    "sarvam-105b-think": 0.833,
+    "sarvam-105b-think(16k cap)": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.833,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.333,
+    "qwen3-30b-local": 0.667
+   },
+   "en-mix": {
+    "sarvam-105b": 0.75,
+    "sarvam-105b-think": 0.75,
+    "sarvam-105b-think(16k cap)": 0.75,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.0,
+    "qwen3-30b-local": 0.333
+   },
+   "hi-deva": {
+    "sarvam-105b": 0.667,
+    "sarvam-105b-think": 0.889,
+    "sarvam-105b-think(16k cap)": 0.889,
+    "gemini-3.8-flash": 0.778,
+    "openai:gpt-5.4-mini": 0.889,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.25,
+    "qwen3-30b-local": 0.25
+   },
+   "hi-rom": {
+    "sarvam-105b": 0.697,
+    "sarvam-105b-think": 0.909,
+    "sarvam-105b-think(16k cap)": 0.909,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.697,
+    "or:anthropic/claude-haiku-5.5": 0.879,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 0.889,
+    "sarvam-30b-local": 0.0,
+    "qwen3-30b-local": 0.562
+   },
+   "kn-knda": {
+    "sarvam-105b": 1.0,
+    "sarvam-105b-think": 1.0,
+    "sarvam-105b-think(16k cap)": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.5,
+    "qwen3-30b-local": 0.5
+   },
+   "kn-rom": {
+    "sarvam-105b": 0.75,
+    "sarvam-105b-think": 1.0,
+    "sarvam-105b-think(16k cap)": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.625,
+    "or:anthropic/claude-haiku-5.5": 0.75,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.25,
+    "qwen3-30b-local": 0.0
+   },
+   "mr-deva": {
+    "sarvam-105b": 1.0,
+    "sarvam-105b-think": 1.0,
+    "sarvam-105b-think(16k cap)": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": null,
+    "openai:gpt-5.5": null,
+    "or:anthropic/claude-sonnet-5.5": null,
+    "sarvam-30b-local": 1.0,
+    "qwen3-30b-local": 0.0
+   },
+   "mr-rom": {
+    "sarvam-105b": 0.875,
+    "sarvam-105b-think": 1.0,
+    "sarvam-105b-think(16k cap)": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.875,
+    "or:anthropic/claude-haiku-5.5": 0.875,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.0,
+    "qwen3-30b-local": 0.25
+   },
+   "ta-rom": {
+    "sarvam-105b": 0.545,
+    "sarvam-105b-think": 0.727,
+    "sarvam-105b-think(16k cap)": 0.727,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.545,
+    "or:anthropic/claude-haiku-5.5": 0.636,
+    "gemini-pro-latest": 0.75,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 0.75,
+    "sarvam-30b-local": 0.0,
+    "qwen3-30b-local": 0.2
+   },
+   "ta-tamil": {
+    "sarvam-105b": 0.5,
+    "sarvam-105b-think": 1.0,
+    "sarvam-105b-think(16k cap)": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.0,
+    "qwen3-30b-local": 0.5
+   }
+  },
+  "B: exact match by language": {
+   "hi": {
+    "sarvam-transliterate": 0.96,
+    "sarvam-105b": 0.88,
+    "gemini-3.8-flash": 0.96,
+    "openai:gpt-5.4-mini": 0.96,
+    "or:anthropic/claude-haiku-5.5": 0.96,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.692,
+    "qwen3-30b-local": 0.692
+   },
+   "ta": {
+    "sarvam-transliterate": 0.76,
+    "sarvam-105b": 0.88,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.96,
+    "or:anthropic/claude-haiku-5.5": 0.92,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.25,
+    "qwen3-30b-local": 0.667
+   },
+   "bn": {
+    "sarvam-transliterate": 0.84,
+    "sarvam-105b": 0.92,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.92,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.077,
+    "qwen3-30b-local": 0.615
+   },
+   "mr": {
+    "sarvam-transliterate": 0.96,
+    "sarvam-105b": 0.88,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.583,
+    "qwen3-30b-local": 0.667
+   }
+  },
+  "B: CER by language": {
+   "hi": {
+    "sarvam-transliterate": 0.006,
+    "sarvam-105b": 0.029,
+    "gemini-3.8-flash": 0.01,
+    "openai:gpt-5.4-mini": 0.003,
+    "or:anthropic/claude-haiku-5.5": 0.01,
+    "gemini-pro-latest": 0.0,
+    "openai:gpt-5.5": 0.0,
+    "or:anthropic/claude-sonnet-5.5": 0.0,
+    "sarvam-30b-local": 0.107,
+    "qwen3-30b-local": 0.069
+   },
+   "ta": {
+    "sarvam-transliterate": 0.102,
+    "sarvam-105b": 0.021,
+    "gemini-3.8-flash": 0.0,
+    "openai:gpt-5.4-mini": 0.015,
+    "or:anthropic/claude-haiku-5.5": 0.013,
+    "gemini-pro-latest": 0.0,
+    "openai:gpt-5.5": 0.0,
+    "or:anthropic/claude-sonnet-5.5": 0.0,
+    "sarvam-30b-local": 0.213,
+    "qwen3-30b-local": 0.123
+   },
+   "bn": {
+    "sarvam-transliterate": 0.046,
+    "sarvam-105b": 0.011,
+    "gemini-3.8-flash": 0.0,
+    "openai:gpt-5.4-mini": 0.007,
+    "or:anthropic/claude-haiku-5.5": 0.0,
+    "gemini-pro-latest": 0.0,
+    "openai:gpt-5.5": 0.0,
+    "or:anthropic/claude-sonnet-5.5": 0.0,
+    "sarvam-30b-local": 0.519,
+    "qwen3-30b-local": 0.045
+   },
+   "mr": {
+    "sarvam-transliterate": 0.013,
+    "sarvam-105b": 0.014,
+    "gemini-3.8-flash": 0.0,
+    "openai:gpt-5.4-mini": 0.0,
+    "or:anthropic/claude-haiku-5.5": 0.0,
+    "gemini-pro-latest": 0.0,
+    "openai:gpt-5.5": 0.0,
+    "or:anthropic/claude-sonnet-5.5": 0.0,
+    "sarvam-30b-local": 0.093,
+    "qwen3-30b-local": 0.049
+   }
+  }
+ },
+ "speed": {
+  "A:sarvam-105b": {
+   "p50_ms": 1242.0320510864258,
+   "p95_ms": 2660.414934158325
+  },
+  "A:sarvam-105b-think": {
+   "p50_ms": 8874.704122543335,
+   "p95_ms": 27471.532106399536
+  },
+  "A:sarvam-105b-think(16k cap)": {
+   "p50_ms": 8874.704122543335,
+   "p95_ms": 23324.063062667847
+  },
+  "A:gemini-3.8-flash": {
+   "p50_ms": 2834.5909118652344,
+   "p95_ms": 5160.539150238037
+  },
+  "A:openai:gpt-5.4-mini": {
+   "p50_ms": 1071.3391304016113,
+   "p95_ms": 1352.5640964508057
+  },
+  "A:or:anthropic/claude-haiku-5.5": {
+   "p50_ms": 1732.032060623169,
+   "p95_ms": 2568.0580139160156
+  },
+  "A:gemini-pro-latest": {
+   "p50_ms": 7514.21594619751,
+   "p95_ms": 12131.279706954956
+  },
+  "A:openai:gpt-5.5": {
+   "p50_ms": 2596.086025238037,
+   "p95_ms": 3178.089141845703
+  },
+  "A:or:anthropic/claude-sonnet-5.5": {
+   "p50_ms": 2837.3148441314697,
+   "p95_ms": 5521.896839141846
+  },
+  "A:sarvam-30b-local": {
+   "p50_ms": 10656.838178634644,
+   "p95_ms": 164568.92800331116
+  },
+  "A:qwen3-30b-local": {
+   "p50_ms": 5515.905141830444,
+   "p95_ms": 7303.999900817871
+  },
+  "B:sarvam-transliterate": {
+   "p50_ms": 719.4013595581055,
+   "p95_ms": 826.7350196838379
+  },
+  "B:sarvam-105b": {
+   "p50_ms": 373.13199043273926,
+   "p95_ms": 5156.738042831421
+  },
+  "B:gemini-3.8-flash": {
+   "p50_ms": 2672.5971698760986,
+   "p95_ms": 4721.814155578613
+  },
+  "B:openai:gpt-5.4-mini": {
+   "p50_ms": 924.6490001678467,
+   "p95_ms": 1293.616771697998
+  },
+  "B:or:anthropic/claude-haiku-5.5": {
+   "p50_ms": 1497.6780414581299,
+   "p95_ms": 2197.4740028381348
+  },
+  "B:gemini-pro-latest": {
+   "p50_ms": 4925.925970077515,
+   "p95_ms": 6341.142892837524
+  },
+  "B:openai:gpt-5.5": {
+   "p50_ms": 2338.3028507232666,
+   "p95_ms": 8181.072235107422
+  },
+  "B:or:anthropic/claude-sonnet-5.5": {
+   "p50_ms": 1604.3028831481934,
+   "p95_ms": 2021.0471153259277
+  },
+  "B:sarvam-30b-local": {
+   "p50_ms": 82226.970911026,
+   "p95_ms": 237230.30018806458
+  },
+  "B:qwen3-30b-local": {
+   "p50_ms": 878.2219886779785,
+   "p95_ms": 1209.3958854675293
+  }
+ },
+ "usage": {
+  "A:sarvam-105b": {
+   "calls": 100,
+   "in_tok": 69293,
+   "out_tok": 12752,
+   "reasoning_tok": 0,
+   "cost_usd": 0,
+   "errors": 0
+  },
+  "A:sarvam-105b-think": {
+   "calls": 100,
+   "in_tok": 68893,
+   "out_tok": 180971,
+   "reasoning_tok": 172382,
+   "cost_usd": 0,
+   "errors": 0
+  },
+  "A:sarvam-105b-think(16k cap)": {
+   "calls": 100,
+   "in_tok": 68893,
+   "out_tok": 174509,
+   "reasoning_tok": 165677,
+   "cost_usd": 0,
+   "errors": 0
+  },
+  "A:gemini-3.8-flash": {
+   "calls": 100,
+   "in_tok": 67604,
+   "out_tok": 8187,
+   "reasoning_tok": 0,
+   "cost_usd": 0,
+   "errors": 0
+  },
+  "A:openai:gpt-5.4-mini": {
+   "calls": 100,
+   "in_tok": 65657,
+   "out_tok": 6244,
+   "reasoning_tok": 0,
+   "cost_usd": 0,
+   "errors": 0
+  },
+  "A:or:anthropic/claude-haiku-5.5": {
+   "calls": 100,
+   "in_tok": 101996,
+   "out_tok": 10697,
+   "reasoning_tok": 0,
+   "cost_usd": 0.0155,
+   "errors": 0
+  },
+  "A:gemini-pro-latest": {
+   "calls": 30,
+   "in_tok": 20237,
+   "out_tok": 3557,
+   "reasoning_tok": 20295,
+   "cost_usd": 0,
+   "errors": 0
+  },
+  "A:openai:gpt-5.5": {
+   "calls": 30,
+   "in_tok": 19662,
+   "out_tok": 4615,
+   "reasoning_tok": 2663,
+   "cost_usd": 0,
+   "errors": 0
+  },
+  "A:or:anthropic/claude-sonnet-5.5": {
+   "calls": 30,
+   "in_tok": 30637,
+   "out_tok": 5043,
+   "reasoning_tok": 2179,
+   "cost_usd": 0.1117,
+   "errors": 0
+  },
+  "A:sarvam-30b-local": {
+   "calls": 53,
+   "in_tok": 36765,
+   "out_tok": 7775,
+   "reasoning_tok": 0,
+   "cost_usd": 0,
+   "errors": 0
+  },
+  "A:qwen3-30b-local": {
+   "calls": 50,
+   "in_tok": 35870,
+   "out_tok": 4826,
+   "reasoning_tok": 0,
+   "cost_usd": 0,
+   "errors": 0
+  },
+  "B:sarvam-transliterate": {
+   "calls": 100,
+   "chars": 939,
+   "in_tok": 0,
+   "out_tok": 0,
+   "cost_usd": 0
+  },
+  "B:sarvam-105b": {
+   "calls": 100,
+   "chars": 0,
+   "in_tok": 4969,
+   "out_tok": 409,
+   "cost_usd": 0
+  },
+  "B:gemini-3.8-flash": {
+   "calls": 100,
+   "chars": 0,
+   "in_tok": 3669,
+   "out_tok": 314,
+   "cost_usd": 0
+  },
+  "B:openai:gpt-5.4-mini": {
+   "calls": 100,
+   "chars": 0,
+   "in_tok": 4136,
+   "out_tok": 746,
+   "cost_usd": 0
+  },
+  "B:or:anthropic/claude-haiku-5.5": {
+   "calls": 100,
+   "chars": 0,
+   "in_tok": 6258,
+   "out_tok": 1035,
+   "cost_usd": 0.0011
+  },
+  "B:gemini-pro-latest": {
+   "calls": 30,
+   "chars": 0,
+   "in_tok": 1104,
+   "out_tok": 90,
+   "cost_usd": 0
+  },
+  "B:openai:gpt-5.5": {
+   "calls": 30,
+   "chars": 0,
+   "in_tok": 1245,
+   "out_tok": 2331,
+   "cost_usd": 0
+  },
+  "B:or:anthropic/claude-sonnet-5.5": {
+   "calls": 30,
+   "chars": 0,
+   "in_tok": 1939,
+   "out_tok": 313,
+   "cost_usd": 0.007
+  },
+  "B:sarvam-30b-local": {
+   "calls": 50,
+   "chars": 0,
+   "in_tok": 2435,
+   "out_tok": 1662,
+   "cost_usd": 0
+  },
+  "B:qwen3-30b-local": {
+   "calls": 50,
+   "chars": 0,
+   "in_tok": 2443,
+   "out_tok": 696,
+   "cost_usd": 0
+  },
+  "A:sarvam-105b-think-16k-rerun": {
+   "calls": 3,
+   "ids": [
+    18,
+    74,
+    99
+   ],
+   "in_tok": 2062,
+   "out_tok": 11538
+  }
+ },
+ "extra": {
+  "sarvam_spend_inr_estimate": 16.4
+ },
+ "examples": [
+  {
+   "task": "A order extraction",
+   "input": "bhaiyaa 1kg tamater 1/2 kg adrak nahi 250gm adrak aur lehsun 250 gm, hari mirch 100gm. cod. 110059",
+   "gold": {
+    "items": [
+     {
+      "name": "tomato",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "ginger",
+      "brand": null,
+      "qty": 250,
+      "unit": "g"
+     },
+     {
+      "name": "garlic",
+      "brand": null,
+      "qty": 250,
+      "unit": "g"
+     },
+     {
+      "name": "green chilli",
+      "brand": null,
+      "qty": 100,
+      "unit": "g"
+     }
+    ],
+    "pincode": "110059",
+    "payment": "COD",
+    "slot": null
+   },
+   "outputs": {
+    "sarvam-105b": {
+     "text": "{\n  \"items\": [\n    {\n      \"name\": \"tomato\",\n      \"brand\": null,\n      \"qty\": 1,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"ginger\",\n      \"brand\": null,\n      \"qty\": 0.25,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"garlic\",\n      \"brand\": null,\n      \"qty\": 0.25,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"green chilli\",\n      \"brand\": null,\n      \"qty\": 0.1,\n      \"unit\": \"kg\"\n    }\n  ],\n  \"pincode\": \"110059\",\n  \"payment\": \"COD\",\n  \"slot\": null\n}",
+     "score": {
+      "valid": 1,
+      "name_tp": 4,
+      "strict_tp": 4,
+      "n_gold": 4,
+      "n_pred": 4,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "sarvam-105b-think": {
+     "text": "\n```json\n{\n  \"items\": [\n    {\n      \"name\": \"tomato\",\n      \"brand\": null,\n      \"qty\": 1,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"ginger\",\n      \"brand\": null,\n      \"qty\": 250,\n      \"unit\": \"g\"\n    },\n    {\n      \"name\": \"garlic\",\n      \"brand\": null,\n      \"qty\": 250,\n      \"unit\": \"g\"\n    },\n    {\n      \"name\": \"green chilli\",\n      \"brand\": null,\n      \"qty\": 100,\n      \"unit\": \"g\"\n    }\n  ],\n  \"pincode\": \"110059\",\n  \"payment\": \"COD\",\n  \"slot\": null\n}\n```",
+     "score": {
+      "valid": 1,
+      "name_tp": 4,
+      "strict_tp": 4,
+      "n_gold": 4,
+      "n_pred": 4,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "gemini-3.8-flash": {
+     "text": "{\"items\": [{\"name\": \"tomato\", \"brand\": null, \"qty\": 1, \"unit\": \"kg\"}, {\"name\": \"ginger\", \"brand\": null, \"qty\": 250, \"unit\": \"g\"}, {\"name\": \"garlic\", \"brand\": null, \"qty\": 250, \"unit\": \"g\"}, {\"name\": \"green chilli\", \"brand\": null, \"qty\": 100, \"unit\": \"g\"}], \"pincode\": \"110059\", \"payment\": \"COD\", \"slot\": null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 4,
+      "strict_tp": 4,
+      "n_gold": 4,
+      "n_pred": 4,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "qwen3-30b-local": {
+     "text": "{\"items\": [{\"name\": \"tomato\", \"brand\": null, \"qty\": 1, \"unit\": \"kg\"}, {\"name\": \"ginger\", \"brand\": null, \"qty\": 0.25, \"unit\": \"kg\"}, {\"name\": \"garlic\", \"brand\": null, \"qty\": 0.25, \"unit\": \"kg\"}, {\"name\": \"green chilli\", \"brand\": null, \"qty\": 0.1, \"unit\": \"kg\"}], \"pincode\": \"110059\", \"payment\": \"COD\", \"slot\": null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 4,
+      "strict_tp": 4,
+      "n_gold": 4,
+      "n_pred": 4,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "{\"items\":[{\"name\":\"tomato\",\"brand\":null,\"qty\":1,\"unit\":\"kg\"},{\"name\":\"ginger\",\"brand\":null,\"qty\":0.25,\"unit\":\"kg\"},{\"name\":\"garlic\",\"brand\":null,\"qty\":0.25,\"unit\":\"kg\"},{\"name\":\"green chilli\",\"brand\":null,\"qty\":0.1,\"unit\":\"kg\"}],\"pincode\":\"110059\",\"payment\":\"COD\",\"slot\":null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 4,
+      "strict_tp": 4,
+      "n_gold": 4,
+      "n_pred": 4,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "{\"items\": [{\"name\": \"tomato\", \"brand\": null, \"qty\": 1, \"unit\": \"kg\"}, {\"name\": \"ginger\", \"brand\": null, \"qty\": 250, \"unit\": \"g\"}, {\"name\": \"garlic\", \"brand\": null, \"qty\": 250, \"unit\": \"g\"}, {\"name\": \"green chilli\", \"brand\": null, \"qty\": 100, \"unit\": \"g\"}], \"pincode\": \"110059\", \"payment\": \"COD\", \"slot\": null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 4,
+      "strict_tp": 4,
+      "n_gold": 4,
+      "n_pred": 4,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "sarvam-30b-local": {
+     "text": "```json\n{\n  \"items\": [\n    {\n      \"name\": \"tomato\",\n      \"brand\": null,\n      \"qty\": 1,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"ginger\",\n      \"brand\": null,\n      \"qty\": 0.5,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"garlic\",\n      \"brand\": null,\n      \"qty\": 0.5,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"green chilli\",\n      \"brand\": null,\n      \"qty\": 0.1,\n      \"unit\": \"kg\"\n    }\n  ],\n  \"pincode\": \"110059\",\n  \"payment\": \"COD\",\n  \"slot\": \"today_morning\"\n}\n```",
+     "score": {
+      "valid": 1,
+      "name_tp": 4,
+      "strict_tp": 2,
+      "n_gold": 4,
+      "n_pred": 4,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 0,
+      "exact": 0
+     }
+    },
+    "sarvam-105b-think(16k cap)": {
+     "text": "\n```json\n{\n  \"items\": [\n    {\n      \"name\": \"tomato\",\n      \"brand\": null,\n      \"qty\": 1,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"ginger\",\n      \"brand\": null,\n      \"qty\": 250,\n      \"unit\": \"g\"\n    },\n    {\n      \"name\": \"garlic\",\n      \"brand\": null,\n      \"qty\": 250,\n      \"unit\": \"g\"\n    },\n    {\n      \"name\": \"green chilli\",\n      \"brand\": null,\n      \"qty\": 100,\n      \"unit\": \"g\"\n    }\n  ],\n  \"pincode\": \"110059\",\n  \"payment\": \"COD\",\n  \"slot\": null\n}\n```",
+     "score": {
+      "valid": 1,
+      "name_tp": 4,
+      "strict_tp": 4,
+      "n_gold": 4,
+      "n_pred": 4,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    }
+   }
+  },
+  {
+   "task": "A order extraction",
+   "input": "২ কেজি আলু, ১ কেজি পেঁয়াজ আর ৬টা কলা পাঠান। পিন ৭০০০৬৪। ক্যাশ অন ডেলিভারি",
+   "gold": {
+    "items": [
+     {
+      "name": "potato",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "onion",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "banana",
+      "brand": null,
+      "qty": 6,
+      "unit": "piece"
+     }
+    ],
+    "pincode": "700064",
+    "payment": "COD",
+    "slot": null
+   },
+   "outputs": {
+    "sarvam-105b": {
+     "text": "```json\n{\n  \"items\": [\n    {\n      \"name\": \"potato\",\n      \"brand\": null,\n      \"qty\": 2,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"onion\",\n      \"brand\": null,\n      \"qty\": 1,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"banana\",\n      \"brand\": null,\n      \"qty\": 6,\n      \"unit\": \"piece\"\n    }\n  ],\n  \"pincode\": \"700064\",\n  \"payment\": \"COD\",\n  \"slot\": null\n}\n```",
+     "score": {
+      "valid": 1,
+      "name_tp": 3,
+      "strict_tp": 3,
+      "n_gold": 3,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "sarvam-105b-think": {
+     "text": "\n{\"items\":[{\"name\":\"potato\",\"brand\":null,\"qty\":2,\"unit\":\"kg\"},{\"name\":\"onion\",\"brand\":null,\"qty\":1,\"unit\":\"kg\"},{\"name\":\"banana\",\"brand\":null,\"qty\":6,\"unit\":\"piece\"}],\"pincode\":\"700064\",\"payment\":\"COD\",\"slot\":null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 3,
+      "strict_tp": 3,
+      "n_gold": 3,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "gemini-3.8-flash": {
+     "text": "{\"items\": [{\"name\": \"potato\", \"brand\": null, \"qty\": 2, \"unit\": \"kg\"}, {\"name\": \"onion\", \"brand\": null, \"qty\": 1, \"unit\": \"kg\"}, {\"name\": \"banana\", \"brand\": null, \"qty\": 6, \"unit\": \"piece\"}], \"pincode\": \"700064\", \"payment\": \"COD\", \"slot\": null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 3,
+      "strict_tp": 3,
+      "n_gold": 3,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "qwen3-30b-local": {
+     "text": "{\"items\": [{\"name\": \"potato\", \"brand\": null, \"qty\": 2, \"unit\": \"kg\"}, {\"name\": \"onion\", \"brand\": null, \"qty\": 1, \"unit\": \"kg\"}, {\"name\": \"banana\", \"brand\": null, \"qty\": 6, \"unit\": \"piece\"}], \"pincode\": \"700064\", \"payment\": \"COD\", \"slot\": null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 3,
+      "strict_tp": 3,
+      "n_gold": 3,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "{\"items\":[{\"name\":\"potato\",\"brand\":null,\"qty\":2,\"unit\":\"kg\"},{\"name\":\"onion\",\"brand\":null,\"qty\":1,\"unit\":\"kg\"},{\"name\":\"banana\",\"brand\":null,\"qty\":6,\"unit\":\"piece\"}],\"pincode\":\"700064\",\"payment\":\"COD\",\"slot\":null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 3,
+      "strict_tp": 3,
+      "n_gold": 3,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "{\"items\": [{\"name\": \"potato\", \"brand\": null, \"qty\": 2, \"unit\": \"kg\"}, {\"name\": \"onion\", \"brand\": null, \"qty\": 1, \"unit\": \"kg\"}, {\"name\": \"banana\", \"brand\": null, \"qty\": 6, \"unit\": \"piece\"}], \"pincode\": \"700064\", \"payment\": \"COD\", \"slot\": null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 3,
+      "strict_tp": 3,
+      "n_gold": 3,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "sarvam-30b-local": {
+     "text": "```json\n{\n  \"items\": [\n    {\n      \"name\": \"potato\",\n      \"brand\": null,\n      \"qty\": 2,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"onion\",\n      \"brand\": null,\n      \"qty\": 1,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"banana\",\n      \"brand\": null,\n      \"qty\": 6,\n      \"unit\": \"piece\"\n    }\n  ],\n  \"pincode\": \"70064\",\n  \"payment\": \"COD\",\n  \"slot\": \"today_morning\"\n}\n```",
+     "score": {
+      "valid": 1,
+      "name_tp": 3,
+      "strict_tp": 3,
+      "n_gold": 3,
+      "n_pred": 3,
+      "pincode": 0,
+      "payment": 1,
+      "slot": 0,
+      "exact": 0
+     }
+    },
+    "sarvam-105b-think(16k cap)": {
+     "text": "\n{\"items\":[{\"name\":\"potato\",\"brand\":null,\"qty\":2,\"unit\":\"kg\"},{\"name\":\"onion\",\"brand\":null,\"qty\":1,\"unit\":\"kg\"},{\"name\":\"banana\",\"brand\":null,\"qty\":6,\"unit\":\"piece\"}],\"pincode\":\"700064\",\"payment\":\"COD\",\"slot\":null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 3,
+      "strict_tp": 3,
+      "n_gold": 3,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    }
+   }
+  },
+  {
+   "task": "A order extraction",
+   "input": "Order: Tata salt 1kg x2, Fortune sunflower oil 1L x3, Surf excel matic 2kg. card on delivery",
+   "gold": {
+    "items": [
+     {
+      "name": "salt",
+      "brand": "Tata",
+      "qty": 2,
+      "unit": "packet",
+      "alt": [
+       {
+        "qty": 2,
+        "unit": "kg"
+       }
+      ]
+     },
+     {
+      "name": "sunflower oil",
+      "brand": "Fortune",
+      "qty": 3,
+      "unit": "packet",
+      "alt": [
+       {
+        "qty": 3,
+        "unit": "l"
+       }
+      ]
+     },
+     {
+      "name": "detergent powder",
+      "brand": "Surf Excel",
+      "qty": 2,
+      "unit": "kg",
+      "alt": [
+       {
+        "qty": 1,
+        "unit": "packet"
+       }
+      ]
+     }
+    ],
+    "pincode": null,
+    "payment": "card",
+    "slot": null
+   },
+   "outputs": {
+    "sarvam-105b": {
+     "text": "```json\n{\n  \"items\": [\n    {\n      \"name\": \"salt\",\n      \"brand\": \"Tata\",\n      \"qty\": 2,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"sunflower oil\",\n      \"brand\": \"Fortune\",\n      \"qty\": 3,\n      \"unit\": \"l\"\n    },\n    {\n      \"name\": \"detergent powder\",\n      \"brand\": \"Surf excel\",\n      \"qty\": 2,\n      \"unit\": \"kg\"\n    }\n  ],\n  \"pincode\": null,\n  \"payment\": \"card\",\n  \"slot\": null\n}\n```",
+     "score": {
+      "valid": 1,
+      "name_tp": 3,
+      "strict_tp": 3,
+      "n_gold": 3,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "sarvam-105b-think": {
+     "text": "\n{\"items\": [{\"name\": \"salt\", \"brand\": \"Tata\", \"qty\": 2, \"unit\": \"kg\"}, {\"name\": \"sunflower oil\", \"brand\": \"Fortune\", \"qty\": 3, \"unit\": \"l\"}, {\"name\": \"detergent powder\", \"brand\": \"Surf excel\", \"qty\": 2, \"unit\": \"kg\"}], \"pincode\": null, \"payment\": \"card\", \"slot\": null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 3,
+      "strict_tp": 3,
+      "n_gold": 3,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "gemini-3.8-flash": {
+     "text": "{\"items\": [{\"name\": \"salt\", \"brand\": \"Tata\", \"qty\": 2, \"unit\": \"kg\"}, {\"name\": \"sunflower oil\", \"brand\": \"Fortune\", \"qty\": 3, \"unit\": \"l\"}, {\"name\": \"detergent powder\", \"brand\": \"Surf Excel\", \"qty\": 2, \"unit\": \"kg\"}], \"pincode\": null, \"payment\": \"card\", \"slot\": null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 3,
+      "strict_tp": 3,
+      "n_gold": 3,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "qwen3-30b-local": {
+     "text": "{\"items\": [{\"name\": \"salt\", \"brand\": \"Tata\", \"qty\": 1, \"unit\": \"kg\"}, {\"name\": \"sunflower oil\", \"brand\": \"Fortune\", \"qty\": 1, \"unit\": \"L\"}, {\"name\": \"detergent powder\", \"brand\": \"Surf excel\", \"qty\": 2, \"unit\": \"kg\"}], \"pincode\": null, \"payment\": \"card\", \"slot\": null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 3,
+      "strict_tp": 1,
+      "n_gold": 3,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 0
+     }
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "{\"items\":[{\"name\":\"salt\",\"brand\":\"Tata\",\"qty\":2,\"unit\":\"kg\"},{\"name\":\"sunflower oil\",\"brand\":\"Fortune\",\"qty\":3,\"unit\":\"l\"},{\"name\":\"detergent powder\",\"brand\":\"Surf excel\",\"qty\":2,\"unit\":\"kg\"}],\"pincode\":null,\"payment\":\"card\",\"slot\":null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 3,
+      "strict_tp": 3,
+      "n_gold": 3,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "{\"items\": [{\"name\": \"salt\", \"brand\": \"Tata\", \"qty\": 2, \"unit\": \"packet\"}, {\"name\": \"sunflower oil\", \"brand\": \"Fortune\", \"qty\": 3, \"unit\": \"bottle\"}, {\"name\": \"detergent powder\", \"brand\": \"Surf Excel Matic\", \"qty\": 2, \"unit\": \"kg\"}], \"pincode\": null, \"payment\": \"card\", \"slot\": null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 3,
+      "strict_tp": 3,
+      "n_gold": 3,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "sarvam-30b-local": {
+     "text": "```json\n{\n  \"items\": [\n    {\n      \"name\": \"salt\",\n      \"brand\": \"Tata\",\n      \"qty\": 1,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"sunflower oil\",\n      \"brand\": \"Fortune\",\n      \"qty\": 3,\n      \"unit\": \"L\"\n    },\n    {\n      \"name\": \"Surf excel matic\",\n      \"brand\": \"Surf excel\",\n      \"qty\": 2,\n      \"unit\": \"kg\"\n    }\n  ],\n  \"pincode\": null,\n  \"payment\": \"card\",\n  \"slot\": null\n}\n```",
+     "score": {
+      "valid": 1,
+      "name_tp": 2,
+      "strict_tp": 1,
+      "n_gold": 3,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 0
+     }
+    },
+    "sarvam-105b-think(16k cap)": {
+     "text": "\n{\"items\": [{\"name\": \"salt\", \"brand\": \"Tata\", \"qty\": 2, \"unit\": \"kg\"}, {\"name\": \"sunflower oil\", \"brand\": \"Fortune\", \"qty\": 3, \"unit\": \"l\"}, {\"name\": \"detergent powder\", \"brand\": \"Surf excel\", \"qty\": 2, \"unit\": \"kg\"}], \"pincode\": null, \"payment\": \"card\", \"slot\": null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 3,
+      "strict_tp": 3,
+      "n_gold": 3,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    }
+   }
+  },
+  {
+   "task": "A order extraction",
+   "input": "2 kg bendekayi beda, 1 kg badanekayi saaku. 1 kg carrot. 560078",
+   "gold": {
+    "items": [
+     {
+      "name": "brinjal",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "carrot",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "560078",
+    "payment": null,
+    "slot": null
+   },
+   "outputs": {
+    "sarvam-105b": {
+     "text": "```json\n{\n  \"items\": [\n    {\n      \"name\": \"brinjal\",\n      \"brand\": null,\n      \"qty\": 1,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"carrot\",\n      \"brand\": null,\n      \"qty\": 1,\n      \"unit\": \"kg\"\n    }\n  ],\n  \"pincode\": \"560078\",\n  \"payment\": null,\n  \"slot\": null\n}\n```",
+     "score": {
+      "valid": 1,
+      "name_tp": 2,
+      "strict_tp": 2,
+      "n_gold": 2,
+      "n_pred": 2,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "sarvam-105b-think": {
+     "text": "\n{\"items\":[{\"name\":\"brinjal\",\"brand\":null,\"qty\":1,\"unit\":\"kg\"},{\"name\":\"carrot\",\"brand\":null,\"qty\":1,\"unit\":\"kg\"}],\"pincode\":\"560078\",\"payment\":null,\"slot\":null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 2,
+      "strict_tp": 2,
+      "n_gold": 2,
+      "n_pred": 2,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "gemini-3.8-flash": {
+     "text": "{\"items\": [{\"name\": \"brinjal\", \"brand\": null, \"qty\": 1, \"unit\": \"kg\"}, {\"name\": \"carrot\", \"brand\": null, \"qty\": 1, \"unit\": \"kg\"}], \"pincode\": \"560078\", \"payment\": null, \"slot\": null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 2,
+      "strict_tp": 2,
+      "n_gold": 2,
+      "n_pred": 2,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    },
+    "qwen3-30b-local": {
+     "text": "{\"items\": [{\"name\": \"bendekayi\", \"brand\": null, \"qty\": 2, \"unit\": \"kg\"}, {\"name\": \"badanekayi\", \"brand\": null, \"qty\": 1, \"unit\": \"kg\"}, {\"name\": \"carrot\", \"brand\": null, \"qty\": 1, \"unit\": \"kg\"}], \"pincode\": \"560078\", \"payment\": null, \"slot\": null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 1,
+      "strict_tp": 1,
+      "n_gold": 2,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 0
+     }
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "{\"items\":[{\"name\":\"okra\",\"brand\":null,\"qty\":1,\"unit\":\"kg\"},{\"name\":\"carrot\",\"brand\":null,\"qty\":1,\"unit\":\"kg\"}],\"pincode\":\"560078\",\"payment\":null,\"slot\":null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 1,
+      "strict_tp": 1,
+      "n_gold": 2,
+      "n_pred": 2,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 0
+     }
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "{\"items\": [{\"name\": \"okra\", \"brand\": null, \"qty\": 2, \"unit\": \"kg\"}, {\"name\": \"brinjal\", \"brand\": null, \"qty\": 1, \"unit\": \"kg\"}, {\"name\": \"carrot\", \"brand\": null, \"qty\": 1, \"unit\": \"kg\"}], \"pincode\": \"560078\", \"payment\": null, \"slot\": null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 2,
+      "strict_tp": 2,
+      "n_gold": 2,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 0
+     }
+    },
+    "sarvam-30b-local": {
+     "text": "```json\n{\n  \"items\": [\n    {\n      \"name\": \"bendekayi\",\n      \"brand\": null,\n      \"qty\": 2,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"badanekayi\",\n      \"brand\": null,\n      \"qty\": 1,\n      \"unit\": \"kg\"\n    },\n    {\n      \"name\": \"carrot\",\n      \"brand\": null,\n      \"qty\": 1,\n      \"unit\": \"kg\"\n    }\n  ],\n  \"pincode\": \"560078\",\n  \"payment\": \"COD\",\n  \"slot\": \"today_morning\"\n}\n```",
+     "score": {
+      "valid": 1,
+      "name_tp": 1,
+      "strict_tp": 1,
+      "n_gold": 2,
+      "n_pred": 3,
+      "pincode": 1,
+      "payment": 0,
+      "slot": 0,
+      "exact": 0
+     }
+    },
+    "sarvam-105b-think(16k cap)": {
+     "text": "\n{\"items\":[{\"name\":\"brinjal\",\"brand\":null,\"qty\":1,\"unit\":\"kg\"},{\"name\":\"carrot\",\"brand\":null,\"qty\":1,\"unit\":\"kg\"}],\"pincode\":\"560078\",\"payment\":null,\"slot\":null}",
+     "score": {
+      "valid": 1,
+      "name_tp": 2,
+      "strict_tp": 2,
+      "n_gold": 2,
+      "n_pred": 2,
+      "pincode": 1,
+      "payment": 1,
+      "slot": 1,
+      "exact": 1
+     }
+    }
+   }
+  },
+  {
+   "task": "B transliteration",
+   "input": "Lonavala",
+   "gold": [
+    "लोणावळा"
+   ],
+   "outputs": {
+    "sarvam-transliterate": {
+     "text": "लोणावळा",
+     "exact": 1,
+     "cer": 0.0
+    },
+    "sarvam-105b": {
+     "text": "लोणावळा",
+     "exact": 1,
+     "cer": 0.0
+    },
+    "gemini-3.8-flash": {
+     "text": "लोणावळा",
+     "exact": 1,
+     "cer": 0.0
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "लोणावळा",
+     "exact": 1,
+     "cer": 0.0
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "लोणावळा",
+     "exact": 1,
+     "cer": 0.0
+    }
+   }
+  },
+  {
+   "task": "B transliteration",
+   "input": "Tiruchirappalli",
+   "gold": [
+    "திருச்சிராப்பள்ளி"
+   ],
+   "outputs": {
+    "sarvam-transliterate": {
+     "text": "திருச்சிற்றம்பலம்",
+     "exact": 0,
+     "cer": 0.471
+    },
+    "sarvam-105b": {
+     "text": "திருச்சிராப்பள்ளி",
+     "exact": 1,
+     "cer": 0.0
+    },
+    "gemini-3.8-flash": {
+     "text": "திருச்சிராப்பள்ளி",
+     "exact": 1,
+     "cer": 0.0
+    },
+    "qwen3-30b-local": {
+     "text": "திருச்சிராப்பள்ளி",
+     "exact": 1,
+     "cer": 0.0
+    },
+    "sarvam-30b-local": {
+     "text": "திருச்சிராப்பள்ளி",
+     "exact": 1,
+     "cer": 0.0
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "திருச்சிராப்பள்ளி",
+     "exact": 1,
+     "cer": 0.0
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "திருச்சிராப்பள்ளி",
+     "exact": 1,
+     "cer": 0.0
+    }
+   }
+  }
+ ],
+ "findings": [
+  "Order extraction, exact whole-order accuracy over 100 code-mixed messages. Thinking off: gemini-3.8-flash 98% [95-100], claude-haiku-5.5 85%, gpt-5.4-mini 77%, sarvam-105b 71% [62-80]. With thinking, sarvam-105b reaches 90-91%. Strict item F1 for the same systems is 0.99, 0.92, 0.89, 0.85 and 0.95 (105b-think with the 16k cap). On the 50-message local subset, qwen3-30b-local scores 36% exact.",
+  "On the fixed 30-message frontier subset (ids with (id-1)%10 in {0,3,6}, covering every language group), exact accuracy with thinking on is gpt-5.5 100%, gemini-pro-latest 97% and claude-sonnet-5.5 93%. Price-matched systems on the same messages: gemini-3.8-flash 93%, claude-haiku-5.5 90%, sarvam-105b-think 87% (16k cap), gpt-5.4-mini 63%, sarvam-105b 63%. gemini-3.8-flash with thinking off is within the CI of the frontier ceiling.",
+  "sarvam-105b without thinking makes regional-vocabulary mistakes, not format mistakes. Bengali 'sorsher tel' (mustard oil) became sesame oil, Tamil 'sakkarai' (sugar) became jaggery, Tamil 'theangai' (coconut) became banana, and 'sona masoori' became basmati rice. It also drops brands written in Tamil script (மேகி -> no brand), treats varieties as brands (Ponni, alphonso), sets search quantities to 1 packet instead of '200g', and invents slot labels ('night', 'evening_16-20') on 6% of messages. Its catalog-name F1 is still 0.98: it finds the products but gets the details wrong.",
+  "sarvam-105b thinking can return nothing. At max_tokens 6000, 3 of 100 replies (ids 18, 74, 99) came back empty after spending the whole budget on reasoning. Rerun at 16000, all 3 answered correctly, using about 3.8k completion tokens each, below the earlier cap. The reasoning length is non-deterministic, not simply too long for the cap. docs-legal saw the same pattern (16 of 80 empty), so any 105b-think deployment needs a high max_tokens and a retry on empty content. Exact accuracy goes from 90% to 91%, p95 latency stays at 23-27 s, and reasoning averages about 1,700 tokens per message.",
+  "Pincode and payment extraction is solved for every cloud model: 100% for gemini-3.8-flash, gpt-5.4-mini, claude-haiku-5.5, sarvam-105b and all three frontier models. That includes pincodes in Bengali (৭০০০৬৪), Devanagari (४११०३८) and Kannada (೫೬೦೦೧೧) digits, and slang such as GPay/PhonePe/Paytm/nakad/'cash e debo'. Gemini 3.8 Flash's only 2 misses wrote the brand in Devanagari (मैगी, हल्दीराम), which a catalog lookup would not match.",
+  "qwen3-30b-local copies the customer's word instead of mapping it to the catalog (bhindi, gajar, theangai, pauruti, Bisleri, Pampers instead of okra, carrot, coconut, bread, packaged water, diapers), so name-only F1 is 0.72. It is fast (p50 5.5 s on the shared Mac) and always produced valid JSON.",
+  "Transliteration exact match over 100 names: gemini-3.8-flash 99%, claude-haiku-5.5 97%, gpt-5.4-mini 96%, sarvam-105b 89%, Sarvam /transliterate API 88%. On the 30-name frontier subset, gemini-pro-latest, gpt-5.5 and claude-sonnet-5.5 all score 100%. On the 50-name local subset, qwen3-30b-local scores 66%. The Sarvam API is strong in Hindi and Marathi (96%) and weak in Tamil (76%). Examples: Tiruchirappalli became திருச்சிற்றம்பலம் (a different place), Kavitha became கவிதை (the word 'poem'), Rameswaram became a mixed-script 'ரameswaram', and Bankura became বঙ্গুরা.",
+  "Marathi orthography separates the models: sarvam-105b wrote गोकुल and शिवजी where Marathi uses गोकुळ and शिवाजी. Gemini 3.8 Flash, gpt-5.4-mini and claude-haiku-5.5 got all 25 Marathi names right, including ळ in लोणावळा and महाबळेश्वर.",
+  "Cost and speed: the Sarvam transliterate API costs INR 20 per 10k chars (about INR 2 for 100 names) at p50 0.72 s. sarvam-105b order extraction costs about INR 1.8 per 100 orders without thinking and about INR 12 with thinking. claude-haiku-5.5 cost US$0.016 per 100 orders (OpenRouter-reported). gpt-5.4-mini is fastest at p50 1.07 s per order, but at 77% exact it is the least accurate cloud model here."
+ ],
+ "caveats": [
+  "All data is synthetic and was written by one author: 100 messages and 100 names. 95% CIs are about +/-8 points at n=100 and +/-10-15 at n=30. Some golds are judgement calls (for example '1 kg sorsher tel' accepts kg or l, and 'aaj raat tak' is today_night); they are written down in build_data.py.",
+  "Four Bengali transliteration golds gained accepted variants after the first outputs were seen: native surname forms (Bose -> বসু, Chatterjee -> চট্টোপাধ্যায়), অরিজিত beside অরিজিৎ, and ঋতুপর্ণ (used for both genders). Before that change, exact match was Sarvam API 84%, sarvam-105b 88%, gemini 98%.",
+  "The strict brand check requires a Latin-script brand matching the catalog. A brand returned in native script (मैगी) counts as wrong, because the downstream catalog lookup would fail too.",
+  "'sarvam-105b-think' is the original run with max_tokens 6000, where empty replies are scored as failures. 'sarvam-105b-think(16k cap)' is the same run with the 3 empty replies replaced by their 16k reruns. Both are reported.",
+  "Frontier models ran with thinking on and only on the fixed 30-message and 30-name subsets (every id with index%10 in {0,3,6}). Price-matched cloud models ran with thinking off on the full sets.",
+  "Local models were scored on subsets (every other message and every other name) because the shared llama-server was saturated. sarvam-30b-local ran at 2-6 minutes per call and had finished fewer than 20 items when this was written. Its numbers are placeholders and get updated automatically if the background run completes.",
+  "Spend for this suite: Sarvam about INR 16. OpenRouter about US$0.14 as reported. OpenAI used about 95k input and 14k output tokens across gpt-5.4-mini and gpt-5.5, well under budget; tokens are in usage."
+ ],
+ "verdict": "To turn WhatsApp-style code-mixed orders into structured carts, gemini-3.8-flash with thinking off is the best value. It got 98% of whole orders exactly right in about 3 s and was within the CI of the frontier models (gpt-5.5 100% and gemini-pro 97% on a 30-message subset). claude-haiku-5.5 (85%) is a reasonable second choice. sarvam-105b is usable only with thinking on (90-91% exact). Even then it takes 9 s p50 and 23-27 s p95, and it needs a max_tokens of 16k plus a retry on empty replies. Without thinking it confuses regional grocery words and should not write orders unsupervised. Every cloud model reads pincode and payment correctly, so those fields are safe to automate today. For writing names in native script (labels, invoices, search), use gemini-3.8-flash, claude-haiku-5.5 or gpt-5.4-mini (96-99%). The Sarvam transliterate API is cheap and fast for Hindi and Marathi but makes visible errors on Tamil and Bengali names. The local 30B models are not yet good enough for either task without a catalog-mapping layer.",
+ "updated": "2026-10-11 23:07:09"
+}

@@ -1,0 +1,126 @@
+{
+ "request_id": "20261011_d8d6d765-200c-4447-9525-6312ecf03cc8",
+ "transcript": "Hello, please sit. Tell me what the problem is. Doctor, I have had a high fever for three days. My whole body is aching, and my head is also aching. How high is the fever? Have you measured it with a thermometer? Last night it went up to 102. I haven't taken any medicine yet. Okay. Now I am seeing your temperature is 101.4. Pulse 96, BP 118 by 76. Do you have a cough, vomiting, or loose stools? No, just fever and body aches. My throat is a little scratchy. Are you allergic to any medicine? No, I don't have any allergies. Doctor, please give me an antibiotic. I've heard that taking Azithromycin will make me recover quickly. No, it seems like a viral fever. Antibiotics are not needed for this. Taking azithromycin will not be of any benefit; on the contrary, it may cause harm. I am giving 650 milligrams of paracetamol. Dolo 650. Three times a day for three days after eating. And for the throat, cetirizine 10 milligrams. One at night before sleeping for five days. Okay. Is there anything else to keep in mind? Drink plenty of water. If you have trouble breathing or blood comes from your gums or red rashes appear on your body, come immediately. When will I come again? You will come after three days with the CBC test report.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Hello, please sit.",
+    "start_time_seconds": 0.37,
+    "end_time_seconds": 2.21,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Tell me what the problem is.",
+    "start_time_seconds": 3.21,
+    "end_time_seconds": 4.81,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Doctor, I have had a high fever for three days. My whole body is aching, and my head is also aching.",
+    "start_time_seconds": 5.95,
+    "end_time_seconds": 13.43,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "How high is the fever? Have you measured it with a thermometer?",
+    "start_time_seconds": 14.49,
+    "end_time_seconds": 17.99,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Last night it went up to 102. I haven't taken any medicine yet.",
+    "start_time_seconds": 18.99,
+    "end_time_seconds": 24.65,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Okay. Now I am seeing your temperature is 101.4.",
+    "start_time_seconds": 25.69,
+    "end_time_seconds": 31.33,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Pulse 96, BP 118 by 76.",
+    "start_time_seconds": 32.55,
+    "end_time_seconds": 40.15,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Do you have a cough, vomiting, or loose stools?",
+    "start_time_seconds": 41.43,
+    "end_time_seconds": 44.03,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "No, just fever and body aches. My throat is a little scratchy.",
+    "start_time_seconds": 44.63,
+    "end_time_seconds": 50.83,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Are you allergic to any medicine?",
+    "start_time_seconds": 52.03,
+    "end_time_seconds": 54.07,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "No, I don't have any allergies. Doctor, please give me an antibiotic. I've heard that taking Azithromycin will make me recover quickly.",
+    "start_time_seconds": 55.27,
+    "end_time_seconds": 66.03,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "No, it seems like a viral fever. Antibiotics are not needed for this. Taking azithromycin will not be of any benefit; on the contrary, it may cause harm.",
+    "start_time_seconds": 66.93,
+    "end_time_seconds": 76.13,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "I am giving 650 milligrams of paracetamol. Dolo 650. Three times a day for three days after eating. And for the throat, cetirizine 10 milligrams. One at night before sleeping for five days.",
+    "start_time_seconds": 78.71,
+    "end_time_seconds": 91.97,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay. Is there anything else to keep in mind?",
+    "start_time_seconds": 92.97,
+    "end_time_seconds": 96.67,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Drink plenty of water. If you have trouble breathing or blood comes from your gums or red rashes appear on your body, come immediately.",
+    "start_time_seconds": 97.61,
+    "end_time_seconds": 108.93,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "When will I come again?",
+    "start_time_seconds": 109.45,
+    "end_time_seconds": 110.91,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "You will come after three days with the CBC test report.",
+    "start_time_seconds": 111.63,
+    "end_time_seconds": 115.41,
+    "speaker_id": "0"
+   }
+  ]
+ },
+ "language_code": "bn-IN",
+ "language_probability": null,
+ "audio_hash": "28192adae44b9d638d3e3b4a8db24545",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_3128a8dd-0dcd-4a14-b513-b2e9b7ab1efa",
+  "elapsed_s": 10.683840990066528,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "translate",
+   "language_code": "bn-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

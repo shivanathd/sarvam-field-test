@@ -1,0 +1,138 @@
+{
+ "id": "d15",
+ "pair": "ml-en",
+ "lang": "Malayalam",
+ "style": "native",
+ "topic": "diabetes",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "റംലാത്താ, ഇരിക്കൂ. Sugar എങ്ങനെയുണ്ട്?"
+  },
+  {
+   "speaker": "patient",
+   "text": "ഡോക്ടറേ, രണ്ടു മാസമായി കാലിന്റെ അടിയിൽ തരിപ്പും എരിച്ചിലും ആണ്. രാത്രി ഉറങ്ങാൻ പറ്റുന്നില്ല."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Fasting sugar 142 ആണ്. Weight 59 kilo, BP 136 by 80. കാലിൽ sensation കുറവാണ്. ഇത് diabetic peripheral neuropathy ആണ്, sugar കാരണം ഞരമ്പിനു വരുന്ന പ്രശ്നം."
+  },
+  {
+   "speaker": "patient",
+   "text": "വേദനയ്ക്ക് Diclofenac കഴിക്കട്ടെ? അയൽക്കാരി കഴിക്കുന്നുണ്ട്."
+  },
+  {
+   "speaker": "doctor",
+   "text": "വേണ്ട, Diclofenac ഈ വേദനയ്ക്ക് ഫലിക്കില്ല, kidney-ക്കും നല്ലതല്ല. ഏതെങ്കിലും മരുന്നിനോട് അലർജി ഉണ്ടോ?"
+  },
+  {
+   "speaker": "patient",
+   "text": "Aspirin കഴിച്ചാൽ ശ്വാസം മുട്ടൽ വരും."
+  },
+  {
+   "speaker": "doctor",
+   "text": "ശരി, എഴുതിയിട്ടുണ്ട്. Pregabalin 75 mg, രാത്രി ഉറങ്ങുന്നതിനു മുമ്പ് ഒന്ന്, ഒരു മാസം. Methylcobalamin 1500 mcg, ദിവസം ഒരു നേരം, ഒരു മാസം. Metformin 500 mg രണ്ടു നേരം തുടരണം."
+  },
+  {
+   "speaker": "patient",
+   "text": "ഈ ഗുളിക കഴിച്ചാൽ ഉറക്കം വരുമോ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "കുറച്ച് മയക്കം വരാം. എഴുന്നേൽക്കുമ്പോൾ തലകറക്കം വന്നാൽ സൂക്ഷിക്കണം, വീഴാതെ നോക്കണം. കാലിൽ ഉണങ്ങാത്ത മുറിവോ, വിരൽ കറുത്തു വരുന്നതോ കണ്ടാൽ ഉടനെ വരണം."
+  },
+  {
+   "speaker": "patient",
+   "text": "ശരി ഡോക്ടറേ. ചെരുപ്പ് ഇടണോ വീട്ടിലും?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ഇടണം, എന്നും രാത്രി കാല് നോക്കണം. ഒരു മാസം കഴിഞ്ഞ് വരൂ."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "numbness of feet",
+   "burning feet",
+   "tingling in feet"
+  ],
+  "duration": {
+   "value": 2,
+   "unit": "months"
+  },
+  "vitals": {
+   "blood_sugar": 142,
+   "weight_kg": 59,
+   "bp": "136/80"
+  },
+  "diagnosis": [
+   "diabetic peripheral neuropathy",
+   "diabetic neuropathy",
+   "peripheral neuropathy"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "pregabalin",
+     "pregaba"
+    ],
+    "dose": "75 mg",
+    "frequency": "HS",
+    "duration_days": 30
+   },
+   {
+    "drug": [
+     "methylcobalamin",
+     "mecobalamin",
+     "vitamin b12"
+    ],
+    "dose": "1500 mcg",
+    "frequency": "OD",
+    "duration_days": 30
+   },
+   {
+    "drug": [
+     "metformin",
+     "glycomet"
+    ],
+    "dose": "500 mg",
+    "frequency": "BD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [
+   [
+    "aspirin"
+   ]
+  ],
+  "red_flags": [
+   [
+    "foot wound",
+    "non-healing wound",
+    "foot ulcer"
+   ],
+   [
+    "blackening of toes",
+    "toe turning black",
+    "gangrene"
+   ],
+   [
+    "dizziness",
+    "falls",
+    "giddiness"
+   ]
+  ],
+  "follow_up": [
+   "1 month",
+   "one month",
+   "after 1 month",
+   "4 weeks"
+  ],
+  "not_prescribed": [
+   "diclofenac"
+  ]
+ },
+ "trap": "Patient asks for neighbour's Diclofenac; refused."
+}

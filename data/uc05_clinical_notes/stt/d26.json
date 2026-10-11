@@ -1,0 +1,132 @@
+{
+ "request_id": "20261011_e56f818e-c396-4d47-8613-ce8dea8c603a",
+ "transcript": "Come, sit down. Your name and age? My name is Subir Mondal. Age fifty-two. Tell me, what is the problem? For the past 2 months, I have been feeling very thirsty. I have to go to the bathroom repeatedly at night. My body also feels weak. Have you had your sugar tested? Yes, this is the report. The sugar level on an empty stomach is 186. Hmm, fasting sugar is 186. That's quite a lot. Your rate is 78. P 134/84. Does anyone at home have diabetes? Yes, it was my mother's, and I don't have any allergies to any medicine. You have type 2 diabetes. I am giving Metformin 500 mg. Morning and night. No, wait, since the sugar is high. Let me make it Metformin 1000 mg. One after meals in the morning and at night. This will work regularly. Is this all? And Glimipride 1mg, one before breakfast in the morning. Continue this as well. If there is any problem after taking medicine If suddenly you feel dizzy, sweat a lot, and your hands and feet tremble, then you will understand that your sugar level has decreased. Immediately take sugar and let me know. And if you have any wounds on your feet, don't leave them. Okay, when will I show it again? Please come after one month. Get an HbA1c and fasting sugar test done. Okay, Doctor.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Come, sit down.",
+    "start_time_seconds": 0.05,
+    "end_time_seconds": 1.93,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Your name and age?",
+    "start_time_seconds": 2.99,
+    "end_time_seconds": 4.65,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "My name is Subir Mondal. Age fifty-two.",
+    "start_time_seconds": 5.49,
+    "end_time_seconds": 9.99,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Tell me, what is the problem?",
+    "start_time_seconds": 10.85,
+    "end_time_seconds": 12.95,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "For the past 2 months, I have been feeling very thirsty. I have to go to the bathroom repeatedly at night. My body also feels weak.",
+    "start_time_seconds": 13.69,
+    "end_time_seconds": 24.11,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Have you had your sugar tested?",
+    "start_time_seconds": 24.97,
+    "end_time_seconds": 26.49,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Yes, this is the report. The sugar level on an empty stomach is 186.",
+    "start_time_seconds": 27.51,
+    "end_time_seconds": 33.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Hmm, fasting sugar is 186. That's quite a lot. Your rate is 78.",
+    "start_time_seconds": 33.59,
+    "end_time_seconds": 42.61,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "P 134/84. Does anyone at home have diabetes?",
+    "start_time_seconds": 44.05,
+    "end_time_seconds": 49.41,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Yes, it was my mother's, and I don't have any allergies to any medicine.",
+    "start_time_seconds": 50.83,
+    "end_time_seconds": 55.93,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "You have type 2 diabetes. I am giving Metformin 500 mg. Morning and night. No, wait, since the sugar is high. Let me make it Metformin 1000 mg. One after meals in the morning and at night. This will work regularly.",
+    "start_time_seconds": 57.35,
+    "end_time_seconds": 76.35,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Is this all?",
+    "start_time_seconds": 77.45,
+    "end_time_seconds": 78.77,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "And Glimipride 1mg, one before breakfast in the morning. Continue this as well.",
+    "start_time_seconds": 80.13,
+    "end_time_seconds": 86.17,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "If there is any problem after taking medicine",
+    "start_time_seconds": 86.91,
+    "end_time_seconds": 89.49,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "If suddenly you feel dizzy, sweat a lot, and your hands and feet tremble, then you will understand that your sugar level has decreased. Immediately take sugar and let me know. And if you have any wounds on your feet, don't leave them.",
+    "start_time_seconds": 90.43,
+    "end_time_seconds": 106.87,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay, when will I show it again?",
+    "start_time_seconds": 107.95,
+    "end_time_seconds": 111.11,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Please come after one month. Get an HbA1c and fasting sugar test done.",
+    "start_time_seconds": 112.19,
+    "end_time_seconds": 117.81,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay, Doctor.",
+    "start_time_seconds": 118.87,
+    "end_time_seconds": 120.35,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "bn-IN",
+ "language_probability": null,
+ "audio_hash": "c05996c4f0c52366c98af4e4e0177ae3",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_ef7f62f7-ff79-446c-91f0-e9e08a7f9c50",
+  "elapsed_s": 11.154900074005127,
+  "params": {
+   "model": "saaras:v3",
+   "mode": "translate",
+   "language_code": "bn-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

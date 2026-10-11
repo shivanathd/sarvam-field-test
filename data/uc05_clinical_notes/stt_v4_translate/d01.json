@@ -1,0 +1,120 @@
+{
+ "request_id": "20261011_29f33115-a4bd-4c3d-8d3f-22e0c9ada911",
+ "transcript": "Hello, please sit down. Tell me, what is the problem? Doctor, I have had a fever for three days. There is pain all over my body. I get a fever at night from catching a cold. Okay. What is the temperature at home? Did you take any medicine? It had gone up to one hundred and two at home. I had taken Combiflam from the medical store twice. Okay. Right now your temperature is one hundred and one point four. Pulse is ninety-eight and BP is one hundred and eighteen by seventy-six, which is normal. Do you have any vomiting, diarrhea, or cough? It's not a cough, I feel a little nauseous. I don't feel hungry. Are you allergic to any medicine? No doctor, nothing ever happened. Just give me some antibiotic. The one with azithromycin. I will get well soon. No. This seems like a viral fever. There is no benefit of antibiotics in this. We will not give azithromycin. And stop the combiflamo as well. If there is a suspicion of dengue, then that is not safe. Okay. Then what do you want to take? Paracetamol 650 mg, meaning Dolo 650, three times a day for three days. Along with Pantoprazole 40 mg, once on an empty stomach in the morning for five days. What should I keep in mind while eating and drinking? Drink plenty of water, coconut water, and lemon water. Also get a CBC test done. If red spots appear on the body, blood comes from the gums, or there is difficulty in breathing, then come immediately. Don't wait. Yes, I understand. When should I come again? Bring the CBC report after three days.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Hello, please sit down. Tell me, what is the problem?",
+    "start_time_seconds": 0.01,
+    "end_time_seconds": 4.49,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Doctor, I have had a fever for three days. There is pain all over my body. I get a fever at night from catching a cold.",
+    "start_time_seconds": 5.73,
+    "end_time_seconds": 16.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Okay. What is the temperature at home? Did you take any medicine?",
+    "start_time_seconds": 16.95,
+    "end_time_seconds": 21.23,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "It had gone up to one hundred and two at home. I had taken Combiflam from the medical store twice.",
+    "start_time_seconds": 22.11,
+    "end_time_seconds": 30.37,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Okay. Right now your temperature is one hundred and one point four. Pulse is ninety-eight and BP is one hundred and eighteen by seventy-six, which is normal. Do you have any vomiting, diarrhea, or cough?",
+    "start_time_seconds": 31.25,
+    "end_time_seconds": 45.47,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "It's not a cough, I feel a little nauseous. I don't feel hungry.",
+    "start_time_seconds": 46.01,
+    "end_time_seconds": 51.05,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Are you allergic to any medicine?",
+    "start_time_seconds": 52.01,
+    "end_time_seconds": 54.55,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "No doctor, nothing ever happened. Just give me some antibiotic. The one with azithromycin. I will get well soon.",
+    "start_time_seconds": 55.37,
+    "end_time_seconds": 64.67,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "No. This seems like a viral fever. There is no benefit of antibiotics in this. We will not give azithromycin. And stop the combiflamo as well. If there is a suspicion of dengue, then that is not safe.",
+    "start_time_seconds": 65.47,
+    "end_time_seconds": 80.09,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay. Then what do you want to take?",
+    "start_time_seconds": 80.89,
+    "end_time_seconds": 83.39,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Paracetamol 650 mg, meaning Dolo 650, three times a day for three days. Along with Pantoprazole 40 mg, once on an empty stomach in the morning for five days.",
+    "start_time_seconds": 84.11,
+    "end_time_seconds": 102.09,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "What should I keep in mind while eating and drinking?",
+    "start_time_seconds": 102.97,
+    "end_time_seconds": 105.43,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Drink plenty of water, coconut water, and lemon water.",
+    "start_time_seconds": 106.47,
+    "end_time_seconds": 110.41,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Also get a CBC test done. If red spots appear on the body, blood comes from the gums, or there is difficulty in breathing, then come immediately. Don't wait.",
+    "start_time_seconds": 111.43,
+    "end_time_seconds": 125.99,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Yes, I understand. When should I come again?",
+    "start_time_seconds": 126.73,
+    "end_time_seconds": 130.35,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Bring the CBC report after three days.",
+    "start_time_seconds": 131.31,
+    "end_time_seconds": 134.13,
+    "speaker_id": "0"
+   }
+  ]
+ },
+ "language_code": "hi-IN",
+ "language_probability": null,
+ "audio_hash": "399d76971725fecb3e651de714b43f06",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_6acc3b5f-a69e-476b-8fe5-4a2eeb35c280",
+  "elapsed_s": 10.734875917434692,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "translate",
+   "language_code": "hi-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

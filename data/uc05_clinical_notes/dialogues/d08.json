@@ -1,0 +1,132 @@
+{
+ "id": "d08",
+ "pair": "hi-en",
+ "lang": "Hindi",
+ "style": "romanised",
+ "topic": "paediatrics",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "Haan ji, bachche ko kya hua?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "Doctor ye Ishaan hai, 18 mahine ka. 2 din se loose motion ho rahe hain, din mein 6-7 baar."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Ulti? Bukhar? Peshab theek aa raha hai?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "Ek baar ulti hui thi. Halka bukhar hai. Peshab aa raha hai par kam."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Temperature 99.8, pulse 120, weight 10 kg. Aankhen dhansi nahi hain, abhi dehydration nahi hai. Ye acute gastroenteritis hai, pet ka infection."
+  },
+  {
+   "speaker": "attendant",
+   "text": "Maine kal Eldoper ki aadhi goli de di thi, padosan ne boli thi."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Nahi nahi, chhote bachchon ko Eldoper bilkul nahi deni, wo khatarnak hai. Band karo."
+  },
+  {
+   "speaker": "attendant",
+   "text": "Theek hai doctor. Ise kisi dawai se allergy nahi hai."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Har loose motion ke baad ORS 50 ml pilana hai, chammach se dheere dheere. Aur Zinc syrup 20 mg roz ek baar, 14 din tak, motion band ho jaaye tab bhi poora karna."
+  },
+  {
+   "speaker": "attendant",
+   "text": "Doodh de sakte hain?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Haan, doodh aur khana band nahi karna. Agar potty mein khoon aaye, 6 ghante se zyada peshab na aaye, ya bachcha bahut sust ho jaaye, toh turant le aana."
+  },
+  {
+   "speaker": "attendant",
+   "text": "Theek hai, phir kab dikhana hai?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "2 din baad dikha dena."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "loose motions",
+   "diarrhoea",
+   "diarrhea"
+  ],
+  "duration": {
+   "value": 2,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 99.8,
+   "pulse": 120,
+   "weight_kg": 10
+  },
+  "diagnosis": [
+   "acute gastroenteritis",
+   "gastroenteritis",
+   "age",
+   "diarrhoea without dehydration"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "ors",
+     "oral rehydration solution"
+    ],
+    "dose": "50 ml",
+    "frequency": "SOS",
+    "duration_days": null
+   },
+   {
+    "drug": [
+     "zinc",
+     "zinc sulphate"
+    ],
+    "dose": "20 mg",
+    "frequency": "OD",
+    "duration_days": 14
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "blood in stool",
+    "bloody stool"
+   ],
+   [
+    "no urine",
+    "not passing urine",
+    "reduced urine"
+   ],
+   [
+    "very drowsy",
+    "lethargic",
+    "drowsiness"
+   ]
+  ],
+  "follow_up": [
+   "2 days",
+   "two days",
+   "after 2 days"
+  ],
+  "not_prescribed": [
+   "loperamide",
+   "eldoper"
+  ]
+ },
+ "trap": "Mother gave Eldoper (loperamide); doctor stops it."
+}

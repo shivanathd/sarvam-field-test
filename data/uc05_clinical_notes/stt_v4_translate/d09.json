@@ -1,0 +1,150 @@
+{
+ "request_id": "20261011_dbc8e769-0b21-448c-bb50-0c62c66f75f0",
+ "transcript": "Come, sit down. What is the problem? Doctor, I have had a fever and cough for five days. The phlegm is yellow in color. Are you breathing? Chest pain. There is no shortness of breath. When coughing, there is a slight pain in the chest. Okay. Let me see. Temperature 100 point. Pulse 102. 20295. I can hear some crackles in the left lung. This is a lower respiratory tract infection. So. Yes. Will a pill be needed? Needed. Augmentin 625 mg twice a day for five days. Doctor, I forgot to tell you one thing. I am allergic to penicillin. Once before, my whole body itched and swelled up. What you said is good. But Augmentin is not needed. That is a penicillin group. Instead, Azithromycin 500 mg once a day for three days. For fever, Paracetamol 650 mg three times a day for three days should be taken. Should I pay attention to anything else? Drink plenty of warm water. If you experience shortness of breath, increased chest pain, or see blood in your phlegm, come immediately. Okay, Doctor. Now when? Should come inside. Come after three days after taking a chest X-ray.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Come, sit down. What is the problem?",
+    "start_time_seconds": 0.43,
+    "end_time_seconds": 3.47,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor, I have had a fever and cough for five days. The phlegm is yellow in color.",
+    "start_time_seconds": 4.23,
+    "end_time_seconds": 11.79,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Are you breathing? Chest pain.",
+    "start_time_seconds": 12.71,
+    "end_time_seconds": 15.53,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "There is no shortness of breath. When coughing, there is a slight pain in the chest.",
+    "start_time_seconds": 16.55,
+    "end_time_seconds": 22.15,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay. Let me see.",
+    "start_time_seconds": 23.25,
+    "end_time_seconds": 25.03,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Temperature 100 point.",
+    "start_time_seconds": 26.49,
+    "end_time_seconds": 28.79,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Pulse 102.",
+    "start_time_seconds": 30.85,
+    "end_time_seconds": 33.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "20295.",
+    "start_time_seconds": 34.39,
+    "end_time_seconds": 35.83,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "I can hear some crackles in the left lung. This is a lower respiratory tract infection. So.",
+    "start_time_seconds": 37.63,
+    "end_time_seconds": 48.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Yes.",
+    "start_time_seconds": 48.01,
+    "end_time_seconds": 48.45,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Will a pill be needed?",
+    "start_time_seconds": 48.45,
+    "end_time_seconds": 50.49,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Needed.",
+    "start_time_seconds": 51.63,
+    "end_time_seconds": 52.19,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Augmentin 625 mg twice a day for five days.",
+    "start_time_seconds": 53.21,
+    "end_time_seconds": 58.59,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor, I forgot to tell you one thing. I am allergic to penicillin. Once before, my whole body itched and swelled up.",
+    "start_time_seconds": 59.69,
+    "end_time_seconds": 70.69,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "What you said is good. But Augmentin is not needed. That is a penicillin group. Instead, Azithromycin 500 mg once a day for three days. For fever, Paracetamol 650 mg three times a day for three days should be taken.",
+    "start_time_seconds": 71.57,
+    "end_time_seconds": 90.17,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Should I pay attention to anything else?",
+    "start_time_seconds": 90.79,
+    "end_time_seconds": 92.89,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Drink plenty of warm water. If you experience shortness of breath, increased chest pain, or see blood in your phlegm, come immediately.",
+    "start_time_seconds": 93.83,
+    "end_time_seconds": 104.45,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Okay, Doctor.",
+    "start_time_seconds": 104.45,
+    "end_time_seconds": 105.55,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Now when?",
+    "start_time_seconds": 105.55,
+    "end_time_seconds": 107.19,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Should come inside.",
+    "start_time_seconds": 107.19,
+    "end_time_seconds": 107.87,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Come after three days after taking a chest X-ray.",
+    "start_time_seconds": 108.75,
+    "end_time_seconds": 112.31,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "ml-IN",
+ "language_probability": null,
+ "audio_hash": "ae4033095efe3cbf0dffe9a6cfa728ac",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_d445fe91-d246-4d54-b735-379077281e85",
+  "elapsed_s": 10.668691158294678,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "translate",
+   "language_code": "ml-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

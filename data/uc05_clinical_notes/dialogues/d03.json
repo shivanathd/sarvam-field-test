@@ -1,0 +1,139 @@
+{
+ "id": "d03",
+ "pair": "hi-en",
+ "lang": "Hindi",
+ "style": "native",
+ "topic": "paediatrics",
+ "audio_subset": true,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "नमस्ते, आइए। बच्चे का नाम क्या है और उम्र?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "आरव है, चार साल का। दो दिन से खांसी-ज़ुकाम है और बुखार भी है।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "बुखार कितना है? रात को साँस लेने में कोई दिक्कत?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "रात को 101 तक गया था। साँस ठीक है, बस नाक बंद रहती है।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "अभी temperature 100.6 है, oxygen यानी SpO2 98 percent है, बढ़िया है। वज़न 16 kilo है।"
+  },
+  {
+   "speaker": "attendant",
+   "text": "डॉक्टर, घर में बड़े बेटे की Azithral की बोतल पड़ी थी, कल रात एक खुराक दे दी थी।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "नहीं, वो बंद कर दीजिए। ये viral infection है, upper respiratory tract infection, इसमें antibiotic की ज़रूरत नहीं है। बिना पूछे antibiotic मत दीजिए।"
+  },
+  {
+   "speaker": "attendant",
+   "text": "जी ठीक है। इसे किसी दवा से allergy नहीं है।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "अच्छा। बुखार के लिए Paracetamol syrup, Calpol 250, 5 ml, जब बुखार सौ से ऊपर हो तभी, दिन में चार बार से ज़्यादा नहीं, तीन दिन तक।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ज़ुकाम के लिए Cetirizine syrup 2.5 ml, रात को सोने से पहले, पाँच दिन।"
+  },
+  {
+   "speaker": "attendant",
+   "text": "खाना कम खा रहा है, क्या करूँ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "थोड़ा-थोड़ा करके पानी और दाल का पानी देते रहिए। अगर साँस तेज़ चले, पसली चले, बच्चा पानी पीना बंद कर दे या दौरा पड़े, तो तुरंत emergency में लाइए।"
+  },
+  {
+   "speaker": "attendant",
+   "text": "जी समझ गई। फिर कब आएँ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "तीन दिन बाद दिखाइए, अगर बुखार तब भी रहे।"
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "cough",
+   "cold",
+   "fever",
+   "runny nose"
+  ],
+  "duration": {
+   "value": 2,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 100.6,
+   "spo2": 98,
+   "weight_kg": 16
+  },
+  "diagnosis": [
+   "upper respiratory tract infection",
+   "urti",
+   "viral infection",
+   "viral urti",
+   "common cold"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "paracetamol",
+     "calpol"
+    ],
+    "dose": "5 ml",
+    "frequency": "SOS",
+    "duration_days": 3
+   },
+   {
+    "drug": [
+     "cetirizine"
+    ],
+    "dose": "2.5 ml",
+    "frequency": "HS",
+    "duration_days": 5
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "fast breathing",
+    "rapid breathing",
+    "chest indrawing",
+    "breathing difficulty"
+   ],
+   [
+    "not drinking",
+    "refusing fluids",
+    "not feeding"
+   ],
+   [
+    "convulsion",
+    "seizure",
+    "fits"
+   ]
+  ],
+  "follow_up": [
+   "3 days",
+   "after 3 days",
+   "three days"
+  ],
+  "not_prescribed": [
+   "azithromycin",
+   "azithral"
+  ]
+ },
+ "trap": "Mother gave leftover Azithral; doctor stops it."
+}

@@ -1,0 +1,116 @@
+22:33:40 or:anthropic/claude-haiku-5.5 running 150 items
+22:34:46 or:anthropic/claude-sonnet-5.5-think running 30 items
+overall_all_correct {'sarvam-105b': 0.94, 'sarvam-105b-think': 0.8, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.627, 'sarvam-30b-local-think': 0.607, 'qwen3-30b-local-nothink': 0.84, 'qwen3-30b-local-think': 0.913, 'openai:gpt-5.4-mini': 0.993, 'or:anthropic/claude-haiku-5.5': 0.96, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 0.967, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+overall_all_correct_subset30 {'sarvam-105b': 0.933, 'sarvam-105b-think': 0.867, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.667, 'sarvam-30b-local-think': 0.633, 'qwen3-30b-local-nothink': 0.767, 'qwen3-30b-local-think': 0.967, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 0.967, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 0.967, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+triage_all_correct {'sarvam-105b': 0.833, 'sarvam-105b-think': 0.833, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.167, 'sarvam-30b-local-think': 0.2, 'qwen3-30b-local-nothink': 0.667, 'qwen3-30b-local-think': 0.767, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 0.967, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 0.833, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+triage_intent {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.967, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 1.0, 'sarvam-30b-local-think': 0.933, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+triage_urgency {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.967, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.8, 'sarvam-30b-local-think': 0.633, 'qwen3-30b-local-nothink': 0.933, 'qwen3-30b-local-think': 1.0, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 0.833, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+triage_language {'sarvam-105b': 0.833, 'sarvam-105b-think': 0.833, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.2, 'sarvam-30b-local-think': 0.3, 'qwen3-30b-local-nothink': 0.667, 'qwen3-30b-local-think': 0.767, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 0.967, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+triage_intent_urgency {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.933, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.8, 'sarvam-30b-local-think': 0.567, 'qwen3-30b-local-nothink': 0.933, 'qwen3-30b-local-think': 1.0, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 0.833, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+crm_all_correct {'sarvam-105b': 0.967, 'sarvam-105b-think': 0.767, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.233, 'sarvam-30b-local-think': 0.167, 'qwen3-30b-local-nothink': 0.7, 'qwen3-30b-local-think': 0.967, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 0.933, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+crm_order_id {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.967, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 1.0, 'sarvam-30b-local-think': 0.9, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+crm_amount {'sarvam-105b': 1.0, 'sarvam-105b-think': 1.0, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 1.0, 'sarvam-30b-local-think': 0.933, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+crm_date {'sarvam-105b': 0.967, 'sarvam-105b-think': 1.0, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.233, 'sarvam-30b-local-think': 0.5, 'qwen3-30b-local-nothink': 0.7, 'qwen3-30b-local-think': 0.967, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 0.933, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+crm_issue {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.767, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.6, 'sarvam-30b-local-think': 0.267, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+crm_english {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.767, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.7, 'sarvam-30b-local-think': 0.2, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+reply_all_correct {'sarvam-105b': 0.9, 'sarvam-105b-think': 0.9, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.8, 'sarvam-30b-local-think': 0.667, 'qwen3-30b-local-nothink': 0.833, 'qwen3-30b-local-think': 0.867, 'openai:gpt-5.4-mini': 0.967, 'or:anthropic/claude-haiku-5.5': 0.9, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+reply_language {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.9, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.933, 'sarvam-30b-local-think': 0.733, 'qwen3-30b-local-nothink': 0.867, 'qwen3-30b-local-think': 0.867, 'openai:gpt-5.4-mini': 0.967, 'or:anthropic/claude-haiku-5.5': 0.9, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+reply_window_stated {'sarvam-105b': 1.0, 'sarvam-105b-think': 1.0, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 1.0, 'sarvam-30b-local-think': 0.9, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+reply_no_forbidden {'sarvam-105b': 0.9, 'sarvam-105b-think': 1.0, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.833, 'sarvam-30b-local-think': 0.833, 'qwen3-30b-local-nothink': 0.967, 'qwen3-30b-local-think': 1.0, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+escalate_all_correct {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.567, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.967, 'sarvam-30b-local-think': 1.0, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+escalate_sentiment {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.567, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 1.0, 'sarvam-30b-local-think': 1.0, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+escalate_escalate {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.567, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.967, 'sarvam-30b-local-think': 1.0, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+extract_all_correct {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.933, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.967, 'sarvam-30b-local-think': 1.0, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 0.967, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+extract_invoice_no {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.933, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 1.0, 'sarvam-30b-local-think': 1.0, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+extract_gstin {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.933, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 1.0, 'sarvam-30b-local-think': 1.0, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 0.967, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+extract_total_inr {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.933, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.967, 'sarvam-30b-local-think': 1.0, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+extract_due_date {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.933, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 1.0, 'sarvam-30b-local-think': 1.0, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0, 'openai:gpt-5.4-mini': 1.0, 'or:anthropic/claude-haiku-5.5': 1.0, 'gemini-pro-latest-think': 1.0, 'openai:gpt-5.5-think': 1.0, 'or:anthropic/claude-sonnet-5.5-think': 1.0}
+{
+"sarvam-105b": {
+"in_tok": 27488,
+"out_tok": 7590,
+"reasoning_tok": 0,
+"calls": 150,
+"api_errors_retried": 152,
+"inr_list_price": 0.87
+},
+"sarvam-105b-think": {
+"in_tok": 26888,
+"out_tok": 150474,
+"reasoning_tok": 143394,
+"calls": 150,
+"api_errors_retried": 40,
+"inr_list_price": 9.43
+},
+"gemini-3.8-flash": {
+"in_tok": 25065,
+"out_tok": 7235,
+"reasoning_tok": 34461,
+"calls": 150,
+"api_errors_retried": 0
+},
+"sarvam-30b-local-nothink": {
+"in_tok": 27763,
+"out_tok": 9940,
+"reasoning_tok": 0,
+"calls": 150,
+"api_errors_retried": 0
+},
+"sarvam-30b-local-think": {
+"in_tok": 26863,
+"out_tok": 241562,
+"reasoning_tok": 0,
+"calls": 150,
+"api_errors_retried": 0
+},
+"qwen3-30b-local-nothink": {
+"in_tok": 37711,
+"out_tok": 8742,
+"reasoning_tok": 0,
+"calls": 150,
+"api_errors_retried": 0
+},
+"qwen3-30b-local-think": {
+"in_tok": 36511,
+"out_tok": 57918,
+"reasoning_tok": 0,
+"calls": 150,
+"api_errors_retried": 0
+},
+"openai:gpt-5.4-mini": {
+"in_tok": 25314,
+"out_tok": 6359,
+"reasoning_tok": 0,
+"calls": 150,
+"api_errors_retried": 0
+},
+"or:anthropic/claude-haiku-5.5": {
+"in_tok": 39633,
+"out_tok": 12442,
+"reasoning_tok": 0,
+"calls": 150,
+"api_errors_retried": 0
+},
+"gemini-pro-latest-think": {
+"in_tok": 5036,
+"out_tok": 1417,
+"reasoning_tok": 17901,
+"calls": 30,
+"api_errors_retried": 0
+},
+"openai:gpt-5.5-think": {
+"in_tok": 5095,
+"out_tok": 3146,
+"reasoning_tok": 1734,
+"calls": 30,
+"api_errors_retried": 0
+},
+"or:anthropic/claude-sonnet-5.5-think": {
+"in_tok": 7961,
+"out_tok": 4425,
+"reasoning_tok": 1541,
+"calls": 30,
+"api_errors_retried": 0
+}
+}
+{'sarvam-105b': {'p50_ms': 622.9081153869629, 'p95_ms': 4472.3639488220215}, 'sarvam-105b-think': {'p50_ms': 4594.670057296753, 'p95_ms': 14013.551950454712}, 'gemini-3.8-flash': {'p50_ms': 3324.403762817383, 'p95_ms': 8991.499900817871}, 'sarvam-30b-local-nothink': {'p50_ms': 8593.398094177246, 'p95_ms': 17490.70429801941}, 'sarvam-30b-local-think': {'p50_ms': 149668.79892349243, 'p95_ms': 391352.8199195862}, 'qwen3-30b-local-nothink': {'p50_ms': 8249.335050582886, 'p95_ms': 26611.708879470825}, 'qwen3-30b-local-think': {'p50_ms': 34176.761865615845, 'p95_ms': 89257.60006904602}, 'openai:gpt-5.4-mini': {'p50_ms': 931.7529201507568, 'p95_ms': 1359.3511581420898}, 'or:anthropic/claude-haiku-5.5': {'p50_ms': 1526.1509418487549, 'p95_ms': 2674.654960632324}, 'gemini-pro-latest-think': {'p50_ms': 6158.899307250977, 'p95_ms': 9077.256917953491}, 'openai:gpt-5.5-think': {'p50_ms': 2165.6951904296875, 'p95_ms': 5979.789972305298}, 'or:anthropic/claude-sonnet-5.5-think': {'p50_ms': 2102.1549701690674, 'p95_ms': 6163.219928741455}}

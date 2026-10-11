@@ -1,0 +1,119 @@
+{
+ "id": "d33",
+ "pair": "mr-en",
+ "lang": "Marathi",
+ "style": "native",
+ "topic": "fever",
+ "audio_subset": true,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "नमस्कार, बसा. काय होतंय?"
+  },
+  {
+   "speaker": "patient",
+   "text": "डॉक्टर, 2 दिवसांपासून खूप ताप आहे, आणि अंग खूप दुखतंय."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Temperature बघतो... 102.2 आहे. Pulse 100, BP 116/74. उलटी, जुलाब काही?"
+  },
+  {
+   "speaker": "patient",
+   "text": "थोडी मळमळ होते, उलटी नाही."
+  },
+  {
+   "speaker": "doctor",
+   "text": "कोणत्या औषधाची allergy आहे का?"
+  },
+  {
+   "speaker": "patient",
+   "text": "नाही, कोणतीही allergy नाही. डॉक्टर, मला Combiflam द्या ना, अंगदुखी लगेच जाते."
+  },
+  {
+   "speaker": "doctor",
+   "text": "नाही, सध्या dengue चा season आहे, म्हणून ibuprofen, म्हणजे Combiflam, अजिबात घ्यायचं नाही. हा viral fever वाटतोय, पण dengue test करून घेऊ."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Paracetamol 500 mg, दिवसातून तीन वेळा जेवणानंतर, 3 दिवस घ्या. भरपूर पाणी, नारळपाणी प्या."
+  },
+  {
+   "speaker": "patient",
+   "text": "बरं. अजून काय काळजी घ्यायची?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "हिरड्यांतून रक्त आलं, पोटात खूप दुखलं, किंवा सारख्या उलट्या होऊ लागल्या तर लगेच hospital मध्ये या."
+  },
+  {
+   "speaker": "patient",
+   "text": "पुन्हा कधी यायचं?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "2 दिवसांनी या, NS1 आणि CBC चा report घेऊन."
+  },
+  {
+   "speaker": "patient",
+   "text": "ठीक आहे, धन्यवाद डॉक्टर."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "fever",
+   "body ache"
+  ],
+  "duration": {
+   "value": 2,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 102.2,
+   "pulse": 100,
+   "bp": "116/74"
+  },
+  "diagnosis": [
+   "viral fever",
+   "suspected dengue",
+   "dengue"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "paracetamol"
+    ],
+    "dose": "500 mg",
+    "frequency": "TDS",
+    "duration_days": 3
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "bleeding gums",
+    "gum bleeding",
+    "bleeding"
+   ],
+   [
+    "severe abdominal pain",
+    "abdominal pain"
+   ],
+   [
+    "persistent vomiting",
+    "repeated vomiting",
+    "vomiting"
+   ]
+  ],
+  "follow_up": [
+   "2 days",
+   "after 2 days"
+  ],
+  "not_prescribed": [
+   "ibuprofen",
+   "combiflam"
+  ]
+ },
+ "trap": "Patient asks for Combiflam (ibuprofen); doctor refuses."
+}

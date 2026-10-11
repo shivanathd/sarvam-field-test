@@ -1,0 +1,16 @@
+19:48:14 sarvam-105b running 150 items
+19:48:14 gemini-3.8-flash running 150 items
+19:49:32 sarvam-105b-think running 150 items
+19:56:33 qwen3-30b-local-nothink running 150 items
+19:56:33 sarvam-30b-local-nothink running 150 items
+20:02:32 qwen3-30b-local-think running 150 items
+20:09:47 sarvam-30b-local-nothink running 150 items
+20:16:21 sarvam-30b-local-think running 150 items
+21:48:03 sarvam-105b running 150 items
+21:49:34 sarvam-105b-think running 100 items
+21:53:51 sarvam-105b running 2 items
+22:33:14 openai:gpt-5.4-mini running 150 items
+22:33:26 gemini-pro-latest-think running 30 items
+22:33:40 or:anthropic/claude-haiku-5.5 running 150 items
+22:33:52 openai:gpt-5.5-think running 30 items
+22:34:46 or:anthropic/claude-sonnet-5.5-think running 30 items

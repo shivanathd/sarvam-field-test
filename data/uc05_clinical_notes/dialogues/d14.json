@@ -1,0 +1,134 @@
+{
+ "id": "d14",
+ "pair": "ml-en",
+ "lang": "Malayalam",
+ "style": "native",
+ "topic": "fever",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "സുരേഷേ, വരൂ. എന്താ പ്രശ്നം?"
+  },
+  {
+   "speaker": "patient",
+   "text": "മൂന്നു ദിവസമായി നല്ല പനിയാണ് ഡോക്ടറേ. കാലിലെ മസിൽ, പ്രത്യേകിച്ച് കണങ്കാലിന് മുകളിൽ ഭയങ്കര വേദന. തലവേദനയും ഉണ്ട്."
+  },
+  {
+   "speaker": "doctor",
+   "text": "കഴിഞ്ഞ ആഴ്ചകളിൽ പാടത്തോ വെള്ളക്കെട്ടിലോ പണിക്ക് പോയിരുന്നോ?"
+  },
+  {
+   "speaker": "patient",
+   "text": "ഉവ്വ്, കഴിഞ്ഞ ആഴ്ച മുഴുവൻ നെൽപ്പാടത്ത് ആയിരുന്നു."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Temperature 102 ആണ്, pulse 108, BP 110 by 70. കണ്ണിൽ ചെറിയ ചുവപ്പുണ്ട്. ഇത് leptospirosis ആണെന്ന് സംശയിക്കുന്നു, എലിപ്പനി."
+  },
+  {
+   "speaker": "patient",
+   "text": "വീട്ടിൽ വെച്ച് Dolo രണ്ടെണ്ണവും വേദനയ്ക്ക് Brufen ഒന്നും കഴിച്ചു."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Brufen ഇനി കഴിക്കരുത്, ഇത് kidney-ക്ക് ദോഷം ചെയ്യും. ഏതെങ്കിലും മരുന്നിനോട് അലർജി ഉണ്ടോ?"
+  },
+  {
+   "speaker": "patient",
+   "text": "ഇല്ല ഡോക്ടറേ."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Doxycycline 100 mg, ദിവസം രണ്ടു നേരം, ഏഴു ദിവസം, ഭക്ഷണത്തിനു ശേഷം ധാരാളം വെള്ളത്തോടൊപ്പം. പനിക്ക് Paracetamol 650 mg, ദിവസം മൂന്നു നേരം, മൂന്നു ദിവസം."
+  },
+  {
+   "speaker": "patient",
+   "text": "Admit ആകണോ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ഇപ്പോൾ വേണ്ട. പക്ഷേ കണ്ണ് മഞ്ഞളിച്ചാലോ, മൂത്രം കുറഞ്ഞാലോ, ശ്വാസം മുട്ടലോ ചുമയിൽ രക്തമോ വന്നാലോ ഉടനെ admit ആകണം."
+  },
+  {
+   "speaker": "patient",
+   "text": "ശരി ഡോക്ടറേ."
+  },
+  {
+   "speaker": "doctor",
+   "text": "രണ്ടു ദിവസം കഴിഞ്ഞ് blood test റിപ്പോർട്ടുമായി വരണം."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "fever",
+   "calf muscle pain",
+   "myalgia",
+   "headache"
+  ],
+  "duration": {
+   "value": 3,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 102,
+   "pulse": 108,
+   "bp": "110/70"
+  },
+  "diagnosis": [
+   "leptospirosis",
+   "suspected leptospirosis",
+   "rat fever"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "doxycycline",
+     "doxy"
+    ],
+    "dose": "100 mg",
+    "frequency": "BD",
+    "duration_days": 7
+   },
+   {
+    "drug": [
+     "paracetamol",
+     "dolo"
+    ],
+    "dose": "650 mg",
+    "frequency": "TDS",
+    "duration_days": 3
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "jaundice",
+    "yellow eyes",
+    "yellowing of eyes"
+   ],
+   [
+    "reduced urine",
+    "decreased urine output",
+    "less urine"
+   ],
+   [
+    "breathlessness",
+    "blood in cough",
+    "haemoptysis",
+    "hemoptysis"
+   ]
+  ],
+  "follow_up": [
+   "2 days",
+   "two days",
+   "after 2 days"
+  ],
+  "not_prescribed": [
+   "ibuprofen",
+   "brufen"
+  ]
+ },
+ "trap": "Patient took Brufen; doctor stops it."
+}

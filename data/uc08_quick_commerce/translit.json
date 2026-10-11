@@ -1,0 +1,824 @@
+{
+ "synthetic": true,
+ "how_made": "hand-authored for this benchmark; no real customer data",
+ "license": "CC-BY 4.0",
+ "clock": "Sunday 11 October 2026, 10:00 AM IST",
+ "items": [
+  {
+   "id": "hi-00",
+   "lang": "hi",
+   "input": "Delhi",
+   "gold": [
+    "दिल्ली"
+   ]
+  },
+  {
+   "id": "hi-01",
+   "lang": "hi",
+   "input": "Mumbai",
+   "gold": [
+    "मुंबई",
+    "मुम्बई"
+   ]
+  },
+  {
+   "id": "hi-02",
+   "lang": "hi",
+   "input": "Lucknow",
+   "gold": [
+    "लखनऊ"
+   ]
+  },
+  {
+   "id": "hi-03",
+   "lang": "hi",
+   "input": "Varanasi",
+   "gold": [
+    "वाराणसी"
+   ]
+  },
+  {
+   "id": "hi-04",
+   "lang": "hi",
+   "input": "Haridwar",
+   "gold": [
+    "हरिद्वार"
+   ]
+  },
+  {
+   "id": "hi-05",
+   "lang": "hi",
+   "input": "Jaipur",
+   "gold": [
+    "जयपुर"
+   ]
+  },
+  {
+   "id": "hi-06",
+   "lang": "hi",
+   "input": "Bhopal",
+   "gold": [
+    "भोपाल"
+   ]
+  },
+  {
+   "id": "hi-07",
+   "lang": "hi",
+   "input": "Patna",
+   "gold": [
+    "पटना"
+   ]
+  },
+  {
+   "id": "hi-08",
+   "lang": "hi",
+   "input": "Kanpur",
+   "gold": [
+    "कानपुर"
+   ]
+  },
+  {
+   "id": "hi-09",
+   "lang": "hi",
+   "input": "Gorakhpur",
+   "gold": [
+    "गोरखपुर"
+   ]
+  },
+  {
+   "id": "hi-10",
+   "lang": "hi",
+   "input": "Rajesh Kumar",
+   "gold": [
+    "राजेश कुमार"
+   ]
+  },
+  {
+   "id": "hi-11",
+   "lang": "hi",
+   "input": "Priyanka Sharma",
+   "gold": [
+    "प्रियंका शर्मा"
+   ]
+  },
+  {
+   "id": "hi-12",
+   "lang": "hi",
+   "input": "Amitabh Bachchan",
+   "gold": [
+    "अमिताभ बच्चन"
+   ]
+  },
+  {
+   "id": "hi-13",
+   "lang": "hi",
+   "input": "Sunita Verma",
+   "gold": [
+    "सुनीता वर्मा"
+   ]
+  },
+  {
+   "id": "hi-14",
+   "lang": "hi",
+   "input": "Rahul Gupta",
+   "gold": [
+    "राहुल गुप्ता"
+   ]
+  },
+  {
+   "id": "hi-15",
+   "lang": "hi",
+   "input": "Anjali Mishra",
+   "gold": [
+    "अंजलि मिश्रा",
+    "अंजली मिश्रा"
+   ]
+  },
+  {
+   "id": "hi-16",
+   "lang": "hi",
+   "input": "Haldiram",
+   "gold": [
+    "हल्दीराम"
+   ]
+  },
+  {
+   "id": "hi-17",
+   "lang": "hi",
+   "input": "Patanjali",
+   "gold": [
+    "पतंजलि"
+   ]
+  },
+  {
+   "id": "hi-18",
+   "lang": "hi",
+   "input": "Amul",
+   "gold": [
+    "अमूल"
+   ]
+  },
+  {
+   "id": "hi-19",
+   "lang": "hi",
+   "input": "Aashirvaad",
+   "gold": [
+    "आशीर्वाद"
+   ]
+  },
+  {
+   "id": "hi-20",
+   "lang": "hi",
+   "input": "Bikaner",
+   "gold": [
+    "बीकानेर"
+   ]
+  },
+  {
+   "id": "hi-21",
+   "lang": "hi",
+   "input": "Rishikesh",
+   "gold": [
+    "ऋषिकेश"
+   ]
+  },
+  {
+   "id": "hi-22",
+   "lang": "hi",
+   "input": "Prayagraj",
+   "gold": [
+    "प्रयागराज"
+   ]
+  },
+  {
+   "id": "hi-23",
+   "lang": "hi",
+   "input": "Chandni Chowk",
+   "gold": [
+    "चांदनी चौक",
+    "चाँदनी चौक"
+   ]
+  },
+  {
+   "id": "hi-24",
+   "lang": "hi",
+   "input": "Connaught Place",
+   "gold": [
+    "कनॉट प्लेस"
+   ]
+  },
+  {
+   "id": "ta-25",
+   "lang": "ta",
+   "input": "Chennai",
+   "gold": [
+    "சென்னை"
+   ]
+  },
+  {
+   "id": "ta-26",
+   "lang": "ta",
+   "input": "Madurai",
+   "gold": [
+    "மதுரை"
+   ]
+  },
+  {
+   "id": "ta-27",
+   "lang": "ta",
+   "input": "Coimbatore",
+   "gold": [
+    "கோயம்புத்தூர்",
+    "கோயமுத்தூர்"
+   ]
+  },
+  {
+   "id": "ta-28",
+   "lang": "ta",
+   "input": "Tiruchirappalli",
+   "gold": [
+    "திருச்சிராப்பள்ளி"
+   ]
+  },
+  {
+   "id": "ta-29",
+   "lang": "ta",
+   "input": "Thanjavur",
+   "gold": [
+    "தஞ்சாவூர்"
+   ]
+  },
+  {
+   "id": "ta-30",
+   "lang": "ta",
+   "input": "Kanchipuram",
+   "gold": [
+    "காஞ்சிபுரம்"
+   ]
+  },
+  {
+   "id": "ta-31",
+   "lang": "ta",
+   "input": "Tirunelveli",
+   "gold": [
+    "திருநெல்வேலி"
+   ]
+  },
+  {
+   "id": "ta-32",
+   "lang": "ta",
+   "input": "Salem",
+   "gold": [
+    "சேலம்"
+   ]
+  },
+  {
+   "id": "ta-33",
+   "lang": "ta",
+   "input": "Velachery",
+   "gold": [
+    "வேளச்சேரி"
+   ]
+  },
+  {
+   "id": "ta-34",
+   "lang": "ta",
+   "input": "Mylapore",
+   "gold": [
+    "மயிலாப்பூர்"
+   ]
+  },
+  {
+   "id": "ta-35",
+   "lang": "ta",
+   "input": "Kanyakumari",
+   "gold": [
+    "கன்னியாகுமரி"
+   ]
+  },
+  {
+   "id": "ta-36",
+   "lang": "ta",
+   "input": "Rameswaram",
+   "gold": [
+    "ராமேஸ்வரம்",
+    "இராமேஸ்வரம்"
+   ]
+  },
+  {
+   "id": "ta-37",
+   "lang": "ta",
+   "input": "Murugan",
+   "gold": [
+    "முருகன்"
+   ]
+  },
+  {
+   "id": "ta-38",
+   "lang": "ta",
+   "input": "Lakshmi",
+   "gold": [
+    "லட்சுமி",
+    "லக்ஷ்மி"
+   ]
+  },
+  {
+   "id": "ta-39",
+   "lang": "ta",
+   "input": "Senthil Kumar",
+   "gold": [
+    "செந்தில் குமார்"
+   ]
+  },
+  {
+   "id": "ta-40",
+   "lang": "ta",
+   "input": "Kavitha",
+   "gold": [
+    "கவிதா"
+   ]
+  },
+  {
+   "id": "ta-41",
+   "lang": "ta",
+   "input": "Karthik",
+   "gold": [
+    "கார்த்திக்"
+   ]
+  },
+  {
+   "id": "ta-42",
+   "lang": "ta",
+   "input": "Meenakshi",
+   "gold": [
+    "மீனாட்சி"
+   ]
+  },
+  {
+   "id": "ta-43",
+   "lang": "ta",
+   "input": "Arun",
+   "gold": [
+    "அருண்"
+   ]
+  },
+  {
+   "id": "ta-44",
+   "lang": "ta",
+   "input": "Vijay",
+   "gold": [
+    "விஜய்"
+   ]
+  },
+  {
+   "id": "ta-45",
+   "lang": "ta",
+   "input": "Selvi",
+   "gold": [
+    "செல்வி"
+   ]
+  },
+  {
+   "id": "ta-46",
+   "lang": "ta",
+   "input": "Aavin",
+   "gold": [
+    "ஆவின்"
+   ]
+  },
+  {
+   "id": "ta-47",
+   "lang": "ta",
+   "input": "Saravana Stores",
+   "gold": [
+    "சரவணா ஸ்டோர்ஸ்"
+   ]
+  },
+  {
+   "id": "ta-48",
+   "lang": "ta",
+   "input": "Pothys",
+   "gold": [
+    "போத்தீஸ்"
+   ]
+  },
+  {
+   "id": "ta-49",
+   "lang": "ta",
+   "input": "Idhayam",
+   "gold": [
+    "இதயம்"
+   ]
+  },
+  {
+   "id": "bn-50",
+   "lang": "bn",
+   "input": "Kolkata",
+   "gold": [
+    "কলকাতা"
+   ]
+  },
+  {
+   "id": "bn-51",
+   "lang": "bn",
+   "input": "Howrah",
+   "gold": [
+    "হাওড়া"
+   ]
+  },
+  {
+   "id": "bn-52",
+   "lang": "bn",
+   "input": "Siliguri",
+   "gold": [
+    "শিলিগুড়ি"
+   ]
+  },
+  {
+   "id": "bn-53",
+   "lang": "bn",
+   "input": "Durgapur",
+   "gold": [
+    "দুর্গাপুর"
+   ]
+  },
+  {
+   "id": "bn-54",
+   "lang": "bn",
+   "input": "Asansol",
+   "gold": [
+    "আসানসোল"
+   ]
+  },
+  {
+   "id": "bn-55",
+   "lang": "bn",
+   "input": "Darjeeling",
+   "gold": [
+    "দার্জিলিং"
+   ]
+  },
+  {
+   "id": "bn-56",
+   "lang": "bn",
+   "input": "Shantiniketan",
+   "gold": [
+    "শান্তিনিকেতন"
+   ]
+  },
+  {
+   "id": "bn-57",
+   "lang": "bn",
+   "input": "Bardhaman",
+   "gold": [
+    "বর্ধমান"
+   ]
+  },
+  {
+   "id": "bn-58",
+   "lang": "bn",
+   "input": "Salt Lake",
+   "gold": [
+    "সল্টলেক",
+    "সল্ট লেক"
+   ]
+  },
+  {
+   "id": "bn-59",
+   "lang": "bn",
+   "input": "Gariahat",
+   "gold": [
+    "গড়িয়াহাট"
+   ]
+  },
+  {
+   "id": "bn-60",
+   "lang": "bn",
+   "input": "Dhakuria",
+   "gold": [
+    "ঢাকুরিয়া"
+   ]
+  },
+  {
+   "id": "bn-61",
+   "lang": "bn",
+   "input": "Bankura",
+   "gold": [
+    "বাঁকুড়া"
+   ]
+  },
+  {
+   "id": "bn-62",
+   "lang": "bn",
+   "input": "Kalighat",
+   "gold": [
+    "কালীঘাট"
+   ]
+  },
+  {
+   "id": "bn-63",
+   "lang": "bn",
+   "input": "Dakshineswar",
+   "gold": [
+    "দক্ষিণেশ্বর"
+   ]
+  },
+  {
+   "id": "bn-64",
+   "lang": "bn",
+   "input": "Behala",
+   "gold": [
+    "বেহালা"
+   ]
+  },
+  {
+   "id": "bn-65",
+   "lang": "bn",
+   "input": "Jadavpur",
+   "gold": [
+    "যাদবপুর"
+   ]
+  },
+  {
+   "id": "bn-66",
+   "lang": "bn",
+   "input": "Sourav Ganguly",
+   "gold": [
+    "সৌরভ গাঙ্গুলী",
+    "সৌরভ গাঙ্গুলি"
+   ]
+  },
+  {
+   "id": "bn-67",
+   "lang": "bn",
+   "input": "Arijit Singh",
+   "gold": [
+    "অরিজিৎ সিং",
+    "অরিজিত সিং"
+   ]
+  },
+  {
+   "id": "bn-68",
+   "lang": "bn",
+   "input": "Subhas Bose",
+   "gold": [
+    "সুভাষ বোস",
+    "সুভাষ বসু"
+   ]
+  },
+  {
+   "id": "bn-69",
+   "lang": "bn",
+   "input": "Debashis Roy",
+   "gold": [
+    "দেবাশিস রায়",
+    "দেবাশীষ রায়",
+    "দেবাশিষ রায়"
+   ]
+  },
+  {
+   "id": "bn-70",
+   "lang": "bn",
+   "input": "Ananya Das",
+   "gold": [
+    "অনন্যা দাস"
+   ]
+  },
+  {
+   "id": "bn-71",
+   "lang": "bn",
+   "input": "Tanmoy Chatterjee",
+   "gold": [
+    "তন্ময় চ্যাটার্জী",
+    "তন্ময় চ্যাটার্জি",
+    "তন্ময় চট্টোপাধ্যায়"
+   ]
+  },
+  {
+   "id": "bn-72",
+   "lang": "bn",
+   "input": "Rituparna Sen",
+   "gold": [
+    "ঋতুপর্ণা সেন",
+    "ঋতুপর্ণ সেন"
+   ]
+  },
+  {
+   "id": "bn-73",
+   "lang": "bn",
+   "input": "Moumita Ghosh",
+   "gold": [
+    "মৌমিতা ঘোষ"
+   ]
+  },
+  {
+   "id": "bn-74",
+   "lang": "bn",
+   "input": "Biswajit Mondal",
+   "gold": [
+    "বিশ্বজিৎ মণ্ডল",
+    "বিশ্বজিৎ মন্ডল"
+   ]
+  },
+  {
+   "id": "mr-75",
+   "lang": "mr",
+   "input": "Pune",
+   "gold": [
+    "पुणे"
+   ]
+  },
+  {
+   "id": "mr-76",
+   "lang": "mr",
+   "input": "Nashik",
+   "gold": [
+    "नाशिक"
+   ]
+  },
+  {
+   "id": "mr-77",
+   "lang": "mr",
+   "input": "Kolhapur",
+   "gold": [
+    "कोल्हापूर"
+   ]
+  },
+  {
+   "id": "mr-78",
+   "lang": "mr",
+   "input": "Aurangabad",
+   "gold": [
+    "औरंगाबाद"
+   ]
+  },
+  {
+   "id": "mr-79",
+   "lang": "mr",
+   "input": "Nagpur",
+   "gold": [
+    "नागपूर"
+   ]
+  },
+  {
+   "id": "mr-80",
+   "lang": "mr",
+   "input": "Solapur",
+   "gold": [
+    "सोलापूर"
+   ]
+  },
+  {
+   "id": "mr-81",
+   "lang": "mr",
+   "input": "Satara",
+   "gold": [
+    "सातारा"
+   ]
+  },
+  {
+   "id": "mr-82",
+   "lang": "mr",
+   "input": "Sangli",
+   "gold": [
+    "सांगली"
+   ]
+  },
+  {
+   "id": "mr-83",
+   "lang": "mr",
+   "input": "Ratnagiri",
+   "gold": [
+    "रत्नागिरी"
+   ]
+  },
+  {
+   "id": "mr-84",
+   "lang": "mr",
+   "input": "Thane",
+   "gold": [
+    "ठाणे"
+   ]
+  },
+  {
+   "id": "mr-85",
+   "lang": "mr",
+   "input": "Dadar",
+   "gold": [
+    "दादर"
+   ]
+  },
+  {
+   "id": "mr-86",
+   "lang": "mr",
+   "input": "Shivaji Park",
+   "gold": [
+    "शिवाजी पार्क"
+   ]
+  },
+  {
+   "id": "mr-87",
+   "lang": "mr",
+   "input": "Lonavala",
+   "gold": [
+    "लोणावळा"
+   ]
+  },
+  {
+   "id": "mr-88",
+   "lang": "mr",
+   "input": "Mahabaleshwar",
+   "gold": [
+    "महाबळेश्वर"
+   ]
+  },
+  {
+   "id": "mr-89",
+   "lang": "mr",
+   "input": "Sachin Tendulkar",
+   "gold": [
+    "सचिन तेंडुलकर"
+   ]
+  },
+  {
+   "id": "mr-90",
+   "lang": "mr",
+   "input": "Lata Mangeshkar",
+   "gold": [
+    "लता मंगेशकर"
+   ]
+  },
+  {
+   "id": "mr-91",
+   "lang": "mr",
+   "input": "Shivaji Maharaj",
+   "gold": [
+    "शिवाजी महाराज"
+   ]
+  },
+  {
+   "id": "mr-92",
+   "lang": "mr",
+   "input": "Pallavi Joshi",
+   "gold": [
+    "पल्लवी जोशी"
+   ]
+  },
+  {
+   "id": "mr-93",
+   "lang": "mr",
+   "input": "Sanjay Patil",
+   "gold": [
+    "संजय पाटील"
+   ]
+  },
+  {
+   "id": "mr-94",
+   "lang": "mr",
+   "input": "Vaishali Deshmukh",
+   "gold": [
+    "वैशाली देशमुख"
+   ]
+  },
+  {
+   "id": "mr-95",
+   "lang": "mr",
+   "input": "Amol Kulkarni",
+   "gold": [
+    "अमोल कुलकर्णी"
+   ]
+  },
+  {
+   "id": "mr-96",
+   "lang": "mr",
+   "input": "Snehal Jadhav",
+   "gold": [
+    "स्नेहल जाधव"
+   ]
+  },
+  {
+   "id": "mr-97",
+   "lang": "mr",
+   "input": "Chitale Bandhu",
+   "gold": [
+    "चितळे बंधू"
+   ]
+  },
+  {
+   "id": "mr-98",
+   "lang": "mr",
+   "input": "Gokul",
+   "gold": [
+    "गोकुळ"
+   ]
+  },
+  {
+   "id": "mr-99",
+   "lang": "mr",
+   "input": "Kaka Halwai",
+   "gold": [
+    "काका हलवाई"
+   ]
+  }
+ ]
+}

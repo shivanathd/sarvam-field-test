@@ -1,0 +1,2124 @@
+{
+ "uc": "uc03_documents",
+ "title": "Documents: KYC, GST invoices, land records and bills in Indian scripts",
+ "business_question": "Can I digitise Indian-language business documents (GST invoices, KYC forms, land records, utility bills, ration cards) into correct structured fields, from clean scans and from phone photos, and which stack should I use?",
+ "dataset": {
+  "name": "uc03-synthetic-indic-docs",
+  "source": "authored for this benchmark (suites/uc03_documents/make_data.py); rendered with macOS system fonts via CoreText",
+  "license": "CC0 (synthetic); fonts are macOS system fonts used only to render images",
+  "n": 60,
+  "n_images": 136,
+  "conditions": [
+   "clean",
+   "photo",
+   "harsh"
+  ],
+  "languages": [
+   "bn",
+   "gu",
+   "hi",
+   "kn",
+   "ml",
+   "mr",
+   "ta",
+   "te"
+  ],
+  "scripts": {
+   "Devanagari": 23,
+   "Gujarati": 4,
+   "Tamil": 13,
+   "Malayalam": 5,
+   "Kannada": 5,
+   "Telugu": 5,
+   "Bengali": 5
+  },
+  "doc_types": {
+   "gst_invoice": 12,
+   "kyc_form": 10,
+   "land_7_12": 10,
+   "patta": 10,
+   "electricity_bill": 10,
+   "ration_card": 8
+  },
+  "fields_scored": 756,
+  "synthetic": true
+ },
+ "systems": [
+  "sarvam-vision",
+  "gemini-3.8-flash-ocr",
+  "sarvam-vision+sarvam-105b",
+  "sarvam-vision+gemini-3.8-flash",
+  "gemini-3.8-flash",
+  "openai:gpt-5.4-mini",
+  "or:anthropic/claude-haiku-5.5",
+  "gemini-pro-latest",
+  "openai:gpt-5.5",
+  "or:anthropic/claude-sonnet-5.5"
+ ],
+ "metrics": [
+  {
+   "name": "field exact-match accuracy (clean)",
+   "higher_is_better": true,
+   "unit": "fraction of fields",
+   "values": {
+    "sarvam-vision+sarvam-105b": {
+     "mean": 0.9948717948717949,
+     "lo": 0.9897435897435898,
+     "hi": 0.9987179487179486,
+     "n": 60
+    },
+    "sarvam-vision+gemini-3.8-flash": {
+     "mean": 0.9948717948717949,
+     "lo": 0.9897435897435898,
+     "hi": 0.9987179487179486,
+     "n": 60
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9956876456876457,
+     "lo": 0.9900932400932401,
+     "hi": 1.0,
+     "n": 60
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.8910922410922412,
+     "lo": 0.863894438894439,
+     "hi": 0.9160006660006661,
+     "n": 60
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9974358974358974,
+     "lo": 0.9935897435897435,
+     "hi": 1.0,
+     "n": 60
+    },
+    "gemini-pro-latest": {
+     "mean": null,
+     "lo": null,
+     "hi": null,
+     "n": 0
+    },
+    "openai:gpt-5.5": {
+     "mean": null,
+     "lo": null,
+     "hi": null,
+     "n": 0
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": null,
+     "lo": null,
+     "hi": null,
+     "n": 0
+    }
+   }
+  },
+  {
+   "name": "pages with every field correct (clean)",
+   "higher_is_better": true,
+   "unit": "fraction of pages",
+   "values": {
+    "sarvam-vision+sarvam-105b": {
+     "mean": 0.9333333333333333,
+     "lo": 0.8666666666666667,
+     "hi": 0.9833333333333333,
+     "n": 60
+    },
+    "sarvam-vision+gemini-3.8-flash": {
+     "mean": 0.9333333333333333,
+     "lo": 0.8666666666666667,
+     "hi": 0.9833333333333333,
+     "n": 60
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.95,
+     "lo": 0.8833333333333333,
+     "hi": 1.0,
+     "n": 60
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.3,
+     "lo": 0.18333333333333332,
+     "hi": 0.4166666666666667,
+     "n": 60
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9166666666666666,
+     "hi": 1.0,
+     "n": 60
+    },
+    "gemini-pro-latest": {
+     "mean": null,
+     "lo": null,
+     "hi": null,
+     "n": 0
+    },
+    "openai:gpt-5.5": {
+     "mean": null,
+     "lo": null,
+     "hi": null,
+     "n": 0
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": null,
+     "lo": null,
+     "hi": null,
+     "n": 0
+    }
+   }
+  },
+  {
+   "name": "character error rate vs gold text (clean)",
+   "higher_is_better": false,
+   "unit": "CER (capped at 1)",
+   "values": {
+    "sarvam-vision": {
+     "mean": 0.01965226189419487,
+     "lo": 0.011600914735484517,
+     "hi": 0.02777744866216959,
+     "n": 60
+    },
+    "gemini-3.8-flash-ocr": {
+     "mean": 0.02255233106048008,
+     "lo": 0.0018217301890621526,
+     "hi": 0.060340789712200756,
+     "n": 60
+    }
+   }
+  },
+  {
+   "name": "gold-word recall (order-free) (clean)",
+   "higher_is_better": true,
+   "unit": "fraction of gold words",
+   "values": {
+    "sarvam-vision": {
+     "mean": 0.999177570093458,
+     "lo": 0.9984999999999999,
+     "hi": 0.9998333333333334,
+     "n": 60
+    },
+    "gemini-3.8-flash-ocr": {
+     "mean": 0.998344126471249,
+     "lo": 0.9968186793190628,
+     "hi": 0.9995601851851852,
+     "n": 60
+    }
+   }
+  },
+  {
+   "name": "field exact-match accuracy (photo)",
+   "higher_is_better": true,
+   "unit": "fraction of fields",
+   "values": {
+    "sarvam-vision+sarvam-105b": {
+     "mean": 0.9933760683760684,
+     "lo": 0.9879273504273505,
+     "hi": 0.9986111111111111,
+     "n": 60
+    },
+    "sarvam-vision+gemini-3.8-flash": {
+     "mean": 0.9947649572649573,
+     "lo": 0.9895299145299145,
+     "hi": 0.9987179487179486,
+     "n": 60
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9932345432345432,
+     "lo": 0.9874070374070374,
+     "hi": 0.9986111111111111,
+     "n": 60
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.833387445887446,
+     "lo": 0.7870934620934621,
+     "hi": 0.8757450882450882,
+     "n": 60
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9881105006105007,
+     "lo": 0.9805860805860805,
+     "hi": 0.9947496947496948,
+     "n": 60
+    },
+    "gemini-pro-latest": {
+     "mean": 0.9619309262166406,
+     "lo": 0.9340659340659341,
+     "hi": 0.989010989010989,
+     "n": 14
+    },
+    "openai:gpt-5.5": {
+     "mean": 0.9945054945054945,
+     "lo": 0.9835164835164836,
+     "hi": 1.0,
+     "n": 14
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 14
+    }
+   }
+  },
+  {
+   "name": "pages with every field correct (photo)",
+   "higher_is_better": true,
+   "unit": "fraction of pages",
+   "values": {
+    "sarvam-vision+sarvam-105b": {
+     "mean": 0.9166666666666666,
+     "lo": 0.85,
+     "hi": 0.9833333333333333,
+     "n": 60
+    },
+    "sarvam-vision+gemini-3.8-flash": {
+     "mean": 0.9333333333333333,
+     "lo": 0.8666666666666667,
+     "hi": 0.9833333333333333,
+     "n": 60
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9166666666666666,
+     "lo": 0.85,
+     "hi": 0.9833333333333333,
+     "n": 60
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.26666666666666666,
+     "lo": 0.16666666666666666,
+     "hi": 0.38333333333333336,
+     "n": 60
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.85,
+     "lo": 0.75,
+     "hi": 0.9333333333333333,
+     "n": 60
+    },
+    "gemini-pro-latest": {
+     "mean": 0.6428571428571429,
+     "lo": 0.42857142857142855,
+     "hi": 0.8571428571428571,
+     "n": 14
+    },
+    "openai:gpt-5.5": {
+     "mean": 0.9285714285714286,
+     "lo": 0.7857142857142857,
+     "hi": 1.0,
+     "n": 14
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 14
+    }
+   }
+  },
+  {
+   "name": "character error rate vs gold text (photo)",
+   "higher_is_better": false,
+   "unit": "CER (capped at 1)",
+   "values": {
+    "sarvam-vision": {
+     "mean": 0.01500920028184574,
+     "lo": 0.008105226668433224,
+     "hi": 0.021846594688219364,
+     "n": 60
+    },
+    "gemini-3.8-flash-ocr": {
+     "mean": 0.004224039675143701,
+     "lo": 0.0009675731278716609,
+     "hi": 0.009354609034607034,
+     "n": 60
+    }
+   }
+  },
+  {
+   "name": "gold-word recall (order-free) (photo)",
+   "higher_is_better": true,
+   "unit": "fraction of gold words",
+   "values": {
+    "sarvam-vision": {
+     "mean": 0.9950002915050354,
+     "lo": 0.9913452672648856,
+     "hi": 0.997821920375573,
+     "n": 60
+    },
+    "gemini-3.8-flash-ocr": {
+     "mean": 0.9943827350074215,
+     "lo": 0.989256342497778,
+     "hi": 0.998266746702279,
+     "n": 60
+    }
+   }
+  },
+  {
+   "name": "field exact-match accuracy (harsh)",
+   "higher_is_better": true,
+   "unit": "fraction of fields",
+   "values": {
+    "sarvam-vision+sarvam-105b": {
+     "mean": 0.855779637029637,
+     "lo": 0.784965034965035,
+     "hi": 0.9209020146520147,
+     "n": 16
+    },
+    "sarvam-vision+gemini-3.8-flash": {
+     "mean": 0.8654522560772561,
+     "lo": 0.7965888278388279,
+     "hi": 0.924232017982018,
+     "n": 16
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9276920995670995,
+     "lo": 0.8717532467532467,
+     "hi": 0.9724702380952381,
+     "n": 16
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.5614801864801865,
+     "lo": 0.43525224775224775,
+     "hi": 0.6853927322677322,
+     "n": 16
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.7641108891108891,
+     "lo": 0.6333041958041958,
+     "hi": 0.8808379120879121,
+     "n": 16
+    },
+    "gemini-pro-latest": {
+     "mean": 0.9097360972360973,
+     "lo": 0.86500999000999,
+     "hi": 0.9486451048951049,
+     "n": 16
+    },
+    "openai:gpt-5.5": {
+     "mean": 0.6115186896436896,
+     "lo": 0.5112387612387612,
+     "hi": 0.7228396603396603,
+     "n": 16
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.9322864635364635,
+     "lo": 0.8879818098568099,
+     "hi": 0.9743589743589743,
+     "n": 16
+    }
+   }
+  },
+  {
+   "name": "pages with every field correct (harsh)",
+   "higher_is_better": true,
+   "unit": "fraction of pages",
+   "values": {
+    "sarvam-vision+sarvam-105b": {
+     "mean": 0.25,
+     "lo": 0.0625,
+     "hi": 0.4375,
+     "n": 16
+    },
+    "sarvam-vision+gemini-3.8-flash": {
+     "mean": 0.25,
+     "lo": 0.0625,
+     "hi": 0.4375,
+     "n": 16
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.5625,
+     "lo": 0.3125,
+     "hi": 0.8125,
+     "n": 16
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.0625,
+     "lo": 0.0,
+     "hi": 0.1875,
+     "n": 16
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.25,
+     "lo": 0.0625,
+     "hi": 0.5,
+     "n": 16
+    },
+    "gemini-pro-latest": {
+     "mean": 0.3125,
+     "lo": 0.125,
+     "hi": 0.5625,
+     "n": 16
+    },
+    "openai:gpt-5.5": {
+     "mean": 0.0625,
+     "lo": 0.0,
+     "hi": 0.1875,
+     "n": 16
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.5625,
+     "lo": 0.3125,
+     "hi": 0.8125,
+     "n": 16
+    }
+   }
+  },
+  {
+   "name": "character error rate vs gold text (harsh)",
+   "higher_is_better": false,
+   "unit": "CER (capped at 1)",
+   "values": {
+    "sarvam-vision": {
+     "mean": 0.19265166508548698,
+     "lo": 0.12292933390570342,
+     "hi": 0.27082273054182615,
+     "n": 16
+    },
+    "gemini-3.8-flash-ocr": {
+     "mean": 0.02756681217338041,
+     "lo": 0.015957551482204294,
+     "hi": 0.0407269895677333,
+     "n": 16
+    }
+   }
+  },
+  {
+   "name": "gold-word recall (order-free) (harsh)",
+   "higher_is_better": true,
+   "unit": "fraction of gold words",
+   "values": {
+    "sarvam-vision": {
+     "mean": 0.8412927745496104,
+     "lo": 0.7808435392201211,
+     "hi": 0.8914662217690301,
+     "n": 16
+    },
+    "gemini-3.8-flash-ocr": {
+     "mean": 0.9460288185200482,
+     "lo": 0.9228284131133009,
+     "hi": 0.9679879223801745,
+     "n": 16
+    }
+   }
+  },
+  {
+   "name": "field exact-match accuracy (frontier subset: 16 harsh + 14 phone photos)",
+   "higher_is_better": true,
+   "unit": "fraction of fields",
+   "values": {
+    "sarvam-vision+sarvam-105b": {
+     "mean": 0.917954267954268,
+     "lo": 0.8717393717393718,
+     "hi": 0.9578976578976579,
+     "n": 30
+    },
+    "sarvam-vision+gemini-3.8-flash": {
+     "mean": 0.9231129981129982,
+     "lo": 0.878998778998779,
+     "hi": 0.9601259851259851,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9564907314907315,
+     "lo": 0.9251803751803752,
+     "hi": 0.9836219336219336,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.7322399822399822,
+     "lo": 0.6346792096792097,
+     "hi": 0.8236430236430237,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.8668664668664668,
+     "lo": 0.7831779331779332,
+     "hi": 0.9351093351093351,
+     "n": 30
+    },
+    "gemini-pro-latest": {
+     "mean": 0.9340936840936841,
+     "lo": 0.90493117993118,
+     "hi": 0.9615606615606616,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 0.7902458652458653,
+     "lo": 0.6976273726273726,
+     "hi": 0.8781440781440781,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.9638861138861139,
+     "lo": 0.9371572871572872,
+     "hi": 0.9886363636363636,
+     "n": 30
+    }
+   }
+  },
+  {
+   "name": "pages with every field correct (frontier subset: 16 harsh + 14 phone photos)",
+   "higher_is_better": true,
+   "unit": "fraction of pages",
+   "values": {
+    "sarvam-vision+sarvam-105b": {
+     "mean": 0.5333333333333333,
+     "lo": 0.36666666666666664,
+     "hi": 0.7,
+     "n": 30
+    },
+    "sarvam-vision+gemini-3.8-flash": {
+     "mean": 0.5333333333333333,
+     "lo": 0.36666666666666664,
+     "hi": 0.7,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.7,
+     "lo": 0.5333333333333333,
+     "hi": 0.8666666666666667,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.16666666666666666,
+     "lo": 0.03333333333333333,
+     "hi": 0.3,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.5,
+     "lo": 0.3333333333333333,
+     "hi": 0.6666666666666666,
+     "n": 30
+    },
+    "gemini-pro-latest": {
+     "mean": 0.4666666666666667,
+     "lo": 0.3,
+     "hi": 0.6333333333333333,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 0.4666666666666667,
+     "lo": 0.3,
+     "hi": 0.6333333333333333,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.7666666666666667,
+     "lo": 0.6,
+     "hi": 0.9,
+     "n": 30
+    }
+   }
+  }
+ ],
+ "per_language": {
+  "field accuracy by script (clean)": {
+   "Devanagari": {
+    "sarvam-vision+sarvam-105b": 0.9967,
+    "sarvam-vision+gemini-3.8-flash": 0.9967,
+    "gemini-3.8-flash": 0.9967,
+    "openai:gpt-5.4-mini": 0.872,
+    "or:anthropic/claude-haiku-5.5": 0.9967
+   },
+   "Gujarati": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.9464,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   },
+   "Tamil": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.8297,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   },
+   "Malayalam": {
+    "sarvam-vision+sarvam-105b": 0.9538,
+    "sarvam-vision+gemini-3.8-flash": 0.9538,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.9692,
+    "or:anthropic/claude-haiku-5.5": 0.9846
+   },
+   "Kannada": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.9538,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   },
+   "Telugu": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.9538,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   },
+   "Bengali": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 0.9636,
+    "openai:gpt-5.4-mini": 0.8909,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   }
+  },
+  "field accuracy by script (photo)": {
+   "Devanagari": {
+    "sarvam-vision+sarvam-105b": 0.9894,
+    "sarvam-vision+gemini-3.8-flash": 0.993,
+    "gemini-3.8-flash": 0.9863,
+    "openai:gpt-5.4-mini": 0.757,
+    "or:anthropic/claude-haiku-5.5": 0.9721,
+    "gemini-pro-latest": 0.9615,
+    "openai:gpt-5.5": 0.9872,
+    "or:anthropic/claude-sonnet-5.5": 1.0
+   },
+   "Gujarati": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.9107,
+    "or:anthropic/claude-haiku-5.5": 0.9821,
+    "gemini-pro-latest": 0.9762,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0
+   },
+   "Tamil": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.8095,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0
+   },
+   "Malayalam": {
+    "sarvam-vision+sarvam-105b": 0.9692,
+    "sarvam-vision+gemini-3.8-flash": 0.9692,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.9692,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 0.9231,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0
+   },
+   "Kannada": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.9231,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   },
+   "Telugu": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.9385,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   },
+   "Bengali": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 0.9818,
+    "openai:gpt-5.4-mini": 0.8545,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   }
+  },
+  "field accuracy by script (harsh)": {
+   "Devanagari": {
+    "sarvam-vision+sarvam-105b": 0.7624,
+    "sarvam-vision+gemini-3.8-flash": 0.7964,
+    "gemini-3.8-flash": 0.9032,
+    "openai:gpt-5.4-mini": 0.4913,
+    "or:anthropic/claude-haiku-5.5": 0.7622,
+    "gemini-pro-latest": 0.9199,
+    "openai:gpt-5.5": 0.5706,
+    "or:anthropic/claude-sonnet-5.5": 0.8811
+   },
+   "Gujarati": {
+    "sarvam-vision+sarvam-105b": 0.9286,
+    "sarvam-vision+gemini-3.8-flash": 0.9286,
+    "gemini-3.8-flash": 0.9286,
+    "openai:gpt-5.4-mini": 0.5714,
+    "or:anthropic/claude-haiku-5.5": 0.8571,
+    "gemini-pro-latest": 0.9286,
+    "openai:gpt-5.5": 0.5714,
+    "or:anthropic/claude-sonnet-5.5": 1.0
+   },
+   "Tamil": {
+    "sarvam-vision+sarvam-105b": 0.8651,
+    "sarvam-vision+gemini-3.8-flash": 0.8373,
+    "gemini-3.8-flash": 0.9246,
+    "openai:gpt-5.4-mini": 0.4246,
+    "or:anthropic/claude-haiku-5.5": 0.5635,
+    "gemini-pro-latest": 0.9484,
+    "openai:gpt-5.5": 0.5833,
+    "or:anthropic/claude-sonnet-5.5": 0.9722
+   },
+   "Malayalam": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.9231,
+    "or:anthropic/claude-haiku-5.5": 0.9231,
+    "gemini-pro-latest": 0.9231,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0
+   },
+   "Kannada": {
+    "sarvam-vision+sarvam-105b": 0.9615,
+    "sarvam-vision+gemini-3.8-flash": 0.9615,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.7308,
+    "or:anthropic/claude-haiku-5.5": 0.9615,
+    "gemini-pro-latest": 0.8846,
+    "openai:gpt-5.5": 0.6538,
+    "or:anthropic/claude-sonnet-5.5": 1.0
+   },
+   "Telugu": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.7692,
+    "or:anthropic/claude-haiku-5.5": 0.7692,
+    "gemini-pro-latest": 0.9231,
+    "openai:gpt-5.5": 0.6154,
+    "or:anthropic/claude-sonnet-5.5": 0.9231
+   },
+   "Bengali": {
+    "sarvam-vision+sarvam-105b": 0.9091,
+    "sarvam-vision+gemini-3.8-flash": 0.9091,
+    "gemini-3.8-flash": 0.8182,
+    "openai:gpt-5.4-mini": 0.5455,
+    "or:anthropic/claude-haiku-5.5": 0.7273,
+    "gemini-pro-latest": 0.7273,
+    "openai:gpt-5.5": 0.5455,
+    "or:anthropic/claude-sonnet-5.5": 0.9091
+   }
+  },
+  "CER by script (clean)": {
+   "Devanagari": {
+    "sarvam-vision": 0.0498,
+    "gemini-3.8-flash-ocr": 0.0483
+   },
+   "Gujarati": {
+    "sarvam-vision": 0.0,
+    "gemini-3.8-flash-ocr": 0.0
+   },
+   "Tamil": {
+    "sarvam-vision": 0.0,
+    "gemini-3.8-flash-ocr": 0.0
+   },
+   "Malayalam": {
+    "sarvam-vision": 0.0014,
+    "gemini-3.8-flash-ocr": 0.0
+   },
+   "Kannada": {
+    "sarvam-vision": 0.0053,
+    "gemini-3.8-flash-ocr": 0.0
+   },
+   "Telugu": {
+    "sarvam-vision": 0.0,
+    "gemini-3.8-flash-ocr": 0.0015
+   },
+   "Bengali": {
+    "sarvam-vision": 0.0,
+    "gemini-3.8-flash-ocr": 0.0469
+   }
+  },
+  "CER by script (photo)": {
+   "Devanagari": {
+    "sarvam-vision": 0.0308,
+    "gemini-3.8-flash-ocr": 0.002
+   },
+   "Gujarati": {
+    "sarvam-vision": 0.0302,
+    "gemini-3.8-flash-ocr": 0.0004
+   },
+   "Tamil": {
+    "sarvam-vision": 0.0002,
+    "gemini-3.8-flash-ocr": 0.0
+   },
+   "Malayalam": {
+    "sarvam-vision": 0.0011,
+    "gemini-3.8-flash-ocr": 0.0004
+   },
+   "Kannada": {
+    "sarvam-vision": 0.0105,
+    "gemini-3.8-flash-ocr": 0.0043
+   },
+   "Telugu": {
+    "sarvam-vision": 0.002,
+    "gemini-3.8-flash-ocr": 0.0015
+   },
+   "Bengali": {
+    "sarvam-vision": 0.0,
+    "gemini-3.8-flash-ocr": 0.0347
+   }
+  },
+  "CER by script (harsh)": {
+   "Devanagari": {
+    "sarvam-vision": 0.2047,
+    "gemini-3.8-flash-ocr": 0.0185
+   },
+   "Gujarati": {
+    "sarvam-vision": 0.0825,
+    "gemini-3.8-flash-ocr": 0.0034
+   },
+   "Tamil": {
+    "sarvam-vision": 0.3204,
+    "gemini-3.8-flash-ocr": 0.0378
+   },
+   "Malayalam": {
+    "sarvam-vision": 0.0766,
+    "gemini-3.8-flash-ocr": 0.0481
+   },
+   "Kannada": {
+    "sarvam-vision": 0.0685,
+    "gemini-3.8-flash-ocr": 0.05
+   },
+   "Telugu": {
+    "sarvam-vision": 0.1804,
+    "gemini-3.8-flash-ocr": 0.0309
+   },
+   "Bengali": {
+    "sarvam-vision": 0.2118,
+    "gemini-3.8-flash-ocr": 0.0156
+   }
+  }
+ },
+ "per_doc_type": {
+  "field accuracy by document type (clean)": {
+   "gst_invoice": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.9464,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   },
+   "kyc_form": {
+    "sarvam-vision+sarvam-105b": 0.9692,
+    "sarvam-vision+gemini-3.8-flash": 0.9692,
+    "gemini-3.8-flash": 0.9923,
+    "openai:gpt-5.4-mini": 0.9615,
+    "or:anthropic/claude-haiku-5.5": 0.9846
+   },
+   "land_7_12": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.75,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   },
+   "patta": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.8,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   },
+   "electricity_bill": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.9538,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   },
+   "ration_card": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 0.9773,
+    "openai:gpt-5.4-mini": 0.9318,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   }
+  },
+  "field accuracy by document type (photo)": {
+   "gst_invoice": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 0.994,
+    "openai:gpt-5.4-mini": 0.9226,
+    "or:anthropic/claude-haiku-5.5": 0.9881,
+    "gemini-pro-latest": 0.9911,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0
+   },
+   "kyc_form": {
+    "sarvam-vision+sarvam-105b": 0.9769,
+    "sarvam-vision+gemini-3.8-flash": 0.9769,
+    "gemini-3.8-flash": 0.9923,
+    "openai:gpt-5.4-mini": 0.9692,
+    "or:anthropic/claude-haiku-5.5": 0.9846,
+    "gemini-pro-latest": 0.9231,
+    "openai:gpt-5.5": 0.9872,
+    "or:anthropic/claude-sonnet-5.5": 1.0
+   },
+   "land_7_12": {
+    "sarvam-vision+sarvam-105b": 0.9833,
+    "sarvam-vision+gemini-3.8-flash": 0.9917,
+    "gemini-3.8-flash": 0.9833,
+    "openai:gpt-5.4-mini": 0.5083,
+    "or:anthropic/claude-haiku-5.5": 0.9583
+   },
+   "patta": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.7667,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   },
+   "electricity_bill": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.9308,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   },
+   "ration_card": {
+    "sarvam-vision+sarvam-105b": 1.0,
+    "sarvam-vision+gemini-3.8-flash": 1.0,
+    "gemini-3.8-flash": 0.9886,
+    "openai:gpt-5.4-mini": 0.8977,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   }
+  },
+  "field accuracy by document type (harsh)": {
+   "gst_invoice": {
+    "sarvam-vision+sarvam-105b": 0.8214,
+    "sarvam-vision+gemini-3.8-flash": 0.8393,
+    "gemini-3.8-flash": 0.9286,
+    "openai:gpt-5.4-mini": 0.5,
+    "or:anthropic/claude-haiku-5.5": 0.8571,
+    "gemini-pro-latest": 0.9286,
+    "openai:gpt-5.5": 0.5893,
+    "or:anthropic/claude-sonnet-5.5": 0.9643
+   },
+   "kyc_form": {
+    "sarvam-vision+sarvam-105b": 0.9744,
+    "sarvam-vision+gemini-3.8-flash": 0.9744,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.8974,
+    "or:anthropic/claude-haiku-5.5": 0.9744,
+    "gemini-pro-latest": 0.9487,
+    "openai:gpt-5.5": 0.9231,
+    "or:anthropic/claude-sonnet-5.5": 1.0
+   },
+   "land_7_12": {
+    "sarvam-vision+sarvam-105b": 0.5833,
+    "sarvam-vision+gemini-3.8-flash": 0.6667,
+    "gemini-3.8-flash": 0.8333,
+    "openai:gpt-5.4-mini": 0.2083,
+    "or:anthropic/claude-haiku-5.5": 0.5833,
+    "gemini-pro-latest": 0.875,
+    "openai:gpt-5.5": 0.3333,
+    "or:anthropic/claude-sonnet-5.5": 0.7917
+   },
+   "patta": {
+    "sarvam-vision+sarvam-105b": 0.8333,
+    "sarvam-vision+gemini-3.8-flash": 0.7917,
+    "gemini-3.8-flash": 0.9583,
+    "openai:gpt-5.4-mini": 0.4583,
+    "or:anthropic/claude-haiku-5.5": 0.4167,
+    "gemini-pro-latest": 0.9583,
+    "openai:gpt-5.5": 0.625,
+    "or:anthropic/claude-sonnet-5.5": 0.9583
+   },
+   "electricity_bill": {
+    "sarvam-vision+sarvam-105b": 0.9744,
+    "sarvam-vision+gemini-3.8-flash": 0.9744,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.7436,
+    "or:anthropic/claude-haiku-5.5": 0.8974,
+    "gemini-pro-latest": 0.8974,
+    "openai:gpt-5.5": 0.641,
+    "or:anthropic/claude-sonnet-5.5": 0.9744
+   },
+   "ration_card": {
+    "sarvam-vision+sarvam-105b": 0.8636,
+    "sarvam-vision+gemini-3.8-flash": 0.8636,
+    "gemini-3.8-flash": 0.7727,
+    "openai:gpt-5.4-mini": 0.3636,
+    "or:anthropic/claude-haiku-5.5": 0.5909,
+    "gemini-pro-latest": 0.8182,
+    "openai:gpt-5.5": 0.4091,
+    "or:anthropic/claude-sonnet-5.5": 0.8182
+   }
+  }
+ },
+ "most_missed_fields": {
+  "sarvam-vision+sarvam-105b (clean)": [
+   [
+    "kyc_form.pan",
+    3
+   ],
+   [
+    "kyc_form.customer_name",
+    1
+   ]
+  ],
+  "sarvam-vision+sarvam-105b (photo)": [
+   [
+    "kyc_form.pan",
+    3
+   ],
+   [
+    "land_7_12.village",
+    1
+   ],
+   [
+    "land_7_12.taluka",
+    1
+   ]
+  ],
+  "sarvam-vision+sarvam-105b (harsh)": [
+   [
+    "gst_invoice.first_item_hsn",
+    3
+   ],
+   [
+    "gst_invoice.seller_gstin",
+    2
+   ],
+   [
+    "land_7_12.village",
+    2
+   ],
+   [
+    "ration_card.card_number",
+    2
+   ],
+   [
+    "gst_invoice.igst_amount",
+    1
+   ],
+   [
+    "gst_invoice.invoice_number",
+    1
+   ]
+  ],
+  "sarvam-vision+gemini-3.8-flash (clean)": [
+   [
+    "kyc_form.pan",
+    3
+   ],
+   [
+    "kyc_form.customer_name",
+    1
+   ]
+  ],
+  "sarvam-vision+gemini-3.8-flash (photo)": [
+   [
+    "kyc_form.pan",
+    3
+   ],
+   [
+    "land_7_12.taluka",
+    1
+   ]
+  ],
+  "sarvam-vision+gemini-3.8-flash (harsh)": [
+   [
+    "gst_invoice.seller_gstin",
+    2
+   ],
+   [
+    "gst_invoice.first_item_hsn",
+    2
+   ],
+   [
+    "land_7_12.village",
+    2
+   ],
+   [
+    "ration_card.card_number",
+    2
+   ],
+   [
+    "gst_invoice.igst_amount",
+    1
+   ],
+   [
+    "gst_invoice.invoice_number",
+    1
+   ]
+  ],
+  "gemini-3.8-flash (clean)": [
+   [
+    "kyc_form.pan",
+    1
+   ],
+   [
+    "ration_card.father_or_husband_name",
+    1
+   ],
+   [
+    "ration_card.member2_name",
+    1
+   ]
+  ],
+  "gemini-3.8-flash (photo)": [
+   [
+    "land_7_12.taluka",
+    2
+   ],
+   [
+    "gst_invoice.buyer_gstin",
+    1
+   ],
+   [
+    "kyc_form.pan",
+    1
+   ],
+   [
+    "ration_card.member2_name",
+    1
+   ]
+  ],
+  "gemini-3.8-flash (harsh)": [
+   [
+    "gst_invoice.seller_gstin",
+    2
+   ],
+   [
+    "gst_invoice.buyer_gstin",
+    2
+   ],
+   [
+    "ration_card.card_number",
+    2
+   ],
+   [
+    "ration_card.member2_name",
+    2
+   ],
+   [
+    "land_7_12.village",
+    1
+   ],
+   [
+    "land_7_12.area_hectare",
+    1
+   ]
+  ],
+  "openai:gpt-5.4-mini (clean)": [
+   [
+    "patta.owner_name",
+    10
+   ],
+   [
+    "patta.father_name",
+    9
+   ],
+   [
+    "gst_invoice.buyer_name",
+    6
+   ],
+   [
+    "land_7_12.mutation_number",
+    6
+   ],
+   [
+    "land_7_12.survey_number",
+    6
+   ],
+   [
+    "electricity_bill.consumer_name",
+    6
+   ]
+  ],
+  "openai:gpt-5.4-mini (photo)": [
+   [
+    "patta.owner_name",
+    10
+   ],
+   [
+    "patta.father_name",
+    10
+   ],
+   [
+    "land_7_12.mutation_number",
+    9
+   ],
+   [
+    "land_7_12.village",
+    8
+   ],
+   [
+    "land_7_12.occupant_name",
+    8
+   ],
+   [
+    "land_7_12.assessment_rupees",
+    8
+   ]
+  ],
+  "openai:gpt-5.4-mini (harsh)": [
+   [
+    "gst_invoice.seller_name",
+    4
+   ],
+   [
+    "gst_invoice.seller_gstin",
+    4
+   ],
+   [
+    "gst_invoice.buyer_name",
+    4
+   ],
+   [
+    "gst_invoice.first_item_hsn",
+    4
+   ],
+   [
+    "gst_invoice.buyer_gstin",
+    3
+   ],
+   [
+    "electricity_bill.consumer_name",
+    3
+   ]
+  ],
+  "or:anthropic/claude-haiku-5.5 (clean)": [
+   [
+    "kyc_form.pan",
+    2
+   ]
+  ],
+  "or:anthropic/claude-haiku-5.5 (photo)": [
+   [
+    "land_7_12.occupant_name",
+    2
+   ],
+   [
+    "land_7_12.survey_number",
+    2
+   ],
+   [
+    "gst_invoice.cgst_amount",
+    1
+   ],
+   [
+    "gst_invoice.invoice_number",
+    1
+   ],
+   [
+    "kyc_form.gender",
+    1
+   ],
+   [
+    "kyc_form.pan",
+    1
+   ]
+  ],
+  "or:anthropic/claude-haiku-5.5 (harsh)": [
+   [
+    "gst_invoice.first_item_hsn",
+    2
+   ],
+   [
+    "gst_invoice.seller_name",
+    2
+   ],
+   [
+    "land_7_12.survey_number",
+    2
+   ],
+   [
+    "land_7_12.area_hectare",
+    2
+   ],
+   [
+    "land_7_12.assessment_rupees",
+    2
+   ],
+   [
+    "patta.father_name",
+    2
+   ]
+  ],
+  "gemini-pro-latest (clean)": [],
+  "gemini-pro-latest (photo)": [
+   [
+    "kyc_form.aadhaar_last4",
+    4
+   ],
+   [
+    "kyc_form.pan",
+    2
+   ],
+   [
+    "gst_invoice.buyer_name",
+    1
+   ]
+  ],
+  "gemini-pro-latest (harsh)": [
+   [
+    "gst_invoice.seller_gstin",
+    2
+   ],
+   [
+    "kyc_form.aadhaar_last4",
+    2
+   ],
+   [
+    "electricity_bill.consumer_name",
+    2
+   ],
+   [
+    "ration_card.card_number",
+    2
+   ],
+   [
+    "gst_invoice.invoice_date",
+    1
+   ],
+   [
+    "gst_invoice.buyer_gstin",
+    1
+   ]
+  ],
+  "openai:gpt-5.5 (clean)": [],
+  "openai:gpt-5.5 (photo)": [
+   [
+    "kyc_form.pan",
+    1
+   ]
+  ],
+  "openai:gpt-5.5 (harsh)": [
+   [
+    "gst_invoice.invoice_number",
+    4
+   ],
+   [
+    "gst_invoice.seller_gstin",
+    4
+   ],
+   [
+    "gst_invoice.first_item_hsn",
+    4
+   ],
+   [
+    "gst_invoice.seller_name",
+    3
+   ],
+   [
+    "gst_invoice.buyer_gstin",
+    3
+   ],
+   [
+    "electricity_bill.account_number",
+    3
+   ]
+  ],
+  "or:anthropic/claude-sonnet-5.5 (clean)": [],
+  "or:anthropic/claude-sonnet-5.5 (photo)": [],
+  "or:anthropic/claude-sonnet-5.5 (harsh)": [
+   [
+    "land_7_12.village",
+    2
+   ],
+   [
+    "land_7_12.mutation_number",
+    2
+   ],
+   [
+    "gst_invoice.invoice_date",
+    1
+   ],
+   [
+    "gst_invoice.seller_gstin",
+    1
+   ],
+   [
+    "land_7_12.assessment_rupees",
+    1
+   ],
+   [
+    "patta.village",
+    1
+   ]
+  ]
+ },
+ "speed": {
+  "gemini-3.8-flash": {
+   "p50_ms": 5049,
+   "p95_ms": 8736,
+   "n": 136
+  },
+  "gemini-3.8-flash-ocr": {
+   "p50_ms": 5039,
+   "p95_ms": 10230,
+   "n": 136
+  },
+  "sarvam-vision": {
+   "p50_ms": 5890,
+   "p95_ms": 25287,
+   "n": 136
+  },
+  "sarvam-vision+sarvam-105b": {
+   "p50_ms": 9183,
+   "p95_ms": 33460,
+   "n": 136
+  },
+  "sarvam-vision+gemini-3.8-flash": {
+   "p50_ms": 9610,
+   "p95_ms": 27607,
+   "n": 136
+  },
+  "openai:gpt-5.4-mini": {
+   "p50_ms": 1443,
+   "p95_ms": 1823,
+   "n": 136
+  },
+  "or:anthropic/claude-haiku-5.5": {
+   "p50_ms": 2860,
+   "p95_ms": 3820,
+   "n": 136
+  },
+  "or:anthropic/claude-sonnet-5.5": {
+   "p50_ms": 3933,
+   "p95_ms": 9396,
+   "n": 30
+  },
+  "openai:gpt-5.5": {
+   "p50_ms": 9722,
+   "p95_ms": 50275,
+   "n": 30
+  },
+  "gemini-pro-latest": {
+   "p50_ms": 16682,
+   "p95_ms": 87212,
+   "n": 30
+  }
+ },
+ "usage": {
+  "gemini-3.8-flash": {
+   "calls": 136,
+   "in_tok": 177234,
+   "out_tok": 25997,
+   "pages": 0,
+   "reasoning_tok": 0,
+   "cost_usd": 0
+  },
+  "gemini-3.8-flash-ocr": {
+   "calls": 136,
+   "in_tok": 153952,
+   "out_tok": 38790,
+   "pages": 0,
+   "reasoning_tok": 0,
+   "cost_usd": 0
+  },
+  "sarvam-vision": {
+   "calls": 136,
+   "in_tok": 0,
+   "out_tok": 0,
+   "pages": 136,
+   "reasoning_tok": 0,
+   "cost_usd": 0
+  },
+  "sarvam-vision+sarvam-105b": {
+   "calls": 136,
+   "in_tok": 85902,
+   "out_tok": 26094,
+   "pages": 0,
+   "reasoning_tok": 0,
+   "cost_usd": 0
+  },
+  "sarvam-vision+gemini-3.8-flash": {
+   "calls": 136,
+   "in_tok": 85025,
+   "out_tok": 25887,
+   "pages": 0,
+   "reasoning_tok": 0,
+   "cost_usd": 0
+  },
+  "openai:gpt-5.4-mini": {
+   "calls": 136,
+   "in_tok": 312281,
+   "out_tok": 15151,
+   "pages": 0,
+   "reasoning_tok": 0,
+   "cost_usd": 0
+  },
+  "or:anthropic/claude-haiku-5.5": {
+   "calls": 136,
+   "in_tok": 354470,
+   "out_tok": 28654,
+   "pages": 0,
+   "reasoning_tok": 0,
+   "cost_usd": 0.049774000000000006
+  },
+  "or:anthropic/claude-sonnet-5.5": {
+   "calls": 30,
+   "in_tok": 55100,
+   "out_tok": 10367,
+   "pages": 0,
+   "reasoning_tok": 3682,
+   "cost_usd": 0.21387
+  },
+  "openai:gpt-5.5": {
+   "calls": 30,
+   "in_tok": 48329,
+   "out_tok": 33395,
+   "pages": 0,
+   "reasoning_tok": 29376,
+   "cost_usd": 0
+  },
+  "gemini-pro-latest": {
+   "calls": 30,
+   "in_tok": 39458,
+   "out_tok": 6243,
+   "pages": 0,
+   "reasoning_tok": 85287,
+   "cost_usd": 0
+  },
+  "_cost_per_1000_pages": {
+   "sarvam-vision": {
+    "inr_per_1000_pages": 500.0,
+    "basis": "₹0.50/page list price"
+   },
+   "sarvam-vision+sarvam-105b": {
+    "inr_per_1000_pages": 521.0,
+    "basis": "Vision ₹500 + sarvam-105b ₹21.0 at ₹15/₹60 per 1M in/out tokens"
+   },
+   "gemini-3.8-flash": {
+    "tokens_per_1000_pages": {
+     "in_tok": 1303191,
+     "out_tok": 191154
+    },
+    "basis": "Gemini price not recorded here; multiply by your current Gemini rate"
+   },
+   "sarvam-vision+gemini-3.8-flash": {
+    "inr_per_1000_pages_sarvam_part": 500.0,
+    "gemini_tokens_per_1000_pages": {
+     "in_tok": 625184,
+     "out_tok": 190346
+    }
+   },
+   "openai:gpt-5.4-mini": {
+    "tokens_per_1000_pages": {
+     "in_tok": 2296184,
+     "out_tok": 111404
+    }
+   },
+   "or:anthropic/claude-haiku-5.5": {
+    "tokens_per_1000_pages": {
+     "in_tok": 2606397,
+     "out_tok": 210691
+    },
+    "usd_per_1000_pages": 0.37
+   },
+   "gemini-pro-latest": {
+    "tokens_per_1000_pages": {
+     "in_tok": 1315267,
+     "out_tok": 208100
+    }
+   },
+   "openai:gpt-5.5": {
+    "tokens_per_1000_pages": {
+     "in_tok": 1610967,
+     "out_tok": 1113167
+    }
+   },
+   "or:anthropic/claude-sonnet-5.5": {
+    "tokens_per_1000_pages": {
+     "in_tok": 1836667,
+     "out_tok": 345567
+    },
+    "usd_per_1000_pages": 7.13
+   }
+  },
+  "_openrouter_cost_usd": 0.2636,
+  "_sarvam_spend_inr_this_run": 70.85
+ },
+ "examples": [
+  {
+   "id": "patta_ta_01",
+   "doc_type": "patta",
+   "script": "Tamil",
+   "condition": "harsh",
+   "image": "data/uc03_documents/pages/patta_ta_01_harsh.jpg",
+   "gold_fields": {
+    "district": "சேலம்",
+    "taluk": "ஓமலூர்",
+    "village": "அய்யம்பட்டி",
+    "patta_number": "812",
+    "owner_name": "ஆறுமுகம்",
+    "father_name": "அன்பழகன்",
+    "survey_number": "312",
+    "subdivision": "3A",
+    "land_type": "நன்செய்",
+    "extent_hectare": "1.53.25",
+    "tax_rupees": "33.87",
+    "issue_date": "02/10/2025"
+   },
+   "systems": {
+    "sarvam-vision+sarvam-105b": {
+     "field_accuracy": 0.833,
+     "wrong_fields": {
+      "taluk": "ஒமலூர்",
+      "tax_rupees": null
+     }
+    },
+    "sarvam-vision+gemini-3.8-flash": {
+     "field_accuracy": 0.75,
+     "wrong_fields": {
+      "taluk": null,
+      "village": "ஒமலூர்",
+      "tax_rupees": "33.07"
+     }
+    },
+    "gemini-3.8-flash": {
+     "field_accuracy": 0.917,
+     "wrong_fields": {
+      "tax_rupees": "33.07"
+     }
+    },
+    "openai:gpt-5.4-mini": {
+     "field_accuracy": 0.667,
+     "wrong_fields": {
+      "taluk": "கங்கவல்லி",
+      "village": "சின்னவாடி",
+      "owner_name": "null",
+      "father_name": "null"
+     }
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "field_accuracy": 0.0,
+     "wrong_fields": {
+      "district": null,
+      "taluk": null,
+      "village": null,
+      "patta_number": null,
+      "owner_name": null,
+      "father_name": null,
+      "survey_number": null,
+      "subdivision": null,
+      "land_type": null,
+      "extent_hectare": null,
+      "tax_rupees": null,
+      "issue_date": null
+     }
+    },
+    "gemini-pro-latest": {
+     "field_accuracy": 0.917,
+     "wrong_fields": {
+      "tax_rupees": "33.07"
+     }
+    },
+    "openai:gpt-5.5": {
+     "field_accuracy": 0.583,
+     "wrong_fields": {
+      "village": "கஞ்சநாயக்கன்பட்டி",
+      "owner_name": "குமரசாமி",
+      "father_name": "கந்தசாமி",
+      "land_type": "புன்செய்",
+      "tax_rupees": "35.87"
+     }
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "field_accuracy": 0.917,
+     "wrong_fields": {
+      "village": "அம்பம்பட்டி"
+     }
+    },
+    "sarvam-vision": {
+     "cer": 0.491
+    },
+    "gemini-3.8-flash-ocr": {
+     "cer": 0.017
+    }
+   }
+  },
+  {
+   "id": "ration_card_hi_01",
+   "doc_type": "ration_card",
+   "script": "Devanagari",
+   "condition": "harsh",
+   "image": "data/uc03_documents/pages/ration_card_hi_01_harsh.jpg",
+   "gold_fields": {
+    "card_number": "UP5384270331",
+    "category_code": "PHH",
+    "head_of_family": "नेहा अग्रवाल",
+    "father_or_husband_name": "प्रिया सिंह",
+    "district": "सीतापुर",
+    "block": "मिश्रिख",
+    "fps_number": "957",
+    "issue_date": "21/10/2018",
+    "member_count": "5",
+    "member2_name": "अनिल चौहान",
+    "member2_age": "59"
+   },
+   "systems": {
+    "sarvam-vision+sarvam-105b": {
+     "field_accuracy": 0.818,
+     "wrong_fields": {
+      "card_number": "UPS384270001",
+      "block": "प्रिथिव"
+     }
+    },
+    "sarvam-vision+gemini-3.8-flash": {
+     "field_accuracy": 0.818,
+     "wrong_fields": {
+      "card_number": "UPS384270001",
+      "block": "प्रिथिव"
+     }
+    },
+    "gemini-3.8-flash": {
+     "field_accuracy": 0.727,
+     "wrong_fields": {
+      "card_number": "UP6384270031",
+      "block": "पिसांवा",
+      "member2_name": "अमित चौहान"
+     }
+    },
+    "openai:gpt-5.4-mini": {
+     "field_accuracy": 0.182,
+     "wrong_fields": {
+      "card_number": "UPS3470201",
+      "category_code": null,
+      "head_of_family": "विजय राजोरा",
+      "father_or_husband_name": "राम शरण",
+      "district": "जौनपुर",
+      "block": "मडियाहू",
+      "fps_number": "967",
+      "member2_name": "अब्दुली",
+      "member2_age": "19"
+     }
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "field_accuracy": 0.455,
+     "wrong_fields": {
+      "card_number": "UPS394270031",
+      "father_or_husband_name": "विक्रम सिंह",
+      "district": "मीरापुर",
+      "block": "सिकंदर",
+      "member2_name": "अमित गौहान",
+      "member2_age": "52"
+     }
+    },
+    "gemini-pro-latest": {
+     "field_accuracy": 0.909,
+     "wrong_fields": {
+      "card_number": "UP5384270031"
+     }
+    },
+    "openai:gpt-5.5": {
+     "field_accuracy": 0.273,
+     "wrong_fields": {
+      "card_number": "UP454270021",
+      "head_of_family": "रवि कुमार",
+      "father_or_husband_name": "दिनेश सिंह",
+      "district": "बरेली",
+      "block": "बहेड़ी",
+      "issue_date": "23/10/2018",
+      "member2_name": "रीना गौतम",
+      "member2_age": "50"
+     }
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "field_accuracy": 0.727,
+     "wrong_fields": {
+      "father_or_husband_name": "दिया सिंह",
+      "block": "सिधौली",
+      "member2_name": "अमित चौहान"
+     }
+    },
+    "sarvam-vision": {
+     "cer": 0.293
+    },
+    "gemini-3.8-flash-ocr": {
+     "cer": 0.022
+    }
+   }
+  },
+  {
+   "id": "gst_invoice_hi_01",
+   "doc_type": "gst_invoice",
+   "script": "Devanagari",
+   "condition": "harsh",
+   "image": "data/uc03_documents/pages/gst_invoice_hi_01_harsh.jpg",
+   "gold_fields": {
+    "invoice_number": "INV/25-26/0012",
+    "invoice_date": "27/11/2025",
+    "seller_name": "महालक्ष्मी एंटरप्राइजेज",
+    "seller_gstin": "09RNZPS9975X8ZY",
+    "buyer_name": "गंगा किराना भंडार",
+    "buyer_gstin": "27OHAPT2322D5Z9",
+    "place_of_supply_state": "Maharashtra",
+    "first_item_hsn": "5208",
+    "item_count": "2",
+    "taxable_value": "1,93,200.00",
+    "cgst_amount": "0.00",
+    "sgst_amount": "0.00",
+    "igst_amount": "9,660.00",
+    "grand_total": "2,02,860.00"
+   },
+   "systems": {
+    "sarvam-vision+sarvam-105b": {
+     "field_accuracy": 0.786,
+     "wrong_fields": {
+      "seller_gstin": "09RNZPS9976X8ZY",
+      "first_item_hsn": null,
+      "igst_amount": 9860.0
+     }
+    },
+    "sarvam-vision+gemini-3.8-flash": {
+     "field_accuracy": 0.857,
+     "wrong_fields": {
+      "seller_gstin": "09RNZPS9976X8ZY",
+      "igst_amount": 9860.0
+     }
+    },
+    "gemini-3.8-flash": {
+     "field_accuracy": 1.0,
+     "wrong_fields": {}
+    },
+    "openai:gpt-5.4-mini": {
+     "field_accuracy": 0.571,
+     "wrong_fields": {
+      "seller_name": "महेश्वरी एंटरप्राइसेस",
+      "seller_gstin": "09RNZPS9975KXZY",
+      "buyer_name": "गंग विरला भंडर",
+      "first_item_hsn": "9403",
+      "igst_amount": 9860.0,
+      "grand_total": 203060.0
+     }
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "field_accuracy": 1.0,
+     "wrong_fields": {}
+    },
+    "gemini-pro-latest": {
+     "field_accuracy": 1.0,
+     "wrong_fields": {}
+    },
+    "openai:gpt-5.5": {
+     "field_accuracy": 0.643,
+     "wrong_fields": {
+      "invoice_number": "INV/PS-34/0018",
+      "seller_name": "महाराष्ट्र इलेक्ट्रॉनिक्स",
+      "seller_gstin": "09RNZPS9876M3ZY",
+      "buyer_name": "योग विज्ञान भंडार",
+      "first_item_hsn": "9403"
+     }
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "field_accuracy": 1.0,
+     "wrong_fields": {}
+    },
+    "sarvam-vision": {
+     "cer": 0.096
+    },
+    "gemini-3.8-flash-ocr": {
+     "cer": 0.0
+    }
+   }
+  },
+  {
+   "id": "land_7_12_mr_01",
+   "doc_type": "land_7_12",
+   "script": "Devanagari",
+   "condition": "harsh",
+   "image": "data/uc03_documents/pages/land_7_12_mr_01_harsh.jpg",
+   "gold_fields": {
+    "village": "देवळाली",
+    "taluka": "राहुरी",
+    "district": "अहमदनगर",
+    "survey_number": "300/3",
+    "occupant_name": "कांबळे सुरेश बाळासाहेब",
+    "area_hectare": "1.63.20",
+    "assessment_rupees": "13.14",
+    "mutation_number": "1015",
+    "crop_year": "2025-26",
+    "season": "रब्बी",
+    "crop_name": "गहू",
+    "irrigation_source": "विहीर"
+   },
+   "systems": {
+    "sarvam-vision+sarvam-105b": {
+     "field_accuracy": 0.667,
+     "wrong_fields": {
+      "village": "गाव नमुना बारा",
+      "taluka": "पिंपरी चिंचवड",
+      "district": null,
+      "mutation_number": "१०२५"
+     }
+    },
+    "sarvam-vision+gemini-3.8-flash": {
+     "field_accuracy": 0.833,
+     "wrong_fields": {
+      "village": "देवनाम्ती",
+      "mutation_number": "१०२५"
+     }
+    },
+    "gemini-3.8-flash": {
+     "field_accuracy": 1.0,
+     "wrong_fields": {}
+    },
+    "openai:gpt-5.4-mini": {
+     "field_accuracy": 0.333,
+     "wrong_fields": {
+      "village": "सोनुर्ली",
+      "taluka": "नांदगाव",
+      "occupant_name": "कुंदेह सुरेश बबुरावसाहेब",
+      "area_hectare": "0.63.20",
+      "assessment_rupees": "63.22",
+      "mutation_number": null,
+      "crop_year": "२०१५-१६",
+      "season": "खरीप"
+     }
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "field_accuracy": 0.5,
+     "wrong_fields": {
+      "village": "देवगाव",
+      "survey_number": "३००/अ",
+      "area_hectare": "0.63.20",
+      "assessment_rupees": "१३.४४",
+      "mutation_number": "१०४५",
+      "season": "रबी"
+     }
+    },
+    "gemini-pro-latest": {
+     "field_accuracy": 1.0,
+     "wrong_fields": {}
+    },
+    "openai:gpt-5.5": {
+     "field_accuracy": 0.333,
+     "wrong_fields": {
+      "village": "पिंपरी",
+      "survey_number": "३०७/३",
+      "occupant_name": "कांबळे सुरेश बळवंतराव",
+      "area_hectare": "१.८०.३०",
+      "assessment_rupees": "१३.३४",
+      "mutation_number": "२०१५",
+      "season": "खरीप",
+      "crop_name": "मूग"
+     }
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "field_accuracy": 0.833,
+     "wrong_fields": {
+      "village": "देवसाडी",
+      "mutation_number": "२०१५"
+     }
+    },
+    "sarvam-vision": {
+     "cer": 0.277
+    },
+    "gemini-3.8-flash-ocr": {
+     "cer": 0.008
+    }
+   }
+  },
+  {
+   "id": "electricity_bill_kn_02",
+   "doc_type": "electricity_bill",
+   "script": "Kannada",
+   "condition": "harsh",
+   "image": "data/uc03_documents/pages/electricity_bill_kn_02_harsh.jpg",
+   "gold_fields": {
+    "consumer_name": "ಶಿವಕುಮಾರ್ ಕೆ",
+    "account_number": "EB2786848",
+    "bill_number": "9485511171",
+    "bill_date": "08/07/2026",
+    "due_date": "25/07/2026",
+    "tariff_category": "LT-1",
+    "previous_reading": "38516",
+    "present_reading": "38754",
+    "units_consumed": "238",
+    "fixed_charges": "140.00",
+    "energy_charges": "1,441.00",
+    "tax": "129.69",
+    "amount_payable": "1,710.69"
+   },
+   "systems": {
+    "sarvam-vision+sarvam-105b": {
+     "field_accuracy": 1.0,
+     "wrong_fields": {}
+    },
+    "sarvam-vision+gemini-3.8-flash": {
+     "field_accuracy": 1.0,
+     "wrong_fields": {}
+    },
+    "gemini-3.8-flash": {
+     "field_accuracy": 1.0,
+     "wrong_fields": {}
+    },
+    "openai:gpt-5.4-mini": {
+     "field_accuracy": 0.615,
+     "wrong_fields": {
+      "consumer_name": "ಕಂದಗೋಳ 6",
+      "account_number": "EB2796840",
+      "bill_number": "9448511171",
+      "bill_date": "08/07/2024",
+      "due_date": "25/07/2024"
+     }
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "field_accuracy": 0.923,
+     "wrong_fields": {
+      "consumer_name": "ಮಹಬೂಬ್ ಕೆ"
+     }
+    },
+    "gemini-pro-latest": {
+     "field_accuracy": 0.769,
+     "wrong_fields": {
+      "consumer_name": "ಕನ್ಸೂಮರ್ 6",
+      "bill_date": "08/07/2020",
+      "due_date": "25/07/2020"
+     }
+    },
+    "openai:gpt-5.5": {
+     "field_accuracy": 0.385,
+     "wrong_fields": {
+      "consumer_name": "ಸಿದ್ದಲಿಂಗಪ್ಪ ಬಿ",
+      "account_number": "E82798440",
+      "bill_number": "948951172",
+      "bill_date": "04/07/2020",
+      "due_date": "25/07/2020",
+      "previous_reading": "36516",
+      "present_reading": "36754",
+      "tax": "₹ 128.69"
+     }
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "field_accuracy": 1.0,
+     "wrong_fields": {}
+    },
+    "sarvam-vision": {
+     "cer": 0.094
+    },
+    "gemini-3.8-flash-ocr": {
+     "cer": 0.066
+    }
+   }
+  }
+ ],
+ "findings": [
+  "Clean scans and ordinary phone photos are essentially solved by all three stacks. Field exact-match: clean 99.5% (Sarvam Vision + sarvam-105b), 99.5% (Sarvam Vision + Gemini), 99.6% (Gemini on the image). Phone photo: 99.3% / 99.5% / 99.3%. The CIs overlap completely (60 pages, 783 fields each). Pages with every field correct: 93-95% clean, 92-93% photo.",
+  "Bad photos separate the stacks. On the 16-page harsh subset (6 deg tilt, strong skew, hand shadow, noise, 0.55x resolution, JPEG q 22-30), Gemini on the image kept 92.8% of fields [87.2, 97.2] and got 56% of pages fully right. The Sarvam pipeline kept 85.6% [78.5, 92.1] and 25% of pages. Swapping sarvam-105b for Gemini as the extractor on the same Vision text only moved this to 86.5%, so the gap is OCR, not extraction.",
+  "Text accuracy tells the same story. Order-free CER for Sarvam Vision vs Gemini OCR is 0.020 vs 0.023 clean and 0.015 vs 0.004 photo, then 0.193 vs 0.028 on harsh photos (gold-word recall 0.84 vs 0.95). The harsh-photo CER by script for Vision is worst in Tamil (0.32), Bengali (0.21) and Devanagari (0.20).",
+  "On degraded pages Sarvam Vision writes fluent text that is not on the page. The Tamil patta header 'மாதிரி ஆவணம்' (sample document) came out as 'எதிரி ஆயுதம் - தற்காப்பு' (enemy weapon - defence). A line of Kannada about Belagavi district appeared inside the Tamil page. The 7/12 subtitle '(पिकांची नोंदवही)' became '(पिंपरी चिंचवड)', a real Pune place name, and sarvam-105b then put that into the taluka field. During the smoke test, a Kannada line on a mixed-script page also came back in Bengali script.",
+  "Handwriting-style PANs expose character confusions. Sarvam Vision misread I/1 and O/0 in 3 of 10 KYC forms (e.g. FADPQ1032L read as FADPQI032L, HLOPM1790W as HLOPM179OW), the same way on clean and photo pages. Gemini got 1 of 10 wrong. A PAN or GSTIN format and checksum check would catch these, whichever OCR you use.",
+  "Latency per page, p50 / p95: Sarvam Vision job 5.9 s / 25.3 s (the job API queues; one job per page), Vision + sarvam-105b 9.2 s / 33.5 s, Gemini on the image 5.0 s / 8.7 s.",
+  "Cost per 1,000 pages: the Sarvam pipeline is ₹521 (Vision ₹500 at ₹0.50/page, plus ₹20.9 of sarvam-105b tokens). Gemini on the image uses about 1.30M input and 0.19M output tokens per 1,000 pages; multiply by your Gemini rate. Running Vision + Gemini costs Vision's ₹500 plus about 0.62M/0.19M Gemini tokens.",
+  "Sarvam Vision API quirks. Insufficient credits return HTTP 400 'Insufficient credits for 1 pages' from /start, not 402 as on chat. Uploads must be a PDF or a ZIP, so a single photo has to be zipped. The status payload names the input 'document.pdf' even for a ZIP. Output is a ZIP holding document.md (tables as HTML <table>/<br/>, not pipe markdown) plus metadata/page_NNN.json with block coordinates and reading order. The job needs a language code, so a mixed-language intake also needs language detection first.",
+  "Price-matched cloud tier on the image, field accuracy clean / photo / harsh: claude-haiku-5.5 (via OpenRouter) scored 99.7% / 98.8% / 76.4%. openai:gpt-5.4-mini scored 89.1% / 83.3% / 56.1%, with only 30% of clean pages fully correct. Its errors are genuine misreads of Indic names and numbers; on clean pages it got patta owner names wrong on 10 of 10. Latency p50: gpt-5.4-mini 1.4 s, haiku 2.9 s. Cost: haiku about $0.37 per 1,000 pages (OpenRouter usage.cost); gpt-5.4-mini uses about 2.3M input tokens per 1,000 pages.",
+  "Frontier ceiling, think on, on the fixed 30 images (16 harsh plus 14 phone photos), field accuracy:\n- claude-sonnet-5.5: 96.4% [93.4, 98.7], 77% of pages fully correct.\n- gemini-3.8-flash (think off): 95.6%.\n- gemini-pro-latest: 93.4%.\n- Sarvam Vision + Gemini: 92.3%.\n- Sarvam Vision + 105b: 91.8%.\n- claude-haiku-5.5: 86.7%.\n- openai:gpt-5.5: 79.0%.\n- gpt-5.4-mini: 73.2%.\nOn harsh photos only, gpt-5.5 kept 61% of fields. It produced fluent but invented firm names and GSTINs (for example 'महाराष्ट्र इलेक्ट्रॉनिक्स' for 'महालक्ष्मी एंटरप्राइजेज') rather than leaving fields null. So the most expensive model is not the safest on bad photos."
+ ],
+ "caveats": [
+  "The documents are synthetic, computer-rendered pages with system fonts. There are no real stamps, signatures, carbon copies, printer artefacts, folds or Indic handwriting; the 'handwriting' is a Latin handwriting-style font, used only for KYC entries. Real scans will score lower than the clean condition here.",
+  "The harsh condition covers only 16 pages (kept small to stay inside the Sarvam budget), so its CIs are wide. The direction is clear (Gemini better on every text metric), but the size of the field-accuracy gap is uncertain.",
+  "Each Sarvam Vision job was given the page's correct language code. A production pipeline has to detect it first.",
+  "There is one extraction prompt, shared by all systems, and Gemini ran with thinking off. Exact match is strict: names must stay in the printed script, while numbers compare by value and Indic digits are folded to ASCII.",
+  "Reading order on forms is ambiguous, so the text metric is an order-free CER (described in the README). It does not measure whether the reading order is correct.",
+  "Gemini prices are not recorded here. Its cost is reported in tokens only.",
+  "Frontier models ran only on the 30-image subset, and their thinking budgets were the provider defaults (gpt-5.5 reasoning_effort medium, Gemini dynamic, Claude reasoning enabled). OpenAI images went in as data URIs with default detail. OpenAI prices are not recorded, so only tokens are reported."
+ ],
+ "verdict": "For clean scans and ordinary phone photos of Indian-script business documents, any of these stacks reads about 99.5% of fields correctly. Choose on cost, latency and where the data may go. The all-Sarvam pipeline (Vision plus sarvam-105b) costs about ₹0.52 per page and runs on an Indian provider. Gemini on the image is faster at p95 (8.7 s vs 33.5 s) and simpler, since it needs no job API. Poor photos are the exception. There, Gemini on the image was clearly more robust (93% of fields and 56% of pages fully right, against 86% and 25%), and Sarvam Vision sometimes wrote fluent text that was not on the page, occasionally in the wrong script. So if your intake is mostly phone photos taken by customers or field staff, use Gemini, or put an image-quality gate and a re-capture step in front of Sarvam Vision. With either stack, validate IDs such as PAN and GSTIN by format and checksum. Among the added comparators, claude-sonnet-5.5 was the most accurate on bad photos, and claude-haiku-5.5 matched the leaders on clean and normal photos at about $0.37 per 1,000 pages. OpenAI's gpt-5.4-mini and gpt-5.5 misread or invented Indic-script values far more often in this test, so don't use them for this job without validation.",
+ "updated": "2026-10-11 22:00:38"
+}

@@ -1,0 +1,126 @@
+{
+ "request_id": "20261011_0ac35dd7-2943-49a2-a4e2-27311e975059",
+ "transcript": "Elam, come. What's the news? Doctor, it's been ten days, when I wake up in the morning, I have a headache. Sometimes I feel like my heartbeat is slow. Which medicines are you taking now? Amlodipine five milligrams once in the morning. Then Atenolol fifty milligrams at night. Let me see. BP is one hundred and fifty-eight by ninety-four. Pulse is only fifty-six. That is low. Weight is sixty-six kilos. Is that a problem, Doctor? The reason for the pulse decreasing could be Atenolol. Therefore, you must stop taking Atenolol from today. Are you allergic to any medicine? No doctor, I don't have anything. Okay. BP is still not under control. This is uncontrolled hypertension. Both should be eaten regularly. Should I add salt? Certainly. You should reduce pickles and papadums. If you get chest pain, if one side of your body feels weak, if your speech becomes slurred, or if you feel dizzy and fall, you should come to the hospital immediately. Okay. When is the next one? It's been two weeks. At home. Be. Looking at the copy and writing it down.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Elam, come. What's the news?",
+    "start_time_seconds": 0.53,
+    "end_time_seconds": 3.51,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Doctor, it's been ten days, when I wake up in the morning, I have a headache. Sometimes I feel like my heartbeat is slow.",
+    "start_time_seconds": 4.69,
+    "end_time_seconds": 15.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Which medicines are you taking now?",
+    "start_time_seconds": 16.07,
+    "end_time_seconds": 18.79,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Amlodipine five milligrams once in the morning. Then Atenolol fifty milligrams at night.",
+    "start_time_seconds": 19.69,
+    "end_time_seconds": 27.81,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Let me see.",
+    "start_time_seconds": 28.77,
+    "end_time_seconds": 29.39,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "BP is one hundred and fifty-eight by ninety-four. Pulse is only fifty-six. That is low. Weight is sixty-six kilos.",
+    "start_time_seconds": 31.23,
+    "end_time_seconds": 42.69,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Is that a problem, Doctor?",
+    "start_time_seconds": 43.37,
+    "end_time_seconds": 45.37,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "The reason for the pulse decreasing could be Atenolol. Therefore, you must stop taking Atenolol from today. Are you allergic to any medicine?",
+    "start_time_seconds": 46.63,
+    "end_time_seconds": 56.37,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "No doctor, I don't have anything.",
+    "start_time_seconds": 57.15,
+    "end_time_seconds": 59.39,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Okay. BP is still not under control. This is uncontrolled hypertension.",
+    "start_time_seconds": 60.29,
+    "end_time_seconds": 68.47,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Both should be eaten regularly.",
+    "start_time_seconds": 77.77,
+    "end_time_seconds": 79.29,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Should I add salt?",
+    "start_time_seconds": 80.25,
+    "end_time_seconds": 81.59,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Certainly. You should reduce pickles and papadums. If you get chest pain, if one side of your body feels weak, if your speech becomes slurred, or if you feel dizzy and fall, you should come to the hospital immediately.",
+    "start_time_seconds": 82.49,
+    "end_time_seconds": 97.61,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay. When is the next one?",
+    "start_time_seconds": 98.63,
+    "end_time_seconds": 101.25,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "It's been two weeks. At home.",
+    "start_time_seconds": 102.25,
+    "end_time_seconds": 104.89,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Be.",
+    "start_time_seconds": 104.89,
+    "end_time_seconds": 105.19,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Looking at the copy and writing it down.",
+    "start_time_seconds": 105.19,
+    "end_time_seconds": 106.65,
+    "speaker_id": "0"
+   }
+  ]
+ },
+ "language_code": "ml-IN",
+ "language_probability": null,
+ "audio_hash": "760d0dfa123422e672507f1d54001efd",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_d445fe91-d246-4d54-b735-379077281e85",
+  "elapsed_s": 10.83534288406372,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "translate",
+   "language_code": "ml-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

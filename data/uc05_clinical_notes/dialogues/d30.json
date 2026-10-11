@@ -1,0 +1,119 @@
+{
+ "id": "d30",
+ "pair": "bn-en",
+ "lang": "Bengali",
+ "style": "native",
+ "topic": "hypertension",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "বসুন। কী সমস্যা?"
+  },
+  {
+   "speaker": "patient",
+   "text": "এক সপ্তাহ ধরে মাথার পেছন দিকটা খুব ব্যথা করছে, ডাক্তারবাবু। ঘাড়ও টানে।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "BP মাপছি... 162/100। বেশ বেশি। Pulse চুরাশি। Weight 82 kg।"
+  },
+  {
+   "speaker": "patient",
+   "text": "আমার শালা বলল ওর BP-র ওষুধ Telma 40 খেতে, দুদিন খেয়েছি।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "না না, অন্যের ওষুধ নিজে থেকে খাবেন না। Telma বন্ধ করুন। আপনার hypertension, মানে high blood pressure হয়েছে।"
+  },
+  {
+   "speaker": "patient",
+   "text": "কোনো allergy নেই আমার। কী ওষুধ খাব?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Amlodipine 5 mg, রোজ সকালে একটা। এটা রোজ চলবে, নিজে থেকে বন্ধ করবেন না।"
+  },
+  {
+   "speaker": "patient",
+   "text": "খাওয়ায় কী বদলাব?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "নুন কম খাবেন, আচার পাঁপড় বাদ, রোজ আধ ঘণ্টা হাঁটবেন।"
+  },
+  {
+   "speaker": "patient",
+   "text": "কখন বিপদ বুঝব?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "বুকে ব্যথা হলে, শরীরের একদিক অবশ লাগলে বা কথা জড়িয়ে গেলে এক মিনিটও দেরি না করে emergency-তে যাবেন।"
+  },
+  {
+   "speaker": "patient",
+   "text": "পরের বার কবে আসব?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "2 সপ্তাহ পরে BP check করাতে আসবেন।"
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "headache",
+   "occipital headache",
+   "neck pain"
+  ],
+  "duration": {
+   "value": 1,
+   "unit": "weeks"
+  },
+  "vitals": {
+   "bp": "162/100",
+   "pulse": 84,
+   "weight_kg": 82
+  },
+  "diagnosis": [
+   "hypertension",
+   "high blood pressure",
+   "stage 2 hypertension"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "amlodipine"
+    ],
+    "dose": "5 mg",
+    "frequency": "OD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "chest pain"
+   ],
+   [
+    "one-sided weakness",
+    "weakness on one side",
+    "numbness",
+    "paralysis"
+   ],
+   [
+    "slurred speech",
+    "difficulty speaking"
+   ]
+  ],
+  "follow_up": [
+   "2 weeks",
+   "two weeks"
+  ],
+  "not_prescribed": [
+   "telmisartan",
+   "telma"
+  ]
+ },
+ "trap": "Relative's Telma 40 (telmisartan) is stopped; pulse spoken in words."
+}

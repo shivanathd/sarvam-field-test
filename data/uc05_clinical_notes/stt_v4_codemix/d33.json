@@ -1,0 +1,120 @@
+{
+ "request_id": "20261011_3e7e1551-45e1-41fd-8635-ceb1ab62c105",
+ "transcript": "नमस्कार बसा काय होतंय? Doctor दोन दिवसांपासून खूप ताप आहे आणि अंग खूप दुखतंय. Temperature बघतो. एकशे दोन point one आहे. pulse शंभर BP. एकशे सोळा भागिले चौऱ्याहत्तर उलटी जुलाब काय? थोडी मळमळ होते उलटी नाही. कोणत्या औषधाची allergy आहे का? नाही कोणतीही allergy नाही doctor मला Combiflam द्या ना अंगदुखी लगेच जाते. नाही सध्या dengueचा season आहे म्हणून ibuprofen म्हणजे Combiflam अजिबात घ्यायचा नाही हा viral fever वाटतोय पण dengue test करून घेऊ. Paracetamol 500 mg दिवसातून तीन वेळा जेवणानंतर तीन दिवस घ्या. भरपूर पाणी, नारळ पाणी प्या. बरं अजून काय काळजी घ्यायची? हिरड्यातून रक्त आलं, पोटात खूप दुखलं किंवा सारख्या उलट्या होऊ लागल्या तर लगेच hospitalमध्ये या. पुन्हा कधी यायचं? दोन दिवसांनी NS One आणि CBC चा report घेऊन. ठीक आहे धन्यवाद Doctor.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "नमस्कार बसा काय होतंय?",
+    "start_time_seconds": 0.23,
+    "end_time_seconds": 3.33,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Doctor दोन दिवसांपासून खूप ताप आहे आणि अंग खूप दुखतंय.",
+    "start_time_seconds": 4.43,
+    "end_time_seconds": 10.63,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Temperature बघतो.",
+    "start_time_seconds": 11.75,
+    "end_time_seconds": 14.51,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "एकशे दोन point one आहे.",
+    "start_time_seconds": 15.59,
+    "end_time_seconds": 17.19,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "pulse शंभर BP.",
+    "start_time_seconds": 18.59,
+    "end_time_seconds": 23.39,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "एकशे सोळा भागिले चौऱ्याहत्तर उलटी जुलाब काय?",
+    "start_time_seconds": 24.41,
+    "end_time_seconds": 28.87,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "थोडी मळमळ होते उलटी नाही.",
+    "start_time_seconds": 29.93,
+    "end_time_seconds": 32.75,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "कोणत्या औषधाची allergy आहे का?",
+    "start_time_seconds": 33.71,
+    "end_time_seconds": 35.73,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "नाही कोणतीही allergy नाही doctor मला Combiflam द्या ना अंगदुखी लगेच जाते.",
+    "start_time_seconds": 36.49,
+    "end_time_seconds": 43.77,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "नाही सध्या dengueचा season आहे म्हणून ibuprofen म्हणजे Combiflam अजिबात घ्यायचा नाही हा viral fever वाटतोय पण dengue test करून घेऊ.",
+    "start_time_seconds": 44.39,
+    "end_time_seconds": 56.99,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Paracetamol 500 mg दिवसातून तीन वेळा जेवणानंतर तीन दिवस घ्या. भरपूर पाणी, नारळ पाणी प्या.",
+    "start_time_seconds": 58.27,
+    "end_time_seconds": 67.39,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "बरं अजून काय काळजी घ्यायची?",
+    "start_time_seconds": 68.63,
+    "end_time_seconds": 71.81,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "हिरड्यातून रक्त आलं, पोटात खूप दुखलं किंवा सारख्या उलट्या होऊ लागल्या तर लगेच hospitalमध्ये या.",
+    "start_time_seconds": 72.95,
+    "end_time_seconds": 81.01,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "पुन्हा कधी यायचं?",
+    "start_time_seconds": 82.33,
+    "end_time_seconds": 83.73,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "दोन दिवसांनी NS One आणि CBC चा report घेऊन.",
+    "start_time_seconds": 84.47,
+    "end_time_seconds": 88.59,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ठीक आहे धन्यवाद Doctor.",
+    "start_time_seconds": 89.53,
+    "end_time_seconds": 91.61,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "mr-IN",
+ "language_probability": null,
+ "audio_hash": "39fe7ce0afd95876b8c5c5f53fc10ff8",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_30669210-9bda-474e-9779-e0f549a1c17f",
+  "elapsed_s": 10.715738773345947,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "codemix",
+   "language_code": "mr-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

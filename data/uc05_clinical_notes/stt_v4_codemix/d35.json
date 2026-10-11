@@ -1,0 +1,120 @@
+{
+ "request_id": "20261011_b39bd938-26dc-4862-8abe-4bf82b0e9fa3",
+ "transcript": "Doctor माझ्या मुलीचा कान दोन दिवसांपासून दुखतोय. रात्रभर रडत होती. ती सहा वर्षांची आहे. ताप आहे का? हो थोडा ताप आहे. Temperature 100.8 आहे. काम बघतो. कानाचा पडदा लाल झालाय. हे acute otitis media आहे म्हणजे कानाचं infection. तिला कोणत्याही औषधाची allergy नाही. Amoxicillin syrup देतो पाच ml दिवसातून तीन वेळा. थांबा तिचं weight किती आहे? आत्ताच मोजलं वीस किलो. मग वीस किलोसाठी पाच ml कमी पडेल. Amoxicillin syrup 7.5 ml दिवसातून तीन वेळा सात दिवस पूर्ण द्या. आणि ताप आला किंवा कान दुखला तरच Paracetamol syrup 6 ml द्या. अजून काही काळजी? कानातून पू आला ताप उतरत नसेल किंवा मान ताठ झाली तर लगेच घेऊन या. पुन्हा कधी दाखवायचं? पाच दिवसांनी परत दाखवा.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Doctor माझ्या मुलीचा कान दोन दिवसांपासून दुखतोय. रात्रभर रडत होती. ती सहा वर्षांची आहे.",
+    "start_time_seconds": 0.01,
+    "end_time_seconds": 9.93,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ताप आहे का?",
+    "start_time_seconds": 11.05,
+    "end_time_seconds": 12.01,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "हो थोडा ताप आहे.",
+    "start_time_seconds": 12.71,
+    "end_time_seconds": 14.85,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Temperature 100.8 आहे.",
+    "start_time_seconds": 15.61,
+    "end_time_seconds": 18.43,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "काम बघतो.",
+    "start_time_seconds": 20.03,
+    "end_time_seconds": 21.09,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "कानाचा पडदा लाल झालाय. हे acute otitis media आहे म्हणजे कानाचं infection.",
+    "start_time_seconds": 23.29,
+    "end_time_seconds": 31.03,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "तिला कोणत्याही औषधाची allergy नाही.",
+    "start_time_seconds": 32.07,
+    "end_time_seconds": 34.95,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Amoxicillin syrup देतो पाच ml दिवसातून तीन वेळा. थांबा तिचं weight किती आहे?",
+    "start_time_seconds": 35.87,
+    "end_time_seconds": 43.35,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "आत्ताच मोजलं वीस किलो.",
+    "start_time_seconds": 43.87,
+    "end_time_seconds": 46.31,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "मग वीस किलोसाठी पाच ml कमी पडेल.",
+    "start_time_seconds": 47.67,
+    "end_time_seconds": 50.89,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Amoxicillin syrup 7.5 ml दिवसातून तीन वेळा सात दिवस पूर्ण द्या.",
+    "start_time_seconds": 51.95,
+    "end_time_seconds": 60.03,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "आणि ताप आला किंवा कान दुखला तरच Paracetamol syrup 6 ml द्या.",
+    "start_time_seconds": 61.51,
+    "end_time_seconds": 67.21,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "अजून काही काळजी?",
+    "start_time_seconds": 68.41,
+    "end_time_seconds": 69.79,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "कानातून पू आला ताप उतरत नसेल किंवा मान ताठ झाली तर लगेच घेऊन या.",
+    "start_time_seconds": 71.13,
+    "end_time_seconds": 78.43,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "पुन्हा कधी दाखवायचं?",
+    "start_time_seconds": 79.75,
+    "end_time_seconds": 81.47,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "पाच दिवसांनी परत दाखवा.",
+    "start_time_seconds": 81.89,
+    "end_time_seconds": 83.53,
+    "speaker_id": "0"
+   }
+  ]
+ },
+ "language_code": "mr-IN",
+ "language_probability": null,
+ "audio_hash": "66eba47485bfad5804498aff824f4b98",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_30669210-9bda-474e-9779-e0f549a1c17f",
+  "elapsed_s": 11.075898885726929,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "codemix",
+   "language_code": "mr-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

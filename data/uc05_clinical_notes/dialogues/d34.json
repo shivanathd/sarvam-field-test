@@ -1,0 +1,127 @@
+{
+ "id": "d34",
+ "pair": "mr-en",
+ "lang": "Marathi",
+ "style": "native",
+ "topic": "diabetes",
+ "audio_subset": true,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "या, बसा. काय तक्रार आहे?"
+  },
+  {
+   "speaker": "patient",
+   "text": "डॉक्टर, एक महिन्यापासून सारखं लघवीला जावं लागतं, रात्री पण 3-4 वेळा उठते."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Sugar तपासली का?"
+  },
+  {
+   "speaker": "patient",
+   "text": "हो, उपाशीपोटी sugar 168 आली आहे."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Fasting sugar 168, म्हणजे जास्त आहे. तुमचं weight 72 kg, BP 128/82. तुम्हाला type 2 diabetes झाला आहे."
+  },
+  {
+   "speaker": "doctor",
+   "text": "मी metformin 500 mg देतो, सकाळी आणि रात्री जेवणानंतर एक-एक. आणि सोबत glimepiride पण सुरू करू..."
+  },
+  {
+   "speaker": "patient",
+   "text": "डॉक्टर, एक सांगायचं राहिलं, मला sulpha च्या औषधांची allergy आहे, अंगावर पुरळ आलं होतं."
+  },
+  {
+   "speaker": "doctor",
+   "text": "बरं झालं सांगितलंत. मग glimepiride देत नाही, फक्त metformin 500 mg सकाळ-रात्र चालू ठेवा. हे औषध नियमित घ्यायचं, बंद करायचं नाही."
+  },
+  {
+   "speaker": "patient",
+   "text": "अजून काय करायचं?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "रोज अर्धा तास चाला, गोड कमी खा. चक्कर आली, खूप घाम आला तर sugar कमी झाली असेल, लगेच साखर खा. पायाला जखम झाली आणि भरत नसेल तर लगेच दाखवा."
+  },
+  {
+   "speaker": "patient",
+   "text": "पुन्हा कधी यायचं?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "1 महिन्यानंतर fasting sugar आणि HbA1c चा report घेऊन या."
+  },
+  {
+   "speaker": "patient",
+   "text": "ठीक आहे डॉक्टर."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "frequent urination",
+   "polyuria",
+   "increased urination"
+  ],
+  "duration": {
+   "value": 1,
+   "unit": "months"
+  },
+  "vitals": {
+   "blood_sugar": 168,
+   "weight_kg": 72,
+   "bp": "128/82"
+  },
+  "diagnosis": [
+   "type 2 diabetes",
+   "type 2 diabetes mellitus",
+   "t2dm",
+   "diabetes mellitus"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "metformin"
+    ],
+    "dose": "500 mg",
+    "frequency": "BD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [
+   [
+    "sulfa",
+    "sulpha",
+    "sulphonamide",
+    "sulfonamide"
+   ]
+  ],
+  "red_flags": [
+   [
+    "dizziness",
+    "giddiness",
+    "sweating",
+    "low sugar",
+    "hypoglycaemia",
+    "hypoglycemia"
+   ],
+   [
+    "non-healing wound",
+    "foot wound",
+    "wound not healing",
+    "wound"
+   ]
+  ],
+  "follow_up": [
+   "1 month",
+   "one month"
+  ],
+  "not_prescribed": [
+   "glimepiride"
+  ]
+ },
+ "trap": "Late sulpha-allergy disclosure makes the doctor drop the planned glimepiride."
+}

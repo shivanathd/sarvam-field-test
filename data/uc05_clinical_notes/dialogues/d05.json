@@ -1,0 +1,140 @@
+{
+ "id": "d05",
+ "pair": "hi-en",
+ "lang": "Hindi",
+ "style": "romanised",
+ "topic": "fever",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "Haan Neha ji, aaiye. Kya problem hai?"
+  },
+  {
+   "speaker": "patient",
+   "text": "Doctor 4 din se bukhar hai, thand lagke aata hai, aur pet mein bhi halka dard hai."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Ulti ya loose motion?"
+  },
+  {
+   "speaker": "patient",
+   "text": "Ulti nahi, bas bhookh bilkul nahi lagti. Bahar ka khana khaya tha last week."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Temperature 102.2 hai, pulse 104, BP 104 by 70. Blood report mein Widal positive hai aur typhoid wala test bhi positive aaya hai. Ye enteric fever hai, typhoid."
+  },
+  {
+   "speaker": "patient",
+   "text": "Oh. Toh kya dawai leni hai?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Main Ciplox 500 de raha hoon, din mein do baar..."
+  },
+  {
+   "speaker": "patient",
+   "text": "Doctor ek minute, cipro se mujhe pehle bahut rashes hue the, poore haath pe."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Achha hua bata diya, ye allergy hai. Toh Ciplox nahi. Uski jagah Cefixime 200 mg, subah-shaam, 14 din tak, course poora karna hai beech mein band nahi karna."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Bukhar ke liye Paracetamol 650 mg, sirf jab bukhar ho tab, din mein 3 baar se zyada nahi, 5 din tak."
+  },
+  {
+   "speaker": "patient",
+   "text": "Khana kya khaun?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Halka khana, khichdi, dahi, boiled paani. Agar pet mein bahut tez dard ho, potty kaali ya khoon wali aaye, ya ulti band na ho, toh turant hospital aana."
+  },
+  {
+   "speaker": "patient",
+   "text": "Theek hai. Phir kab aaun?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "5 din baad aakar dikhao."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "fever",
+   "fever with chills",
+   "abdominal pain"
+  ],
+  "duration": {
+   "value": 4,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 102.2,
+   "pulse": 104,
+   "bp": "104/70"
+  },
+  "diagnosis": [
+   "typhoid",
+   "typhoid fever",
+   "enteric fever"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "cefixime",
+     "taxim-o"
+    ],
+    "dose": "200 mg",
+    "frequency": "BD",
+    "duration_days": 14
+   },
+   {
+    "drug": [
+     "paracetamol",
+     "dolo"
+    ],
+    "dose": "650 mg",
+    "frequency": "SOS",
+    "duration_days": 5
+   }
+  ],
+  "allergies": [
+   [
+    "ciprofloxacin",
+    "cipro",
+    "ciplox"
+   ]
+  ],
+  "red_flags": [
+   [
+    "severe abdominal pain",
+    "severe pain in abdomen"
+   ],
+   [
+    "black stool",
+    "blood in stool",
+    "bloody stool"
+   ],
+   [
+    "persistent vomiting",
+    "vomiting"
+   ]
+  ],
+  "follow_up": [
+   "5 days",
+   "after 5 days",
+   "five days"
+  ],
+  "not_prescribed": [
+   "ciprofloxacin",
+   "ciplox"
+  ]
+ },
+ "trap": "Doctor starts Ciplox, patient discloses cipro allergy, switched to Cefixime."
+}

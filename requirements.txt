@@ -1,0 +1,14 @@
+requests==2.34.2
+httpx==0.28.1
+google-genai==2.29.0
+numpy==2.5.4
+soundfile==0.14.0
+librosa==1.0.0
+transformers==5.19.0
+torch==2.14.1
+pillow==12.3.0
+scipy==1.18.1
+tokenizers==0.23.3
+huggingface_hub==1.33.0
+datasets==5.1.0
+pypdfium2==5.14.0

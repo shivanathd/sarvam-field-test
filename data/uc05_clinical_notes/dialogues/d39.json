@@ -1,0 +1,130 @@
+{
+ "id": "d39",
+ "pair": "mr-en",
+ "lang": "Marathi",
+ "style": "native",
+ "topic": "pregnancy",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "या, बसा. आता किती आठवडे झाले?"
+  },
+  {
+   "speaker": "patient",
+   "text": "12 आठवडे झाले डॉक्टर. 2 आठवड्यांपासून खूप मळमळ आणि उलट्या होतात, काही खाल्लं की उलटी."
+  },
+  {
+   "speaker": "doctor",
+   "text": "BP 110/70, pulse 90, weight 54 kg. हे pregnancy मधलं nausea vomiting आहे, काळजी करू नका."
+  },
+  {
+   "speaker": "patient",
+   "text": "मी iron ची गोळी घेते, ती घेतल्यावर जास्त मळमळतं."
+  },
+  {
+   "speaker": "doctor",
+   "text": "मग आता iron ची गोळी काही दिवस बंद ठेवा, 16 आठवड्यांनंतर पुन्हा सुरू करू."
+  },
+  {
+   "speaker": "doctor",
+   "text": "कोणत्या औषधाची allergy आहे का?"
+  },
+  {
+   "speaker": "patient",
+   "text": "हो, penicillin ची allergy आहे."
+  },
+  {
+   "speaker": "doctor",
+   "text": "ठीक आहे, नोंद करते. Doxinate, म्हणजे doxylamine 10 mg, रात्री झोपताना एक गोळी, 14 दिवस. आणि folic acid 5 mg रोज सकाळी एक, चालू ठेवा."
+  },
+  {
+   "speaker": "patient",
+   "text": "खायचं कसं?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "थोडं थोडं, सारखं खा. पण पाणी सुद्धा पोटात राहत नसेल, रक्तस्राव झाला किंवा पोटात खूप दुखलं तर लगेच या."
+  },
+  {
+   "speaker": "patient",
+   "text": "पुढच्या वेळी कधी यायचं?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "2 आठवड्यांनी, NT scan चा report घेऊन या."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "nausea",
+   "vomiting"
+  ],
+  "duration": {
+   "value": 2,
+   "unit": "weeks"
+  },
+  "vitals": {
+   "bp": "110/70",
+   "pulse": 90,
+   "weight_kg": 54
+  },
+  "diagnosis": [
+   "nausea and vomiting of pregnancy",
+   "morning sickness",
+   "hyperemesis",
+   "emesis gravidarum"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "doxylamine",
+     "doxinate"
+    ],
+    "dose": "10 mg",
+    "frequency": "HS",
+    "duration_days": 14
+   },
+   {
+    "drug": [
+     "folic acid"
+    ],
+    "dose": "5 mg",
+    "frequency": "OD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [
+   [
+    "penicillin"
+   ]
+  ],
+  "red_flags": [
+   [
+    "unable to keep fluids",
+    "cannot keep water down",
+    "persistent vomiting"
+   ],
+   [
+    "bleeding",
+    "vaginal bleeding",
+    "spotting"
+   ],
+   [
+    "abdominal pain",
+    "severe abdominal pain"
+   ]
+  ],
+  "follow_up": [
+   "2 weeks",
+   "two weeks"
+  ],
+  "not_prescribed": [
+   "iron",
+   "ferrous ascorbate",
+   "ferrous sulphate"
+  ]
+ },
+ "trap": "Current iron tablet is paused, not prescribed."
+}

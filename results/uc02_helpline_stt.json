@@ -1,0 +1,1227 @@
+{
+ "uc": "uc02_helpline_stt",
+ "title": "Citizen helpline speech-to-text across India's languages",
+ "business_question": "A state or national citizen helpline takes calls in many Indian languages: which speech-to-text works in all of them, and how bad is its weakest language?",
+ "dataset": {
+  "name": "FLEURS (google/fleurs) test split",
+  "source": "https://huggingface.co/datasets/google/fleurs",
+  "license": "CC-BY-4.0",
+  "n": 350,
+  "languages": [
+   "Assamese",
+   "Bengali",
+   "Gujarati",
+   "Hindi",
+   "Kannada",
+   "Malayalam",
+   "Marathi",
+   "Nepali",
+   "Odia",
+   "Punjabi",
+   "Sindhi",
+   "Tamil",
+   "Telugu",
+   "Urdu"
+  ],
+  "synthetic": false,
+  "how_made": "First 25 distinct sentences of at most 30 s (in archive order) of each Indic FLEURS test set, real volunteers reading Wikipedia sentences; reference = FLEURS raw_transcription."
+ },
+ "systems": [
+  "saaras:v3-transcribe",
+  "gemini-3.8-flash",
+  "whisper-large-v3-turbo",
+  "whisper-1",
+  "gpt-4o-transcribe"
+ ],
+ "metrics": [
+  {
+   "name": "WER, macro-average over languages",
+   "higher_is_better": false,
+   "unit": "fraction (capped at 1 per clip)",
+   "values": {
+    "saaras:v3-transcribe": {
+     "mean": 0.2285179107137769,
+     "lo": 0.20227159224508387,
+     "hi": 0.2546262477815587,
+     "n": 350
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.21060945735346082,
+     "lo": 0.1886936657832881,
+     "hi": 0.23567070781048557,
+     "n": 350
+    },
+    "whisper-large-v3-turbo": {
+     "mean": 0.7618911045405283,
+     "lo": 0.7331616559175822,
+     "hi": 0.7889208907891583,
+     "n": 350
+    },
+    "whisper-1": {
+     "mean": 0.8011545640831039,
+     "lo": 0.7727534121470907,
+     "hi": 0.8302883583904775,
+     "n": 350
+    },
+    "gpt-4o-transcribe": {
+     "mean": 0.27543822155463593,
+     "lo": 0.25802950526115614,
+     "hi": 0.2932301781510934,
+     "n": 350
+    }
+   }
+  },
+  {
+   "name": "CER, macro-average over languages",
+   "higher_is_better": false,
+   "unit": "fraction (capped at 1 per clip)",
+   "values": {
+    "saaras:v3-transcribe": {
+     "mean": 0.11985234767334436,
+     "lo": 0.09371221467283179,
+     "hi": 0.1470279763245684,
+     "n": 350
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.09109416514647653,
+     "lo": 0.07004129534916799,
+     "hi": 0.11428454195375116,
+     "n": 350
+    },
+    "whisper-large-v3-turbo": {
+     "mean": 0.4808024525335638,
+     "lo": 0.4412287179320262,
+     "hi": 0.5214086109728784,
+     "n": 350
+    },
+    "whisper-1": {
+     "mean": 0.571293864398423,
+     "lo": 0.5311887363868526,
+     "hi": 0.6142009626269872,
+     "n": 350
+    },
+    "gpt-4o-transcribe": {
+     "mean": 0.09545496608040854,
+     "lo": 0.08573541391458034,
+     "hi": 0.10571193206544635,
+     "n": 350
+    }
+   }
+  },
+  {
+   "name": "WER in the system's WORST language",
+   "higher_is_better": false,
+   "unit": "fraction",
+   "values": {
+    "saaras:v3-transcribe": {
+     "mean": 0.9955555555555555,
+     "lo": 0.9866666666666667,
+     "hi": 1.0,
+     "n": 25
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.30767976668441066,
+     "lo": 0.21218023239230668,
+     "hi": 0.42480995790128917,
+     "n": 25
+    },
+    "whisper-large-v3-turbo": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 25
+    },
+    "whisper-1": {
+     "mean": 0.9980952380952381,
+     "lo": 0.9942857142857143,
+     "hi": 1.0,
+     "n": 25
+    },
+    "gpt-4o-transcribe": {
+     "mean": 0.42439110566045984,
+     "lo": 0.320323524805698,
+     "hi": 0.5293150574516842,
+     "n": 25
+    }
+   }
+  },
+  {
+   "name": "WER in the WORST language, excluding languages output in another script",
+   "higher_is_better": false,
+   "unit": "fraction",
+   "values": {
+    "saaras:v3-transcribe": {
+     "mean": 0.2707202519230578,
+     "lo": 0.2151081229025293,
+     "hi": 0.33354204818628025,
+     "n": 25
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.30767976668441066,
+     "lo": 0.21218023239230668,
+     "hi": 0.42480995790128917,
+     "n": 25
+    },
+    "whisper-large-v3-turbo": {
+     "mean": 0.9143384927907917,
+     "lo": 0.870494434730302,
+     "hi": 0.953301856792519,
+     "n": 25
+    },
+    "whisper-1": {
+     "mean": 0.9784410521252626,
+     "lo": 0.9494736842105262,
+     "hi": 0.9985185185185185,
+     "n": 25
+    },
+    "gpt-4o-transcribe": {
+     "mean": 0.42439110566045984,
+     "lo": 0.320323524805698,
+     "hi": 0.5293150574516842,
+     "n": 25
+    }
+   }
+  },
+  {
+   "name": "Clips with no transcript at all (blocked/empty after retries)",
+   "higher_is_better": false,
+   "unit": "fraction",
+   "values": {
+    "saaras:v3-transcribe": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 350
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.03142857142857143,
+     "lo": 0.014285714285714285,
+     "hi": 0.05142857142857143,
+     "n": 350
+    },
+    "whisper-large-v3-turbo": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 350
+    },
+    "whisper-1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 350
+    },
+    "gpt-4o-transcribe": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 350
+    }
+   }
+  }
+ ],
+ "per_language": {
+  "WER": {
+   "Hindi": {
+    "saaras:v3-transcribe": 0.0846,
+    "gemini-3.8-flash": 0.1368,
+    "whisper-large-v3-turbo": 0.2835,
+    "whisper-1": 0.3,
+    "gpt-4o-transcribe": 0.1133
+   },
+   "Bengali": {
+    "saaras:v3-transcribe": 0.1308,
+    "gemini-3.8-flash": 0.1566,
+    "whisper-large-v3-turbo": 0.786,
+    "whisper-1": 0.9572,
+    "gpt-4o-transcribe": 0.1742
+   },
+   "Tamil": {
+    "saaras:v3-transcribe": 0.2373,
+    "gemini-3.8-flash": 0.3042,
+    "whisper-large-v3-turbo": 0.6176,
+    "whisper-1": 0.5504,
+    "gpt-4o-transcribe": 0.3158
+   },
+   "Telugu": {
+    "saaras:v3-transcribe": 0.17,
+    "gemini-3.8-flash": 0.173,
+    "whisper-large-v3-turbo": 0.7357,
+    "whisper-1": 0.8283,
+    "gpt-4o-transcribe": 0.2408
+   },
+   "Malayalam": {
+    "saaras:v3-transcribe": 0.1674,
+    "gemini-3.8-flash": 0.274,
+    "whisper-large-v3-turbo": 1.0,
+    "whisper-1": 0.9976,
+    "gpt-4o-transcribe": 0.2984
+   },
+   "Kannada": {
+    "saaras:v3-transcribe": 0.1666,
+    "gemini-3.8-flash": 0.1818,
+    "whisper-large-v3-turbo": 0.7016,
+    "whisper-1": 0.7083,
+    "gpt-4o-transcribe": 0.3176
+   },
+   "Marathi": {
+    "saaras:v3-transcribe": 0.159,
+    "gemini-3.8-flash": 0.1797,
+    "whisper-large-v3-turbo": 0.7581,
+    "whisper-1": 0.8144,
+    "gpt-4o-transcribe": 0.2479
+   },
+   "Gujarati": {
+    "saaras:v3-transcribe": 0.132,
+    "gemini-3.8-flash": 0.1444,
+    "whisper-large-v3-turbo": 0.7086,
+    "whisper-1": 0.9481,
+    "gpt-4o-transcribe": 0.2602
+   },
+   "Punjabi": {
+    "saaras:v3-transcribe": 0.148,
+    "gemini-3.8-flash": 0.2335,
+    "whisper-large-v3-turbo": 0.9945,
+    "whisper-1": 0.9732,
+    "gpt-4o-transcribe": 0.2349
+   },
+   "Odia": {
+    "saaras:v3-transcribe": 0.1962,
+    "gemini-3.8-flash": 0.2335,
+    "whisper-large-v3-turbo": 1.0,
+    "whisper-1": 0.9981,
+    "gpt-4o-transcribe": 0.3984
+   },
+   "Assamese": {
+    "saaras:v3-transcribe": 0.157,
+    "gemini-3.8-flash": 0.3077,
+    "whisper-large-v3-turbo": 1.0,
+    "whisper-1": 0.9784,
+    "gpt-4o-transcribe": 0.3695
+   },
+   "Urdu": {
+    "saaras:v3-transcribe": 0.1839,
+    "gemini-3.8-flash": 0.1367,
+    "whisper-large-v3-turbo": 0.2136,
+    "whisper-1": 0.2354,
+    "gpt-4o-transcribe": 0.1415
+   },
+   "Nepali": {
+    "saaras:v3-transcribe": 0.2707,
+    "gemini-3.8-flash": 0.2721,
+    "whisper-large-v3-turbo": 0.9143,
+    "whisper-1": 0.9521,
+    "gpt-4o-transcribe": 0.4244
+   },
+   "Sindhi": {
+    "saaras:v3-transcribe": 0.9956,
+    "gemini-3.8-flash": 0.2145,
+    "whisper-large-v3-turbo": 0.9527,
+    "whisper-1": 0.9746,
+    "gpt-4o-transcribe": 0.3193
+   }
+  },
+  "CER": {
+   "Hindi": {
+    "saaras:v3-transcribe": 0.0297,
+    "gemini-3.8-flash": 0.0729,
+    "whisper-large-v3-turbo": 0.0999,
+    "whisper-1": 0.1157,
+    "gpt-4o-transcribe": 0.0508
+   },
+   "Bengali": {
+    "saaras:v3-transcribe": 0.0209,
+    "gemini-3.8-flash": 0.0858,
+    "whisper-large-v3-turbo": 0.3013,
+    "whisper-1": 0.8031,
+    "gpt-4o-transcribe": 0.0527
+   },
+   "Tamil": {
+    "saaras:v3-transcribe": 0.1165,
+    "gemini-3.8-flash": 0.1665,
+    "whisper-large-v3-turbo": 0.1674,
+    "whisper-1": 0.1926,
+    "gpt-4o-transcribe": 0.091
+   },
+   "Telugu": {
+    "saaras:v3-transcribe": 0.0579,
+    "gemini-3.8-flash": 0.0184,
+    "whisper-large-v3-turbo": 0.2893,
+    "whisper-1": 0.5611,
+    "gpt-4o-transcribe": 0.0484
+   },
+   "Malayalam": {
+    "saaras:v3-transcribe": 0.0334,
+    "gemini-3.8-flash": 0.107,
+    "whisper-large-v3-turbo": 0.9742,
+    "whisper-1": 0.9712,
+    "gpt-4o-transcribe": 0.0653
+   },
+   "Kannada": {
+    "saaras:v3-transcribe": 0.0373,
+    "gemini-3.8-flash": 0.0977,
+    "whisper-large-v3-turbo": 0.1582,
+    "whisper-1": 0.2656,
+    "gpt-4o-transcribe": 0.0765
+   },
+   "Marathi": {
+    "saaras:v3-transcribe": 0.0418,
+    "gemini-3.8-flash": 0.0401,
+    "whisper-large-v3-turbo": 0.2181,
+    "whisper-1": 0.2629,
+    "gpt-4o-transcribe": 0.069
+   },
+   "Gujarati": {
+    "saaras:v3-transcribe": 0.038,
+    "gemini-3.8-flash": 0.0419,
+    "whisper-large-v3-turbo": 0.3363,
+    "whisper-1": 0.7826,
+    "gpt-4o-transcribe": 0.0969
+   },
+   "Punjabi": {
+    "saaras:v3-transcribe": 0.0396,
+    "gemini-3.8-flash": 0.1271,
+    "whisper-large-v3-turbo": 0.9729,
+    "whisper-1": 0.9288,
+    "gpt-4o-transcribe": 0.0886
+   },
+   "Odia": {
+    "saaras:v3-transcribe": 0.0691,
+    "gemini-3.8-flash": 0.0967,
+    "whisper-large-v3-turbo": 0.9994,
+    "whisper-1": 0.9988,
+    "gpt-4o-transcribe": 0.1677
+   },
+   "Assamese": {
+    "saaras:v3-transcribe": 0.0433,
+    "gemini-3.8-flash": 0.1711,
+    "whisper-large-v3-turbo": 1.0,
+    "whisper-1": 0.7369,
+    "gpt-4o-transcribe": 0.1468
+   },
+   "Urdu": {
+    "saaras:v3-transcribe": 0.0748,
+    "gemini-3.8-flash": 0.0556,
+    "whisper-large-v3-turbo": 0.0846,
+    "whisper-1": 0.0961,
+    "gpt-4o-transcribe": 0.0574
+   },
+   "Nepali": {
+    "saaras:v3-transcribe": 0.0756,
+    "gemini-3.8-flash": 0.0911,
+    "whisper-large-v3-turbo": 0.2907,
+    "whisper-1": 0.3516,
+    "gpt-4o-transcribe": 0.1617
+   },
+   "Sindhi": {
+    "saaras:v3-transcribe": 1.0,
+    "gemini-3.8-flash": 0.1035,
+    "whisper-large-v3-turbo": 0.8389,
+    "whisper-1": 0.931,
+    "gpt-4o-transcribe": 0.1636
+   }
+  },
+  "WER 95% CI": {
+   "Hindi": {
+    "saaras:v3-transcribe": [
+     0.0582,
+     0.1138
+    ],
+    "gemini-3.8-flash": [
+     0.0813,
+     0.2265
+    ],
+    "whisper-large-v3-turbo": [
+     0.2401,
+     0.3231
+    ],
+    "whisper-1": [
+     0.2617,
+     0.3374
+    ],
+    "gpt-4o-transcribe": [
+     0.0802,
+     0.1468
+    ]
+   },
+   "Bengali": {
+    "saaras:v3-transcribe": [
+     0.0904,
+     0.1785
+    ],
+    "gemini-3.8-flash": [
+     0.0822,
+     0.2579
+    ],
+    "whisper-large-v3-turbo": [
+     0.7316,
+     0.8356
+    ],
+    "whisper-1": [
+     0.9245,
+     0.9841
+    ],
+    "gpt-4o-transcribe": [
+     0.1435,
+     0.2051
+    ]
+   },
+   "Tamil": {
+    "saaras:v3-transcribe": [
+     0.1625,
+     0.3267
+    ],
+    "gemini-3.8-flash": [
+     0.201,
+     0.4157
+    ],
+    "whisper-large-v3-turbo": [
+     0.5405,
+     0.6907
+    ],
+    "whisper-1": [
+     0.4652,
+     0.6384
+    ],
+    "gpt-4o-transcribe": [
+     0.2633,
+     0.3695
+    ]
+   },
+   "Telugu": {
+    "saaras:v3-transcribe": [
+     0.0969,
+     0.2572
+    ],
+    "gemini-3.8-flash": [
+     0.1214,
+     0.2284
+    ],
+    "whisper-large-v3-turbo": [
+     0.658,
+     0.8133
+    ],
+    "whisper-1": [
+     0.7524,
+     0.8957
+    ],
+    "gpt-4o-transcribe": [
+     0.1941,
+     0.2887
+    ]
+   },
+   "Malayalam": {
+    "saaras:v3-transcribe": [
+     0.1206,
+     0.2162
+    ],
+    "gemini-3.8-flash": [
+     0.1848,
+     0.3802
+    ],
+    "whisper-large-v3-turbo": [
+     1.0,
+     1.0
+    ],
+    "whisper-1": [
+     0.9929,
+     1.0
+    ],
+    "gpt-4o-transcribe": [
+     0.2459,
+     0.3529
+    ]
+   },
+   "Kannada": {
+    "saaras:v3-transcribe": [
+     0.1153,
+     0.2193
+    ],
+    "gemini-3.8-flash": [
+     0.0993,
+     0.2855
+    ],
+    "whisper-large-v3-turbo": [
+     0.6408,
+     0.7595
+    ],
+    "whisper-1": [
+     0.6342,
+     0.7821
+    ],
+    "gpt-4o-transcribe": [
+     0.2571,
+     0.3758
+    ]
+   },
+   "Marathi": {
+    "saaras:v3-transcribe": [
+     0.1174,
+     0.201
+    ],
+    "gemini-3.8-flash": [
+     0.1291,
+     0.2436
+    ],
+    "whisper-large-v3-turbo": [
+     0.6787,
+     0.8324
+    ],
+    "whisper-1": [
+     0.7483,
+     0.8795
+    ],
+    "gpt-4o-transcribe": [
+     0.1934,
+     0.303
+    ]
+   },
+   "Gujarati": {
+    "saaras:v3-transcribe": [
+     0.0871,
+     0.1788
+    ],
+    "gemini-3.8-flash": [
+     0.1048,
+     0.188
+    ],
+    "whisper-large-v3-turbo": [
+     0.6388,
+     0.7813
+    ],
+    "whisper-1": [
+     0.9104,
+     0.9807
+    ],
+    "gpt-4o-transcribe": [
+     0.2067,
+     0.3251
+    ]
+   },
+   "Punjabi": {
+    "saaras:v3-transcribe": [
+     0.1102,
+     0.1905
+    ],
+    "gemini-3.8-flash": [
+     0.1441,
+     0.3453
+    ],
+    "whisper-large-v3-turbo": [
+     0.9836,
+     1.0
+    ],
+    "whisper-1": [
+     0.9433,
+     0.9988
+    ],
+    "gpt-4o-transcribe": [
+     0.1962,
+     0.2817
+    ]
+   },
+   "Odia": {
+    "saaras:v3-transcribe": [
+     0.1493,
+     0.2445
+    ],
+    "gemini-3.8-flash": [
+     0.1634,
+     0.322
+    ],
+    "whisper-large-v3-turbo": [
+     1.0,
+     1.0
+    ],
+    "whisper-1": [
+     0.9943,
+     1.0
+    ],
+    "gpt-4o-transcribe": [
+     0.3241,
+     0.4781
+    ]
+   },
+   "Assamese": {
+    "saaras:v3-transcribe": [
+     0.1157,
+     0.1991
+    ],
+    "gemini-3.8-flash": [
+     0.2122,
+     0.4248
+    ],
+    "whisper-large-v3-turbo": [
+     1.0,
+     1.0
+    ],
+    "whisper-1": [
+     0.9495,
+     0.9985
+    ],
+    "gpt-4o-transcribe": [
+     0.3132,
+     0.4272
+    ]
+   },
+   "Urdu": {
+    "saaras:v3-transcribe": [
+     0.156,
+     0.2105
+    ],
+    "gemini-3.8-flash": [
+     0.1061,
+     0.1687
+    ],
+    "whisper-large-v3-turbo": [
+     0.1738,
+     0.2538
+    ],
+    "whisper-1": [
+     0.1974,
+     0.2724
+    ],
+    "gpt-4o-transcribe": [
+     0.1132,
+     0.1715
+    ]
+   },
+   "Nepali": {
+    "saaras:v3-transcribe": [
+     0.2151,
+     0.3335
+    ],
+    "gemini-3.8-flash": [
+     0.1899,
+     0.3751
+    ],
+    "whisper-large-v3-turbo": [
+     0.8705,
+     0.9533
+    ],
+    "whisper-1": [
+     0.9075,
+     0.9843
+    ],
+    "gpt-4o-transcribe": [
+     0.3203,
+     0.5293
+    ]
+   },
+   "Sindhi": {
+    "saaras:v3-transcribe": [
+     0.9867,
+     1.0
+    ],
+    "gemini-3.8-flash": [
+     0.1551,
+     0.2766
+    ],
+    "whisper-large-v3-turbo": [
+     0.919,
+     0.9823
+    ],
+    "whisper-1": [
+     0.9481,
+     0.996
+    ],
+    "gpt-4o-transcribe": [
+     0.2548,
+     0.3932
+    ]
+   }
+  },
+  "output in correct script": {
+   "Hindi": {
+    "saaras:v3-transcribe": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "whisper-large-v3-turbo": 1.0,
+    "whisper-1": 1.0,
+    "gpt-4o-transcribe": 1.0
+   },
+   "Bengali": {
+    "saaras:v3-transcribe": 1.0,
+    "gemini-3.8-flash": 0.96,
+    "whisper-large-v3-turbo": 0.96,
+    "whisper-1": 0.32,
+    "gpt-4o-transcribe": 1.0
+   },
+   "Tamil": {
+    "saaras:v3-transcribe": 1.0,
+    "gemini-3.8-flash": 0.96,
+    "whisper-large-v3-turbo": 1.0,
+    "whisper-1": 1.0,
+    "gpt-4o-transcribe": 1.0
+   },
+   "Telugu": {
+    "saaras:v3-transcribe": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "whisper-large-v3-turbo": 0.92,
+    "whisper-1": 0.6,
+    "gpt-4o-transcribe": 1.0
+   },
+   "Malayalam": {
+    "saaras:v3-transcribe": 1.0,
+    "gemini-3.8-flash": 0.92,
+    "whisper-large-v3-turbo": 0.08,
+    "whisper-1": 0.04,
+    "gpt-4o-transcribe": 1.0
+   },
+   "Kannada": {
+    "saaras:v3-transcribe": 1.0,
+    "gemini-3.8-flash": 0.96,
+    "whisper-large-v3-turbo": 1.0,
+    "whisper-1": 0.92,
+    "gpt-4o-transcribe": 1.0
+   },
+   "Marathi": {
+    "saaras:v3-transcribe": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "whisper-large-v3-turbo": 1.0,
+    "whisper-1": 1.0,
+    "gpt-4o-transcribe": 1.0
+   },
+   "Gujarati": {
+    "saaras:v3-transcribe": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "whisper-large-v3-turbo": 0.88,
+    "whisper-1": 0.4,
+    "gpt-4o-transcribe": 1.0
+   },
+   "Punjabi": {
+    "saaras:v3-transcribe": 1.0,
+    "gemini-3.8-flash": 0.92,
+    "whisper-large-v3-turbo": 0.08,
+    "whisper-1": 0.12,
+    "gpt-4o-transcribe": 1.0
+   },
+   "Odia": {
+    "saaras:v3-transcribe": 1.0,
+    "gemini-3.8-flash": 0.96,
+    "whisper-large-v3-turbo": 0.0,
+    "whisper-1": 0.0,
+    "gpt-4o-transcribe": 1.0
+   },
+   "Assamese": {
+    "saaras:v3-transcribe": 1.0,
+    "gemini-3.8-flash": 0.88,
+    "whisper-large-v3-turbo": 0.0,
+    "whisper-1": 0.6,
+    "gpt-4o-transcribe": 1.0
+   },
+   "Urdu": {
+    "saaras:v3-transcribe": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "whisper-large-v3-turbo": 1.0,
+    "whisper-1": 1.0,
+    "gpt-4o-transcribe": 1.0
+   },
+   "Nepali": {
+    "saaras:v3-transcribe": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "whisper-large-v3-turbo": 0.96,
+    "whisper-1": 0.92,
+    "gpt-4o-transcribe": 1.0
+   },
+   "Sindhi": {
+    "saaras:v3-transcribe": 0.0,
+    "gemini-3.8-flash": 1.0,
+    "whisper-large-v3-turbo": 0.32,
+    "whisper-1": 0.12,
+    "gpt-4o-transcribe": 1.0
+   }
+  }
+ },
+ "worst_language": {
+  "saaras:v3-transcribe": {
+   "worst_wer_language": "Sindhi",
+   "wer": {
+    "mean": 0.9955555555555555,
+    "lo": 0.9866666666666667,
+    "hi": 1.0,
+    "n": 25
+   },
+   "worst_cer_language": "Sindhi",
+   "cer": 1.0,
+   "worst_wer_language_scorable_script": "Nepali",
+   "wer_scorable_script": {
+    "mean": 0.2707202519230578,
+    "lo": 0.2151081229025293,
+    "hi": 0.33354204818628025,
+    "n": 25
+   }
+  },
+  "gemini-3.8-flash": {
+   "worst_wer_language": "Assamese",
+   "wer": {
+    "mean": 0.30767976668441066,
+    "lo": 0.21218023239230668,
+    "hi": 0.42480995790128917,
+    "n": 25
+   },
+   "worst_cer_language": "Assamese",
+   "cer": 0.1711,
+   "worst_wer_language_scorable_script": "Assamese",
+   "wer_scorable_script": {
+    "mean": 0.30767976668441066,
+    "lo": 0.21218023239230668,
+    "hi": 0.42480995790128917,
+    "n": 25
+   }
+  },
+  "whisper-large-v3-turbo": {
+   "worst_wer_language": "Malayalam",
+   "wer": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 25
+   },
+   "worst_cer_language": "Assamese",
+   "cer": 1.0,
+   "worst_wer_language_scorable_script": "Nepali",
+   "wer_scorable_script": {
+    "mean": 0.9143384927907917,
+    "lo": 0.870494434730302,
+    "hi": 0.953301856792519,
+    "n": 25
+   }
+  },
+  "whisper-1": {
+   "worst_wer_language": "Odia",
+   "wer": {
+    "mean": 0.9980952380952381,
+    "lo": 0.9942857142857143,
+    "hi": 1.0,
+    "n": 25
+   },
+   "worst_cer_language": "Odia",
+   "cer": 0.9988,
+   "worst_wer_language_scorable_script": "Assamese",
+   "wer_scorable_script": {
+    "mean": 0.9784410521252626,
+    "lo": 0.9494736842105262,
+    "hi": 0.9985185185185185,
+    "n": 25
+   }
+  },
+  "gpt-4o-transcribe": {
+   "worst_wer_language": "Nepali",
+   "wer": {
+    "mean": 0.42439110566045984,
+    "lo": 0.320323524805698,
+    "hi": 0.5293150574516842,
+    "n": 25
+   },
+   "worst_cer_language": "Odia",
+   "cer": 0.1677,
+   "worst_wer_language_scorable_script": "Nepali",
+   "wer_scorable_script": {
+    "mean": 0.42439110566045984,
+    "lo": 0.320323524805698,
+    "hi": 0.5293150574516842,
+    "n": 25
+   }
+  }
+ },
+ "cannot_handle": {
+  "saaras:v3-transcribe": {
+   "other_script_than_reference": [
+    "Sindhi"
+   ],
+   "cer_at_least_0.5": []
+  },
+  "gemini-3.8-flash": {
+   "other_script_than_reference": [],
+   "cer_at_least_0.5": []
+  },
+  "whisper-large-v3-turbo": {
+   "other_script_than_reference": [
+    "Assamese",
+    "Malayalam",
+    "Odia",
+    "Punjabi",
+    "Sindhi"
+   ],
+   "cer_at_least_0.5": []
+  },
+  "whisper-1": {
+   "other_script_than_reference": [
+    "Bengali",
+    "Gujarati",
+    "Malayalam",
+    "Odia",
+    "Punjabi",
+    "Sindhi"
+   ],
+   "cer_at_least_0.5": [
+    "Assamese",
+    "Telugu"
+   ]
+  },
+  "gpt-4o-transcribe": {
+   "other_script_than_reference": [],
+   "cer_at_least_0.5": []
+  }
+ },
+ "speed": {
+  "saaras:v3-transcribe": {
+   "p50_ms": 874.1450309753418,
+   "p95_ms": 2330.6028842926025,
+   "real_time_factor": 0.091
+  },
+  "gemini-3.8-flash": {
+   "p50_ms": 3856.2309741973877,
+   "p95_ms": 6991.045951843262,
+   "real_time_factor": 0.361
+  },
+  "whisper-large-v3-turbo": {
+   "p50_ms": 8631.865978240967,
+   "p95_ms": 23174.733877182007,
+   "real_time_factor": 0.836
+  },
+  "whisper-1": {
+   "p50_ms": 2970.3071117401123,
+   "p95_ms": 6575.1988887786865,
+   "real_time_factor": 0.275
+  },
+  "gpt-4o-transcribe": {
+   "p50_ms": 1399.0061283111572,
+   "p95_ms": 2242.479085922241,
+   "real_time_factor": 0.121
+  }
+ },
+ "usage": {
+  "saaras:v3-transcribe": {
+   "calls": 350,
+   "audio_s": 4354.2,
+   "in_tok": 0,
+   "out_tok": 0,
+   "final_errors": 0,
+   "transient_error_records": 74,
+   "first_pass_empty": 0,
+   "inr_at_list_price": 36.29
+  },
+  "gemini-3.8-flash": {
+   "calls": 350,
+   "audio_s": 4354.2,
+   "in_tok": 116307,
+   "out_tok": 16105,
+   "final_errors": 0,
+   "transient_error_records": 0,
+   "first_pass_empty": 20
+  },
+  "whisper-large-v3-turbo": {
+   "calls": 350,
+   "audio_s": 4354.2,
+   "in_tok": 0,
+   "out_tok": 0,
+   "final_errors": 0,
+   "transient_error_records": 0,
+   "first_pass_empty": 0
+  },
+  "whisper-1": {
+   "calls": 350,
+   "audio_s": 4354.2,
+   "in_tok": 0,
+   "out_tok": 0,
+   "final_errors": 0,
+   "transient_error_records": 0,
+   "first_pass_empty": 0
+  },
+  "gpt-4o-transcribe": {
+   "calls": 350,
+   "audio_s": 4354.2,
+   "in_tok": 47302,
+   "out_tok": 19788,
+   "final_errors": 0,
+   "transient_error_records": 0,
+   "first_pass_empty": 0
+  }
+ },
+ "examples": [
+  {
+   "id": "ta_in/10015420708072669120.wav",
+   "language": "Tamil",
+   "reference": "இது வேதியியல் pH என அழைக்கப்படுகிறது. நீங்கள் சிவப்பு முட்டைக்கோஸ் சாற்றைப் பயன்படுத்தி ஒரு குறிகாட்டியை உருவாக்கலாம்.",
+   "outputs": {
+    "saaras:v3-transcribe": {
+     "hyp": "இது வேதியியல் பிஹெச் என அழைக்கப்படுகிறது. நீங்கள் சிவப்பு முட்டைக்கோ சாற்றைப் பயன்படுத்தி ஒரு குறிகாட்டியை உருவாக்கலாம்.",
+     "wer": 0.154,
+     "cer": 0.077
+    },
+    "gemini-3.8-flash": {
+     "hyp": "இது வேதியல் பிஹெச் என அழைக்கப்படுகிறது நீங்கள் சிவப்பு முட்டைக்கோஸ் சாற்றை பயன்படுத்தி ஒரு குறிகாட்டியை உருவாக்கலாம்",
+     "wer": 0.231,
+     "cer": 0.096
+    },
+    "whisper-large-v3-turbo": {
+     "hyp": "இது வேதியில் பீகச் சென அலைக்கப்படிகிறது நீங்கள் சுவுப்பு முட்டைக்கோ சாற்றைப் பையன் படுத்தி ஒரு குரியாட்டியை உருவாக்களாம்",
+     "wer": 0.769,
+     "cer": 0.173
+    },
+    "whisper-1": {
+     "hyp": "இது வேதியில் பீகச் சென்ன அழைக்கப்படிக்கிறது நீங்கள் சிவுப்பு முட்டைக்கோ சாட்டரைப் பயன்படுத்தி ஒரு குரியாட்டியை உருவாக்கலாம்.",
+     "wer": 0.615,
+     "cer": 0.202
+    },
+    "gpt-4o-transcribe": {
+     "hyp": "இது வேதியல் pH என அழைக்கப்படுகிறது நீங்கள் சிவப்பு முட்டைக்கோஸ் சாற்றைப் பயன்படுத்தி ஒரு குறியீட்டையே உருவாக்கலாம்.",
+     "wer": 0.154,
+     "cer": 0.058
+    }
+   }
+  },
+  {
+   "id": "or_in/10032896167284103272.wav",
+   "language": "Odia",
+   "reference": "ଯେଉଁ ଯୁଗରେ ଘଟଣାଗୁଡ଼ିକ ଘଟିଥିଲା ​​ତାହାକୁ ସାଧାରଣତଃ 11ଶ, 12ଶ ଏବଂ 13ଶ ଶତାବ୍ଦୀରେ (AD 1000–1300)ରେ ୟୁରୋପୀୟ ଇତିହାସର ଉଚ୍ଚ ମଧ୍ୟଯୁଗ ବୋଲି କୁହାଯାଏ।",
+   "outputs": {
+    "saaras:v3-transcribe": {
+     "hyp": "ଯେଉଁ ଯୁଗରେ ଘଟଣାଗୁଡ଼ିକ ଘଟିଥିଲା ତାହାକୁ ସାଧାରଣତଃ ଏକାଦଶ, ଦ୍ଵାଦଶ ଏବଂ ତ୍ରୟୋଦଶ ଶତାବ୍ଦୀରେ ଖ୍ରୀଷ୍ଟପୂର୍ବ ହଜାରରୁ ତେରଶହରେ ୟୁରୋପୀୟ ଇତିହାସର ଉଚ୍ଚ ମଧ୍ୟଯୁଗ ବୋଲି କୁହାଯାଏ।",
+     "wer": 0.381,
+     "cer": 0.36
+    },
+    "gemini-3.8-flash": {
+     "hyp": "ଯେଉଁ ଯୁଗରେ ଘଟଣାଗୁଡ଼ିକ ଘଟିଥିଲା, ତାହାକୁ ସାଧାରଣତଃ ଏକାଦଶ, ଦ୍ଵାଦଶ ଏବଂ ତ୍ରୟୋଦଶ ଶତାବ୍ଦୀରେ ଖ୍ରୀଷ୍ଟପୂର୍ବ ୧୦୦୦ ରୁ ୧୩୦୦ ରେ ଇଉରୋପୀୟ ଇତିହାସର ଉଚ୍ଚ ମଧ୍ୟଯୁଗ ବୋଲି କୁହାଯାଏ।",
+     "wer": 0.333,
+     "cer": 0.297
+    },
+    "whisper-large-v3-turbo": {
+     "hyp": "જેઉં જુગરે ઘટણાંગુડીકો ઘટીતીલા તાહાકું સાધર્ણ તો એકકાદસે દાદસે બમ ત્ર્યાદસા સતાપદીરે ખીષ્ટપુર્વં હજારો તેરો સારે એઉરોપીય ત્યાસરો ઉચ્ય મધ્યં જુગવલી કુહાજાજાય",
+     "wer": 1.0,
+     "cer": 1.0
+    },
+    "whisper-1": {
+     "hyp": "जैउं जुगरे घटना गुडिको घटितिला ताहाको सद्धारन्त एकादस्य, द्वादस्य पंग, त्रयदस्य सताप दिरे खिष्टपूर्ब हजार रो तेरसर रे इउरोपिय इत्यास रो उच्छ मद्ध्यों जुगो बली कुहा जाये।",
+     "wer": 1.0,
+     "cer": 1.0
+    },
+    "gpt-4o-transcribe": {
+     "hyp": "ଯେଉଁ ଯୁଗରେ ଘଟଣାଗୁଡ଼ିକ ଘଟିଥିଲା, ତାହାକୁ ସାଧାରଣତଃ ଏକାଦଶ, ଦ୍ୱାଦଶ ଏବଂ ତ୍ରୟୋଦଶ ଶତାବ୍ଦୀରେ ଖିଷ୍ଟପୂର୍ବ ହଜାରରୁ ତେରୋଶରେ ଇଉରୋପୀୟ ଇତିହାସର ଉଚ୍ଚ ମଧ୍ୟଯୁଗ ବୋଲି କୁହାଯାଏ।",
+     "wer": 0.429,
+     "cer": 0.36
+    }
+   }
+  },
+  {
+   "id": "as_in/10007973808011083086.wav",
+   "language": "Assamese",
+   "reference": "প্ৰতিবেদনটোত ইৰাকৰ কাৰ্যপালিকাৰ বৰ্তমানৰ প্ৰতিটো নীতিৰ অতি বেছি সমালোচনা কৰা হৈছে আৰু ইয়াত ততালিকে নিৰ্দেশ সলনি কৰাৰ বাবে অনুৰোধ জনোৱা হৈছে।",
+   "outputs": {
+    "saaras:v3-transcribe": {
+     "hyp": "প্ৰতিবেদনটোত ইৰাকৰ কাৰ্যপালিকাৰ বৰ্তমানৰ প্ৰতিটো নীতিৰ অতি বেছি সমালোচনা কৰা হৈছে আৰু ইয়াত ততালিকে নিৰ্দেশ সলনি কৰাৰ বাবে অনুৰোধ জনোৱা হৈছে।",
+     "wer": 0.0,
+     "cer": 0.0
+    },
+    "gemini-3.8-flash": {
+     "hyp": "",
+     "wer": 1.0,
+     "cer": 1.0
+    },
+    "whisper-large-v3-turbo": {
+     "hyp": "प्रटीबेरुन्तुर इराकोर कार्जोकालिकार बट्टमनर प्रटीटो निटिर ओटीबेसी हमालो सुना करा होईसे आरु यार्त ततालिके निर्डिकलोलोनिकरार वारवे",
+     "wer": 1.0,
+     "cer": 1.0
+    },
+    "whisper-1": {
+     "hyp": "পরটিবেরন্তোর ইরাকোর কার্জপালিকার বড্টমানোর পরটিতো নিটির অতি বেসি হমালোসনা করা হোইসে আরো যার ততালিকে নিটি খলানি ক",
+     "wer": 0.905,
+     "cer": 0.542
+    },
+    "gpt-4o-transcribe": {
+     "hyp": "প্ৰতিবেদনত ৰিৰাকৰ কাৰ্য্যকালৰ বৰ্তমানৰ প্ৰতিটো নীতিৰ অতি বেছি সমালোচনা কৰা হৈছে আৰু ইয়াৰ ততালিকে নিৰ্দিষ্ট সলনি কৰাৰ বাবে অনুৰোধ জনোৱা হৈছে।",
+     "wer": 0.238,
+     "cer": 0.117
+    }
+   }
+  },
+  {
+   "id": "ur_pk/10032188829272002643.wav",
+   "language": "Urdu",
+   "reference": "ان کے دور میں خفیف تلوُّث ایزا مسئلہ نہیں تھا جیسا کہ وہ آج ہے۔ ان کی سکونت ایسے شہروں یا حوزات میں ہے جہا ں تک بآسانی پہنچا جا سکتا ہے بہ نسبت ان مقامات کے جو ماڈرن زمانے میں تعمیر کئے گئے۔",
+   "outputs": {
+    "saaras:v3-transcribe": {
+     "hyp": "ان کے دور میں خفیب تلووس ایسا مسئلہ نہیں تھا جیسا کہ وہ آج ہے، ان کی سکونت ایسے شہروں یا حوضات میں ہے جہاں تک بآسانی پہنچا جا سکتا ہے بہ نسبت ان مقامات کے جو ماڈرن زمانے میں تعمیر کئے گئے۔",
+     "wer": 0.136,
+     "cer": 0.035
+    },
+    "gemini-3.8-flash": {
+     "hyp": "ان کے دور میں خفیف تلوس ایسا مسئلہ نہیں تھا جیسا کہ وہ اج ہے۔ ان کی سکونت ایسے شہروں یا حوضات میں ہے جہاں تک بااسانی پہنچا جا سکتا ہے۔ بانسبت ان مقامات کے جو ماڈرن زمانے میں تعمیر کیے گئے۔",
+     "wer": 0.227,
+     "cer": 0.056
+    },
+    "whisper-large-v3-turbo": {
+     "hyp": "ان کے دور میں خفیب تلویس ایزا مسئلہ نہیں تھا جیسا کہ وہ آج ہے ان کی سکونت ایسے شہروں یا حوزات میں ہے جہاں تک بہتسانی پہنچا جا سکتا ہے بنسبت ان مقامات کے جو مادرن زمانے میں تعمیر کیے گئے",
+     "wer": 0.205,
+     "cer": 0.056
+    },
+    "whisper-1": {
+     "hyp": "ان کے دور میں خفیف تلویس ایزا مسئلہ نہیں تھا جیسا کہ وہ آج ہے ان کی سکونت ایسے شہروں یا حوزات میں ہے جہاں تک بہ سانی پہنچا جا سکتا ہے بنسبت ان مقامات کے جو مادرن زمانے میں تعمیر کیے گئے",
+     "wer": 0.205,
+     "cer": 0.042
+    },
+    "gpt-4o-transcribe": {
+     "hyp": "ان کے دور میں خفیف تلوث ایسا مسئلہ نہیں تھا جیسا کہ وہ آج ہے۔ ان کی سکونت ایسے شہروں یا حوضات میں ہے جہاں تک بآسانی پہنچا جا سکتا ہے، بہ نسبت ان مقامات کے جو ماڈرن زمانے میں تعمیر کیے گئے۔",
+     "wer": 0.114,
+     "cer": 0.021
+    }
+   }
+  },
+  {
+   "id": "sd_in/10032344746424251496.wav",
+   "language": "Sindhi",
+   "reference": "'هوسٽائل ماحول واري ڪورس' لاءِ انٽرنيٽ جي هڪ ڳولا ممڪن طور تي ڪنهن مقامي ڪمپني جو پتو مهيا ڪندي.",
+   "outputs": {
+    "saaras:v3-transcribe": {
+     "hyp": "होस्टाइल माहौल वारे कोर्स लाइ इंटरनेट जी हिकु ॻोल्हा मुमकिन तौर ते कंहिं मकामी कंपनी जो पतो मुहैया कंदी",
+     "wer": 1.0,
+     "cer": 1.0
+    },
+    "gemini-3.8-flash": {
+     "hyp": "هاسٽائل ماحول واري ڪورس لاءِ انٽرنيٽ جي هڪ ڳولا ممڪن طور تي ڪنهن مقامي ڪمپني جو پتو مهيا ڪندي",
+     "wer": 0.053,
+     "cer": 0.014
+    },
+    "whisper-large-v3-turbo": {
+     "hyp": "Haustile mahalwarik course lai internet jhek gola mumkinkin torte queh maqami company jopato moya kandhi.",
+     "wer": 1.0,
+     "cer": 1.0
+    },
+    "whisper-1": {
+     "hyp": "हॉस्ट्रायल माहॉल बारे कोर्स लाए इंटरनेट जीख गोला मुम्किन तोरते कै मकामी कमपनी जो पतो मोया करदी।",
+     "wer": 1.0,
+     "cer": 1.0
+    },
+    "gpt-4o-transcribe": {
+     "hyp": "Hostile ماحول واري ڪورس لاءِ، انٽرنيٽ جي هڪ گولا ممڪن طور تي ڪنهن مقامي ڪمپني جو پتو ڏي ميا ڪري.",
+     "wer": 0.263,
+     "cer": 0.176
+    }
+   }
+  }
+ ],
+ "findings": [
+  "In the 13 languages where its output script matches FLEURS, saaras:v3 has the lowest WER in 12 (all except Urdu; Nepali 0.271 vs 0.272 and Telugu 0.170 vs 0.173 are ties; on CER Gemini wins Telugu, Marathi and Urdu): macro WER 0.17 / CER 0.052 vs gemini-3.8-flash 0.21 / 0.090, gpt-4o-transcribe 0.27 / 0.090, whisper-1 (hosted) 0.79 / 0.54 and whisper-large-v3-turbo (local) 0.75 / 0.45. Biggest saaras leads: Assamese 0.16 vs 0.31, Malayalam 0.17 vs 0.27, Punjabi 0.15 vs 0.23 (Gemini figures include its blocked clips).",
+  "Worst language: saaras Nepali 0.27 [0.22-0.33], Gemini Assamese 0.31 [0.21-0.42], Whisper Malayalam 1.00. Gemini's worst-language CI overlaps saaras's, so on read speech the two are close on the weakest language; Whisper is not.",
+  "gpt-4o-transcribe is the most robust OpenAI option and the only system besides Gemini that writes every language, including Sindhi, in the reference script: WER worst language Nepali 0.42 [0.32-0.53], best CER of all systems on Tamil (0.091), zero blocked clips, p50 1.4 s (RTF 0.12). Its WER trails saaras in 12 of 13 comparable languages (it wins only Urdu, and on CER also Tamil); the gap is mostly word boundaries and spelling choices — its macro CER (0.090) equals Gemini's.",
+  "Sindhi: saaras:v3 (language_code sd-IN) writes Sindhi in Devanagari, FLEURS uses Perso-Arabic script, so it scores WER 0.996 here. The Devanagari text reads as a faithful transcript (e.g. 'होस्टाइल माहौल वारे कोर्स…' for 'هوسٽائل ماحول واري ڪورس…'), so this is a script choice, not deafness — but a helpline that needs Arabic-script Sindhi cannot get it from saaras. Gemini handles Sindhi in Arabic script at WER 0.21.",
+  "Gemini returned no transcript at all for 20 of 350 clips on the first try (prompt blocked, block_reason OTHER) and for 11 (3.1%) even after three attempts, spread over 7 languages (Assamese 3, Punjabi 2, Malayalam 2, Bengali, Tamil, Kannada, Odia 1 each). On the clips it did transcribe, its macro WER is 0.185. A helpline using Gemini needs a fallback for blocked audio.",
+  "Hosted whisper-1 rejects language codes bn, te, gu, pa ('Language 'bn' is not supported.', HTTP 400) and has no Odia, so those ran on auto-detect; it then wrote Bengali, Gujarati, Malayalam, Odia, Punjabi and Sindhi mostly in the wrong script, and Assamese/Telugu at CER >= 0.5. Only Hindi (0.30) and Urdu (0.24) are usable — no better than the local model.",
+  "Whisper-large-v3-turbo cannot serve five of the fourteen languages: with the language forced it still wrote Punjabi in Devanagari (23/25), Assamese in Devanagari (18/25), Malayalam in Devanagari or Kannada script (23/25), and Sindhi mostly in Devanagari; it has no Odia at all and auto-detect wrote Odia audio in Gujarati script (20/25). Only Urdu (0.21) and Hindi (0.28) are usable.",
+  "Speed per clip (5-30 s of audio): saaras p50 0.87 s / p95 2.3 s (RTF 0.09); gpt-4o-transcribe 1.4 / 2.2 s (RTF 0.12); whisper-1 3.0 / 6.6 s (RTF 0.28); Gemini 3.9 / 7.0 s (RTF 0.36); local Whisper p50 8.6 s (RTF 0.84) on a GPU shared with a 30B llama.cpp server.",
+  "saaras:v3 REST rejects clips over 30 s ('use the batch API'), so long callers must be chunked or sent through the job API. 74 calls first ended as HTTP 400 'Failed to read the file'; these followed 429 rate-limit retries in common/bench.py, which re-sends an already-read file handle (an empty upload), and all succeeded when the file was re-opened per attempt.",
+  "Cost: 350 clips (72.6 min) cost Rs 36.3 on saaras at the Rs 30/hour list price; Gemini used 116k input / 16k output tokens, gpt-4o-transcribe 47k input / 20k output tokens, whisper-1 72.6 billed minutes for the same audio."
+ ],
+ "caveats": [
+  "FLEURS is read Wikipedia sentences recorded by volunteers on decent microphones: easier than real helpline calls (spontaneous speech, code-mixing, 8 kHz phone lines, background noise). Expect higher error rates in production, and see uc01 for phone-line and code-mixed results.",
+  "25 clips per language (first 25 distinct sentences <= 30 s in archive order); per-language CIs are wide (often +/-0.05 to +/-0.10 WER). Rankings between saaras and Gemini inside one language are often not significant; the macro averages and Whisper's failures are.",
+  "Urdu is FLEURS ur_pk (Pakistani speakers) and Nepali is ne_np; Indian Urdu/Nepali speakers may differ.",
+  "WER on Indic text is harsh: agglutinative words, optional nukta/halant spellings and number formatting all count as errors. CER is the fairer cross-language number; both are reported.",
+  "Sindhi is scored against Perso-Arabic references only; nothing is transliterated, so saaras's Devanagari Sindhi is counted as wrong. The 'excluding other-script languages' worst-language metric shows the result without it.",
+  "Gemini's blocked clips count as WER 1.0. FLEURS sentences come from Wikipedia, so the block may be a recitation/content filter that real calls would trigger less often — unverified.",
+  "Whisper latency was measured on a shared Mac whose GPU was also serving other benchmark jobs."
+ ],
+ "verdict": "For a multi-language citizen helpline, saaras:v3 is the strongest default: lowest WER in 12 of the 13 comparable languages (several near-ties), macro CER about half of Gemini's and gpt-4o-transcribe's, every clip transcribed, and answers in under a second. Plan for its two gaps: it writes Sindhi only in Devanagari, and it accepts at most 30 s per REST call. Gemini-3.8-flash (worst language Assamese 0.31) and gpt-4o-transcribe (worst Nepali 0.42, never blocks, 1.4 s) are the credible alternatives and both handle Arabic-script Sindhi; Gemini silently returned nothing for about 3% of clips. Whisper — hosted whisper-1 or local large-v3-turbo — is not fit for an Indian helpline: it rejects or mis-scripts six of the fourteen languages.",
+ "updated": "2026-10-11 21:53:03"
+}

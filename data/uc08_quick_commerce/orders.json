@@ -1,0 +1,2849 @@
+{
+ "synthetic": true,
+ "how_made": "hand-authored for this benchmark; no real customer data",
+ "license": "CC-BY 4.0",
+ "clock": "Sunday 11 October 2026, 10:00 AM IST",
+ "catalog": [
+  "rice",
+  "basmati rice",
+  "wheat flour",
+  "toor dal",
+  "moong dal",
+  "chana dal",
+  "masoor dal",
+  "besan",
+  "semolina",
+  "poha",
+  "sugar",
+  "salt",
+  "jaggery",
+  "sunflower oil",
+  "mustard oil",
+  "coconut oil",
+  "sesame oil",
+  "cooking oil",
+  "ghee",
+  "milk",
+  "curd",
+  "buttermilk",
+  "butter",
+  "paneer",
+  "cheese slices",
+  "fresh cream",
+  "ice cream",
+  "bread",
+  "eggs",
+  "onion",
+  "tomato",
+  "potato",
+  "ginger",
+  "garlic",
+  "green chilli",
+  "coriander leaves",
+  "mint leaves",
+  "curry leaves",
+  "lemon",
+  "cucumber",
+  "spinach",
+  "cauliflower",
+  "brinjal",
+  "okra",
+  "carrot",
+  "banana",
+  "apple",
+  "mango",
+  "coconut",
+  "tea",
+  "coffee",
+  "biscuits",
+  "instant noodles",
+  "chips",
+  "namkeen",
+  "chocolate",
+  "jam",
+  "soft drink",
+  "packaged water",
+  "detergent powder",
+  "detergent bar",
+  "dishwash bar",
+  "dishwash liquid",
+  "soap",
+  "shampoo",
+  "toothpaste",
+  "sanitary pads",
+  "diapers",
+  "chicken",
+  "mutton",
+  "fish",
+  "turmeric powder",
+  "chilli powder",
+  "garam masala",
+  "sambar powder",
+  "idli batter",
+  "dosa batter",
+  "soya chunks",
+  "peanuts",
+  "chickpeas"
+ ],
+ "units": [
+  "kg",
+  "g",
+  "l",
+  "ml",
+  "dozen",
+  "packet",
+  "piece",
+  "bottle",
+  "bunch",
+  "box",
+  "can"
+ ],
+ "orders": [
+  {
+   "id": 1,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "bhaiya 2 kilo aashirvaad atta, 1 kg toor dal aur half litre amul taaza bhej do. pin 110017, COD",
+   "gold": {
+    "items": [
+     {
+      "name": "wheat flour",
+      "brand": "Aashirvaad",
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "toor dal",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "milk",
+      "brand": "Amul",
+      "qty": 0.5,
+      "unit": "l"
+     }
+    ],
+    "pincode": "110017",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 2,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "5 kg basmati chawal india gate wala chahiye, payment upi se karunga, aaj shaam tak de dena",
+   "gold": {
+    "items": [
+     {
+      "name": "basmati rice",
+      "brand": "India Gate",
+      "qty": 5,
+      "unit": "kg"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "today_evening"
+   }
+  },
+  {
+   "id": 3,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "ek darjan ande aur 2 packet britannia bread, kal subah 7 baje. 400050",
+   "gold": {
+    "items": [
+     {
+      "name": "eggs",
+      "brand": null,
+      "qty": 1,
+      "unit": "dozen"
+     },
+     {
+      "name": "bread",
+      "brand": "Britannia",
+      "qty": 2,
+      "unit": "packet"
+     }
+    ],
+    "pincode": "400050",
+    "payment": null,
+    "slot": "tomorrow_morning"
+   }
+  },
+  {
+   "id": 4,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "maggi ke 4 packet, 1 litre fortune sunflower tel, aadha kilo cheeni. cash on delivery",
+   "gold": {
+    "items": [
+     {
+      "name": "instant noodles",
+      "brand": "Maggi",
+      "qty": 4,
+      "unit": "packet"
+     },
+     {
+      "name": "sunflower oil",
+      "brand": "Fortune",
+      "qty": 1,
+      "unit": "l"
+     },
+     {
+      "name": "sugar",
+      "brand": null,
+      "qty": 0.5,
+      "unit": "kg"
+     }
+    ],
+    "pincode": null,
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 5,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "pyaz 2 kg tamatar 1 kg aloo 3 kg, dhaniya ek gaddi. GPay kar dunga. 122001",
+   "gold": {
+    "items": [
+     {
+      "name": "onion",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "tomato",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "potato",
+      "brand": null,
+      "qty": 3,
+      "unit": "kg"
+     },
+     {
+      "name": "coriander leaves",
+      "brand": null,
+      "qty": 1,
+      "unit": "bunch"
+     }
+    ],
+    "pincode": "122001",
+    "payment": "UPI",
+    "slot": null
+   }
+  },
+  {
+   "id": 6,
+   "lang": "hi-rom",
+   "kind": "search",
+   "message": "amul butter 500g wala hai kya stock me?",
+   "gold": {
+    "items": [
+     {
+      "name": "butter",
+      "brand": "Amul",
+      "qty": 500,
+      "unit": "g"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 7,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "mother dairy ka paneer 1 kilo aur do packet dahi bhi (koi bhi brand). raat 9 baje ke baad deliver karna. upi",
+   "gold": {
+    "items": [
+     {
+      "name": "paneer",
+      "brand": "Mother Dairy",
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "curd",
+      "brand": null,
+      "qty": 2,
+      "unit": "packet"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "today_night"
+   }
+  },
+  {
+   "id": 8,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "surf excel 1kg, vim bar 3, colgate 200 gram. 560034 pe bhejo. cod",
+   "gold": {
+    "items": [
+     {
+      "name": "detergent powder",
+      "brand": "Surf Excel",
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "dishwash bar",
+      "brand": "Vim",
+      "qty": 3,
+      "unit": "piece"
+     },
+     {
+      "name": "toothpaste",
+      "brand": "Colgate",
+      "qty": 200,
+      "unit": "g"
+     }
+    ],
+    "pincode": "560034",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 9,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "haldiram bhujia 2 pkt aur thums up 2 litre wali 1 bottle",
+   "gold": {
+    "items": [
+     {
+      "name": "namkeen",
+      "brand": "Haldiram's",
+      "qty": 2,
+      "unit": "packet"
+     },
+     {
+      "name": "soft drink",
+      "brand": "Thums Up",
+      "qty": 1,
+      "unit": "bottle",
+      "alt": [
+       {
+        "qty": 2,
+        "unit": "l"
+       }
+      ]
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 10,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "kal dopahar me 10 kg aata aur 5 kilo chini. payment card se. 302017",
+   "gold": {
+    "items": [
+     {
+      "name": "wheat flour",
+      "brand": null,
+      "qty": 10,
+      "unit": "kg"
+     },
+     {
+      "name": "sugar",
+      "brand": null,
+      "qty": 5,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "302017",
+    "payment": "card",
+    "slot": "tomorrow_afternoon"
+   }
+  },
+  {
+   "id": 11,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "bhai jaldi bhejo 2 bisleri 1 ltr aur lays ke 3 packet, COD, 110092",
+   "gold": {
+    "items": [
+     {
+      "name": "packaged water",
+      "brand": "Bisleri",
+      "qty": 2,
+      "unit": "bottle",
+      "alt": [
+       {
+        "qty": 2,
+        "unit": "l"
+       }
+      ]
+     },
+     {
+      "name": "chips",
+      "brand": "Lays",
+      "qty": 3,
+      "unit": "packet"
+     }
+    ],
+    "pincode": "110092",
+    "payment": "COD",
+    "slot": "asap"
+   }
+  },
+  {
+   "id": 12,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "do kilo chicken curry cut aur 1 kg mutton. sham 6 baje. upi. 500081",
+   "gold": {
+    "items": [
+     {
+      "name": "chicken",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "mutton",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "500081",
+    "payment": "UPI",
+    "slot": "today_evening"
+   }
+  },
+  {
+   "id": 13,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "tata namak 1 kg, tata tea premium 500 gm, aur parle g 5 packet",
+   "gold": {
+    "items": [
+     {
+      "name": "salt",
+      "brand": "Tata",
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "tea",
+      "brand": "Tata Tea",
+      "qty": 500,
+      "unit": "g"
+     },
+     {
+      "name": "biscuits",
+      "brand": "Parle-G",
+      "qty": 5,
+      "unit": "packet"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 14,
+   "lang": "hi-rom",
+   "kind": "search",
+   "message": "saffola gold oil 5 litre ka jar milega? rate kya hai",
+   "gold": {
+    "items": [
+     {
+      "name": "cooking oil",
+      "brand": "Saffola",
+      "qty": 5,
+      "unit": "l",
+      "alt": [
+       {
+        "qty": 1,
+        "unit": "piece"
+       }
+      ]
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 15,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "aaj raat tak 1 pampers medium pack aur whisper 2 packet. Paytm se pay karenge",
+   "gold": {
+    "items": [
+     {
+      "name": "diapers",
+      "brand": "Pampers",
+      "qty": 1,
+      "unit": "packet"
+     },
+     {
+      "name": "sanitary pads",
+      "brand": "Whisper",
+      "qty": 2,
+      "unit": "packet"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "today_night"
+   }
+  },
+  {
+   "id": 16,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "1kg moong dal, 1kg chana dal, 500g besan, 250 gm haldi powder. pincode 226010. cod pls",
+   "gold": {
+    "items": [
+     {
+      "name": "moong dal",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "chana dal",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "besan",
+      "brand": null,
+      "qty": 500,
+      "unit": "g"
+     },
+     {
+      "name": "turmeric powder",
+      "brand": null,
+      "qty": 250,
+      "unit": "g"
+     }
+    ],
+    "pincode": "226010",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 17,
+   "lang": "hi-deva",
+   "kind": "order",
+   "message": "2 किलो आलू, 1 किलो प्याज़ और 6 केले भेज दीजिए। पिन 110085, कैश ऑन डिलीवरी",
+   "gold": {
+    "items": [
+     {
+      "name": "potato",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "onion",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "banana",
+      "brand": null,
+      "qty": 6,
+      "unit": "piece"
+     }
+    ],
+    "pincode": "110085",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 18,
+   "lang": "hi-deva",
+   "kind": "order",
+   "message": "अमूल का 1 लीटर दूध 2 पैकेट और एक ब्रेड। कल सुबह चाहिए। UPI से पेमेंट",
+   "gold": {
+    "items": [
+     {
+      "name": "milk",
+      "brand": "Amul",
+      "qty": 2,
+      "unit": "packet",
+      "alt": [
+       {
+        "qty": 2,
+        "unit": "l"
+       }
+      ]
+     },
+     {
+      "name": "bread",
+      "brand": null,
+      "qty": 1,
+      "unit": "packet"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "tomorrow_morning"
+   }
+  },
+  {
+   "id": 19,
+   "lang": "hi-deva",
+   "kind": "order",
+   "message": "आशीर्वाद आटा 5 किलो और फॉर्च्यून सरसों तेल 1 लीटर। 208001",
+   "gold": {
+    "items": [
+     {
+      "name": "wheat flour",
+      "brand": "Aashirvaad",
+      "qty": 5,
+      "unit": "kg"
+     },
+     {
+      "name": "mustard oil",
+      "brand": "Fortune",
+      "qty": 1,
+      "unit": "l"
+     }
+    ],
+    "pincode": "208001",
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 20,
+   "lang": "hi-deva",
+   "kind": "search",
+   "message": "क्या आपके पास MDH गरम मसाला 100 ग्राम है?",
+   "gold": {
+    "items": [
+     {
+      "name": "garam masala",
+      "brand": "MDH",
+      "qty": 100,
+      "unit": "g"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 21,
+   "lang": "hi-deva",
+   "kind": "order",
+   "message": "एक दर्जन अंडे, आधा किलो पनीर, 2 पैकेट मैगी। आज शाम 6 बजे तक। 452001, नकद",
+   "gold": {
+    "items": [
+     {
+      "name": "eggs",
+      "brand": null,
+      "qty": 1,
+      "unit": "dozen"
+     },
+     {
+      "name": "paneer",
+      "brand": null,
+      "qty": 0.5,
+      "unit": "kg"
+     },
+     {
+      "name": "instant noodles",
+      "brand": "Maggi",
+      "qty": 2,
+      "unit": "packet"
+     }
+    ],
+    "pincode": "452001",
+    "payment": "COD",
+    "slot": "today_evening"
+   }
+  },
+  {
+   "id": 22,
+   "lang": "hi-deva",
+   "kind": "order",
+   "message": "चीनी 2 किलो, चायपत्ती रेड लेबल 250 ग्राम, बिस्कुट गुड डे 4 पैकेट। फोनपे से पेमेंट करूँगा",
+   "gold": {
+    "items": [
+     {
+      "name": "sugar",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "tea",
+      "brand": "Red Label",
+      "qty": 250,
+      "unit": "g"
+     },
+     {
+      "name": "biscuits",
+      "brand": "Good Day",
+      "qty": 4,
+      "unit": "packet"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": null
+   }
+  },
+  {
+   "id": 23,
+   "lang": "hi-deva",
+   "kind": "order",
+   "message": "पोहा 1 किलो, सूजी आधा किलो, गुड़ 1 किलो — रात 8 बजे के बाद भेजना, पिन कोड 800001",
+   "gold": {
+    "items": [
+     {
+      "name": "poha",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "semolina",
+      "brand": null,
+      "qty": 0.5,
+      "unit": "kg"
+     },
+     {
+      "name": "jaggery",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "800001",
+    "payment": null,
+    "slot": "today_night"
+   }
+  },
+  {
+   "id": 24,
+   "lang": "hi-deva",
+   "kind": "order",
+   "message": "हल्दीराम नमकीन 3 पैकेट और कोका कोला 2 बोतल अभी भेजो",
+   "gold": {
+    "items": [
+     {
+      "name": "namkeen",
+      "brand": "Haldiram's",
+      "qty": 3,
+      "unit": "packet"
+     },
+     {
+      "name": "soft drink",
+      "brand": "Coca-Cola",
+      "qty": 2,
+      "unit": "bottle"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": "asap"
+   }
+  },
+  {
+   "id": 25,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "bhaiyaa 1kg tamater 1/2 kg adrak nahi 250gm adrak aur lehsun 250 gm, hari mirch 100gm. cod. 110059",
+   "gold": {
+    "items": [
+     {
+      "name": "tomato",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "ginger",
+      "brand": null,
+      "qty": 250,
+      "unit": "g"
+     },
+     {
+      "name": "garlic",
+      "brand": null,
+      "qty": 250,
+      "unit": "g"
+     },
+     {
+      "name": "green chilli",
+      "brand": null,
+      "qty": 100,
+      "unit": "g"
+     }
+    ],
+    "pincode": "110059",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 26,
+   "lang": "en-mix",
+   "kind": "order",
+   "message": "plz send 3 ltr milk nandini, 1 pkt curd, tomrw mrng 6:30. 560076. upi",
+   "gold": {
+    "items": [
+     {
+      "name": "milk",
+      "brand": "Nandini",
+      "qty": 3,
+      "unit": "l"
+     },
+     {
+      "name": "curd",
+      "brand": null,
+      "qty": 1,
+      "unit": "packet"
+     }
+    ],
+    "pincode": "560076",
+    "payment": "UPI",
+    "slot": "tomorrow_morning"
+   }
+  },
+  {
+   "id": 27,
+   "lang": "en-mix",
+   "kind": "order",
+   "message": "dettol soap 4, dove shampoo 340ml 1 bottle, colgate 2. card payment",
+   "gold": {
+    "items": [
+     {
+      "name": "soap",
+      "brand": "Dettol",
+      "qty": 4,
+      "unit": "piece"
+     },
+     {
+      "name": "shampoo",
+      "brand": "Dove",
+      "qty": 1,
+      "unit": "bottle",
+      "alt": [
+       {
+        "qty": 340,
+        "unit": "ml"
+       }
+      ]
+     },
+     {
+      "name": "toothpaste",
+      "brand": "Colgate",
+      "qty": 2,
+      "unit": "piece"
+     }
+    ],
+    "pincode": null,
+    "payment": "card",
+    "slot": null
+   }
+  },
+  {
+   "id": 28,
+   "lang": "hi-rom",
+   "kind": "search",
+   "message": "kya aapke yaha amul ice cream milegi? vanilla 1 litre",
+   "gold": {
+    "items": [
+     {
+      "name": "ice cream",
+      "brand": "Amul",
+      "qty": 1,
+      "unit": "l"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 29,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "Sabzi: bhindi 500g, gobhi 1, palak 2 gaddi, gajar 1 kg. Delivery aaj dopahar. 411038. COD",
+   "gold": {
+    "items": [
+     {
+      "name": "okra",
+      "brand": null,
+      "qty": 500,
+      "unit": "g"
+     },
+     {
+      "name": "cauliflower",
+      "brand": null,
+      "qty": 1,
+      "unit": "piece"
+     },
+     {
+      "name": "spinach",
+      "brand": null,
+      "qty": 2,
+      "unit": "bunch"
+     },
+     {
+      "name": "carrot",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "411038",
+    "payment": "COD",
+    "slot": "today_afternoon"
+   }
+  },
+  {
+   "id": 30,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "1 litre ghee chahiye, koi bhi brand chalega",
+   "gold": {
+    "items": [
+     {
+      "name": "ghee",
+      "brand": null,
+      "qty": 1,
+      "unit": "l"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 31,
+   "lang": "ta-rom",
+   "kind": "order",
+   "message": "anna 2 kg ponni arisi, 1 kg thuvaram paruppu, 1 litre gold winner oil. 600020. cash on delivery",
+   "gold": {
+    "items": [
+     {
+      "name": "rice",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "toor dal",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "sunflower oil",
+      "brand": "Gold Winner",
+      "qty": 1,
+      "unit": "l"
+     }
+    ],
+    "pincode": "600020",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 32,
+   "lang": "ta-rom",
+   "kind": "order",
+   "message": "aavin paal 2 packet, thayir 1 packet, naalaiku kaalaila venum. gpay",
+   "gold": {
+    "items": [
+     {
+      "name": "milk",
+      "brand": "Aavin",
+      "qty": 2,
+      "unit": "packet"
+     },
+     {
+      "name": "curd",
+      "brand": null,
+      "qty": 1,
+      "unit": "packet"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "tomorrow_morning"
+   }
+  },
+  {
+   "id": 33,
+   "lang": "ta-rom",
+   "kind": "order",
+   "message": "vengayam 2 kilo, thakkali 1 kilo, urulai kizhangu 1 kilo, karuveppilai oru kattu. 641004",
+   "gold": {
+    "items": [
+     {
+      "name": "onion",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "tomato",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "potato",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "curry leaves",
+      "brand": null,
+      "qty": 1,
+      "unit": "bunch"
+     }
+    ],
+    "pincode": "641004",
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 34,
+   "lang": "ta-rom",
+   "kind": "order",
+   "message": "iD idli maavu 2 packet, iD dosa maavu 1 packet. inniku saayangalam. upi",
+   "gold": {
+    "items": [
+     {
+      "name": "idli batter",
+      "brand": "iD",
+      "qty": 2,
+      "unit": "packet"
+     },
+     {
+      "name": "dosa batter",
+      "brand": "iD",
+      "qty": 1,
+      "unit": "packet"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "today_evening"
+   }
+  },
+  {
+   "id": 35,
+   "lang": "ta-rom",
+   "kind": "order",
+   "message": "theangai 3, vazhaipazham 1 dozen, elumichai 5. COD please. 625001",
+   "gold": {
+    "items": [
+     {
+      "name": "coconut",
+      "brand": null,
+      "qty": 3,
+      "unit": "piece"
+     },
+     {
+      "name": "banana",
+      "brand": null,
+      "qty": 1,
+      "unit": "dozen"
+     },
+     {
+      "name": "lemon",
+      "brand": null,
+      "qty": 5,
+      "unit": "piece"
+     }
+    ],
+    "pincode": "625001",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 36,
+   "lang": "ta-rom",
+   "kind": "order",
+   "message": "chicken 1 kg, meen 1/2 kg. inniku madhiyam 2 maniku. 600042. card",
+   "gold": {
+    "items": [
+     {
+      "name": "chicken",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "fish",
+      "brand": null,
+      "qty": 0.5,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "600042",
+    "payment": "card",
+    "slot": "today_afternoon"
+   }
+  },
+  {
+   "id": 37,
+   "lang": "ta-rom",
+   "kind": "search",
+   "message": "bru coffee 200g irukka?",
+   "gold": {
+    "items": [
+     {
+      "name": "coffee",
+      "brand": "Bru",
+      "qty": 200,
+      "unit": "g"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 38,
+   "lang": "ta-rom",
+   "kind": "order",
+   "message": "sakkarai 1 kilo, ravai 1/2 kilo, kadalai maavu 500 gram, nei 200 ml aavin",
+   "gold": {
+    "items": [
+     {
+      "name": "sugar",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "semolina",
+      "brand": null,
+      "qty": 0.5,
+      "unit": "kg"
+     },
+     {
+      "name": "besan",
+      "brand": null,
+      "qty": 500,
+      "unit": "g"
+     },
+     {
+      "name": "ghee",
+      "brand": "Aavin",
+      "qty": 200,
+      "unit": "ml"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 39,
+   "lang": "ta-tamil",
+   "kind": "order",
+   "message": "2 கிலோ வெங்காயம், 1 கிலோ தக்காளி, ஒரு கட்டு கொத்தமல்லி. பின்கோடு 600017. கேஷ் ஆன் டெலிவரி",
+   "gold": {
+    "items": [
+     {
+      "name": "onion",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "tomato",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "coriander leaves",
+      "brand": null,
+      "qty": 1,
+      "unit": "bunch"
+     }
+    ],
+    "pincode": "600017",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 40,
+   "lang": "ta-tamil",
+   "kind": "order",
+   "message": "ஆவின் பால் 3 பாக்கெட், ஒரு டஜன் முட்டை. நாளை காலை 7 மணிக்கு. ஜிபே",
+   "gold": {
+    "items": [
+     {
+      "name": "milk",
+      "brand": "Aavin",
+      "qty": 3,
+      "unit": "packet"
+     },
+     {
+      "name": "eggs",
+      "brand": null,
+      "qty": 1,
+      "unit": "dozen"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "tomorrow_morning"
+   }
+  },
+  {
+   "id": 41,
+   "lang": "ta-tamil",
+   "kind": "order",
+   "message": "சன்ஃப்ளவர் ஆயில் 2 லிட்டர், பொன்னி அரிசி 5 கிலோ வேண்டும்",
+   "gold": {
+    "items": [
+     {
+      "name": "sunflower oil",
+      "brand": null,
+      "qty": 2,
+      "unit": "l"
+     },
+     {
+      "name": "rice",
+      "brand": null,
+      "qty": 5,
+      "unit": "kg"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 42,
+   "lang": "ta-tamil",
+   "kind": "order",
+   "message": "மேகி 6 பாக்கெட் உடனே அனுப்புங்க, UPI",
+   "gold": {
+    "items": [
+     {
+      "name": "instant noodles",
+      "brand": "Maggi",
+      "qty": 6,
+      "unit": "packet"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "asap"
+   }
+  },
+  {
+   "id": 43,
+   "lang": "bn-rom",
+   "kind": "order",
+   "message": "dada 2 kg aloo, 1 kg peyaj, 500 gram ada ar 250 gram rosun pathiye din. 700029. COD",
+   "gold": {
+    "items": [
+     {
+      "name": "potato",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "onion",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "ginger",
+      "brand": null,
+      "qty": 500,
+      "unit": "g"
+     },
+     {
+      "name": "garlic",
+      "brand": null,
+      "qty": 250,
+      "unit": "g"
+     }
+    ],
+    "pincode": "700029",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 44,
+   "lang": "bn-rom",
+   "kind": "order",
+   "message": "1 kg sorsher tel, 2 kg chal, 1 kg masoor dal",
+   "gold": {
+    "items": [
+     {
+      "name": "mustard oil",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg",
+      "alt": [
+       {
+        "qty": 1,
+        "unit": "l"
+       }
+      ]
+     },
+     {
+      "name": "rice",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "masoor dal",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 45,
+   "lang": "bn-rom",
+   "kind": "order",
+   "message": "1 dozen dim, 4 ta pauruti packet, amul butter 100 gram. kal sokale. upi te debo",
+   "gold": {
+    "items": [
+     {
+      "name": "eggs",
+      "brand": null,
+      "qty": 1,
+      "unit": "dozen"
+     },
+     {
+      "name": "bread",
+      "brand": null,
+      "qty": 4,
+      "unit": "packet"
+     },
+     {
+      "name": "butter",
+      "brand": "Amul",
+      "qty": 100,
+      "unit": "g"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "tomorrow_morning"
+   }
+  },
+  {
+   "id": 46,
+   "lang": "bn-rom",
+   "kind": "order",
+   "message": "macher jhol er jonno 1 kg rui mach ar 250 gram kancha lonka. raat 8 tar por. 700091",
+   "gold": {
+    "items": [
+     {
+      "name": "fish",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "green chilli",
+      "brand": null,
+      "qty": 250,
+      "unit": "g"
+     }
+    ],
+    "pincode": "700091",
+    "payment": null,
+    "slot": "today_night"
+   }
+  },
+  {
+   "id": 47,
+   "lang": "bn-rom",
+   "kind": "order",
+   "message": "2 packet mother dairy doi ar 1 litre dudh. cash e debo",
+   "gold": {
+    "items": [
+     {
+      "name": "curd",
+      "brand": "Mother Dairy",
+      "qty": 2,
+      "unit": "packet"
+     },
+     {
+      "name": "milk",
+      "brand": null,
+      "qty": 1,
+      "unit": "l"
+     }
+    ],
+    "pincode": null,
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 48,
+   "lang": "bn-rom",
+   "kind": "search",
+   "message": "fortune soyabean tel 5 litre ache?",
+   "gold": {
+    "items": [
+     {
+      "name": "cooking oil",
+      "brand": "Fortune",
+      "qty": 5,
+      "unit": "l"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 49,
+   "lang": "bn-beng",
+   "kind": "order",
+   "message": "২ কেজি আলু, ১ কেজি পেঁয়াজ আর ৬টা কলা পাঠান। পিন ৭০০০৬৪। ক্যাশ অন ডেলিভারি",
+   "gold": {
+    "items": [
+     {
+      "name": "potato",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "onion",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "banana",
+      "brand": null,
+      "qty": 6,
+      "unit": "piece"
+     }
+    ],
+    "pincode": "700064",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 50,
+   "lang": "bn-beng",
+   "kind": "order",
+   "message": "এক ডজন ডিম আর ২ প্যাকেট ব্রিটানিয়া পাউরুটি, কাল সকালে চাই। UPI",
+   "gold": {
+    "items": [
+     {
+      "name": "eggs",
+      "brand": null,
+      "qty": 1,
+      "unit": "dozen"
+     },
+     {
+      "name": "bread",
+      "brand": "Britannia",
+      "qty": 2,
+      "unit": "packet"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "tomorrow_morning"
+   }
+  },
+  {
+   "id": 51,
+   "lang": "bn-beng",
+   "kind": "order",
+   "message": "১ লিটার সরষের তেল আর ৫ কেজি চাল। আজ সন্ধ্যায় দিয়ে যাবেন",
+   "gold": {
+    "items": [
+     {
+      "name": "mustard oil",
+      "brand": null,
+      "qty": 1,
+      "unit": "l"
+     },
+     {
+      "name": "rice",
+      "brand": null,
+      "qty": 5,
+      "unit": "kg"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": "today_evening"
+   }
+  },
+  {
+   "id": 52,
+   "lang": "mr-rom",
+   "kind": "order",
+   "message": "2 kilo kanda, 1 kilo batata, ardha kilo tomato pathva. 411001. COD",
+   "gold": {
+    "items": [
+     {
+      "name": "onion",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "potato",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "tomato",
+      "brand": null,
+      "qty": 0.5,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "411001",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 53,
+   "lang": "mr-rom",
+   "kind": "order",
+   "message": "amul taak 2 packet ani 1 litre gokul dudh, udya sakali. gpay",
+   "gold": {
+    "items": [
+     {
+      "name": "buttermilk",
+      "brand": "Amul",
+      "qty": 2,
+      "unit": "packet"
+     },
+     {
+      "name": "milk",
+      "brand": "Gokul",
+      "qty": 1,
+      "unit": "l"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "tomorrow_morning"
+   }
+  },
+  {
+   "id": 54,
+   "lang": "mr-rom",
+   "kind": "order",
+   "message": "5 kilo gahu peeth ani 1 kilo toor dal, sandhyakali 6 la. 440010. card ne pay karto",
+   "gold": {
+    "items": [
+     {
+      "name": "wheat flour",
+      "brand": null,
+      "qty": 5,
+      "unit": "kg"
+     },
+     {
+      "name": "toor dal",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "440010",
+    "payment": "card",
+    "slot": "today_evening"
+   }
+  },
+  {
+   "id": 55,
+   "lang": "mr-rom",
+   "kind": "order",
+   "message": "pohe 1 kilo, shengdane 500 gram, sakhar 1 kilo",
+   "gold": {
+    "items": [
+     {
+      "name": "poha",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "peanuts",
+      "brand": null,
+      "qty": 500,
+      "unit": "g"
+     },
+     {
+      "name": "sugar",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 56,
+   "lang": "mr-rom",
+   "kind": "order",
+   "message": "chicken 1.5 kilo pahije, aaj ratri 9 nantar. 400601. upi",
+   "gold": {
+    "items": [
+     {
+      "name": "chicken",
+      "brand": null,
+      "qty": 1.5,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "400601",
+    "payment": "UPI",
+    "slot": "today_night"
+   }
+  },
+  {
+   "id": 57,
+   "lang": "mr-rom",
+   "kind": "search",
+   "message": "parle g che 10 packet ahet ka?",
+   "gold": {
+    "items": [
+     {
+      "name": "biscuits",
+      "brand": "Parle-G",
+      "qty": 10,
+      "unit": "packet"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 58,
+   "lang": "mr-deva",
+   "kind": "order",
+   "message": "२ किलो कांदे, १ किलो बटाटे आणि १ डझन अंडी पाठवा. पिनकोड ४११०३८. कॅश ऑन डिलिव्हरी",
+   "gold": {
+    "items": [
+     {
+      "name": "onion",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "potato",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "eggs",
+      "brand": null,
+      "qty": 1,
+      "unit": "dozen"
+     }
+    ],
+    "pincode": "411038",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 59,
+   "lang": "mr-deva",
+   "kind": "order",
+   "message": "उद्या सकाळी अमूल दूध २ पिशव्या आणि ब्रेड १ पाकीट. UPI",
+   "gold": {
+    "items": [
+     {
+      "name": "milk",
+      "brand": "Amul",
+      "qty": 2,
+      "unit": "packet"
+     },
+     {
+      "name": "bread",
+      "brand": null,
+      "qty": 1,
+      "unit": "packet"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "tomorrow_morning"
+   }
+  },
+  {
+   "id": 60,
+   "lang": "mr-deva",
+   "kind": "order",
+   "message": "तूप अर्धा किलो आणि साखर २ किलो हवे आहे",
+   "gold": {
+    "items": [
+     {
+      "name": "ghee",
+      "brand": null,
+      "qty": 0.5,
+      "unit": "kg"
+     },
+     {
+      "name": "sugar",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 61,
+   "lang": "kn-rom",
+   "kind": "order",
+   "message": "anna 2 kg eerulli, 1 kg tomato, 1 kg aalugadde kalsi. 560034. COD",
+   "gold": {
+    "items": [
+     {
+      "name": "onion",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "tomato",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "potato",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "560034",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 62,
+   "lang": "kn-rom",
+   "kind": "order",
+   "message": "nandini haalu 2 packet, mosaru 1 packet, naale belige. upi",
+   "gold": {
+    "items": [
+     {
+      "name": "milk",
+      "brand": "Nandini",
+      "qty": 2,
+      "unit": "packet"
+     },
+     {
+      "name": "curd",
+      "brand": null,
+      "qty": 1,
+      "unit": "packet"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "tomorrow_morning"
+   }
+  },
+  {
+   "id": 63,
+   "lang": "kn-rom",
+   "kind": "order",
+   "message": "5 kg sona masoori akki, 1 kg togari bele, 1 litre sunflower enne",
+   "gold": {
+    "items": [
+     {
+      "name": "rice",
+      "brand": null,
+      "qty": 5,
+      "unit": "kg"
+     },
+     {
+      "name": "toor dal",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "sunflower oil",
+      "brand": null,
+      "qty": 1,
+      "unit": "l"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 64,
+   "lang": "kn-rom",
+   "kind": "search",
+   "message": "MTR sambar powder 200g ide na?",
+   "gold": {
+    "items": [
+     {
+      "name": "sambar powder",
+      "brand": "MTR",
+      "qty": 200,
+      "unit": "g"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 65,
+   "lang": "kn-rom",
+   "kind": "order",
+   "message": "chicken 1 kg, meenu 1 kg, ivattu sanje 7 gante olage. 570009. card",
+   "gold": {
+    "items": [
+     {
+      "name": "chicken",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "fish",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "570009",
+    "payment": "card",
+    "slot": "today_evening"
+   }
+  },
+  {
+   "id": 66,
+   "lang": "kn-rom",
+   "kind": "order",
+   "message": "bisleri 20 litre can 2 beku, COD",
+   "gold": {
+    "items": [
+     {
+      "name": "packaged water",
+      "brand": "Bisleri",
+      "qty": 2,
+      "unit": "can",
+      "alt": [
+       {
+        "qty": 40,
+        "unit": "l"
+       }
+      ]
+     }
+    ],
+    "pincode": null,
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 67,
+   "lang": "kn-knda",
+   "kind": "order",
+   "message": "೨ ಕೆಜಿ ಈರುಳ್ಳಿ, ೧ ಕೆಜಿ ಟೊಮೆಟೊ ಮತ್ತು ಒಂದು ಕಟ್ಟು ಕೊತ್ತಂಬರಿ ಸೊಪ್ಪು ಕಳುಹಿಸಿ. ಪಿನ್ ೫೬೦೦೧೧. ಕ್ಯಾಶ್ ಆನ್ ಡೆಲಿವರಿ",
+   "gold": {
+    "items": [
+     {
+      "name": "onion",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "tomato",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "coriander leaves",
+      "brand": null,
+      "qty": 1,
+      "unit": "bunch"
+     }
+    ],
+    "pincode": "560011",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 68,
+   "lang": "kn-knda",
+   "kind": "order",
+   "message": "ನಂದಿನಿ ಹಾಲು ೩ ಪ್ಯಾಕೆಟ್ ನಾಳೆ ಬೆಳಿಗ್ಗೆ ಬೇಕು. UPI",
+   "gold": {
+    "items": [
+     {
+      "name": "milk",
+      "brand": "Nandini",
+      "qty": 3,
+      "unit": "packet"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "tomorrow_morning"
+   }
+  },
+  {
+   "id": 69,
+   "lang": "kn-knda",
+   "kind": "order",
+   "message": "ಅಕ್ಕಿ ೧೦ ಕೆಜಿ ಮತ್ತು ತೊಗರಿ ಬೇಳೆ ೨ ಕೆಜಿ",
+   "gold": {
+    "items": [
+     {
+      "name": "rice",
+      "brand": null,
+      "qty": 10,
+      "unit": "kg"
+     },
+     {
+      "name": "toor dal",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 70,
+   "lang": "en",
+   "kind": "order",
+   "message": "Need 2 packets of Amul Gold milk, 1 loaf brown bread and a dozen eggs by 8 am tomorrow. Pincode 560102. Paying via UPI",
+   "gold": {
+    "items": [
+     {
+      "name": "milk",
+      "brand": "Amul",
+      "qty": 2,
+      "unit": "packet"
+     },
+     {
+      "name": "bread",
+      "brand": null,
+      "qty": 1,
+      "unit": "packet"
+     },
+     {
+      "name": "eggs",
+      "brand": null,
+      "qty": 1,
+      "unit": "dozen"
+     }
+    ],
+    "pincode": "560102",
+    "payment": "UPI",
+    "slot": "tomorrow_morning"
+   }
+  },
+  {
+   "id": 71,
+   "lang": "en",
+   "kind": "search",
+   "message": "Do you have Kissan mixed fruit jam 500g?",
+   "gold": {
+    "items": [
+     {
+      "name": "jam",
+      "brand": "Kissan",
+      "qty": 500,
+      "unit": "g"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 72,
+   "lang": "en",
+   "kind": "order",
+   "message": "pls deliver 1 kg chicken breast, 6 bananas, 1 kg apples asap. COD. 122018",
+   "gold": {
+    "items": [
+     {
+      "name": "chicken",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "banana",
+      "brand": null,
+      "qty": 6,
+      "unit": "piece"
+     },
+     {
+      "name": "apple",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "122018",
+    "payment": "COD",
+    "slot": "asap"
+   }
+  },
+  {
+   "id": 73,
+   "lang": "en",
+   "kind": "order",
+   "message": "Order: Tata salt 1kg x2, Fortune sunflower oil 1L x3, Surf excel matic 2kg. card on delivery",
+   "gold": {
+    "items": [
+     {
+      "name": "salt",
+      "brand": "Tata",
+      "qty": 2,
+      "unit": "packet",
+      "alt": [
+       {
+        "qty": 2,
+        "unit": "kg"
+       }
+      ]
+     },
+     {
+      "name": "sunflower oil",
+      "brand": "Fortune",
+      "qty": 3,
+      "unit": "packet",
+      "alt": [
+       {
+        "qty": 3,
+        "unit": "l"
+       }
+      ]
+     },
+     {
+      "name": "detergent powder",
+      "brand": "Surf Excel",
+      "qty": 2,
+      "unit": "kg",
+      "alt": [
+       {
+        "qty": 1,
+        "unit": "packet"
+       }
+      ]
+     }
+    ],
+    "pincode": null,
+    "payment": "card",
+    "slot": null
+   }
+  },
+  {
+   "id": 74,
+   "lang": "en",
+   "kind": "search",
+   "message": "Is Haldiram aloo bhujia 1 kg pack available? Need delivery to 110024",
+   "gold": {
+    "items": [
+     {
+      "name": "namkeen",
+      "brand": "Haldiram's",
+      "qty": 1,
+      "unit": "kg",
+      "alt": [
+       {
+        "qty": 1,
+        "unit": "packet"
+       }
+      ]
+     }
+    ],
+    "pincode": "110024",
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 75,
+   "lang": "en",
+   "kind": "order",
+   "message": "3 Thums Up 750ml, 2 Lays magic masala, 1 Dairy Milk silk",
+   "gold": {
+    "items": [
+     {
+      "name": "soft drink",
+      "brand": "Thums Up",
+      "qty": 3,
+      "unit": "bottle",
+      "alt": [
+       {
+        "qty": 2250,
+        "unit": "ml"
+       }
+      ]
+     },
+     {
+      "name": "chips",
+      "brand": "Lays",
+      "qty": 2,
+      "unit": "packet"
+     },
+     {
+      "name": "chocolate",
+      "brand": "Dairy Milk|Cadbury",
+      "qty": 1,
+      "unit": "piece"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 76,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "bhai 2 kg pyaaz bheje the kal, aaj 1 kg aur bhejo + 500 gm lehsun. same address 110034. upi",
+   "gold": {
+    "items": [
+     {
+      "name": "onion",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "garlic",
+      "brand": null,
+      "qty": 500,
+      "unit": "g"
+     }
+    ],
+    "pincode": "110034",
+    "payment": "UPI",
+    "slot": null
+   }
+  },
+  {
+   "id": 77,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "1 kg chini nahi 2 kg chahiye, aur 1 pkt chai patti taaza",
+   "gold": {
+    "items": [
+     {
+      "name": "sugar",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "tea",
+      "brand": "Taaza",
+      "qty": 1,
+      "unit": "packet"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 78,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "dhaniya pudina 1-1 gaddi, nimbu 4, kheera 1/2 kg",
+   "gold": {
+    "items": [
+     {
+      "name": "coriander leaves",
+      "brand": null,
+      "qty": 1,
+      "unit": "bunch"
+     },
+     {
+      "name": "mint leaves",
+      "brand": null,
+      "qty": 1,
+      "unit": "bunch"
+     },
+     {
+      "name": "lemon",
+      "brand": null,
+      "qty": 4,
+      "unit": "piece"
+     },
+     {
+      "name": "cucumber",
+      "brand": null,
+      "qty": 0.5,
+      "unit": "kg"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 79,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "pampers new born 1 pack aur johnson baby soap 2",
+   "gold": {
+    "items": [
+     {
+      "name": "diapers",
+      "brand": "Pampers",
+      "qty": 1,
+      "unit": "packet"
+     },
+     {
+      "name": "soap",
+      "brand": "Johnson's",
+      "qty": 2,
+      "unit": "piece"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 80,
+   "lang": "hi-rom",
+   "kind": "search",
+   "message": "sir maggi 12 pack ka box hai kya? aur kitne ka hai",
+   "gold": {
+    "items": [
+     {
+      "name": "instant noodles",
+      "brand": "Maggi",
+      "qty": 12,
+      "unit": "packet",
+      "alt": [
+       {
+        "qty": 1,
+        "unit": "box"
+       }
+      ]
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 81,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "aaj sham 6 baje 2 kilo mutton keema. 201301. COD",
+   "gold": {
+    "items": [
+     {
+      "name": "mutton",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "201301",
+    "payment": "COD",
+    "slot": "today_evening"
+   }
+  },
+  {
+   "id": 82,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "ek kilo soya badi aur 1 kg kabuli chana",
+   "gold": {
+    "items": [
+     {
+      "name": "soya chunks",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "chickpeas",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 83,
+   "lang": "en-mix",
+   "kind": "order",
+   "message": "Amul cheese slice 2 pkt + amul butter 100g + amul fresh cream 1. UPI. 380015",
+   "gold": {
+    "items": [
+     {
+      "name": "cheese slices",
+      "brand": "Amul",
+      "qty": 2,
+      "unit": "packet"
+     },
+     {
+      "name": "butter",
+      "brand": "Amul",
+      "qty": 100,
+      "unit": "g"
+     },
+     {
+      "name": "fresh cream",
+      "brand": "Amul",
+      "qty": 1,
+      "unit": "packet"
+     }
+    ],
+    "pincode": "380015",
+    "payment": "UPI",
+    "slot": null
+   }
+  },
+  {
+   "id": 84,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "kal subah 2 litre doodh aur 1 paneer 200g",
+   "gold": {
+    "items": [
+     {
+      "name": "milk",
+      "brand": null,
+      "qty": 2,
+      "unit": "l"
+     },
+     {
+      "name": "paneer",
+      "brand": null,
+      "qty": 200,
+      "unit": "g",
+      "alt": [
+       {
+        "qty": 1,
+        "unit": "packet"
+       }
+      ]
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": "tomorrow_morning"
+   }
+  },
+  {
+   "id": 85,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "Gud morning bhaiya, aaj ka order: aloo 2kg pyaz 2kg tamatar 1kg, adrak 100g, hari mirch 50g, dhaniya 1. COD. 302020",
+   "gold": {
+    "items": [
+     {
+      "name": "potato",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "onion",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "tomato",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "ginger",
+      "brand": null,
+      "qty": 100,
+      "unit": "g"
+     },
+     {
+      "name": "green chilli",
+      "brand": null,
+      "qty": 50,
+      "unit": "g"
+     },
+     {
+      "name": "coriander leaves",
+      "brand": null,
+      "qty": 1,
+      "unit": "bunch"
+     }
+    ],
+    "pincode": "302020",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 86,
+   "lang": "ta-rom",
+   "kind": "order",
+   "message": "bro oru kilo mutton, rendu kilo chicken venum, naalaiku kaalai. 600091. COD",
+   "gold": {
+    "items": [
+     {
+      "name": "mutton",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "chicken",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "600091",
+    "payment": "COD",
+    "slot": "tomorrow_morning"
+   }
+  },
+  {
+   "id": 87,
+   "lang": "ta-rom",
+   "kind": "order",
+   "message": "Lays 5 packet, Coke 2 litre bottle onnu, Haldiram mixture 2. udane anuppunga. gpay",
+   "gold": {
+    "items": [
+     {
+      "name": "chips",
+      "brand": "Lays",
+      "qty": 5,
+      "unit": "packet"
+     },
+     {
+      "name": "soft drink",
+      "brand": "Coca-Cola|Coke",
+      "qty": 1,
+      "unit": "bottle",
+      "alt": [
+       {
+        "qty": 2,
+        "unit": "l"
+       }
+      ]
+     },
+     {
+      "name": "namkeen",
+      "brand": "Haldiram's",
+      "qty": 2,
+      "unit": "packet"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "asap"
+   }
+  },
+  {
+   "id": 88,
+   "lang": "ta-rom",
+   "kind": "search",
+   "message": "nalla ennai 1 litre idhayam brand irukka?",
+   "gold": {
+    "items": [
+     {
+      "name": "sesame oil",
+      "brand": "Idhayam",
+      "qty": 1,
+      "unit": "l"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 89,
+   "lang": "bn-rom",
+   "kind": "order",
+   "message": "dada 1 packet amul dudh, 1 ta pauruti, 6 ta dim. 711101. cash",
+   "gold": {
+    "items": [
+     {
+      "name": "milk",
+      "brand": "Amul",
+      "qty": 1,
+      "unit": "packet"
+     },
+     {
+      "name": "bread",
+      "brand": null,
+      "qty": 1,
+      "unit": "packet"
+     },
+     {
+      "name": "eggs",
+      "brand": null,
+      "qty": 6,
+      "unit": "piece"
+     }
+    ],
+    "pincode": "711101",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 90,
+   "lang": "bn-rom",
+   "kind": "order",
+   "message": "kal dupure 2 kg khasir mangsho",
+   "gold": {
+    "items": [
+     {
+      "name": "mutton",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": "tomorrow_afternoon"
+   }
+  },
+  {
+   "id": 91,
+   "lang": "mr-rom",
+   "kind": "order",
+   "message": "dada 1 kilo shengdane ani 2 packet parle g. COD. pin 422001",
+   "gold": {
+    "items": [
+     {
+      "name": "peanuts",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "biscuits",
+      "brand": "Parle-G",
+      "qty": 2,
+      "unit": "packet"
+     }
+    ],
+    "pincode": "422001",
+    "payment": "COD",
+    "slot": null
+   }
+  },
+  {
+   "id": 92,
+   "lang": "mr-rom",
+   "kind": "order",
+   "message": "udya dupari 1 kg paneer ani 2 litre doodh pahije",
+   "gold": {
+    "items": [
+     {
+      "name": "paneer",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "milk",
+      "brand": null,
+      "qty": 2,
+      "unit": "l"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": "tomorrow_afternoon"
+   }
+  },
+  {
+   "id": 93,
+   "lang": "kn-rom",
+   "kind": "order",
+   "message": "2 kg bendekayi beda, 1 kg badanekayi saaku. 1 kg carrot. 560078",
+   "gold": {
+    "items": [
+     {
+      "name": "brinjal",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "carrot",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "560078",
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 94,
+   "lang": "kn-rom",
+   "kind": "order",
+   "message": "nandini ghee 1 litre, sakkare 2 kg. card",
+   "gold": {
+    "items": [
+     {
+      "name": "ghee",
+      "brand": "Nandini",
+      "qty": 1,
+      "unit": "l"
+     },
+     {
+      "name": "sugar",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     }
+    ],
+    "pincode": null,
+    "payment": "card",
+    "slot": null
+   }
+  },
+  {
+   "id": 95,
+   "lang": "hi-rom",
+   "kind": "search",
+   "message": "atta 10kg cheapest konsa hai",
+   "gold": {
+    "items": [
+     {
+      "name": "wheat flour",
+      "brand": null,
+      "qty": 10,
+      "unit": "kg"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 96,
+   "lang": "hi-rom",
+   "kind": "search",
+   "message": "bread hai kya? 560034",
+   "gold": {
+    "items": [
+     {
+      "name": "bread",
+      "brand": null,
+      "qty": null,
+      "unit": null
+     }
+    ],
+    "pincode": "560034",
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 97,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "colgate ya pepsodent koi bhi 1 toothpaste",
+   "gold": {
+    "items": [
+     {
+      "name": "toothpaste",
+      "brand": null,
+      "qty": 1,
+      "unit": "piece"
+     }
+    ],
+    "pincode": null,
+    "payment": null,
+    "slot": null
+   }
+  },
+  {
+   "id": 98,
+   "lang": "hi-rom",
+   "kind": "order",
+   "message": "Mujhe 3 kg aam chahiye, alphonso ho to best. 400076, COD, kal shaam",
+   "gold": {
+    "items": [
+     {
+      "name": "mango",
+      "brand": null,
+      "qty": 3,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "400076",
+    "payment": "COD",
+    "slot": "tomorrow_evening"
+   }
+  },
+  {
+   "id": 99,
+   "lang": "en-mix",
+   "kind": "order",
+   "message": "Need 1 Vim liquid 500ml and 2 Surf Excel bars, Paytm UPI, today night",
+   "gold": {
+    "items": [
+     {
+      "name": "dishwash liquid",
+      "brand": "Vim",
+      "qty": 1,
+      "unit": "bottle",
+      "alt": [
+       {
+        "qty": 500,
+        "unit": "ml"
+       }
+      ]
+     },
+     {
+      "name": "detergent bar",
+      "brand": "Surf Excel",
+      "qty": 2,
+      "unit": "piece"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "today_night"
+   }
+  },
+  {
+   "id": 100,
+   "lang": "hi-deva",
+   "kind": "order",
+   "message": "भैया 1 किलो चीनी, 1 पैकेट नमक टाटा का और दो लीटर दूध। 7 बजे शाम तक। UPI",
+   "gold": {
+    "items": [
+     {
+      "name": "sugar",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "salt",
+      "brand": "Tata",
+      "qty": 1,
+      "unit": "packet"
+     },
+     {
+      "name": "milk",
+      "brand": null,
+      "qty": 2,
+      "unit": "l"
+     }
+    ],
+    "pincode": null,
+    "payment": "UPI",
+    "slot": "today_evening"
+   }
+  }
+ ]
+}

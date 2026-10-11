@@ -1,0 +1,142 @@
+{
+ "id": "d09",
+ "pair": "ml-en",
+ "lang": "Malayalam",
+ "style": "native",
+ "topic": "fever",
+ "audio_subset": true,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "വരൂ, ഇരിക്കൂ. എന്താണ് പ്രശ്നം?"
+  },
+  {
+   "speaker": "patient",
+   "text": "ഡോക്ടറേ, അഞ്ച് ദിവസമായി പനിയും ചുമയും ഉണ്ട്. കഫത്തിന് മഞ്ഞ നിറമാണ്."
+  },
+  {
+   "speaker": "doctor",
+   "text": "ശ്വാസം മുട്ടലുണ്ടോ? നെഞ്ചുവേദന?"
+  },
+  {
+   "speaker": "patient",
+   "text": "ശ്വാസം മുട്ടലില്ല. ചുമയ്ക്കുമ്പോൾ നെഞ്ചിൽ ചെറിയ വേദനയുണ്ട്."
+  },
+  {
+   "speaker": "doctor",
+   "text": "ശരി, നോക്കട്ടെ. Temperature 100.8 ആണ്, pulse 102, SpO2 95 percent. ഇടതുവശത്തെ lung-ൽ കുറച്ച് crackles കേൾക്കുന്നുണ്ട്. ഇത് ഒരു lower respiratory tract infection ആണ്."
+  },
+  {
+   "speaker": "patient",
+   "text": "അപ്പോൾ ഗുളിക വേണ്ടി വരുമോ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "വേണം. Augmentin 625 mg, ദിവസം രണ്ടു നേരം, അഞ്ചു ദിവസം..."
+  },
+  {
+   "speaker": "patient",
+   "text": "ഡോക്ടറേ, ഒരു കാര്യം പറയാൻ മറന്നു. എനിക്ക് penicillin അലർജിയാണ്. മുമ്പ് ഒരിക്കൽ ദേഹം മുഴുവൻ ചൊറിഞ്ഞു തടിച്ചു."
+  },
+  {
+   "speaker": "doctor",
+   "text": "പറഞ്ഞത് നന്നായി. എങ്കിൽ Augmentin വേണ്ട, അത് penicillin group ആണ്. പകരം Azithromycin 500 mg, ദിവസം ഒരു നേരം, മൂന്നു ദിവസം."
+  },
+  {
+   "speaker": "doctor",
+   "text": "പനിക്ക് Paracetamol 650 mg, ദിവസം മൂന്നു നേരം, മൂന്നു ദിവസം കഴിക്കണം."
+  },
+  {
+   "speaker": "patient",
+   "text": "വേറെ എന്തെങ്കിലും ശ്രദ്ധിക്കണോ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ചൂടുവെള്ളം ധാരാളം കുടിക്കുക. ശ്വാസം മുട്ടൽ വന്നാലോ, നെഞ്ചുവേദന കൂടിയാലോ, കഫത്തിൽ രക്തം കണ്ടാലോ ഉടനെ വരണം."
+  },
+  {
+   "speaker": "patient",
+   "text": "ശരി ഡോക്ടറേ. ഇനി എപ്പോൾ വരണം?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "മൂന്നു ദിവസം കഴിഞ്ഞ് ഒരു chest X-ray എടുത്തിട്ട് വരൂ."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "fever",
+   "cough",
+   "productive cough"
+  ],
+  "duration": {
+   "value": 5,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 100.8,
+   "pulse": 102,
+   "spo2": 95
+  },
+  "diagnosis": [
+   "lower respiratory tract infection",
+   "lrti",
+   "chest infection",
+   "bronchitis"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "azithromycin",
+     "azithral",
+     "azee"
+    ],
+    "dose": "500 mg",
+    "frequency": "OD",
+    "duration_days": 3
+   },
+   {
+    "drug": [
+     "paracetamol",
+     "dolo"
+    ],
+    "dose": "650 mg",
+    "frequency": "TDS",
+    "duration_days": 3
+   }
+  ],
+  "allergies": [
+   [
+    "penicillin"
+   ]
+  ],
+  "red_flags": [
+   [
+    "breathlessness",
+    "difficulty breathing",
+    "shortness of breath"
+   ],
+   [
+    "chest pain"
+   ],
+   [
+    "blood in sputum",
+    "haemoptysis",
+    "hemoptysis"
+   ]
+  ],
+  "follow_up": [
+   "3 days",
+   "after 3 days",
+   "three days"
+  ],
+  "not_prescribed": [
+   "augmentin",
+   "amoxicillin",
+   "amoxicillin-clavulanate",
+   "co-amoxiclav"
+  ]
+ },
+ "trap": "Doctor starts Augmentin, patient discloses penicillin allergy, switched to Azithromycin."
+}

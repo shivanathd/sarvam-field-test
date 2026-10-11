@@ -1,0 +1,126 @@
+{
+ "request_id": "20261011_b80f5789-65a7-4efd-bca7-e497f9e057d2",
+ "transcript": "नमस्ते। आइए। बच्चे का नाम क्या है और उम्र? आरव है चार साल का दो दिन से खांसी जुकाम है और बुखार भी है। बुखार कितना है? रात को सांस लेने में कोई दिक्कत? रात को एक सौ एक तक गया था। सांस ठीक है बस नाक बंद रहती है। अभी temperature 100.6 है oxygen यानी SPO2 98% है बढ़िया है। अजून सोला किलो है। Doctor घर में बड़े बेटे की Azithral की bottle पड़ी थी कल रात एक खुराक दे दी थी। नहीं वो बंद कर दीजिए। ये viral infection है। upper respiratory tract infection। इसमें antibiotic की जरूरत नहीं है। बिना पूछे antibiotic मत दीजिए। जी ठीक है। इसे किसी दवा से allergy नहीं है। अच्छा। बुखार के लिए Paracetamol syrup Calpol 250 5 ml जब बुखार 100 से ऊपर हो तभी दिन में 4 बार से ज़्यादा नहीं 3 दिन तक।\nज़ुकाम के लिए Cetirizine syrup 2.5 ml रात को सोने से पहले 5 दिन। खाना कम खा रहा है। क्या करूँ? थोड़ा-थोड़ा करके पानी और दाल का पानी देते रहिए। अगर सांस तेज चले, पसली चले, बच्चा पानी पीना बंद कर दे या दौरा पड़े तो तुरंत emergency में लाइए। जी समझ गई। फिर कब आए? तीन दिन बाद दिखाइए अगर बुखार तब भी रहे।",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "नमस्ते। आइए।",
+    "start_time_seconds": 0.39,
+    "end_time_seconds": 2.05,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "बच्चे का नाम क्या है और उम्र?",
+    "start_time_seconds": 3.15,
+    "end_time_seconds": 5.31,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "आरव है चार साल का दो दिन से खांसी जुकाम है और बुखार भी है।",
+    "start_time_seconds": 6.27,
+    "end_time_seconds": 13.45,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "बुखार कितना है? रात को सांस लेने में कोई दिक्कत?",
+    "start_time_seconds": 14.39,
+    "end_time_seconds": 18.51,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "रात को एक सौ एक तक गया था। सांस ठीक है बस नाक बंद रहती है।",
+    "start_time_seconds": 19.23,
+    "end_time_seconds": 25.67,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "अभी temperature 100.6 है oxygen यानी SPO2 98% है बढ़िया है।",
+    "start_time_seconds": 26.61,
+    "end_time_seconds": 35.39,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "अजून सोला किलो है।",
+    "start_time_seconds": 36.45,
+    "end_time_seconds": 37.67,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor घर में बड़े बेटे की Azithral की bottle पड़ी थी कल रात एक खुराक दे दी थी।",
+    "start_time_seconds": 38.13,
+    "end_time_seconds": 47.61,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "नहीं वो बंद कर दीजिए। ये viral infection है। upper respiratory tract infection। इसमें antibiotic की जरूरत नहीं है। बिना पूछे antibiotic मत दीजिए।",
+    "start_time_seconds": 48.63,
+    "end_time_seconds": 61.25,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "जी ठीक है। इसे किसी दवा से allergy नहीं है।",
+    "start_time_seconds": 62.23,
+    "end_time_seconds": 67.39,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "अच्छा।",
+    "start_time_seconds": 68.23,
+    "end_time_seconds": 68.91,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "बुखार के लिए Paracetamol syrup Calpol 250 5 ml जब बुखार 100 से ऊपर हो तभी दिन में 4 बार से ज़्यादा नहीं 3 दिन तक।\nज़ुकाम के लिए Cetirizine syrup 2.5 ml रात को सोने से पहले 5 दिन।",
+    "start_time_seconds": 69.99,
+    "end_time_seconds": 87.69,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "खाना कम खा रहा है। क्या करूँ?",
+    "start_time_seconds": 88.33,
+    "end_time_seconds": 91.43,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "थोड़ा-थोड़ा करके पानी और दाल का पानी देते रहिए। अगर सांस तेज चले, पसली चले, बच्चा पानी पीना बंद कर दे या दौरा पड़े तो तुरंत emergency में लाइए।",
+    "start_time_seconds": 92.39,
+    "end_time_seconds": 106.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "जी समझ गई।",
+    "start_time_seconds": 106.97,
+    "end_time_seconds": 108.21,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "फिर कब आए?",
+    "start_time_seconds": 109.23,
+    "end_time_seconds": 110.09,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "तीन दिन बाद दिखाइए अगर बुखार तब भी रहे।",
+    "start_time_seconds": 110.81,
+    "end_time_seconds": 113.97,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "hi-IN",
+ "language_probability": null,
+ "audio_hash": "a2963df3f9c1b1b566b3d6a92df681f4",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_4d514db7-38a1-49ad-bc52-10cf0f9dd842",
+  "elapsed_s": 11.049293041229248,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "codemix",
+   "language_code": "hi-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

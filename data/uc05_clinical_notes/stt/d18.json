@@ -1,0 +1,114 @@
+{
+ "request_id": "20261011_2a931a06-81e7-4d93-878d-53bf82210e13",
+ "transcript": "Ramsamy sir, come in. How is your sugar level? Doctor, I have had high sugar for a month. My eyes are looking a little blurry. What tablet are you taking now? Metformin 500, morning and night. Fasting sugar is 198. BP is 140/88. Weight is 79 kg. Type 2 diabetes is not under control. Should I increase the dosage? Metformin 500 mg, continue tomorrow and the night after. Also, Sitagliptin 50 mg. No, your kidney report is normal. Therefore, Sitagliptin 100 mg, once in the morning. You should continue to take both. I am not allergic to any medicine, Doctor. Okay Reduce your intake of sweets and rice. Walk every day and week. What should I do for my eyes? Need to see the retina with an eye doctor for an eye checkup. If you suddenly lose your sight, come immediately. Sweat, shivering, if you feel dizzy, your sugar might be low. Call us immediately after eating sugar. Okay doctor. When next? Come with the eye checkup report after one month.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Ramsamy sir, come in. How is your sugar level?",
+    "start_time_seconds": 0.01,
+    "end_time_seconds": 4.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor, I have had high sugar for a month. My eyes are looking a little blurry.",
+    "start_time_seconds": 4.87,
+    "end_time_seconds": 11.69,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "What tablet are you taking now?",
+    "start_time_seconds": 12.37,
+    "end_time_seconds": 14.37,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Metformin 500, morning and night.",
+    "start_time_seconds": 14.93,
+    "end_time_seconds": 19.05,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Fasting sugar is 198. BP is 140/88. Weight is 79 kg.",
+    "start_time_seconds": 19.93,
+    "end_time_seconds": 28.71,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Type 2 diabetes is not under control.",
+    "start_time_seconds": 30.07,
+    "end_time_seconds": 32.39,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Should I increase the dosage?",
+    "start_time_seconds": 33.15,
+    "end_time_seconds": 35.27,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Metformin 500 mg, continue tomorrow and the night after. Also, Sitagliptin 50 mg. No, your kidney report is normal. Therefore, Sitagliptin 100 mg, once in the morning. You should continue to take both.",
+    "start_time_seconds": 36.01,
+    "end_time_seconds": 53.09,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "I am not allergic to any medicine, Doctor.",
+    "start_time_seconds": 54.13,
+    "end_time_seconds": 57.47,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay",
+    "start_time_seconds": 57.99,
+    "end_time_seconds": 58.41,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Reduce your intake of sweets and rice. Walk every day and week.",
+    "start_time_seconds": 59.43,
+    "end_time_seconds": 64.05,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "What should I do for my eyes?",
+    "start_time_seconds": 65.21,
+    "end_time_seconds": 66.91,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Need to see the retina with an eye doctor for an eye checkup. If you suddenly lose your sight, come immediately. Sweat, shivering, if you feel dizzy, your sugar might be low. Call us immediately after eating sugar.",
+    "start_time_seconds": 67.45,
+    "end_time_seconds": 82.95,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Okay doctor. When next?",
+    "start_time_seconds": 83.87,
+    "end_time_seconds": 86.91,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Come with the eye checkup report after one month.",
+    "start_time_seconds": 87.87,
+    "end_time_seconds": 91.01,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "ta-IN",
+ "language_probability": null,
+ "audio_hash": "a5e4adbeca746e361d3dc0dea2d045d1",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_3f7f8de8-6354-4c89-a4e3-607aaf0e837f",
+  "elapsed_s": 11.268703937530518,
+  "params": {
+   "model": "saaras:v3",
+   "mode": "translate",
+   "language_code": "ta-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

@@ -1,0 +1,120 @@
+{
+ "request_id": "20261011_5eb2598a-8062-4b8b-9f97-a78db8c1368d",
+ "transcript": "Eelamma, come. What's the news? Doctor, I have had a headache for ten days since I woke up in the morning. Sometimes I feel like my heartbeat is slow. Which pills are you taking now? Amlodipine five milligrams in the morning, one. Then Atenolol fifty milligrams at night. Let me see. BP is 158/94. Pulse is only 56. That is less. Weight is 66 kg. Is that a problem, Doctor? The reason for the pulse to decrease could be atenol. Therefore, atenol should be stopped from today. Are you allergic to any medicine? No doctor, nothing at all. Okay. BP is not completely controlled. This is uncontrolled hypertension. Both should be eaten regularly. Should I reduce the salt? Definitely. Reduce pickles and papadums. If you get chest pain, or one side is paralyzed, or speech is stunted, or you feel dizzy, come to the hospital immediately. Okay. When is the next one? After two weeks, at home Looking at the copy, write it down.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Eelamma, come. What's the news?",
+    "start_time_seconds": 0.53,
+    "end_time_seconds": 3.51,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Doctor, I have had a headache for ten days since I woke up in the morning. Sometimes I feel like my heartbeat is slow.",
+    "start_time_seconds": 4.69,
+    "end_time_seconds": 15.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Which pills are you taking now?",
+    "start_time_seconds": 16.07,
+    "end_time_seconds": 18.79,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Amlodipine five milligrams in the morning, one. Then Atenolol fifty milligrams at night.",
+    "start_time_seconds": 19.69,
+    "end_time_seconds": 27.81,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Let me see.",
+    "start_time_seconds": 28.77,
+    "end_time_seconds": 29.39,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "BP is 158/94. Pulse is only 56. That is less. Weight is 66 kg.",
+    "start_time_seconds": 31.23,
+    "end_time_seconds": 42.69,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Is that a problem, Doctor?",
+    "start_time_seconds": 43.37,
+    "end_time_seconds": 45.37,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "The reason for the pulse to decrease could be atenol. Therefore, atenol should be stopped from today. Are you allergic to any medicine?",
+    "start_time_seconds": 46.63,
+    "end_time_seconds": 56.37,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "No doctor, nothing at all.",
+    "start_time_seconds": 57.15,
+    "end_time_seconds": 59.39,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Okay. BP is not completely controlled. This is uncontrolled hypertension.",
+    "start_time_seconds": 60.29,
+    "end_time_seconds": 68.47,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Both should be eaten regularly.",
+    "start_time_seconds": 77.77,
+    "end_time_seconds": 79.29,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Should I reduce the salt?",
+    "start_time_seconds": 80.25,
+    "end_time_seconds": 81.59,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Definitely. Reduce pickles and papadums. If you get chest pain, or one side is paralyzed, or speech is stunted, or you feel dizzy, come to the hospital immediately.",
+    "start_time_seconds": 82.49,
+    "end_time_seconds": 97.61,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay. When is the next one?",
+    "start_time_seconds": 98.63,
+    "end_time_seconds": 101.25,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "After two weeks, at home",
+    "start_time_seconds": 102.25,
+    "end_time_seconds": 104.89,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Looking at the copy, write it down.",
+    "start_time_seconds": 105.19,
+    "end_time_seconds": 106.65,
+    "speaker_id": "0"
+   }
+  ]
+ },
+ "language_code": "ml-IN",
+ "language_probability": null,
+ "audio_hash": "760d0dfa123422e672507f1d54001efd",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_31142ffd-8c9f-4229-ac32-f1fb9b2b1c6d",
+  "elapsed_s": 11.129354000091553,
+  "params": {
+   "model": "saaras:v3",
+   "mode": "translate",
+   "language_code": "ml-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

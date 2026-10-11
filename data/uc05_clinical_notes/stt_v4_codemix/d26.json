@@ -1,0 +1,132 @@
+{
+ "request_id": "20261011_17baf0b1-0ed8-4b2f-ad7a-3ec90104556b",
+ "transcript": "আসুন, বসুন। আপনার নাম আর বয়স? আমার নাম সুবীর মন্ডল। বয়স বাহান্ন। বলুন কি অসুবিধা? গত দু মাস ধরে খুব জল তেষ্টা পায়। রাতে বারবার bathroom-এ যেতে হয়। শরীরও দুর্বল লাগে। Sugar test করিয়েছেন? হ্যাঁ এই যে report খালি পেটে sugar এসেছে একশো ছিয়াশি। হুম fasting sugar 186 এটা বেশ বেশি আপনার rate 78। P 134 by 84 বাড়িতে কারোর diabetes আছে? হ্যাঁ মায়ের ছিল আর কোনো ওষুধে আমার allergy নেই। হুম আপনার type two diabetes হয়েছে। Metformin 500 mg দিচ্ছি। সকাল রাত না দাঁড়ান sugar যেহেতু বেশি Metformin 1000 mg করিয়ে দিই। সকালে আর রাতে খাবারের পরে একটা করে। এটা regular চলবে। শুধু এটাই? আর Glimepiride 1 mg সকালে breakfast-এর আগে একটা এটাও continue করবেন। ওষুধ খেয়ে কোনো সমস্যা হলে? যদি হঠাৎ মাথা ঘোরে, খুব ঘাম হয়, হাত পা কাঁপে, তাহলে বুঝবেন sugar কমে গেছে। সঙ্গে সঙ্গে চিনি খাবেন আর আমাকে জানাবেন। আর পায়ে কোনো ঘা হলে ফেলে রাখবেন না। আচ্ছা আবার কবে দেখাবো? এক মাস পরে আসবেন HbA1c আর fasting sugar test করিয়ে। ঠিক আছে ডাক্তারবাবু।",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "আসুন, বসুন।",
+    "start_time_seconds": 0.05,
+    "end_time_seconds": 1.93,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "আপনার নাম আর বয়স?",
+    "start_time_seconds": 2.99,
+    "end_time_seconds": 4.65,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "আমার নাম সুবীর মন্ডল। বয়স বাহান্ন।",
+    "start_time_seconds": 5.49,
+    "end_time_seconds": 9.99,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "বলুন কি অসুবিধা?",
+    "start_time_seconds": 10.85,
+    "end_time_seconds": 12.95,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "গত দু মাস ধরে খুব জল তেষ্টা পায়। রাতে বারবার bathroom-এ যেতে হয়। শরীরও দুর্বল লাগে।",
+    "start_time_seconds": 13.69,
+    "end_time_seconds": 24.11,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Sugar test করিয়েছেন?",
+    "start_time_seconds": 24.97,
+    "end_time_seconds": 26.49,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "হ্যাঁ এই যে report খালি পেটে sugar এসেছে একশো ছিয়াশি।",
+    "start_time_seconds": 27.51,
+    "end_time_seconds": 33.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "হুম fasting sugar 186 এটা বেশ বেশি আপনার rate 78।",
+    "start_time_seconds": 33.59,
+    "end_time_seconds": 42.61,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "P 134 by 84 বাড়িতে কারোর diabetes আছে?",
+    "start_time_seconds": 44.05,
+    "end_time_seconds": 49.41,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "হ্যাঁ মায়ের ছিল আর কোনো ওষুধে আমার allergy নেই।",
+    "start_time_seconds": 50.83,
+    "end_time_seconds": 55.93,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "হুম আপনার type two diabetes হয়েছে। Metformin 500 mg দিচ্ছি। সকাল রাত না দাঁড়ান sugar যেহেতু বেশি Metformin 1000 mg করিয়ে দিই। সকালে আর রাতে খাবারের পরে একটা করে। এটা regular চলবে।",
+    "start_time_seconds": 57.35,
+    "end_time_seconds": 76.35,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "শুধু এটাই?",
+    "start_time_seconds": 77.45,
+    "end_time_seconds": 78.77,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "আর Glimepiride 1 mg সকালে breakfast-এর আগে একটা এটাও continue করবেন।",
+    "start_time_seconds": 80.13,
+    "end_time_seconds": 86.17,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ওষুধ খেয়ে কোনো সমস্যা হলে?",
+    "start_time_seconds": 86.91,
+    "end_time_seconds": 89.49,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "যদি হঠাৎ মাথা ঘোরে, খুব ঘাম হয়, হাত পা কাঁপে, তাহলে বুঝবেন sugar কমে গেছে। সঙ্গে সঙ্গে চিনি খাবেন আর আমাকে জানাবেন। আর পায়ে কোনো ঘা হলে ফেলে রাখবেন না।",
+    "start_time_seconds": 90.43,
+    "end_time_seconds": 106.87,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "আচ্ছা আবার কবে দেখাবো?",
+    "start_time_seconds": 107.95,
+    "end_time_seconds": 111.11,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "এক মাস পরে আসবেন HbA1c আর fasting sugar test করিয়ে।",
+    "start_time_seconds": 112.19,
+    "end_time_seconds": 117.81,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ঠিক আছে ডাক্তারবাবু।",
+    "start_time_seconds": 118.87,
+    "end_time_seconds": 120.35,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "bn-IN",
+ "language_probability": null,
+ "audio_hash": "c05996c4f0c52366c98af4e4e0177ae3",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_01d1d9ed-406c-4f2f-b8f2-e34caddc701a",
+  "elapsed_s": 10.895806312561035,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "codemix",
+   "language_code": "bn-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

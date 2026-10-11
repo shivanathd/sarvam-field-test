@@ -1,0 +1,120 @@
+{
+ "request_id": "20261011_f850be77-dba1-42ff-8969-21c981a39383",
+ "transcript": "Come, sit down. What is the problem? Doctor, I have had a fever for three days. When I urinate, it feels irritating. I feel like I need to go frequently. Is there pain on the side of the head? Bandhi. I don't have back pain, doctor. I don't have vomiting either. Okay. Temperature 101.6, pulse 96, BP 120. There are a lot of pus cells in the urine test. This is a urinary tract infection, that is, a urinary tract infection. Last year, when it came like this, they gave Septron. In that, the whole body got fat. You said it at the right time. That is a sulfa medicine. You have a sulfa allergy. Therefore, Septran is definitely not needed. Okay doctor. What other medicine? Nitrofurantoin 100 mg. You should take it in the morning and at night for five days. For fever, paracetamol 500 mg. Three times a day for three days. Should I drink a lot of water? Yes. Drink three liters of water a day. If you have severe pain in your back, if you vomit and can't eat anything, or if you see blood in your urine, come immediately. Okay doctor. When should I come back? Bring the urine culture report after five days.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Come, sit down. What is the problem?",
+    "start_time_seconds": 0.33,
+    "end_time_seconds": 3.17,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Doctor, I have had a fever for three days. When I urinate, it feels irritating. I feel like I need to go frequently.",
+    "start_time_seconds": 3.95,
+    "end_time_seconds": 13.63,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Is there pain on the side of the head?",
+    "start_time_seconds": 14.99,
+    "end_time_seconds": 16.87,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Bandhi.",
+    "start_time_seconds": 18.55,
+    "end_time_seconds": 19.09,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "I don't have back pain, doctor. I don't have vomiting either.",
+    "start_time_seconds": 19.95,
+    "end_time_seconds": 23.39,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Okay. Temperature 101.6, pulse 96, BP 120.",
+    "start_time_seconds": 24.79,
+    "end_time_seconds": 33.03,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "There are a lot of pus cells in the urine test.",
+    "start_time_seconds": 36.23,
+    "end_time_seconds": 38.87,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "This is a urinary tract infection, that is, a urinary tract infection.",
+    "start_time_seconds": 40.51,
+    "end_time_seconds": 44.57,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Last year, when it came like this, they gave Septron. In that, the whole body got fat.",
+    "start_time_seconds": 45.31,
+    "end_time_seconds": 53.63,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "You said it at the right time. That is a sulfa medicine. You have a sulfa allergy. Therefore, Septran is definitely not needed.",
+    "start_time_seconds": 54.57,
+    "end_time_seconds": 63.67,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay doctor. What other medicine?",
+    "start_time_seconds": 64.83,
+    "end_time_seconds": 68.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Nitrofurantoin 100 mg. You should take it in the morning and at night for five days. For fever, paracetamol 500 mg. Three times a day for three days.",
+    "start_time_seconds": 68.97,
+    "end_time_seconds": 82.97,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Should I drink a lot of water?",
+    "start_time_seconds": 84.07,
+    "end_time_seconds": 86.05,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Yes. Drink three liters of water a day. If you have severe pain in your back, if you vomit and can't eat anything, or if you see blood in your urine, come immediately.",
+    "start_time_seconds": 86.63,
+    "end_time_seconds": 102.19,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay doctor. When should I come back?",
+    "start_time_seconds": 103.73,
+    "end_time_seconds": 106.99,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Bring the urine culture report after five days.",
+    "start_time_seconds": 108.35,
+    "end_time_seconds": 111.83,
+    "speaker_id": "0"
+   }
+  ]
+ },
+ "language_code": "ta-IN",
+ "language_probability": null,
+ "audio_hash": "7c1ca2651a7fb7b0aba8a7689b7951b5",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_3e171b1c-05b0-49ed-9484-9d5240809685",
+  "elapsed_s": 10.686994314193726,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "translate",
+   "language_code": "ta-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

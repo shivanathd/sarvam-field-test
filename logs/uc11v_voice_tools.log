@@ -1,0 +1,98 @@
+23:37:42 synth h1 say:Lekha 2.64
+23:37:47 synth h2 gemini:Puck 1.6
+23:37:47 synth h3 say:Lekha 4.65
+23:37:47 synth h4 gemini:Aoede 2.6
+23:37:47 synth h5 say:Lekha 2.13
+23:37:47 synth h6 gemini:Leda 6.72
+23:37:47 synth h7 say:Lekha 2.85
+23:37:47 synth h8 gemini:Puck 3.36
+23:37:48 synth x1 gemini:Charon 2.28
+23:37:49 synth x2 gemini:Aoede 5.28
+23:37:49 synth x3 gemini:Fenrir 2.36
+23:37:50 synth x4 gemini:Leda 2.6
+23:37:51 synth x5 gemini:Kore 3.2
+23:37:51 synth x6 gemini:Puck 1.72
+23:37:52 synth x7 gemini:Charon 3.8
+23:37:52 synth x8 gemini:Aoede 3.24
+23:37:52 synth t1 say:Vani 4.23
+23:37:55 synth t2 gemini:Leda 1.8
+23:37:55 synth t3 say:Vani 5.2
+23:37:55 synth t4 gemini:Puck 2.0
+23:37:55 synth t5 say:Vani 2.92
+23:37:55 synth t6 gemini:Aoede 2.84
+23:37:55 synth t7 say:Vani 7.19
+23:37:57 synth b1 gemini:Leda 3.44
+23:37:57 synth b2 say:Piya 1.62
+23:37:59 synth b3 gemini:Puck 6.52
+23:37:59 synth b4 say:Piya 2.34
+23:37:59 synth b5 gemini:Aoede 2.24
+23:37:59 synth b6 say:Piya 3.63
+23:38:00 synth b7 gemini:Leda 3.8
+23:38:00 synth h9 say:Lekha 5.57
+23:38:02 synth h10 gemini:Puck 6.4
+23:38:02 synth h11 say:Lekha 2.38
+23:38:02 synth h12 gemini:Aoede 1.84
+23:38:02 synth h13 say:Lekha 3.07
+23:38:03 synth x9 gemini:Leda 2.16
+23:38:03 synth x10 gemini:Kore 3.48
+23:38:05 synth x11 gemini:Puck 2.12
+23:38:05 synth x12 gemini:Charon 2.88
+23:38:05 synth x13 gemini:Aoede 2.6
+23:38:05 synth t8 say:Vani 6.11
+23:38:07 synth t9 gemini:Leda 2.24
+23:38:07 synth t10 say:Vani 2.25
+23:38:07 synth t11 gemini:Puck 3.08
+23:38:07 synth t12 say:Vani 1.9
+23:38:08 synth b8 gemini:Aoede 1.96
+23:38:08 synth b9 say:Piya 6.87
+23:38:09 synth b10 gemini:Leda 1.68
+23:38:09 synth b11 say:Piya 3.89
+23:38:09 synth b12 gemini:Puck 2.52
+23:38:16 stt saaras:v4 clean h2 बिजली का बिल भर दो।
+23:38:16 stt saaras:v4 clean h1 मेरा 299 वाला रिचार्ज कर दो।
+23:38:16 stt saaras:v4 clean h3 9876543210 पर ₹500 भेज दो।
+23:38:17 stt saaras:v4 clean h4 मेरे बैंक खाते में कितना पैसा है?
+23:38:17 stt saaras:v4 clean h6 मम्मी के नंबर 9123456780 पर 239 का रिचार्ज करो।
+23:38:17 stt saaras:v4 clean h7 डीटीएच का बिल ₹450 भर दो।
+23:38:17 stt saaras:v4 clean h5 इंडियन का गैस सिलेंडर बुक कर दो।
+23:38:17 stt saaras:v4 clean h8 रमेश @ओकेएक्सिस को ढाई हज़ार रुपये भेजो।
+23:38:17 stt saaras:v4 clean x1 मेरा 299 वाला रिचार्ज कर दो।
+23:38:18 stt saaras:v4 clean x3 क्रेडिट कार्ड का बैलेंस कितना बचा है?
+23:38:18 stt saaras:v4 clean x2 भाई डेढ़ हज़ार भेज दो 9988776655 पे।
+23:38:18 stt saaras:v4 clean x4 एचपी गैस के दो सिलेंडर बुक कर दो।
+23:38:18 stt saaras:v4 clean x6 वॉलेट में कितने पैसे हैं?
+23:38:18 stt saaras:v4 clean x5 ब्रॉडबैंड का बिल पे करना है 799 का।
+23:38:18 stt saaras:v4 clean x7 सवा सौ रुपये भेजो शॉपकीपर @YBL को।
+23:38:18 stt saaras:v4 clean x8 पाइप्ड गैस का बिल भर दो, 612 रुपये।
+23:38:18 stt saaras:v4 clean t1 என் நம்பருக்கு 349 ரூபாய் ரீசார்ஜ் பண்ணுங்க.
+23:38:19 stt saaras:v4 clean t2 கரண்ட் பில் கட்டுங்க.
+23:38:19 stt saaras:v4 clean t4 பாரத் கேஸ் சிலிண்டர் புக் பண்ணுங்க.
+23:38:19 stt saaras:v4 clean t3 987650123-க்கு ₹1000 அனுப்புங்கள்.
+23:38:19 stt saaras:v4 clean t5 என் பேங்க் அக்கவுண்டில் எவ்வளவு பேலன்ஸ் இருக்கு?
+23:38:19 stt saaras:v4 clean t6 தண்ணி பில் 180 ரூபாய் கட்டிடு.
+23:38:19 stt saaras:v4 clean b1 আমার নম্বরে ২৯৯ টাকার রিচার্জ করে দাও।
+23:38:19 stt saaras:v4 clean t7 அம்மா நம்பர் 944556677110099 ரீசார்ஜ் பண்ணு.
+23:38:20 stt saaras:v4 clean b2 ইলেকট্রিক বিল দিযে দাও।
+23:38:20 stt saaras:v4 clean b4 ইন্ডেনের দুটো সিলিন্ডার বুক করো।
+23:38:20 stt saaras:v4 clean b3 নয় আট তিন শূন্য শূন্য এক দুই তিন চার পাঁচ নম্বরে পাঁচশো টাক
+23:38:20 stt saaras:v4 clean b5 ক্রেডিট কার্ডে কত ব্যালেন্স আছে?
+23:38:20 stt saaras:v4 clean b6 ব্রডবোন্ডের বিল ৬৯৯ টাকা দিজে দাও।
+23:38:20 stt saaras:v4 clean b7 দীপক @ পেটিএম-এ দেড় হাজার টাকা পাঠাও।
+23:38:20 stt saaras:v4 clean h9 पौने दो हज़ार नौ रुपये आठ एक दो तीन चार पाँच छः सात शून्य पर
+23:38:20 stt saaras:v4 clean h11 भारत गैस के तीन सिलेंडर चाहिए।
+23:38:20 stt saaras:v4 clean h10 साढ़े तीन सौ वाला रिचार्ज मेरे भाई के 9090909090 पर कर दो।
+23:38:21 stt saaras:v4 clean h12 पोस्टपेड बिल चुका दो।
+23:38:21 stt saaras:v4 clean h13 नल का बिल एक हज़ार दो सौ पचास रुपये भर दो।
+23:38:21 stt saaras:v4 clean x9 पौने तीन सौ का रिचार्ज करो।
+23:38:21 stt saaras:v4 clean x10 साढ़े चार हज़ार भेज दो प्रिया.एसबीआई पे।
+23:38:21 stt saaras:v4 clean x11 मोबाइल का पोस्टपेड बिल भरना है।
+23:38:21 stt saaras:v4 clean x12 इंडेन वाला सिलेंडर बुक करो, एक ही चाहिए।
+23:38:21 stt saaras:v4 clean x13 टाटा प्ले का 350 का बिल भर दो।
+23:38:22 stt saaras:v4 clean t9 இண்டேன் சிலிண்டர் ரெண்டு புக் பண்ணு.
+23:38:22 stt saaras:v4 clean t8 ₹1500 984001234-க்கு அனுப்பு.
+23:38:22 stt saaras:v4 clean t11 ஈபி பில் கட்டணும், 2340 ரூபாய்.
+23:38:22 stt saaras:v4 clean t12 ஏர்டெல் போஸ்ட்பேட் பில் கட்டு.
+23:38:22 stt saaras:v4 clean t10 வாலட்ல எவ்வளவு காசு இருக்கு?
+23:38:24 stt saaras:v4 clean b9 মাঝের নম্বর 9874563210-এ ₹199 রিচার্জ করে দাও।
+23:38:25 stt saaras:v4 clean b10 জলের বিল মিটিয়ে দাও।
+23:38:26 stt saaras:v4 clean b11 আড়াই হাজার টাকা ঋণাত দরেit ভাইভ্যালী পাঠাও।

@@ -1,0 +1,114 @@
+{
+ "request_id": "20261011_e706a3fa-7794-44ad-b579-d3f1a14af88c",
+ "transcript": "ராமசாமி ஐயா வாங்க sugar எப்படி இருக்கு? Doctor, ஒரு மாசமா sugar அதிகமா இருக்கு. கண்ணு கொஞ்சம் மங்கலா தெரியுது. இப்போ என்ன மாத்திரை சாப்பிடுறீங்க? Metformin ஐநூறு காலையும் ராத்திரியும். fasting sugar 198 வந்திருக்கு. BP 140/88. weight 79 kg. Type 2 diabetes control-ல இல்ல. மாத்திரையை அதிகமாக்கணுமா? Metformin 500 mg காலையும் ராத்திரியும் அப்படியே தொடருங்க. கூட Sitagliptin 50 mg. இல்ல, உங்க kidney report normal-ஆ இருக்கு. அதனால Sitagliptin 100 mg காலையில ஒரு தடவை. ரெண்டும் தொடர்ந்து சாப்பிடணும். எனக்கு எந்த மருந்துக்கும் allergy இல்ல doctor. சரி. இனிப்பு அரிசி சாதம் குறைச்சுக்கோங்க. தினமும் உடம்பு நடங்க. கண்ணுக்கு என்ன பண்ணனும்? ஒரு eye checkup கண் doctor கிட்ட retina பாக்கணும். திடீர்னு பார்வை போனா உடனே வாங்க. வியர்வை, நடுக்கம், தலை சுத்தல் வந்தா sugar குறைஞ்சிருக்கலாம். உடனே சக்கரை சாப்பிட்டு எங்களை கூப்பிடுங்க. சரி Doctor அடுத்து எப்போ? ஒரு மாசம் கழிச்சு eye checkup report-ஓட வாங்க.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "ராமசாமி ஐயா வாங்க sugar எப்படி இருக்கு?",
+    "start_time_seconds": 0.01,
+    "end_time_seconds": 4.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor, ஒரு மாசமா sugar அதிகமா இருக்கு. கண்ணு கொஞ்சம் மங்கலா தெரியுது.",
+    "start_time_seconds": 4.87,
+    "end_time_seconds": 11.69,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "இப்போ என்ன மாத்திரை சாப்பிடுறீங்க?",
+    "start_time_seconds": 12.37,
+    "end_time_seconds": 14.37,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Metformin ஐநூறு காலையும் ராத்திரியும்.",
+    "start_time_seconds": 14.93,
+    "end_time_seconds": 19.05,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "fasting sugar 198 வந்திருக்கு. BP 140/88. weight 79 kg.",
+    "start_time_seconds": 19.93,
+    "end_time_seconds": 28.71,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Type 2 diabetes control-ல இல்ல.",
+    "start_time_seconds": 30.07,
+    "end_time_seconds": 32.39,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "மாத்திரையை அதிகமாக்கணுமா?",
+    "start_time_seconds": 33.15,
+    "end_time_seconds": 35.27,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Metformin 500 mg காலையும் ராத்திரியும் அப்படியே தொடருங்க. கூட Sitagliptin 50 mg. இல்ல, உங்க kidney report normal-ஆ இருக்கு. அதனால Sitagliptin 100 mg காலையில ஒரு தடவை. ரெண்டும் தொடர்ந்து சாப்பிடணும்.",
+    "start_time_seconds": 36.01,
+    "end_time_seconds": 53.09,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "எனக்கு எந்த மருந்துக்கும் allergy இல்ல doctor.",
+    "start_time_seconds": 54.13,
+    "end_time_seconds": 57.47,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "சரி.",
+    "start_time_seconds": 57.99,
+    "end_time_seconds": 58.41,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "இனிப்பு அரிசி சாதம் குறைச்சுக்கோங்க. தினமும் உடம்பு நடங்க.",
+    "start_time_seconds": 59.43,
+    "end_time_seconds": 64.05,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "கண்ணுக்கு என்ன பண்ணனும்?",
+    "start_time_seconds": 65.21,
+    "end_time_seconds": 66.91,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ஒரு eye checkup கண் doctor கிட்ட retina பாக்கணும். திடீர்னு பார்வை போனா உடனே வாங்க. வியர்வை, நடுக்கம், தலை சுத்தல் வந்தா sugar குறைஞ்சிருக்கலாம். உடனே சக்கரை சாப்பிட்டு எங்களை கூப்பிடுங்க.",
+    "start_time_seconds": 67.45,
+    "end_time_seconds": 82.95,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "சரி Doctor அடுத்து எப்போ?",
+    "start_time_seconds": 83.87,
+    "end_time_seconds": 86.91,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ஒரு மாசம் கழிச்சு eye checkup report-ஓட வாங்க.",
+    "start_time_seconds": 87.87,
+    "end_time_seconds": 91.01,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "ta-IN",
+ "language_probability": null,
+ "audio_hash": "a5e4adbeca746e361d3dc0dea2d045d1",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_3108f4bf-0187-4687-8684-2ff86e0e0324",
+  "elapsed_s": 10.880073070526123,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "codemix",
+   "language_code": "ta-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

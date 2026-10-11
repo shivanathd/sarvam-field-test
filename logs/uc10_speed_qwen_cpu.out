@@ -1,0 +1,38 @@
+{
+ "target": "qwen-cpu",
+ "port": 8111,
+ "server_cmd": "~/embed-bench/llamacpp/llama-b11541/llama-server -m gguf/Qwen3-30B-A3B-Q4_K_M.gguf --jinja -ngl 0 -dev none --no-op-offload -c 32768 -np 4 --port 8111",
+ "measured_at": "2026-10-11 21:45:21",
+ "machine": "Apple M5 Max, 128 GB unified memory (shared Mac; other jobs running)",
+ "prompt_tokens": 2428,
+ "gen_tokens": 64,
+ "thinking": "disabled",
+ "c1": {
+  "prompt_tok_per_s": 11.156953466479226,
+  "gen_tok_per_s": 2.389224008106068,
+  "ttft_ms": 351598.34003448486,
+  "wall_ms": 377960.11328697205,
+  "runs": 2
+ },
+ "c4": {
+  "per_request_gen_tok_per_s": 0.2807717642115982,
+  "per_request_prompt_tok_per_s": 8.761323379508513,
+  "aggregate_gen_tok_per_s": 0.30680918137616686,
+  "ttft_ms": 609621.26994133,
+  "batch_wall_ms": 834394.8471546173,
+  "rounds": 1
+ },
+ "peak_rss_gb": 40.48,
+ "phys_footprint_mb_after": 21000.0,
+ "load_avg_before": [
+  21.3,
+  43.0,
+  64.1
+ ],
+ "load_avg_after": [
+  335.1,
+  232.4,
+  142.5
+ ],
+ "other_clients_busy_slots_at_start": 0
+}

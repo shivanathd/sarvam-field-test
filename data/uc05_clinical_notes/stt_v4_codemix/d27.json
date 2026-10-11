@@ -1,0 +1,108 @@
+{
+ "request_id": "20261011_7c3ef5e2-cf46-459a-9b3e-ef1cff0a5a6c",
+ "transcript": "কি হয়েছে বাবুর কত বয়স? ডাক্তারবাবু ছেলের বয়স চার বছর দুদিন ধরে কাশি নাক দিয়ে জল পড়ছে আর অল্প জ্বর। জ্বর মেপেছিলেন? হ্যাঁ আজ সকালে মেপেছি গা গরম ছিল। আচ্ছা এখানে দেখছি temperature 102.2 degree weight 16 kg oxygen saturation 98 ভালো আছে। বুকে শুনছি। হুম just clear sir. আগেরবার ওকে Amoxicillin দিয়েছিল তাতে গায়ে rash বেরিয়েছিল এবারও কি antibiotic লাগবে? ভালো করেছেন বলে ওর Amoxicillin-এ allergy আছে লিখে রাখছি। এবার antibiotic লাগবে না। এটা সাধারণ ঠান্ডা লাগা। common cold. জ্বরের জন্য Paracetamol syrup Calpol 5 ml করে দেবেন। শুধু জ্বর এলে। দিনে তিনবারের বেশি নয়, তিন দিন পর্যন্ত। আর Cetirizine syrup 2.5 ml রাতে ঘুমের আগে পাঁচ দিন। আর কি খেয়াল রাখবো? যদি খুব তাড়াতাড়ি শ্বাস নেয়, বুক বসে যায় বা কিছুই খেতে না চায়, ঝিমিয়ে পড়ে, তাহলে সঙ্গে সঙ্গে নিয়ে আসবেন। ঠিক আছে। আবার কবে আনবো? তিন দিন পরে একবার দেখিয়ে যাবেন।",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "কি হয়েছে বাবুর কত বয়স?",
+    "start_time_seconds": 0.01,
+    "end_time_seconds": 2.49,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ডাক্তারবাবু ছেলের বয়স চার বছর দুদিন ধরে কাশি নাক দিয়ে জল পড়ছে আর অল্প জ্বর।",
+    "start_time_seconds": 3.17,
+    "end_time_seconds": 12.53,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "জ্বর মেপেছিলেন?",
+    "start_time_seconds": 13.31,
+    "end_time_seconds": 14.61,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "হ্যাঁ আজ সকালে মেপেছি গা গরম ছিল।",
+    "start_time_seconds": 15.11,
+    "end_time_seconds": 18.71,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "আচ্ছা এখানে দেখছি temperature 102.2 degree weight 16 kg oxygen saturation 98 ভালো আছে।",
+    "start_time_seconds": 19.61,
+    "end_time_seconds": 31.07,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "বুকে শুনছি।",
+    "start_time_seconds": 32.27,
+    "end_time_seconds": 33.67,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "হুম just clear sir.",
+    "start_time_seconds": 35.19,
+    "end_time_seconds": 38.19,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "আগেরবার ওকে Amoxicillin দিয়েছিল তাতে গায়ে rash বেরিয়েছিল এবারও কি antibiotic লাগবে?",
+    "start_time_seconds": 38.63,
+    "end_time_seconds": 49.07,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ভালো করেছেন বলে ওর Amoxicillin-এ allergy আছে লিখে রাখছি। এবার antibiotic লাগবে না। এটা সাধারণ ঠান্ডা লাগা। common cold.",
+    "start_time_seconds": 49.57,
+    "end_time_seconds": 62.05,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "জ্বরের জন্য Paracetamol syrup Calpol 5 ml করে দেবেন। শুধু জ্বর এলে। দিনে তিনবারের বেশি নয়, তিন দিন পর্যন্ত। আর Cetirizine syrup 2.5 ml রাতে ঘুমের আগে পাঁচ দিন।",
+    "start_time_seconds": 62.99,
+    "end_time_seconds": 81.11,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "আর কি খেয়াল রাখবো?",
+    "start_time_seconds": 82.05,
+    "end_time_seconds": 83.67,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "যদি খুব তাড়াতাড়ি শ্বাস নেয়, বুক বসে যায় বা কিছুই খেতে না চায়, ঝিমিয়ে পড়ে, তাহলে সঙ্গে সঙ্গে নিয়ে আসবেন।",
+    "start_time_seconds": 84.27,
+    "end_time_seconds": 94.73,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ঠিক আছে। আবার কবে আনবো?",
+    "start_time_seconds": 95.49,
+    "end_time_seconds": 98.57,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "তিন দিন পরে একবার দেখিয়ে যাবেন।",
+    "start_time_seconds": 99.17,
+    "end_time_seconds": 101.47,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "bn-IN",
+ "language_probability": null,
+ "audio_hash": "7e77d66ba412ef16f7cedf4da71490f6",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_01d1d9ed-406c-4f2f-b8f2-e34caddc701a",
+  "elapsed_s": 11.079936027526855,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "codemix",
+   "language_code": "bn-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

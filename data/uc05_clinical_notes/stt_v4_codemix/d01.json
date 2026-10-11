@@ -1,0 +1,120 @@
+{
+ "request_id": "20261011_7fc3e3f3-c890-4a6d-ae73-05492ec59895",
+ "transcript": "नमस्ते बैठिए बताइए क्या तकलीफ है? Doctor साहब तीन दिन से बुखार है पूरे बदन में दर्द है रात को ठंड लगकर बुखार चढ़ता है। अच्छा घर पर temperature कितना जा रहा है कोई दवा ली? घर पर 102 तक गया था। मैंने medical store से Combiflam ले ली थी दो बार। ठीक है। अभी आपका temperature 101.4 है। pulse 98 है और BP 118 by 76 normal है। उल्टी दस्त या खांसी कुछ है? खांसी नहीं है थोड़ा जी मिचलाता है भूख नहीं लगती। किसी दवा से allergy है आपको? नहीं doctor कभी कुछ नहीं हुआ। बस कोई antibiotic दे दीजिए। Azithromycin वाली। जल्दी ठीक हो जाऊंगा। नहीं, यह viral fever लग रहा है। इसमें antibiotic का कोई फायदा नहीं है। Azithromycin नहीं देंगे। और Combigrain भी बंद कर दीजिए। Dengue का शक हो तो वह safe नहीं है। ठीक है फिर क्या लेना है? Paracetamol 650 mg यानी Dolo 650 दिन में तीन बार तीन दिन तक। साथ में Pantoprazole 40 mg सुबह खाली पेट एक बार पांच दिन। खाने पीने में क्या ध्यान रखूं? खूब पानी नारियल पानी और नींबू पानी पीजिए। एक CBC test भी करवा लीजिए। अगर शरीर पे लाल दाने निकलें, मसूड़ों से खून आए या सांस लेने में तकलीफ हो तो तुरंत आइए। इंतज़ार मत कीजिए। जी समझ गया। दोबारा कब आऊं? तीन दिन बाद CBC की report लेके आई है।",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "नमस्ते बैठिए बताइए क्या तकलीफ है?",
+    "start_time_seconds": 0.01,
+    "end_time_seconds": 4.49,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Doctor साहब तीन दिन से बुखार है पूरे बदन में दर्द है रात को ठंड लगकर बुखार चढ़ता है।",
+    "start_time_seconds": 5.73,
+    "end_time_seconds": 16.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "अच्छा घर पर temperature कितना जा रहा है कोई दवा ली?",
+    "start_time_seconds": 16.95,
+    "end_time_seconds": 21.23,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "घर पर 102 तक गया था। मैंने medical store से Combiflam ले ली थी दो बार।",
+    "start_time_seconds": 22.11,
+    "end_time_seconds": 30.37,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ठीक है। अभी आपका temperature 101.4 है। pulse 98 है और BP 118 by 76 normal है। उल्टी दस्त या खांसी कुछ है?",
+    "start_time_seconds": 31.25,
+    "end_time_seconds": 45.47,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "खांसी नहीं है थोड़ा जी मिचलाता है भूख नहीं लगती।",
+    "start_time_seconds": 46.01,
+    "end_time_seconds": 51.05,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "किसी दवा से allergy है आपको?",
+    "start_time_seconds": 52.01,
+    "end_time_seconds": 54.55,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "नहीं doctor कभी कुछ नहीं हुआ। बस कोई antibiotic दे दीजिए। Azithromycin वाली। जल्दी ठीक हो जाऊंगा।",
+    "start_time_seconds": 55.37,
+    "end_time_seconds": 64.67,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "नहीं, यह viral fever लग रहा है। इसमें antibiotic का कोई फायदा नहीं है। Azithromycin नहीं देंगे। और Combigrain भी बंद कर दीजिए। Dengue का शक हो तो वह safe नहीं है।",
+    "start_time_seconds": 65.47,
+    "end_time_seconds": 80.09,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ठीक है फिर क्या लेना है?",
+    "start_time_seconds": 80.89,
+    "end_time_seconds": 83.39,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Paracetamol 650 mg यानी Dolo 650 दिन में तीन बार तीन दिन तक। साथ में Pantoprazole 40 mg सुबह खाली पेट एक बार पांच दिन।",
+    "start_time_seconds": 84.11,
+    "end_time_seconds": 102.09,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "खाने पीने में क्या ध्यान रखूं?",
+    "start_time_seconds": 102.97,
+    "end_time_seconds": 105.43,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "खूब पानी नारियल पानी और नींबू पानी पीजिए।",
+    "start_time_seconds": 106.47,
+    "end_time_seconds": 110.41,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "एक CBC test भी करवा लीजिए। अगर शरीर पे लाल दाने निकलें, मसूड़ों से खून आए या सांस लेने में तकलीफ हो तो तुरंत आइए। इंतज़ार मत कीजिए।",
+    "start_time_seconds": 111.43,
+    "end_time_seconds": 125.99,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "जी समझ गया। दोबारा कब आऊं?",
+    "start_time_seconds": 126.73,
+    "end_time_seconds": 130.35,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "तीन दिन बाद CBC की report लेके आई है।",
+    "start_time_seconds": 131.31,
+    "end_time_seconds": 134.13,
+    "speaker_id": "0"
+   }
+  ]
+ },
+ "language_code": "hi-IN",
+ "language_probability": null,
+ "audio_hash": "399d76971725fecb3e651de714b43f06",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_4d514db7-38a1-49ad-bc52-10cf0f9dd842",
+  "elapsed_s": 10.687666177749634,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "codemix",
+   "language_code": "hi-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

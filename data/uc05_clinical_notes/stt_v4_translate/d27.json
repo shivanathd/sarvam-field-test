@@ -1,0 +1,108 @@
+{
+ "request_id": "20261011_233560d1-4c18-4c50-9e28-a3784c81a33c",
+ "transcript": "What happened to Babu? How old is he? Doctor, the boy is four years old. He has been coughing for two days, his nose is running, and he has a slight fever. Did you measure the fever? Yes, I measured it this morning. My body was hot. Okay. Here I see the temperature is 102 degrees. Weight is 16 kg, oxygen saturation is 98. It's good. I am hearing in my chest. Hmm. Just near us. Last time he was given amoxicillin, which caused a rash on his body. Will antibiotics be needed this time as well? Because you did well. He has an allergy to moxacillin. I am writing it down. This time antibiotics will not be needed. This is a common cold. Common cold. For fever, give paracetamol syrup, Calpol, 5 ml. Only if there is a fever. Not more than three times a day, for three days. And cetirizine syrup, 2.5 ml, at night before sleeping for five days. What else should I take care of? If they breathe very quickly, their chest sinks, or they don't want to eat anything and become drowsy, then bring them immediately. Okay. When will I bring it again? Show it once after three days.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "What happened to Babu? How old is he?",
+    "start_time_seconds": 0.01,
+    "end_time_seconds": 2.49,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor, the boy is four years old. He has been coughing for two days, his nose is running, and he has a slight fever.",
+    "start_time_seconds": 3.17,
+    "end_time_seconds": 12.53,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Did you measure the fever?",
+    "start_time_seconds": 13.31,
+    "end_time_seconds": 14.61,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Yes, I measured it this morning. My body was hot.",
+    "start_time_seconds": 15.11,
+    "end_time_seconds": 18.71,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay. Here I see the temperature is 102 degrees. Weight is 16 kg, oxygen saturation is 98. It's good.",
+    "start_time_seconds": 19.61,
+    "end_time_seconds": 31.07,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "I am hearing in my chest.",
+    "start_time_seconds": 32.27,
+    "end_time_seconds": 33.67,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Hmm. Just near us.",
+    "start_time_seconds": 35.19,
+    "end_time_seconds": 38.19,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Last time he was given amoxicillin, which caused a rash on his body. Will antibiotics be needed this time as well?",
+    "start_time_seconds": 38.63,
+    "end_time_seconds": 49.07,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Because you did well. He has an allergy to moxacillin. I am writing it down. This time antibiotics will not be needed. This is a common cold. Common cold.",
+    "start_time_seconds": 49.57,
+    "end_time_seconds": 62.05,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "For fever, give paracetamol syrup, Calpol, 5 ml. Only if there is a fever. Not more than three times a day, for three days. And cetirizine syrup, 2.5 ml, at night before sleeping for five days.",
+    "start_time_seconds": 62.99,
+    "end_time_seconds": 81.11,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "What else should I take care of?",
+    "start_time_seconds": 82.05,
+    "end_time_seconds": 83.67,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "If they breathe very quickly, their chest sinks, or they don't want to eat anything and become drowsy, then bring them immediately.",
+    "start_time_seconds": 84.27,
+    "end_time_seconds": 94.73,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Okay. When will I bring it again?",
+    "start_time_seconds": 95.49,
+    "end_time_seconds": 98.57,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Show it once after three days.",
+    "start_time_seconds": 99.17,
+    "end_time_seconds": 101.47,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "bn-IN",
+ "language_probability": null,
+ "audio_hash": "7e77d66ba412ef16f7cedf4da71490f6",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_3128a8dd-0dcd-4a14-b513-b2e9b7ab1efa",
+  "elapsed_s": 11.007665157318115,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "translate",
+   "language_code": "bn-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

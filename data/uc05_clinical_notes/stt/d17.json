@@ -1,0 +1,120 @@
+{
+ "request_id": "20261011_9c20786c-8a6f-4568-92c3-b31faf29ba4b",
+ "transcript": "Come, sit down. What is the problem? Doctor, I have had a fever for three days. When I pass urine, it feels irritating. I feel like I need to go frequently. Is there pain in the whole side? Vandi No back pain, doctor. No vomiting either. Sorry, temperature 101.6, pulse 96, BP 125. Pus cells are high in the urine test. This is a urinary tract infection, that is, a urinary infection. Last year, when something similar happened, they gave me Ceptron. It caused a complete lump in my body. You said it well. That is sulfa medicine. You have sulfa allergy. Therefore, you definitely don't need Ceptron. Okay doctor, what other medicine? Nitrofurantoin 100 mg. Should be taken five days a week, morning and night. For fever, paracetamol 500 mg. Three times a day, three days. Do you want to drink a lot of water? Yes. Drink 3 liters of water a day. If you have severe back pain, or if you vomit and can't eat anything, or if you have blood in your urine, buy it immediately. Okay doctor, when should I come back? Come after 5 days with the urine culture report.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Come, sit down. What is the problem?",
+    "start_time_seconds": 0.33,
+    "end_time_seconds": 3.17,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Doctor, I have had a fever for three days. When I pass urine, it feels irritating. I feel like I need to go frequently.",
+    "start_time_seconds": 3.95,
+    "end_time_seconds": 13.63,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Is there pain in the whole side?",
+    "start_time_seconds": 14.99,
+    "end_time_seconds": 16.87,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Vandi",
+    "start_time_seconds": 18.55,
+    "end_time_seconds": 19.09,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "No back pain, doctor. No vomiting either.",
+    "start_time_seconds": 19.95,
+    "end_time_seconds": 23.39,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Sorry, temperature 101.6, pulse 96, BP 125.",
+    "start_time_seconds": 24.79,
+    "end_time_seconds": 33.03,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Pus cells are high in the urine test.",
+    "start_time_seconds": 36.23,
+    "end_time_seconds": 38.87,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "This is a urinary tract infection, that is, a urinary infection.",
+    "start_time_seconds": 40.51,
+    "end_time_seconds": 44.57,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Last year, when something similar happened, they gave me Ceptron. It caused a complete lump in my body.",
+    "start_time_seconds": 45.31,
+    "end_time_seconds": 53.63,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "You said it well. That is sulfa medicine. You have sulfa allergy. Therefore, you definitely don't need Ceptron.",
+    "start_time_seconds": 54.57,
+    "end_time_seconds": 63.67,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay doctor, what other medicine?",
+    "start_time_seconds": 64.83,
+    "end_time_seconds": 68.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Nitrofurantoin 100 mg. Should be taken five days a week, morning and night. For fever, paracetamol 500 mg. Three times a day, three days.",
+    "start_time_seconds": 68.97,
+    "end_time_seconds": 82.97,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Do you want to drink a lot of water?",
+    "start_time_seconds": 84.07,
+    "end_time_seconds": 86.05,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Yes. Drink 3 liters of water a day. If you have severe back pain, or if you vomit and can't eat anything, or if you have blood in your urine, buy it immediately.",
+    "start_time_seconds": 86.63,
+    "end_time_seconds": 102.19,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay doctor, when should I come back?",
+    "start_time_seconds": 103.73,
+    "end_time_seconds": 106.99,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Come after 5 days with the urine culture report.",
+    "start_time_seconds": 108.35,
+    "end_time_seconds": 111.83,
+    "speaker_id": "0"
+   }
+  ]
+ },
+ "language_code": "ta-IN",
+ "language_probability": null,
+ "audio_hash": "7c1ca2651a7fb7b0aba8a7689b7951b5",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_3f7f8de8-6354-4c89-a4e3-607aaf0e837f",
+  "elapsed_s": 11.041626930236816,
+  "params": {
+   "model": "saaras:v3",
+   "mode": "translate",
+   "language_code": "ta-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

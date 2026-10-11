@@ -1,0 +1,131 @@
+{
+ "id": "d07",
+ "pair": "hi-en",
+ "lang": "Hindi",
+ "style": "romanised",
+ "topic": "pregnancy",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "Aao Kavita, kaisi ho? Kitne mahine ho gaye?"
+  },
+  {
+   "speaker": "patient",
+   "text": "Doctor 24 hafte ho gaye. 1 hafte se pairon mein thodi sujan hai, shaam ko zyada hoti hai."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Baby ki movement theek mehsoos ho rahi hai?"
+  },
+  {
+   "speaker": "patient",
+   "text": "Haan, din bhar hilta rehta hai."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Good. BP 124 by 80 hai, normal hai. Weight 63 kg. Hemoglobin thoda kam hai, 9.8, matlab mild anaemia hai. Pairon ki sujan is stage mein normal hai, pair upar rakh ke so."
+  },
+  {
+   "speaker": "patient",
+   "text": "Doctor kamar mein bahut dard hota hai, Brufen le loon kya?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Nahi, pregnancy mein Brufen bilkul nahi lena. Halki exercise aur garam paani ki sikai karo."
+  },
+  {
+   "speaker": "patient",
+   "text": "Theek hai. Kisi dawai se allergy nahi hai mujhe."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Iron ki goli, Ferrous ascorbate 100 mg, din mein ek baar lunch ke baad, poori pregnancy chalegi. Calcium 500 mg subah-shaam, wo bhi continue. Iron aur calcium saath mein mat lena, gap rakhna."
+  },
+  {
+   "speaker": "patient",
+   "text": "Ok doctor."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Agar bleeding ho, baby ki movement kam lage, ya bahut tez sir dard aur dhundla dikhe, toh usi waqt hospital aana."
+  },
+  {
+   "speaker": "patient",
+   "text": "Agla checkup kab?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "4 hafte baad, sugar wala glucose test karwa ke aana."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "swelling of feet",
+   "pedal edema",
+   "pedal oedema",
+   "leg swelling"
+  ],
+  "duration": {
+   "value": 1,
+   "unit": "weeks"
+  },
+  "vitals": {
+   "bp": "124/80",
+   "weight_kg": 63
+  },
+  "diagnosis": [
+   "mild anaemia in pregnancy",
+   "anemia in pregnancy",
+   "mild anemia",
+   "24 weeks pregnancy"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "ferrous ascorbate",
+     "iron"
+    ],
+    "dose": "100 mg",
+    "frequency": "OD",
+    "duration_days": null
+   },
+   {
+    "drug": [
+     "calcium",
+     "calcium carbonate"
+    ],
+    "dose": "500 mg",
+    "frequency": "BD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "bleeding",
+    "vaginal bleeding"
+   ],
+   [
+    "reduced fetal movements",
+    "decreased fetal movement"
+   ],
+   [
+    "severe headache",
+    "blurred vision"
+   ]
+  ],
+  "follow_up": [
+   "4 weeks",
+   "four weeks",
+   "after 4 weeks",
+   "1 month"
+  ],
+  "not_prescribed": [
+   "ibuprofen",
+   "brufen"
+  ]
+ },
+ "trap": "Patient asks for Brufen, refused in pregnancy."
+}

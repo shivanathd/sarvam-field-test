@@ -1,0 +1,3134 @@
+{
+ "uc": "uc11_bharat_code",
+ "title": "Bharat Code: coding agents for Indian business logic, prompted in Indian languages",
+ "business_question": "Can these models act as coding agents for Indian business logic when the developer writes the task in their own language (Hindi, Tamil, Hinglish) instead of English? And can they drive a payments-app tool schema from Indian-language voice commands?",
+ "dataset": {
+  "name": "uc11 Bharat Code (40 tasks x 4 prompt languages) + 50 tool-calling commands",
+  "source": "authored for this benchmark: 40 India-specific Python tasks (Verhoeff/Aadhaar, PAN, GSTIN, IFSC, GST split/invoice, Indian digit grouping, lakh/crore words in English and Hindi, FY/quarter, TDS/income tax with stated slabs, EMI, UPI, Indic digits, PIN, railway status, IST, Luhn/RuPay, mobile normalisation, vehicle plates, HRA, gratuity, EPF, FD, CIN, bank holidays, etc.) each with a reference solution and 8-14 hidden asserts (all references verified passing). Specs hand-translated to Hindi, Tamil and Hinglish with identifiers/literals verbatim; every translation back-translated blind by Gemini and diffed against the English (3 ambiguities found and fixed, then 0 flagged).",
+  "license": "CC-BY-4.0 (authored here)",
+  "n": 160,
+  "languages": [
+   "en",
+   "hi",
+   "ta",
+   "hinglish",
+   "bn (tool test only)"
+  ],
+  "synthetic": true,
+  "synthetic_note": "All IDs (Aadhaar-format, PAN, GSTIN, CIN, cards, phones, UPI IDs) are synthetic test values."
+ },
+ "systems": [
+  "sarvam-105b",
+  "sarvam-105b-think",
+  "sarvam-105b-think-t0",
+  "sarvam-105b-t0.7",
+  "gemini-3.8-flash",
+  "gemini-3.8-flash-think",
+  "gpt-5.4-mini",
+  "gpt-5.4-mini-think",
+  "claude-haiku-5.5",
+  "claude-haiku-5.5-think",
+  "gemini-pro-latest-think",
+  "gpt-5.5-think",
+  "claude-sonnet-5.5-think",
+  "sarvam-30b-local",
+  "qwen3-30b-local"
+ ],
+ "metrics": [
+  {
+   "name": "pass@1 (single shot)",
+   "higher_is_better": true,
+   "unit": "fraction of task-language items (160 full set; 120 = tasks 1-30 for frontier; 80 = odd tasks for local)",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.55625,
+     "lo": 0.475,
+     "hi": 0.63125,
+     "n": 160
+    },
+    "sarvam-105b-think": {
+     "mean": 0.68125,
+     "lo": 0.6125,
+     "hi": 0.75,
+     "n": 160
+    },
+    "sarvam-105b-think-t0": {
+     "mean": 0.6875,
+     "lo": 0.61875,
+     "hi": 0.7625,
+     "n": 160
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.50625,
+     "lo": 0.425,
+     "hi": 0.5875,
+     "n": 160
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 160
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 0.94375,
+     "lo": 0.90625,
+     "hi": 0.975,
+     "n": 160
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.91875,
+     "lo": 0.875,
+     "hi": 0.95625,
+     "n": 160
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 0.975,
+     "lo": 0.95,
+     "hi": 0.99375,
+     "n": 160
+    },
+    "claude-haiku-5.5": {
+     "mean": 0.99375,
+     "lo": 0.98125,
+     "hi": 1.0,
+     "n": 160
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 0.99375,
+     "lo": 0.98125,
+     "hi": 1.0,
+     "n": 160
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.9857142857142858,
+     "lo": 0.9642857142857143,
+     "hi": 1.0,
+     "n": 140
+    },
+    "gpt-5.5-think": {
+     "mean": 0.9785714285714285,
+     "lo": 0.95,
+     "hi": 1.0,
+     "n": 140
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 0.9642857142857143,
+     "lo": 0.9357142857142857,
+     "hi": 0.9928571428571429,
+     "n": 140
+    },
+    "sarvam-30b-local": {
+     "mean": 0.2,
+     "lo": 0.125,
+     "hi": 0.2875,
+     "n": 80
+    },
+    "qwen3-30b-local": {
+     "mean": 0.425,
+     "lo": 0.3125,
+     "hi": 0.5375,
+     "n": 80
+    }
+   }
+  },
+  {
+   "name": "pass@3 with repair loop",
+   "higher_is_better": true,
+   "unit": "fraction of task-language items (160 full set; 120 = tasks 1-30 for frontier; 80 = odd tasks for local)",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.64375,
+     "lo": 0.56875,
+     "hi": 0.7125,
+     "n": 160
+    },
+    "sarvam-105b-think": {
+     "mean": 0.83125,
+     "lo": 0.775,
+     "hi": 0.8875,
+     "n": 160
+    },
+    "sarvam-105b-think-t0": {
+     "mean": 0.83125,
+     "lo": 0.775,
+     "hi": 0.8875,
+     "n": 160
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.66875,
+     "lo": 0.59375,
+     "hi": 0.74375,
+     "n": 160
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 160
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 0.99375,
+     "lo": 0.98125,
+     "hi": 1.0,
+     "n": 160
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.975,
+     "lo": 0.95,
+     "hi": 0.99375,
+     "n": 160
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 160
+    },
+    "claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 160
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 160
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 140
+    },
+    "gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 140
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 140
+    }
+   }
+  },
+  {
+   "name": "language penalty, pass@1 (English minus language; avg over hi/ta/hinglish)",
+   "higher_is_better": false,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.125,
+     "lo": null,
+     "hi": null,
+     "n": 3
+    },
+    "sarvam-105b-think": {
+     "mean": -0.041666666666666664,
+     "lo": null,
+     "hi": null,
+     "n": 3
+    },
+    "sarvam-105b-think-t0": {
+     "mean": -0.016666666666666666,
+     "lo": null,
+     "hi": null,
+     "n": 3
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.05833333333333334,
+     "lo": null,
+     "hi": null,
+     "n": 3
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": null,
+     "hi": null,
+     "n": 3
+    },
+    "gemini-3.8-flash-think": {
+     "mean": -0.05833333333333333,
+     "lo": null,
+     "hi": null,
+     "n": 3
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.041666666666666664,
+     "lo": null,
+     "hi": null,
+     "n": 3
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 0.03333333333333333,
+     "lo": null,
+     "hi": null,
+     "n": 3
+    },
+    "claude-haiku-5.5": {
+     "mean": 0.008333333333333333,
+     "lo": null,
+     "hi": null,
+     "n": 3
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 0.008333333333333333,
+     "lo": null,
+     "hi": null,
+     "n": 3
+    },
+    "gemini-pro-latest-think": {
+     "mean": -0.019047619047619046,
+     "lo": null,
+     "hi": null,
+     "n": 3
+    },
+    "gpt-5.5-think": {
+     "mean": -0.009523809523809523,
+     "lo": null,
+     "hi": null,
+     "n": 3
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": -0.02857142857142857,
+     "lo": null,
+     "hi": null,
+     "n": 3
+    },
+    "sarvam-30b-local": {
+     "mean": 0.06666666666666667,
+     "lo": null,
+     "hi": null,
+     "n": 3
+    },
+    "qwen3-30b-local": {
+     "mean": 0.03333333333333333,
+     "lo": null,
+     "hi": null,
+     "n": 3
+    }
+   }
+  },
+  {
+   "name": "tool calling: correct tool + exact args (all 50)",
+   "higher_is_better": true,
+   "unit": "fraction of 50 commands",
+   "values": {
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "sarvam-105b-think": {
+     "mean": 0.98,
+     "lo": 0.94,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.96,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "claude-haiku-5.5": {
+     "mean": 0.94,
+     "lo": 0.86,
+     "hi": 1.0,
+     "n": 50
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "sarvam-30b-local": {
+     "mean": 0.6,
+     "lo": 0.46,
+     "hi": 0.74,
+     "n": 50
+    },
+    "qwen3-30b-local": {
+     "mean": 0.86,
+     "lo": 0.76,
+     "hi": 0.94,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "tool calling exact: base 30",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-105b-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "claude-haiku-5.5": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.7333333333333333,
+     "lo": 0.5666666666666667,
+     "hi": 0.8666666666666667,
+     "n": 30
+    },
+    "qwen3-30b-local": {
+     "mean": 0.9,
+     "lo": 0.7666666666666667,
+     "hi": 1.0,
+     "n": 30
+    }
+   }
+  },
+  {
+   "name": "tool calling exact: hard 20 (fractional amounts, regional terms)",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "sarvam-105b-think": {
+     "mean": 0.95,
+     "lo": 0.85,
+     "hi": 1.0,
+     "n": 20
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.95,
+     "lo": 0.85,
+     "hi": 1.0,
+     "n": 20
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "claude-haiku-5.5": {
+     "mean": 0.9,
+     "lo": 0.75,
+     "hi": 1.0,
+     "n": 20
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "sarvam-30b-local": {
+     "mean": 0.4,
+     "lo": 0.2,
+     "hi": 0.6,
+     "n": 20
+    },
+    "qwen3-30b-local": {
+     "mean": 0.8,
+     "lo": 0.6,
+     "hi": 0.95,
+     "n": 20
+    }
+   }
+  },
+  {
+   "name": "tool calling: correct tool name (all 50)",
+   "higher_is_better": true,
+   "unit": "fraction of 50 commands",
+   "values": {
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "sarvam-105b-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gpt-5.4-mini": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "sarvam-30b-local": {
+     "mean": 0.96,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 50
+    },
+    "qwen3-30b-local": {
+     "mean": 0.98,
+     "lo": 0.94,
+     "hi": 1.0,
+     "n": 50
+    }
+   }
+  }
+ ],
+ "per_language": {
+  "pass@1": {
+   "en": {
+    "sarvam-105b": {
+     "mean": 0.65,
+     "lo": 0.5,
+     "hi": 0.8,
+     "n": 40
+    },
+    "sarvam-105b-think": {
+     "mean": 0.65,
+     "lo": 0.5,
+     "hi": 0.8,
+     "n": 40
+    },
+    "sarvam-105b-think-t0": {
+     "mean": 0.675,
+     "lo": 0.525,
+     "hi": 0.8,
+     "n": 40
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.55,
+     "lo": 0.4,
+     "hi": 0.7,
+     "n": 40
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 0.9,
+     "lo": 0.8,
+     "hi": 0.975,
+     "n": 40
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.95,
+     "lo": 0.875,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.9714285714285714,
+     "lo": 0.9142857142857143,
+     "hi": 1.0,
+     "n": 35
+    },
+    "gpt-5.5-think": {
+     "mean": 0.9714285714285714,
+     "lo": 0.9142857142857143,
+     "hi": 1.0,
+     "n": 35
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 0.9428571428571428,
+     "lo": 0.8571428571428571,
+     "hi": 1.0,
+     "n": 35
+    },
+    "sarvam-30b-local": {
+     "mean": 0.25,
+     "lo": 0.05,
+     "hi": 0.45,
+     "n": 20
+    },
+    "qwen3-30b-local": {
+     "mean": 0.45,
+     "lo": 0.25,
+     "hi": 0.65,
+     "n": 20
+    }
+   },
+   "hi": {
+    "sarvam-105b": {
+     "mean": 0.525,
+     "lo": 0.375,
+     "hi": 0.675,
+     "n": 40
+    },
+    "sarvam-105b-think": {
+     "mean": 0.7,
+     "lo": 0.55,
+     "hi": 0.825,
+     "n": 40
+    },
+    "sarvam-105b-think-t0": {
+     "mean": 0.65,
+     "lo": 0.5,
+     "hi": 0.8,
+     "n": 40
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.5,
+     "lo": 0.35,
+     "hi": 0.65,
+     "n": 40
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 0.95,
+     "lo": 0.875,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.925,
+     "lo": 0.825,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 0.975,
+     "lo": 0.925,
+     "hi": 1.0,
+     "n": 40
+    },
+    "claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.9714285714285714,
+     "lo": 0.9142857142857143,
+     "hi": 1.0,
+     "n": 35
+    },
+    "gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 35
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 0.9428571428571428,
+     "lo": 0.8571428571428571,
+     "hi": 1.0,
+     "n": 35
+    },
+    "sarvam-30b-local": {
+     "mean": 0.1,
+     "lo": 0.0,
+     "hi": 0.25,
+     "n": 20
+    },
+    "qwen3-30b-local": {
+     "mean": 0.45,
+     "lo": 0.25,
+     "hi": 0.7,
+     "n": 20
+    }
+   },
+   "ta": {
+    "sarvam-105b": {
+     "mean": 0.575,
+     "lo": 0.425,
+     "hi": 0.725,
+     "n": 40
+    },
+    "sarvam-105b-think": {
+     "mean": 0.675,
+     "lo": 0.525,
+     "hi": 0.8,
+     "n": 40
+    },
+    "sarvam-105b-think-t0": {
+     "mean": 0.625,
+     "lo": 0.475,
+     "hi": 0.775,
+     "n": 40
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.525,
+     "lo": 0.375,
+     "hi": 0.675,
+     "n": 40
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 0.95,
+     "lo": 0.875,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.925,
+     "lo": 0.825,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 0.975,
+     "lo": 0.925,
+     "hi": 1.0,
+     "n": 40
+    },
+    "claude-haiku-5.5": {
+     "mean": 0.975,
+     "lo": 0.925,
+     "hi": 1.0,
+     "n": 40
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 35
+    },
+    "gpt-5.5-think": {
+     "mean": 0.9714285714285714,
+     "lo": 0.9142857142857143,
+     "hi": 1.0,
+     "n": 35
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 35
+    },
+    "sarvam-30b-local": {
+     "mean": 0.2,
+     "lo": 0.05,
+     "hi": 0.4,
+     "n": 20
+    },
+    "qwen3-30b-local": {
+     "mean": 0.45,
+     "lo": 0.25,
+     "hi": 0.65,
+     "n": 20
+    }
+   },
+   "hinglish": {
+    "sarvam-105b": {
+     "mean": 0.475,
+     "lo": 0.325,
+     "hi": 0.625,
+     "n": 40
+    },
+    "sarvam-105b-think": {
+     "mean": 0.7,
+     "lo": 0.55,
+     "hi": 0.85,
+     "n": 40
+    },
+    "sarvam-105b-think-t0": {
+     "mean": 0.8,
+     "lo": 0.675,
+     "hi": 0.925,
+     "n": 40
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.45,
+     "lo": 0.3,
+     "hi": 0.6,
+     "n": 40
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 0.975,
+     "lo": 0.925,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.875,
+     "lo": 0.775,
+     "hi": 0.975,
+     "n": 40
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 0.95,
+     "lo": 0.875,
+     "hi": 1.0,
+     "n": 40
+    },
+    "claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 0.975,
+     "lo": 0.925,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 35
+    },
+    "gpt-5.5-think": {
+     "mean": 0.9714285714285714,
+     "lo": 0.9142857142857143,
+     "hi": 1.0,
+     "n": 35
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 0.9714285714285714,
+     "lo": 0.9142857142857143,
+     "hi": 1.0,
+     "n": 35
+    },
+    "sarvam-30b-local": {
+     "mean": 0.25,
+     "lo": 0.05,
+     "hi": 0.45,
+     "n": 20
+    },
+    "qwen3-30b-local": {
+     "mean": 0.35,
+     "lo": 0.15,
+     "hi": 0.55,
+     "n": 20
+    }
+   }
+  },
+  "pass@3 with repair": {
+   "en": {
+    "sarvam-105b": {
+     "mean": 0.7,
+     "lo": 0.55,
+     "hi": 0.825,
+     "n": 40
+    },
+    "sarvam-105b-think": {
+     "mean": 0.8,
+     "lo": 0.675,
+     "hi": 0.925,
+     "n": 40
+    },
+    "sarvam-105b-think-t0": {
+     "mean": 0.875,
+     "lo": 0.75,
+     "hi": 0.975,
+     "n": 40
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.75,
+     "lo": 0.6,
+     "hi": 0.875,
+     "n": 40
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 0.975,
+     "lo": 0.925,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.975,
+     "lo": 0.925,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 35
+    },
+    "gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 35
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 35
+    },
+    "sarvam-30b-local": {
+     "mean": 0.25,
+     "lo": 0.05,
+     "hi": 0.45,
+     "n": 20
+    },
+    "qwen3-30b-local": {
+     "mean": 0.45,
+     "lo": 0.25,
+     "hi": 0.65,
+     "n": 20
+    }
+   },
+   "hi": {
+    "sarvam-105b": {
+     "mean": 0.6,
+     "lo": 0.45,
+     "hi": 0.75,
+     "n": 40
+    },
+    "sarvam-105b-think": {
+     "mean": 0.85,
+     "lo": 0.725,
+     "hi": 0.95,
+     "n": 40
+    },
+    "sarvam-105b-think-t0": {
+     "mean": 0.8,
+     "lo": 0.675,
+     "hi": 0.925,
+     "n": 40
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.675,
+     "lo": 0.525,
+     "hi": 0.825,
+     "n": 40
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.975,
+     "lo": 0.925,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 35
+    },
+    "gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 35
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 35
+    },
+    "sarvam-30b-local": {
+     "mean": 0.1,
+     "lo": 0.0,
+     "hi": 0.25,
+     "n": 20
+    },
+    "qwen3-30b-local": {
+     "mean": 0.45,
+     "lo": 0.25,
+     "hi": 0.7,
+     "n": 20
+    }
+   },
+   "ta": {
+    "sarvam-105b": {
+     "mean": 0.7,
+     "lo": 0.55,
+     "hi": 0.825,
+     "n": 40
+    },
+    "sarvam-105b-think": {
+     "mean": 0.825,
+     "lo": 0.7,
+     "hi": 0.925,
+     "n": 40
+    },
+    "sarvam-105b-think-t0": {
+     "mean": 0.775,
+     "lo": 0.65,
+     "hi": 0.9,
+     "n": 40
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.625,
+     "lo": 0.475,
+     "hi": 0.775,
+     "n": 40
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.95,
+     "lo": 0.875,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 35
+    },
+    "gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 35
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 35
+    },
+    "sarvam-30b-local": {
+     "mean": 0.2,
+     "lo": 0.05,
+     "hi": 0.4,
+     "n": 20
+    },
+    "qwen3-30b-local": {
+     "mean": 0.45,
+     "lo": 0.25,
+     "hi": 0.65,
+     "n": 20
+    }
+   },
+   "hinglish": {
+    "sarvam-105b": {
+     "mean": 0.575,
+     "lo": 0.425,
+     "hi": 0.725,
+     "n": 40
+    },
+    "sarvam-105b-think": {
+     "mean": 0.85,
+     "lo": 0.725,
+     "hi": 0.95,
+     "n": 40
+    },
+    "sarvam-105b-think-t0": {
+     "mean": 0.875,
+     "lo": 0.75,
+     "hi": 0.975,
+     "n": 40
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.625,
+     "lo": 0.475,
+     "hi": 0.775,
+     "n": 40
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gpt-5.4-mini": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 35
+    },
+    "gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 35
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 35
+    },
+    "sarvam-30b-local": {
+     "mean": 0.25,
+     "lo": 0.05,
+     "hi": 0.45,
+     "n": 20
+    },
+    "qwen3-30b-local": {
+     "mean": 0.35,
+     "lo": 0.15,
+     "hi": 0.55,
+     "n": 20
+    }
+   }
+  },
+  "tool exact": {
+   "hi": {
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "sarvam-105b-think": {
+     "mean": 0.9230769230769231,
+     "lo": 0.7692307692307693,
+     "hi": 1.0,
+     "n": 13
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "gpt-5.4-mini": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "sarvam-30b-local": {
+     "mean": 0.6153846153846154,
+     "lo": 0.3076923076923077,
+     "hi": 0.8461538461538461,
+     "n": 13
+    },
+    "qwen3-30b-local": {
+     "mean": 0.9230769230769231,
+     "lo": 0.7692307692307693,
+     "hi": 1.0,
+     "n": 13
+    }
+   },
+   "hinglish": {
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "sarvam-105b-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.8461538461538461,
+     "lo": 0.6153846153846154,
+     "hi": 1.0,
+     "n": 13
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "claude-haiku-5.5": {
+     "mean": 0.7692307692307693,
+     "lo": 0.5384615384615384,
+     "hi": 1.0,
+     "n": 13
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 13
+    },
+    "sarvam-30b-local": {
+     "mean": 0.5384615384615384,
+     "lo": 0.3076923076923077,
+     "hi": 0.7692307692307693,
+     "n": 13
+    },
+    "qwen3-30b-local": {
+     "mean": 0.7692307692307693,
+     "lo": 0.5384615384615384,
+     "hi": 1.0,
+     "n": 13
+    }
+   },
+   "ta": {
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "sarvam-105b-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "gpt-5.4-mini": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "sarvam-30b-local": {
+     "mean": 0.6666666666666666,
+     "lo": 0.4166666666666667,
+     "hi": 0.9166666666666666,
+     "n": 12
+    },
+    "qwen3-30b-local": {
+     "mean": 0.75,
+     "lo": 0.5,
+     "hi": 1.0,
+     "n": 12
+    }
+   },
+   "bn": {
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "sarvam-105b-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "gemini-3.8-flash-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "gpt-5.4-mini": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "gemini-pro-latest-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "gpt-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    },
+    "sarvam-30b-local": {
+     "mean": 0.5833333333333334,
+     "lo": 0.3333333333333333,
+     "hi": 0.8333333333333334,
+     "n": 12
+    },
+    "qwen3-30b-local": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 12
+    }
+   }
+  }
+ },
+ "language_penalty": {
+  "pass@1": {
+   "hi": {
+    "sarvam-105b": {
+     "mean": 0.125,
+     "lo": 0.0,
+     "hi": 0.275,
+     "n": 40
+    },
+    "sarvam-105b-think": {
+     "mean": -0.05,
+     "lo": -0.2,
+     "hi": 0.075,
+     "n": 40
+    },
+    "sarvam-105b-think-t0": {
+     "mean": 0.025,
+     "lo": -0.175,
+     "hi": 0.225,
+     "n": 40
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.05,
+     "lo": -0.1,
+     "hi": 0.2,
+     "n": 40
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "gemini-3.8-flash-think": {
+     "mean": -0.05,
+     "lo": -0.15,
+     "hi": 0.05,
+     "n": 40
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.025,
+     "lo": -0.075,
+     "hi": 0.125,
+     "n": 40
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 0.025,
+     "lo": 0.0,
+     "hi": 0.075,
+     "n": 40
+    },
+    "claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.0,
+     "lo": -0.08571428571428572,
+     "hi": 0.08571428571428572,
+     "n": 35
+    },
+    "gpt-5.5-think": {
+     "mean": -0.02857142857142857,
+     "lo": -0.08571428571428572,
+     "hi": 0.0,
+     "n": 35
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 0.0,
+     "lo": -0.08571428571428572,
+     "hi": 0.08571428571428572,
+     "n": 35
+    },
+    "sarvam-30b-local": {
+     "mean": 0.15,
+     "lo": -0.05,
+     "hi": 0.35,
+     "n": 20
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": -0.15,
+     "hi": 0.15,
+     "n": 20
+    }
+   },
+   "ta": {
+    "sarvam-105b": {
+     "mean": 0.075,
+     "lo": -0.075,
+     "hi": 0.225,
+     "n": 40
+    },
+    "sarvam-105b-think": {
+     "mean": -0.025,
+     "lo": -0.175,
+     "hi": 0.15,
+     "n": 40
+    },
+    "sarvam-105b-think-t0": {
+     "mean": 0.05,
+     "lo": -0.125,
+     "hi": 0.225,
+     "n": 40
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.025,
+     "lo": -0.15,
+     "hi": 0.2,
+     "n": 40
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "gemini-3.8-flash-think": {
+     "mean": -0.05,
+     "lo": -0.15,
+     "hi": 0.05,
+     "n": 40
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.025,
+     "lo": -0.05,
+     "hi": 0.125,
+     "n": 40
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 0.025,
+     "lo": 0.0,
+     "hi": 0.075,
+     "n": 40
+    },
+    "claude-haiku-5.5": {
+     "mean": 0.025,
+     "lo": 0.0,
+     "hi": 0.075,
+     "n": 40
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "gemini-pro-latest-think": {
+     "mean": -0.02857142857142857,
+     "lo": -0.08571428571428572,
+     "hi": 0.0,
+     "n": 35
+    },
+    "gpt-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 35
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": -0.05714285714285714,
+     "lo": -0.14285714285714285,
+     "hi": 0.0,
+     "n": 35
+    },
+    "sarvam-30b-local": {
+     "mean": 0.05,
+     "lo": -0.1,
+     "hi": 0.2,
+     "n": 20
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": -0.3,
+     "hi": 0.3,
+     "n": 20
+    }
+   },
+   "hinglish": {
+    "sarvam-105b": {
+     "mean": 0.175,
+     "lo": 0.0,
+     "hi": 0.35,
+     "n": 40
+    },
+    "sarvam-105b-think": {
+     "mean": -0.05,
+     "lo": -0.2,
+     "hi": 0.075,
+     "n": 40
+    },
+    "sarvam-105b-think-t0": {
+     "mean": -0.125,
+     "lo": -0.3,
+     "hi": 0.05,
+     "n": 40
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.1,
+     "lo": -0.075,
+     "hi": 0.275,
+     "n": 40
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "gemini-3.8-flash-think": {
+     "mean": -0.075,
+     "lo": -0.175,
+     "hi": 0.0,
+     "n": 40
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.075,
+     "lo": -0.025,
+     "hi": 0.175,
+     "n": 40
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 0.05,
+     "lo": 0.0,
+     "hi": 0.125,
+     "n": 40
+    },
+    "claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 0.025,
+     "lo": 0.0,
+     "hi": 0.075,
+     "n": 40
+    },
+    "gemini-pro-latest-think": {
+     "mean": -0.02857142857142857,
+     "lo": -0.08571428571428572,
+     "hi": 0.0,
+     "n": 35
+    },
+    "gpt-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 35
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": -0.02857142857142857,
+     "lo": -0.08571428571428572,
+     "hi": 0.0,
+     "n": 35
+    },
+    "sarvam-30b-local": {
+     "mean": 0.0,
+     "lo": -0.2,
+     "hi": 0.2,
+     "n": 20
+    },
+    "qwen3-30b-local": {
+     "mean": 0.1,
+     "lo": -0.15,
+     "hi": 0.4,
+     "n": 20
+    }
+   }
+  },
+  "pass@3": {
+   "hi": {
+    "sarvam-105b": {
+     "mean": 0.1,
+     "lo": -0.025,
+     "hi": 0.25,
+     "n": 40
+    },
+    "sarvam-105b-think": {
+     "mean": -0.05,
+     "lo": -0.175,
+     "hi": 0.075,
+     "n": 40
+    },
+    "sarvam-105b-think-t0": {
+     "mean": 0.075,
+     "lo": -0.025,
+     "hi": 0.2,
+     "n": 40
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.075,
+     "lo": -0.05,
+     "hi": 0.2,
+     "n": 40
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "gemini-3.8-flash-think": {
+     "mean": -0.025,
+     "lo": -0.075,
+     "hi": 0.0,
+     "n": 40
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.0,
+     "lo": -0.075,
+     "hi": 0.075,
+     "n": 40
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 35
+    },
+    "gpt-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 35
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 35
+    },
+    "sarvam-30b-local": {
+     "mean": 0.15,
+     "lo": -0.05,
+     "hi": 0.35,
+     "n": 20
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": -0.15,
+     "hi": 0.15,
+     "n": 20
+    }
+   },
+   "ta": {
+    "sarvam-105b": {
+     "mean": 0.0,
+     "lo": -0.15,
+     "hi": 0.15,
+     "n": 40
+    },
+    "sarvam-105b-think": {
+     "mean": -0.025,
+     "lo": -0.15,
+     "hi": 0.1,
+     "n": 40
+    },
+    "sarvam-105b-think-t0": {
+     "mean": 0.1,
+     "lo": -0.025,
+     "hi": 0.225,
+     "n": 40
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.125,
+     "lo": -0.025,
+     "hi": 0.275,
+     "n": 40
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "gemini-3.8-flash-think": {
+     "mean": -0.025,
+     "lo": -0.075,
+     "hi": 0.0,
+     "n": 40
+    },
+    "gpt-5.4-mini": {
+     "mean": 0.025,
+     "lo": 0.0,
+     "hi": 0.075,
+     "n": 40
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 35
+    },
+    "gpt-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 35
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 35
+    },
+    "sarvam-30b-local": {
+     "mean": 0.05,
+     "lo": -0.1,
+     "hi": 0.2,
+     "n": 20
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": -0.3,
+     "hi": 0.3,
+     "n": 20
+    }
+   },
+   "hinglish": {
+    "sarvam-105b": {
+     "mean": 0.125,
+     "lo": -0.05,
+     "hi": 0.3,
+     "n": 40
+    },
+    "sarvam-105b-think": {
+     "mean": -0.05,
+     "lo": -0.175,
+     "hi": 0.075,
+     "n": 40
+    },
+    "sarvam-105b-think-t0": {
+     "mean": 0.0,
+     "lo": -0.1,
+     "hi": 0.1,
+     "n": 40
+    },
+    "sarvam-105b-t0.7": {
+     "mean": 0.125,
+     "lo": -0.05,
+     "hi": 0.3,
+     "n": 40
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "gemini-3.8-flash-think": {
+     "mean": -0.025,
+     "lo": -0.075,
+     "hi": 0.0,
+     "n": 40
+    },
+    "gpt-5.4-mini": {
+     "mean": -0.025,
+     "lo": -0.075,
+     "hi": 0.0,
+     "n": 40
+    },
+    "gpt-5.4-mini-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "claude-haiku-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 40
+    },
+    "gemini-pro-latest-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 35
+    },
+    "gpt-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 35
+    },
+    "claude-sonnet-5.5-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 35
+    },
+    "sarvam-30b-local": {
+     "mean": 0.0,
+     "lo": -0.2,
+     "hi": 0.2,
+     "n": 20
+    },
+    "qwen3-30b-local": {
+     "mean": 0.1,
+     "lo": -0.15,
+     "hi": 0.4,
+     "n": 20
+    }
+   }
+  }
+ },
+ "repair_curve": {
+  "sarvam-105b": {
+   "after_1": 0.5563,
+   "after_2": 0.625,
+   "after_3": 0.6438
+  },
+  "sarvam-105b-think": {
+   "after_1": 0.6813,
+   "after_2": 0.7875,
+   "after_3": 0.8313
+  },
+  "sarvam-105b-think-t0": {
+   "after_1": 0.6875,
+   "after_2": 0.7937,
+   "after_3": 0.8313
+  },
+  "sarvam-105b-t0.7": {
+   "after_1": 0.5062,
+   "after_2": 0.6062,
+   "after_3": 0.6687
+  },
+  "gemini-3.8-flash": {
+   "after_1": 1.0,
+   "after_2": 1.0,
+   "after_3": 1.0
+  },
+  "gemini-3.8-flash-think": {
+   "after_1": 0.9437,
+   "after_2": 0.9875,
+   "after_3": 0.9938
+  },
+  "gpt-5.4-mini": {
+   "after_1": 0.9187,
+   "after_2": 0.9688,
+   "after_3": 0.975
+  },
+  "gpt-5.4-mini-think": {
+   "after_1": 0.975,
+   "after_2": 1.0,
+   "after_3": 1.0
+  },
+  "claude-haiku-5.5": {
+   "after_1": 0.9938,
+   "after_2": 1.0,
+   "after_3": 1.0
+  },
+  "claude-haiku-5.5-think": {
+   "after_1": 0.9938,
+   "after_2": 1.0,
+   "after_3": 1.0
+  },
+  "gemini-pro-latest-think": {
+   "after_1": 0.9857,
+   "after_2": 1.0,
+   "after_3": 1.0
+  },
+  "gpt-5.5-think": {
+   "after_1": 0.9786,
+   "after_2": 1.0,
+   "after_3": 1.0
+  },
+  "claude-sonnet-5.5-think": {
+   "after_1": 0.9643,
+   "after_2": 0.9857,
+   "after_3": 1.0
+  },
+  "sarvam-30b-local": {
+   "after_1": 0.2,
+   "after_2": 0.2,
+   "after_3": 0.2
+  },
+  "qwen3-30b-local": {
+   "after_1": 0.425,
+   "after_2": 0.425,
+   "after_3": 0.425
+  }
+ },
+ "subset20_odd_tasks": {
+  "sarvam-105b": {
+   "pass@1": {
+    "mean": 0.6125,
+    "lo": 0.5,
+    "hi": 0.725,
+    "n": 80
+   },
+   "pass@3": {
+    "mean": 0.675,
+    "lo": 0.575,
+    "hi": 0.775,
+    "n": 80
+   }
+  },
+  "sarvam-105b-think": {
+   "pass@1": {
+    "mean": 0.6625,
+    "lo": 0.55,
+    "hi": 0.775,
+    "n": 80
+   },
+   "pass@3": {
+    "mean": 0.825,
+    "lo": 0.7375,
+    "hi": 0.9,
+    "n": 80
+   }
+  },
+  "sarvam-105b-think-t0": {
+   "pass@1": {
+    "mean": 0.675,
+    "lo": 0.575,
+    "hi": 0.775,
+    "n": 80
+   },
+   "pass@3": {
+    "mean": 0.85,
+    "lo": 0.7625,
+    "hi": 0.925,
+    "n": 80
+   }
+  },
+  "sarvam-105b-t0.7": {
+   "pass@1": {
+    "mean": 0.5375,
+    "lo": 0.425,
+    "hi": 0.6375,
+    "n": 80
+   },
+   "pass@3": {
+    "mean": 0.65,
+    "lo": 0.55,
+    "hi": 0.75,
+    "n": 80
+   }
+  },
+  "gemini-3.8-flash": {
+   "pass@1": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 80
+   },
+   "pass@3": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 80
+   }
+  },
+  "gemini-3.8-flash-think": {
+   "pass@1": {
+    "mean": 0.925,
+    "lo": 0.8625,
+    "hi": 0.975,
+    "n": 80
+   },
+   "pass@3": {
+    "mean": 0.9875,
+    "lo": 0.9625,
+    "hi": 1.0,
+    "n": 80
+   }
+  },
+  "gpt-5.4-mini": {
+   "pass@1": {
+    "mean": 0.95,
+    "lo": 0.9,
+    "hi": 0.9875,
+    "n": 80
+   },
+   "pass@3": {
+    "mean": 0.9875,
+    "lo": 0.9625,
+    "hi": 1.0,
+    "n": 80
+   }
+  },
+  "gpt-5.4-mini-think": {
+   "pass@1": {
+    "mean": 0.9625,
+    "lo": 0.9125,
+    "hi": 1.0,
+    "n": 80
+   },
+   "pass@3": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 80
+   }
+  },
+  "claude-haiku-5.5": {
+   "pass@1": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 80
+   },
+   "pass@3": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 80
+   }
+  },
+  "claude-haiku-5.5-think": {
+   "pass@1": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 80
+   },
+   "pass@3": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 80
+   }
+  },
+  "gemini-pro-latest-think": {
+   "pass@1": {
+    "mean": 0.975,
+    "lo": 0.9375,
+    "hi": 1.0,
+    "n": 80
+   },
+   "pass@3": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 80
+   }
+  },
+  "gpt-5.5-think": {
+   "pass@1": {
+    "mean": 0.9625,
+    "lo": 0.9125,
+    "hi": 1.0,
+    "n": 80
+   },
+   "pass@3": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 80
+   }
+  },
+  "claude-sonnet-5.5-think": {
+   "pass@1": {
+    "mean": 0.9875,
+    "lo": 0.9625,
+    "hi": 1.0,
+    "n": 80
+   },
+   "pass@3": {
+    "mean": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "n": 80
+   }
+  },
+  "sarvam-30b-local": {
+   "pass@1": {
+    "mean": 0.2,
+    "lo": 0.125,
+    "hi": 0.2875,
+    "n": 80
+   },
+   "pass@3": null
+  },
+  "qwen3-30b-local": {
+   "pass@1": {
+    "mean": 0.425,
+    "lo": 0.3125,
+    "hi": 0.5375,
+    "n": 80
+   },
+   "pass@3": null
+  }
+ },
+ "hardest_tasks_pass@1_all_systems": {
+  "advance_tax_due": 0.525,
+  "is_valid_aadhaar": 0.55,
+  "verhoeff_check_digit": 0.596,
+  "mask_aadhaar": 0.615,
+  "format_compact_inr": 0.633,
+  "cheque_amount_words": 0.65,
+  "parse_indian_amount": 0.667,
+  "gst_invoice_total": 0.7,
+  "parse_indian_date": 0.7,
+  "inr_words_hi": 0.733
+ },
+ "tool_calling_modes": {
+  "sarvam-105b": [
+   "native"
+  ],
+  "sarvam-105b-think": [
+   "native"
+  ],
+  "gemini-3.8-flash": [
+   "native"
+  ],
+  "gemini-3.8-flash-think": [
+   "native"
+  ],
+  "gpt-5.4-mini": [
+   "native"
+  ],
+  "gpt-5.4-mini-think": [
+   "native (responses API)"
+  ],
+  "claude-haiku-5.5": [
+   "native"
+  ],
+  "claude-haiku-5.5-think": [
+   "native"
+  ],
+  "gemini-pro-latest-think": [
+   "native"
+  ],
+  "gpt-5.5-think": [
+   "native (responses API)"
+  ],
+  "claude-sonnet-5.5-think": [
+   "native"
+  ],
+  "sarvam-30b-local": [
+   "native"
+  ],
+  "qwen3-30b-local": [
+   "native"
+  ]
+ },
+ "speed": {
+  "sarvam-105b": {
+   "p50_ms": 3000.764846801758,
+   "p95_ms": 10214.874267578125,
+   "mean_output_tokens_per_solved_item": 481,
+   "mean_wall_s_per_solved_item": 3.2
+  },
+  "sarvam-105b-think": {
+   "p50_ms": 42030.7502746582,
+   "p95_ms": 96689.64314460754,
+   "mean_output_tokens_per_solved_item": 8539,
+   "mean_wall_s_per_solved_item": 46.0
+  },
+  "sarvam-105b-think-t0": {
+   "p50_ms": 47045.329093933105,
+   "p95_ms": 98306.44679069519,
+   "mean_output_tokens_per_solved_item": 8223,
+   "mean_wall_s_per_solved_item": 44.4
+  },
+  "sarvam-105b-t0.7": {
+   "p50_ms": 2765.5529975891113,
+   "p95_ms": 9336.024045944214,
+   "mean_output_tokens_per_solved_item": 710,
+   "mean_wall_s_per_solved_item": 3.9
+  },
+  "gemini-3.8-flash": {
+   "p50_ms": 5782.867193222046,
+   "p95_ms": 13768.761157989502,
+   "mean_output_tokens_per_solved_item": 517,
+   "mean_wall_s_per_solved_item": 7.0
+  },
+  "gemini-3.8-flash-think": {
+   "p50_ms": 22215.304136276245,
+   "p95_ms": 110072.48997688293,
+   "mean_output_tokens_per_solved_item": 5040,
+   "mean_wall_s_per_solved_item": 35.3
+  },
+  "gpt-5.4-mini": {
+   "p50_ms": 2437.2856616973877,
+   "p95_ms": 5363.56520652771,
+   "mean_output_tokens_per_solved_item": 371,
+   "mean_wall_s_per_solved_item": 2.8
+  },
+  "gpt-5.4-mini-think": {
+   "p50_ms": 5086.075782775879,
+   "p95_ms": 18282.716751098633,
+   "mean_output_tokens_per_solved_item": 1121,
+   "mean_wall_s_per_solved_item": 7.7
+  },
+  "claude-haiku-5.5": {
+   "p50_ms": 2653.0940532684326,
+   "p95_ms": 4530.166149139404,
+   "mean_output_tokens_per_solved_item": 499,
+   "mean_wall_s_per_solved_item": 2.8
+  },
+  "claude-haiku-5.5-think": {
+   "p50_ms": 6263.690233230591,
+   "p95_ms": 11100.292921066284,
+   "mean_output_tokens_per_solved_item": 1279,
+   "mean_wall_s_per_solved_item": 6.8
+  },
+  "gemini-pro-latest-think": {
+   "p50_ms": 18566.195011138916,
+   "p95_ms": 38348.83904457092,
+   "mean_output_tokens_per_solved_item": 2907,
+   "mean_wall_s_per_solved_item": 21.0
+  },
+  "gpt-5.5-think": {
+   "p50_ms": 7546.762943267822,
+   "p95_ms": 16804.495096206665,
+   "mean_output_tokens_per_solved_item": 765,
+   "mean_wall_s_per_solved_item": 8.5
+  },
+  "claude-sonnet-5.5-think": {
+   "p50_ms": 7034.633159637451,
+   "p95_ms": 15520.889043807983,
+   "mean_output_tokens_per_solved_item": 908,
+   "mean_wall_s_per_solved_item": 7.9
+  },
+  "sarvam-30b-local": {
+   "p50_ms": 122142.72737503052,
+   "p95_ms": 239745.20611763,
+   "mean_output_tokens_per_solved_item": 1500,
+   "mean_wall_s_per_solved_item": 98.3
+  },
+  "qwen3-30b-local": {
+   "p50_ms": 10189.023971557617,
+   "p95_ms": 49329.437017440796,
+   "mean_output_tokens_per_solved_item": 304,
+   "mean_wall_s_per_solved_item": 10.7
+  }
+ },
+ "usage": {
+  "sarvam-105b": {
+   "calls": 341,
+   "in_tok": 312144,
+   "out_tok": 198740,
+   "reasoning_tok": 0,
+   "est_cost_inr_list_price": 16.61
+  },
+  "sarvam-105b-think": {
+   "calls": 295,
+   "in_tok": 150728,
+   "out_tok": 2250084,
+   "reasoning_tok": 2146028,
+   "est_cost_inr_list_price": 137.27
+  },
+  "sarvam-105b-think-t0": {
+   "calls": 243,
+   "in_tok": 122908,
+   "out_tok": 2232248,
+   "reasoning_tok": 2136030,
+   "est_cost_inr_list_price": 135.78
+  },
+  "sarvam-105b-t0.7": {
+   "calls": 302,
+   "in_tok": 303799,
+   "out_tok": 209160,
+   "reasoning_tok": 0,
+   "est_cost_inr_list_price": 17.11
+  },
+  "gemini-3.8-flash": {
+   "calls": 210,
+   "in_tok": 65686,
+   "out_tok": 66418,
+   "reasoning_tok": 21022
+  },
+  "gemini-3.8-flash-think": {
+   "calls": 221,
+   "in_tok": 78479,
+   "out_tok": 71474,
+   "reasoning_tok": 791006
+  },
+  "gpt-5.4-mini": {
+   "calls": 228,
+   "in_tok": 83461,
+   "out_tok": 65818,
+   "reasoning_tok": 0
+  },
+  "gpt-5.4-mini-think": {
+   "calls": 214,
+   "in_tok": 61094,
+   "out_tok": 183093,
+   "reasoning_tok": 126343
+  },
+  "claude-haiku-5.5": {
+   "calls": 211,
+   "in_tok": 124085,
+   "out_tok": 83441,
+   "reasoning_tok": 0,
+   "cost_usd_reported": 0.0541
+  },
+  "claude-haiku-5.5-think": {
+   "calls": 211,
+   "in_tok": 123186,
+   "out_tok": 209261,
+   "reasoning_tok": 126753,
+   "cost_usd_reported": 0.1169
+  },
+  "gemini-pro-latest-think": {
+   "calls": 192,
+   "in_tok": 62372,
+   "out_tok": 55270,
+   "reasoning_tok": 362720
+  },
+  "gpt-5.5-think": {
+   "calls": 193,
+   "in_tok": 55029,
+   "out_tok": 109458,
+   "reasoning_tok": 65994
+  },
+  "claude-sonnet-5.5-think": {
+   "calls": 197,
+   "in_tok": 116931,
+   "out_tok": 130559,
+   "reasoning_tok": 57731,
+   "cost_usd_reported": 1.5395
+  },
+  "sarvam-30b-local": {
+   "calls": 134,
+   "in_tok": 61643,
+   "out_tok": 127356,
+   "reasoning_tok": 0
+  },
+  "qwen3-30b-local": {
+   "calls": 130,
+   "in_tok": 67064,
+   "out_tok": 32458,
+   "reasoning_tok": 0
+  }
+ },
+ "harness": {
+  "sandbox": "macOS sandbox-exec: network denied, file writes only in a fresh temp dir, reads under $HOME denied (except Python stdlib), python -I, 10 s timeout; self-test in suites/uc11_bharat_code/sandbox.py",
+  "repair_loop": "up to 3 attempts; after a failure the model sees up to 5 failing asserts (call, expected, got) or the traceback, truncated, like a coding-agent test runner",
+  "system_prompt": "English (as in real coding tools); task text and output instruction in the prompt language",
+  "temperature": 0
+ },
+ "findings": [
+  "Gemini-3.8-flash (think off) solved every task in every language on the first try: pass@1 100% (95% CI 100%-100%, n=160). Sarvam-105b reached 56% (95% CI 48%-63%, n=160) with thinking off and 68% (95% CI 61%-75%, n=160) with thinking on (temperature 0.5, as Sarvam's docs recommend for thinking mode).",
+  "Test-feedback repair helps Sarvam: thinking on goes from 68% to 83% within 3 attempts, and thinking off goes from 56% to 64%. With thinking off at temperature 0, Sarvam-105b re-sent byte-identical code in 63 of 131 repair turns (48%), even though the failing asserts were in its context. At temperature 0.7 that drops to 18%, and pass@3 is 67% vs 64%, but pass@1 falls to 51%.",
+  "Sarvam-105b thinking mode often never answers. In 71 of 245 calls (29%) it used the whole 16k-token budget on reasoning and returned content=null. Its reasoning_content was also null, so the tokens are billed and nothing is visible. A 32k-token retry of one such item also ran out. Solved items cost 8539 output tokens and 46.0 s on average, vs 481 tokens and 3.2 s with thinking off (about ₹1.03 vs ₹0.16 per solved item at list price).",
+  "Ironically, the Aadhaar checksum is Sarvam's blind spot. On the two Verhoeff tasks (validate an Aadhaar-format number, generate a check digit), Sarvam-105b solved 0% of 8 items first try with thinking off and 0% with thinking on, vs Gemini-3.8-flash 100%. Its Verhoeff implementations either crashed (IndexError/TypeError on the tables) or returned wrong check digits. Other consistent Sarvam failures were compact '1.25 Cr' formatting, advance-tax instalment boundaries (on 15 Sep it returned 15% instead of 45%), and GST invoices where it rounded the total tax and then floor-halved it (898 paise) instead of computing CGST and SGST separately as specified (899).",
+  "Language penalty (English pass@1 minus the other language, paired by task): Sarvam-105b with thinking off loses +0.17 on Hinglish (CI +0.00 to +0.35), +0.12 on Hindi and +0.07 on Tamil. With thinking on the penalty disappears (hi -0.05, ta -0.03, hinglish -0.05; all CIs span 0). Gemini scores 100% in every language, so it has no measurable penalty. Writing the task in Tamil or Hindi did not hurt any system by a statistically clear margin. The only borderline case is Sarvam with thinking off on Hinglish and Hindi.",
+  "Tool calling is solved for this kind of schema. Every API system used native tools (Sarvam /v1/chat/completions accepts OpenAI-style `tools` and `tool_choice`, and returns `tool_calls`). sarvam-105b: base 100%, hard 100%; sarvam-105b-think: base 100%, hard 95%; gemini-3.8-flash: base 100%, hard 100%; gemini-3.8-flash-think: base 100%, hard 100%; gpt-5.4-mini: base 97%, hard 95%; gpt-5.4-mini-think: base 100%, hard 100%; claude-haiku-5.5: base 97%, hard 90%; claude-haiku-5.5-think: base 100%, hard 100%; gemini-pro-latest-think: base 100%, hard 100%; gpt-5.5-think: base 100%, hard 100%; claude-sonnet-5.5-think: base 100%, hard 100%; sarvam-30b-local: base 73%, hard 40%; qwen3-30b-local: base 90%, hard 80%. Hard items include 'पौने दो हज़ार' (1750), 'paune teen sau' (275), 'সাড়ে তিনশো' (350), 'ஈபி பில்' (electricity) and 'Tata Play' (DTH).",
+  "Price-matched cloud tier (full set, n=160): gpt-5.4-mini pass@1 92% (88%-96%), pass@3 98%; gpt-5.4-mini-think pass@1 98% (95%-99%), pass@3 100%; claude-haiku-5.5 pass@1 99% (98%-100%), pass@3 100%; claude-haiku-5.5-think pass@1 99% (98%-100%), pass@3 100%. So Sarvam-105b trails all three price-matched competitors by 30 points or more on first try. Its gap persists after repair (83% vs 100%-100%).",
+  "Frontier tier (thinking on; task ids 1-30 plus odd ids 31-39, x 4 languages, n=140): gemini-pro-latest-think pass@1 99%, pass@3 100%; gpt-5.5-think pass@1 98%, pass@3 100%; claude-sonnet-5.5-think pass@1 96%, pass@3 100%. On the same subset gemini-3.8-flash scores 100% and sarvam-105b-think 69%. Frontier models add nothing over the cheap tier here, because the suite saturates.",
+  "No non-Sarvam cloud model shows a language penalty above +0.07 in any language (English minus Hindi/Tamil/Hinglish pass@1). For these models, writing the task in your own language is free.",
+  "OpenAI quirks: /v1/chat/completions rejects function tools combined with reasoning_effort for gpt-5.4-mini (\"use /v1/responses\"), so OpenAI thinking-mode tool calls use the Responses API. On /v1/responses, function tools default to strict=true, which makes every property required. The models then filled optional args with mobile=\"\" and amount=0 (which would pay ₹0), dropping exact-match to 74% for both gpt-5.4-mini-think and gpt-5.5-think. With strict=false the reported numbers apply; the strict run is kept in data/uc11_bharat_code/tools_openai_responses_strict.jsonl.",
+  "Gemini thinking on did slightly worse than off: pass@1 94% vs 100%. 9 of its 9 first-try misses were runaway thinking that hit the 16k cap before the code was finished. This run used temperature 0, and Google recommends 1.0 for Gemini 3.",
+  "sarvam-30b-local (self-hosted Q4_K_M, single shot, 20-task subset x 4 languages, n=80): pass@1 20%. On the same subset, sarvam-105b scores 61% and gemini-3.8-flash 100%. Sarvam-30B needs an empty <think></think> prefill to stop it reasoning for 4000+ tokens on a 3-line task. Even without thinking, 100% of its answers ran to the 1500-token cap (repetitive comments, duplicated blocks), and median latency was 122 s on the shared Mac.",
+  "qwen3-30b-local (self-hosted Q4_K_M, single shot, 20-task subset x 4 languages, n=80): pass@1 42%. On the same subset, sarvam-105b scores 61% and gemini-3.8-flash 100%. Median latency was 10 s on the shared Mac.",
+  "sarvam-30b-local tool calling (llama-server --jinja, native tools): exact 60% (95% CI 46%-74%, n=50); base 73%, hard 40%. It got 1 of 7 fractional-amount commands right (e.g. 'पौने दो हज़ार' -> 900), and in 7 commands it sent amount=0 for 'pay the full bill' instead of omitting the argument, which would pay ₹0.",
+  "qwen3-30b-local tool calling (llama-server --jinja, native tools): exact 86% (95% CI 76%-94%, n=50); base 90%, hard 80%. It got 4 of 7 fractional-amount commands right (e.g. 'पौने दो हज़ार' -> 2500)."
+ ],
+ "caveats": [
+  "The 40 tasks are well-specified, mostly single-function problems. Gemini-3.8-flash hits the ceiling, so the suite cannot rank models stronger than it, and it cannot measure Gemini's language penalty. Harder multi-file or ambiguous-spec tasks would be needed.",
+  "Repair mode shows the model the expected values of up to 5 failing asserts, as pytest output would. pass@3 therefore measures convergence with test feedback, not blind correctness. When the reply was empty, the feedback was a NameError because no function was defined.",
+  "Translations were done by hand for this benchmark (not by any system under test). They were checked by blind Gemini back-translation plus a meaning diff, with 3 ambiguities fixed. No native-speaker review was possible. The Hinglish style is one developer's register.",
+  "The system prompt is English in every language condition (as in real coding tools). Only the task text and the output instruction are translated.",
+  "Thinking budgets were capped at 16k output tokens. Sarvam-105b thinking used temperature 0.5 (vendor guidance). A temperature-0 thinking run is kept as the 'sarvam-105b-think-t0' ablation and lands within noise of it. Gemini thinking ran at temperature 0, below Google's recommended 1.0.",
+  "Local models were run single-shot on a 20-task subset (odd task ids) with a 1500-token cap. The llama-servers were shared with other benchmark suites at ~6-20 tok/s per slot, so their latency figures reflect a loaded machine, not the hardware ceiling.",
+  "The tool test uses one turn and five tools, and every command has full information. It does not test clarification questions, multi-step plans or refusals.",
+  "Frontier models ran on task ids 1-30 plus 31, 33, 35, 37, 39 (the brief addendum first-30 subset plus the 20 odd-id local subset; subset20_odd_tasks gives a like-for-like table). OpenAI and Gemini costs are reported as tokens only; OpenRouter's usage.cost is summed as reported.",
+  "n=40 per language cell: language-penalty CIs are about ±15 points wide. Differences under ~15 points are not resolved."
+ ],
+ "verdict": "For an Indian team building fintech, GST or HR logic with an AI coding assistant, any of the price-matched cloud models works. Gemini-3.8-flash (100% first try, think off), Claude Haiku 5.5 (99%) and GPT-5.4-mini with thinking (98%) all reach 97-100% after test-feedback repair, in English, Hindi, Tamil and Hinglish alike. Frontier models are not needed for this class of task. Sarvam-105b is not yet a reliable coding agent for this work. Use it only with thinking on and a test loop (83% within 3 attempts, ~46 s and ~8.5k tokens per solved task), retry its frequent empty replies, and never trust it with checksum algorithms (Verhoeff/Aadhaar) without tests. For Indian-language voice-command tool calling, Sarvam-105b, Gemini, Claude and GPT score 94-100% on these payment commands (thinking-on variants 98-100%; the misses are fractional amounts like paune teen sau = 275), so choose on price, latency or data residency. Watch OpenAI's Responses-API strict default with optional arguments. If you must self-host, Qwen3-30B-A3B beat the official Sarvam-30B Q4 GGUF on code (42% vs 20%) and on tool calls, and was about 10x faster. Neither is usable as an unattended coding agent.",
+ "examples": [
+  {
+   "item": "23:ta",
+   "task": "gst_invoice_total",
+   "what": "Tamil prompt, GST invoice with two rate groups",
+   "input_prompt_head": "GST invoice-இன் மொத்தத்தைக் கணக்கிடும் ஒரு function எழுதுங்கள். items என்பது (quantity, unit_price_paise, gst_rate_pct) கொண்ட list.\n1. Taxable value = எல்லா வரிகளின் quantity * unit_price கூட்டுத்தொகை (paise).\n2. வரிகளை GST rate வாரியாகக் குழுவாக்குங்கள். ஒவ்வொரு rate-க்கும் வரி அந்த rate குழுவின் ம",
+   "gold": "{'taxable': 23341, 'cgst': 899, 'sgst': 899, ...}  (5% group: 14344 x 2.5% = 358.60 -> 359; 12% group: 8997 x 6% = 539.82 -> 540)",
+   "systems": {
+    "sarvam-105b": {
+     "solved_at_attempt": 3,
+     "first_try_tests": "9/10",
+     "first_failure": "1 of 10 tests failed:\n- gst_invoice_total([(1, 1999, 5), (3, 2999, 12), (1, 12345, 5)], False) -> expected {'taxable': 23341, 'cgst': 0, 'sgst': 0, 'igst': 1797, 'round_off': -38, 'grand_total': 25100}, got {'taxable': 23341, 'cgst': 0, 'sgst': 0, 'igst': 1798, 'round_off': -39, 'grand_total': 25100"
+    },
+    "sarvam-105b-think": {
+     "solved_at_attempt": 2,
+     "first_try_tests": "0/10",
+     "first_failure": "10 of 10 tests failed:\n- gst_invoice_total([(2, 49900, 18)], True) -> expected {'taxable': 99800, 'cgst': 8982, 'sgst': 8982, 'igst': 0, 'round_off': 36, 'grand_total': 117800}, got None\n- gst_invoice_total([(2, 49900, 18)], False) -> expected {'taxable': 99800, 'cgst': 0, 'sgst': 0, 'igst': 17964, "
+    },
+    "gemini-3.8-flash": {
+     "solved_at_attempt": 1,
+     "first_try_tests": "10/10",
+     "first_failure": null
+    },
+    "sarvam-30b-local": {
+     "solved_at_attempt": null,
+     "first_try_tests": "0/10",
+     "first_failure": "10 of 10 tests failed:\n- gst_invoice_total([(2, 49900, 18)], True) -> raised NameError: name 'sgst_for_long_group' is not defined\n- gst_invoice_total([(2, 49900, 18)], False) -> raised UnboundLocalError: cannot access local variable 'cgst_for_group' where it is not associated with a value\n- gst_invo"
+    },
+    "qwen3-30b-local": {
+     "solved_at_attempt": 1,
+     "first_try_tests": "10/10",
+     "first_failure": null
+    }
+   }
+  },
+  {
+   "item": "3:hi",
+   "task": "pan_entity_type",
+   "what": "Hindi prompt, PAN holder type",
+   "input_prompt_head": "एक फ़ंक्शन लिखिए जो भारतीय PAN (Permanent Account Number) को validate करे और धारक का प्रकार लौटाए।\nपहले आगे-पीछे का whitespace हटाइए और uppercase में बदलिए। वैध PAN 10 अक्षरों का होता है: 5 अक्षर (letters), 4 अंक, 1 अक्षर।\nचौथा अक्षर धारक का प्रकार बताता है: P = \"Individual\", C = \"Company\", H = \"HUF",
+   "gold": "pan_entity_type('ABCPE1234F') == 'Individual'  (4th character P)",
+   "systems": {
+    "sarvam-105b": {
+     "solved_at_attempt": null,
+     "first_try_tests": "5/12",
+     "first_failure": "7 of 12 tests failed:\n- pan_entity_type('ABCPE1234F') -> expected 'Individual', got None\n- pan_entity_type('  abccd1234k ') -> expected 'Company', got None\n- pan_entity_type('XYZHA0001Q') -> expected 'HUF', got 'AOP'\n- pan_entity_type('PQRFS9999Z') -> expected 'Firm', got None\n- pan_entity_type('LMN"
+    },
+    "sarvam-105b-think": {
+     "solved_at_attempt": 1,
+     "first_try_tests": "12/12",
+     "first_failure": null
+    },
+    "gemini-3.8-flash": {
+     "solved_at_attempt": 1,
+     "first_try_tests": "12/12",
+     "first_failure": null
+    },
+    "sarvam-30b-local": {
+     "solved_at_attempt": null,
+     "first_try_tests": "0/12",
+     "first_failure": "Running your code failed before the tests could finish:\n  File \"/private/var/folders/f_/7k8hdz055tgfl881jvjl42v80000gp/T/uc11_la4pekce/main.py\", line 3\n    def pan_entity_type(pan: str) input_string:\n                                  ^^^^^^^^^^^^\nSyntaxError: expected ':'\n"
+    },
+    "qwen3-30b-local": {
+     "solved_at_attempt": 1,
+     "first_try_tests": "12/12",
+     "first_failure": null
+    }
+   }
+  },
+  {
+   "item": "1:en",
+   "task": "is_valid_aadhaar",
+   "what": "English prompt, Aadhaar Verhoeff check",
+   "input_prompt_head": "Write a function that checks whether a string is a valid Aadhaar-format number.\nRules: remove all spaces first. The result must be exactly 12 ASCII digits. The first digit must not be 0 or 1.\nThe last digit is a Verhoeff checksum digit: the whole 12-digit number must pass the standard Verhoeff check",
+   "gold": "is_valid_aadhaar('999900001231') == True  (Verhoeff-valid SAMPLE number)",
+   "systems": {
+    "sarvam-105b": {
+     "solved_at_attempt": null,
+     "first_try_tests": "8/12",
+     "first_failure": "4 of 12 tests failed:\n- is_valid_aadhaar('999900001231') -> raised TypeError: list indices must be integers or slices, not list\n- is_valid_aadhaar('9999 0000 1231') -> raised TypeError: list indices must be integers or slices, not list\n- is_valid_aadhaar('999900001232') -> raised TypeError: list ind"
+    },
+    "sarvam-105b-think": {
+     "solved_at_attempt": null,
+     "first_try_tests": "0/12",
+     "first_failure": "12 of 12 tests failed:\n- is_valid_aadhaar('999900001231') -> raised NameError: name 'is_valid_aadhaar' is not defined\n- is_valid_aadhaar('9999 0000 1231') -> raised NameError: name 'is_valid_aadhaar' is not defined\n- is_valid_aadhaar('999900001232') -> raised NameError: name 'is_valid_aadhaar' is no"
+    },
+    "gemini-3.8-flash": {
+     "solved_at_attempt": 1,
+     "first_try_tests": "12/12",
+     "first_failure": null
+    },
+    "sarvam-30b-local": {
+     "solved_at_attempt": null,
+     "first_try_tests": "0/12",
+     "first_failure": "Running your code failed before the tests could finish:\n  File \"/private/var/folders/f_/7k8hdz055tgfl881jvjl42v80000gp/T/uc11_eqvshelg/main.py\", line 3\n    def is_valid_aadhaar(number: str)\n                                     ^\nSyntaxError: expected ':'\n"
+    },
+    "qwen3-30b-local": {
+     "solved_at_attempt": null,
+     "first_try_tests": "9/12",
+     "first_failure": "3 of 12 tests failed:\n- is_valid_aadhaar('999900001231') -> expected True, got False\n- is_valid_aadhaar('9999 0000 1231') -> expected True, got False\n- is_valid_aadhaar('234567890124') -> expected True, got False"
+    }
+   }
+  },
+  {
+   "item": "37:hinglish",
+   "task": "format_compact_inr",
+   "what": "Hinglish prompt, compact lakh/crore formatting",
+   "input_prompt_head": "Ek function likho jo rupee amount ko compact format mein likhe, jaise Indian news aur dashboards karte hain.\n- Agar abs(amount) >= 1,00,00,000: crores mein value, 2 decimals tak round (half upar), trailing zeros aur trailing\n  \".\" hata ke, phir \" Cr\" (12500000 -> \"1.25 Cr\", 10000000 -> \"1 Cr\").\n- Wa",
+   "gold": "format_compact_inr(9999999) == '100 L'",
+   "systems": {
+    "sarvam-105b": {
+     "solved_at_attempt": null,
+     "first_try_tests": "4/12",
+     "first_failure": "8 of 12 tests failed:\n- format_compact_inr(12500000) -> expected '1.25 Cr', got '0.00 Cr'\n- format_compact_inr(10000000) -> expected '1 Cr', got '0.00 Cr'\n- format_compact_inr(150000) -> expected '1.5 L', got '0.00 L'\n- format_compact_inr(1234567) -> expected '12.35 L', got '0.00 L'\n- format_compact"
+    },
+    "sarvam-105b-think": {
+     "solved_at_attempt": 2,
+     "first_try_tests": "11/12",
+     "first_failure": "1 of 12 tests failed:\n- format_compact_inr(100500) -> expected '1.01 L', got '1 L'"
+    },
+    "gemini-3.8-flash": {
+     "solved_at_attempt": 1,
+     "first_try_tests": "12/12",
+     "first_failure": null
+    },
+    "sarvam-30b-local": {
+     "solved_at_attempt": null,
+     "first_try_tests": "0/12",
+     "first_failure": "Running your code failed before the tests could finish:\n  File \"/private/var/folders/f_/7k8hdz055tgfl881jvjl42v80000gp/T/uc11_j79ppv9p/main.py\", line 61\n    import datetime as _dt, json as _json, math as _math, unicodedata as _ud, traceback as _tb\nIndentationError: expected an indented block after '"
+    },
+    "qwen3-30b-local": {
+     "solved_at_attempt": null,
+     "first_try_tests": "11/12",
+     "first_failure": "1 of 12 tests failed:\n- format_compact_inr(100500) -> expected '1.01 L', got '1 L'"
+    }
+   }
+  },
+  {
+   "item": "tool h9",
+   "what": "Hindi voice command with a fractional amount",
+   "input": "पौने दो हज़ार रुपये 9812345670 पर ट्रांसफर करो",
+   "gold": {
+    "name": "transfer_upi",
+    "args": {
+     "payee": "9812345670",
+     "amount": 1750
+    }
+   },
+   "systems": {
+    "sarvam-105b": {
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "9812345670",
+       "amount": 1750
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "sarvam-105b-think": {
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "9812345670",
+       "amount": 1799
+      },
+      "n_calls": 1
+     },
+     "exact": false
+    },
+    "gemini-3.8-flash": {
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "9812345670",
+       "amount": 1750
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "gemini-3.8-flash-think": {
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "amount": 1750,
+       "payee": "9812345670"
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "sarvam-30b-local": {
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "9812345670",
+       "amount": 900
+      },
+      "n_calls": 1
+     },
+     "exact": false
+    },
+    "qwen3-30b-local": {
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "9812345670",
+       "amount": 2500
+      },
+      "n_calls": 1
+     },
+     "exact": false
+    },
+    "gpt-5.4-mini": {
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "9812345670",
+       "amount": 1750
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "claude-haiku-5.5": {
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "9812345670",
+       "amount": 1750
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "claude-haiku-5.5-think": {
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "9812345670",
+       "amount": 1750
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "gemini-pro-latest-think": {
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "amount": 1750,
+       "payee": "9812345670"
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "claude-sonnet-5.5-think": {
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "9812345670",
+       "amount": 1750
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "gpt-5.4-mini-think": {
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "9812345670",
+       "amount": 1750
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "gpt-5.5-think": {
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "9812345670",
+       "amount": 1750
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    }
+   }
+  }
+ ],
+ "updated": "2026-10-11 23:32:11"
+}

@@ -1,0 +1,2356 @@
+{
+ "uc": "uc12_token_tax",
+ "title": "The Indic token tax",
+ "business_question": "What does each model's tokenizer charge you, in tokens (and so in money, latency and context window), for the same sentence written in each Indian language?",
+ "dataset": {
+  "name": "FLEURS transcripts (FLoRes-101 sentences)",
+  "source": "google/fleurs data/<lang>/{test,dev}.tsv",
+  "license": "CC-BY-4.0",
+  "n": 100,
+  "languages": [
+   "English",
+   "Hindi",
+   "Bengali",
+   "Marathi",
+   "Telugu",
+   "Tamil",
+   "Gujarati",
+   "Kannada",
+   "Malayalam",
+   "Punjabi",
+   "Odia",
+   "Assamese",
+   "Urdu",
+   "Nepali",
+   "Sindhi"
+  ],
+  "synthetic": false,
+  "how_made": "100 sentence ids drawn (seed 0) from the 201 ids present in all 15 languages; raw transcription column."
+ },
+ "systems": [
+  "Sarvam (30B/105B tokenizer)",
+  "Qwen3-30B-A3B",
+  "Gemma 4",
+  "Gemini 3.8 Flash (count_tokens)",
+  "OpenAI gpt-5.4-mini (API prompt_tokens)",
+  "Claude Haiku 5.5 (OpenRouter prompt_tokens)"
+ ],
+ "metrics": [
+  {
+   "name": "tokens_per_sentence_English",
+   "higher_is_better": false,
+   "unit": "tokens",
+   "values": {
+    "sarvam": {
+     "mean": 24.22,
+     "lo": 22.67,
+     "hi": 25.78,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 24.89,
+     "lo": 23.25,
+     "hi": 26.49,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 24.22,
+     "lo": 22.67,
+     "hi": 25.78,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 24.22,
+     "lo": 22.67,
+     "hi": 25.78,
+     "n": 100
+    },
+    "openai": {
+     "mean": 24.28,
+     "lo": 22.74,
+     "hi": 25.88,
+     "n": 100
+    },
+    "claude": {
+     "mean": 38.21,
+     "lo": 35.73,
+     "hi": 40.72,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "tokens_per_sentence_Hindi",
+   "higher_is_better": false,
+   "unit": "tokens",
+   "values": {
+    "sarvam": {
+     "mean": 31.34,
+     "lo": 29.07,
+     "hi": 33.54,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 108.98,
+     "lo": 101.21,
+     "hi": 116.51,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 31.34,
+     "lo": 29.07,
+     "hi": 33.54,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 31.34,
+     "lo": 29.07,
+     "hi": 33.54,
+     "n": 100
+    },
+    "openai": {
+     "mean": 37.68,
+     "lo": 35.04,
+     "hi": 40.17,
+     "n": 100
+    },
+    "claude": {
+     "mean": 81.9,
+     "lo": 76.13,
+     "hi": 87.52,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "tokens_per_sentence_Bengali",
+   "higher_is_better": false,
+   "unit": "tokens",
+   "values": {
+    "sarvam": {
+     "mean": 29.9,
+     "lo": 27.7,
+     "hi": 32.07,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 127.28,
+     "lo": 118.32,
+     "hi": 135.96,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 29.9,
+     "lo": 27.7,
+     "hi": 32.07,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 29.9,
+     "lo": 27.7,
+     "hi": 32.07,
+     "n": 100
+    },
+    "openai": {
+     "mean": 41.6,
+     "lo": 38.65,
+     "hi": 44.43,
+     "n": 100
+    },
+    "claude": {
+     "mean": 104.87,
+     "lo": 97.57,
+     "hi": 111.8,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "tokens_per_sentence_Marathi",
+   "higher_is_better": false,
+   "unit": "tokens",
+   "values": {
+    "sarvam": {
+     "mean": 33.92,
+     "lo": 31.66,
+     "hi": 36.1,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 115.37,
+     "lo": 107.63,
+     "hi": 122.96,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 33.92,
+     "lo": 31.66,
+     "hi": 36.1,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 33.92,
+     "lo": 31.66,
+     "hi": 36.1,
+     "n": 100
+    },
+    "openai": {
+     "mean": 43.87,
+     "lo": 40.97,
+     "hi": 46.61,
+     "n": 100
+    },
+    "claude": {
+     "mean": 91.5,
+     "lo": 85.31,
+     "hi": 97.58,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "tokens_per_sentence_Telugu",
+   "higher_is_better": false,
+   "unit": "tokens",
+   "values": {
+    "sarvam": {
+     "mean": 35.49,
+     "lo": 33.17,
+     "hi": 37.7,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 177.3,
+     "lo": 165.44,
+     "hi": 188.53,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 43.3,
+     "lo": 40.16,
+     "hi": 46.15,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 43.3,
+     "lo": 40.16,
+     "hi": 46.15,
+     "n": 100
+    },
+    "openai": {
+     "mean": 46.79,
+     "lo": 43.49,
+     "hi": 49.79,
+     "n": 100
+    },
+    "claude": {
+     "mean": 108.07,
+     "lo": 100.99,
+     "hi": 114.88,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "tokens_per_sentence_Tamil",
+   "higher_is_better": false,
+   "unit": "tokens",
+   "values": {
+    "sarvam": {
+     "mean": 35.31,
+     "lo": 33.02,
+     "hi": 37.57,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 151.6,
+     "lo": 141.75,
+     "hi": 161.12,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 35.31,
+     "lo": 33.02,
+     "hi": 37.57,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 35.31,
+     "lo": 33.02,
+     "hi": 37.57,
+     "n": 100
+    },
+    "openai": {
+     "mean": 47.78,
+     "lo": 44.58,
+     "hi": 50.82,
+     "n": 100
+    },
+    "claude": {
+     "mean": 115.13,
+     "lo": 107.58,
+     "hi": 122.31,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "tokens_per_sentence_Gujarati",
+   "higher_is_better": false,
+   "unit": "tokens",
+   "values": {
+    "sarvam": {
+     "mean": 36.92,
+     "lo": 34.46,
+     "hi": 39.37,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 172.05,
+     "lo": 160.66,
+     "hi": 183.0,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 45.78,
+     "lo": 42.68,
+     "hi": 48.94,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 45.78,
+     "lo": 42.68,
+     "hi": 48.94,
+     "n": 100
+    },
+    "openai": {
+     "mean": 43.76,
+     "lo": 40.81,
+     "hi": 46.66,
+     "n": 100
+    },
+    "claude": {
+     "mean": 106.82,
+     "lo": 99.86,
+     "hi": 113.61,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "tokens_per_sentence_Kannada",
+   "higher_is_better": false,
+   "unit": "tokens",
+   "values": {
+    "sarvam": {
+     "mean": 37.04,
+     "lo": 34.48,
+     "hi": 39.54,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 174.17,
+     "lo": 162.33,
+     "hi": 185.68,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 46.83,
+     "lo": 43.76,
+     "hi": 49.85,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 46.83,
+     "lo": 43.76,
+     "hi": 49.85,
+     "n": 100
+    },
+    "openai": {
+     "mean": 47.81,
+     "lo": 44.61,
+     "hi": 50.87,
+     "n": 100
+    },
+    "claude": {
+     "mean": 221.46,
+     "lo": 206.97,
+     "hi": 235.76,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "tokens_per_sentence_Malayalam",
+   "higher_is_better": false,
+   "unit": "tokens",
+   "values": {
+    "sarvam": {
+     "mean": 39.25,
+     "lo": 36.48,
+     "hi": 42.11,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 178.9,
+     "lo": 166.11,
+     "hi": 190.99,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 44.05,
+     "lo": 41.09,
+     "hi": 47.09,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 44.05,
+     "lo": 41.09,
+     "hi": 47.09,
+     "n": 100
+    },
+    "openai": {
+     "mean": 46.3,
+     "lo": 43.09,
+     "hi": 49.5,
+     "n": 100
+    },
+    "claude": {
+     "mean": 149.9,
+     "lo": 139.43,
+     "hi": 160.26,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "tokens_per_sentence_Punjabi",
+   "higher_is_better": false,
+   "unit": "tokens",
+   "values": {
+    "sarvam": {
+     "mean": 37.44,
+     "lo": 34.72,
+     "hi": 40.28,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 181.83,
+     "lo": 169.01,
+     "hi": 194.47,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 65.62,
+     "lo": 61.18,
+     "hi": 69.94,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 65.62,
+     "lo": 61.18,
+     "hi": 69.94,
+     "n": 100
+    },
+    "openai": {
+     "mean": 63.27,
+     "lo": 58.93,
+     "hi": 67.58,
+     "n": 100
+    },
+    "claude": {
+     "mean": 245.44,
+     "lo": 228.27,
+     "hi": 262.43,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "tokens_per_sentence_Odia",
+   "higher_is_better": false,
+   "unit": "tokens",
+   "values": {
+    "sarvam": {
+     "mean": 34.12,
+     "lo": 31.58,
+     "hi": 36.5,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 242.38,
+     "lo": 224.71,
+     "hi": 258.67,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 85.63,
+     "lo": 79.44,
+     "hi": 91.21,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 85.63,
+     "lo": 79.44,
+     "hi": 91.21,
+     "n": 100
+    },
+    "openai": {
+     "mean": 121.08,
+     "lo": 112.24,
+     "hi": 129.2,
+     "n": 100
+    },
+    "claude": {
+     "mean": 192.81,
+     "lo": 178.96,
+     "hi": 205.37,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "tokens_per_sentence_Assamese",
+   "higher_is_better": false,
+   "unit": "tokens",
+   "values": {
+    "sarvam": {
+     "mean": 48.5,
+     "lo": 45.32,
+     "hi": 51.57,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 133.08,
+     "lo": 124.16,
+     "hi": 141.46,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 48.5,
+     "lo": 45.32,
+     "hi": 51.57,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 48.5,
+     "lo": 45.32,
+     "hi": 51.57,
+     "n": 100
+    },
+    "openai": {
+     "mean": 47.57,
+     "lo": 44.62,
+     "hi": 50.35,
+     "n": 100
+    },
+    "claude": {
+     "mean": 120.8,
+     "lo": 112.57,
+     "hi": 128.55,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "tokens_per_sentence_Urdu",
+   "higher_is_better": false,
+   "unit": "tokens",
+   "values": {
+    "sarvam": {
+     "mean": 36.73,
+     "lo": 34.19,
+     "hi": 39.3,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 78.5,
+     "lo": 73.07,
+     "hi": 83.65,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 36.73,
+     "lo": 34.19,
+     "hi": 39.3,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 36.73,
+     "lo": 34.19,
+     "hi": 39.3,
+     "n": 100
+    },
+    "openai": {
+     "mean": 40.22,
+     "lo": 37.46,
+     "hi": 42.93,
+     "n": 100
+    },
+    "claude": {
+     "mean": 90.42,
+     "lo": 84.33,
+     "hi": 96.46,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "tokens_per_sentence_Nepali",
+   "higher_is_better": false,
+   "unit": "tokens",
+   "values": {
+    "sarvam": {
+     "mean": 37.37,
+     "lo": 34.6,
+     "hi": 40.06,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 110.16,
+     "lo": 102.64,
+     "hi": 117.62,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 37.37,
+     "lo": 34.6,
+     "hi": 40.06,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 37.37,
+     "lo": 34.6,
+     "hi": 40.06,
+     "n": 100
+    },
+    "openai": {
+     "mean": 38.71,
+     "lo": 35.94,
+     "hi": 41.48,
+     "n": 100
+    },
+    "claude": {
+     "mean": 90.73,
+     "lo": 84.53,
+     "hi": 96.79,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "tokens_per_sentence_Sindhi",
+   "higher_is_better": false,
+   "unit": "tokens",
+   "values": {
+    "sarvam": {
+     "mean": 49.04,
+     "lo": 45.71,
+     "hi": 52.41,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 70.29,
+     "lo": 65.32,
+     "hi": 75.17,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 49.04,
+     "lo": 45.71,
+     "hi": 52.41,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 49.04,
+     "lo": 45.71,
+     "hi": 52.41,
+     "n": 100
+    },
+    "openai": {
+     "mean": 41.33,
+     "lo": 38.47,
+     "hi": 44.01,
+     "n": 100
+    },
+    "claude": {
+     "mean": 94.12,
+     "lo": 87.57,
+     "hi": 100.55,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "token_tax_vs_english_Hindi",
+   "higher_is_better": false,
+   "unit": "x English",
+   "values": {
+    "sarvam": {
+     "mean": 1.2911123240156266,
+     "lo": 1.2474514769896679,
+     "hi": 1.3339679870996477,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 4.412592009092922,
+     "lo": 4.245594151832759,
+     "hi": 4.5908627361572085,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 1.2911123240156266,
+     "lo": 1.2474514769896679,
+     "hi": 1.3339679870996477,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 1.2911123240156266,
+     "lo": 1.2474514769896679,
+     "hi": 1.3339679870996477,
+     "n": 100
+    },
+    "openai": {
+     "mean": 1.5546657386503286,
+     "lo": 1.505975630009724,
+     "hi": 1.6085689153486775,
+     "n": 100
+    },
+    "claude": {
+     "mean": 2.156009397991388,
+     "lo": 2.0797017839590537,
+     "hi": 2.2382611162388777,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "token_tax_vs_english_Bengali",
+   "higher_is_better": false,
+   "unit": "x English",
+   "values": {
+    "sarvam": {
+     "mean": 1.23409470944428,
+     "lo": 1.1889457365636682,
+     "hi": 1.27827880945776,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 5.173339605501767,
+     "lo": 4.963353753776443,
+     "hi": 5.388850008658268,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 1.23409470944428,
+     "lo": 1.1889457365636682,
+     "hi": 1.27827880945776,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 1.23409470944428,
+     "lo": 1.1889457365636682,
+     "hi": 1.27827880945776,
+     "n": 100
+    },
+    "openai": {
+     "mean": 1.7187582003776738,
+     "lo": 1.65984723269184,
+     "hi": 1.780131592879263,
+     "n": 100
+    },
+    "claude": {
+     "mean": 2.775415895129771,
+     "lo": 2.6728565483866005,
+     "hi": 2.886785115056315,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "token_tax_vs_english_Marathi",
+   "higher_is_better": false,
+   "unit": "x English",
+   "values": {
+    "sarvam": {
+     "mean": 1.4197732713652351,
+     "lo": 1.3717501883002945,
+     "hi": 1.4705266576491314,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 4.714055388050815,
+     "lo": 4.544670058062865,
+     "hi": 4.902692101351575,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 1.4197732713652351,
+     "lo": 1.3717501883002945,
+     "hi": 1.4705266576491314,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 1.4197732713652351,
+     "lo": 1.3717501883002945,
+     "hi": 1.4705266576491314,
+     "n": 100
+    },
+    "openai": {
+     "mean": 1.8260339066749618,
+     "lo": 1.7660915575216323,
+     "hi": 1.887456431917957,
+     "n": 100
+    },
+    "claude": {
+     "mean": 2.4244481159796405,
+     "lo": 2.3361058230763168,
+     "hi": 2.5181860972646244,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "token_tax_vs_english_Telugu",
+   "higher_is_better": false,
+   "unit": "x English",
+   "values": {
+    "sarvam": {
+     "mean": 1.4808780060726068,
+     "lo": 1.436982663083776,
+     "hi": 1.5281795125997824,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 7.276772369608279,
+     "lo": 6.9855655272320485,
+     "hi": 7.591384929824923,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 1.8032450831278675,
+     "lo": 1.740384328167157,
+     "hi": 1.8669784771327844,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 1.8032450831278675,
+     "lo": 1.740384328167157,
+     "hi": 1.8669784771327844,
+     "n": 100
+    },
+    "openai": {
+     "mean": 1.9424286109913458,
+     "lo": 1.8738767509975771,
+     "hi": 2.0165969306233493,
+     "n": 100
+    },
+    "claude": {
+     "mean": 2.8772537642451375,
+     "lo": 2.7704538194342248,
+     "hi": 2.9895056797935,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "token_tax_vs_english_Tamil",
+   "higher_is_better": false,
+   "unit": "x English",
+   "values": {
+    "sarvam": {
+     "mean": 1.4905531082419166,
+     "lo": 1.4354630489283948,
+     "hi": 1.5463421788457763,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 6.246495341967321,
+     "lo": 5.9921911233683876,
+     "hi": 6.513226553041367,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 1.4905531082419166,
+     "lo": 1.4354630489283948,
+     "hi": 1.5463421788457763,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 1.4905531082419166,
+     "lo": 1.4354630489283948,
+     "hi": 1.5463421788457763,
+     "n": 100
+    },
+    "openai": {
+     "mean": 2.005886196444524,
+     "lo": 1.9291106833145903,
+     "hi": 2.0867218173122453,
+     "n": 100
+    },
+    "claude": {
+     "mean": 3.0959750745527113,
+     "lo": 2.960670555774663,
+     "hi": 3.230250704228215,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "token_tax_vs_english_Gujarati",
+   "higher_is_better": false,
+   "unit": "x English",
+   "values": {
+    "sarvam": {
+     "mean": 1.5412175485394772,
+     "lo": 1.492612943989443,
+     "hi": 1.5921832022419633,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 7.026779212431758,
+     "lo": 6.780478759301593,
+     "hi": 7.29253345344958,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 1.90520527112766,
+     "lo": 1.8490900568833712,
+     "hi": 1.9678107290063247,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 1.90520527112766,
+     "lo": 1.8490900568833712,
+     "hi": 1.9678107290063247,
+     "n": 100
+    },
+    "openai": {
+     "mean": 1.8134455183191545,
+     "lo": 1.7586578841846956,
+     "hi": 1.868931752137427,
+     "n": 100
+    },
+    "claude": {
+     "mean": 2.83425748645819,
+     "lo": 2.74209679202888,
+     "hi": 2.93258931290155,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "token_tax_vs_english_Kannada",
+   "higher_is_better": false,
+   "unit": "x English",
+   "values": {
+    "sarvam": {
+     "mean": 1.5367913735345602,
+     "lo": 1.4862588784048154,
+     "hi": 1.58979937260646,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 7.110989331549819,
+     "lo": 6.8198502509779315,
+     "hi": 7.430417355888694,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 1.9565138922211203,
+     "lo": 1.8907564512442263,
+     "hi": 2.0257177626159297,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 1.9565138922211203,
+     "lo": 1.8907564512442263,
+     "hi": 2.0257177626159297,
+     "n": 100
+    },
+    "openai": {
+     "mean": 1.9888810925965512,
+     "lo": 1.9204056457658873,
+     "hi": 2.058412469215148,
+     "n": 100
+    },
+    "claude": {
+     "mean": 5.887530211494892,
+     "lo": 5.658239149778731,
+     "hi": 6.135730597079926,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "token_tax_vs_english_Malayalam",
+   "higher_is_better": false,
+   "unit": "x English",
+   "values": {
+    "sarvam": {
+     "mean": 1.6304345593812366,
+     "lo": 1.577533964162613,
+     "hi": 1.688069935761473,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 7.277301623128779,
+     "lo": 7.018448780671721,
+     "hi": 7.562645092433943,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 1.8363060847732064,
+     "lo": 1.7736181551636465,
+     "hi": 1.9085001323429611,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 1.8363060847732064,
+     "lo": 1.7736181551636465,
+     "hi": 1.9085001323429611,
+     "n": 100
+    },
+    "openai": {
+     "mean": 1.9223153202232746,
+     "lo": 1.8590141919687948,
+     "hi": 1.9906282853322983,
+     "n": 100
+    },
+    "claude": {
+     "mean": 3.9719093292590344,
+     "lo": 3.8280247733036803,
+     "hi": 4.125034693069175,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "token_tax_vs_english_Punjabi",
+   "higher_is_better": false,
+   "unit": "x English",
+   "values": {
+    "sarvam": {
+     "mean": 1.5382366089677628,
+     "lo": 1.4900608853680337,
+     "hi": 1.5875530242078058,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 7.363505173545454,
+     "lo": 7.081864223394857,
+     "hi": 7.64484417555402,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 2.730463146788337,
+     "lo": 2.6467080886871703,
+     "hi": 2.817011944781243,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 2.730463146788337,
+     "lo": 2.6467080886871703,
+     "hi": 2.817011944781243,
+     "n": 100
+    },
+    "openai": {
+     "mean": 2.622703035191276,
+     "lo": 2.5357951257147047,
+     "hi": 2.714397979955649,
+     "n": 100
+    },
+    "claude": {
+     "mean": 6.5010138199757055,
+     "lo": 6.23745917321368,
+     "hi": 6.767543344647748,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "token_tax_vs_english_Odia",
+   "higher_is_better": false,
+   "unit": "x English",
+   "values": {
+    "sarvam": {
+     "mean": 1.421723786186285,
+     "lo": 1.369624915360256,
+     "hi": 1.4746547759485926,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 9.90664003179616,
+     "lo": 9.483111998331985,
+     "hi": 10.362604503629457,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 3.5902630583177744,
+     "lo": 3.452762908191648,
+     "hi": 3.738096520306276,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 3.5902630583177744,
+     "lo": 3.452762908191648,
+     "hi": 3.738096520306276,
+     "n": 100
+    },
+    "openai": {
+     "mean": 5.0422383335428265,
+     "lo": 4.842263131305644,
+     "hi": 5.254525116090293,
+     "n": 100
+    },
+    "claude": {
+     "mean": 5.126283465900519,
+     "lo": 4.927266900116839,
+     "hi": 5.34729478451003,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "token_tax_vs_english_Assamese",
+   "higher_is_better": false,
+   "unit": "x English",
+   "values": {
+    "sarvam": {
+     "mean": 2.0418978063223743,
+     "lo": 1.9601143988375682,
+     "hi": 2.1273312262805883,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 5.43507682961384,
+     "lo": 5.218878392985857,
+     "hi": 5.659304542474937,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 2.0418978063223743,
+     "lo": 1.9601143988375682,
+     "hi": 2.1273312262805883,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 2.0418978063223743,
+     "lo": 1.9601143988375682,
+     "hi": 2.1273312262805883,
+     "n": 100
+    },
+    "openai": {
+     "mean": 1.99321707594497,
+     "lo": 1.9239735592080818,
+     "hi": 2.065340004428368,
+     "n": 100
+    },
+    "claude": {
+     "mean": 3.213855097676385,
+     "lo": 3.0909551915736113,
+     "hi": 3.3425146916754143,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "token_tax_vs_english_Urdu",
+   "higher_is_better": false,
+   "unit": "x English",
+   "values": {
+    "sarvam": {
+     "mean": 1.520934198940777,
+     "lo": 1.4729681003239374,
+     "hi": 1.571654014944415,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 3.185649199648856,
+     "lo": 3.071079722912751,
+     "hi": 3.3097397181879575,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 1.520934198940777,
+     "lo": 1.4729681003239374,
+     "hi": 1.571654014944415,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 1.520934198940777,
+     "lo": 1.4729681003239374,
+     "hi": 1.571654014944415,
+     "n": 100
+    },
+    "openai": {
+     "mean": 1.6598138985521012,
+     "lo": 1.6106220981308552,
+     "hi": 1.7123928563899407,
+     "n": 100
+    },
+    "claude": {
+     "mean": 2.395849963263877,
+     "lo": 2.3068872406297634,
+     "hi": 2.486614682027877,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "token_tax_vs_english_Nepali",
+   "higher_is_better": false,
+   "unit": "x English",
+   "values": {
+    "sarvam": {
+     "mean": 1.5465696098424928,
+     "lo": 1.4928600361063218,
+     "hi": 1.6019844170862259,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 4.480002500822659,
+     "lo": 4.313326026696874,
+     "hi": 4.651487600746667,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 1.5465696098424928,
+     "lo": 1.4928600361063218,
+     "hi": 1.6019844170862259,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 1.5465696098424928,
+     "lo": 1.4928600361063218,
+     "hi": 1.6019844170862259,
+     "n": 100
+    },
+    "openai": {
+     "mean": 1.60585994336454,
+     "lo": 1.5479726716637257,
+     "hi": 1.6609216601552554,
+     "n": 100
+    },
+    "claude": {
+     "mean": 2.3994613747885167,
+     "lo": 2.3148737016243426,
+     "hi": 2.483724477806601,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "token_tax_vs_english_Sindhi",
+   "higher_is_better": false,
+   "unit": "x English",
+   "values": {
+    "sarvam": {
+     "mean": 2.034715878554776,
+     "lo": 1.967932852377482,
+     "hi": 2.10097373260231,
+     "n": 100
+    },
+    "qwen3": {
+     "mean": 2.8318690763002077,
+     "lo": 2.73206665209178,
+     "hi": 2.940290822542663,
+     "n": 100
+    },
+    "gemma4": {
+     "mean": 2.034715878554776,
+     "lo": 1.967932852377482,
+     "hi": 2.10097373260231,
+     "n": 100
+    },
+    "gemini": {
+     "mean": 2.034715878554776,
+     "lo": 1.967932852377482,
+     "hi": 2.10097373260231,
+     "n": 100
+    },
+    "openai": {
+     "mean": 1.7069383035490007,
+     "lo": 1.6514674505145392,
+     "hi": 1.7627416519599706,
+     "n": 100
+    },
+    "claude": {
+     "mean": 2.4870453650381195,
+     "lo": 2.386934088908534,
+     "hi": 2.5955652867127075,
+     "n": 100
+    }
+   }
+  }
+ ],
+ "per_language": {
+  "tokens_per_sentence": {
+   "English": {
+    "sarvam": 24.22,
+    "qwen3": 24.89,
+    "gemma4": 24.22,
+    "gemini": 24.22,
+    "openai": 24.28,
+    "claude": 38.21
+   },
+   "Hindi": {
+    "sarvam": 31.34,
+    "qwen3": 108.98,
+    "gemma4": 31.34,
+    "gemini": 31.34,
+    "openai": 37.68,
+    "claude": 81.9
+   },
+   "Bengali": {
+    "sarvam": 29.9,
+    "qwen3": 127.28,
+    "gemma4": 29.9,
+    "gemini": 29.9,
+    "openai": 41.6,
+    "claude": 104.87
+   },
+   "Marathi": {
+    "sarvam": 33.92,
+    "qwen3": 115.37,
+    "gemma4": 33.92,
+    "gemini": 33.92,
+    "openai": 43.87,
+    "claude": 91.5
+   },
+   "Telugu": {
+    "sarvam": 35.49,
+    "qwen3": 177.3,
+    "gemma4": 43.3,
+    "gemini": 43.3,
+    "openai": 46.79,
+    "claude": 108.07
+   },
+   "Tamil": {
+    "sarvam": 35.31,
+    "qwen3": 151.6,
+    "gemma4": 35.31,
+    "gemini": 35.31,
+    "openai": 47.78,
+    "claude": 115.13
+   },
+   "Gujarati": {
+    "sarvam": 36.92,
+    "qwen3": 172.05,
+    "gemma4": 45.78,
+    "gemini": 45.78,
+    "openai": 43.76,
+    "claude": 106.82
+   },
+   "Kannada": {
+    "sarvam": 37.04,
+    "qwen3": 174.17,
+    "gemma4": 46.83,
+    "gemini": 46.83,
+    "openai": 47.81,
+    "claude": 221.46
+   },
+   "Malayalam": {
+    "sarvam": 39.25,
+    "qwen3": 178.9,
+    "gemma4": 44.05,
+    "gemini": 44.05,
+    "openai": 46.3,
+    "claude": 149.9
+   },
+   "Punjabi": {
+    "sarvam": 37.44,
+    "qwen3": 181.83,
+    "gemma4": 65.62,
+    "gemini": 65.62,
+    "openai": 63.27,
+    "claude": 245.44
+   },
+   "Odia": {
+    "sarvam": 34.12,
+    "qwen3": 242.38,
+    "gemma4": 85.63,
+    "gemini": 85.63,
+    "openai": 121.08,
+    "claude": 192.81
+   },
+   "Assamese": {
+    "sarvam": 48.5,
+    "qwen3": 133.08,
+    "gemma4": 48.5,
+    "gemini": 48.5,
+    "openai": 47.57,
+    "claude": 120.8
+   },
+   "Urdu": {
+    "sarvam": 36.73,
+    "qwen3": 78.5,
+    "gemma4": 36.73,
+    "gemini": 36.73,
+    "openai": 40.22,
+    "claude": 90.42
+   },
+   "Nepali": {
+    "sarvam": 37.37,
+    "qwen3": 110.16,
+    "gemma4": 37.37,
+    "gemini": 37.37,
+    "openai": 38.71,
+    "claude": 90.73
+   },
+   "Sindhi": {
+    "sarvam": 49.04,
+    "qwen3": 70.29,
+    "gemma4": 49.04,
+    "gemini": 49.04,
+    "openai": 41.33,
+    "claude": 94.12
+   }
+  },
+  "token_tax_vs_english": {
+   "English": {
+    "sarvam": 1.0,
+    "qwen3": 1.0,
+    "gemma4": 1.0,
+    "gemini": 1.0,
+    "openai": 1.0,
+    "claude": 1.0
+   },
+   "Hindi": {
+    "sarvam": 1.291,
+    "qwen3": 4.413,
+    "gemma4": 1.291,
+    "gemini": 1.291,
+    "openai": 1.555,
+    "claude": 2.156
+   },
+   "Bengali": {
+    "sarvam": 1.234,
+    "qwen3": 5.173,
+    "gemma4": 1.234,
+    "gemini": 1.234,
+    "openai": 1.719,
+    "claude": 2.775
+   },
+   "Marathi": {
+    "sarvam": 1.42,
+    "qwen3": 4.714,
+    "gemma4": 1.42,
+    "gemini": 1.42,
+    "openai": 1.826,
+    "claude": 2.424
+   },
+   "Telugu": {
+    "sarvam": 1.481,
+    "qwen3": 7.277,
+    "gemma4": 1.803,
+    "gemini": 1.803,
+    "openai": 1.942,
+    "claude": 2.877
+   },
+   "Tamil": {
+    "sarvam": 1.491,
+    "qwen3": 6.246,
+    "gemma4": 1.491,
+    "gemini": 1.491,
+    "openai": 2.006,
+    "claude": 3.096
+   },
+   "Gujarati": {
+    "sarvam": 1.541,
+    "qwen3": 7.027,
+    "gemma4": 1.905,
+    "gemini": 1.905,
+    "openai": 1.813,
+    "claude": 2.834
+   },
+   "Kannada": {
+    "sarvam": 1.537,
+    "qwen3": 7.111,
+    "gemma4": 1.957,
+    "gemini": 1.957,
+    "openai": 1.989,
+    "claude": 5.888
+   },
+   "Malayalam": {
+    "sarvam": 1.63,
+    "qwen3": 7.277,
+    "gemma4": 1.836,
+    "gemini": 1.836,
+    "openai": 1.922,
+    "claude": 3.972
+   },
+   "Punjabi": {
+    "sarvam": 1.538,
+    "qwen3": 7.364,
+    "gemma4": 2.73,
+    "gemini": 2.73,
+    "openai": 2.623,
+    "claude": 6.501
+   },
+   "Odia": {
+    "sarvam": 1.422,
+    "qwen3": 9.907,
+    "gemma4": 3.59,
+    "gemini": 3.59,
+    "openai": 5.042,
+    "claude": 5.126
+   },
+   "Assamese": {
+    "sarvam": 2.042,
+    "qwen3": 5.435,
+    "gemma4": 2.042,
+    "gemini": 2.042,
+    "openai": 1.993,
+    "claude": 3.214
+   },
+   "Urdu": {
+    "sarvam": 1.521,
+    "qwen3": 3.186,
+    "gemma4": 1.521,
+    "gemini": 1.521,
+    "openai": 1.66,
+    "claude": 2.396
+   },
+   "Nepali": {
+    "sarvam": 1.547,
+    "qwen3": 4.48,
+    "gemma4": 1.547,
+    "gemini": 1.547,
+    "openai": 1.606,
+    "claude": 2.399
+   },
+   "Sindhi": {
+    "sarvam": 2.035,
+    "qwen3": 2.832,
+    "gemma4": 2.035,
+    "gemini": 2.035,
+    "openai": 1.707,
+    "claude": 2.487
+   }
+  },
+  "tokens_per_word": {
+   "English": {
+    "sarvam": 1.221,
+    "qwen3": 1.255,
+    "gemma4": 1.221,
+    "gemini": 1.221,
+    "openai": 1.224,
+    "claude": 1.927
+   },
+   "Hindi": {
+    "sarvam": 1.353,
+    "qwen3": 4.703,
+    "gemma4": 1.353,
+    "gemini": 1.353,
+    "openai": 1.626,
+    "claude": 3.535
+   },
+   "Bengali": {
+    "sarvam": 1.691,
+    "qwen3": 7.199,
+    "gemma4": 1.691,
+    "gemini": 1.691,
+    "openai": 2.353,
+    "claude": 5.932
+   },
+   "Marathi": {
+    "sarvam": 1.949,
+    "qwen3": 6.63,
+    "gemma4": 1.949,
+    "gemini": 1.949,
+    "openai": 2.521,
+    "claude": 5.259
+   },
+   "Telugu": {
+    "sarvam": 2.32,
+    "qwen3": 11.588,
+    "gemma4": 2.83,
+    "gemini": 2.83,
+    "openai": 3.058,
+    "claude": 7.063
+   },
+   "Tamil": {
+    "sarvam": 2.36,
+    "qwen3": 10.134,
+    "gemma4": 2.36,
+    "gemini": 2.36,
+    "openai": 3.194,
+    "claude": 7.696
+   },
+   "Gujarati": {
+    "sarvam": 1.908,
+    "qwen3": 8.891,
+    "gemma4": 2.366,
+    "gemini": 2.366,
+    "openai": 2.261,
+    "claude": 5.52
+   },
+   "Kannada": {
+    "sarvam": 2.52,
+    "qwen3": 11.848,
+    "gemma4": 3.186,
+    "gemini": 3.186,
+    "openai": 3.252,
+    "claude": 15.065
+   },
+   "Malayalam": {
+    "sarvam": 2.933,
+    "qwen3": 13.371,
+    "gemma4": 3.292,
+    "gemini": 3.292,
+    "openai": 3.46,
+    "claude": 11.203
+   },
+   "Punjabi": {
+    "sarvam": 1.579,
+    "qwen3": 7.669,
+    "gemma4": 2.768,
+    "gemini": 2.768,
+    "openai": 2.668,
+    "claude": 10.352
+   },
+   "Odia": {
+    "sarvam": 1.929,
+    "qwen3": 13.702,
+    "gemma4": 4.841,
+    "gemini": 4.841,
+    "openai": 6.845,
+    "claude": 10.899
+   },
+   "Assamese": {
+    "sarvam": 2.825,
+    "qwen3": 7.751,
+    "gemma4": 2.825,
+    "gemini": 2.825,
+    "openai": 2.771,
+    "claude": 7.036
+   },
+   "Urdu": {
+    "sarvam": 1.469,
+    "qwen3": 3.139,
+    "gemma4": 1.469,
+    "gemini": 1.469,
+    "openai": 1.608,
+    "claude": 3.615
+   },
+   "Nepali": {
+    "sarvam": 2.194,
+    "qwen3": 6.469,
+    "gemma4": 2.194,
+    "gemini": 2.194,
+    "openai": 2.273,
+    "claude": 5.328
+   },
+   "Sindhi": {
+    "sarvam": 2.164,
+    "qwen3": 3.102,
+    "gemma4": 2.164,
+    "gemini": 2.164,
+    "openai": 1.824,
+    "claude": 4.154
+   }
+  },
+  "sarvam_105b_inr_per_1000_sentences": {
+   "English": {
+    "input_inr": 0.3633,
+    "output_inr": 1.4532
+   },
+   "Hindi": {
+    "input_inr": 0.4701,
+    "output_inr": 1.8804
+   },
+   "Bengali": {
+    "input_inr": 0.4485,
+    "output_inr": 1.794
+   },
+   "Marathi": {
+    "input_inr": 0.5088,
+    "output_inr": 2.0352
+   },
+   "Telugu": {
+    "input_inr": 0.5323,
+    "output_inr": 2.1294
+   },
+   "Tamil": {
+    "input_inr": 0.5297,
+    "output_inr": 2.1186
+   },
+   "Gujarati": {
+    "input_inr": 0.5538,
+    "output_inr": 2.2152
+   },
+   "Kannada": {
+    "input_inr": 0.5556,
+    "output_inr": 2.2224
+   },
+   "Malayalam": {
+    "input_inr": 0.5887,
+    "output_inr": 2.355
+   },
+   "Punjabi": {
+    "input_inr": 0.5616,
+    "output_inr": 2.2464
+   },
+   "Odia": {
+    "input_inr": 0.5118,
+    "output_inr": 2.0472
+   },
+   "Assamese": {
+    "input_inr": 0.7275,
+    "output_inr": 2.91
+   },
+   "Urdu": {
+    "input_inr": 0.551,
+    "output_inr": 2.2038
+   },
+   "Nepali": {
+    "input_inr": 0.5605,
+    "output_inr": 2.2422
+   },
+   "Sindhi": {
+    "input_inr": 0.7356,
+    "output_inr": 2.9424
+   }
+  }
+ },
+ "table": [
+  {
+   "lang": "English",
+   "code": "en_us",
+   "chars": 118.9,
+   "words": 19.8,
+   "sarvam_tok": 24.2,
+   "qwen3_tok": 24.9,
+   "gemma4_tok": 24.2,
+   "gemini_tok": 24.2,
+   "openai_tok": 24.3,
+   "claude_tok": 38.2,
+   "sarvam_tax": 1.0,
+   "qwen3_tax": 1.0,
+   "gemma4_tax": 1.0,
+   "gemini_tax": 1.0,
+   "openai_tax": 1.0,
+   "claude_tax": 1.0,
+   "sarvam_inr_per_1k_in": 0.3633,
+   "sarvam_inr_per_1k_out": 1.4532
+  },
+  {
+   "lang": "Hindi",
+   "code": "hi_in",
+   "chars": 117.2,
+   "words": 23.2,
+   "sarvam_tok": 31.3,
+   "qwen3_tok": 109.0,
+   "gemma4_tok": 31.3,
+   "gemini_tok": 31.3,
+   "openai_tok": 37.7,
+   "claude_tok": 81.9,
+   "sarvam_tax": 1.29,
+   "qwen3_tax": 4.41,
+   "gemma4_tax": 1.29,
+   "gemini_tax": 1.29,
+   "openai_tax": 1.55,
+   "claude_tax": 2.16,
+   "sarvam_inr_per_1k_in": 0.4701,
+   "sarvam_inr_per_1k_out": 1.8804
+  },
+  {
+   "lang": "Bengali",
+   "code": "bn_in",
+   "chars": 117.6,
+   "words": 17.7,
+   "sarvam_tok": 29.9,
+   "qwen3_tok": 127.3,
+   "gemma4_tok": 29.9,
+   "gemini_tok": 29.9,
+   "openai_tok": 41.6,
+   "claude_tok": 104.9,
+   "sarvam_tax": 1.23,
+   "qwen3_tax": 5.17,
+   "gemma4_tax": 1.23,
+   "gemini_tax": 1.23,
+   "openai_tax": 1.72,
+   "claude_tax": 2.78,
+   "sarvam_inr_per_1k_in": 0.4485,
+   "sarvam_inr_per_1k_out": 1.794
+  },
+  {
+   "lang": "Marathi",
+   "code": "mr_in",
+   "chars": 120.5,
+   "words": 17.4,
+   "sarvam_tok": 33.9,
+   "qwen3_tok": 115.4,
+   "gemma4_tok": 33.9,
+   "gemini_tok": 33.9,
+   "openai_tok": 43.9,
+   "claude_tok": 91.5,
+   "sarvam_tax": 1.42,
+   "qwen3_tax": 4.71,
+   "gemma4_tax": 1.42,
+   "gemini_tax": 1.42,
+   "openai_tax": 1.83,
+   "claude_tax": 2.42,
+   "sarvam_inr_per_1k_in": 0.5088,
+   "sarvam_inr_per_1k_out": 2.0352
+  },
+  {
+   "lang": "Telugu",
+   "code": "te_in",
+   "chars": 121.0,
+   "words": 15.3,
+   "sarvam_tok": 35.5,
+   "qwen3_tok": 177.3,
+   "gemma4_tok": 43.3,
+   "gemini_tok": 43.3,
+   "openai_tok": 46.8,
+   "claude_tok": 108.1,
+   "sarvam_tax": 1.48,
+   "qwen3_tax": 7.28,
+   "gemma4_tax": 1.8,
+   "gemini_tax": 1.8,
+   "openai_tax": 1.94,
+   "claude_tax": 2.88,
+   "sarvam_inr_per_1k_in": 0.5323,
+   "sarvam_inr_per_1k_out": 2.1294
+  },
+  {
+   "lang": "Tamil",
+   "code": "ta_in",
+   "chars": 138.4,
+   "words": 15.0,
+   "sarvam_tok": 35.3,
+   "qwen3_tok": 151.6,
+   "gemma4_tok": 35.3,
+   "gemini_tok": 35.3,
+   "openai_tok": 47.8,
+   "claude_tok": 115.1,
+   "sarvam_tax": 1.49,
+   "qwen3_tax": 6.25,
+   "gemma4_tax": 1.49,
+   "gemini_tax": 1.49,
+   "openai_tax": 2.01,
+   "claude_tax": 3.1,
+   "sarvam_inr_per_1k_in": 0.5297,
+   "sarvam_inr_per_1k_out": 2.1186
+  },
+  {
+   "lang": "Gujarati",
+   "code": "gu_in",
+   "chars": 116.4,
+   "words": 19.4,
+   "sarvam_tok": 36.9,
+   "qwen3_tok": 172.1,
+   "gemma4_tok": 45.8,
+   "gemini_tok": 45.8,
+   "openai_tok": 43.8,
+   "claude_tok": 106.8,
+   "sarvam_tax": 1.54,
+   "qwen3_tax": 7.03,
+   "gemma4_tax": 1.91,
+   "gemini_tax": 1.91,
+   "openai_tax": 1.81,
+   "claude_tax": 2.83,
+   "sarvam_inr_per_1k_in": 0.5538,
+   "sarvam_inr_per_1k_out": 2.2152
+  },
+  {
+   "lang": "Kannada",
+   "code": "kn_in",
+   "chars": 125.6,
+   "words": 14.7,
+   "sarvam_tok": 37.0,
+   "qwen3_tok": 174.2,
+   "gemma4_tok": 46.8,
+   "gemini_tok": 46.8,
+   "openai_tok": 47.8,
+   "claude_tok": 221.5,
+   "sarvam_tax": 1.54,
+   "qwen3_tax": 7.11,
+   "gemma4_tax": 1.96,
+   "gemini_tax": 1.96,
+   "openai_tax": 1.99,
+   "claude_tax": 5.89,
+   "sarvam_inr_per_1k_in": 0.5556,
+   "sarvam_inr_per_1k_out": 2.2224
+  },
+  {
+   "lang": "Malayalam",
+   "code": "ml_in",
+   "chars": 133.3,
+   "words": 13.4,
+   "sarvam_tok": 39.2,
+   "qwen3_tok": 178.9,
+   "gemma4_tok": 44.0,
+   "gemini_tok": 44.0,
+   "openai_tok": 46.3,
+   "claude_tok": 149.9,
+   "sarvam_tax": 1.63,
+   "qwen3_tax": 7.28,
+   "gemma4_tax": 1.84,
+   "gemini_tax": 1.84,
+   "openai_tax": 1.92,
+   "claude_tax": 3.97,
+   "sarvam_inr_per_1k_in": 0.5887,
+   "sarvam_inr_per_1k_out": 2.355
+  },
+  {
+   "lang": "Punjabi",
+   "code": "pa_in",
+   "chars": 120.3,
+   "words": 23.7,
+   "sarvam_tok": 37.4,
+   "qwen3_tok": 181.8,
+   "gemma4_tok": 65.6,
+   "gemini_tok": 65.6,
+   "openai_tok": 63.3,
+   "claude_tok": 245.4,
+   "sarvam_tax": 1.54,
+   "qwen3_tax": 7.36,
+   "gemma4_tax": 2.73,
+   "gemini_tax": 2.73,
+   "openai_tax": 2.62,
+   "claude_tax": 6.5,
+   "sarvam_inr_per_1k_in": 0.5616,
+   "sarvam_inr_per_1k_out": 2.2464
+  },
+  {
+   "lang": "Odia",
+   "code": "or_in",
+   "chars": 121.2,
+   "words": 17.7,
+   "sarvam_tok": 34.1,
+   "qwen3_tok": 242.4,
+   "gemma4_tok": 85.6,
+   "gemini_tok": 85.6,
+   "openai_tok": 121.1,
+   "claude_tok": 192.8,
+   "sarvam_tax": 1.42,
+   "qwen3_tax": 9.91,
+   "gemma4_tax": 3.59,
+   "gemini_tax": 3.59,
+   "openai_tax": 5.04,
+   "claude_tax": 5.13,
+   "sarvam_inr_per_1k_in": 0.5118,
+   "sarvam_inr_per_1k_out": 2.0472
+  },
+  {
+   "lang": "Assamese",
+   "code": "as_in",
+   "chars": 111.9,
+   "words": 17.2,
+   "sarvam_tok": 48.5,
+   "qwen3_tok": 133.1,
+   "gemma4_tok": 48.5,
+   "gemini_tok": 48.5,
+   "openai_tok": 47.6,
+   "claude_tok": 120.8,
+   "sarvam_tax": 2.04,
+   "qwen3_tax": 5.44,
+   "gemma4_tax": 2.04,
+   "gemini_tax": 2.04,
+   "openai_tax": 1.99,
+   "claude_tax": 3.21,
+   "sarvam_inr_per_1k_in": 0.7275,
+   "sarvam_inr_per_1k_out": 2.91
+  },
+  {
+   "lang": "Urdu",
+   "code": "ur_pk",
+   "chars": 117.2,
+   "words": 25.0,
+   "sarvam_tok": 36.7,
+   "qwen3_tok": 78.5,
+   "gemma4_tok": 36.7,
+   "gemini_tok": 36.7,
+   "openai_tok": 40.2,
+   "claude_tok": 90.4,
+   "sarvam_tax": 1.52,
+   "qwen3_tax": 3.19,
+   "gemma4_tax": 1.52,
+   "gemini_tax": 1.52,
+   "openai_tax": 1.66,
+   "claude_tax": 2.4,
+   "sarvam_inr_per_1k_in": 0.551,
+   "sarvam_inr_per_1k_out": 2.2038
+  },
+  {
+   "lang": "Nepali",
+   "code": "ne_np",
+   "chars": 114.2,
+   "words": 17.0,
+   "sarvam_tok": 37.4,
+   "qwen3_tok": 110.2,
+   "gemma4_tok": 37.4,
+   "gemini_tok": 37.4,
+   "openai_tok": 38.7,
+   "claude_tok": 90.7,
+   "sarvam_tax": 1.55,
+   "qwen3_tax": 4.48,
+   "gemma4_tax": 1.55,
+   "gemini_tax": 1.55,
+   "openai_tax": 1.61,
+   "claude_tax": 2.4,
+   "sarvam_inr_per_1k_in": 0.5605,
+   "sarvam_inr_per_1k_out": 2.2422
+  },
+  {
+   "lang": "Sindhi",
+   "code": "sd_in",
+   "chars": 106.0,
+   "words": 22.7,
+   "sarvam_tok": 49.0,
+   "qwen3_tok": 70.3,
+   "gemma4_tok": 49.0,
+   "gemini_tok": 49.0,
+   "openai_tok": 41.3,
+   "claude_tok": 94.1,
+   "sarvam_tax": 2.03,
+   "qwen3_tax": 2.83,
+   "gemma4_tax": 2.03,
+   "gemini_tax": 2.03,
+   "openai_tax": 1.71,
+   "claude_tax": 2.49,
+   "sarvam_inr_per_1k_in": 0.7356,
+   "sarvam_inr_per_1k_out": 2.9424
+  }
+ ],
+ "cross_checks": {
+  "sarvam_api_minus_hf_distinct_deltas": {
+   "en_us": [
+    14
+   ],
+   "hi_in": [
+    14
+   ],
+   "bn_in": [
+    14
+   ],
+   "mr_in": [
+    14
+   ],
+   "te_in": [
+    14
+   ],
+   "ta_in": [
+    14
+   ],
+   "gu_in": [
+    14
+   ],
+   "kn_in": [
+    14
+   ],
+   "ml_in": [
+    14
+   ],
+   "pa_in": [
+    14
+   ],
+   "or_in": [
+    14
+   ],
+   "as_in": [
+    14
+   ],
+   "ur_pk": [
+    14
+   ],
+   "ne_np": [
+    14
+   ],
+   "sd_in": [
+    14
+   ]
+  },
+  "gguf_minus_hf_distinct_deltas": {
+   "en_us": [
+    0
+   ],
+   "hi_in": [
+    0
+   ],
+   "bn_in": [
+    0
+   ],
+   "mr_in": [
+    0
+   ],
+   "te_in": [
+    -2,
+    -1,
+    0
+   ],
+   "ta_in": [
+    0
+   ],
+   "gu_in": [
+    -3,
+    -2,
+    0,
+    2
+   ],
+   "kn_in": [
+    -4,
+    -2,
+    -1,
+    0
+   ],
+   "ml_in": [
+    -4,
+    -1,
+    0,
+    1,
+    2,
+    4
+   ],
+   "pa_in": [
+    -2,
+    -1,
+    0
+   ],
+   "or_in": [
+    0
+   ],
+   "as_in": [
+    0
+   ],
+   "ur_pk": [
+    0
+   ],
+   "ne_np": [
+    0
+   ],
+   "sd_in": [
+    0
+   ]
+  },
+  "gemini_minus_gemma4_mean": {
+   "en_us": 0.0,
+   "hi_in": 0.0,
+   "bn_in": 0.0,
+   "mr_in": 0.0,
+   "te_in": 0.0,
+   "ta_in": 0.0,
+   "gu_in": 0.0,
+   "kn_in": 0.0,
+   "ml_in": 0.0,
+   "pa_in": 0.0,
+   "or_in": 0.0,
+   "as_in": 0.0,
+   "ur_pk": 0.0,
+   "ne_np": 0.0,
+   "sd_in": 0.0
+  },
+  "gemini_request_overhead_tokens": 1,
+  "sarvam_30b_vs_105b_tokenizer": "byte-identical tokenizer.json (md5 0987ae61...)"
+ },
+ "speed": {},
+ "usage": {
+  "openai:gpt-5.4-mini": {
+   "in_tok": 82212,
+   "out_tok": 24003,
+   "calls": 1501,
+   "cost_usd": 0,
+   "fixed_overhead_tokens_removed": 6
+  },
+  "or:anthropic/claude-haiku-5.5": {
+   "in_tok": 194225,
+   "out_tok": 24016,
+   "calls": 1501,
+   "cost_usd": 0.0314,
+   "fixed_overhead_tokens_removed": 6
+  },
+  "sarvam-105b": {
+   "in_tok": 6952,
+   "out_tok": 150,
+   "calls": 150
+  },
+  "gemini-3.8-flash": {
+   "count_tokens_calls": 1501,
+   "note": "count_tokens is a free endpoint; no generation"
+  }
+ },
+ "findings": [
+  "Average Indic token tax (tokens vs the same sentence in English, mean over 14 languages): Sarvam (30B/105B tokenizer) 1.55x, Qwen3-30B-A3B 5.89x, Gemma 4 1.89x, Gemini 3.8 Flash (count_tokens) 1.89x, OpenAI gpt-5.4-mini (API prompt_tokens) 2.10x, Claude Haiku 5.5 (OpenRouter prompt_tokens) 3.44x.",
+  "Sarvam's tokenizer is the cheapest of the 6 on 12/14 Indic languages; per language the cheapest is: Hindi=sarvam, Bengali=sarvam, Marathi=sarvam, Telugu=sarvam, Tamil=sarvam, Gujarati=sarvam, Kannada=sarvam, Malayalam=sarvam, Punjabi=sarvam, Odia=sarvam, Assamese=openai, Urdu=sarvam, Nepali=sarvam, Sindhi=openai.",
+  "Qwen3 spends this many times more tokens than Sarvam on the same sentence: Odia 7.1x, Telugu 5.0x, Punjabi 4.9x, Kannada 4.7x, Gujarati 4.7x, Malayalam 4.6x, Tamil 4.3x, Bengali 4.3x, Hindi 3.5x, Marathi 3.4x, Nepali 2.9x, Assamese 2.7x, Urdu 2.1x, Sindhi 1.4x (English 1.03x).",
+  "Worst/best tokenizer spread per language (same sentence): Odia 7.1x, Punjabi 6.6x, Kannada 6.0x, Telugu 5.0x, Gujarati 4.7x, Malayalam 4.6x, Tamil 4.3x, Bengali 4.3x, Hindi 3.5x, Marathi 3.4x, Nepali 2.9x, Assamese 2.8x, Urdu 2.5x, Sindhi 2.3x.",
+  "Implied sarvam-105b list cost per 1,000 FLEURS sentences sent as input: English INR 0.36, Hindi INR 0.47, Bengali INR 0.45, Marathi INR 0.51, Telugu INR 0.53, Tamil INR 0.53, Gujarati INR 0.55, Kannada INR 0.56, Malayalam INR 0.59, Punjabi INR 0.56, Odia INR 0.51, Assamese INR 0.73, Urdu INR 0.55, Nepali INR 0.56, Sindhi INR 0.74; as generated output (INR 60/1M) multiply by 4.",
+  "Cross-check: Sarvam API prompt_tokens minus the HF tokenizer count is a constant per sentence (distinct deltas across all 150 sampled sentences: [14]), i.e. the API bills exactly the open tokenizer plus a fixed chat-template overhead.",
+  "llama.cpp's tokenizer for the official Sarvam-30B GGUF does not exactly match the HF tokenizer on the scripts Sarvam added: sentences (of 10) with a different count - Telugu 4, Gujarati 4, Kannada 5, Malayalam 7, Punjabi 2; deltas range -4 to 4 tokens per sentence; identical for every other language. Minor for cost, but it means the GGUF build sees slightly different token sequences than the model was trained on for Telugu/Gujarati/Kannada/Malayalam/Punjabi.",
+  "Gemini count_tokens minus Gemma-4 tokenizer count, mean per sentence: English +0.00, Hindi +0.00, Bengali +0.00, Marathi +0.00, Telugu +0.00, Tamil +0.00, Gujarati +0.00, Kannada +0.00, Malayalam +0.00, Punjabi +0.00, Odia +0.00, Assamese +0.00, Urdu +0.00, Nepali +0.00, Sindhi +0.00 (after removing a 1-token request overhead).",
+  "Sarvam's tokenizer is Gemma's vocabulary with surgery: both have 262,144 entries and 233,116 (89%) are the same token at the same id. 22,843 tokens are new in Sarvam: GURMUKHI 3,561, ORIYA 3,328, KANNADA 2,935, GUJARATI 2,635, TELUGU 2,520, MEETEI 2,333, MALAYALAM 2,067, TIBETAN 1,796, OL 1,320; dropped HANGUL 4,678, LATIN 3,903, THAI 2,142, HIRAGANA 1,969, KATAKANA 1,957, GREEK 1,313, CJK 904, ETHIOPIC 847. That is why Hindi/Bengali/Marathi/Tamil/Urdu/Nepali counts are identical to Gemini's, and Sarvam wins only on the scripts it added.",
+  "Claude Haiku 5.5 (OpenRouter prompt_tokens) needs this many times Sarvam's tokens for the same sentence: Punjabi 6.6x, Kannada 6.0x, Odia 5.7x, Malayalam 3.8x, Bengali 3.5x, Tamil 3.3x, Telugu 3.0x, Gujarati 2.9x, Marathi 2.7x, Hindi 2.6x, Assamese 2.5x, Urdu 2.5x, Nepali 2.4x, Sindhi 1.9x (English 1.58x).",
+  "OpenAI gpt-5.4-mini (API prompt_tokens) needs this many times Sarvam's tokens for the same sentence: Odia 3.5x, Punjabi 1.7x, Bengali 1.4x, Tamil 1.4x, Telugu 1.3x, Marathi 1.3x, Kannada 1.3x, Hindi 1.2x, Gujarati 1.2x, Malayalam 1.2x, Urdu 1.1x, Nepali 1.0x, Assamese 1.0x, Sindhi 0.8x (English 1.00x)."
+ ],
+ "caveats": [
+  "FLEURS sentences are encyclopaedic (Wikipedia-style) prose; chatty business text, code-mixing and numbers may tokenize differently.",
+  "Gemini prices are not applied (not taken from a verified source); its column is tokens only. The 'tax' multiplier is price-independent and applies to any per-token price.",
+  "Sindhi FLEURS text is in Arabic (Perso-Arabic) script; Urdu sentences come from ur_pk.",
+  "Gemini count_tokens adds a fixed per-request overhead, estimated from count_tokens('a') and subtracted.",
+  "OpenAI and Claude publish no usable tokenizer here (tiktoken is not installed; Claude's is closed), so their counts are API usage.prompt_tokens for the sentence as the only user message, minus a fixed chat overhead estimated as prompt_tokens('a') - 1 (6 tokens for both). If 'a' is not exactly one token the error is a constant +-1 per sentence. 4 Claude sentences tripped OpenRouter's content filter (no usage returned) and were counted inside a 'Translate this sentence to English:' frame with the frame's tokens subtracted.",
+  "Tokens per sentence is only half the cost story: a model that needs fewer tokens but answers worse is not cheaper."
+ ],
+ "verdict": "Claude is the expensive outlier among the cloud models: 1.9-6.6x Sarvam's tokens on Indic text (Kannada and Punjabi worst), and 1.6x even on English. OpenAI's tokenizer sits between Sarvam and Claude (0.8-3.5x Sarvam: cheaper only on Sindhi, worst on Odia). If your traffic is mostly Hindi, Bengali, Marathi, Tamil, Urdu or Nepali, Sarvam and Gemini/Gemma tokenize identically, so per-token price is the only cost lever. For Telugu, Kannada, Malayalam, Gujarati, Punjabi and especially Odia, Sarvam's tokenizer needs 18-60% fewer tokens than Gemini's on the same text. Avoid Qwen3-class byte-level tokenizers for Indic workloads: 3-10x the tokens of English means 3-10x the generation time when self-hosted and a context window that holds 3-10x less Indic text.",
+ "examples": [
+  {
+   "id": "1513",
+   "sentences": {
+    "English": "Argentina is well known for having one of the best polo teams and players in the world.",
+    "Hindi": "अर्जेंटीना दुनिया में सबसे अच्छी पोलो टीम और खिलाड़ियों के लिए जाना जाता है.",
+    "Tamil": "அர்ஜெண்டினா உலகின் மிகச் சிறந்த போலோ குழுக்கள் மற்றும் விளையாட்டு வீரர்கள் கொண்டதற்கு பெயர் போனது.",
+    "Malayalam": "ലോകത്തിലെ ഏറ്റവും നല്ല പോളോ ടീമുകളിൽ ഒന്നും, മികച്ച കളിക്കാരും അർജന്റീനക്കുണ്ട്.",
+    "Odia": "ଆର୍ଜେଣ୍ଟିନା ଦୁନିଆର 1 ସର୍ବୋତ୍ତମ ପୋଲୋ ଦଳ ଏବଂ ଖେଳାଳି ଥିବା ପାଇଁ ଜଣାଶୁଣା ଅଟେ।"
+   },
+   "tokens": {
+    "English": {
+     "sarvam": 18,
+     "qwen3": 18,
+     "gemma4": 18,
+     "gemini": 18,
+     "openai": 18,
+     "claude": 23
+    },
+    "Hindi": {
+     "sarvam": 17,
+     "qwen3": 73,
+     "gemma4": 17,
+     "gemini": 17,
+     "openai": 20,
+     "claude": 53
+    },
+    "Tamil": {
+     "sarvam": 22,
+     "qwen3": 109,
+     "gemma4": 22,
+     "gemini": 22,
+     "openai": 33,
+     "claude": 81
+    },
+    "Malayalam": {
+     "sarvam": 22,
+     "qwen3": 109,
+     "gemma4": 26,
+     "gemini": 26,
+     "openai": 26,
+     "claude": 83
+    },
+    "Odia": {
+     "sarvam": 23,
+     "qwen3": 140,
+     "gemma4": 55,
+     "gemini": 55,
+     "openai": 71,
+     "claude": 118
+    }
+   }
+  },
+  {
+   "id": "1520",
+   "sentences": {
+    "English": "Out of 1,400 people polled prior to the 2010 federal election, those who oppose Australia becoming a republic grew by 8 per cent since 2008.",
+    "Hindi": "2010 के संघीय चुनाव से पहले 1,400 लोगों ने मतदान किया, 2008 से जो लोग ऑस्ट्रेलिया के गणतंत्र बनने का विरोध करते हैं उनमें 8 प्रतिशत की वृद्धि हुई.",
+    "Tamil": "2010 கூட்டாட்சி தேர்தலுக்கு முன்னர் வாக்களித்த 1,400 பேரில் ஆஸ்திரேலியா ஒரு குடியரசாக மாறுவதை எதிர்ப்பவர்கள் 2008 ல் இருந்து 8 சதவிகிதம் அதிகரித்தனர்.",
+    "Malayalam": "2010 ലെ ഫെഡറൽ തിരഞ്ഞെടുപ്പിന് മുമ്പ് പോൾ ചെയ്ത 1400 പേരിൽ, ഓസ്‌ട്രേലിയ ഒരു റിപ്പബ്ലിക്കായി മാറുന്നതിനെ എതിർക്കുന്നവർ 2008 മുതൽ 8 ശതമാനം വളർച്ച നേടി.",
+    "Odia": "୨୦୦୮ ମସିହା ଠାରୁ ଅଷ୍ଟ୍ରେଲିଆକୁ ଏକ ଗଣତନ୍ତ୍ର ରାଷ୍ଟ୍ର ଭାବେ ବିରୋଧ କରୁଥିବା ୧୪୦୦ ଭୋଟରଙ୍କ ମଧ୍ୟରୁ ୨୦୧୦ ରେ ୮ ପ୍ରତିଶତ ବଢିଯାଇଛନ୍ତି।"
+   },
+   "tokens": {
+    "English": {
+     "sarvam": 41,
+     "qwen3": 41,
+     "gemma4": 41,
+     "gemini": 41,
+     "openai": 36,
+     "claude": 51
+    },
+    "Hindi": {
+     "sarvam": 44,
+     "qwen3": 131,
+     "gemma4": 44,
+     "gemini": 44,
+     "openai": 44,
+     "claude": 104
+    },
+    "Tamil": {
+     "sarvam": 53,
+     "qwen3": 161,
+     "gemma4": 53,
+     "gemini": 53,
+     "openai": 58,
+     "claude": 131
+    },
+    "Malayalam": {
+     "sarvam": 56,
+     "qwen3": 196,
+     "gemma4": 60,
+     "gemini": 60,
+     "openai": 54,
+     "claude": 167
+    },
+    "Odia": {
+     "sarvam": 26,
+     "qwen3": 250,
+     "gemma4": 82,
+     "gemini": 82,
+     "openai": 131,
+     "claude": 202
+    }
+   }
+  },
+  {
+   "id": "1521",
+   "sentences": {
+    "English": "The satellite in space gets the call and then reflects it back down, almost instantly.",
+    "Hindi": "अंतरिक्ष में उपग्रह को कॉल मिलता है और फिर इसे वापस नीचे, उसी समय परावर्तित करता है.",
+    "Tamil": "விண்வெளியில் உள்ள செயற்கைக்கோள் பூமியில் இருந்து அழைப்பைப் பெறுகிறது. பின்னர் அழைப்பிற்கு ஏற்றார் போல் உடனடியாகக் கீழே பிரதிபலிக்கிறது.",
+    "Malayalam": "ബഹിരാകാശ ഉപഗ്രഹത്തിന് കോൾ ലഭിക്കുകയും തൽക്ഷണം താഴേക്ക് കൈമാറുകയും ചെയ്യുന്നു.",
+    "Odia": "ମହାକାଶରେ ଥିବା ସାଟେଲାଇଟ୍ କୁ କଲ୍ ମିଳିଥାଏ ଏବଂ ତାପରେ ଏହାକୁ ତୁରନ୍ତ ପ୍ରତିଫଳିତ କରାଯାଇଥାଏ।"
+   },
+   "tokens": {
+    "English": {
+     "sarvam": 17,
+     "qwen3": 17,
+     "gemma4": 17,
+     "gemini": 17,
+     "openai": 17,
+     "claude": 25
+    },
+    "Hindi": {
+     "sarvam": 23,
+     "qwen3": 77,
+     "gemma4": 23,
+     "gemini": 23,
+     "openai": 26,
+     "claude": 56
+    },
+    "Tamil": {
+     "sarvam": 34,
+     "qwen3": 150,
+     "gemma4": 34,
+     "gemini": 34,
+     "openai": 45,
+     "claude": 111
+    },
+    "Malayalam": {
+     "sarvam": 22,
+     "qwen3": 108,
+     "gemma4": 23,
+     "gemini": 23,
+     "openai": 26,
+     "claude": 87
+    },
+    "Odia": {
+     "sarvam": 23,
+     "qwen3": 161,
+     "gemma4": 58,
+     "gemini": 58,
+     "openai": 82,
+     "claude": 123
+    }
+   }
+  }
+ ],
+ "updated": "2026-10-11 22:51:06"
+}

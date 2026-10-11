@@ -1,0 +1,128 @@
+{
+ "id": "d36",
+ "pair": "mr-en",
+ "lang": "Marathi",
+ "style": "native",
+ "topic": "fever",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "बसा. काय त्रास होतोय?"
+  },
+  {
+   "speaker": "patient",
+   "text": "डॉक्टर, 3 दिवसांपासून ताप आहे आणि लघवीला जळजळ होते."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Temperature 100.6, pulse 92, BP 120/78. पाठीत दुखतंय का?"
+  },
+  {
+   "speaker": "patient",
+   "text": "नाही, फक्त ओटीपोटात थोडं दुखतं."
+  },
+  {
+   "speaker": "doctor",
+   "text": "हे urinary tract infection आहे, UTI. मी ciprofloxacin लिहून देतो..."
+  },
+  {
+   "speaker": "patient",
+   "text": "डॉक्टर, मागच्या वेळी ciprofloxacin घेतल्यावर अंगावर खाज आणि पुरळ आलं होतं."
+  },
+  {
+   "speaker": "doctor",
+   "text": "अच्छा, म्हणजे ciprofloxacin ची allergy आहे. मग ते नको. Nitrofurantoin 100 mg, सकाळी एक रात्री एक, 5 दिवस."
+  },
+  {
+   "speaker": "doctor",
+   "text": "आणि ताप आला तरच paracetamol 650 mg घ्या."
+  },
+  {
+   "speaker": "patient",
+   "text": "बरं. पाणी किती प्यायचं?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "दिवसाला किमान 3 लिटर. कंबरेच्या बाजूला जोरात दुखलं, उलट्या झाल्या किंवा लघवीतून रक्त आलं तर लगेच या."
+  },
+  {
+   "speaker": "patient",
+   "text": "परत कधी यायचं?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "5 दिवसांनी urine test चा report घेऊन या."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "fever",
+   "burning urination",
+   "burning micturition",
+   "dysuria"
+  ],
+  "duration": {
+   "value": 3,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 100.6,
+   "pulse": 92,
+   "bp": "120/78"
+  },
+  "diagnosis": [
+   "urinary tract infection",
+   "uti"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "nitrofurantoin"
+    ],
+    "dose": "100 mg",
+    "frequency": "BD",
+    "duration_days": 5
+   },
+   {
+    "drug": [
+     "paracetamol"
+    ],
+    "dose": "650 mg",
+    "frequency": "SOS",
+    "duration_days": null
+   }
+  ],
+  "allergies": [
+   [
+    "ciprofloxacin",
+    "cipro",
+    "fluoroquinolone"
+   ]
+  ],
+  "red_flags": [
+   [
+    "flank pain",
+    "back pain",
+    "loin pain"
+   ],
+   [
+    "vomiting"
+   ],
+   [
+    "blood in urine",
+    "haematuria",
+    "hematuria"
+   ]
+  ],
+  "follow_up": [
+   "5 days",
+   "after 5 days"
+  ],
+  "not_prescribed": [
+   "ciprofloxacin"
+  ]
+ },
+ "trap": "Doctor starts to prescribe ciprofloxacin; late allergy disclosure switches to nitrofurantoin."
+}

@@ -1,0 +1,62 @@
+22:48:30 0 notes to make
+22:48:30 18 notes to make
+22:48:43 0 sarvam-30b-local d13 parsed 
+22:48:54 1 sarvam-30b-local d14 parsed 
+22:49:06 2 sarvam-30b-local d15 parsed 
+22:49:14 3 sarvam-30b-local d16 parsed 
+22:49:22 4 sarvam-30b-local d20 parsed 
+22:49:31 5 sarvam-30b-local d21 parsed 
+22:49:38 6 sarvam-30b-local d22 parsed 
+22:49:45 7 sarvam-30b-local d24 parsed 
+22:49:51 8 sarvam-30b-local d28 parsed 
+22:50:00 9 sarvam-30b-local d29 parsed 
+22:50:06 10 sarvam-30b-local d30 parsed 
+22:50:13 11 sarvam-30b-local d31 parsed 
+22:50:20 12 sarvam-30b-local d32 parsed 
+22:50:29 13 sarvam-30b-local d36 parsed 
+22:50:40 14 sarvam-30b-local d37 parsed 
+22:50:48 15 sarvam-30b-local d38 parsed 
+22:50:56 16 sarvam-30b-local d39 parsed 
+22:51:03 17 sarvam-30b-local d40 parsed 
+22:51:03 25 notes to make
+22:51:21 0 qwen3-30b-local d04 parsed 
+22:51:33 1 qwen3-30b-local d05 parsed 
+22:51:42 2 qwen3-30b-local d06 parsed 
+22:51:51 3 qwen3-30b-local d07 parsed 
+22:52:03 4 qwen3-30b-local d08 parsed 
+22:52:25 5 qwen3-30b-local d12 parsed 
+22:52:36 6 qwen3-30b-local d13 parsed 
+22:52:57 7 qwen3-30b-local d14 parsed 
+22:53:25 8 qwen3-30b-local d15 parsed 
+22:53:34 9 qwen3-30b-local d16 parsed 
+22:53:43 10 qwen3-30b-local d20 parsed 
+22:55:02 11 qwen3-30b-local d21 parsed 
+22:55:02 12 qwen3-30b-local d22 parsed 
+22:55:02 13 qwen3-30b-local d23 parsed 
+22:55:02 14 qwen3-30b-local d24 parsed 
+22:55:02 15 qwen3-30b-local d28 parsed 
+22:55:02 16 qwen3-30b-local d29 parsed 
+22:55:02 17 qwen3-30b-local d30 parsed 
+22:55:02 18 qwen3-30b-local d31 parsed 
+22:55:11 19 qwen3-30b-local d32 parsed 
+22:55:22 20 qwen3-30b-local d36 parsed 
+22:55:39 21 qwen3-30b-local d37 parsed 
+22:55:51 22 qwen3-30b-local d38 parsed 
+22:56:04 23 qwen3-30b-local d39 parsed 
+22:56:14 24 qwen3-30b-local d40 parsed 
+22:56:19 fact_recall_overall {'sarvam-105b': (0.965, 40), 'sarvam-105b-think': (0.982, 39), 'gemini-3.8-flash': (0.995, 40), 'gemini-3.8-flash-think': (0.993, 40), 'openai:gpt-5.4-mini': (0.97, 40), 'openai:gpt-5.4-mini-think': (0.99, 40), 'or:anthropic/claude-haiku-5.5': (0.929, 40), 'or:anthropic/claude-haiku-5.5-think': (0.993, 40), 'gemini-pro-latest-think': (0.995, 30), 'openai:gpt-5.5-think': (0.99, 30), 'or:anthropic/claude-sonnet-5.5-think': (0.995, 30), 'sarvam-30b-local': (0.782, 40), 'qwen3-30b-local': (0.787, 40), 'audio:saaras-v3-translate+sarvam-105b': (0.941, 15), 'audio:gemini-3.8-flash': (0.997, 15), 'audio:gpt-4o-transcribe+gpt-5.4-mini': (0.979, 15)}
+22:56:19 recall_chief_complaint {'sarvam-105b': (0.975, 40), 'sarvam-105b-think': (0.95, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'openai:gpt-5.4-mini': (0.9, 40), 'openai:gpt-5.4-mini-think': (0.975, 40), 'or:anthropic/claude-haiku-5.5': (0.85, 40), 'or:anthropic/claude-haiku-5.5-think': (0.975, 40), 'gemini-pro-latest-think': (1.0, 30), 'openai:gpt-5.5-think': (0.967, 30), 'or:anthropic/claude-sonnet-5.5-think': (1.0, 30), 'sarvam-30b-local': (0.525, 40), 'qwen3-30b-local': (0.6, 40), 'audio:saaras-v3-translate+sarvam-105b': (1.0, 15), 'audio:gemini-3.8-flash': (1.0, 15), 'audio:gpt-4o-transcribe+gpt-5.4-mini': (1.0, 15)}
+22:56:19 recall_duration {'sarvam-105b': (0.975, 40), 'sarvam-105b-think': (0.975, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'openai:gpt-5.4-mini': (1.0, 40), 'openai:gpt-5.4-mini-think': (1.0, 40), 'or:anthropic/claude-haiku-5.5': (1.0, 40), 'or:anthropic/claude-haiku-5.5-think': (1.0, 40), 'gemini-pro-latest-think': (1.0, 30), 'openai:gpt-5.5-think': (1.0, 30), 'or:anthropic/claude-sonnet-5.5-think': (1.0, 30), 'sarvam-30b-local': (0.925, 40), 'qwen3-30b-local': (0.825, 40), 'audio:saaras-v3-translate+sarvam-105b': (1.0, 15), 'audio:gemini-3.8-flash': (1.0, 15), 'audio:gpt-4o-transcribe+gpt-5.4-mini': (1.0, 15)}
+22:56:19 recall_diagnosis {'sarvam-105b': (1.0, 40), 'sarvam-105b-think': (0.975, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'openai:gpt-5.4-mini': (1.0, 40), 'openai:gpt-5.4-mini-think': (1.0, 40), 'or:anthropic/claude-haiku-5.5': (1.0, 40), 'or:anthropic/claude-haiku-5.5-think': (1.0, 40), 'gemini-pro-latest-think': (1.0, 30), 'openai:gpt-5.5-think': (1.0, 30), 'or:anthropic/claude-sonnet-5.5-think': (1.0, 30), 'sarvam-30b-local': (1.0, 40), 'qwen3-30b-local': (0.925, 40), 'audio:saaras-v3-translate+sarvam-105b': (1.0, 15), 'audio:gemini-3.8-flash': (1.0, 15), 'audio:gpt-4o-transcribe+gpt-5.4-mini': (1.0, 15)}
+22:56:19 recall_follow_up {'sarvam-105b': (0.975, 40), 'sarvam-105b-think': (0.975, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'openai:gpt-5.4-mini': (0.975, 40), 'openai:gpt-5.4-mini-think': (1.0, 40), 'or:anthropic/claude-haiku-5.5': (0.825, 40), 'or:anthropic/claude-haiku-5.5-think': (1.0, 40), 'gemini-pro-latest-think': (1.0, 30), 'openai:gpt-5.5-think': (1.0, 30), 'or:anthropic/claude-sonnet-5.5-think': (1.0, 30), 'sarvam-30b-local': (0.6, 40), 'qwen3-30b-local': (0.65, 40), 'audio:saaras-v3-translate+sarvam-105b': (1.0, 15), 'audio:gemini-3.8-flash': (1.0, 15), 'audio:gpt-4o-transcribe+gpt-5.4-mini': (1.0, 15)}
+22:56:19 recall_vitals {'sarvam-105b': (1.0, 40), 'sarvam-105b-think': (0.975, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'openai:gpt-5.4-mini': (1.0, 40), 'openai:gpt-5.4-mini-think': (1.0, 40), 'or:anthropic/claude-haiku-5.5': (0.992, 40), 'or:anthropic/claude-haiku-5.5-think': (1.0, 40), 'gemini-pro-latest-think': (1.0, 30), 'openai:gpt-5.5-think': (1.0, 30), 'or:anthropic/claude-sonnet-5.5-think': (1.0, 30), 'sarvam-30b-local': (0.971, 40), 'qwen3-30b-local': (0.954, 40), 'audio:saaras-v3-translate+sarvam-105b': (0.878, 15), 'audio:gemini-3.8-flash': (1.0, 15), 'audio:gpt-4o-transcribe+gpt-5.4-mini': (0.933, 15)}
+22:56:19 recall_red_flags {'sarvam-105b': (0.829, 40), 'sarvam-105b-think': (0.892, 40), 'gemini-3.8-flash': (0.967, 40), 'gemini-3.8-flash-think': (0.954, 40), 'openai:gpt-5.4-mini': (0.917, 40), 'openai:gpt-5.4-mini-think': (0.958, 40), 'or:anthropic/claude-haiku-5.5': (0.833, 40), 'or:anthropic/claude-haiku-5.5-think': (0.979, 40), 'gemini-pro-latest-think': (0.967, 30), 'openai:gpt-5.5-think': (0.967, 30), 'or:anthropic/claude-sonnet-5.5-think': (0.967, 30), 'sarvam-30b-local': (0.463, 40), 'qwen3-30b-local': (0.557, 40), 'audio:saaras-v3-translate+sarvam-105b': (0.744, 15), 'audio:gemini-3.8-flash': (0.978, 15), 'audio:gpt-4o-transcribe+gpt-5.4-mini': (0.922, 15)}
+22:56:19 recall_med_found {'sarvam-105b': (1.0, 40), 'sarvam-105b-think': (0.963, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'openai:gpt-5.4-mini': (1.0, 40), 'openai:gpt-5.4-mini-think': (1.0, 40), 'or:anthropic/claude-haiku-5.5': (1.0, 40), 'or:anthropic/claude-haiku-5.5-think': (1.0, 40), 'gemini-pro-latest-think': (1.0, 30), 'openai:gpt-5.5-think': (1.0, 30), 'or:anthropic/claude-sonnet-5.5-think': (1.0, 30), 'sarvam-30b-local': (0.988, 40), 'qwen3-30b-local': (1.0, 40), 'audio:saaras-v3-translate+sarvam-105b': (0.967, 15), 'audio:gemini-3.8-flash': (1.0, 15), 'audio:gpt-4o-transcribe+gpt-5.4-mini': (1.0, 15)}
+22:56:19 medication_exact_drug_dose_freq {'sarvam-105b': (0.925, 40), 'sarvam-105b-think': (0.912, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'openai:gpt-5.4-mini': (0.988, 40), 'openai:gpt-5.4-mini-think': (0.988, 40), 'or:anthropic/claude-haiku-5.5': (0.9, 40), 'or:anthropic/claude-haiku-5.5-think': (1.0, 40), 'gemini-pro-latest-think': (1.0, 30), 'openai:gpt-5.5-think': (1.0, 30), 'or:anthropic/claude-sonnet-5.5-think': (1.0, 30), 'sarvam-30b-local': (0.787, 40), 'qwen3-30b-local': (0.867, 40), 'audio:saaras-v3-translate+sarvam-105b': (0.867, 15), 'audio:gemini-3.8-flash': (1.0, 15), 'audio:gpt-4o-transcribe+gpt-5.4-mini': (0.9, 15)}
+22:56:19 medication_exact_incl_duration {'sarvam-105b': (0.9, 40), 'sarvam-105b-think': (0.912, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'openai:gpt-5.4-mini': (0.988, 40), 'openai:gpt-5.4-mini-think': (0.988, 40), 'or:anthropic/claude-haiku-5.5': (0.9, 40), 'or:anthropic/claude-haiku-5.5-think': (1.0, 40), 'gemini-pro-latest-think': (1.0, 30), 'openai:gpt-5.5-think': (1.0, 30), 'or:anthropic/claude-sonnet-5.5-think': (1.0, 30), 'sarvam-30b-local': (0.746, 40), 'qwen3-30b-local': (0.867, 40), 'audio:saaras-v3-translate+sarvam-105b': (0.833, 15), 'audio:gemini-3.8-flash': (1.0, 15), 'audio:gpt-4o-transcribe+gpt-5.4-mini': (0.9, 15)}
+22:56:19 hallucinated_meds_or_doses_per_note {'sarvam-105b': (0.0, 40), 'sarvam-105b-think': (0.0, 39), 'gemini-3.8-flash': (0.0, 40), 'gemini-3.8-flash-think': (0.0, 40), 'openai:gpt-5.4-mini': (0.0, 40), 'openai:gpt-5.4-mini-think': (0.0, 40), 'or:anthropic/claude-haiku-5.5': (0.0, 40), 'or:anthropic/claude-haiku-5.5-think': (0.0, 40), 'gemini-pro-latest-think': (0.0, 30), 'openai:gpt-5.5-think': (0.0, 30), 'or:anthropic/claude-sonnet-5.5-think': (0.0, 30), 'sarvam-30b-local': (0.025, 40), 'qwen3-30b-local': (0.0, 40), 'audio:saaras-v3-translate+sarvam-105b': (0.0, 15), 'audio:gemini-3.8-flash': (0.0, 15), 'audio:gpt-4o-transcribe+gpt-5.4-mini': (0.0, 15)}
+22:56:19 notes_with_any_hallucinated_med_or_dose {'sarvam-105b': (0.0, 40), 'sarvam-105b-think': (0.0, 39), 'gemini-3.8-flash': (0.0, 40), 'gemini-3.8-flash-think': (0.0, 40), 'openai:gpt-5.4-mini': (0.0, 40), 'openai:gpt-5.4-mini-think': (0.0, 40), 'or:anthropic/claude-haiku-5.5': (0.0, 40), 'or:anthropic/claude-haiku-5.5-think': (0.0, 40), 'gemini-pro-latest-think': (0.0, 30), 'openai:gpt-5.5-think': (0.0, 30), 'or:anthropic/claude-sonnet-5.5-think': (0.0, 30), 'sarvam-30b-local': (0.025, 40), 'qwen3-30b-local': (0.0, 40), 'audio:saaras-v3-translate+sarvam-105b': (0.0, 15), 'audio:gemini-3.8-flash': (0.0, 15), 'audio:gpt-4o-transcribe+gpt-5.4-mini': (0.0, 15)}
+22:56:19 trap_drug_listed_as_prescribed {'sarvam-105b': (0.0, 40), 'sarvam-105b-think': (0.0, 39), 'gemini-3.8-flash': (0.0, 40), 'gemini-3.8-flash-think': (0.0, 40), 'openai:gpt-5.4-mini': (0.0, 40), 'openai:gpt-5.4-mini-think': (0.0, 40), 'or:anthropic/claude-haiku-5.5': (0.0, 40), 'or:anthropic/claude-haiku-5.5-think': (0.0, 40), 'gemini-pro-latest-think': (0.0, 30), 'openai:gpt-5.5-think': (0.0, 30), 'or:anthropic/claude-sonnet-5.5-think': (0.0, 30), 'sarvam-30b-local': (0.0, 40), 'qwen3-30b-local': (0.0, 40), 'audio:saaras-v3-translate+sarvam-105b': (0.0, 15), 'audio:gemini-3.8-flash': (0.0, 15), 'audio:gpt-4o-transcribe+gpt-5.4-mini': (0.0, 15)}
+22:56:19 allergy_capture_rate {'sarvam-105b': (1.0, 13), 'sarvam-105b-think': (1.0, 13), 'gemini-3.8-flash': (1.0, 13), 'gemini-3.8-flash-think': (1.0, 13), 'openai:gpt-5.4-mini': (1.0, 13), 'openai:gpt-5.4-mini-think': (1.0, 13), 'or:anthropic/claude-haiku-5.5': (1.0, 13), 'or:anthropic/claude-haiku-5.5-think': (1.0, 13), 'gemini-pro-latest-think': (1.0, 10), 'openai:gpt-5.5-think': (1.0, 10), 'or:anthropic/claude-sonnet-5.5-think': (1.0, 10), 'sarvam-30b-local': (1.0, 13), 'qwen3-30b-local': (1.0, 13), 'audio:saaras-v3-translate+sarvam-105b': (1.0, 5), 'audio:gemini-3.8-flash': (1.0, 5), 'audio:gpt-4o-transcribe+gpt-5.4-mini': (1.0, 5)}
+22:56:19 false_allergy_rate {'sarvam-105b': (0.0, 27), 'sarvam-105b-think': (0.0, 26), 'gemini-3.8-flash': (0.0, 27), 'gemini-3.8-flash-think': (0.0, 27), 'openai:gpt-5.4-mini': (0.0, 27), 'openai:gpt-5.4-mini-think': (0.0, 27), 'or:anthropic/claude-haiku-5.5': (0.0, 27), 'or:anthropic/claude-haiku-5.5-think': (0.0, 27), 'gemini-pro-latest-think': (0.0, 20), 'openai:gpt-5.5-think': (0.0, 20), 'or:anthropic/claude-sonnet-5.5-think': (0.0, 20), 'sarvam-30b-local': (0.0, 27), 'qwen3-30b-local': (0.0, 27), 'audio:saaras-v3-translate+sarvam-105b': (0.0, 10), 'audio:gemini-3.8-flash': (0.0, 10), 'audio:gpt-4o-transcribe+gpt-5.4-mini': (0.0, 10)}
+22:56:19 json_parse_ok {'sarvam-105b': (1.0, 40), 'sarvam-105b-think': (0.975, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'openai:gpt-5.4-mini': (1.0, 40), 'openai:gpt-5.4-mini-think': (1.0, 40), 'or:anthropic/claude-haiku-5.5': (1.0, 40), 'or:anthropic/claude-haiku-5.5-think': (1.0, 40), 'gemini-pro-latest-think': (1.0, 30), 'openai:gpt-5.5-think': (1.0, 30), 'or:anthropic/claude-sonnet-5.5-think': (1.0, 30), 'sarvam-30b-local': (1.0, 40), 'qwen3-30b-local': (1.0, 40), 'audio:saaras-v3-translate+sarvam-105b': (1.0, 15), 'audio:gemini-3.8-flash': (1.0, 15), 'audio:gpt-4o-transcribe+gpt-5.4-mini': (1.0, 15)}

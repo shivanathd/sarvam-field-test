@@ -1,0 +1,132 @@
+{
+ "id": "d21",
+ "pair": "ta-en",
+ "lang": "Tamil",
+ "style": "native",
+ "topic": "pregnancy",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "பிரியா, வாங்க. எத்தனை வாரம் ஆச்சு?"
+  },
+  {
+   "speaker": "patient",
+   "text": "பன்னிரண்டு வாரம் டாக்டர். ஒரு வாரமா ரொம்ப வாந்தி, எதுவும் சாப்பிட முடியல."
+  },
+  {
+   "speaker": "doctor",
+   "text": "ஒரு நாளைக்கு எத்தனை தடவை வாந்தி?"
+  },
+  {
+   "speaker": "patient",
+   "text": "நாலஞ்சு தடவை. தண்ணி மட்டும் கொஞ்சம் நிக்குது."
+  },
+  {
+   "speaker": "doctor",
+   "text": "BP 110 by 70, pulse 90, weight 52 kilo. Urine-ல ketones இல்ல. இது pregnancy-ல வர்ற சாதாரண nausea and vomiting தான், பயப்பட வேண்டாம்."
+  },
+  {
+   "speaker": "patient",
+   "text": "Pharmacy-ல Domstal குடுத்தாங்க, அதை ரெண்டு நாள் சாப்பிட்டேன்."
+  },
+  {
+   "speaker": "doctor",
+   "text": "அதை நிறுத்துங்க, நான் குடுக்கிற மருந்து மட்டும் போதும். ஏதாவது மருந்துக்கு allergy இருக்கா?"
+  },
+  {
+   "speaker": "patient",
+   "text": "இல்ல டாக்டர்."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Doxylamine-pyridoxine, Doxinate, 10 mg மாத்திரை, ராத்திரி தூங்கறதுக்கு முன்னாடி ஒண்ணு, பத்து நாள். Folic acid 5 mg தினமும் ஒரு தடவை தொடருங்க."
+  },
+  {
+   "speaker": "patient",
+   "text": "சாப்பாடு எப்படி?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "கொஞ்சம் கொஞ்சமா அடிக்கடி சாப்பிடுங்க. எண்ணெய் பலகாரம் வேண்டாம். தண்ணி கூட சுத்தமா நிக்கலைன்னா, வாந்தில ரத்தம் வந்தா, ரத்தப்போக்கு இல்லைன்னா வயிறு வலி வந்தா உடனே வாங்க."
+  },
+  {
+   "speaker": "patient",
+   "text": "சரி டாக்டர். அடுத்த visit எப்போ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ரெண்டு வாரம் கழிச்சு NT scan report எடுத்துட்டு வாங்க."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "vomiting",
+   "nausea and vomiting",
+   "nausea"
+  ],
+  "duration": {
+   "value": 1,
+   "unit": "weeks"
+  },
+  "vitals": {
+   "bp": "110/70",
+   "pulse": 90,
+   "weight_kg": 52
+  },
+  "diagnosis": [
+   "nausea and vomiting of pregnancy",
+   "morning sickness",
+   "emesis gravidarum",
+   "pregnancy-related vomiting"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "doxylamine-pyridoxine",
+     "doxylamine",
+     "doxinate"
+    ],
+    "dose": "10 mg",
+    "frequency": "HS",
+    "duration_days": 10
+   },
+   {
+    "drug": [
+     "folic acid"
+    ],
+    "dose": "5 mg",
+    "frequency": "OD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "unable to keep fluids down",
+    "not able to keep water down",
+    "persistent vomiting"
+   ],
+   [
+    "blood in vomit",
+    "vomiting blood"
+   ],
+   [
+    "bleeding",
+    "vaginal bleeding",
+    "abdominal pain"
+   ]
+  ],
+  "follow_up": [
+   "2 weeks",
+   "two weeks",
+   "after 2 weeks"
+  ],
+  "not_prescribed": [
+   "domperidone",
+   "domstal"
+  ]
+ },
+ "trap": "Patient took Domstal from pharmacy; doctor stops it."
+}

@@ -1,0 +1,130 @@
+{
+ "id": "d31",
+ "pair": "bn-en",
+ "lang": "Bengali",
+ "style": "native",
+ "topic": "pregnancy",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "আসুন, কেমন আছেন? এখন কত সপ্তাহ চলছে?"
+  },
+  {
+   "speaker": "patient",
+   "text": "28 সপ্তাহ ডাক্তারদিদি। এক সপ্তাহ ধরে পা দুটো একটু ফুলছে।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "BP দেখলাম 124/80, normal। Weight 63 kg। বাচ্চা ঠিকঠাক নড়ছে তো?"
+  },
+  {
+   "speaker": "patient",
+   "text": "হ্যাঁ, ভালোই নড়ে।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "পা ফোলাটা এই সময়ে স্বাভাবিক, physiological oedema। Pregnancy ঠিকঠাক চলছে, normal 28 weeks pregnancy।"
+  },
+  {
+   "speaker": "patient",
+   "text": "কোমরে ব্যথা ছিল বলে একটা ibuprofen খেয়ে ফেলেছিলাম।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Pregnancy-তে ibuprofen একদম খাবেন না। ব্যথার জন্য গরম সেঁক দিন।"
+  },
+  {
+   "speaker": "patient",
+   "text": "আচ্ছা। কোনো ওষুধে allergy নেই আমার।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Iron tablet, ferrous ascorbate 100 mg, দুপুরে খাবার পরে একটা, আর calcium 500 mg সকালে একটা রাতে একটা। দুটোই delivery পর্যন্ত চলবে।"
+  },
+  {
+   "speaker": "patient",
+   "text": "কী দেখলে চলে আসব?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "বাচ্চার নড়াচড়া কমে গেলে, রক্তপাত হলে, বা খুব মাথা ব্যথা আর চোখে ঝাপসা দেখলে সঙ্গে সঙ্গে আসবেন।"
+  },
+  {
+   "speaker": "patient",
+   "text": "পরের check-up কবে?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "2 সপ্তাহ পরে আসবেন, sugar test-এর report নিয়ে।"
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "swelling of feet",
+   "leg swelling",
+   "pedal oedema",
+   "pedal edema",
+   "swelling"
+  ],
+  "duration": {
+   "value": 1,
+   "unit": "weeks"
+  },
+  "vitals": {
+   "bp": "124/80",
+   "weight_kg": 63
+  },
+  "diagnosis": [
+   "normal pregnancy",
+   "physiological oedema",
+   "physiological edema",
+   "pedal oedema"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "ferrous ascorbate",
+     "iron"
+    ],
+    "dose": "100 mg",
+    "frequency": "OD",
+    "duration_days": null
+   },
+   {
+    "drug": [
+     "calcium"
+    ],
+    "dose": "500 mg",
+    "frequency": "BD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "reduced fetal movements",
+    "decreased fetal movement",
+    "baby moving less",
+    "reduced foetal movements"
+   ],
+   [
+    "bleeding",
+    "vaginal bleeding"
+   ],
+   [
+    "severe headache",
+    "blurred vision"
+   ]
+  ],
+  "follow_up": [
+   "2 weeks",
+   "two weeks"
+  ],
+  "not_prescribed": [
+   "ibuprofen"
+  ]
+ },
+ "trap": "Self-taken ibuprofen in pregnancy is forbidden, not prescribed."
+}

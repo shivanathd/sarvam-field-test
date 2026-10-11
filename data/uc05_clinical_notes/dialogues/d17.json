@@ -1,0 +1,142 @@
+{
+ "id": "d17",
+ "pair": "ta-en",
+ "lang": "Tamil",
+ "style": "native",
+ "topic": "fever",
+ "audio_subset": true,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "வாங்க, உட்காருங்க. என்ன பிரச்சனை?"
+  },
+  {
+   "speaker": "patient",
+   "text": "டாக்டர், மூணு நாளா காய்ச்சல் இருக்கு. சிறுநீர் போகும்போது எரிச்சலா இருக்கு, அடிக்கடி போகணும்னு தோணுது."
+  },
+  {
+   "speaker": "doctor",
+   "text": "முதுகு பக்கத்துல வலி இருக்கா? வாந்தி?"
+  },
+  {
+   "speaker": "patient",
+   "text": "முதுகு வலி இல்ல டாக்டர். வாந்தியும் இல்ல."
+  },
+  {
+   "speaker": "doctor",
+   "text": "சரி. Temperature 101.6, pulse 96, BP 124 by 80. Urine test-ல pus cells அதிகமா இருக்கு. இது urinary tract infection, அதாவது சிறுநீர் தொற்று."
+  },
+  {
+   "speaker": "patient",
+   "text": "போன வருஷம் இதே மாதிரி வந்தப்போ Septran குடுத்தாங்க, அதுல உடம்பு முழுக்க தடிப்பு வந்துச்சு."
+  },
+  {
+   "speaker": "doctor",
+   "text": "நல்லவேளை சொன்னீங்க. அது sulfa மருந்து, உங்களுக்கு sulfa allergy இருக்கு. அதனால Septran கண்டிப்பா வேண்டாம்."
+  },
+  {
+   "speaker": "patient",
+   "text": "சரி டாக்டர். வேற என்ன மருந்து?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Nitrofurantoin 100 mg, காலையும் ராத்திரியும், அஞ்சு நாள் சாப்பிடணும். காய்ச்சலுக்கு Paracetamol 500 mg, ஒரு நாளைக்கு மூணு வேளை, மூணு நாள்."
+  },
+  {
+   "speaker": "patient",
+   "text": "தண்ணி நிறைய குடிக்கணுமா?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ஆமா, ஒரு நாளைக்கு மூணு லிட்டர் தண்ணி குடிங்க. முதுகு பக்கத்துல கடுமையான வலி வந்தா, வாந்தி வந்து எதுவும் சாப்பிட முடியலைன்னா, இல்லைன்னா சிறுநீர்ல ரத்தம் வந்தா உடனே வாங்க."
+  },
+  {
+   "speaker": "patient",
+   "text": "சரி டாக்டர். திரும்ப எப்போ வரணும்?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "அஞ்சு நாள் கழிச்சு urine culture report எடுத்துட்டு வாங்க."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "fever",
+   "burning urination",
+   "burning micturition",
+   "frequent urination"
+  ],
+  "duration": {
+   "value": 3,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 101.6,
+   "pulse": 96,
+   "bp": "124/80"
+  },
+  "diagnosis": [
+   "urinary tract infection",
+   "uti",
+   "cystitis"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "nitrofurantoin",
+     "niftran"
+    ],
+    "dose": "100 mg",
+    "frequency": "BD",
+    "duration_days": 5
+   },
+   {
+    "drug": [
+     "paracetamol",
+     "dolo",
+     "crocin"
+    ],
+    "dose": "500 mg",
+    "frequency": "TDS",
+    "duration_days": 3
+   }
+  ],
+  "allergies": [
+   [
+    "sulfa",
+    "sulpha",
+    "sulphonamide",
+    "sulfonamide",
+    "septran",
+    "cotrimoxazole"
+   ]
+  ],
+  "red_flags": [
+   [
+    "flank pain",
+    "back pain",
+    "loin pain"
+   ],
+   [
+    "vomiting",
+    "unable to eat"
+   ],
+   [
+    "blood in urine",
+    "haematuria",
+    "hematuria"
+   ]
+  ],
+  "follow_up": [
+   "5 days",
+   "five days",
+   "after 5 days"
+  ],
+  "not_prescribed": [
+   "septran",
+   "cotrimoxazole"
+  ]
+ },
+ "trap": "Patient discloses Septran (sulfa) reaction; Septran avoided."
+}

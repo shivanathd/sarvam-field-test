@@ -1,0 +1,314 @@
+{
+ "h1": {
+  "voice": "say:Lekha",
+  "spoken_text": "मेरा 299 वाला रिचार्ज कर दो",
+  "audio_s": 2.64
+ },
+ "h2": {
+  "voice": "gemini:Puck",
+  "spoken_text": "बिजली का बिल भर दो",
+  "audio_s": 1.6,
+  "in_tok": 7,
+  "out_tok": 40
+ },
+ "h3": {
+  "voice": "say:Lekha",
+  "spoken_text": "9 8 7 6 5 4 3 2 1 0 पर पाँच सौ रुपये भेज दो",
+  "audio_s": 4.65
+ },
+ "h4": {
+  "voice": "gemini:Aoede",
+  "spoken_text": "मेरे बैंक खाते में कितना पैसा है?",
+  "audio_s": 2.6,
+  "in_tok": 9,
+  "out_tok": 65
+ },
+ "h5": {
+  "voice": "say:Lekha",
+  "spoken_text": "इंडेन का गैस सिलेंडर बुक कर दो",
+  "audio_s": 2.13
+ },
+ "h6": {
+  "voice": "gemini:Leda",
+  "spoken_text": "मम्मी के नंबर 9 1 2 3 4 5 6 7 8 0 पर 239 का रिचार्ज करो",
+  "audio_s": 6.72,
+  "in_tok": 33,
+  "out_tok": 168
+ },
+ "h7": {
+  "voice": "say:Lekha",
+  "spoken_text": "डीटीएच का बिल 450 रुपये भर दो",
+  "audio_s": 2.85
+ },
+ "h8": {
+  "voice": "gemini:Puck",
+  "spoken_text": "ramesh at the rate okaxis को ढाई हज़ार भेजो",
+  "audio_s": 3.36,
+  "in_tok": 13,
+  "out_tok": 84
+ },
+ "x1": {
+  "voice": "gemini:Charon",
+  "spoken_text": "mera 299 wala recharge kar do",
+  "audio_s": 2.28,
+  "in_tok": 10,
+  "out_tok": 57
+ },
+ "x2": {
+  "voice": "gemini:Aoede",
+  "spoken_text": "bhai dedh hazaar bhej do 9 9 8 8 7 7 6 6 5 5 pe",
+  "audio_s": 5.28,
+  "in_tok": 32,
+  "out_tok": 132
+ },
+ "x3": {
+  "voice": "gemini:Fenrir",
+  "spoken_text": "credit card ka balance kitna bacha hai?",
+  "audio_s": 2.36,
+  "in_tok": 11,
+  "out_tok": 59
+ },
+ "x4": {
+  "voice": "gemini:Leda",
+  "spoken_text": "HP gas ke do cylinder book kar do",
+  "audio_s": 2.6,
+  "in_tok": 9,
+  "out_tok": 65
+ },
+ "x5": {
+  "voice": "gemini:Kore",
+  "spoken_text": "broadband ka bill pay karna hai, 799 ka",
+  "audio_s": 3.2,
+  "in_tok": 14,
+  "out_tok": 80
+ },
+ "x6": {
+  "voice": "gemini:Puck",
+  "spoken_text": "wallet mein kitne paise hain",
+  "audio_s": 1.72,
+  "in_tok": 7,
+  "out_tok": 43
+ },
+ "x7": {
+  "voice": "gemini:Charon",
+  "spoken_text": "sava sau rupaye bhejo shopkeeper at the rate ybl ko",
+  "audio_s": 3.8,
+  "in_tok": 16,
+  "out_tok": 95
+ },
+ "x8": {
+  "voice": "gemini:Aoede",
+  "spoken_text": "piped gas ka bill bhar do, 612 rupaye",
+  "audio_s": 3.24,
+  "in_tok": 15,
+  "out_tok": 81
+ },
+ "t1": {
+  "voice": "say:Vani",
+  "spoken_text": "என் நம்பருக்கு 349 ரூபாய் ரீசார்ஜ் பண்ணுங்க",
+  "audio_s": 4.23
+ },
+ "t2": {
+  "voice": "gemini:Leda",
+  "spoken_text": "கரண்ட் பில் கட்டுங்க",
+  "audio_s": 1.8,
+  "in_tok": 7,
+  "out_tok": 45
+ },
+ "t3": {
+  "voice": "say:Vani",
+  "spoken_text": "9 8 7 6 5 0 1 2 3 4-க்கு ஆயிரம் ரூபாய் அனுப்புங்க",
+  "audio_s": 5.2
+ },
+ "t4": {
+  "voice": "gemini:Puck",
+  "spoken_text": "பாரத் கேஸ் சிலிண்டர் புக் பண்ணுங்க",
+  "audio_s": 2.0,
+  "in_tok": 14,
+  "out_tok": 50
+ },
+ "t5": {
+  "voice": "say:Vani",
+  "spoken_text": "என் பேங்க் அக்கவுண்ட்ல எவ்வளவு பேலன்ஸ் இருக்கு?",
+  "audio_s": 2.92
+ },
+ "t6": {
+  "voice": "gemini:Aoede",
+  "spoken_text": "தண்ணி பில் 180 ரூபாய் கட்டிடு",
+  "audio_s": 2.84,
+  "in_tok": 13,
+  "out_tok": 71
+ },
+ "t7": {
+  "voice": "say:Vani",
+  "spoken_text": "அம்மா நம்பர் 9 4 4 5 5 6 6 7 7 8-க்கு 199 ரீசார்ஜ் பண்ணு",
+  "audio_s": 7.19
+ },
+ "b1": {
+  "voice": "gemini:Leda",
+  "spoken_text": "আমার নম্বরে ২৯৯ টাকার রিচার্জ করে দাও",
+  "audio_s": 3.44,
+  "in_tok": 11,
+  "out_tok": 86
+ },
+ "b2": {
+  "voice": "say:Piya",
+  "spoken_text": "ইলেকট্রিক বিল দিয়ে দাও",
+  "audio_s": 1.62
+ },
+ "b3": {
+  "voice": "gemini:Puck",
+  "spoken_text": "৯ ৮ ৩ ০ ০ ১ ২ ৩ ৪ ৫ নম্বরে পাঁচশো টাকা পাঠাও",
+  "audio_s": 6.52,
+  "in_tok": 18,
+  "out_tok": 163
+ },
+ "b4": {
+  "voice": "say:Piya",
+  "spoken_text": "ইন্ডেনের দুটো সিলিন্ডার বুক করো",
+  "audio_s": 2.34
+ },
+ "b5": {
+  "voice": "gemini:Aoede",
+  "spoken_text": "ক্রেডিট কার্ডে কত ব্যালান্স আছে?",
+  "audio_s": 2.24,
+  "in_tok": 11,
+  "out_tok": 57
+ },
+ "b6": {
+  "voice": "say:Piya",
+  "spoken_text": "ব্রডব্যান্ডের বিল ৬৯৯ টাকা দিয়ে দাও",
+  "audio_s": 3.63
+ },
+ "b7": {
+  "voice": "gemini:Leda",
+  "spoken_text": "dipak at the rate paytm-এ দেড় হাজার টাকা পাঠাও",
+  "audio_s": 3.8,
+  "in_tok": 16,
+  "out_tok": 95
+ },
+ "h9": {
+  "voice": "say:Lekha",
+  "spoken_text": "पौने दो हज़ार रुपये 9 8 1 2 3 4 5 6 7 0 पर ट्रांसफर करो",
+  "audio_s": 5.57
+ },
+ "h10": {
+  "voice": "gemini:Puck",
+  "spoken_text": "साढ़े तीन सौ वाला रिचार्ज मेरे भाई के 9 0 9 0 9 0 9 0 9 0 पर कर दो",
+  "audio_s": 6.4,
+  "in_tok": 33,
+  "out_tok": 160
+ },
+ "h11": {
+  "voice": "say:Lekha",
+  "spoken_text": "भारत गैस के तीन सिलेंडर चाहिए",
+  "audio_s": 2.38
+ },
+ "h12": {
+  "voice": "gemini:Aoede",
+  "spoken_text": "पोस्टपेड बिल चुका दो",
+  "audio_s": 1.84,
+  "in_tok": 6,
+  "out_tok": 46
+ },
+ "h13": {
+  "voice": "say:Lekha",
+  "spoken_text": "नल का बिल 1,250 रुपये भर दो",
+  "audio_s": 3.07
+ },
+ "x9": {
+  "voice": "gemini:Leda",
+  "spoken_text": "paune teen sau ka recharge karo",
+  "audio_s": 2.16,
+  "in_tok": 8,
+  "out_tok": 54
+ },
+ "x10": {
+  "voice": "gemini:Kore",
+  "spoken_text": "saadhe chaar hazaar bhej do priya.s at the rate oksbi pe",
+  "audio_s": 3.48,
+  "in_tok": 22,
+  "out_tok": 87
+ },
+ "x11": {
+  "voice": "gemini:Puck",
+  "spoken_text": "mobile ka postpaid bill bharna hai",
+  "audio_s": 2.12,
+  "in_tok": 8,
+  "out_tok": 53
+ },
+ "x12": {
+  "voice": "gemini:Charon",
+  "spoken_text": "Indane wala cylinder book karo, ek hi chahiye",
+  "audio_s": 2.88,
+  "in_tok": 11,
+  "out_tok": 72
+ },
+ "x13": {
+  "voice": "gemini:Aoede",
+  "spoken_text": "Tata Play ka 350 ka bill bhar do",
+  "audio_s": 2.6,
+  "in_tok": 12,
+  "out_tok": 65
+ },
+ "t8": {
+  "voice": "say:Vani",
+  "spoken_text": "ஆயிரத்து ஐநூறு ரூபாய் 9 8 4 0 0 1 2 3 4 5-க்கு அனுப்பு",
+  "audio_s": 6.11
+ },
+ "t9": {
+  "voice": "gemini:Leda",
+  "spoken_text": "இண்டேன் சிலிண்டர் ரெண்டு புக் பண்ணு",
+  "audio_s": 2.24,
+  "in_tok": 14,
+  "out_tok": 57
+ },
+ "t10": {
+  "voice": "say:Vani",
+  "spoken_text": "வாலட்ல எவ்வளவு காசு இருக்கு?",
+  "audio_s": 2.25
+ },
+ "t11": {
+  "voice": "gemini:Puck",
+  "spoken_text": "ஈபி பில் கட்டணும், 2,340 ரூபாய்",
+  "audio_s": 3.08,
+  "in_tok": 15,
+  "out_tok": 77
+ },
+ "t12": {
+  "voice": "say:Vani",
+  "spoken_text": "ஏர்டெல் போஸ்ட்பெய்ட் பில் கட்டு",
+  "audio_s": 1.9
+ },
+ "b8": {
+  "voice": "gemini:Aoede",
+  "spoken_text": "সাড়ে তিনশো টাকার রিচার্জ করো",
+  "audio_s": 1.96,
+  "in_tok": 10,
+  "out_tok": 49
+ },
+ "b9": {
+  "voice": "say:Piya",
+  "spoken_text": "মায়ের নম্বর ৯ ৮ ৭ ৪ ৫ ৬ ৩ ২ ১ ০-এ ১৯৯ টাকার রিচার্জ করে দাও",
+  "audio_s": 6.87
+ },
+ "b10": {
+  "voice": "gemini:Leda",
+  "spoken_text": "জলের বিল মিটিয়ে দাও",
+  "audio_s": 1.68,
+  "in_tok": 7,
+  "out_tok": 42
+ },
+ "b11": {
+  "voice": "say:Piya",
+  "spoken_text": "আড়াই হাজার টাকা rina at the rate ybl-এ পাঠাও",
+  "audio_s": 3.89
+ },
+ "b12": {
+  "voice": "gemini:Puck",
+  "spoken_text": "এইচপি গ্যাসের একটা সিলিন্ডার বুক করো",
+  "audio_s": 2.52,
+  "in_tok": 10,
+  "out_tok": 63
+ }
+}

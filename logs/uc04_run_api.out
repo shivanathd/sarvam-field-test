@@ -1,0 +1,12 @@
+19:47:22 39 chunks, 132 questions, embeddings new: {'calls_new': 0, 'chars_new': 0}
+19:47:22 960 calls to make for ['sarvam-105b', 'sarvam-105b-think', 'sarvam-105b-conversations', 'gemini-3.8-flash']
+19:47:23 credit error, stopping {'_error': 402, '_body': '{"error":{"message":"No credits available.","code":"insufficient_quota_error","request_id":"20261011_20aed071-9d3b-4428-84b5-9449e251abd5"}}'}
+19:47:35 retrieval_recall_at5 {'gemini-embedding-2': (1.0, 108)}
+19:47:35 retrieval_recall_at1 {'gemini-embedding-2': (0.981, 108)}
+19:47:35 answer_correct_rag {}
+19:47:35 answer_correct_oracle {}
+19:47:35 reply_in_user_language_rag {}
+19:47:35 unanswerable_refused_rag {}
+19:47:35 false_refusal_rag {}
+19:47:35 hallucinated_number_rate_rag {}
+19:47:35 hallucinated_number_rate_unanswerable {}

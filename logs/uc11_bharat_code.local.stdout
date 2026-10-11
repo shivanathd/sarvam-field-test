@@ -1,0 +1,262 @@
+21:28:51 code: 78 items on pool local
+21:31:10 sarvam-30b-local 1:hinglish solved_at None
+21:31:19 sarvam-30b-local 1:ta solved_at None
+21:35:17 sarvam-30b-local 3:en solved_at None
+21:35:35 sarvam-30b-local 3:hi solved_at None
+21:38:34 sarvam-30b-local 3:ta solved_at None
+21:38:54 sarvam-30b-local 3:hinglish solved_at None
+21:41:38 sarvam-30b-local 5:en solved_at 1
+21:42:27 sarvam-30b-local 5:hi solved_at None
+21:44:43 sarvam-30b-local 5:ta solved_at None
+21:45:17 sarvam-30b-local 5:hinglish solved_at None
+21:47:15 sarvam-30b-local 7:en solved_at None
+21:47:50 sarvam-30b-local 7:hi solved_at None
+21:49:37 sarvam-30b-local 7:ta solved_at None
+21:50:19 sarvam-30b-local 7:hinglish solved_at None
+21:52:21 sarvam-30b-local 9:en solved_at None
+21:52:49 sarvam-30b-local 9:hi solved_at None
+21:54:39 sarvam-30b-local 9:ta solved_at None
+21:54:47 sarvam-30b-local 9:hinglish solved_at None
+21:56:41 sarvam-30b-local 11:en solved_at None
+21:56:50 sarvam-30b-local 11:hi solved_at None
+21:59:21 sarvam-30b-local 11:ta solved_at None
+21:59:26 sarvam-30b-local 11:hinglish solved_at 1
+22:00:49 sarvam-30b-local 13:en solved_at 1
+22:01:29 sarvam-30b-local 13:hi solved_at None
+22:02:32 sarvam-30b-local 13:ta solved_at 1
+22:02:47 sarvam-30b-local 13:hinglish solved_at 1
+22:03:49 sarvam-30b-local 15:en solved_at None
+22:04:33 sarvam-30b-local 15:hi solved_at None
+22:05:38 sarvam-30b-local 15:ta solved_at None
+22:06:22 sarvam-30b-local 15:hinglish solved_at None
+22:07:38 sarvam-30b-local 17:en solved_at None
+22:08:21 sarvam-30b-local 17:hi solved_at None
+22:10:40 sarvam-30b-local 17:ta solved_at None
+22:11:15 sarvam-30b-local 17:hinglish solved_at None
+22:12:43 sarvam-30b-local 19:en solved_at None
+22:13:34 sarvam-30b-local 19:hi solved_at None
+22:14:42 sarvam-30b-local 19:ta solved_at None
+22:15:01 sarvam-30b-local 19:hinglish solved_at None
+22:15:50 sarvam-30b-local 21:en solved_at None
+22:16:09 sarvam-30b-local 21:hi solved_at 1
+22:17:00 sarvam-30b-local 21:ta solved_at None
+22:17:27 sarvam-30b-local 21:hinglish solved_at None
+22:18:45 sarvam-30b-local 23:en solved_at None
+22:19:01 sarvam-30b-local 23:hi solved_at None
+22:20:50 sarvam-30b-local 23:ta solved_at None
+22:21:42 sarvam-30b-local 23:hinglish solved_at None
+22:23:20 sarvam-30b-local 25:en solved_at None
+22:23:41 sarvam-30b-local 25:hi solved_at None
+22:24:50 sarvam-30b-local 25:ta solved_at None
+22:25:11 sarvam-30b-local 25:hinglish solved_at 1
+22:25:55 sarvam-30b-local 27:en solved_at 1
+22:26:47 sarvam-30b-local 27:hi solved_at None
+22:28:01 sarvam-30b-local 27:ta solved_at None
+22:28:31 sarvam-30b-local 27:hinglish solved_at 1
+22:29:44 sarvam-30b-local 29:en solved_at 1
+22:30:08 sarvam-30b-local 29:hi solved_at 1
+22:31:11 sarvam-30b-local 29:ta solved_at 1
+22:31:40 sarvam-30b-local 29:hinglish solved_at 1
+22:32:41 sarvam-30b-local 31:en solved_at None
+22:33:21 sarvam-30b-local 31:hi solved_at None
+22:34:54 sarvam-30b-local 31:ta solved_at None
+22:35:24 sarvam-30b-local 31:hinglish solved_at None
+22:37:00 sarvam-30b-local 33:en solved_at None
+22:37:26 sarvam-30b-local 33:hi solved_at None
+22:39:07 sarvam-30b-local 33:ta solved_at 1
+22:39:35 sarvam-30b-local 33:hinglish solved_at None
+22:41:11 sarvam-30b-local 35:en solved_at None
+22:41:33 sarvam-30b-local 35:hi solved_at None
+22:43:08 sarvam-30b-local 35:ta solved_at None
+22:43:33 sarvam-30b-local 35:hinglish solved_at None
+22:45:08 sarvam-30b-local 37:en solved_at None
+22:45:35 sarvam-30b-local 37:hi solved_at None
+22:47:22 sarvam-30b-local 37:ta solved_at None
+22:47:46 sarvam-30b-local 37:hinglish solved_at None
+22:48:47 sarvam-30b-local 39:en solved_at 1
+22:49:01 sarvam-30b-local 39:hi solved_at None
+22:49:34 sarvam-30b-local 39:ta solved_at 1
+22:49:45 sarvam-30b-local 39:hinglish solved_at None
+22:49:47 code: 80 items on pool local
+22:50:26 qwen3-30b-local 1:hi solved_at None
+22:50:45 qwen3-30b-local 1:en solved_at None
+22:51:15 qwen3-30b-local 1:hinglish solved_at None
+22:51:15 qwen3-30b-local 1:ta solved_at None
+22:51:24 qwen3-30b-local 3:en solved_at 1
+22:51:27 qwen3-30b-local 3:hi solved_at 1
+22:51:32 qwen3-30b-local 3:ta solved_at None
+22:51:34 qwen3-30b-local 3:hinglish solved_at None
+22:51:51 qwen3-30b-local 5:en solved_at 1
+22:51:51 qwen3-30b-local 5:hi solved_at 1
+22:52:12 qwen3-30b-local 5:ta solved_at 1
+22:52:12 qwen3-30b-local 5:hinglish solved_at 1
+22:52:22 qwen3-30b-local 7:en solved_at None
+22:52:23 qwen3-30b-local 7:hi solved_at None
+22:52:34 qwen3-30b-local 7:ta solved_at None
+22:52:35 qwen3-30b-local 7:hinglish solved_at None
+22:53:19 qwen3-30b-local 9:hi solved_at None
+22:53:23 qwen3-30b-local 9:en solved_at None
+22:53:45 qwen3-30b-local 9:ta solved_at None
+22:53:45 qwen3-30b-local 9:hinglish solved_at None
+22:53:52 qwen3-30b-local 11:en solved_at 1
+22:53:55 qwen3-30b-local 11:hi solved_at 1
+22:54:08 qwen3-30b-local 11:ta solved_at None
+22:54:11 qwen3-30b-local 11:hinglish solved_at None
+22:54:14 qwen3-30b-local 13:en solved_at 1
+22:54:19 qwen3-30b-local 13:hi solved_at 1
+22:54:23 qwen3-30b-local 13:ta solved_at 1
+22:54:28 qwen3-30b-local 13:hinglish solved_at 1
+22:55:18 qwen3-30b-local 15:en solved_at None
+22:55:24 qwen3-30b-local 15:hi solved_at None
+22:55:48 qwen3-30b-local 15:ta solved_at 1
+22:55:52 qwen3-30b-local 15:hinglish solved_at 1
+22:55:55 qwen3-30b-local 17:en solved_at 1
+22:55:59 qwen3-30b-local 17:hi solved_at 1
+22:56:01 qwen3-30b-local 17:ta solved_at None
+22:56:04 qwen3-30b-local 17:hinglish solved_at None
+22:56:11 qwen3-30b-local 19:hi solved_at None
+22:56:13 qwen3-30b-local 19:en solved_at None
+22:56:18 qwen3-30b-local 19:ta solved_at None
+22:56:23 qwen3-30b-local 19:hinglish solved_at 1
+22:56:26 qwen3-30b-local 21:en solved_at None
+22:56:29 qwen3-30b-local 21:hi solved_at None
+22:56:32 qwen3-30b-local 21:ta solved_at 1
+22:56:40 qwen3-30b-local 21:hinglish solved_at None
+22:56:41 qwen3-30b-local 23:en solved_at None
+22:56:51 qwen3-30b-local 23:hi solved_at None
+22:56:54 qwen3-30b-local 23:ta solved_at 1
+22:57:01 qwen3-30b-local 23:hinglish solved_at None
+22:57:03 qwen3-30b-local 25:en solved_at None
+22:57:11 qwen3-30b-local 25:hi solved_at None
+22:57:14 qwen3-30b-local 25:ta solved_at 1
+22:57:20 qwen3-30b-local 27:en solved_at 1
+22:57:23 qwen3-30b-local 25:hinglish solved_at 1
+22:57:26 qwen3-30b-local 27:hi solved_at 1
+22:57:30 qwen3-30b-local 27:ta solved_at None
+22:57:32 qwen3-30b-local 27:hinglish solved_at None
+22:57:33 qwen3-30b-local 29:en solved_at 1
+22:57:36 qwen3-30b-local 29:hi solved_at None
+22:57:38 qwen3-30b-local 29:ta solved_at None
+22:57:40 qwen3-30b-local 29:hinglish solved_at None
+22:57:51 qwen3-30b-local 31:en solved_at None
+22:57:59 qwen3-30b-local 31:hi solved_at 1
+22:58:05 qwen3-30b-local 31:ta solved_at None
+22:58:11 qwen3-30b-local 33:en solved_at 1
+22:58:14 qwen3-30b-local 31:hinglish solved_at None
+22:58:18 qwen3-30b-local 33:hi solved_at 1
+22:58:21 qwen3-30b-local 33:ta solved_at 1
+22:58:24 qwen3-30b-local 33:hinglish solved_at 1
+22:58:33 qwen3-30b-local 35:en solved_at None
+22:58:48 qwen3-30b-local 35:hi solved_at None
+22:58:49 qwen3-30b-local 35:ta solved_at 1
+22:59:00 qwen3-30b-local 37:en solved_at None
+22:59:06 qwen3-30b-local 35:hinglish solved_at None
+22:59:11 qwen3-30b-local 37:hi solved_at None
+22:59:18 qwen3-30b-local 37:ta solved_at None
+22:59:22 qwen3-30b-local 39:en solved_at 1
+22:59:22 qwen3-30b-local 37:hinglish solved_at None
+22:59:28 qwen3-30b-local 39:hi solved_at 1
+22:59:28 qwen3-30b-local 39:ta solved_at 1
+22:59:30 qwen3-30b-local 39:hinglish solved_at 1
+22:59:32 tool sarvam-30b-local h1 exact
+22:59:32 tool sarvam-30b-local h2 MISS {'name': 'pay_bill', 'args': {'biller': 'electricity', 'amount': 0}, 'n_calls': 1} 
+22:59:32 tool sarvam-30b-local h4 exact
+22:59:33 tool sarvam-30b-local h3 exact
+22:59:34 tool sarvam-30b-local h5 exact
+22:59:34 tool sarvam-30b-local h6 exact
+22:59:35 tool sarvam-30b-local h7 exact
+22:59:35 tool sarvam-30b-local x1 exact
+22:59:36 tool sarvam-30b-local h8 exact
+22:59:36 tool sarvam-30b-local x3 exact
+22:59:36 tool sarvam-30b-local x2 MISS {'name': 'recharge', 'args': {'amount': 1500, 'mobile': '9988776655'}, 'n_calls': 1} 
+22:59:37 tool sarvam-30b-local x4 exact
+22:59:37 tool sarvam-30b-local x5 exact
+22:59:37 tool sarvam-30b-local x6 exact
+22:59:38 tool sarvam-30b-local x7 MISS {'name': 'transfer_upi', 'args': {'payee': 'shopkeeper@ybl', 'amount': 500}, 'n_calls': 1} 
+22:59:38 tool sarvam-30b-local x8 exact
+22:59:39 tool sarvam-30b-local t2 MISS {'name': 'pay_bill', 'args': {'biller': 'electricity', 'amount': 0}, 'n_calls': 1} 
+22:59:39 tool sarvam-30b-local t1 MISS {'name': 'recharge', 'args': {'amount': 349, 'mobile': '10-digit-number-required'}, 'n_calls': 1} 
+22:59:40 tool sarvam-30b-local t4 exact
+22:59:40 tool sarvam-30b-local t3 exact
+22:59:40 tool sarvam-30b-local t5 exact
+22:59:41 tool sarvam-30b-local t6 exact
+22:59:41 tool sarvam-30b-local t7 exact
+22:59:42 tool sarvam-30b-local b1 MISS {'name': 'recharge', 'args': {'amount': 299, 'mobile': '10-digit-number-required'}, 'n_calls': 1} 
+22:59:42 tool sarvam-30b-local b2 MISS {'name': 'pay_bill', 'args': {'biller': 'electricity', 'amount': 0}, 'n_calls': 1} 
+22:59:43 tool sarvam-30b-local b4 exact
+22:59:43 tool sarvam-30b-local b3 exact
+22:59:43 tool sarvam-30b-local b5 exact
+22:59:44 tool sarvam-30b-local b6 exact
+22:59:44 tool sarvam-30b-local b7 MISS {'name': 'transfer_upi', 'args': {'payee': 'dipak@paytm-', 'amount': 1500}, 'n_calls': 1} 
+22:59:45 tool sarvam-30b-local h9 MISS {'name': 'transfer_upi', 'args': {'payee': '9812345670', 'amount': 900}, 'n_calls': 1} 
+22:59:45 tool sarvam-30b-local h10 MISS {'name': 'recharge', 'args': {'amount': 300, 'mobile': '9090909090'}, 'n_calls': 1} 
+22:59:46 tool sarvam-30b-local h11 MISS {'name': 'book_cylinder', 'args': {'company': 'indane', 'quantity': 3}, 'n_calls': 1} 
+22:59:46 tool sarvam-30b-local h12 MISS {'name': 'pay_bill', 'args': {'biller': 'mobile_postpaid', 'amount': 0}, 'n_calls': 1} 
+22:59:46 tool sarvam-30b-local h13 exact
+22:59:47 tool sarvam-30b-local x9 MISS {'name': 'recharge', 'args': {'amount': 300}, 'n_calls': 1} 
+22:59:47 tool sarvam-30b-local x10 MISS {'name': 'pay_bill', 'args': {'biller': 'mobile_postpaid', 'amount': 4000}, 'n_calls': 1} 
+22:59:48 tool sarvam-30b-local x11 MISS {'name': 'pay_bill', 'args': {'biller': 'mobile_postpaid', 'amount': 0}, 'n_calls': 1} 
+22:59:48 tool sarvam-30b-local x12 exact
+22:59:48 tool sarvam-30b-local x13 MISS {'name': 'pay_bill', 'args': {'biller': 'broadband', 'amount': 350}, 'n_calls': 1} 
+22:59:49 tool sarvam-30b-local t8 MISS {'name': 'transfer_upi', 'args': {'payee': '9840012345', 'amount': 9500}, 'n_calls': 1} 
+22:59:49 tool sarvam-30b-local t9 exact
+22:59:50 tool sarvam-30b-local t10 exact
+22:59:50 tool sarvam-30b-local t11 exact
+22:59:51 tool sarvam-30b-local t12 MISS {'name': 'pay_bill', 'args': {'biller': 'mobile_postpaid', 'amount': 0}, 'n_calls': 1} 
+22:59:51 tool sarvam-30b-local b8 MISS {'name': 'recharge', 'args': {'amount': 300}, 'n_calls': 1} 
+22:59:51 tool sarvam-30b-local b10 MISS {'name': 'pay_bill', 'args': {'biller': 'water', 'amount': 0}, 'n_calls': 1} 
+22:59:52 tool sarvam-30b-local b9 exact
+22:59:52 tool sarvam-30b-local b11 exact
+22:59:52 tool sarvam-30b-local b12 exact
+22:59:54 tool qwen3-30b-local h1 exact
+22:59:54 tool qwen3-30b-local h2 exact
+22:59:55 tool qwen3-30b-local h4 exact
+22:59:56 tool qwen3-30b-local h3 exact
+22:59:57 tool qwen3-30b-local h5 exact
+22:59:58 tool qwen3-30b-local h6 exact
+22:59:58 tool qwen3-30b-local h7 exact
+22:59:59 tool qwen3-30b-local x1 exact
+22:59:59 tool qwen3-30b-local h8 exact
+23:00:00 tool qwen3-30b-local x3 exact
+23:00:01 tool qwen3-30b-local x2 MISS {'name': 'transfer_upi', 'args': {'payee': '9988776655', 'amount': 500}, 'n_calls': 1} 
+23:00:02 tool qwen3-30b-local x4 exact
+23:00:02 tool qwen3-30b-local x5 exact
+23:00:03 tool qwen3-30b-local x6 exact
+23:00:04 tool qwen3-30b-local x7 MISS {'name': 'transfer_upi', 'args': {'payee': 'shopkeeper@ybl', 'amount': 10}, 'n_calls': 1} 
+23:00:04 tool qwen3-30b-local x8 exact
+23:00:05 tool qwen3-30b-local t1 exact
+23:00:06 tool qwen3-30b-local t3 exact
+23:00:07 tool qwen3-30b-local t4 exact
+23:00:08 tool qwen3-30b-local t5 exact
+23:00:09 tool qwen3-30b-local t6 exact
+23:00:11 tool qwen3-30b-local t7 exact
+23:00:11 tool qwen3-30b-local t2 MISS None கரண்ட் பில் கட்ட விரும்புகிறீர்கள். கீழே உள்ள விவரங்களை தெரிவு செய்யவும்: 
+
+1. ம
+23:00:12 tool qwen3-30b-local b1 exact
+23:00:12 tool qwen3-30b-local b2 exact
+23:00:13 tool qwen3-30b-local b4 exact
+23:00:14 tool qwen3-30b-local b3 exact
+23:00:14 tool qwen3-30b-local b5 exact
+23:00:15 tool qwen3-30b-local b6 exact
+23:00:16 tool qwen3-30b-local b7 exact
+23:00:17 tool qwen3-30b-local h9 MISS {'name': 'transfer_upi', 'args': {'payee': '9812345670', 'amount': 2500}, 'n_calls': 1} 
+23:00:17 tool qwen3-30b-local h10 exact
+23:00:18 tool qwen3-30b-local h11 exact
+23:00:19 tool qwen3-30b-local h12 exact
+23:00:19 tool qwen3-30b-local h13 exact
+23:00:20 tool qwen3-30b-local x9 MISS {'name': 'recharge', 'args': {'amount': 20}, 'n_calls': 1} 
+23:00:21 tool qwen3-30b-local x11 exact
+23:00:21 tool qwen3-30b-local x10 exact
+23:00:22 tool qwen3-30b-local x12 exact
+23:00:22 tool qwen3-30b-local x13 exact
+23:00:23 tool qwen3-30b-local t9 exact
+23:00:24 tool qwen3-30b-local t8 MISS {'name': 'transfer_upi', 'args': {'payee': '9840012345', 'amount': 1900}, 'n_calls': 1} 
+23:00:24 tool qwen3-30b-local t10 exact
+23:00:25 tool qwen3-30b-local t11 MISS {'name': 'pay_bill', 'args': {'biller': 'dth', 'amount': 2340}, 'n_calls': 1} 
+23:00:25 tool qwen3-30b-local t12 exact
+23:00:26 tool qwen3-30b-local b8 exact
+23:00:27 tool qwen3-30b-local b10 exact
+23:00:27 tool qwen3-30b-local b9 exact
+23:00:28 tool qwen3-30b-local b12 exact
+23:00:28 tool qwen3-30b-local b11 exact

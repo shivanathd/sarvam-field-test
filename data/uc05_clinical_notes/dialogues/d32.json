@@ -1,0 +1,126 @@
+{
+ "id": "d32",
+ "pair": "bn-en",
+ "lang": "Bengali",
+ "style": "native",
+ "topic": "paediatrics",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "attendant",
+   "text": "ডাক্তারবাবু, মেয়ের বয়স 8 মাস। 2 দিন ধরে পাতলা পায়খানা, দিনে 6-7 বার।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "বমি হচ্ছে? জ্বর?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "বমি নেই, অল্প জ্বর আছে।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Temperature 99.6, pulse 128, weight 7.5 kg। চোখ বসে যায়নি, কাঁদলে জল আসছে, dehydration তেমন নেই। এটা acute gastroenteritis, পেটের infection।"
+  },
+  {
+   "speaker": "attendant",
+   "text": "পাশের বাড়ির দিদি loperamide syrup দিতে বলেছিল, একবার দিয়েছি।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "না, বাচ্চাদের loperamide কখনো দেবেন না, খুব বিপজ্জনক। ওটা আর দেবেন না।"
+  },
+  {
+   "speaker": "attendant",
+   "text": "ওর কোনো ওষুধে allergy নেই।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ORS দেবেন, প্রতিবার পাতলা পায়খানার পরে 50 ml করে। আর zinc syrup, 10 mg, দিনে একবার, টানা 14 দিন। বুকের দুধ চালিয়ে যাবেন।"
+  },
+  {
+   "speaker": "attendant",
+   "text": "কখন সঙ্গে সঙ্গে আনব?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "6 ঘণ্টা প্রস্রাব না হলে, খুব ঝিমিয়ে পড়লে, বা পায়খানায় রক্ত দেখলে সঙ্গে সঙ্গে আনবেন।"
+  },
+  {
+   "speaker": "attendant",
+   "text": "আবার কবে দেখাব?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "2 দিন পরে নিয়ে আসবেন।"
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "loose motions",
+   "diarrhoea",
+   "diarrhea",
+   "loose stools"
+  ],
+  "duration": {
+   "value": 2,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 99.6,
+   "pulse": 128,
+   "weight_kg": 7.5
+  },
+  "diagnosis": [
+   "acute gastroenteritis",
+   "gastroenteritis",
+   "diarrhoea",
+   "diarrhea"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "ors",
+     "oral rehydration"
+    ],
+    "dose": "50 ml",
+    "frequency": "SOS",
+    "duration_days": null
+   },
+   {
+    "drug": [
+     "zinc"
+    ],
+    "dose": "10 mg",
+    "frequency": "OD",
+    "duration_days": 14
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "no urine",
+    "not passing urine",
+    "decreased urine"
+   ],
+   [
+    "lethargy",
+    "drowsy",
+    "very sleepy"
+   ],
+   [
+    "blood in stool",
+    "bloody stool"
+   ]
+  ],
+  "follow_up": [
+   "2 days",
+   "after 2 days"
+  ],
+  "not_prescribed": [
+   "loperamide"
+  ]
+ },
+ "trap": "Loperamide given by neighbour advice is forbidden, not prescribed."
+}

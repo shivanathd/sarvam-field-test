@@ -1,0 +1,2052 @@
+{
+ "uc": "uc09_legal",
+ "title": "Courts and legal: translating and summarising judgments without losing facts",
+ "business_question": "If I translate or summarise English court orders, RTI replies and tribunal awards into Hindi, Tamil, Marathi or Bengali for litigants, which system keeps every amount, date, section, case number and party name intact?",
+ "dataset": {
+  "name": "uc09-synthetic-legal-passages",
+  "source": "authored for this benchmark: 12 hand-written templates (s.138 NI Act conviction and appeal, regular and anticipatory bail, consumer builder refund and insurance appeal, rent eviction, land partition, RTI fee reply and RTI penalty, MACT death and injury awards) filled with invented parties, places and numbers (suites/uc09_legal/make_data.py)",
+  "license": "CC0 (synthetic)",
+  "n": 40,
+  "n_entities": 566,
+  "translation_items_per_system": 120,
+  "summary_items_per_system": 80,
+  "languages": [
+   "hi",
+   "ta",
+   "mr",
+   "bn"
+  ],
+  "synthetic": true
+ },
+ "systems": [
+  "gemini-3.8-flash",
+  "gemini-pro-latest",
+  "mayura:v1",
+  "openai:gpt-5.4-mini",
+  "openai:gpt-5.5",
+  "or:anthropic/claude-haiku-5.5",
+  "or:anthropic/claude-sonnet-5.5",
+  "qwen3-30b-local",
+  "sarvam-105b",
+  "sarvam-105b-think",
+  "sarvam-105b-think (empties rerun at 16k)",
+  "sarvam-30b-local",
+  "sarvam-translate:v1"
+ ],
+ "metrics": [
+  {
+   "name": "entity preservation rate (translation)",
+   "higher_is_better": true,
+   "unit": "fraction of source entities kept",
+   "values": {
+    "sarvam-translate:v1": {
+     "mean": 0.9949909547152195,
+     "lo": 0.9912575863678804,
+     "hi": 0.9982945261437909,
+     "n": 120
+    },
+    "mayura:v1": {
+     "mean": 0.962492323852618,
+     "lo": 0.9513625161603103,
+     "hi": 0.9734056282769518,
+     "n": 120
+    },
+    "sarvam-105b": {
+     "mean": 0.9959909188034187,
+     "lo": 0.9929193376068376,
+     "hi": 0.998838141025641,
+     "n": 120
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9983680555555555,
+     "lo": 0.99625,
+     "hi": 1.0,
+     "n": 120
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.9994791666666667,
+     "lo": 0.9984375,
+     "hi": 1.0,
+     "n": 120
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9987847222222223,
+     "lo": 0.9970486111111111,
+     "hi": 1.0,
+     "n": 120
+    },
+    "gemini-pro-latest": {
+     "mean": 0.9977777777777778,
+     "lo": 0.9933333333333334,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.9979166666666667,
+     "lo": 0.99375,
+     "hi": 1.0,
+     "n": 30
+    }
+   }
+  },
+  {
+   "name": "facts dropped or altered per passage (translation)",
+   "higher_is_better": false,
+   "unit": "count",
+   "values": {
+    "sarvam-translate:v1": {
+     "mean": 0.075,
+     "lo": 0.025,
+     "hi": 0.13333333333333333,
+     "n": 120
+    },
+    "mayura:v1": {
+     "mean": 0.5333333333333333,
+     "lo": 0.375,
+     "hi": 0.6916666666666667,
+     "n": 120
+    },
+    "sarvam-105b": {
+     "mean": 0.058333333333333334,
+     "lo": 0.016666666666666666,
+     "hi": 0.1,
+     "n": 120
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.025,
+     "lo": 0.0,
+     "hi": 0.058333333333333334,
+     "n": 120
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.008333333333333333,
+     "lo": 0.0,
+     "hi": 0.025,
+     "n": 120
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.016666666666666666,
+     "lo": 0.0,
+     "hi": 0.041666666666666664,
+     "n": 120
+    },
+    "gemini-pro-latest": {
+     "mean": 0.03333333333333333,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.03333333333333333,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 30
+    }
+   }
+  },
+  {
+   "name": "distinct unsupported numbers per passage (translation)",
+   "higher_is_better": false,
+   "unit": "count",
+   "values": {
+    "sarvam-translate:v1": {
+     "mean": 0.016666666666666666,
+     "lo": 0.0,
+     "hi": 0.05,
+     "n": 120
+    },
+    "mayura:v1": {
+     "mean": 0.125,
+     "lo": 0.058333333333333334,
+     "hi": 0.20833333333333334,
+     "n": 120
+    },
+    "sarvam-105b": {
+     "mean": 0.016666666666666666,
+     "lo": 0.0,
+     "hi": 0.041666666666666664,
+     "n": 120
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 120
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 120
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 120
+    },
+    "gemini-pro-latest": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    }
+   }
+  },
+  {
+   "name": "output in target language (translation)",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-translate:v1": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 120
+    },
+    "mayura:v1": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 120
+    },
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 120
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 120
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 120
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.975,
+     "lo": 0.9416666666666667,
+     "hi": 1.0,
+     "n": 120
+    },
+    "gemini-pro-latest": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    }
+   }
+  },
+  {
+   "name": "key-fact recall (litigant summary)",
+   "higher_is_better": true,
+   "unit": "fraction of 5-6 key facts",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.8520833333333334,
+     "lo": 0.8145833333333334,
+     "hi": 0.8875,
+     "n": 80
+    },
+    "sarvam-105b-think": {
+     "mean": 0.7208333333333333,
+     "lo": 0.6354166666666667,
+     "hi": 0.8041666666666666,
+     "n": 80
+    },
+    "sarvam-105b-think (empties rerun at 16k)": {
+     "mean": 0.89375,
+     "lo": 0.8583333333333334,
+     "hi": 0.9270833333333334,
+     "n": 80
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9833333333333334,
+     "lo": 0.96875,
+     "hi": 0.99375,
+     "n": 80
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.975,
+     "lo": 0.95625,
+     "hi": 0.9895833333333334,
+     "n": 80
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9729166666666667,
+     "lo": 0.9520833333333334,
+     "hi": 0.9895833333333334,
+     "n": 80
+    },
+    "gemini-pro-latest": {
+     "mean": 0.9777777777777777,
+     "lo": 0.9555555555555556,
+     "hi": 0.9944444444444444,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.8333333333333334,
+     "lo": 0.75,
+     "hi": 0.9166666666666666,
+     "n": 10
+    },
+    "qwen3-30b-local": {
+     "mean": 0.9,
+     "lo": 0.8,
+     "hi": 0.9833333333333334,
+     "n": 10
+    }
+   }
+  },
+  {
+   "name": "distinct hallucinated/altered numbers per summary (litigant summary)",
+   "higher_is_better": false,
+   "unit": "count",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.125,
+     "lo": 0.0375,
+     "hi": 0.225,
+     "n": 80
+    },
+    "sarvam-105b-think": {
+     "mean": 0.0125,
+     "lo": 0.0,
+     "hi": 0.0375,
+     "n": 80
+    },
+    "sarvam-105b-think (empties rerun at 16k)": {
+     "mean": 0.025,
+     "lo": 0.0,
+     "hi": 0.0625,
+     "n": 80
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 80
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 80
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 80
+    },
+    "gemini-pro-latest": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 1.1,
+     "lo": 0.5,
+     "hi": 1.9,
+     "n": 10
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 10
+    }
+   }
+  },
+  {
+   "name": "summaries with zero unsupported numbers (litigant summary)",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.9125,
+     "lo": 0.85,
+     "hi": 0.975,
+     "n": 80
+    },
+    "sarvam-105b-think": {
+     "mean": 0.9875,
+     "lo": 0.9625,
+     "hi": 1.0,
+     "n": 80
+    },
+    "sarvam-105b-think (empties rerun at 16k)": {
+     "mean": 0.975,
+     "lo": 0.9375,
+     "hi": 1.0,
+     "n": 80
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 80
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 80
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 80
+    },
+    "gemini-pro-latest": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.4,
+     "lo": 0.1,
+     "hi": 0.7,
+     "n": 10
+    },
+    "qwen3-30b-local": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    }
+   }
+  },
+  {
+   "name": "output in target language (litigant summary)",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "sarvam-105b": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 80
+    },
+    "sarvam-105b-think": {
+     "mean": 0.8,
+     "lo": 0.7125,
+     "hi": 0.8875,
+     "n": 80
+    },
+    "sarvam-105b-think (empties rerun at 16k)": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 80
+    },
+    "gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 80
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.9875,
+     "lo": 0.9625,
+     "hi": 1.0,
+     "n": 80
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 80
+    },
+    "gemini-pro-latest": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.7,
+     "lo": 0.4,
+     "hi": 1.0,
+     "n": 10
+    },
+    "qwen3-30b-local": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    }
+   }
+  },
+  {
+   "name": "key-fact recall (litigant summary, 5-passage x hi/ta subset all systems ran)",
+   "higher_is_better": true,
+   "unit": "fraction of 5-6 key facts",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.8833333333333334,
+     "lo": 0.75,
+     "hi": 0.9833333333333334,
+     "n": 10
+    },
+    "sarvam-105b-think": {
+     "mean": 0.7833333333333333,
+     "lo": 0.5,
+     "hi": 1.0,
+     "n": 10
+    },
+    "sarvam-105b-think (empties rerun at 16k)": {
+     "mean": 0.9666666666666666,
+     "lo": 0.9166666666666666,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9833333333333334,
+     "lo": 0.95,
+     "hi": 1.0,
+     "n": 10
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gemini-pro-latest": {
+     "mean": 0.9833333333333334,
+     "lo": 0.95,
+     "hi": 1.0,
+     "n": 10
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "sarvam-30b-local": {
+     "mean": 0.8333333333333334,
+     "lo": 0.75,
+     "hi": 0.9166666666666666,
+     "n": 10
+    },
+    "qwen3-30b-local": {
+     "mean": 0.9,
+     "lo": 0.8,
+     "hi": 0.9833333333333334,
+     "n": 10
+    }
+   }
+  },
+  {
+   "name": "distinct hallucinated/altered numbers per summary (litigant summary, 5-passage x hi/ta subset all systems ran)",
+   "higher_is_better": false,
+   "unit": "count",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.2,
+     "lo": 0.0,
+     "hi": 0.6,
+     "n": 10
+    },
+    "sarvam-105b-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 10
+    },
+    "sarvam-105b-think (empties rerun at 16k)": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 10
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 10
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 10
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 10
+    },
+    "gemini-pro-latest": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 10
+    },
+    "openai:gpt-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 10
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 10
+    },
+    "sarvam-30b-local": {
+     "mean": 1.1,
+     "lo": 0.5,
+     "hi": 1.9,
+     "n": 10
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 10
+    }
+   }
+  },
+  {
+   "name": "entity preservation rate (translation, frontier subset: first 15 passages x hi/ta)",
+   "higher_is_better": true,
+   "unit": "fraction of source entities kept",
+   "values": {
+    "sarvam-translate:v1": {
+     "mean": 0.995,
+     "lo": 0.9872222222222222,
+     "hi": 1.0,
+     "n": 30
+    },
+    "mayura:v1": {
+     "mean": 0.970811337355455,
+     "lo": 0.9530920060331826,
+     "hi": 0.9862336601307189,
+     "n": 30
+    },
+    "sarvam-105b": {
+     "mean": 0.9929166666666667,
+     "lo": 0.9844444444444445,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9977777777777778,
+     "lo": 0.9933333333333334,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.9979166666666667,
+     "lo": 0.99375,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-pro-latest": {
+     "mean": 0.9977777777777778,
+     "lo": 0.9933333333333334,
+     "hi": 1.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.9979166666666667,
+     "lo": 0.99375,
+     "hi": 1.0,
+     "n": 30
+    }
+   }
+  },
+  {
+   "name": "facts dropped or altered per passage (translation, frontier subset: first 15 passages x hi/ta)",
+   "higher_is_better": false,
+   "unit": "count",
+   "values": {
+    "sarvam-translate:v1": {
+     "mean": 0.06666666666666667,
+     "lo": 0.0,
+     "hi": 0.16666666666666666,
+     "n": 30
+    },
+    "mayura:v1": {
+     "mean": 0.43333333333333335,
+     "lo": 0.2,
+     "hi": 0.7,
+     "n": 30
+    },
+    "sarvam-105b": {
+     "mean": 0.1,
+     "lo": 0.0,
+     "hi": 0.2,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.03333333333333333,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.03333333333333333,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "gemini-pro-latest": {
+     "mean": 0.03333333333333333,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.03333333333333333,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 30
+    }
+   }
+  },
+  {
+   "name": "key-fact recall (litigant summary, frontier subset: first 15 passages x hi/ta)",
+   "higher_is_better": true,
+   "unit": "fraction of 5-6 key facts",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.8444444444444444,
+     "lo": 0.7722222222222223,
+     "hi": 0.9111111111111111,
+     "n": 30
+    },
+    "sarvam-105b-think": {
+     "mean": 0.7,
+     "lo": 0.5444444444444444,
+     "hi": 0.8388888888888889,
+     "n": 30
+    },
+    "sarvam-105b-think (empties rerun at 16k)": {
+     "mean": 0.9277777777777777,
+     "lo": 0.8833333333333333,
+     "hi": 0.9666666666666667,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.9777777777777777,
+     "lo": 0.9555555555555556,
+     "hi": 0.9944444444444444,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.9722222222222222,
+     "lo": 0.9388888888888889,
+     "hi": 0.9944444444444444,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.9777777777777777,
+     "lo": 0.95,
+     "hi": 1.0,
+     "n": 30
+    },
+    "gemini-pro-latest": {
+     "mean": 0.9777777777777777,
+     "lo": 0.9555555555555556,
+     "hi": 0.9944444444444444,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 0.8333333333333334,
+     "lo": 0.75,
+     "hi": 0.9166666666666666,
+     "n": 10
+    },
+    "qwen3-30b-local": {
+     "mean": 0.9,
+     "lo": 0.8,
+     "hi": 0.9833333333333334,
+     "n": 10
+    }
+   }
+  },
+  {
+   "name": "distinct hallucinated/altered numbers per summary (litigant summary, frontier subset: first 15 passages x hi/ta)",
+   "higher_is_better": false,
+   "unit": "count",
+   "values": {
+    "sarvam-105b": {
+     "mean": 0.06666666666666667,
+     "lo": 0.0,
+     "hi": 0.2,
+     "n": 30
+    },
+    "sarvam-105b-think": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "sarvam-105b-think (empties rerun at 16k)": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "gemini-pro-latest": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 1.1,
+     "lo": 0.5,
+     "hi": 1.9,
+     "n": 10
+    },
+    "qwen3-30b-local": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 10
+    }
+   }
+  }
+ ],
+ "per_language": {
+  "entity preservation rate (translation)": {
+   "hi": {
+    "sarvam-translate:v1": 1.0,
+    "mayura:v1": 0.9932,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 0.9979,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0
+   },
+   "ta": {
+    "sarvam-translate:v1": 0.9914,
+    "mayura:v1": 0.9528,
+    "sarvam-105b": 0.988,
+    "gemini-3.8-flash": 0.9967,
+    "openai:gpt-5.4-mini": 0.9984,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 0.9956,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 0.9958
+   },
+   "mr": {
+    "sarvam-translate:v1": 0.9969,
+    "mayura:v1": 0.937,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 0.9969,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 0.9969
+   },
+   "bn": {
+    "sarvam-translate:v1": 0.9904,
+    "mayura:v1": 0.9459,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   }
+  },
+  "facts dropped or altered per passage (translation)": {
+   "hi": {
+    "sarvam-translate:v1": 0.0,
+    "mayura:v1": 0.1,
+    "sarvam-105b": 0.0,
+    "gemini-3.8-flash": 0.0,
+    "openai:gpt-5.4-mini": 0.0,
+    "or:anthropic/claude-haiku-5.5": 0.025,
+    "gemini-pro-latest": 0.0,
+    "openai:gpt-5.5": 0.0,
+    "or:anthropic/claude-sonnet-5.5": 0.0
+   },
+   "ta": {
+    "sarvam-translate:v1": 0.125,
+    "mayura:v1": 0.675,
+    "sarvam-105b": 0.175,
+    "gemini-3.8-flash": 0.05,
+    "openai:gpt-5.4-mini": 0.025,
+    "or:anthropic/claude-haiku-5.5": 0.0,
+    "gemini-pro-latest": 0.0667,
+    "openai:gpt-5.5": 0.0,
+    "or:anthropic/claude-sonnet-5.5": 0.0667
+   },
+   "mr": {
+    "sarvam-translate:v1": 0.05,
+    "mayura:v1": 0.9,
+    "sarvam-105b": 0.0,
+    "gemini-3.8-flash": 0.05,
+    "openai:gpt-5.4-mini": 0.0,
+    "or:anthropic/claude-haiku-5.5": 0.05
+   },
+   "bn": {
+    "sarvam-translate:v1": 0.15,
+    "mayura:v1": 0.75,
+    "sarvam-105b": 0.0,
+    "gemini-3.8-flash": 0.0,
+    "openai:gpt-5.4-mini": 0.0,
+    "or:anthropic/claude-haiku-5.5": 0.0
+   }
+  },
+  "distinct unsupported numbers per passage (translation)": {
+   "hi": {
+    "sarvam-translate:v1": 0.0,
+    "mayura:v1": 0.075,
+    "sarvam-105b": 0.0,
+    "gemini-3.8-flash": 0.0,
+    "openai:gpt-5.4-mini": 0.0,
+    "or:anthropic/claude-haiku-5.5": 0.0,
+    "gemini-pro-latest": 0.0,
+    "openai:gpt-5.5": 0.0,
+    "or:anthropic/claude-sonnet-5.5": 0.0
+   },
+   "ta": {
+    "sarvam-translate:v1": 0.0,
+    "mayura:v1": 0.0,
+    "sarvam-105b": 0.025,
+    "gemini-3.8-flash": 0.0,
+    "openai:gpt-5.4-mini": 0.0,
+    "or:anthropic/claude-haiku-5.5": 0.0,
+    "gemini-pro-latest": 0.0,
+    "openai:gpt-5.5": 0.0,
+    "or:anthropic/claude-sonnet-5.5": 0.0
+   },
+   "mr": {
+    "sarvam-translate:v1": 0.0,
+    "mayura:v1": 0.4,
+    "sarvam-105b": 0.05,
+    "gemini-3.8-flash": 0.0,
+    "openai:gpt-5.4-mini": 0.0,
+    "or:anthropic/claude-haiku-5.5": 0.0
+   },
+   "bn": {
+    "sarvam-translate:v1": 0.1,
+    "mayura:v1": 0.2,
+    "sarvam-105b": 0.0,
+    "gemini-3.8-flash": 0.0,
+    "openai:gpt-5.4-mini": 0.0,
+    "or:anthropic/claude-haiku-5.5": 0.0
+   }
+  },
+  "output in target language (translation)": {
+   "hi": {
+    "sarvam-translate:v1": 1.0,
+    "mayura:v1": 1.0,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 0.975,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0
+   },
+   "ta": {
+    "sarvam-translate:v1": 1.0,
+    "mayura:v1": 1.0,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 0.95,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0
+   },
+   "mr": {
+    "sarvam-translate:v1": 1.0,
+    "mayura:v1": 1.0,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   },
+   "bn": {
+    "sarvam-translate:v1": 1.0,
+    "mayura:v1": 1.0,
+    "sarvam-105b": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0
+   }
+  },
+  "key-fact recall (litigant summary)": {
+   "hi": {
+    "sarvam-105b": 0.8583,
+    "sarvam-105b-think": 0.775,
+    "sarvam-105b-think (empties rerun at 16k)": 0.9292,
+    "gemini-3.8-flash": 0.9708,
+    "openai:gpt-5.4-mini": 0.9583,
+    "or:anthropic/claude-haiku-5.5": 0.9708,
+    "gemini-pro-latest": 0.9778,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.9,
+    "qwen3-30b-local": 0.9667
+   },
+   "ta": {
+    "sarvam-105b": 0.8458,
+    "sarvam-105b-think": 0.6667,
+    "sarvam-105b-think (empties rerun at 16k)": 0.8583,
+    "gemini-3.8-flash": 0.9958,
+    "openai:gpt-5.4-mini": 0.9917,
+    "or:anthropic/claude-haiku-5.5": 0.975,
+    "gemini-pro-latest": 0.9778,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.7667,
+    "qwen3-30b-local": 0.8333
+   }
+  },
+  "distinct hallucinated/altered numbers per summary (litigant summary)": {
+   "hi": {
+    "sarvam-105b": 0.0,
+    "sarvam-105b-think": 0.025,
+    "sarvam-105b-think (empties rerun at 16k)": 0.025,
+    "gemini-3.8-flash": 0.0,
+    "openai:gpt-5.4-mini": 0.0,
+    "or:anthropic/claude-haiku-5.5": 0.0,
+    "gemini-pro-latest": 0.0,
+    "openai:gpt-5.5": 0.0,
+    "or:anthropic/claude-sonnet-5.5": 0.0,
+    "sarvam-30b-local": 0.8,
+    "qwen3-30b-local": 0.0
+   },
+   "ta": {
+    "sarvam-105b": 0.25,
+    "sarvam-105b-think": 0.0,
+    "sarvam-105b-think (empties rerun at 16k)": 0.025,
+    "gemini-3.8-flash": 0.0,
+    "openai:gpt-5.4-mini": 0.0,
+    "or:anthropic/claude-haiku-5.5": 0.0,
+    "gemini-pro-latest": 0.0,
+    "openai:gpt-5.5": 0.0,
+    "or:anthropic/claude-sonnet-5.5": 0.0,
+    "sarvam-30b-local": 1.4,
+    "qwen3-30b-local": 0.0
+   }
+  },
+  "summaries with zero unsupported numbers (litigant summary)": {
+   "hi": {
+    "sarvam-105b": 1.0,
+    "sarvam-105b-think": 0.975,
+    "sarvam-105b-think (empties rerun at 16k)": 0.975,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.6,
+    "qwen3-30b-local": 1.0
+   },
+   "ta": {
+    "sarvam-105b": 0.825,
+    "sarvam-105b-think": 1.0,
+    "sarvam-105b-think (empties rerun at 16k)": 0.975,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.2,
+    "qwen3-30b-local": 1.0
+   }
+  },
+  "output in target language (litigant summary)": {
+   "hi": {
+    "sarvam-105b": 1.0,
+    "sarvam-105b-think": 0.825,
+    "sarvam-105b-think (empties rerun at 16k)": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 0.975,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 0.9333,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.6,
+    "qwen3-30b-local": 1.0
+   },
+   "ta": {
+    "sarvam-105b": 1.0,
+    "sarvam-105b-think": 0.775,
+    "sarvam-105b-think (empties rerun at 16k)": 1.0,
+    "gemini-3.8-flash": 1.0,
+    "openai:gpt-5.4-mini": 1.0,
+    "or:anthropic/claude-haiku-5.5": 1.0,
+    "gemini-pro-latest": 1.0,
+    "openai:gpt-5.5": 1.0,
+    "or:anthropic/claude-sonnet-5.5": 1.0,
+    "sarvam-30b-local": 0.8,
+    "qwen3-30b-local": 1.0
+   }
+  }
+ },
+ "preservation_by_entity_type": {
+  "translation / sarvam-translate:v1": {
+   "name": 0.988,
+   "number": 0.9953,
+   "date": 1.0,
+   "amount": 0.9957
+  },
+  "translation / mayura:v1": {
+   "name": 0.9551,
+   "number": 0.9662,
+   "date": 0.9813,
+   "amount": 0.9348
+  },
+  "translation / sarvam-105b": {
+   "name": 0.985,
+   "number": 0.9977,
+   "date": 1.0,
+   "amount": 1.0
+  },
+  "translation / gemini-3.8-flash": {
+   "name": 0.991,
+   "number": 1.0,
+   "amount": 1.0,
+   "date": 1.0
+  },
+  "translation / openai:gpt-5.4-mini": {
+   "name": 0.997,
+   "number": 1.0,
+   "date": 1.0,
+   "amount": 1.0
+  },
+  "translation / or:anthropic/claude-haiku-5.5": {
+   "name": 0.997,
+   "number": 0.9988,
+   "amount": 1.0,
+   "date": 1.0
+  },
+  "translation / gemini-pro-latest": {
+   "name": 0.9881,
+   "number": 1.0,
+   "amount": 1.0,
+   "date": 1.0
+  },
+  "translation / openai:gpt-5.5": {
+   "name": 1.0,
+   "number": 1.0,
+   "date": 1.0,
+   "amount": 1.0
+  },
+  "translation / or:anthropic/claude-sonnet-5.5": {
+   "name": 0.9881,
+   "number": 1.0,
+   "date": 1.0,
+   "amount": 1.0
+  },
+  "litigant summary / sarvam-105b": {
+   "name": 1.0,
+   "number": 0.8095,
+   "amount": 0.9079,
+   "date": 0.7703
+  },
+  "litigant summary / sarvam-105b-think": {
+   "name": 0.7045,
+   "amount": 0.7829,
+   "date": 0.7973,
+   "number": 0.6524
+  },
+  "litigant summary / sarvam-105b-think (empties rerun at 16k)": {
+   "name": 0.9773,
+   "amount": 0.9474,
+   "date": 0.9595,
+   "number": 0.8143
+  },
+  "litigant summary / gemini-3.8-flash": {
+   "name": 1.0,
+   "number": 0.9619,
+   "amount": 1.0,
+   "date": 1.0
+  },
+  "litigant summary / openai:gpt-5.4-mini": {
+   "name": 0.9773,
+   "number": 0.9714,
+   "amount": 0.9671,
+   "date": 1.0
+  },
+  "litigant summary / or:anthropic/claude-haiku-5.5": {
+   "name": 1.0,
+   "number": 0.9476,
+   "amount": 0.9934,
+   "date": 0.9865
+  },
+  "litigant summary / gemini-pro-latest": {
+   "name": 1.0,
+   "number": 0.9474,
+   "amount": 1.0,
+   "date": 1.0
+  },
+  "litigant summary / openai:gpt-5.5": {
+   "name": 1.0,
+   "number": 1.0,
+   "amount": 1.0,
+   "date": 1.0
+  },
+  "litigant summary / or:anthropic/claude-sonnet-5.5": {
+   "name": 1.0,
+   "number": 1.0,
+   "amount": 1.0,
+   "date": 1.0
+  },
+  "litigant summary / sarvam-30b-local": {
+   "name": 1.0,
+   "number": 0.7727,
+   "amount": 0.9,
+   "date": 0.7
+  },
+  "litigant summary / qwen3-30b-local": {
+   "name": 1.0,
+   "number": 0.7727,
+   "amount": 1.0,
+   "date": 0.9
+  }
+ },
+ "speed": {
+  "sarvam-translate:v1 [translation]": {
+   "p50_ms": 1782,
+   "p95_ms": 2330,
+   "n": 120
+  },
+  "mayura:v1 [translation]": {
+   "p50_ms": 1479,
+   "p95_ms": 1796,
+   "n": 120
+  },
+  "sarvam-105b [translation]": {
+   "p50_ms": 1482,
+   "p95_ms": 2138,
+   "n": 120
+  },
+  "gemini-3.8-flash [translation]": {
+   "p50_ms": 3661,
+   "p95_ms": 6802,
+   "n": 120
+  },
+  "openai:gpt-5.4-mini [translation]": {
+   "p50_ms": 1978,
+   "p95_ms": 2452,
+   "n": 120
+  },
+  "or:anthropic/claude-haiku-5.5 [translation]": {
+   "p50_ms": 3501,
+   "p95_ms": 5385,
+   "n": 120
+  },
+  "gemini-pro-latest [translation]": {
+   "p50_ms": 23393,
+   "p95_ms": 39778,
+   "n": 30
+  },
+  "openai:gpt-5.5 [translation]": {
+   "p50_ms": 14374,
+   "p95_ms": 20063,
+   "n": 30
+  },
+  "or:anthropic/claude-sonnet-5.5 [translation]": {
+   "p50_ms": 5295,
+   "p95_ms": 7723,
+   "n": 30
+  },
+  "sarvam-105b [litigant summary]": {
+   "p50_ms": 1426,
+   "p95_ms": 5736,
+   "n": 80
+  },
+  "sarvam-105b-think [litigant summary]": {
+   "p50_ms": 21279,
+   "p95_ms": 37726,
+   "n": 80
+  },
+  "sarvam-105b-think (empties rerun at 16k) [litigant summary]": {
+   "p50_ms": 20555,
+   "p95_ms": 38025,
+   "n": 80
+  },
+  "gemini-3.8-flash [litigant summary]": {
+   "p50_ms": 4223,
+   "p95_ms": 9051,
+   "n": 80
+  },
+  "openai:gpt-5.4-mini [litigant summary]": {
+   "p50_ms": 1960,
+   "p95_ms": 2368,
+   "n": 80
+  },
+  "or:anthropic/claude-haiku-5.5 [litigant summary]": {
+   "p50_ms": 3502,
+   "p95_ms": 4842,
+   "n": 80
+  },
+  "gemini-pro-latest [litigant summary]": {
+   "p50_ms": 16392,
+   "p95_ms": 29071,
+   "n": 30
+  },
+  "openai:gpt-5.5 [litigant summary]": {
+   "p50_ms": 9605,
+   "p95_ms": 19364,
+   "n": 30
+  },
+  "or:anthropic/claude-sonnet-5.5 [litigant summary]": {
+   "p50_ms": 8450,
+   "p95_ms": 12896,
+   "n": 30
+  },
+  "sarvam-30b-local [litigant summary]": {
+   "p50_ms": 157735,
+   "p95_ms": 205543,
+   "n": 10
+  },
+  "qwen3-30b-local [litigant summary]": {
+   "p50_ms": 38107,
+   "p95_ms": 40515,
+   "n": 10
+  }
+ },
+ "usage": {
+  "sarvam-translate:v1 [translation]": {
+   "calls": 120,
+   "in_tok": 0,
+   "out_tok": 0,
+   "reasoning_tok": 0,
+   "chars": 75236,
+   "cost_usd": 0
+  },
+  "mayura:v1 [translation]": {
+   "calls": 120,
+   "in_tok": 0,
+   "out_tok": 0,
+   "reasoning_tok": 0,
+   "chars": 75236,
+   "cost_usd": 0
+  },
+  "sarvam-105b [translation]": {
+   "calls": 120,
+   "in_tok": 27664,
+   "out_tok": 25717,
+   "reasoning_tok": 0,
+   "chars": 0,
+   "cost_usd": 0
+  },
+  "gemini-3.8-flash [translation]": {
+   "calls": 120,
+   "in_tok": 26104,
+   "out_tok": 26158,
+   "reasoning_tok": 0,
+   "chars": 0,
+   "cost_usd": 0
+  },
+  "openai:gpt-5.4-mini [translation]": {
+   "calls": 120,
+   "in_tok": 24570,
+   "out_tok": 27919,
+   "reasoning_tok": 0,
+   "chars": 0,
+   "cost_usd": 0
+  },
+  "or:anthropic/claude-haiku-5.5 [translation]": {
+   "calls": 120,
+   "in_tok": 38058,
+   "out_tok": 66517,
+   "reasoning_tok": 0,
+   "chars": 0,
+   "cost_usd": 0.037064300000000015
+  },
+  "gemini-pro-latest [translation]": {
+   "calls": 30,
+   "in_tok": 6612,
+   "out_tok": 6765,
+   "reasoning_tok": 94184,
+   "chars": 0,
+   "cost_usd": 0
+  },
+  "openai:gpt-5.5 [translation]": {
+   "calls": 30,
+   "in_tok": 6222,
+   "out_tok": 19353,
+   "reasoning_tok": 12070,
+   "chars": 0,
+   "cost_usd": 0
+  },
+  "or:anthropic/claude-sonnet-5.5 [translation]": {
+   "calls": 30,
+   "in_tok": 9686,
+   "out_tok": 17082,
+   "reasoning_tok": 878,
+   "chars": 0,
+   "cost_usd": 0.190192
+  },
+  "sarvam-105b [litigant summary]": {
+   "calls": 80,
+   "in_tok": 21180,
+   "out_tok": 15439,
+   "reasoning_tok": 0,
+   "chars": 0,
+   "cost_usd": 0
+  },
+  "sarvam-105b-think [litigant summary]": {
+   "calls": 80,
+   "in_tok": 20860,
+   "out_tok": 350826,
+   "reasoning_tok": 339672,
+   "chars": 0,
+   "cost_usd": 0
+  },
+  "sarvam-105b-think (empties rerun at 16k) [litigant summary]": {
+   "calls": 80,
+   "in_tok": 20860,
+   "out_tok": 329830,
+   "reasoning_tok": 315770,
+   "chars": 0,
+   "cost_usd": 0
+  },
+  "gemini-3.8-flash [litigant summary]": {
+   "calls": 80,
+   "in_tok": 20140,
+   "out_tok": 17474,
+   "reasoning_tok": 0,
+   "chars": 0,
+   "cost_usd": 0
+  },
+  "openai:gpt-5.4-mini [litigant summary]": {
+   "calls": 80,
+   "in_tok": 19106,
+   "out_tok": 17944,
+   "reasoning_tok": 0,
+   "chars": 0,
+   "cost_usd": 0
+  },
+  "or:anthropic/claude-haiku-5.5 [litigant summary]": {
+   "calls": 80,
+   "in_tok": 28730,
+   "out_tok": 39318,
+   "reasoning_tok": 0,
+   "chars": 0,
+   "cost_usd": 0.022532000000000003
+  },
+  "gemini-pro-latest [litigant summary]": {
+   "calls": 30,
+   "in_tok": 7632,
+   "out_tok": 6032,
+   "reasoning_tok": 63169,
+   "chars": 0,
+   "cost_usd": 0
+  },
+  "openai:gpt-5.5 [litigant summary]": {
+   "calls": 30,
+   "in_tok": 7242,
+   "out_tok": 11996,
+   "reasoning_tok": 4761,
+   "chars": 0,
+   "cost_usd": 0
+  },
+  "or:anthropic/claude-sonnet-5.5 [litigant summary]": {
+   "calls": 30,
+   "in_tok": 10946,
+   "out_tok": 28817,
+   "reasoning_tok": 11716,
+   "chars": 0,
+   "cost_usd": 0.31006200000000006
+  },
+  "sarvam-30b-local [litigant summary]": {
+   "calls": 10,
+   "in_tok": 2674,
+   "out_tok": 15000,
+   "reasoning_tok": 0,
+   "chars": 0,
+   "cost_usd": 0
+  },
+  "qwen3-30b-local [litigant summary]": {
+   "calls": 10,
+   "in_tok": 2746,
+   "out_tok": 6447,
+   "reasoning_tok": 0,
+   "chars": 0,
+   "cost_usd": 0
+  },
+  "sarvam-105b-think-16k [16k reruns of the empty think-on replies]": {
+   "calls": 16,
+   "in_tok": 4228,
+   "out_tok": 75004,
+   "reasoning_tok": 72082
+  },
+  "_sarvam_spend_inr_list_price": 330.07,
+  "_openrouter_cost_usd": 0.5599
+ },
+ "examples": [
+  {
+   "task": "translation",
+   "id": "legal_04",
+   "lang": "ta",
+   "source": "HIGH COURT OF JUDICATURE AT Madras. Criminal Miscellaneous Application No. 3237 of 2020. The applicant Suresh Pawar seeks anticipatory bail under Section 438 of the Code of Criminal Procedure, 1973 in Crime No. 308/2020, registered under Sections 409 and 420 of the Indian Penal Code, for misappropriating ₹25.5 crore collected from 174 investors between 14 July 2020 and 6 October 2020. Custodial interrogation is necessary to trace the money. The application is rejected. The interim protection granted on 8 December 2020 stands vacated, and the applicant shall surrender before the investigating officer within 9 days.",
+   "gold_facts": {
+    "c1": "Madras",
+    "cma": "3237",
+    "y1": "2020",
+    "p1": "Suresh Pawar",
+    "n438": "438",
+    "n1973": "1973",
+    "crime": "308",
+    "yc": "2020",
+    "n409": "409",
+    "n420": "420",
+    "k1": "₹25.5 crore",
+    "inv": "174",
+    "t1": "14 July 2020",
+    "t2": "6 October 2020",
+    "t3": "8 December 2020",
+    "d": "9"
+   },
+   "systems": {
+    "sarvam-translate:v1": {
+     "output": "சென்னை உயர் நீதிமன்றம். குற்றவியல் இதர மனு எண். 3237/2020. மனுதாரர் சுரேஷ் பவார், இந்திய தண்டனைச் சட்டத்தின் 409 மற்றும் 420 பிரிவுகளின் கீழ் பதிவு செய்யப்பட்ட 308/2020 குற்றத்தில், 14.07.2020 முதல் 06.10.2020 வரை 174 முதலீட்டாளர்களிடமிருந்து வசூலிக்கப்பட்ட ரூ.25.5 கோடியை கையாடல் செய்ததற்காக, குற்றவியல் நடைமுறைச் சட்டம், 1973 பிரிவு 438ன் கீழ் முன்ஜாமீன் கோருகிறார். பணத்தைக் கண்டுபிடிப்பதற்கு காவலில் வைத்து விசாரிக்க வேண்டியது அவசியம். மனு தள்ளுபடி செய்யப்படுகிறது. 08.12.2020 அன்று வழங்கப்பட்ட இடைக்காலப் பாதுகாப்பு ரத்து செய்யப்படுகிறது, மேலும் மனுதாரர் 9 நாட்களுக்குள் விசாரணை அதிகாரியிடம் சரணடைய வேண்டும்.",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "mayura:v1": {
+     "output": "சென்னை உயர் நீதிமன்றம். 2020ஆம் ஆண்டின் குற்றவியல் இதழ் எண் 3237. இந்திய தண்டனைச் சட்டத்தின் பிரிவு 409 மற்றும் 420இன் கீழ் பதிவு செய்யப்பட்ட குற்ற எண் 308/2020இல் குற்றவியல் நடைமுறைச் சட்டம், 1973இன் பிரிவு 438இன் கீழ் முன்ஜாமீன் கோருகிறார்.14 ஜூலை 2020 முதல் 6 அக்டோபர் 2020 வரை 174 முதலீட்டாளர்களிடமிருந்து 5 கோடி வசூலிக்கப்பட்டது. பணத்தை கண்டுபிடிக்க காவலாளியிடம் விசாரணை நடத்த வேண்டும். விண்ணப்பம் நிராகரிக்கப்பட்டது. 8 டிசம்பர் 2020 அன்று வழங்கப்பட்ட இடைக்கால பாதுகாப்பு ரத்து செய்யப்படுகிறது, மேலும் விண்ணப்பதாரர் 9 நாட்களுக்குள் விசாரணை அதிகாரியிடம் சரணடைய வேண்டும்.",
+     "recall": 0.812,
+     "missed": [
+      "Madras",
+      "Suresh Pawar",
+      "₹25.5 crore"
+     ],
+     "unsupported_numbers": []
+    },
+    "sarvam-105b": {
+     "output": "சென்னை உயர் நீதிமன்றம். குற்றவியல் வழக்கு ஒன்றின் துணை மனு எண் 3237/2020. ஜூலை 14, 2020 முதல் அக்டோபர் 6, 2020 வரை 174 முதலீட்டாளர்களிடமிருந்து வசூலிக்கப்பட்ட ₹25.5 கோடியை மோசடி செய்ததாக, இந்திய தண்டனைச் சட்டம் 409 மற்றும் 420-இன் கீழ் பதிவு செய்யப்பட்ட குற்ற எண் 308/2020 வழக்கில், முன்ஜாமீன் கோரி விண்ணப்பதாரர் சுரேஷ் பவார், குற்றவியல் நடைமுறைச் சட்டம் 1973-இன் 438-ஆவது பிரிவின் கீழ் மனு அளித்துள்ளார். பணத்தைக் கண்டுபிடிக்க காவல் துறை விசாரணையின் விசாரணை அவசியம். இந்த மனு நிராகரிக்கப்படுகிறது. டிசம்பர் 8, 2020 அன்று வழங்கப்பட்ட இடைக்கால பாதுகாப்பு ரத்து செய்யப்படுகிறது, மேலும் விண்ணப்பதாரர் 9 நாட்களுக்குள் விசாரணை அதிகாரியிடம் சரணடைய வேண்டும்.",
+     "recall": 0.938,
+     "missed": [
+      "Madras"
+     ],
+     "unsupported_numbers": []
+    },
+    "gemini-3.8-flash": {
+     "output": "மெட்ராஸ் உயர் நீதிமன்றம். குற்றவியல் பலவகை மனு எண். 3237 of 2020. 14 July 2020 மற்றும் 6 October 2020 ஆகிய தேதிகளுக்கு இடையில் 174 முதலீட்டாளர்களிடமிருந்து வசூலிக்கப்பட்ட ₹25.5 கோடியை கையாடல் செய்ததற்காக, இந்திய தண்டனைச் சட்டம், பிரிவுகள் 409 மற்றும் 420-இன் கீழ் பதிவு செய்யப்பட்ட குற்ற எண். 308/2020-இல், மனுதாரர் சுரேஷ் பவார், குற்றவியல் நடைமுறைச் சட்டம், 1973-இன் பிரிவு 438-இன் கீழ் முன்ஜாமீன் கோருகிறார். பணத்தைக் கண்டறிய காவலில் எடுத்து விசாரிப்பது அவசியமாகிறது. மனு தள்ளுபடி செய்யப்படுகிறது. 8 December 2020 அன்று வழங்கப்பட்ட இடைக்காலப் பாதுகாப்பு ரத்து செய்யப்படுகிறது, மேலும் மனுதாரர் 9 நாட்களுக்குள் புலனாய்வு அதிகாரி முன்பு சரணடைய வேண்டும்.",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "openai:gpt-5.4-mini": {
+     "output": "சென்னை உயர்நீதிமன்றம். Criminal Miscellaneous Application No. 3237 of 2020. விண்ணப்பதாரர் சுரேஷ் பவார், Crime No. 308/2020-இல், இந்தியக் குற்றவியல் நடைமுறைச் சட்டம், 1973 இன் Section 438ன் கீழ், Sections 409 and 420 of the Indian Penal Code-ன் கீழ் பதிவு செய்யப்பட்ட வழக்கில், 14 July 2020 மற்றும் 6 October 2020 இடையில் 174 முதலீட்டாளர்களிடமிருந்து வசூலிக்கப்பட்ட ₹25.5 crore-ஐ தவறாக பயன்படுத்தியதற்காக முன்ஜாமீன் கோருகிறார். பணத்தைத் தடம் காண காவல் காவலில் விசாரணை அவசியம். மனு நிராகரிக்கப்படுகிறது. 8 December 2020 அன்று வழங்கப்பட்ட இடைக்கால பாதுகாப்பு ரத்து செய்யப்படுகிறது, மேலும் விண்ணப்பதாரர் 9 நாட்களுக்குள் விசாரணை அதிகாரியிடம் சரணடைய வேண்டும்.",
+     "recall": 0.938,
+     "missed": [
+      "Madras"
+     ],
+     "unsupported_numbers": []
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "output": "உயர் நீதிமன்றம், மெட்ராஸ். குற்றவியல் இடைக்கால விண்ணப்ப எண். 3237 / 2020. விண்ணப்பதாரர் சுரேஷ் பவார், 1973ஆம் ஆண்டின் குற்றவியல் நடைமுறைச் சட்டத்தின் பிரிவு 438இன் கீழ் முன்கூட்டிய ஜாமீன் கோருகிறார். இது, இந்திய தண்டனைச் சட்டத்தின் பிரிவுகள் 409 மற்றும் 420இன் கீழ் பதிவு செய்யப்பட்ட குற்ற எண். 308 / 2020இல் தொடர்புடையது. 2020ஆம் ஆண்டு ஜூலை 14 முதல் 2020ஆம் ஆண்டு அக்டோபர் 6 வரை 174 முதலீட்டாளர்களிடமிருந்து சேகரிக்கப்பட்ட ₹25.5 கோடியை மோசடியாகக் கையாடல் செய்ததாக அவர்மீது குற்றச்சாட்டு உள்ளது. பணத்தைக் கண்டறிவதற்குக் காவல் விசாரணை அவசியம். விண்ணப்பம் நிராகரிக்கப்படுகிறது. 2020ஆம் ஆண்டு டிசம்பர் 8 அன்று வழங்கப்பட்ட இடைக்காலப் பாதுகாப்பு ரத்து செய்யப்படுகிறது. விண்ணப்பதாரர் 9 நாட்களுக்குள் புலனாய்வு அதிகாரி முன் சரணடைய வேண்டும்.",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "gemini-pro-latest": {
+     "output": "மெட்ராஸ் உயர் நீதிமன்றம். \n\n2020 ஆம் ஆண்டின் குற்றவியல் பல்வகை மனு எண் 3237. \n\n14 ஜூலை 2020 மற்றும் 6 அக்டோபர் 2020 ஆகிய தேதிகளுக்கு இடையில் 174 முதலீட்டாளர்களிடமிருந்து வசூலிக்கப்பட்ட ₹25.5 கோடியை கையாடல் செய்ததற்காக, இந்திய தண்டனைச் சட்டத்தின் பிரிவுகள் 409 மற்றும் 420 இன் கீழ் பதிவு செய்யப்பட்ட குற்ற எண் 308/2020 இல், 1973 ஆம் ஆண்டின் குற்றவியல் நடைமுறைச் சட்டத்தின் பிரிவு 438 இன் கீழ் மனுதாரர் சுரேஷ் பவார் முன்ஜாமீன் கோருகிறார். \n\nபணத்தைக் கண்டுபிடிக்க காவல் விசாரணை அவசியமாகிறது. \n\nஇந்த மனு நிராகரிக்கப்படுகிறது. \n\n8 டிசம்பர் 2020 அன்று வழங்கப்பட்ட இடைக்காலப் பாதுகாப்பு ரத்து செய்யப்படுகிறது, மேலும் மனுதாரர் 9 நாட்களுக்குள் விசாரணை அதிகாரி முன்பு சரணடைய வேண்டும்.",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "openai:gpt-5.5": {
+     "output": "மெட்ராஸ் உயர்நீதிமன்றம். குற்றவியல் இதர மனு எண் 3237 of 2020. மனுதாரர் சுரேஷ் பவார், குற்றவியல் நடைமுறைச் சட்டம், 1973 இன் பிரிவு 438 இன் கீழ் முன்ஜாமீன் கோருகிறார்; இது இந்திய தண்டனைச் சட்டத்தின் பிரிவுகள் 409 மற்றும் 420 இன் கீழ் பதிவு செய்யப்பட்ட குற்ற எண் 308/2020 தொடர்பானது, 14 July 2020 மற்றும் 6 October 2020 இடையில் 174 முதலீட்டாளர்களிடமிருந்து வசூலிக்கப்பட்ட ₹25.5 crore ஐ முறைகேடாகப் பயன்படுத்தியதற்காக. பணத்தைத் தடயமறிந்து கண்டறிய காவல் விசாரணை அவசியம். மனு நிராகரிக்கப்படுகிறது. 8 December 2020 அன்று வழங்கப்பட்ட இடைக்கால பாதுகாப்பு ரத்து செய்யப்படுகிறது, மேலும் மனுதாரர் 9 நாட்களுக்குள் விசாரணை அதிகாரியின் முன் சரணடைய வேண்டும்.",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "output": "சென்னை உயர் நீதிமன்றம். குற்றவியல் இதர விண்ணப்பம் எண். 3237/2020. விண்ணப்பதாரர் சுரேஷ் பவார், குற்ற எண். 308/2020-இல் பதிவு செய்யப்பட்டுள்ள, இந்தியத் தண்டனைச் சட்டத்தின் பிரிவுகள் 409 மற்றும் 420-இன் கீழான வழக்கில், 14 ஜூலை 2020 முதல் 6 அக்டோபர் 2020 வரையிலான காலகட்டத்தில் 174 முதலீட்டாளர்களிடமிருந்து வசூலிக்கப்பட்ட ₹25.5 கோடியை முறைகேடாகக் கையாடல் செய்ததாகக் கூறப்படும் குற்றச்சாட்டு தொடர்பாக, 1973-ஆம் ஆண்டு குற்றவியல் நடைமுறைச் சட்டத்தின் பிரிவு 438-இன் கீழ் முன்ஜாமீன் கோருகிறார். பணத்தைக் கண்டறிய காவலில் வைத்து விசாரணை செய்வது அவசியமாகும். விண்ணப்பம் தள்ளுபடி செய்யப்படுகிறது. 8 டிசம்பர் 2020 அன்று வழங்கப்பட்ட இடைக்காலப் பாதுகாப்பு விலக்கிக்கொள்ளப்படுகிறது; விண்ணப்பதாரர் 9 நாட்களுக்குள் புலன்விசாரணை அதிகாரியின் முன் சரணடைய வேண்டும்.",
+     "recall": 0.938,
+     "missed": [
+      "Madras"
+     ],
+     "unsupported_numbers": []
+    }
+   }
+  },
+  {
+   "task": "translation",
+   "id": "legal_08",
+   "lang": "hi",
+   "source": "IN THE COURT OF THE CIVIL JUDGE (SENIOR DIVISION), Howrah. Original Suit No. 435 of 2019. The plaintiff Meena Raghavan claims a one-third share in agricultural land bearing Survey No. 414 measuring 19 acres at village Vadakkupatti, purchased by their father Selvam Rajan under a sale deed dated 21 June 2019. The defendant Prakash Iyer relied on a will dated 7 November 2019, but neither attesting witness was examined, so the will is not proved. A preliminary decree for partition is passed; the plaintiff is entitled to a one-third share. The defendant is restrained from selling or mortgaging the land and shall pay ₹49,500 as costs of the suit.",
+   "gold_facts": {
+    "c1": "Howrah",
+    "os": "435",
+    "y1": "2019",
+    "p1": "Meena Raghavan",
+    "sv": "414",
+    "acre": "19",
+    "c2": "Vadakkupatti",
+    "p3": "Selvam Rajan",
+    "t1": "21 June 2019",
+    "p2": "Prakash Iyer",
+    "t2": "7 November 2019",
+    "a1": "₹49,500"
+   },
+   "systems": {
+    "sarvam-translate:v1": {
+     "output": "सिविल जज (सीनियर डिवीजन) के कोर्ट, हावड़ा में। मूल मुकदमा संख्या 435/2019। वादी मीना राघवन का दावा है कि उनके पिता सेल्वम राजन द्वारा 21 जून 2019 की तारीख के विक्रय विलेख के तहत ग्राम वडक्कुपट्टी में 19 एकड़ माप वाली सर्वेक्षण संख्या 414 वाली कृषि भूमि में एक तिहाई हिस्सा है। प्रतिवादी प्रकाश अय्यर ने 7 नवंबर 2019 की तारीख की वसीयत पर भरोसा किया, लेकिन किसी भी गवाह की गवाही नहीं ली गई, इसलिए वसीयत साबित नहीं होती है। विभाजन के लिए प्रारंभिक डिक्री पारित की जाती है; वादी एक तिहाई हिस्से की हकदार है। प्रतिवादी को भूमि बेचने या गिरवी रखने से रोका जाता है और मुकदमे की लागत के रूप में ₹49,500 का भुगतान किया जाएगा।",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "mayura:v1": {
+     "output": "हावड़ा के सिविल जज (वरिष्ठ प्रभाग) की अदालत में। मूल सूट संख्या 435, 2019 की। वादी मीना राघवन ने 21 जून 2019 के एक बिक्री विलेख के तहत उनके पिता सेल्वा राजन द्वारा ख़रीदी गई 19 एकड़ कृषि भूमि में एक तिहाई हिस्सेदारी का दावा किया है, जिस पर सर्वेक्षण संख्या 414 अंकित है। प्रतिवादी प्रकाश अय्यर ने 7 नवंबर 2019 की वसीयत पर भरोसा किया, लेकिन न तो गवाह की पुष्टि करने वाले को पूछताछ की गई, इसलिए वसीयत साबित नहीं हुई। विभाजन के लिए एक प्रारंभिक आदेश पारित किया जाता है; वादी को एक तिहाई हिस्सा का अधिकार है। प्रतिवादी को भूमि बेचने या गिरवी रखने से रोक दिया जाता है और उसे मुकदमे की लागत के रूप में ₹49,500 का भुगतान करना होगा।",
+     "recall": 0.917,
+     "missed": [
+      "Vadakkupatti"
+     ],
+     "unsupported_numbers": []
+    },
+    "sarvam-105b": {
+     "output": "हावड़ा के सिविल जज (सीनियर डिवीजन) की अदालत में, मूल वाद संख्या 435/2019।\n\nवादी मीना राघवन का दावा है कि उनके पिता सेल्वम राजन द्वारा 21 जून 2019 को रजिस्ट्रीकृत एक बिक्री विलेख के तहत खरीदे गए, वडक्कुपट्टी गाँव में 19 एकड़ में फैली और सर्वे नंबर 414 वाली कृषि भूमि में उनका एक-तिहाई हिस्सा है। प्रतिवादी प्रकाश अय्यर ने 7 नवंबर 2019 की एक वसीयत पर भरोसा किया था, लेकिन गवाही देने वाले दोनों गवाहों को पेश नहीं किया गया, इसलिए वसीयत प्रमाणित नहीं हो पाती है।\n\nअदालत ने बंटवारे का एक प्राथमिक डिक्री पारित किया है; वादी एक-तिहाई हिस्से की हकदार है। प्रतिवादी को इस जमीन को बेचने या गिरवी रखने से रोक दिया गया है और उसे मुकदमे का खर्च ₹49,500 का भुगतान करने का आदेश दिया गया है।",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "gemini-3.8-flash": {
+     "output": "सिविल जज (सीनियर डिवीजन) का न्यायालय, हावड़ा। मूल वाद संख्या 435 / 2019। वादी मीना राघवन, ग्राम वड़क्कुपट्टी स्थित 19 एकड़ माप वाली सर्वे संख्या 414 की कृषि भूमि में एक-तिहाई हिस्से का दावा करती हैं, जिसे उनके पिता सेल्वम राजन द्वारा 21 जून 2019 के एक विक्रय पत्र (सेल डीड) के तहत खरीदा गया था। प्रतिवादी प्रकाश अय्यर ने 7 नवंबर 2019 की एक वसीयत पर भरोसा किया, लेकिन किसी भी अनुप्रमाणक साक्षी (अटेस्टिंग विटनेस) का परीक्षण नहीं कराया गया, इसलिए वसीयत साबित नहीं हुई है। विभाजन के लिए एक प्रारंभिक डिक्री पारित की जाती है; वादी एक-तिहाई हिस्से की हकदार हैं। प्रतिवादी को उक्त भूमि को बेचने या बंधक रखने से रोका जाता है और वह वाद के खर्च के रूप में ₹49,500 का भुगतान करेगा।",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "openai:gpt-5.4-mini": {
+     "output": "दीवानी न्यायाधीश (वरिष्ठ प्रभाग), हावड़ा की अदालत में। मूल वाद सं. 435 of 2019. वादी मीना राघवन कृषि भूमि में एक-तिहाई हिस्से का दावा करती हैं, जिसका सर्वे सं. 414 है, क्षेत्रफल 19 acres, ग्राम वडक्कुपट्टी में स्थित, जिसे उनके पिता सेल्वम राजन ने 21 June 2019 की विक्रय विलेख के अंतर्गत खरीदा था। प्रतिवादी प्रकाश अय्यर ने 7 November 2019 की वसीयत पर भरोसा किया, लेकिन किसी भी साक्षी-साक्ष्य (attesting witness) की परीक्षा नहीं की गई, इसलिए वसीयत सिद्ध नहीं है। विभाजन हेतु प्रारंभिक डिक्री पारित की जाती है; वादी एक-तिहाई हिस्से की हकदार है। प्रतिवादी को भूमि बेचने या गिरवी रखने से रोका जाता है और वह वाद व्यय के रूप में ₹49,500 अदा करेगा।",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "output": "IN THE COURT OF THE CIVIL JUDGE (SENIOR DIVISION), हावड़ा\n(न्यायालय, सिविल जज (वरिष्ठ प्रभाग), हावड़ा)\n\nमूल वाद संख्या 435 वर्ष 2019\n\nवादी मीना राघवन दावा करती हैं कि ग्राम वडक्कुपट्टी में सर्वे संख्या 414, क्षेत्रफल 19 एकड़ की कृषि भूमि में उनका एक-तिहाई हिस्सा है, जिसे उनके पिता सेल्वम राजन ने दिनांक 21 जून 2019 के विक्रय विलेख के अंतर्गत क्रय किया था। प्रतिवादी प्रकाश अय्यर ने दिनांक 7 नवंबर 2019 की वसीयत पर भरोसा किया, किंतु दोनों अटेस्टिंग गवाहों की परीक्षा नहीं की गई, अतः वसीयत प्रमाणित नहीं हुई। विभाजन के लिए प्रारंभिक डिक्री पारित की जाती है; वादी एक-तिहाई हिस्से की हकदार है। प्रतिवादी को उक्त भूमि बेचने या बंधक रखने से रोका जाता है, और वह वाद-व्यय के रूप में ₹49,500 अदा करेगा।",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "gemini-pro-latest": {
+     "output": "सिविल न्यायाधीश (वरिष्ठ प्रभाग), हावड़ा के न्यायालय में। \nमूल वाद संख्या 435 वर्ष 2019। \n\nवादी मीना राघवन ग्राम वदक्कुपट्टी में सर्वे नंबर 414 वाली 19 एकड़ माप की कृषि भूमि में एक-तिहाई हिस्से का दावा करती है, जिसे उनके पिता सेल्वम राजन द्वारा 21 जून 2019 दिनांकित विक्रय विलेख के तहत खरीदा गया था। प्रतिवादी प्रकाश अय्यर ने 7 नवंबर 2019 दिनांकित वसीयत पर भरोसा किया, लेकिन किसी भी अनुप्रमाणक गवाह का परीक्षण नहीं किया गया, इसलिए वसीयत साबित नहीं होती है। विभाजन के लिए एक प्रारंभिक डिक्री पारित की जाती है; वादी एक-तिहाई हिस्से की हकदार है। प्रतिवादी को भूमि बेचने या गिरवी रखने से प्रतिबंधित किया जाता है और वह वाद व्यय के रूप में ₹49,500 का भुगतान करेगा।",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "openai:gpt-5.5": {
+     "output": "सिविल जज (सीनियर डिवीजन), हावड़ा के न्यायालय में। मूल वाद संख्या 435 of 2019। वादी मीना राघवन ग्राम वडक्कुपट्टी में स्थित सर्वे नं. 414 वाली 19 एकड़ माप की कृषि भूमि में एक-तिहाई हिस्से का दावा करती हैं, जिसे उनके पिता सेल्वम राजन ने 21 June 2019 दिनांकित विक्रय विलेख के तहत खरीदा था। प्रतिवादी प्रकाश अय्यर ने 7 November 2019 दिनांकित वसीयत पर भरोसा किया, लेकिन किसी भी प्रमाणित करने वाले गवाह की परीक्षा नहीं की गई, इसलिए वसीयत सिद्ध नहीं हुई है। विभाजन के लिए प्रारंभिक डिक्री पारित की जाती है; वादी एक-तिहाई हिस्से की हकदार हैं। प्रतिवादी को भूमि बेचने या बंधक रखने से रोका जाता है और वह वाद के खर्च के रूप में ₹49,500 का भुगतान करेगा।",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "output": "सिविल जज (सीनियर डिवीजन), हावड़ा के न्यायालय में। मूल वाद संख्या 435 सन् 2019। वादिनी मीना राघवन ग्राम वडक्कुपट्टी में स्थित सर्वे संख्या 414, क्षेत्रफल 19 एकड़ की कृषि भूमि में एक-तिहाई हिस्से का दावा करती है, जिसे उनके पिता सेल्वम राजन ने दिनांक 21 जून 2019 के विक्रय-पत्र द्वारा क्रय किया था। प्रतिवादी प्रकाश अय्यर ने दिनांक 7 नवंबर 2019 की वसीयत पर भरोसा किया, परंतु दोनों अनुप्रमाणक साक्षियों में से किसी का भी परीक्षण नहीं किया गया, अतः वसीयत सिद्ध नहीं होती। बंटवारे की प्रारंभिक डिक्री पारित की जाती है; वादिनी एक-तिहाई हिस्से की हकदार है। प्रतिवादी को भूमि बेचने या बंधक रखने से प्रतिबंधित किया जाता है तथा वह वाद के खर्च के रूप में ₹49,500 का भुगतान करेगा।",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    }
+   }
+  },
+  {
+   "task": "litigant summary",
+   "id": "legal_03",
+   "lang": "hi",
+   "source": "IN THE COURT OF THE SESSIONS JUDGE, Varanasi. Bail Application No. 2779/2023. The applicant Suresh Pawar, aged 25 years, was arrested on 26 November 2022 in FIR No. 13/2022 registered at Kotwali police station under Sections 420 and 406 of the Indian Penal Code for allegedly cheating the complainant Rekha Bose of ₹48.5 lakh. The charge-sheet was filed on 6 February 2023 and the applicant has been in custody for 221 days. Trial is unlikely to conclude soon. The applicant is released on bail on furnishing a personal bond of ₹26,500 with one surety of the like amount. He shall report to the police station every Monday and shall not leave the district without permission.",
+   "gold_facts": {
+    "p1": "Suresh Pawar",
+    "t1": "26 November 2022",
+    "fir": "13",
+    "l1": "₹48.5 lakh",
+    "days": "221",
+    "a1": "₹26,500"
+   },
+   "systems": {
+    "sarvam-105b": {
+     "output": "यह मामला वाराणसी के सत्र न्यायालय का है, जिसमें सुरेश पवार (25 वर्ष) जमानत के लिए आवेदन करने वाले व्यक्ति हैं और रेखा बोस शिकायतकर्ता हैं। \n\nअदालत ने सुरेश पवार को ₹26,500 के व्यक्तिगत मुचलके और उतने ही पैसे की एक जमानतदार (surety) के साथ जमानत पर रिहा करने का फैसला किया है। \n\nयह जमानत पाने के लिए आपको 26,500 रुपये की जमानत राशि जमा करनी होगी और हर सोमवार को अपने नजदीकी पुलिस स्टेशन में जाकर हाजिरी लगानी होगी। \n\nआप बिना पुलिस की अनुमति के अपने जिले से बाहर नहीं जा सकते हैं। \n\nयदि आप जमानत के कागजात तैयार करना चाहते हैं, तो आपको अपने जमानतदार के साथ 6 फरवरी 2023 को अदालत में पेश होना होगा, क्योंकि उसी दिन पुलिस ने चार्ज-शीट जमा की थी।",
+     "recall": 0.333,
+     "missed": [
+      "26 November 2022",
+      "13",
+      "₹48.5 lakh",
+      "221"
+     ],
+     "unsupported_numbers": []
+    },
+    "sarvam-105b-think": {
+     "output": "",
+     "recall": 0.0,
+     "missed": [
+      "Suresh Pawar",
+      "26 November 2022",
+      "13",
+      "₹48.5 lakh",
+      "221",
+      "₹26,500"
+     ],
+     "unsupported_numbers": []
+    },
+    "sarvam-105b-think (empties rerun at 16k)": {
+     "output": "\nइस मामले में आवेदक सुरेश पवार (25 साल) और शिकायतकर्ता रीखा बोस दो पक्ष हैं। FIR नंबर 13/2022, 26 नवंबर 2022 को कोतवाली थाने में दर्ज हुई है, जिसमें 48.5 लाख रुपये की कथित धोखाधड़ी का आरोप है। 6 फरवरी 2023 को चालान दायर हुआ और जमानत अर्जी संख्या 2779/2023 पर 26,500 रुपये का बॉन्ड और 26,500 रुपये का एक वैसा ही जमानतदार दिखाकर जमानत मंजूर की गई है। हर सोमवार पुलिस स्टेशन में हाजिरी लगानी होगी। बिना इजाजत के पूरे जिले से बाहर जाने की मनाही है।",
+     "recall": 0.833,
+     "missed": [
+      "221"
+     ],
+     "unsupported_numbers": []
+    },
+    "gemini-3.8-flash": {
+     "output": "यह आदेश वाराणसी के सत्र न्यायालय का है, जिसका जमानत प्रार्थना पत्र संख्या 2779/2023 है। \n\nइस मामले में शिकायतकर्ता रेखा बोस हैं और आवेदक (आरोपी) 25 वर्षीय सुरेश पवार हैं, जिन पर कोतवाली थाने की प्राथमिकी संख्या 13/2022 के तहत ₹48.5 लाख की धोखाधड़ी का आरोप है।\n\nअदालत ने सुरेश पवार को जमानत पर रिहा करने का फैसला सुनाया है।\n\nरिहाई के लिए आवेदक को ₹26,500 का निजी मुचलका और इतनी ही राशि (₹26,500) की एक जमानत देनी होगी।\n\nजमानत की शर्त यह है कि आवेदक को हर सोमवार को थाने में हाजिरी देनी होगी और बिना अनुमति जिला नहीं छोड़ना होगा। \n\nमामले में गिरफ्तारी 26 नवंबर 2022 को हुई थी और आरोप पत्र 6 फरवरी 2023 को दाखिल किया गया था।",
+     "recall": 0.833,
+     "missed": [
+      "221"
+     ],
+     "unsupported_numbers": []
+    },
+    "openai:gpt-5.4-mini": {
+     "output": "वाराणसी के सत्र न्यायालय में Bail Application No. 2779/2023 है।  \nयह मामला Suresh Pawar बनाम राज्य से जुड़ा है; शिकायतकर्ता Rekha Bose हैं।  \nSuresh Pawar को 26 नवंबर 2022 को FIR No. 13/2022, कोतवाली पुलिस स्टेशन, धारा 420 और 406 IPC में गिरफ्तार किया गया था।  \nउस पर Rekha Bose से ₹48.5 लाख की ठगी का आरोप है; charge-sheet 6 फरवरी 2023 को दायर हुई और वह 221 दिन से हिरासत में था।  \nन्यायालय ने उसे जमानत पर रिहा करने का आदेश दिया है।  \nजमानत के लिए उसे ₹26,500 का personal bond और उतनी ही राशि का एक surety देना होगा, हर सोमवार पुलिस स्टेशन में रिपोर्ट करना होगा, और बिना अनुमति जिले से बाहर नहीं जाना होगा।",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "output": "सुरेश पवार नाम के 25 साल के व्यक्ति की जमानत की अर्जी वाराणसी की सत्र न्यायालय में दर्ज है, केस संख्या 2779/2023। उन पर कोतवाली थाने में 26 नवंबर 2022 को दर्ज FIR संख्या 13/2022 में धोखाधड़ी और अमानत में खयानत का आरोप है, जिसमें शिकायतकर्ता रेखा बोस का ₹48.5 लाख का मामला बताया गया है। आरोप-पत्र 6 फरवरी 2023 को दाखिल हुआ और वे 221 दिन से हिरासत में हैं। अदालत ने उन्हें जमानत दे दी है, इसके लिए ₹26,500 का निजी बॉन्ड और उतनी ही राशि का एक जमानती देना होगा। हर सोमवार को उन्हें थाने में हाज़िरी देनी होगी। उन्हें अनुमति के बिना जिले से बाहर नहीं जाना है।",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "gemini-pro-latest": {
+     "output": "यह आदेश जमानत याचिका संख्या 2779/2023 और एफआईआर संख्या 13/2022 (धारा 420 और 406) के बारे में है। इस मामले में रेखा बोस ने 25 वर्षीय सुरेश पवार पर ₹48.5 लाख की धोखाधड़ी का आरोप लगाया है। सुरेश 26 नवंबर 2022 को गिरफ्तार हुआ था, 221 दिन जेल में रहा और 6 फरवरी 2023 को चार्जशीट पेश हुई थी। अदालत ने फैसला किया है कि सुरेश को जमानत पर रिहा किया जाएगा। रिहाई के लिए सुरेश को ₹26,500 का निजी बांड और इतनी ही रकम का एक गारंटर (जमानती) देना होगा। उसे हर सोमवार को पुलिस स्टेशन जाकर हाजिरी लगानी होगी। वह बिना अनुमति के जिला छोड़कर नहीं जा सकता है।",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "openai:gpt-5.5": {
+     "output": "यह मामला वाराणसी के सेशंस जज की अदालत में जमानत आवेदन संख्या 2779/2023 का है।  \nआवेदक सुरेश पवार, उम्र 25 साल, को FIR संख्या 13/2022 में 26 नवंबर 2022 को गिरफ्तार किया गया था।  \nयह FIR कोतवाली थाने में IPC की धारा 420 और 406 के तहत दर्ज है, जिसमें शिकायतकर्ता रेखा बोस से ₹48.5 लाख की धोखाधड़ी का आरोप है।  \nचार्जशीट 6 फरवरी 2023 को दाखिल हो चुकी है और सुरेश पवार 221 दिन से हिरासत में है।  \nअदालत ने कहा कि मुकदमा जल्दी खत्म होने की संभावना नहीं है, इसलिए सुरेश पवार को जमानत पर छोड़ा जाता है।  \nउसे ₹26,500 का निजी मुचलका और इतनी ही राशि की एक जमानत देनी होगी।  \nउसे हर सोमवार पुलिस स्टेशन में हाजिर होना होगा और बिना अनुमति जिले से बाहर नहीं जाना होगा।",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "output": "वाराणसी के सेशन्स जज की अदालत में जमानत की अर्जी संख्या 2779/2023 पर यह आदेश हुआ है। आवेदक सुरेश पवार, उम्र 25 वर्ष, को 26 नवंबर 2022 को कोतवाली थाने में दर्ज एफआईआर संख्या 13/2022 में गिरफ्तार किया गया था। यह मामला भारतीय दंड संहिता की धारा 420 और 406 के तहत है, और शिकायतकर्ता रेखा बोस हैं, जिनके साथ ₹48.5 लाख की धोखाधड़ी का आरोप है। आरोप-पत्र 6 फरवरी 2023 को दाखिल हुआ, और सुरेश पवार 221 दिन से हिरासत में हैं। अदालत ने कहा कि मुकदमा जल्दी खत्म होने की संभावना नहीं है। इसलिए सुरेश पवार को जमानत पर रिहा किया गया है, बशर्ते वे ₹26,500 का निजी बॉन्ड और उतनी ही रकम की एक जमानतदार की गारंटी दें। उन्हें हर सोमवार थाने में हाजिरी देनी होगी और अदालत की अनुमति के बिना जिला छोड़कर नहीं जाना होगा।",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "sarvam-30b-local": {
+     "output": "यहाँ आपके केस की जानकारी दी गई है:\n\n1. आपका नाम Suresh Pawar है और आपका केस नंबर Bail Application No. 27779/2023 है।\n2. आपको 26 नवंबर 2022 को ₹48.5 लाख के धोखाधड़ी के आरोप में गिरफ्तार किया गया था।\n3. आपको 221 दिन जेल में रहना पड़ा है और अब आपको जमानत पर रिहा किया जा रहा है।\n4. आपको ₹26,500 की व्यक्तिगत बांड राशि देनी होगी और एक गारंटर (surety) भी चाहिए होगा।\n5. आपको हर सोमवार को पुलिस स्टेशन में रिपोर्ट करना होगा और बिना अनुमति के जिले से बाहर नहीं जाना होगा।\n\n---\n\n**नोट:** यह जानकारी केवल दिए गए टेक्स्ट के आधार पर है। इसमें कोई अतिरिक्त जानकारी नहीं जोड़ी गई है।\n\n---\n\n**महत्वपूर्ण:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक सरल व्याख्या है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक simple interpretation है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अंतिम नोट:** यह जानकारी केवल एक simple interpretation है। यह कानूनी सलाह नहीं है। आपको वकील से परामर्श करना चाहिए।\n\n---\n\n**अं",
+     "recall": 0.833,
+     "missed": [
+      "13"
+     ],
+     "unsupported_numbers": [
+      "27779"
+     ]
+    },
+    "qwen3-30b-local": {
+     "output": "यह एक अदालत का आदेश है जिसमें सुरेश पावर नामक व्यक्ति को राहत दे दी गई है। सुरेश पावर की उम्र 25 साल है। उन्हें 26 नवंबर 2022 को कोतवाली पुलिस स्टेशन में दायर एफआईआर नंबर 13/2022 में आईपीसी के खंड 420 और 406 के तहत गिरफ्तार किया गया था। उन पर रेखा बोस से 48.5 लाख रुपये छल करने का आरोप है। आरोप पत्र 6 फरवरी 2023 को दायर किया गया था। सुरेश पावर को 221 दिन जेल में रहा। अब उन्हें 26,500 रुपये के व्यक्तिगत बॉंड के साथ एक सुरक्षा के साथ राहत दे दी गई है। वे हर सोमवार को पुलिस स्टेशन जाने के लिए मजबूर हैं और बिना अनुमति के जिला छोड़ नहीं सकते। यह मामला नंबर 2779/2023 है।",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    }
+   }
+  },
+  {
+   "task": "litigant summary",
+   "id": "legal_03",
+   "lang": "ta",
+   "source": "IN THE COURT OF THE SESSIONS JUDGE, Varanasi. Bail Application No. 2779/2023. The applicant Suresh Pawar, aged 25 years, was arrested on 26 November 2022 in FIR No. 13/2022 registered at Kotwali police station under Sections 420 and 406 of the Indian Penal Code for allegedly cheating the complainant Rekha Bose of ₹48.5 lakh. The charge-sheet was filed on 6 February 2023 and the applicant has been in custody for 221 days. Trial is unlikely to conclude soon. The applicant is released on bail on furnishing a personal bond of ₹26,500 with one surety of the like amount. He shall report to the police station every Monday and shall not leave the district without permission.",
+   "gold_facts": {
+    "p1": "Suresh Pawar",
+    "t1": "26 November 2022",
+    "fir": "13",
+    "l1": "₹48.5 lakh",
+    "days": "221",
+    "a1": "₹26,500"
+   },
+   "systems": {
+    "sarvam-105b": {
+     "output": "நீதிமன்றத்தின் தீர்ப்பு பற்றிய எளிய விளக்கம்:\n\nஇந்த வழக்கில், குற்றம் சாட்டப்பட்டவர் சுரேஷ் பவார் (வயது 25) ஆவார். இவரை நவம்பர் 26, 2022 அன்று கோட்வாலி காவல் நிலையத்தில் பதிவு செய்யப்பட்ட FIR எண் 13/2022 இன் கீழ் கைது செய்தனர். இவர் மீது ₹48.5 லட்சம் மோசடி செய்ததாக புகார் அளிக்கப்பட்டிருந்தது. இந்த வழக்கில் 6 பிப்ரவரி 2023 அன்று குற்றப்பத்திரிகை தாக்கல் செய்யப்பட்டது. சுரேஷ் பவார் 221 நாட்கள் சிறையில் இருந்துள்ளார். நீதிமன்றம் அவருக்கு ஜாமீன் வழங்கியுள்ளது. அவர் ₹26,500 மதிப்புள்ள சொந்தப் பிணை மற்றும் அதே தொகைக்கு ஒரு பிணையாள் (surety) ஆகியவற்றை வழங்க வேண்டும். அவர் ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்தில் ஆஜராக வேண்டும். நீதிமன்றத்தின் முன் அனுமதி இல்லாமல் அவர் மாவட்டத்தை விட்டு வெளியேறக் கூடாது.",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "sarvam-105b-think": {
+     "output": "",
+     "recall": 0.0,
+     "missed": [
+      "Suresh Pawar",
+      "26 November 2022",
+      "13",
+      "₹48.5 lakh",
+      "221",
+      "₹26,500"
+     ],
+     "unsupported_numbers": []
+    },
+    "sarvam-105b-think (empties rerun at 16k)": {
+     "output": "\nசுரேஷ் பவார் (வயது 25) என்பவர் ரேகா போஸ் என்பவரை ₹48.5 லட்சம் ஏமாற்றியதாக கோட்வாலி காவல் நிலையத்தில் FIR எண் 13/2022 பதிவு செய்யப்பட்டு, 2022 நவம்பர் 26ஆம் தேதி இவர் கைது செய்யப்பட்டார். 2023 பெப்ரவரி 6ஆம் தேதி குற்றப்பத்திரிகை தாக்கல் செய்யப்பட்டு, இவர் 221 நாட்கள் காவலில் இருந்தார். வாரணாசி நீதிமன்றத்தில் ஜாமீன் விண்ணப்ப எண் 2779/2023 வழக்கில் இவர் ஜாமீனில் விடுவிக்கப்பட்டுள்ளார். ₹26,500 ரூபாய்க்கு ஜாமீன் பத்திரமும், அதே தொகையான ₹26,500 ஏற்கக்கூடிய ஒரு உறுதிக்காரரும் சமர்ப்பிக்க வேண்டும். ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்திற்குச் செல்ல வேண்டும், அனுமதி இல்லாமல் மாவட்டத்தை விட்டு வெளியேறக் கூடாது.",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "gemini-3.8-flash": {
+     "output": "வாரணாசி அமர்வு நீதிமன்றத்தில் உள்ள ஜாமீன் மனு எண் 2779/2023-இல், மனுதாரர் 25 வயதுடைய சுரேஷ் பவார் மற்றும் புகார்தாரர் ரேகா போஸ் ஆவர்.\n\nரேகா போஸிடம் ₹48.5 லட்சம் மோசடி செய்ததாகக் கூறி, கோட்வாலி காவல் நிலைய முதல் தகவல் அறிக்கை எண் 13/2022-இன் கீழ் 26 நவம்பர் 2022 அன்று சுரேஷ் பவார் கைது செய்யப்பட்டு, 6 பிப்ரவரி 2023 அன்று குற்றப்பத்திரிகை தாக்கல் செய்யப்பட்டது. \n\n221 நாட்கள் காவலில் இருந்த சுரேஷ் பவாருக்கு இந்த வழக்கில் நீதிமன்றம் தற்போது ஜாமீன் வழங்கியுள்ளது.\n\nஇதற்காக அவர் ₹26,500-க்கான சொந்தப் பிணைப்பத்திரத்தையும், அதே தொகைக்கான (₹26,500) ஒரு நபர் பிணையத்தையும் சமர்ப்பிக்க வேண்டும். \n\nஅவர் ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்தில் ஆஜராகி கையெழுத்திட வேண்டும். \n\nமேலும், நீதிமன்ற அனுமதியின்றி அவர் மாவட்டத்தை விட்டு வெளியே செல்லக்கூடாது.",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "openai:gpt-5.4-mini": {
+     "output": "வாரணாசி அமர்வு நீதிமன்றத்தில் Bail Application No. 2779/2023 விசாரிக்கப்பட்டது.  \nமனுதாரர் சுரேஷ் பவார், வயது 25; இவர் எதிராக Kotwali காவல் நிலையத்தின் FIR No. 13/2022-ல் IPC Sections 420 மற்றும் 406 கீழ் வழக்கு உள்ளது.  \nபுகாராளி ரேகா போஸ் அவர்களை ₹48.5 லட்சம் மோசடி செய்ததாக குற்றச்சாட்டு உள்ளது.  \nசுரேஷ் பவார் 26 நவம்பர் 2022 அன்று கைது செய்யப்பட்டார்; charge-sheet 6 பிப்ரவரி 2023 அன்று தாக்கல் செய்யப்பட்டது; அவர் 221 நாட்கள் காவலில் இருந்தார்.  \nவிசாரணை விரைவில் முடியும் என்று தெரியாததால், அவருக்கு bail வழங்கப்பட்டுள்ளது.  \n₹26,500 தனிநபர் பிணை மற்றும் அதே அளவு ₹26,500 ஒரு surety கொடுத்தால் விடுவிக்கப்படுவார்; அவர் ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்தில் ஆஜராக வேண்டும், மேலும் அனுமதி இல்லாமல் மாவட்டத்தை விட்டு செல்லக்கூடாது.",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "output": "நீதிமன்ற உத்தரவின் சுருக்கம் இதுதான். வாரணாசி அமர்வு நீதிமன்றத்தில் ஜாமீன் மனு எண் 2779/2023 இன் கீழ் சுரேஷ் பவார் (வயது 25) என்பவருக்கு ஜாமீன் வழங்கப்பட்டுள்ளது. அவர் மீது கொத்வாலி காவல் நிலையத்தில் FIR எண் 13/2022 இன் கீழ், ரேகா போஸ் என்பவரிடம் ₹48.5 லட்சம் மோசடி செய்ததாக வழக்கு உள்ளது. 26 நவம்பர் 2022 அன்று கைது செய்யப்பட்ட அவர் 221 நாட்கள் காவலில் இருந்துள்ளார். ஜாமீனில் விடுவிக்க ₹26,500 மதிப்புள்ள தனிப்பட்ட பிணைப் பத்திரமும், அதே தொகைக்கு ஒரு பிணையாளரும் வழங்க வேண்டும். ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்தில் கையொப்பமிட வேண்டும். அனுமதி இல்லாமல் மாவட்டத்தை விட்டு வெளியே செல்லக் கூடாது.",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "gemini-pro-latest": {
+     "output": "இந்த வழக்கு (ஜாமீன் மனு எண் 2779/2023 மற்றும் FIR எண் 13/2022), ரேகா போஸ் என்பவரை ₹48.5 லட்சம் ஏமாற்றியதாக குற்றம் சாட்டப்பட்ட சுரேஷ் பவார் என்பவருக்கானது. \n\nசுரேஷ் பவார் 26 நவம்பர் 2022 அன்று கைது செய்யப்பட்டார், மேலும் இந்த வழக்கின் குற்றப்பத்திரிகை 6 பிப்ரவரி 2023 அன்று தாக்கல் செய்யப்பட்டது. \n\nநீதிமன்றம் இப்போது சுரேஷ் பவாருக்கு ஜாமீன் வழங்கி தீர்ப்பளித்துள்ளது. \n\nஅவர் ஜாமீனில் வெளிவர, ₹26,500-க்கு சொந்த ஜாமீன் பத்திரமும், அதே தொகைக்கு மற்றொரு நபரின் உத்தரவாதமும் (surety) அளிக்க வேண்டும். \n\nநிபந்தனையாக, அவர் ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்திற்குச் சென்று ஆஜராக வேண்டும். \n\nமேலும், முன் அனுமதி இல்லாமல் அவர் மாவட்டத்தை விட்டு வெளியே செல்லக்கூடாது.",
+     "recall": 0.833,
+     "missed": [
+      "221"
+     ],
+     "unsupported_numbers": []
+    },
+    "openai:gpt-5.5": {
+     "output": "வாரணாசி செஷன்ஸ் நீதிமன்றத்தில் ஜாமீன் மனு எண் 2779/2023 பற்றி இந்த உத்தரவு.  \nமனுதாரர் சுரேஷ் பவார், வயது 25, புகாரளித்த ரேகா போஸிடம் ₹48.5 லட்சம் மோசடி செய்ததாக குற்றம் சாட்டப்பட்டுள்ளது.  \nகோட்வாலி காவல் நிலையத்தில் FIR எண் 13/2022, இந்திய தண்டனைச் சட்டம் பிரிவுகள் 420 மற்றும் 406 கீழ் பதிவு செய்யப்பட்டது.  \nசுரேஷ் பவார் 26 நவம்பர் 2022 அன்று கைது செய்யப்பட்டார்; குற்றப்பத்திரிகை 6 பிப்ரவரி 2023 அன்று தாக்கல் செய்யப்பட்டது; அவர் 221 நாட்கள் காவலில் இருந்தார்.  \nவழக்கு விரைவில் முடியும் வாய்ப்பு இல்லை என்பதால், நீதிமன்றம் அவருக்கு ஜாமீன் வழங்கியது.  \nஅவர் ₹26,500 தனிப்பட்ட பிணை மற்றும் அதே தொகையான ₹26,500க்கு ஒருவரின் உத்தரவாதம் அளிக்க வேண்டும்.  \nஅவர் ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்தில் ஆஜராக வேண்டும்; அனுமதி இல்லாமல் மாவட்டத்தை விட்டு செல்லக்கூடாது.",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "output": "வாரணாசி செஷன்ஸ் நீதிமன்றத்தில் ஜாமீன் மனு எண் 2779/2023-ன் மீது இந்த உத்தரவு வழங்கப்பட்டுள்ளது. மனுதாரர் சுரேஷ் பவார் (வயது 25) மீது, புகார்தாரர் ரேகா போஸை ₹48.5 லட்சம் அளவுக்கு ஏமாற்றியதாகக் கூறி, கோட்வாலி காவல் நிலையத்தில் FIR எண் 13/2022-ல், இந்திய தண்டனைச் சட்டம் பிரிவுகள் 420 மற்றும் 406-ன் கீழ் வழக்கு பதிவாகியுள்ளது. அவர் 26 நவம்பர் 2022 அன்று கைது செய்யப்பட்டார்; 6 பிப்ரவரி 2023 அன்று குற்றப்பத்திரிகை தாக்கல் செய்யப்பட்டது; அவர் 221 நாட்களாகக் காவலில் இருக்கிறார்; விசாரணை விரைவில் முடிய வாய்ப்பில்லை. இதனால் நீதிமன்றம் அவரை ஜாமீனில் விடுவித்துள்ளது. இதற்கு அவர் ₹26,500-க்கு சொந்தப் பிணைப்பத்திரமும், அதே தொகைக்கு ஒரு உத்தரவாதியும் (surety) அளிக்க வேண்டும். அவர் ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்தில் தெரிவிக்க (report) வேண்டும். அனுமதி இல்லாமல் மாவட்டத்தை விட்டு வெளியே செல்லக் கூடாது.",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    },
+    "sarvam-30b-local": {
+     "output": "இந்த நீதிமன்ற ஆவணத்தில், சுரேஷ் பவார் என்ற மனுதாரர், 26 நவம்பர் 2022 அன்று 48.5 லட்சம் ரூபாய் மோசடி செய்ததாகக் குற்றம் சாட்டப்பட்டுள்ளார். உங்கள் வழக்கு எண் 2777/2023. உங்கள் பிணைத் தொகை 26,500 ரூபாய். நீங்கள் ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்திற்கு வர வேண்டும். நீங்கள் மாவட்டத்தை விட்டு வெளியே செல்ல அனுமதி தேவை.\n\n**Explanation of the text:**\n\n1.  **Who is involved?**\n    *   **Applicant:** சுரேஷ் பவார், 25 வயது.\n    *   **Accused:** சுரேஷ் பவார்.\n    *   **Complainant:** ரேகா போஸ், 48.5 லட்சம் ரூபாய் மோசடி செய்ததாகக் குற்றம் சாட்டப்பட்டுள்ளார்.\n\n2.  **What was decided?**\n    *   நீதிமன்றம் உங்கள் பிணை வழங்கியுள்ளது.\n\n3.  **Key Dates, Amounts, and Deadlines:**\n    *   **Date of Arrest:** 26 நவம்பர் 2022.\n    *   **Date of FIR:** 26 நவம்பர் 2022.\n    *   **Date of Bail Decision:** (குறிப்பிடப்படவில்லை)\n    *   **Amount of Bail:** 26,500 ரூபாய்.\n    *   **Deadline:** ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்திற்கு வர வேண்டும்.\n\n4.  **Case Number:**\n    *   உங்கள் வழக்கு எண் 2777/2023.\n\n5.  **Conditions:**\n    *   நீங்களும் உங்கள் குடும்பத்தினரும் நீதிமன்றத்தின் அனுமதியின்றி மாவட்டத்தை விட்டு வெளியே செல்லக்கூடாது.\n\n**Summary:**\nநீங்களும் உங்கள் குடும்பத்தினரும் நீதிமன்றத்தின் அனுமதியின்றி மாவட்டத்தை விட்டு வெளியே செல்லக்கூடாது. நீங்கள் ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்திற்கு வர வேண்டும். உங்கள் பிணைத் தொகை 26,500 ரூபாய்.\n\n---\n\n**Important Note:** This is a general explanation. The court text is complex. You should consult a lawyer for specific legal advice. This explanation is not a substitute for legal counsel.\n\n---\n\n**Disclaimer:** This is a simplified explanation. The court text is complex. You should consult a lawyer for specific legal advice. This explanation is not a substitute for legal counsel.\n\n---\n\n**Final Answer:**\nஇந்த நீதிமன்ற ஆவணத்தில், சுரேஷ் பவார் என்ற மனுதாரர், 26 நவம்பர் 2022 அன்று 48.5 லட்சம் ரூபாய் மோசடி செய்ததாகக் குற்றம் சாட்டப்பட்டுள்ளார். உங்கள் வழக்கு எண் 2777/2023. உங்கள் பிணைத் தொகை 26,500 ரூபாய். நீங்கள் ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்திற்கு வர வேண்டும். நீங்கள் மாவட்டத்தை விட்டு வெளியே செல்ல அனுமதி தேவை.\n\n**Explanation of the text:**\n\n1.  **Who is involved?**\n    *   **Applicant:** சுரேஷ் பவார், 25 வயது.\n    *   **Accused:** சுரேஷ் பவார்.\n    *   **Complainant:** ரேகா போஸ், 48.5 லட்சம் ரூபாய் மோசடி செய்ததாகக் குற்றம் சாட்டப்பட்டுள்ளார்.\n\n2.  **What was decided?**\n    *   நீதிமன்றம் உங்கள் பிணை வழங்கியுள்ளது.\n\n3.  **Key Dates, Amounts, and Deadlines:**\n    *   **Date of Arrest:** 26 நவம்பர் 2022.\n    *   **Date of FIR:** 26 நவம்பர் 2022.\n    *   **Date of Bail Decision:** (குறிப்பிடப்படவில்லை)\n    *   **Amount of Bail:** 26,500 ரூபாய்.\n    *   **Deadline:** ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்திற்கு வர வேண்டும்.\n\n4.  **Case Number:**\n    *   உங்கள் வழக்கு எண் 2777/2023.\n\n5.  **Conditions:**\n    *   நீங்களும் உங்கள் குடும்பத்தினரும் நீதிமன்றத்தின் அனுமதியின்றி மாவட்டத்தை விட்டு வெளியே செல்லக்கூடாது.\n\n**Summary:**\nநீங்களும் உங்கள் குடும்பத்தினரும் நீதிமன்றத்தின் அனுமதியின்without மாவட்டத்தை விட்டு வெளியே செல்லக்கூடாது. நீங்கள் ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்திற்கு வர வேண்டும். உங்கள் பிணைத் தொகை 26,500 ரூபாய்.\n\n---\n\n**Important Note:** This is a general explanation. The court text is complex. You should consult a lawyer for specific legal advice. This explanation is not a substitute for legal counsel.\n\n---\n\n**Disclaimer:** This is a simplified explanation. The court text is complex. You should consult a lawyer for specific legal advice. This explanation is not a substitute for legal counsel.\n\n---\n\n**Final Answer:**\nஇந்த நீதிமன்ற ஆவணத்தில், சுரேஷ் பவார் என்ற மனுதாரர், 26 நவம்பர் 2022 அன்று 48.5 லட்சம் ரூபாய் மோசடி செய்ததாகக் குற்றம் சாட்டப்பட்டுள்ளார். உங்கள் வழக்கு எண் 2777/2023. உங்கள் பிணைத் தொகை 26,500 ரூபாய். நீங்கள் ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்திற்கு வர வேண்டும். நீங்கள் மாவட்டத்தை விட்டு வெளியே செல்ல அனுமதி தேவை.\n\n**Explanation of the text:**\n\n1.  **Who is involved?**\n    *   **Applicant:** சுரேஷ் பவார், 25 வயது.\n    *   **Accused:** சுரேஷ் பவார்.\n    *   **Complainant:** ரேகா போஸ், 48.5 லட்சம் ரூபாய் மோசடி செய்ததாகக் குற்றம் சாட்டப்பட்டுள்ளார்.\n\n2.  **What was decided?**\n    *   நீதிமன்றம் உங்கள் பிணை வழங்கியுள்ளது.\n\n3.  **Key Dates, Amounts, and Deadlines:**\n    *   **Date of Arrest:** 26 நவம்பர் 2022.\n    *   **Date of FIR:** 26 நவம்பர் 2022.\n    *   **Date of Bail Decision:** (குறிப்பிடப்படவில்லை)\n    *   **Amount of Bail:** 26,500 ரூபாய்.\n    *   **Deadline:** ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்திற்கு வர வேண்டும்.\n\n4.  **Case Number:**\n    *   உங்கள் வழக்கு எண் 2777/2023.\n\n5.  **Conditions:**\n    *   நீங்களும் உங்கள் குடும்பத்தினரும் நீதிமன்றத்தின் அனுமதியின்றி மாவட்டத்தை விட்டு வெளியே செல்லக்கூடாது.\n\n**Summary:**\nநீங்களும் உங்கள் குடும்பத்தினரும் நீதிமன்றத்தின் அனுமதியின்றி மாவட்டத்தை விட்டு வெளியே செல்லக்கூடாது. நீங்கள் ஒவ்வொரு திங்கட்கிழமையும் காவல் நிலையத்திற்கு வர வேண்டும். உங்கள் பிணைத் தொகை 20,000 ரூபாய்.\n\n---\n\n**Important Note:** This is a general explanation. The court text is complex. You should consult a lawyer for specific legal advice. This explanation is not a substitute for legal counsel.\n\n---\n\n**Disclaimer:** This is a simple explanation. The court text is complex. You should consult a lawyer for specific legal advice. This explanation is not a substitute for legal counsel.\n\n---\n\n**Final Answer:**\nஇந்த நீதிமன்ற ஆவணத்தில், சுரேஷ் பவார்",
+     "recall": 0.667,
+     "missed": [
+      "13",
+      "221"
+     ],
+     "unsupported_numbers": [
+      "2777",
+      "20,000"
+     ]
+    },
+    "qwen3-30b-local": {
+     "output": "இந்த வழக்கு வாரணசியில் உள்ள செசன்ஸ் நீதிபதியின் கோர்ட்டில் பதிவு செய்யப்பட்டுள்ளது. இந்த வழக்கின் எண் 2779/2023 ஆகும். விண்ணப்பதாரர் சுரேஷ் பவார் என்பவர் 25 வயதுடையவர். அவர் 2022 நவம்பர் 26 ஆம் தேதி கோட்வாலி போலீசார் பதிவு செய்த புகார் எண் 13/2022 கீழ் கைது செய்யப்பட்டார். அவர் இந்திய தண்டனை சட்டம் பிரிவு 420 மற்றும் 406 இன் கீழ் ரூ. 48.5 லட்சம் மதிப்புள்ள பணத்தை போலியாக பெற்றதாக குற்றம் சாட்டப்பட்டுள்ளது. குற்ற மனு பதிவு செய்யப்பட்டது 2023 பிப்ரவரி 6 ஆம் தேதி. அவர் 221 நாட்கள் கைதில் இருந்தார். விசாரணை விரைவில் முடியாமல் இருக்கலாம். அவர் ரூ. 26,500 மதிப்புள்ள தனிப்பட்ட கடன் மற்றும் அதே தொகையை கொண்ட ஒரு உறவினரை வைத்து விடுதலை பெற்றார். அவர் ஒவ்வொரு திங்களன்று காவல்நிலையத்திற்கு வர வேண்டும். அவர் தனது மாவட்டத்தை விட்டு போக முடியாது.",
+     "recall": 1.0,
+     "missed": [],
+     "unsupported_numbers": []
+    }
+   }
+  }
+ ],
+ "findings": [
+  "Translation, share of source facts preserved (120 passage-language items each): gemini-3.8-flash 99.8% [99.6, 100], sarvam-105b (think off) 99.6% [99.3, 99.9], sarvam-translate:v1 99.5% [99.1, 99.8], mayura:v1 96.2% [95.1, 97.3]. Facts dropped or altered per passage: 0.025 / 0.058 / 0.075 / 0.53. Every system wrote 100% of outputs in the target script.",
+  "Hindi is nearly solved: no facts were lost by any system except mayura (0.1 per passage). Tamil is hardest. Dropped or altered facts per Tamil passage: mayura 0.68, sarvam-105b 0.18, sarvam-translate 0.13, gemini 0.05. Marathi and Bengali sit in between, with mayura at 0.9 and 0.75.",
+  "mayura:v1 alters money and identifiers, and it is the only system that lost amounts at a meaningful rate (93.5% preserved vs at least 99.6% for the others). With a decimal crore amount it keeps only the digits after the point, in every language: ₹25.5 crore became '5 करोड़', '5 கோடி', '5 कोटी' and '5 কোটি', and ₹15.4 and ₹14.8 crore became 4 and 8 crore. That happened in 10 of 10 decimal-crore cases; the whole-number ₹20 crore was kept. It dropped cheque numbers and Act years. One Tamil passage got stuck repeating a sentence about 10 times. It changed a party's name (Rajendra Prasad Yadav became ராஜசேகர பிரசாத் யாதவ்). In one order it labelled both parties 'accused'.",
+  "sarvam-translate:v1 altered 1 number in 120 items: cheque no. 493369 became '4933/69' in Bengali. Otherwise it matched the LLMs.",
+  "Cost per 650-character passage at Sarvam list prices: the translate APIs cost about ₹1.25 (₹20 per 10k characters). sarvam-105b costs about ₹0.016 (about 230 input and 215 output tokens), roughly 80x cheaper, with equal or better fact preservation. Latency p50: mayura 1.5 s, sarvam-105b 1.5 s, sarvam-translate 1.8 s, gemini 3.7 s.",
+  "Litigant summaries, key-fact recall (80 items each, 6 facts per item): gemini-3.8-flash 98.3% [96.9, 99.4], sarvam-105b think off 85.2% [81.5, 88.7], think on 72.1% [63.5, 80.4]. Mostly sarvam-105b omits dates and case or FIR numbers: by type it kept 77% of dates, 81% of numbers and 91% of amounts, against Gemini's 100% / 96% / 100%.",
+  "sarvam-105b (think off) put numbers that are not in the order into 9% of summaries (0.125 distinct per summary; 0.25 in Tamil, 0 in Hindi). These were mostly values it computed itself: deadline dates like '58 days, i.e. by 28 March 2024', and summed totals. A litigant who acts on a wrong computed date is harmed. Gemini and think-on put no such numbers in their summaries.",
+  "Turning sarvam-105b thinking on (reasoning_effort medium) with max_tokens 6000 returned empty content on 16 of 80 replies, because reasoning used up the budget (about 4,250 reasoning tokens on average), which gave 72.1% key-fact recall. Rerunning just those 16 at max_tokens 16000 gave real answers for all 16; they used 2.5k-6.7k reasoning tokens, which shows the reasoning length varies run to run. With the reruns, think-on scores 89.4% [85.8, 92.7] with 0.025 unsupported numbers per summary, against 85.2% and 0.125 for think-off. The cost is p50 latency of 21 s instead of 1.4 s and about 20x the output tokens. Both numbers are in the results (systems 'sarvam-105b-think' and 'sarvam-105b-think (empties rerun at 16k)').",
+  "Local models, run only on 5 passages x Hindi/Tamil (10 items) on a shared, loaded Mac:\n- qwen3-30b-local: 90% key-fact recall, no unsupported numbers, 100% in the target language, about 38 s per summary.\n- sarvam-30b-local, rerun with the shared think-prefill fix and a 1,500-token cap: 83% recall, 1.1 unsupported numbers per summary (such as truncated '₹13,80,00' and case no. '27779' for 2779), and 70% in the target language. All 10 replies ran to the 1,500-token cap. It appends unrequested 'Note' or 'Final, very simple explanation' sections, repeats blocks, and once answered entirely in English. Each reply took about 2-3 min.",
+  "Translation, price-matched cloud tier (120 items each): openai:gpt-5.4-mini kept 99.9% of facts (0.008 lost per passage) and claude-haiku-5.5 kept 99.9% (0.017). Both are slightly ahead of gemini-3.8-flash (99.8%) and sarvam-105b (99.6%), and none added unsupported numbers. Frontier models on the fixed 30 items (first 15 passages x hi/ta): gpt-5.5 100%, claude-sonnet-5.5 99.8%, gemini-pro-latest 99.8%. On that same subset, sarvam-translate scored 99.5% and sarvam-105b 99.3%. Translation is close to solved for every system except mayura.",
+  "Litigant summaries, key-fact recall:\n- Price-matched tier (80 items each): gpt-5.4-mini 97.5%, claude-haiku-5.5 97.3%, gemini-3.8-flash 98.3%; none invented numbers.\n- Frontier, same 30 items: gpt-5.5 100%, claude-sonnet-5.5 100%, gemini-pro-latest 97.8%.\n- On those 30 items, sarvam-105b scored 84.4% with think off and 92.8% with think on (reruns included).\nSo the Sarvam API is the only cloud option that leaves out roughly 1 in 7 key facts.",
+  "The OpenAI models sometimes answer in mixed Hindi-English: gpt-5.4-mini in 1 of 80 summaries and gpt-5.5 in 1 of 30. They keep court names, 'Criminal Complaint No.' and party names in Latin script, so less than 50% of the letters are Devanagari. That fails the language check even though the facts are all there.",
+  "Latency p50: translation gpt-5.4-mini 2.0 s, claude-haiku 3.5 s, claude-sonnet 5.3 s, gpt-5.5 14 s, gemini-pro 23 s. Summaries gpt-5.4-mini 2.0 s, haiku 3.5 s, sonnet 8.5 s, gpt-5.5 9.6 s, gemini-pro 16 s."
+ ],
+ "caveats": [
+  "The passages are synthetic: 12 templates filled 40 times, so errors are correlated within a template. Real judgments are longer, messier and full of citations. The source is always English.",
+  "Scoring checks whether entities survive, not meaning. Swapped party roles, wrong outcomes (bail granted or rejected) and negations are not caught. Spot checks found such errors (mayura calling both parties 'accused'). The examples in this file show full outputs.",
+  "The name check is a heuristic: a consonant skeleton with fuzzy matching (see score.py). Correct Tamil spellings that write h as க (சவுகான் for Chauhan) are missed, and modernised place names (Madras to சென்னை, Bombay to मुंबई) count as altered. Both affect every system. Amounts written fully in words are not credited.",
+  "The LLMs were told to keep numbers and write names in the target script. The translate APIs cannot take instructions and ran with defaults (formal mode, international numerals).",
+  "Think-on ran with max_tokens 6000. With a larger budget it would return fewer empty replies, at higher cost and latency.",
+  "The local-model results rest on 10 items and are indicative only. Their latency reflects a shared machine running other jobs. sarvam-30b-local's reasoning leak may come from the llama.cpp chat-template setup rather than the model.",
+  "Back-translation was not run. Translation fluency and legal register were not measured.",
+  "Frontier models ran only on a fixed 30-item subset per task (first 15 passages x Hindi/Tamil), with think on at provider-default effort. OpenAI prices are not recorded; OpenRouter cost is what usage.cost reported."
+ ],
+ "verdict": "For translating court orders, RTI replies and tribunal awards into Hindi, Tamil, Marathi or Bengali, gemini-3.8-flash, sarvam-105b (think off) and sarvam-translate:v1 all keep about 99.5% or more of the facts. Hindi is essentially solved, and Tamil is where they differ. If you want a Sarvam stack, prefer sarvam-105b: it matched sarvam-translate on facts at roughly 1/80th of the list cost per passage. Do not use mayura:v1 for legal or financial text: it loses about one fact in every two passages and garbles decimal crore amounts (₹25.5 crore became 5 crore). For plain-language litigant summaries, every non-Sarvam cloud model tested (gemini-3.8-flash, gpt-5.4-mini, claude-haiku-5.5, and the frontier tier on its subset) is clearly better: 98% of key facts and no invented numbers, against 85% and 9% of summaries with unsupported numbers for sarvam-105b. If you use sarvam-105b, either keep thinking off or give it at least 16k max_tokens (89% recall at about 20x the tokens and 21 s); tell it not to compute dates or totals, and check every number in the output against the source before it reaches a litigant. Self-hosted, qwen3-30b did better than sarvam-30b on this small sample.",
+ "updated": "2026-10-11 22:04:16"
+}

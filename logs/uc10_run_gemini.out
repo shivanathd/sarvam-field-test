@@ -1,0 +1,50 @@
+19:48:14 gemini-3.8-flash running 150 items
+overall_all_correct {'sarvam-105b': 0.0, 'sarvam-105b-think': 0.299, 'gemini-3.8-flash': 1.0}
+triage_all_correct {'sarvam-105b': 0.0, 'sarvam-105b-think': 0.0, 'gemini-3.8-flash': 1.0}
+triage_intent {'sarvam-105b': 0.0, 'sarvam-105b-think': 0.033, 'gemini-3.8-flash': 1.0}
+triage_urgency {'sarvam-105b': 0.0, 'sarvam-105b-think': 0.033, 'gemini-3.8-flash': 1.0}
+triage_language {'sarvam-105b': 0.0, 'sarvam-105b-think': 0.0, 'gemini-3.8-flash': 1.0}
+crm_all_correct {'sarvam-105b': 0.0, 'sarvam-105b-think': 0.5, 'gemini-3.8-flash': 1.0}
+crm_order_id {'sarvam-105b': 0.0, 'sarvam-105b-think': 0.633, 'gemini-3.8-flash': 1.0}
+crm_amount {'sarvam-105b': 0.0, 'sarvam-105b-think': 0.633, 'gemini-3.8-flash': 1.0}
+crm_date {'sarvam-105b': 0.0, 'sarvam-105b-think': 0.633, 'gemini-3.8-flash': 1.0}
+crm_issue {'sarvam-105b': 0.0, 'sarvam-105b-think': 0.5, 'gemini-3.8-flash': 1.0}
+crm_english {'sarvam-105b': 0.0, 'sarvam-105b-think': 0.5, 'gemini-3.8-flash': 1.0}
+reply_all_correct {'sarvam-105b': 0.0, 'sarvam-105b-think': 0.714, 'gemini-3.8-flash': 1.0}
+reply_language {'sarvam-105b': 0.0, 'sarvam-105b-think': 0.714, 'gemini-3.8-flash': 1.0}
+reply_window_stated {'sarvam-105b': 0.0, 'sarvam-105b-think': 1.0, 'gemini-3.8-flash': 1.0}
+reply_no_forbidden {'sarvam-105b': 0.0, 'sarvam-105b-think': 1.0, 'gemini-3.8-flash': 1.0}
+escalate_all_correct {'sarvam-105b': 0.0, 'sarvam-105b-think': None, 'gemini-3.8-flash': 1.0}
+escalate_sentiment {'sarvam-105b': 0.0, 'sarvam-105b-think': None, 'gemini-3.8-flash': 1.0}
+escalate_escalate {'sarvam-105b': 0.0, 'sarvam-105b-think': None, 'gemini-3.8-flash': 1.0}
+extract_all_correct {'sarvam-105b': 0.0, 'sarvam-105b-think': None, 'gemini-3.8-flash': 1.0}
+extract_invoice_no {'sarvam-105b': 0.0, 'sarvam-105b-think': None, 'gemini-3.8-flash': 1.0}
+extract_gstin {'sarvam-105b': 0.0, 'sarvam-105b-think': None, 'gemini-3.8-flash': 1.0}
+extract_total_inr {'sarvam-105b': 0.0, 'sarvam-105b-think': None, 'gemini-3.8-flash': 1.0}
+extract_due_date {'sarvam-105b': 0.0, 'sarvam-105b-think': None, 'gemini-3.8-flash': 1.0}
+{
+"sarvam-105b": {
+"in_tok": 0,
+"out_tok": 0,
+"reasoning_tok": 0,
+"calls": 150,
+"errors": 150,
+"inr_list_price": 0.0
+},
+"sarvam-105b-think": {
+"in_tok": 4371,
+"out_tok": 36312,
+"reasoning_tok": 34606,
+"calls": 67,
+"errors": 40,
+"inr_list_price": 2.24
+},
+"gemini-3.8-flash": {
+"in_tok": 25065,
+"out_tok": 7235,
+"reasoning_tok": 34461,
+"calls": 150,
+"errors": 0
+}
+}
+{'sarvam-105b': {'p50_ms': 550.6889820098877, 'p95_ms': 5982.599973678589}, 'sarvam-105b-think': {'p50_ms': 2220.8619117736816, 'p95_ms': 9618.732929229736}, 'gemini-3.8-flash': {'p50_ms': 3324.403762817383, 'p95_ms': 8991.499900817871}}

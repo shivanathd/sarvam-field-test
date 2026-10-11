@@ -1,0 +1,132 @@
+{
+ "request_id": "20261011_3b2fff49-c8c9-425a-96e4-03d09037cb6d",
+ "transcript": "வாங்கம்மா குழந்தைக்கு என்ன? Doctor, இவன் Kavin 3 வயசு. ரெண்டு நாளா காய்ச்சல். கையிலயும் காலிலயும் சின்ன சின்ன கொப்புளம் வந்திருக்கு. வாயில புண்ணு, சாப்பிட மாட்டேங்கிறான். பாக்கியா. Temperature hundred point four. Weight பதிமூணு kilo. உள்ளங்கை உள்ளங்கால் வாயில கொப்புளங்கள் இருக்கு. இது Hand Foot Mouth Disease. Virus காய்ச்சல். Doctor, சீக்கிரம் சரியாக ஒரு antibiotic கொடுங்க, Amoxicillin மாதிரி. இல்லம்மா இது virus amoxicillin வேலை செய்யாது antibiotic வேண்டாம் ஒரு வாரத்துல தானா சரியாயிடும். சரி Doctor. இவனுக்கு எந்த மருந்துக்கும் allergy இல்லை. காய்ச்சலுக்கு paracetamol syrup 4 ml காய்ச்சல் இருக்கும்போது மட்டும். மூன்று. அரிப்புக்கு Cetirizine syrup 2.5 ml ராத்திரி தூங்குறதுக்கு முன்னாடி 5 நாள். சாப்பாடு என்ன கொடுக்கலாம்? கொழுந்த பால் இளநீர் கஞ்சி கொடுங்க காரம் வேண்டாம் பள்ளிக்கூடம் ஒரு வாரம் அனுப்ப வேண்டாம். சரி. எட்டு மணி நேரத்துக்கு வலிப்பு வந்தா உடனே தூக்கிட்டு வாங்க. திரும்ப எப்போ காட்டணும்? மூணு நாள் கழிச்சு காட்டுங்க.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "வாங்கம்மா குழந்தைக்கு என்ன?",
+    "start_time_seconds": 0.01,
+    "end_time_seconds": 2.45,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor, இவன் Kavin 3 வயசு. ரெண்டு நாளா காய்ச்சல். கையிலயும் காலிலயும் சின்ன சின்ன கொப்புளம் வந்திருக்கு. வாயில புண்ணு, சாப்பிட மாட்டேங்கிறான்.",
+    "start_time_seconds": 3.57,
+    "end_time_seconds": 17.01,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "பாக்கியா.",
+    "start_time_seconds": 17.79,
+    "end_time_seconds": 18.39,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Temperature hundred point four. Weight பதிமூணு kilo.",
+    "start_time_seconds": 19.67,
+    "end_time_seconds": 24.07,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "உள்ளங்கை உள்ளங்கால் வாயில கொப்புளங்கள் இருக்கு. இது Hand Foot Mouth Disease. Virus காய்ச்சல்.",
+    "start_time_seconds": 25.29,
+    "end_time_seconds": 33.83,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor, சீக்கிரம் சரியாக ஒரு antibiotic கொடுங்க, Amoxicillin மாதிரி.",
+    "start_time_seconds": 34.83,
+    "end_time_seconds": 40.57,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "இல்லம்மா இது virus amoxicillin வேலை செய்யாது antibiotic வேண்டாம் ஒரு வாரத்துல தானா சரியாயிடும்.",
+    "start_time_seconds": 41.17,
+    "end_time_seconds": 50.03,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "சரி Doctor. இவனுக்கு எந்த மருந்துக்கும் allergy இல்லை.",
+    "start_time_seconds": 50.95,
+    "end_time_seconds": 55.41,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "காய்ச்சலுக்கு paracetamol syrup 4 ml காய்ச்சல் இருக்கும்போது மட்டும்.",
+    "start_time_seconds": 56.93,
+    "end_time_seconds": 62.27,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "மூன்று.",
+    "start_time_seconds": 66.51,
+    "end_time_seconds": 67.17,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "அரிப்புக்கு Cetirizine syrup 2.5 ml ராத்திரி தூங்குறதுக்கு முன்னாடி 5 நாள்.",
+    "start_time_seconds": 68.69,
+    "end_time_seconds": 74.93,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "சாப்பாடு என்ன கொடுக்கலாம்?",
+    "start_time_seconds": 76.35,
+    "end_time_seconds": 79.25,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "கொழுந்த பால் இளநீர் கஞ்சி கொடுங்க காரம் வேண்டாம் பள்ளிக்கூடம் ஒரு வாரம் அனுப்ப வேண்டாம்.",
+    "start_time_seconds": 79.89,
+    "end_time_seconds": 87.25,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "சரி.",
+    "start_time_seconds": 88.61,
+    "end_time_seconds": 89.13,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "எட்டு மணி நேரத்துக்கு",
+    "start_time_seconds": 90.31,
+    "end_time_seconds": 91.61,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "வலிப்பு வந்தா உடனே தூக்கிட்டு வாங்க.",
+    "start_time_seconds": 96.99,
+    "end_time_seconds": 99.31,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "திரும்ப எப்போ காட்டணும்?",
+    "start_time_seconds": 100.49,
+    "end_time_seconds": 102.03,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "மூணு நாள் கழிச்சு காட்டுங்க.",
+    "start_time_seconds": 103.53,
+    "end_time_seconds": 104.91,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "ta-IN",
+ "language_probability": null,
+ "audio_hash": "a57ba5e36bc483d5576bcaafa9ac64eb",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_3108f4bf-0187-4687-8684-2ff86e0e0324",
+  "elapsed_s": 11.062195062637329,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "codemix",
+   "language_code": "ta-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

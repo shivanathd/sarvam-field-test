@@ -1,0 +1,129 @@
+{
+ "id": "d06",
+ "pair": "hi-en",
+ "lang": "Hindi",
+ "style": "romanised",
+ "topic": "diabetes",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "Sat Sri Akal Harpreet ji. Sugar kaisi chal rahi hai?"
+  },
+  {
+   "speaker": "patient",
+   "text": "Doctor sahab, 3 mahine se sugar control nahi ho rahi, goliyan time pe le raha hoon phir bhi."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Kaun kaun si goliyan?"
+  },
+  {
+   "speaker": "patient",
+   "text": "Metformin 1000 subah-shaam aur Gliclazide 80 subah."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Aaj khane ke baad wali sugar 312 aayi hai. Weight 88 kg aur BP 138 by 86. Aapki type 2 diabetes uncontrolled hai, ab insulin start karna padega."
+  },
+  {
+   "speaker": "patient",
+   "text": "Insulin? Injection roz lagana padega?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Haan, din mein sirf ek baar, raat ko sone se pehle. Insulin Glargine 10 units, roz raat ko. Gliclazide ab band kar do, uski zaroorat nahi. Metformin 1000 mg subah-shaam chalu rakho."
+  },
+  {
+   "speaker": "patient",
+   "text": "Theek hai. Koi allergy wali baat nahi hai mujhe kisi dawai se."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Achha. Ghar pe glucometer se roz subah khali pet sugar check karke likhna."
+  },
+  {
+   "speaker": "patient",
+   "text": "Sugar zyada gir gayi toh?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Agar sugar 70 se neeche jaaye, ya pasina, kaanpna, ghabrahat ho, toh turant cheeni ya juice lo aur call karo. Aur agar seene mein dard ya bahut pasina aaye toh seedha emergency."
+  },
+  {
+   "speaker": "patient",
+   "text": "Samajh gaya. Agli baar kab?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "2 hafte baad sugar chart lekar aana, insulin ka dose adjust karenge."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "high blood sugar",
+   "uncontrolled sugar",
+   "uncontrolled diabetes"
+  ],
+  "duration": {
+   "value": 3,
+   "unit": "months"
+  },
+  "vitals": {
+   "blood_sugar": 312,
+   "weight_kg": 88,
+   "bp": "138/86"
+  },
+  "diagnosis": [
+   "uncontrolled type 2 diabetes",
+   "type 2 diabetes",
+   "diabetes mellitus",
+   "t2dm"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "insulin glargine",
+     "glargine",
+     "lantus",
+     "basalog"
+    ],
+    "dose": "10 units",
+    "frequency": "HS",
+    "duration_days": null
+   },
+   {
+    "drug": [
+     "metformin",
+     "glycomet"
+    ],
+    "dose": "1000 mg",
+    "frequency": "BD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "low sugar",
+    "hypoglycemia",
+    "hypoglycaemia",
+    "sugar below 70",
+    "sweating"
+   ],
+   [
+    "chest pain"
+   ]
+  ],
+  "follow_up": [
+   "2 weeks",
+   "two weeks",
+   "after 2 weeks"
+  ],
+  "not_prescribed": [
+   "gliclazide"
+  ]
+ },
+ "trap": "Gliclazide stopped; insulin glargine started."
+}

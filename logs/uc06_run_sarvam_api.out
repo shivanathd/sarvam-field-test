@@ -1,0 +1,17 @@
+21:52:16 sarvam-105b running 70
+grounded_correct {'sarvam-30b-local-nothink': 0.733, 'sarvam-30b-local-think': 0.754, 'qwen3-30b-local-nothink': 0.683, 'qwen3-30b-local-think': 0.767, 'sarvam-30b-cpu-nothink': 0.733, 'qwen3-30b-cpu-nothink': 0.938, 'sarvam-105b': 0.95, 'gemini-3.8-flash': 1.0}
+reply_language_correct {'sarvam-30b-local-nothink': 0.957, 'sarvam-30b-local-think': 0.789, 'qwen3-30b-local-nothink': 0.9, 'qwen3-30b-local-think': 0.857, 'sarvam-30b-cpu-nothink': 0.957, 'qwen3-30b-cpu-nothink': 1.0, 'sarvam-105b': 1.0, 'gemini-3.8-flash': 0.957}
+oos_refusal {'sarvam-30b-local-nothink': 0.1, 'sarvam-30b-local-think': None, 'qwen3-30b-local-nothink': 0.0, 'qwen3-30b-local-think': 0.9, 'sarvam-30b-cpu-nothink': 0.1, 'qwen3-30b-cpu-nothink': None, 'sarvam-105b': 0.8, 'gemini-3.8-flash': 1.0}
+oos_refusal_lenient {'sarvam-30b-local-nothink': 0.3, 'sarvam-30b-local-think': None, 'qwen3-30b-local-nothink': 0.4, 'qwen3-30b-local-think': 0.9, 'sarvam-30b-cpu-nothink': 0.2, 'qwen3-30b-cpu-nothink': None, 'sarvam-105b': 1.0, 'gemini-3.8-flash': 1.0}
+false_refusal {'sarvam-30b-local-nothink': 0.0, 'sarvam-30b-local-think': 0.14, 'qwen3-30b-local-nothink': 0.017, 'qwen3-30b-local-think': 0.083, 'sarvam-30b-cpu-nothink': 0.0, 'qwen3-30b-cpu-nothink': 0.0, 'sarvam-105b': 0.0, 'gemini-3.8-flash': 0.0}
+overall_pass {'sarvam-30b-local-nothink': 0.629, 'sarvam-30b-local-think': 0.684, 'qwen3-30b-local-nothink': 0.557, 'qwen3-30b-local-think': 0.7, 'sarvam-30b-cpu-nothink': 0.629, 'qwen3-30b-cpu-nothink': 0.938, 'sarvam-105b': 0.929, 'gemini-3.8-flash': 0.957}
+grounded_correct_native_script {'sarvam-30b-local-nothink': 0.8, 'sarvam-30b-local-think': 0.857, 'qwen3-30b-local-nothink': 0.8, 'qwen3-30b-local-think': 0.9, 'sarvam-30b-cpu-nothink': 0.867, 'qwen3-30b-cpu-nothink': 1.0, 'sarvam-105b': 1.0, 'gemini-3.8-flash': 1.0}
+grounded_correct_romanised {'sarvam-30b-local-nothink': 0.667, 'sarvam-30b-local-think': 0.655, 'qwen3-30b-local-nothink': 0.567, 'qwen3-30b-local-think': 0.633, 'sarvam-30b-cpu-nothink': 0.6, 'qwen3-30b-cpu-nothink': 0.875, 'sarvam-105b': 0.9, 'gemini-3.8-flash': 1.0}
+sarvam-30b-local-nothink {'p50_ms': 60398.8, 'p95_ms': 135175.8, 'mean_ms': 70938.5, 'mean_out_tok': 26.9, 'prompt_tok_per_s_median': 91.6, 'gen_tok_per_s_median': 11.8, 'concurrency': 4}
+sarvam-30b-local-think {'p50_ms': 209028.3, 'p95_ms': 447982.1, 'mean_ms': 238284.8, 'mean_out_tok': 1616.3, 'prompt_tok_per_s_median': 116.1, 'gen_tok_per_s_median': 20.5, 'concurrency': 4}
+qwen3-30b-local-nothink {'p50_ms': 6601.0, 'p95_ms': 18586.2, 'mean_ms': 8130.9, 'mean_out_tok': 59.0, 'prompt_tok_per_s_median': 114.0, 'gen_tok_per_s_median': 8.3, 'concurrency': 4}
+qwen3-30b-local-think {'p50_ms': 29162.0, 'p95_ms': 43796.5, 'mean_ms': 30432.9, 'mean_out_tok': 236.7, 'prompt_tok_per_s_median': 93.0, 'gen_tok_per_s_median': 9.3, 'concurrency': 4}
+sarvam-30b-cpu-nothink {'p50_ms': 21950.2, 'p95_ms': 48848.0, 'mean_ms': 24760.4, 'mean_out_tok': 26.5, 'prompt_tok_per_s_median': 5.8, 'gen_tok_per_s_median': 1.7, 'concurrency': 1}
+qwen3-30b-cpu-nothink {'p50_ms': 18445.1, 'p95_ms': 97540.5, 'mean_ms': 25461.2, 'mean_out_tok': 37.2, 'prompt_tok_per_s_median': 7.4, 'gen_tok_per_s_median': 3.5, 'concurrency': 1}
+sarvam-105b {'p50_ms': 482.8, 'p95_ms': 2264.8, 'mean_ms': 865.2, 'mean_out_tok': 31.7}
+gemini-3.8-flash {'p50_ms': 3567.4, 'p95_ms': 12121.7, 'mean_ms': 4592.6, 'mean_out_tok': 41.3}

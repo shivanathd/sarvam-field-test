@@ -1,0 +1,128 @@
+{
+ "id": "d27",
+ "pair": "bn-en",
+ "lang": "Bengali",
+ "style": "native",
+ "topic": "paediatrics",
+ "audio_subset": true,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "কী হয়েছে বাবুর? কত বয়স?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "ডাক্তারবাবু, ছেলের বয়স 4 বছর। 2 দিন ধরে কাশি, নাক দিয়ে জল পড়ছে, আর অল্প জ্বর।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "জ্বর মেপেছিলেন?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "হ্যাঁ, আজ সকালে মেপেছি, গা গরম ছিল।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "আচ্ছা, এখানে দেখছি temperature একশো দশমিক দুই ডিগ্রি। Weight 16 kg, oxygen saturation 98, ভালো আছে। বুকে শুনছি... chest clear আছে।"
+  },
+  {
+   "speaker": "attendant",
+   "text": "আগের বার ওকে amoxicillin দিয়েছিল, তাতে গায়ে rash বেরিয়েছিল। এবারও কি antibiotic লাগবে?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ভালো করেছেন বলে, ওর amoxicillin-এ allergy আছে, লিখে রাখছি। এবার antibiotic লাগবে না, এটা সাধারণ ঠান্ডা লাগা, common cold।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "জ্বরের জন্য paracetamol syrup, Calpol, 5 ml করে দেবেন, শুধু জ্বর এলে, দিনে তিনবারের বেশি নয়, 3 দিন পর্যন্ত। আর cetirizine syrup 2.5 ml রাতে ঘুমের আগে, 5 দিন।"
+  },
+  {
+   "speaker": "attendant",
+   "text": "আর কী খেয়াল রাখব?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "যদি খুব তাড়াতাড়ি শ্বাস নেয়, বুক বসে যায়, বা কিছুই খেতে না চায়, ঝিমিয়ে পড়ে, তাহলে সঙ্গে সঙ্গে নিয়ে আসবেন।"
+  },
+  {
+   "speaker": "attendant",
+   "text": "ঠিক আছে। আবার কবে আনব?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "3 দিন পরে একবার দেখিয়ে যাবেন।"
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "cough",
+   "runny nose",
+   "cold"
+  ],
+  "duration": {
+   "value": 2,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 100.2,
+   "weight_kg": 16,
+   "spo2": 98
+  },
+  "diagnosis": [
+   "common cold",
+   "upper respiratory tract infection",
+   "urti",
+   "viral urti"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "paracetamol",
+     "calpol"
+    ],
+    "dose": "5 ml",
+    "frequency": "SOS",
+    "duration_days": 3
+   },
+   {
+    "drug": [
+     "cetirizine"
+    ],
+    "dose": "2.5 ml",
+    "frequency": "HS",
+    "duration_days": 5
+   }
+  ],
+  "allergies": [
+   [
+    "amoxicillin",
+    "penicillin"
+   ]
+  ],
+  "red_flags": [
+   [
+    "fast breathing",
+    "rapid breathing",
+    "chest indrawing"
+   ],
+   [
+    "not feeding",
+    "not eating",
+    "poor feeding",
+    "lethargy",
+    "drowsy"
+   ]
+  ],
+  "follow_up": [
+   "3 days",
+   "after 3 days"
+  ],
+  "not_prescribed": [
+   "amoxicillin"
+  ]
+ },
+ "trap": "Mother discloses amoxicillin rash; amoxicillin mentioned but not prescribed. Temperature spoken in words."
+}

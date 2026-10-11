@@ -1,0 +1,132 @@
+{
+ "id": "d11",
+ "pair": "ml-en",
+ "lang": "Malayalam",
+ "style": "native",
+ "topic": "pregnancy",
+ "audio_subset": true,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "ഫാത്തിമ, വരൂ. ഇപ്പോൾ എത്ര ആഴ്ചയായി?"
+  },
+  {
+   "speaker": "patient",
+   "text": "മുപ്പത്തിരണ്ട് ആഴ്ചയായി ഡോക്ടറേ. മൂന്നു ദിവസമായി ചെറിയ തലവേദനയും കാലിൽ നീരും ഉണ്ട്."
+  },
+  {
+   "speaker": "doctor",
+   "text": "കുഞ്ഞിന്റെ അനക്കം നന്നായി അറിയുന്നുണ്ടോ?"
+  },
+  {
+   "speaker": "patient",
+   "text": "ഉണ്ട്, നന്നായി അനങ്ങുന്നുണ്ട്."
+  },
+  {
+   "speaker": "doctor",
+   "text": "BP 142 by 92 ആണ്, കുറച്ച് കൂടുതലാണ്. Pulse 88, weight 68 kilo. ഇത് gestational hypertension ആണ്, ഗർഭകാലത്ത് വരുന്ന BP."
+  },
+  {
+   "speaker": "patient",
+   "text": "ഡോക്ടറേ, കല്യാണത്തിനു മുമ്പ് എനിക്ക് BP-ക്ക് Telmisartan തന്നിരുന്നു. അത് വീട്ടിലുണ്ട്, അത് കഴിക്കട്ടെ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "വേണ്ട, ഒരിക്കലും വേണ്ട. ഗർഭകാലത്ത് Telmisartan കുഞ്ഞിന് ദോഷമാണ്. പകരം Labetalol 100 mg, ദിവസം രണ്ടു നേരം, രാവിലെയും രാത്രിയും. ഇത് സ്ഥിരമായി കഴിക്കണം."
+  },
+  {
+   "speaker": "patient",
+   "text": "ശരി. എനിക്ക് ഒരു മരുന്നിനോടും അലർജി ഇല്ല."
+  },
+  {
+   "speaker": "doctor",
+   "text": "നല്ലത്. Calcium 500 mg രണ്ടു നേരം കഴിക്കുന്നത് തുടരണം."
+  },
+  {
+   "speaker": "patient",
+   "text": "വേറെ എന്തെങ്കിലും ശ്രദ്ധിക്കണോ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "കഠിനമായ തലവേദന, കാഴ്ച മങ്ങൽ, കുഞ്ഞിന്റെ അനക്കം കുറയുക, രക്തസ്രാവം, ഇതിൽ ഏതെങ്കിലും ഉണ്ടായാൽ ഉടനെ labour room-ൽ വരണം."
+  },
+  {
+   "speaker": "patient",
+   "text": "ശരി ഡോക്ടറേ. ഇനി എപ്പോൾ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ഒരാഴ്ച കഴിഞ്ഞ് urine protein test ചെയ്തിട്ട് വരൂ."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "headache",
+   "swelling of feet",
+   "pedal edema",
+   "leg swelling"
+  ],
+  "duration": {
+   "value": 3,
+   "unit": "days"
+  },
+  "vitals": {
+   "bp": "142/92",
+   "pulse": 88,
+   "weight_kg": 68
+  },
+  "diagnosis": [
+   "gestational hypertension",
+   "pregnancy induced hypertension",
+   "pih"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "labetalol",
+     "labebet"
+    ],
+    "dose": "100 mg",
+    "frequency": "BD",
+    "duration_days": null
+   },
+   {
+    "drug": [
+     "calcium",
+     "calcium carbonate"
+    ],
+    "dose": "500 mg",
+    "frequency": "BD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "severe headache"
+   ],
+   [
+    "blurred vision"
+   ],
+   [
+    "reduced fetal movements",
+    "decreased fetal movement"
+   ],
+   [
+    "bleeding",
+    "vaginal bleeding"
+   ]
+  ],
+  "follow_up": [
+   "1 week",
+   "one week",
+   "after 1 week",
+   "7 days"
+  ],
+  "not_prescribed": [
+   "telmisartan"
+  ]
+ },
+ "trap": "Patient wants to take her old Telmisartan; refused in pregnancy."
+}

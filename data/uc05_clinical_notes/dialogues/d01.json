@@ -1,0 +1,144 @@
+{
+ "id": "d01",
+ "pair": "hi-en",
+ "lang": "Hindi",
+ "style": "native",
+ "topic": "fever",
+ "audio_subset": true,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "नमस्ते, बैठिए। बताइए क्या तकलीफ है?"
+  },
+  {
+   "speaker": "patient",
+   "text": "डॉक्टर साहब, तीन दिन से बुखार है, पूरे बदन में दर्द है। रात को ठंड लगकर बुखार चढ़ता है।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "अच्छा। घर पर temperature कितना जा रहा है? कोई दवा ली?"
+  },
+  {
+   "speaker": "patient",
+   "text": "घर पर 102 तक गया था। मैंने medical store से Combiflam ले ली थी, दो बार।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ठीक है। अभी आपका temperature 101.4 है, pulse 98 है, और BP 118 by 76, normal है। उल्टी, दस्त या खांसी कुछ है?"
+  },
+  {
+   "speaker": "patient",
+   "text": "खांसी नहीं है, थोड़ा जी मिचलाता है। भूख नहीं लगती।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "किसी दवा से allergy है आपको?"
+  },
+  {
+   "speaker": "patient",
+   "text": "नहीं डॉक्टर, कभी कुछ नहीं हुआ। बस कोई antibiotic दे दीजिए, Azithromycin वाली, जल्दी ठीक हो जाऊँगा।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "नहीं, यह viral fever लग रहा है, इसमें antibiotic का कोई फायदा नहीं है। Azithromycin नहीं देंगे। और Combiflam अभी बंद कर दीजिए, dengue का शक हो तो वो safe नहीं है।"
+  },
+  {
+   "speaker": "patient",
+   "text": "ठीक है। फिर क्या लेना है?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Paracetamol 650 mg, यानी Dolo 650, दिन में तीन बार, तीन दिन तक। साथ में Pantoprazole 40 mg, सुबह खाली पेट एक बार, पाँच दिन।"
+  },
+  {
+   "speaker": "patient",
+   "text": "खाने-पीने में क्या ध्यान रखूँ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "खूब पानी, नारियल पानी और नींबू पानी पीजिए। एक CBC test भी करवा लीजिए।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "अगर शरीर पर लाल दाने निकलें, मसूड़ों से खून आए, या सांस लेने में तकलीफ हो, तो तुरंत आइए, इंतज़ार मत कीजिए।"
+  },
+  {
+   "speaker": "patient",
+   "text": "जी समझ गया। दोबारा कब आऊँ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "तीन दिन बाद CBC की report लेकर आइए।"
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "fever",
+   "body ache"
+  ],
+  "duration": {
+   "value": 3,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 101.4,
+   "pulse": 98,
+   "bp": "118/76"
+  },
+  "diagnosis": [
+   "viral fever",
+   "viral pyrexia",
+   "viral illness"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "paracetamol",
+     "dolo 650",
+     "dolo"
+    ],
+    "dose": "650 mg",
+    "frequency": "TDS",
+    "duration_days": 3
+   },
+   {
+    "drug": [
+     "pantoprazole",
+     "pan 40"
+    ],
+    "dose": "40 mg",
+    "frequency": "OD",
+    "duration_days": 5
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "rash",
+    "red spots"
+   ],
+   [
+    "bleeding gums",
+    "gum bleeding",
+    "bleeding"
+   ],
+   [
+    "breathlessness",
+    "difficulty breathing",
+    "shortness of breath"
+   ]
+  ],
+  "follow_up": [
+   "3 days",
+   "after 3 days",
+   "three days"
+  ],
+  "not_prescribed": [
+   "azithromycin",
+   "combiflam",
+   "ibuprofen"
+  ]
+ },
+ "trap": "Patient took Combiflam (stopped) and asked for Azithromycin (refused)."
+}

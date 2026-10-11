@@ -1,0 +1,236 @@
+{
+ "schema_version": 2,
+ "diagram_type": "workflow",
+ "meta": {
+  "title": "How the Sarvam Field Test ran",
+  "quality_profile": "showcase",
+  "output": ".archify/workflow-bench-run-20261011-2320/bench-run.html"
+ },
+ "lanes": [
+  {
+   "id": "data",
+   "label": "Test data"
+  },
+  {
+   "id": "agents",
+   "label": "Suite agents"
+  },
+  {
+   "id": "models",
+   "label": "Systems under test"
+  },
+  {
+   "id": "scoring",
+   "label": "Scoring and outputs",
+   "variant": "exception"
+  }
+ ],
+ "mainPath": [
+  "authored",
+  "suites",
+  "sarvam",
+  "score",
+  "results",
+  "report"
+ ],
+ "nodes": [
+  {
+   "id": "authored",
+   "lane": "data",
+   "col": 3,
+   "type": "database",
+   "label": "Authored sets",
+   "sublabel": "orders, KYC, policies",
+   "tag": "known answers",
+   "width": 160
+  },
+  {
+   "id": "public",
+   "lane": "data",
+   "col": 4,
+   "type": "database",
+   "label": "Public speech",
+   "sublabel": "FLEURS / FLORES",
+   "width": 160
+  },
+  {
+   "id": "brief",
+   "lane": "agents",
+   "col": 2,
+   "type": "backend",
+   "label": "Shared brief",
+   "sublabel": "rules + bench.py",
+   "width": 160
+  },
+  {
+   "id": "suites",
+   "lane": "agents",
+   "col": 3,
+   "type": "backend",
+   "label": "12 suites",
+   "sublabel": "6 parallel agents",
+   "tag": "resumable",
+   "width": 160
+  },
+  {
+   "id": "sarvam",
+   "lane": "models",
+   "col": 3,
+   "type": "cloud",
+   "label": "Sarvam API",
+   "sublabel": "Saaras, Bulbul, 105B",
+   "width": 160
+  },
+  {
+   "id": "cloud",
+   "lane": "models",
+   "col": 4,
+   "type": "cloud",
+   "label": "Cloud rivals",
+   "sublabel": "Gemini, OpenAI, Claude",
+   "width": 160
+  },
+  {
+   "id": "local",
+   "lane": "models",
+   "col": 2,
+   "type": "backend",
+   "label": "Self-hosted",
+   "sublabel": "llama.cpp on the Mac",
+   "width": 160
+  },
+  {
+   "id": "score",
+   "lane": "scoring",
+   "col": 3,
+   "type": "backend",
+   "label": "Known-answer scoring",
+   "sublabel": "bootstrap 95% CIs",
+   "width": 160
+  },
+  {
+   "id": "raw",
+   "lane": "scoring",
+   "col": 2,
+   "type": "database",
+   "label": "Raw outputs",
+   "sublabel": "every reply kept",
+   "width": 160
+  },
+  {
+   "id": "results",
+   "lane": "scoring",
+   "col": 4,
+   "type": "database",
+   "label": "Result files",
+   "sublabel": "one JSON per suite",
+   "width": 160
+  },
+  {
+   "id": "report",
+   "lane": "scoring",
+   "col": 5,
+   "type": "frontend",
+   "label": "Report + repo",
+   "sublabel": "rebuilds offline",
+   "width": 160
+  }
+ ],
+ "edges": [
+  {
+   "id": "e1",
+   "from": "authored",
+   "to": "suites",
+   "label": "inputs",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e2",
+   "from": "public",
+   "to": "suites",
+   "variant": "default"
+  },
+  {
+   "id": "e3",
+   "from": "brief",
+   "to": "suites",
+   "label": "same rules",
+   "variant": "dashed"
+  },
+  {
+   "id": "e4",
+   "from": "suites",
+   "to": "sarvam",
+   "label": "same prompts",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e5",
+   "from": "suites",
+   "to": "cloud",
+   "variant": "default"
+  },
+  {
+   "id": "e6",
+   "from": "suites",
+   "to": "local",
+   "variant": "default"
+  },
+  {
+   "id": "e7",
+   "from": "sarvam",
+   "to": "score",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e8",
+   "from": "cloud",
+   "to": "score",
+   "variant": "default"
+  },
+  {
+   "id": "e10",
+   "from": "local",
+   "to": "score",
+   "variant": "default"
+  },
+  {
+   "id": "e11",
+   "from": "score",
+   "to": "raw",
+   "label": "cache",
+   "variant": "dashed"
+  },
+  {
+   "id": "e12",
+   "from": "score",
+   "to": "results",
+   "variant": "emphasis"
+  },
+  {
+   "id": "e13",
+   "from": "results",
+   "to": "report",
+   "label": "build",
+   "variant": "emphasis"
+  }
+ ],
+ "cards": [
+  {
+   "dot": "cyan",
+   "title": "Fair comparison",
+   "items": [
+    "Every system gets identical inputs and prompts",
+    "Sarvam-105B runs with thinking off and on"
+   ]
+  },
+  {
+   "dot": "rose",
+   "title": "Checked by code, sandboxed",
+   "items": [
+    "Gold answers scored by code; no model grades another",
+    "Model-written code runs with no network or home access"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,418 @@
+{
+ "hi01": {
+  "voice": "say:Lekha",
+  "audio_s": 6.48
+ },
+ "hi03": {
+  "voice": "say:Lekha",
+  "audio_s": 6.81
+ },
+ "hi05": {
+  "voice": "say:Lekha",
+  "audio_s": 7.94
+ },
+ "hi07": {
+  "voice": "say:Lekha",
+  "audio_s": 6.61
+ },
+ "hi09": {
+  "voice": "say:Lekha",
+  "audio_s": 6.11
+ },
+ "hi11": {
+  "voice": "say:Lekha",
+  "audio_s": 5.23
+ },
+ "hi13": {
+  "voice": "say:Lekha",
+  "audio_s": 6.97
+ },
+ "hi15": {
+  "voice": "say:Lekha",
+  "audio_s": 7.12
+ },
+ "ta01": {
+  "voice": "say:Vani",
+  "audio_s": 6.51
+ },
+ "ta03": {
+  "voice": "say:Vani",
+  "audio_s": 5.76
+ },
+ "ta05": {
+  "voice": "say:Vani",
+  "audio_s": 8.41
+ },
+ "ta07": {
+  "voice": "say:Vani",
+  "audio_s": 6.41
+ },
+ "ta09": {
+  "voice": "say:Vani",
+  "audio_s": 6.0
+ },
+ "ta11": {
+  "voice": "say:Vani",
+  "audio_s": 4.92
+ },
+ "ta13": {
+  "voice": "say:Vani",
+  "audio_s": 6.73
+ },
+ "ta15": {
+  "voice": "say:Vani",
+  "audio_s": 8.65
+ },
+ "bn01": {
+  "voice": "say:Piya",
+  "audio_s": 6.02
+ },
+ "bn03": {
+  "voice": "say:Piya",
+  "audio_s": 5.99
+ },
+ "bn05": {
+  "voice": "say:Piya",
+  "audio_s": 8.23
+ },
+ "bn07": {
+  "voice": "say:Piya",
+  "audio_s": 5.38
+ },
+ "bn09": {
+  "voice": "say:Piya",
+  "audio_s": 6.05
+ },
+ "bn11": {
+  "voice": "say:Piya",
+  "audio_s": 5.98
+ },
+ "bn13": {
+  "voice": "say:Piya",
+  "audio_s": 5.75
+ },
+ "bn15": {
+  "voice": "say:Piya",
+  "audio_s": 7.57
+ },
+ "kn01": {
+  "voice": "say:Soumya",
+  "audio_s": 7.11
+ },
+ "kn03": {
+  "voice": "say:Soumya",
+  "audio_s": 6.29
+ },
+ "kn05": {
+  "voice": "say:Soumya",
+  "audio_s": 9.62
+ },
+ "kn07": {
+  "voice": "say:Soumya",
+  "audio_s": 6.34
+ },
+ "kn09": {
+  "voice": "say:Soumya",
+  "audio_s": 6.98
+ },
+ "kn11": {
+  "voice": "say:Soumya",
+  "audio_s": 6.19
+ },
+ "kn13": {
+  "voice": "say:Soumya",
+  "audio_s": 6.99
+ },
+ "kn15": {
+  "voice": "say:Soumya",
+  "audio_s": 8.23
+ },
+ "hi02": {
+  "voice": "gemini:Puck",
+  "audio_s": 8.16,
+  "in_tok": 33,
+  "out_tok": 204
+ },
+ "hi04": {
+  "voice": "gemini:Aoede",
+  "audio_s": 4.96,
+  "in_tok": 23,
+  "out_tok": 124
+ },
+ "hi06": {
+  "voice": "gemini:Leda",
+  "audio_s": 5.52,
+  "in_tok": 23,
+  "out_tok": 138
+ },
+ "hi08": {
+  "voice": "gemini:Puck",
+  "audio_s": 5.28,
+  "in_tok": 24,
+  "out_tok": 132
+ },
+ "hi10": {
+  "voice": "gemini:Aoede",
+  "audio_s": 4.2,
+  "in_tok": 17,
+  "out_tok": 105
+ },
+ "hi12": {
+  "voice": "gemini:Leda",
+  "audio_s": 8.96,
+  "in_tok": 29,
+  "out_tok": 225
+ },
+ "hi14": {
+  "voice": "gemini:Puck",
+  "audio_s": 6.08,
+  "in_tok": 27,
+  "out_tok": 152
+ },
+ "hi16": {
+  "voice": "gemini:Aoede",
+  "audio_s": 4.88,
+  "in_tok": 19,
+  "out_tok": 122
+ },
+ "ta02": {
+  "voice": "gemini:Puck",
+  "audio_s": 8.32,
+  "in_tok": 31,
+  "out_tok": 208
+ },
+ "ta04": {
+  "voice": "gemini:Aoede",
+  "audio_s": 5.84,
+  "in_tok": 27,
+  "out_tok": 146
+ },
+ "ta06": {
+  "voice": "gemini:Leda",
+  "audio_s": 8.68,
+  "in_tok": 28,
+  "out_tok": 217
+ },
+ "ta08": {
+  "voice": "gemini:Puck",
+  "audio_s": 4.96,
+  "in_tok": 24,
+  "out_tok": 124
+ },
+ "ta10": {
+  "voice": "gemini:Aoede",
+  "audio_s": 5.44,
+  "in_tok": 22,
+  "out_tok": 136
+ },
+ "ta12": {
+  "voice": "gemini:Leda",
+  "audio_s": 7.36,
+  "in_tok": 28,
+  "out_tok": 184
+ },
+ "ta14": {
+  "voice": "gemini:Puck",
+  "audio_s": 5.12,
+  "in_tok": 26,
+  "out_tok": 128
+ },
+ "ta16": {
+  "voice": "gemini:Aoede",
+  "audio_s": 5.52,
+  "in_tok": 19,
+  "out_tok": 138
+ },
+ "ml01": {
+  "voice": "gemini:Kore",
+  "audio_s": 6.32,
+  "in_tok": 28,
+  "out_tok": 158
+ },
+ "ml02": {
+  "voice": "gemini:Puck",
+  "audio_s": 7.16,
+  "in_tok": 33,
+  "out_tok": 179
+ },
+ "ml03": {
+  "voice": "gemini:Charon",
+  "audio_s": 4.16,
+  "in_tok": 25,
+  "out_tok": 104
+ },
+ "ml04": {
+  "voice": "gemini:Aoede",
+  "audio_s": 4.64,
+  "in_tok": 26,
+  "out_tok": 116
+ },
+ "ml05": {
+  "voice": "gemini:Fenrir",
+  "audio_s": 7.36,
+  "in_tok": 29,
+  "out_tok": 184
+ },
+ "ml06": {
+  "voice": "gemini:Leda",
+  "audio_s": 8.24,
+  "in_tok": 26,
+  "out_tok": 206
+ },
+ "ml07": {
+  "voice": "gemini:Kore",
+  "audio_s": 5.04,
+  "in_tok": 26,
+  "out_tok": 126
+ },
+ "ml08": {
+  "voice": "gemini:Puck",
+  "audio_s": 4.64,
+  "in_tok": 20,
+  "out_tok": 116
+ },
+ "ml09": {
+  "voice": "gemini:Charon",
+  "audio_s": 5.08,
+  "in_tok": 25,
+  "out_tok": 127
+ },
+ "ml10": {
+  "voice": "gemini:Aoede",
+  "audio_s": 5.24,
+  "in_tok": 22,
+  "out_tok": 131
+ },
+ "ml11": {
+  "voice": "gemini:Fenrir",
+  "audio_s": 5.08,
+  "in_tok": 18,
+  "out_tok": 127
+ },
+ "ml12": {
+  "voice": "gemini:Leda",
+  "audio_s": 8.68,
+  "in_tok": 28,
+  "out_tok": 217
+ },
+ "ml13": {
+  "voice": "gemini:Kore",
+  "audio_s": 6.56,
+  "in_tok": 26,
+  "out_tok": 164
+ },
+ "ml14": {
+  "voice": "gemini:Puck",
+  "audio_s": 5.92,
+  "in_tok": 26,
+  "out_tok": 148
+ },
+ "ml15": {
+  "voice": "gemini:Charon",
+  "audio_s": 6.24,
+  "in_tok": 29,
+  "out_tok": 156
+ },
+ "ml16": {
+  "voice": "gemini:Aoede",
+  "audio_s": 4.32,
+  "in_tok": 18,
+  "out_tok": 108
+ },
+ "bn02": {
+  "voice": "gemini:Puck",
+  "audio_s": 6.68,
+  "in_tok": 30,
+  "out_tok": 167
+ },
+ "bn04": {
+  "voice": "gemini:Aoede",
+  "audio_s": 5.28,
+  "in_tok": 22,
+  "out_tok": 132
+ },
+ "bn06": {
+  "voice": "gemini:Leda",
+  "audio_s": 8.88,
+  "in_tok": 28,
+  "out_tok": 223
+ },
+ "bn08": {
+  "voice": "gemini:Puck",
+  "audio_s": 4.12,
+  "in_tok": 21,
+  "out_tok": 103
+ },
+ "bn10": {
+  "voice": "gemini:Aoede",
+  "audio_s": 4.32,
+  "in_tok": 18,
+  "out_tok": 108
+ },
+ "bn12": {
+  "voice": "gemini:Leda",
+  "audio_s": 7.36,
+  "in_tok": 24,
+  "out_tok": 184
+ },
+ "bn14": {
+  "voice": "gemini:Puck",
+  "audio_s": 5.28,
+  "in_tok": 25,
+  "out_tok": 132
+ },
+ "bn16": {
+  "voice": "gemini:Aoede",
+  "audio_s": 4.12,
+  "in_tok": 17,
+  "out_tok": 103
+ },
+ "kn02": {
+  "voice": "gemini:Puck",
+  "audio_s": 7.52,
+  "in_tok": 31,
+  "out_tok": 188
+ },
+ "kn04": {
+  "voice": "gemini:Aoede",
+  "audio_s": 5.04,
+  "in_tok": 28,
+  "out_tok": 126
+ },
+ "kn06": {
+  "voice": "gemini:Leda",
+  "audio_s": 7.76,
+  "in_tok": 28,
+  "out_tok": 194
+ },
+ "kn08": {
+  "voice": "gemini:Puck",
+  "audio_s": 5.48,
+  "in_tok": 25,
+  "out_tok": 137
+ },
+ "kn10": {
+  "voice": "gemini:Aoede",
+  "audio_s": 4.84,
+  "in_tok": 21,
+  "out_tok": 121
+ },
+ "kn12": {
+  "voice": "gemini:Leda",
+  "audio_s": 9.24,
+  "in_tok": 26,
+  "out_tok": 231
+ },
+ "kn14": {
+  "voice": "gemini:Puck",
+  "audio_s": 7.24,
+  "in_tok": 26,
+  "out_tok": 181
+ },
+ "kn16": {
+  "voice": "gemini:Aoede",
+  "audio_s": 4.24,
+  "in_tok": 17,
+  "out_tok": 106
+ }
+}

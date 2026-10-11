@@ -1,0 +1,37 @@
+20:06:45 running 100 jobs (A|1|sarvam-105b ...)
+20:07:39 running 100 jobs (A|1|sarvam-105b-think ...)
+20:30:06 running 61 jobs (A|40|sarvam-105b-think ...)
+20:32:29 scored; Sarvam spend estimate INR 11.2
+20:33:54 running 100 jobs (A|1|gemini-3.8-flash ...)
+20:35:03 running 100 jobs (A|1|sarvam-30b-local ...)
+20:35:15 running 100 jobs (B|hi-00|sarvam-transliterate ...)
+20:35:40 running 100 jobs (B|hi-00|sarvam-105b ...)
+20:36:21 running 100 jobs (B|hi-00|gemini-3.8-flash ...)
+20:37:35 scored; Sarvam spend estimate INR 15.67
+20:38:29 scored; Sarvam spend estimate INR 15.67
+20:43:27 scored; Sarvam spend estimate INR 15.67
+20:46:37 scored; Sarvam spend estimate INR 15.67
+20:47:09 running 47 jobs (A|7|sarvam-30b-local ...)
+20:59:14 running 50 jobs (B|hi-00|sarvam-30b-local ...)
+21:07:32 running 50 jobs (B|hi-00|qwen3-30b-local ...)
+21:08:16 running 50 jobs (A|1|qwen3-30b-local ...)
+21:12:40 scored; Sarvam spend estimate INR 15.67
+21:14:19 scored; Sarvam spend estimate INR 15.67
+21:14:30 scored; Sarvam spend estimate INR 15.67
+21:39:49 running 3 jobs (A|18|sarvam-105b-think-16k ...)
+21:40:32 running 100 jobs (A|1|openai:gpt-5.4-mini ...)
+21:40:59 running 100 jobs (A|1|or:anthropic/claude-haiku-5.5 ...)
+21:41:45 running 30 jobs (A|1|gemini-pro-latest ...)
+21:42:48 running 30 jobs (A|1|openai:gpt-5.5 ...)
+21:43:09 running 30 jobs (A|1|or:anthropic/claude-sonnet-5.5 ...)
+21:43:33 running 100 jobs (B|hi-00|openai:gpt-5.4-mini ...)
+21:43:58 running 100 jobs (B|hi-00|or:anthropic/claude-haiku-5.5 ...)
+21:44:38 running 30 jobs (B|hi-00|gemini-pro-latest ...)
+21:45:18 running 30 jobs (B|hi-00|openai:gpt-5.5 ...)
+21:45:41 running 30 jobs (B|hi-00|or:anthropic/claude-sonnet-5.5 ...)
+21:45:57 scored; Sarvam spend estimate INR 16.4
+21:46:52 scored; Sarvam spend estimate INR 16.4
+21:48:37 scored; Sarvam spend estimate INR 16.4
+22:10:37 running 44 jobs (A|13|sarvam-30b-local ...)
+22:17:55 scored; Sarvam spend estimate INR 15.67
+23:07:09 scored; Sarvam spend estimate INR 16.4

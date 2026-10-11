@@ -1,0 +1,126 @@
+{
+ "request_id": "20261011_921d9c5f-ee99-4280-92cd-585041b6b249",
+ "transcript": "নমস্কার, বসুন। কী সমস্যা হচ্ছে বলুন? ডাক্তারবাবু তিনদিন ধরে খুব জ্বর সারা গায়ে ব্যথা মাথাও ধরে আছে। জ্বর কত উঠছে thermometer-এ মেপেছেন? কাল রাতে একশো দুই পর্যন্ত উঠেছিল। এখনো কোনো ওষুধ খাইনি। ঠিক আছে এখন আপনার temperature দেখছি একশো এক point চার। Pulse ninety six BP একশো আঠেরো বাই ছিয়াত্তর। কাশি বমি বা পাতলা পায়খানা আছে? না শুধু জ্বর আর গা হাত পা ব্যথা একটু গলা খুসখুস করছে। কোনো ওষুধে allergy আছে? না কোনো allergy নেই। ডাক্তারবাবু একটা antibiotic দিয়ে দিন না। Azithromycin খেলে তাড়াতাড়ি সেরে যাবে শুনেছি। না, এটা viral fever মনে হচ্ছে। এতে antibiotic লাগে না। Azithromycin খেলে কোনো লাভ হবে না, উল্টে ক্ষতি হতে পারে। Paracetamol 650 mg দিচ্ছি Dolo 650 দিনে তিনবার খাওয়ার পরে তিন দিন আর গলার জন্য Cetirizine 10 mg রাতে শোয়ার আগে একটা পাঁচ দিন। ঠিক আছে আর কিছু খেয়াল রাখতে হবে? প্রচুর জল খাবেন। যদি শ্বাসকষ্ট হয় বা মাড়ি থেকে রক্ত পড়ে বা গায়ে লাল লাল rash বেরোয় সঙ্গে সঙ্গে চলে আসবেন। আবার কবে আসবো? তিন দিন পরে আসবেন CBC test-এর report নিয়ে।",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "নমস্কার, বসুন।",
+    "start_time_seconds": 0.37,
+    "end_time_seconds": 2.21,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "কী সমস্যা হচ্ছে বলুন?",
+    "start_time_seconds": 3.21,
+    "end_time_seconds": 4.81,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ডাক্তারবাবু তিনদিন ধরে খুব জ্বর সারা গায়ে ব্যথা মাথাও ধরে আছে।",
+    "start_time_seconds": 5.95,
+    "end_time_seconds": 13.43,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "জ্বর কত উঠছে thermometer-এ মেপেছেন?",
+    "start_time_seconds": 14.49,
+    "end_time_seconds": 17.99,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "কাল রাতে একশো দুই পর্যন্ত উঠেছিল। এখনো কোনো ওষুধ খাইনি।",
+    "start_time_seconds": 18.99,
+    "end_time_seconds": 24.65,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ঠিক আছে এখন আপনার temperature দেখছি একশো এক point চার।",
+    "start_time_seconds": 25.69,
+    "end_time_seconds": 31.33,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Pulse ninety six BP একশো আঠেরো বাই ছিয়াত্তর।",
+    "start_time_seconds": 32.55,
+    "end_time_seconds": 40.15,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "কাশি বমি বা পাতলা পায়খানা আছে?",
+    "start_time_seconds": 41.43,
+    "end_time_seconds": 44.03,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "না শুধু জ্বর আর গা হাত পা ব্যথা একটু গলা খুসখুস করছে।",
+    "start_time_seconds": 44.63,
+    "end_time_seconds": 50.83,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "কোনো ওষুধে allergy আছে?",
+    "start_time_seconds": 52.03,
+    "end_time_seconds": 54.07,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "না কোনো allergy নেই। ডাক্তারবাবু একটা antibiotic দিয়ে দিন না। Azithromycin খেলে তাড়াতাড়ি সেরে যাবে শুনেছি।",
+    "start_time_seconds": 55.27,
+    "end_time_seconds": 66.03,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "না, এটা viral fever মনে হচ্ছে। এতে antibiotic লাগে না। Azithromycin খেলে কোনো লাভ হবে না, উল্টে ক্ষতি হতে পারে।",
+    "start_time_seconds": 66.93,
+    "end_time_seconds": 76.13,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Paracetamol 650 mg দিচ্ছি Dolo 650 দিনে তিনবার খাওয়ার পরে তিন দিন আর গলার জন্য Cetirizine 10 mg রাতে শোয়ার আগে একটা পাঁচ দিন।",
+    "start_time_seconds": 78.71,
+    "end_time_seconds": 91.97,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ঠিক আছে আর কিছু খেয়াল রাখতে হবে?",
+    "start_time_seconds": 92.97,
+    "end_time_seconds": 96.67,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "প্রচুর জল খাবেন। যদি শ্বাসকষ্ট হয় বা মাড়ি থেকে রক্ত পড়ে বা গায়ে লাল লাল rash বেরোয় সঙ্গে সঙ্গে চলে আসবেন।",
+    "start_time_seconds": 97.61,
+    "end_time_seconds": 108.93,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "আবার কবে আসবো?",
+    "start_time_seconds": 109.45,
+    "end_time_seconds": 110.91,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "তিন দিন পরে আসবেন CBC test-এর report নিয়ে।",
+    "start_time_seconds": 111.63,
+    "end_time_seconds": 115.41,
+    "speaker_id": "0"
+   }
+  ]
+ },
+ "language_code": "bn-IN",
+ "language_probability": null,
+ "audio_hash": "28192adae44b9d638d3e3b4a8db24545",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_01d1d9ed-406c-4f2f-b8f2-e34caddc701a",
+  "elapsed_s": 10.726795196533203,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "codemix",
+   "language_code": "bn-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

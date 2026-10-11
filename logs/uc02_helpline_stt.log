@@ -1,0 +1,38 @@
+19:59:40 == step fetch
+19:59:57 fetched hi_in 25 clips 318 s
+20:00:09 fetched bn_in 25 clips 355 s
+20:00:21 fetched ta_in 25 clips 358 s
+20:00:28 fetched te_in 25 clips 276 s
+20:00:35 fetched ml_in 25 clips 383 s
+20:00:42 fetched kn_in 25 clips 358 s
+20:00:49 fetched mr_in 25 clips 356 s
+20:00:55 fetched gu_in 25 clips 274 s
+20:01:01 fetched pa_in 25 clips 301 s
+20:01:08 fetched or_in 25 clips 306 s
+20:01:16 fetched as_in 25 clips 321 s
+20:01:25 fetched ur_pk 25 clips 249 s
+20:01:31 fetched ne_np 25 clips 282 s
+20:01:39 fetched sd_in 25 clips 295 s
+20:02:35 == step stt
+20:02:35 stt: 350 saaras + 350 gemini jobs
+20:06:32 == step fetch
+20:06:39 fetched ml_in 25 clips 367 s
+20:06:45 fetched kn_in 25 clips 341 s
+20:06:49 fetched or_in 25 clips 281 s
+20:06:55 fetched as_in 25 clips 301 s
+20:10:17 == step stt
+20:10:17 stt: 209 saaras + 289 gemini jobs
+20:19:07 == step stt
+20:19:07 stt: 75 saaras + 0 gemini jobs
+20:32:52 == step whisper
+20:37:24 == step score
+20:38:58 == step stt
+20:38:58 stt: 0 saaras + 20 gemini jobs
+20:40:08 == step score
+21:34:02 whisper done 350
+21:34:13 == step score
+21:35:17 == step score
+21:40:55 == step stt
+21:40:55 stt: 0 saaras + 0 gemini + 700 openai jobs
+21:50:14 == step score
+21:52:51 == step score

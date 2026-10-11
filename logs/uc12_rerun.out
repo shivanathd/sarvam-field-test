@@ -1,0 +1,12 @@
+22:41:48 claude error None
+22:43:02 claude error None
+22:45:33 claude error None
+22:47:30 claude error None
+Traceback (most recent call last):
+  File "~/sarvam-bench/suites/uc12_token_tax/run.py", line 286, in <module>
+    for row in main():
+               ~~~~^^
+  File "~/sarvam-bench/suites/uc12_token_tax/run.py", line 178, in main
+    tok_per_sent = {s: {l: bootstrap_ci([counts[s][(l, i)] for i in ids]) for l in LANGS} for s in systems}
+                                         ~~~~~~~~~^^^^^^^^
+KeyError: ('ta_in', '1543')

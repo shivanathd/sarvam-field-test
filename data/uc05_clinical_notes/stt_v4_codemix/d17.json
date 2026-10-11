@@ -1,0 +1,120 @@
+{
+ "request_id": "20261011_6083ee72-c56d-4899-a808-17ecb7444221",
+ "transcript": "வாங்க உட்காருங்க என்ன பிரச்சனை? Doctor, மூணு நாளா காய்ச்சல் இருக்கு. சிறுநீர் போகும்போது எரிச்சலா இருக்கு. அடிக்கடி போகணும்னு தோணுது. மூணு பக்கத்துல வலி இருக்கா? வாந்தி. முதுகு வலி இல்ல doctor. வாந்தியும் இல்ல. சரி temperature 101.6 pulse 96 BP 120. urine test-ல pus cells அதிகமா இருக்கு. இது urinary tract infection அதாவது சிறுநீர் தொற்று. போன வருஷம் இதே மாதிரி வந்தப்போ Septron கொடுத்தாங்க. அதுல உடம்பு முழுக்க தடிப்பு வந்துச்சு. நல்ல வேலை சொன்னீங்க. அது sulfa மருந்து. உங்களுக்கு sulfa allergy இருக்கு. அதனால Septron கண்டிப்பா வேண்டாம். சரி doctor. வேற என்ன மருந்து? Nitrofurantoin 100 mg காலையும் ராத்திரியும் 5 நாள் சாப்பிடணும். காய்ச்சலுக்கு Paracetamol 500 mg ஒரு நாளைக்கு 3 வேளை 3 நாள். தண்ணி நிறைய குடிக்கணுமா? ஆமா. ஒரு நாளைக்கு 3 liter தண்ணி குடிங்க. முதுகு பக்கத்துல கடுமையான வலி வந்தா, வாந்தி வந்து எதுவும் சாப்பிட முடியலன்னா, இல்லன்னா சிறுநீரில் ரத்தம் வந்தா உடனே வாங்க. சரி Doctor. திரும்ப எப்போ வரணும்? அஞ்சு நாள் கழிச்சு urine culture report எடுத்துட்டு வாங்க.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "வாங்க உட்காருங்க என்ன பிரச்சனை?",
+    "start_time_seconds": 0.33,
+    "end_time_seconds": 3.17,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Doctor, மூணு நாளா காய்ச்சல் இருக்கு. சிறுநீர் போகும்போது எரிச்சலா இருக்கு. அடிக்கடி போகணும்னு தோணுது.",
+    "start_time_seconds": 3.95,
+    "end_time_seconds": 13.63,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "மூணு பக்கத்துல வலி இருக்கா?",
+    "start_time_seconds": 14.99,
+    "end_time_seconds": 16.87,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "வாந்தி.",
+    "start_time_seconds": 18.55,
+    "end_time_seconds": 19.09,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "முதுகு வலி இல்ல doctor. வாந்தியும் இல்ல.",
+    "start_time_seconds": 19.95,
+    "end_time_seconds": 23.39,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "சரி temperature 101.6 pulse 96 BP 120.",
+    "start_time_seconds": 24.79,
+    "end_time_seconds": 33.03,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "urine test-ல pus cells அதிகமா இருக்கு.",
+    "start_time_seconds": 36.23,
+    "end_time_seconds": 38.87,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "இது urinary tract infection அதாவது சிறுநீர் தொற்று.",
+    "start_time_seconds": 40.51,
+    "end_time_seconds": 44.57,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "போன வருஷம் இதே மாதிரி வந்தப்போ Septron கொடுத்தாங்க. அதுல உடம்பு முழுக்க தடிப்பு வந்துச்சு.",
+    "start_time_seconds": 45.31,
+    "end_time_seconds": 53.63,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "நல்ல வேலை சொன்னீங்க. அது sulfa மருந்து. உங்களுக்கு sulfa allergy இருக்கு. அதனால Septron கண்டிப்பா வேண்டாம்.",
+    "start_time_seconds": 54.57,
+    "end_time_seconds": 63.67,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "சரி doctor. வேற என்ன மருந்து?",
+    "start_time_seconds": 64.83,
+    "end_time_seconds": 68.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Nitrofurantoin 100 mg காலையும் ராத்திரியும் 5 நாள் சாப்பிடணும். காய்ச்சலுக்கு Paracetamol 500 mg ஒரு நாளைக்கு 3 வேளை 3 நாள்.",
+    "start_time_seconds": 68.97,
+    "end_time_seconds": 82.97,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "தண்ணி நிறைய குடிக்கணுமா?",
+    "start_time_seconds": 84.07,
+    "end_time_seconds": 86.05,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ஆமா. ஒரு நாளைக்கு 3 liter தண்ணி குடிங்க. முதுகு பக்கத்துல கடுமையான வலி வந்தா, வாந்தி வந்து எதுவும் சாப்பிட முடியலன்னா, இல்லன்னா சிறுநீரில் ரத்தம் வந்தா உடனே வாங்க.",
+    "start_time_seconds": 86.63,
+    "end_time_seconds": 102.19,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "சரி Doctor. திரும்ப எப்போ வரணும்?",
+    "start_time_seconds": 103.73,
+    "end_time_seconds": 106.99,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "அஞ்சு நாள் கழிச்சு urine culture report எடுத்துட்டு வாங்க.",
+    "start_time_seconds": 108.35,
+    "end_time_seconds": 111.83,
+    "speaker_id": "0"
+   }
+  ]
+ },
+ "language_code": "ta-IN",
+ "language_probability": null,
+ "audio_hash": "7c1ca2651a7fb7b0aba8a7689b7951b5",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_3108f4bf-0187-4687-8684-2ff86e0e0324",
+  "elapsed_s": 10.70770001411438,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "codemix",
+   "language_code": "ta-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

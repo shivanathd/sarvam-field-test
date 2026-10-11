@@ -1,0 +1,120 @@
+{
+ "request_id": "20261011_b8a80ab8-ab85-467b-a510-4b66b01aad09",
+ "transcript": "Yeah, बस. काय तक्रार आहे? Doctor एक महिन्यापासून सारखं लघवीला जावं लागतं रात्री पण तीन चार वेळा उठते. Sugar तपासली का? हो उपाशी पोटी sugar एकशे अडुसष्ट आली आहे. Fasting sugar 168 म्हणजे जास्त आहे. तुमचं weight 72 kilo BP 128 by 82. तुम्हाला type two diabetes झालाय. मी Metformin 500 mg देतो सकाळी आणि रात्री जेवणानंतर एक एक आणि सोबत Glimepiride पण सुरू करू. Doctor एक सांगायचं राहिलं मला सल्फाच्या औषधांची allergy आहे अंगावर पुरळ आलं होतं. बरं झालं सांगितलं. मग Glyburide देत नाही. फक्त Metformin 500 mg सकाळ रात्र चालू ठेवा. हे औषध नियमित घ्यायचंय, बंद करायचं नाही. अजून काय करायचं? रोज अर्धा तास चाला. गोड कमी खा. चक्कर आली, खूप घाम आला तर sugar कमी झाली असेल. लगेच साखर खा. पायाला जखम झाली आणि भरत नसेल तर लगेच दाखवा. पुन्हा कधी यायचं? एक महिन्यानंतर fasting sugar आणि HbA1c चा report घेऊन या. ठीक आहे Doctor.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Yeah, बस.",
+    "start_time_seconds": 0.25,
+    "end_time_seconds": 1.47,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "काय तक्रार आहे?",
+    "start_time_seconds": 2.51,
+    "end_time_seconds": 3.41,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor एक महिन्यापासून सारखं लघवीला जावं लागतं रात्री पण तीन चार वेळा उठते.",
+    "start_time_seconds": 4.39,
+    "end_time_seconds": 13.49,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Sugar तपासली का?",
+    "start_time_seconds": 14.23,
+    "end_time_seconds": 15.53,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "हो उपाशी पोटी sugar एकशे अडुसष्ट आली आहे.",
+    "start_time_seconds": 16.19,
+    "end_time_seconds": 21.01,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Fasting sugar 168 म्हणजे जास्त आहे.",
+    "start_time_seconds": 22.11,
+    "end_time_seconds": 25.65,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "तुमचं weight 72 kilo BP 128 by 82.",
+    "start_time_seconds": 26.89,
+    "end_time_seconds": 32.03,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "तुम्हाला type two diabetes झालाय.",
+    "start_time_seconds": 33.73,
+    "end_time_seconds": 36.19,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "मी Metformin 500 mg देतो सकाळी आणि रात्री जेवणानंतर एक एक आणि सोबत Glimepiride पण सुरू करू.",
+    "start_time_seconds": 37.27,
+    "end_time_seconds": 46.43,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor एक सांगायचं राहिलं मला सल्फाच्या औषधांची allergy आहे अंगावर पुरळ आलं होतं.",
+    "start_time_seconds": 47.01,
+    "end_time_seconds": 55.85,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "बरं झालं सांगितलं. मग Glyburide देत नाही. फक्त Metformin 500 mg सकाळ रात्र चालू ठेवा. हे औषध नियमित घ्यायचंय, बंद करायचं नाही.",
+    "start_time_seconds": 57.11,
+    "end_time_seconds": 69.79,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "अजून काय करायचं?",
+    "start_time_seconds": 70.51,
+    "end_time_seconds": 71.89,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "रोज अर्धा तास चाला. गोड कमी खा. चक्कर आली, खूप घाम आला तर sugar कमी झाली असेल. लगेच साखर खा. पायाला जखम झाली आणि भरत नसेल तर लगेच दाखवा.",
+    "start_time_seconds": 72.93,
+    "end_time_seconds": 87.61,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "पुन्हा कधी यायचं?",
+    "start_time_seconds": 88.53,
+    "end_time_seconds": 89.89,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "एक महिन्यानंतर fasting sugar आणि HbA1c चा report घेऊन या.",
+    "start_time_seconds": 90.31,
+    "end_time_seconds": 95.87,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ठीक आहे Doctor.",
+    "start_time_seconds": 96.75,
+    "end_time_seconds": 97.87,
+    "speaker_id": "0"
+   }
+  ]
+ },
+ "language_code": "mr-IN",
+ "language_probability": null,
+ "audio_hash": "65e49787eb10cd2e9ffe110db227b54f",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_30669210-9bda-474e-9779-e0f549a1c17f",
+  "elapsed_s": 10.892443895339966,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "codemix",
+   "language_code": "mr-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

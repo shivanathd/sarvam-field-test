@@ -1,0 +1,129 @@
+{
+ "id": "d18",
+ "pair": "ta-en",
+ "lang": "Tamil",
+ "style": "native",
+ "topic": "diabetes",
+ "audio_subset": true,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "ராமசாமி ஐயா, வாங்க. Sugar எப்படி இருக்கு?"
+  },
+  {
+   "speaker": "patient",
+   "text": "டாக்டர், ஒரு மாசமா sugar அதிகமா இருக்கு. கண்ணு கொஞ்சம் மங்கலா தெரியுது."
+  },
+  {
+   "speaker": "doctor",
+   "text": "இப்போ என்ன மாத்திரை சாப்பிடுறீங்க?"
+  },
+  {
+   "speaker": "patient",
+   "text": "Metformin 500 காலையும் ராத்திரியும்."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Fasting sugar 198 வந்திருக்கு. BP நூற்று நாற்பது by எண்பத்தெட்டு. Weight 79 kilo. உங்க type 2 diabetes control-ல இல்ல."
+  },
+  {
+   "speaker": "patient",
+   "text": "மாத்திரையை அதிகமாக்கணுமா?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Metformin 500 mg காலையும் ராத்திரியும் அப்படியே தொடருங்க. கூட Sitagliptin 50 mg... இல்ல, உங்க kidney report normal-ஆ இருக்கு, அதனால Sitagliptin 100 mg, காலையில ஒரு தடவை. ரெண்டும் தொடர்ந்து சாப்பிடணும்."
+  },
+  {
+   "speaker": "patient",
+   "text": "எனக்கு எந்த மருந்துக்கும் allergy இல்ல டாக்டர்."
+  },
+  {
+   "speaker": "doctor",
+   "text": "சரி. இனிப்பு, அரிசி சாதம் குறைச்சுக்கோங்க. தினமும் அரை மணி நேரம் நடங்க."
+  },
+  {
+   "speaker": "patient",
+   "text": "கண்ணுக்கு என்ன பண்ணணும்?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ஒரு eye check-up, கண் டாக்டர்கிட்ட retina பாக்கணும். திடீர்னு பார்வை போனா உடனே வாங்க. வியர்வை, நடுக்கம், தலைசுத்தல் வந்தா sugar குறைஞ்சிருக்கலாம், உடனே சர்க்கரை சாப்பிட்டு எங்களை கூப்பிடுங்க."
+  },
+  {
+   "speaker": "patient",
+   "text": "சரி டாக்டர். அடுத்து எப்போ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ஒரு மாசம் கழிச்சு eye check-up report-ஓட வாங்க."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "high blood sugar",
+   "uncontrolled sugar",
+   "blurred vision"
+  ],
+  "duration": {
+   "value": 1,
+   "unit": "months"
+  },
+  "vitals": {
+   "blood_sugar": 198,
+   "bp": "140/88",
+   "weight_kg": 79
+  },
+  "diagnosis": [
+   "uncontrolled type 2 diabetes",
+   "type 2 diabetes",
+   "diabetes mellitus",
+   "t2dm"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "metformin",
+     "glycomet"
+    ],
+    "dose": "500 mg",
+    "frequency": "BD",
+    "duration_days": null
+   },
+   {
+    "drug": [
+     "sitagliptin",
+     "januvia",
+     "istavel"
+    ],
+    "dose": "100 mg",
+    "frequency": "OD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "sudden loss of vision",
+    "vision loss",
+    "sudden vision loss"
+   ],
+   [
+    "low sugar",
+    "hypoglycemia",
+    "hypoglycaemia",
+    "sweating",
+    "tremor"
+   ]
+  ],
+  "follow_up": [
+   "1 month",
+   "one month",
+   "after 1 month",
+   "4 weeks"
+  ],
+  "not_prescribed": []
+ },
+ "trap": "Sitagliptin first said 50 mg, corrected to 100 mg; BP said in Tamil words."
+}

@@ -1,0 +1,482 @@
+{
+ "hi:1": {
+  "back_translation": "Write a function that checks whether a string is a valid Aadhaar-format number or not.\nRules: First remove all spaces. What remains must be exactly 12 ASCII digits. The first digit must not be 0 or 1.\nThe last digit is a Verhoeff checksum digit: the full 12-digit number must pass the standard Verhoeff check.\nReturn True if all rules are satisfied, otherwise False (never raise an exception).",
+  "diff": "NONE"
+ },
+ "hi:2": {
+  "back_translation": "Write a function that takes a string of ASCII digits (length >= 1) and returns the Verhoeff check digit (int from 0-9) which, when appended to its end, makes the entire number pass the Verhoeff checksum. The 12th digit of an Aadhaar-format number is generated from the first 11 digits in this way. If the input is empty or contains anything other than digits, raise a ValueError.",
+  "diff": "NONE"
+ },
+ "hi:3": {
+  "back_translation": "Write a function that validates an Indian PAN (Permanent Account Number) and returns the holder's type.\nFirst remove leading and trailing whitespace and convert to uppercase. A valid PAN is 10 characters long: 5 letters, 4 digits, 1 letter.\nThe fourth letter indicates the holder's type: P = \"Individual\", C = \"Company\", H = \"HUF\", F = \"Firm\", A = \"AOP\",\nT = \"Trust\", B = \"BOI\", L = \"Local Authority\", J = \"Artificial Juridical Person\", G = \"Government\".\nReturn the holder's type exactly as the string written above. If the format is invalid or the fourth letter is none of these, return None.",
+  "diff": "NONE"
+ },
+ "hi:4": {
+  "back_translation": "GSTIN consists of 15 characters; the 15th character is a check character derived from the first 14 characters.\nWrite a function that returns this check character. Algorithm: take the alphabet \"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\nin which the value of each character is its index (0-35). Out of the 14 characters, multiply the value of each character at position i (starting from 0)\nby 1 if i is even and by 2 if i is odd; add (product // 36) + (product % 36) to a running sum.\nCheck value = (36 - sum % 36) % 36, and the result is the character at that index in the alphabet.\nIf the input is not exactly 14 characters or its characters are not from this alphabet (uppercase only), raise a ValueError.",
+  "diff": "NONE"
+ },
+ "hi:7": {
+  "back_translation": "Write a function that converts an amount given in paise (integer, 100 paise = 1 rupee) into a rupee string with Indian digit grouping: the last 3 digits of the rupee part form a group, and before that, every 2 digits form a group.\nAlways show exactly 2 decimal places and prepend the rupee symbol \"₹\". For a negative amount, \"-\" will be placed before \"₹\".\nExamples: 123456789 -> \"₹12,34,567.89\", 100000 -> \"₹1,000.00\", -5050 -> \"-₹50.50\", 0 -> \"₹0.00\".",
+  "diff": "NONE"
+ },
+ "hi:8": {
+  "back_translation": "Write a function that converts a non-negative integer (0 <= n < 1,000,000,000) into English words in the Indian numbering system (thousand, lakh, crore — never million or billion). Rules: everything lowercase; numbers from 21-99 that are not multiples of ten are written with a hyphen (\"forty-two\"); no \"and\"; a single space between words; 0 -> \"zero\".\nExample: 12345678 -> \"one crore twenty-three lakh forty-five thousand six hundred seventy-eight\".\nIf n is negative or >= 1,000,000,000, raise a ValueError.",
+  "diff": "NONE"
+ },
+ "hi:9": {
+  "back_translation": "Write a function that converts a non-negative integer (0 <= n < 1,000,000,000) into Devanagari Hindi words in the Indian system.\nDivide n into these parts: the crore part (n // 10^7), the lakh part (two digits), the thousand part (two digits), the hundreds digit,\nand the last two digits. Write every non-zero part with its number-word followed by its unit-word:\nकरोड़, लाख, हज़ार, सौ (no unit for the last two digits). Join with single spaces; skip parts that are zero; 0 -> \"शून्य\".\nUse exactly these number-words: 1 एक, 2 दो, 3 तीन, 4 चार, 5 पाँच, 6 छह, 7 सात, 8 आठ, 9 नौ, 10 दस, 20 बीस, 30 तीस,\n40 चालीस, 50 पचास, 60 साठ, 70 सत्तर, 80 अस्सी, 90 नब्बे. In the inputs, every two-digit part will be one of these values.\nExample: 30405060 -> \"तीन करोड़ चार लाख पाँच हज़ार साठ\".",
+  "diff": "NONE"
+ },
+ "hi:10": {
+  "back_translation": "The Indian financial year runs from 1 April to 31 March. Write a function that, for a given date, returns the financial year label and the quarter. Format of the label: \"FY\" + starting year + \"-\" + last two digits of the ending year, such as \"FY2024-25\".\nQuarters: Q1 = April-June, Q2 = July-September, Q3 = October-December, Q4 = January-March.\nExample: datetime.date(2025, 2, 10) -> (\"FY2024-25\", \"Q4\").",
+  "diff": "NONE"
+ },
+ "hi:11": {
+  "back_translation": "Write a function that calculates GST on a taxable value (in paise). supplier_state and place_of_supply are 2-digit GST state codes,\nsuch as \"27\" or \"07\". If both are equal, the supply is intra-state: apply CGST and SGST, both at half the rate.\nOtherwise, the supply is inter-state: apply IGST at the full rate.\nRound each tax amount to the nearest paisa, and round exact half up (round half up — do not use Python's round()).\nIn intra-state, calculate CGST and SGST separately (each = taxable * rate/2 / 100, rounded); both are always equal.\nReturn a dict {\"cgst\": int, \"sgst\": int, \"igst\": int} in paise, with 0 for taxes that do not apply.\nrate_pct can also be fractional, such as 0.25 or 1.5.",
+  "diff": "NONE"
+ },
+ "hi:12": {
+  "back_translation": "Write a function that calculates the annual income tax of a salaried individual using these rules (rupees, input integers):\n1. Taxable income = gross_salary - 75,000 standard deduction (not less than 0).\n2. Slab tax on taxable income: zero up to 4,00,000; 5% on 4,00,001-8,00,000; 10% on 8,00,001-12,00,000;\n   15% on 12,00,001-16,00,000; 20% on 16,00,001-20,00,000; 25% on 20,00,001-24,00,000; 30% above 24,00,000.\n   Each rate applies only to the income within that band.\n3. Rebate: If taxable income is 12,00,000 or less, tax is 0. (Ignore marginal relief and surcharge.)\n4. Add 4% health and education cess on tax.\n5. Round the final amount to the nearest rupee, exactly half upward. Return an int.",
+  "diff": "NONE"
+ },
+ "hi:13": {
+  "back_translation": "Write a function that calculates the monthly EMI of a loan (reducing-balance method of Indian banks).\nr = annual_rate_pct / 12 / 100. EMI = P * r * (1 + r)^n / ((1 + r)^n - 1), where P is the principal in rupees and n is the number of months.\nIf the rate is 0 then EMI = P / n. Round the result to 2 decimal places (paise) and return a float.\nIf months <= 0, or principal < 0, or the rate is negative, raise a ValueError.",
+  "diff": "NONE"
+ },
+ "hi:14": {
+  "back_translation": "Write a function that validates a UPI ID (VPA) like \"ramesh.kumar@okaxis\". First remove leading and trailing whitespace.\nRules: exactly one \"@\". The part before \"@\" must be 2 to 64 characters long, containing only letters, digits, \".\", \"_\", and \"-\";\nit must start and end with a letter or digit, and it must not contain two consecutive dots.\nThe part after \"@\" (handle) must be 3 to 32 characters long, only letters and digits, and start with a letter.\nLetters can be both upper or lower case. Return True or False (never raise).",
+  "diff": "NONE"
+ },
+ "hi:15": {
+  "back_translation": "Write a function that replaces every native digit of these Indian scripts with its equivalent ASCII digit 0-9:\nDevanagari, Bengali, Gurmukhi, Gujarati, Odia, Tamil, Telugu, Kannada, Malayalam. Every other character (letters, ASCII digits,\npunctuation marks, digits of non-Indian scripts such as Arabic-Indic digits) should remain as is.\nExamples: \"कुल ₹१,२५०\" -> \"कुल ₹1,250\", \"௨௦௨௪\" -> \"2024\".",
+  "diff": "NONE"
+ },
+ "hi:16": {
+  "back_translation": "Write a function that replaces every ASCII digit 0-9 in text with the native digit of the given script. script is one of these\n(case-insensitive): \"devanagari\", \"bengali\", \"gurmukhi\", \"gujarati\", \"odia\", \"tamil\", \"telugu\", \"kannada\", \"malayalam\".\nAll other characters should remain as they are. Raise a ValueError for any other script name.\nExample: ascii_to_indic_digits(\"₹1,250\", \"devanagari\") -> \"₹१,२५०\".",
+  "diff": "NONE"
+ },
+ "hi:17": {
+  "back_translation": "Write a function that finds the state of an Indian PIN code with the help of a given prefix table, like\n{\"11\": \"Delhi\", \"40\": \"Maharashtra\", \"403\": \"Goa\", \"56\": \"Karnataka\"}. First remove spaces from the PIN.\nA valid PIN consists of exactly 6 ASCII digits and does not start with 0; for an invalid PIN return None.\nTake the longest key among the keys of the table with which the PIN starts. Return its state, or None if no key matches.",
+  "diff": "NONE"
+ },
+ "hi:18": {
+  "back_translation": "Write a function that parses an Indian Railways ticket booking status string. Ignore case and leading/trailing whitespace; parts may be separated by \"/\" or spaces (one or more). Supported formats:\n- Confirmed: \"CNF/B2/45\" or \"CNF/B2/45/LB\" -> {\"status\": \"CNF\", \"coach\": \"B2\", \"berth\": 45, \"berth_type\": \"LB\"}\n  (None if berth_type is not present; return coach and berth_type in uppercase; berth is an int).\n- RAC: \"RAC 12\" or \"RAC/12\" -> {\"status\": \"RAC\", \"number\": 12}\n- Waitlist: \"WL 34\", \"GNWL 34\", \"RLWL/5\", \"PQWL 2\", \"TQWL 9\" -> {\"status\": \"WL\", \"list\": \"GNWL\", \"number\": 34}\n  where list is the exact waitlist code written, in uppercase (\"WL\", \"GNWL\", \"RLWL\", \"PQWL\", or \"TQWL\").\nReturn None for anything else (including non-numeric berth/number).",
+  "diff": "NONE"
+ },
+ "hi:19": {
+  "back_translation": "Write a function that converts a local time string in Indian format in IST (UTC+05:30) to UTC.\nInput format: \"DD/MM/YYYY hh:mm AM\" or \"... PM\" (12-hour clock; AM/PM case-insensitive; day and month always 2 digits, hour 1 or 2 digits). 12:xx AM is just after midnight, 12:xx PM just after noon.\nReturn UTC in ISO format \"YYYY-MM-DDTHH:MM:00Z\". If the string or date/time is invalid, raise a ValueError.\nExample: \"01/04/2025 12:15 AM\" -> \"2025-03-31T18:45:00Z\".",
+  "diff": "NONE"
+ },
+ "hi:20": {
+  "back_translation": "Write a function that identifies the network of a payment card number and checks its Luhn checksum.\nFirst, remove spaces and hyphens. If what remains is not 12-19 ASCII digits, return None.\nNetwork from prefix: \"Amex\" if it starts with 34 or 37; \"Visa\" if it starts with 4; \"Mastercard\" if the first two digits are 51-55 or the first four digits are 2221-2720; \"RuPay\" if it starts with 60, 65, 81, 82, or 508; otherwise \"Unknown\".\nReturn (network, luhn_ok), where luhn_ok is True if the number passes the Luhn check.",
+  "diff": "NONE"
+ },
+ "hi:21": {
+  "back_translation": "Write a function that normalises an Indian mobile number into the form \"+91XXXXXXXXXX\".\nFirst remove spaces, hyphens, dots, and parentheses. Then remove a country/trunk prefix: a leading \"+91\", or a leading \"0091\", or a leading \"91\" if exactly 12 digits remain, or a leading \"0\" if exactly 11 digits remain.\nWhat remains must be exactly 10 ASCII digits starting with 6, 7, 8, or 9; then return \"+91\" + those 10 digits, otherwise None.",
+  "diff": "NONE"
+ },
+ "hi:22": {
+  "back_translation": "Write a function that parses an Indian vehicle registration number. First uppercase it and remove spaces and hyphens.\nTwo formats are valid:\n1. Regular: state code (2 letters), RTO code (1 or 2 digits), series (1 to 3 letters), number (1 to 4 digits).\n   State code must be one of these: AN AP AR AS BR CH CG DD DL GA GJ HP HR JH JK KA KL LA LD MH ML MN MP MZ NL OD PB PY RJ SK TN TR TS UK UP WB.\n   Return {\"type\": \"regular\", \"state\": \"MH\", \"rto\": \"02\", \"series\": \"AB\", \"number\": \"0042\"}, in which rto is zero-padded to 2 digits\n   and number is zero-padded to 4 digits.\n2. Bharat series: 2-digit year, \"BH\", 4 digits, 1 or 2 letters, like \"22 BH 1234 AA\".\n   Return {\"type\": \"BH\", \"year\": 2022, \"number\": \"1234\", \"series\": \"AA\"}.\nIf neither format matches, return None.",
+  "diff": "NONE"
+ },
+ "hi:23": {
+  "back_translation": "Write a function that calculates the total of a GST invoice. items is a list containing (quantity, unit_price_paise, gst_rate_pct).\n1. Taxable value = sum of quantity * unit_price of all lines (paise).\n2. Group the lines by GST rate. For each rate, the tax will be calculated on the total taxable value of that rate group:\n   intra-state: CGST = SGST = group_taxable * rate / 2 / 100 each; inter-state: IGST = group_taxable * rate / 100.\n   Round each tax amount (each rate group, each tax) to the nearest paisa, exact half up.\n3. Total before rounding = taxable + all taxes. Round the grand total to the nearest whole rupee (100 paise),\n   exact half (50 paise) up. round_off = grand_total - total before rounding (can also be negative).\nReturn {\"taxable\", \"cgst\", \"sgst\", \"igst\", \"round_off\", \"grand_total\"} — all in int paise.",
+  "diff": "NONE"
+ },
+ "hi:24": {
+  "back_translation": "To comply with Indian data-protection regulations, write a function that masks Aadhaar numbers within free text.\nA candidate consists of 12 digits, which are written either consecutively or in three groups of 4 digits each, where each gap between the groups is a space or a hyphen; there must not be any other digit immediately before or immediately after it.\nMask the candidate only if it is a valid Aadhaar-format number: the first digit is not 0 or 1, and the 12 digits pass the Verhoeff checksum. Replace every valid number with \"XXXX XXXX \" followed by its last 4 digits. Leave everything else as it is.",
+  "diff": "NONE"
+ },
+ "hi:26": {
+  "back_translation": "Write a function that calculates the HRA (house rent allowance) exemption under Indian income-tax rules. All inputs are in annual rupees (basic salary includes DA). The exemption is the minimum of these:\n(a) HRA actually received; (b) rent paid minus 10% of basic (not less than 0); (c) 50% of basic if the city is metro, otherwise 40% of basic. Round the result to the nearest rupee (half-way rounded up) and return an int.",
+  "diff": "NONE"
+ },
+ "hi:27": {
+  "back_translation": "Write a function that calculates the payable gratuity based on these rules (like the Payment of Gratuity Act).\nmonthly_salary is the last drawn basic + DA, in rupees; service is given in completed years and extra months (0-11).\n1. If completed years < 5, then gratuity is 0.\n2. Otherwise, counted years = years, and 1 more if extra months are more than 6 (exactly 6 months are not counted).\n3. Gratuity = 15 * monthly_salary * counted_years / 26, round to the nearest rupee (round half up).\n4. The maximum limit of the amount is 20,00,000. Return an int.",
+  "diff": "NONE"
+ },
+ "hi:28": {
+  "back_translation": "Write a function that calculates the monthly Employees' Provident Fund contribution for monthly basic + DA (rupees) in India.\n- Employee contribution = 12% of basic_da.\n- Employer pension (EPS) share = 8.33% of wage, where the wage limit is 15,000 (take min(basic_da, 15000)).\n- Employer EPF share = (12% of basic_da) - EPS share, from the already rounded values.\nRound every percentage amount to the nearest rupee, exact halves up.\nReturn {\"employee\": int, \"employer_eps\": int, \"employer_epf\": int}.",
+  "diff": "NONE"
+ },
+ "hi:29": {
+  "back_translation": "Write a function that calculates the maturity value of an Indian bank fixed deposit with quarterly compounding.\nMaturity = principal * (1 + annual_rate_pct / 400) ** (months / 3). months must be a positive multiple of 3, otherwise raise a ValueError. Round the result to 2 decimal places and return it as a float.",
+  "diff": "NONE"
+ },
+ "hi:30": {
+  "back_translation": "Shops in India often quote GST-inclusive prices. Write a function that splits the GST-inclusive amount (paise) into the taxable value and the GST amount. taxable = inclusive * 100 / (100 + rate_pct), round to the nearest paisa, exact halves up; gst = inclusive - taxable (so that the sum of both is always exactly equal). Return (taxable, gst) as ints.",
+  "diff": "NONE"
+ },
+ "hi:31": {
+  "back_translation": "Write a function that parses a date written in the Indian day-first style and returns a datetime.date.\nThe order is always day, month, year. Separators can be \"/\", \"-\", \".\" or spaces. The month can be a number (1 or 2 digits),\na 3-letter English abbreviation (\"Aug\") or a full English name (\"August\"), case-insensitive. The year is 4 digits,\nor 2 digits meaning 2000-2099. The day is 1 or 2 digits. If the format or date is invalid, raise a ValueError.\nExamples: \"15/08/2024\", \"15-Aug-2024\", \"5.9.24\", \"1 January 2025\".",
+  "diff": "NONE"
+ },
+ "hi:32": {
+  "back_translation": "Write a function that validates and parses an Indian Corporate Identification Number (CIN). First strip and uppercase it.\nA CIN consists of 21 characters: 1 character \"L\" (listed) or \"U\" (unlisted); a 5-digit industry code; a 2-letter state code;\n4 digits of the year of incorporation (must be between 1850-2100); 3 letters of the company type, which must be one of these:\nPLC, PTC, GOI, SGC, FLC, GAP, NPL, ULL, ULT, OPC; a 6-digit registration number.\nReturn {\"listed\": bool, \"industry\": \"72200\", \"state\": \"MH\", \"year\": 2010, \"type\": \"PTC\", \"reg_no\": \"123456\"}\n(year an int, the rest strings), or None if invalid.",
+  "diff": "NONE"
+ },
+ "hi:33": {
+  "back_translation": "Write a function that generates a UPI deep link used for QR-code payments in India:\n\"upi://pay?pa=<vpa>&pn=<name>&am=<amount>&cu=INR\" and, only if note is provided and not empty, \"&tn=<note>\" at the end.\nAmount will be in rupees with exactly 2 decimal places (amount_paise 12345 -> \"123.45\").\nPercent-encode each value (pa, pn, am, tn) exactly as Python's urllib.parse.quote(value, safe=\"@\") does\n(i.e., spaces become %20 and \"@\" remains as is). If amount_paise <= 0, raise a ValueError.",
+  "diff": "NONE"
+ },
+ "hi:34": {
+  "back_translation": "Indian banks are closed on all Sundays and on the second and fourth Saturdays of every month (the first, third, and fifth Saturdays are working days). Write a function that counts bank working days from start to end (both inclusive), and also excludes every date given in holidays. If start is after end, return 0.",
+  "diff": "NONE"
+ },
+ "hi:35": {
+  "back_translation": "Write a function that writes an amount (given in paise) into words for an Indian cheque, in the Indian system (Thousand, Lakh, Crore). The rupee part should be n < 1,000,000,000. Format:\nIf the paise part is 0, then \"Rupees <rupee words> Only\", otherwise \"Rupees <rupee words> and <paise words> Paise Only\".\nRules for words: Each word should start with a capital letter; non-multiples of ten numbers from 21-99 should be written with a hyphen and both parts capitalized (\"Forty-Two\"); no \"and\" within the number; 0 is \"Zero\".\nExample: 123456789 -> \"Rupees Twelve Lakh Thirty-Four Thousand Five Hundred Sixty-Seven and Eighty-Nine Paise Only\".",
+  "diff": "NONE"
+ },
+ "hi:36": {
+  "back_translation": "Write a function that calculates a domestic electricity bill using a telescopic slab tariff (each rate applies only to the units within its slab):\nunits 1-100 at ₹3.00 per unit, 101-200 at ₹4.50, 201-500 at ₹6.00, above 500 at ₹7.50.\nFixed charge: ₹50 per kW of sanctioned load, where the load is rounded upwards to the whole kW (at least 1 kW).\nElectricity duty: 5% of the energy charge only (not of the fixed charge).\nTotal = energy charge + fixed charge + duty, round to 2 decimals (round half up). Return a float.",
+  "diff": "NONE"
+ },
+ "hi:37": {
+  "back_translation": "Write a function that formats an amount of rupees into a short form, as Indian news and dashboards do.\n- If abs(amount) >= 1,00,00,000: value in crores, round to 2 decimals (round half up), trailing zeros and trailing \".\" removed, followed by \" Cr\" (12500000 -> \"1.25 Cr\", 10000000 -> \"1 Cr\").\n- Else if abs(amount) >= 1,00,000: similarly in lakhs, with \" L\" (150000 -> \"1.5 L\", 1234567 -> \"12.35 L\").\n- Else: integer with Indian digit grouping (99999 -> \"99,999\", 500 -> \"500\").\nThe unit is determined by the value before rounding (9999999 -> \"100 L\"). A negative amount will be preceded by \"-\".",
+  "diff": "NONE"
+ },
+ "hi:38": {
+  "back_translation": "GST invoice numbers must be sequential within a financial year (April 1 - March 31). Write a function that returns the next invoice number in the \"INV/<FY>/<seq>\" format, where FY is like \"2024-25\" (starting year, \"-\", last 2 digits of the ending year) and seq is zero-padded to at least 4 digits (\"0001\"; \"10000\" comes after \"9999\"). prev is the previous invoice number in this same format, or None. If prev is None or its FY is different from the FY of date d, start from 0001; otherwise, add one to the sequence of prev. Example: next_invoice_number(\"INV/2024-25/0041\", date(2025, 3, 31)) -> \"INV/2024-25/0042\".",
+  "diff": "NONE"
+ },
+ "hi:39": {
+  "back_translation": "Write a function that classifies an Indian enterprise under these MSME limits (both values in crore rupees; limit means \"up to, inclusive of it\"):\nMicro: investment <= 2.5 and turnover <= 10. Small: investment <= 25 and turnover <= 100.\nMedium: investment <= 125 and turnover <= 500. For any category, both conditions must be met; check upward from Micro and return the first one that fits: \"Micro\", \"Small\", \"Medium\", otherwise \"Not MSME\". If any value is negative, raise a ValueError.",
+  "diff": "NONE"
+ },
+ "hi:40": {
+  "back_translation": "Write a function that tells how much cumulative advance tax should have been paid by a given date in India.\ntotal_tax is the estimated tax for that financial year (1 April - 31 March) in which on_date falls.\nIf total_tax is less than 10,000, nothing is due (return 0). Otherwise, the total amount due:\nBefore 15 June: 0; From 15 June: 15%; From 15 September: 45%; From 15 December: 75%; From 15 March: 100%\n(The installment date itself is also included, for example, 15% is due on 15 June). Round to the nearest rupee, round half up. Return an int.",
+  "diff": "NONE"
+ },
+ "ta:1": {
+  "back_translation": "Write a function that checks whether a string is a valid Aadhaar-format number.\nRules: First, remove all spaces. The remainder must be exactly 12 ASCII digits. The first digit must not be 0 or 1.\nThe last digit is a Verhoeff checksum digit: the full 12-digit number must pass the standard Verhoeff test.\nReturn True if all rules are satisfied, otherwise return False (must never raise an exception).",
+  "diff": "NONE"
+ },
+ "ta:2": {
+  "back_translation": "Write a function that takes a string of ASCII digits (length >= 1) and returns the Verhoeff check digit (an int from 0-9) which, when appended to its end, makes the whole number pass the Verhoeff checksum. This is how the 12th digit of an Aadhaar-format number is generated from the first 11 digits. Raise a ValueError if the input is empty or contains anything other than digits.",
+  "diff": "NONE"
+ },
+ "ta:3": {
+  "back_translation": "Write a function that validates an Indian PAN (Permanent Account Number) and returns the holder type.\nFirst, strip leading and trailing whitespace and convert it to uppercase. A valid PAN consists of 10 characters: 5 letters, 4 digits, 1 letter.\nThe 4th letter indicates the holder type: P = \"Individual\", C = \"Company\", H = \"HUF\", F = \"Firm\", A = \"AOP\",\nT = \"Trust\", B = \"BOI\", L = \"Local Authority\", J = \"Artificial Juridical Person\", G = \"Government\".\nReturn the type as a string exactly as written above. If the format is incorrect or the 4th letter is not one of these, return None.",
+  "diff": "NONE"
+ },
+ "ta:4": {
+  "back_translation": "GSTIN consists of 15 characters; the 15th character is a check character calculated from the first 14 characters.\nWrite a function that returns that check character. Algorithm: Use the alphabet \"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ\"; the value of each character is its index (0-35).\nFor each character at position i (starting from 0) in the 14 characters, multiply its value by 1 if i is even, and by 2 if odd; add (product // 36) + (product % 36) to the running sum.\nCheck value = (36 - sum % 36) % 36; the result is the character at that index in the alphabet.\nRaise a ValueError if the input is not exactly 14 characters or if it contains characters not in that alphabet (uppercase only).",
+  "diff": "NONE"
+ },
+ "ta:7": {
+  "back_translation": "Write a function that formats an amount given in paise (integer, 100 paise = 1 rupee) into a rupee string with Indian digit grouping: the last 3 digits of the rupee part form one group, and each preceding 2 digits form a group.\nAlways display exactly 2 decimal places and prepend the rupee symbol \"₹\". For negative amounts, \"-\" comes before \"₹\".\nExamples: 123456789 -> \"₹12,34,567.89\", 100000 -> \"₹1,000.00\", -5050 -> \"-₹50.50\", 0 -> \"₹0.00\".",
+  "diff": "NONE"
+ },
+ "ta:8": {
+  "back_translation": "Write a function that converts a non-negative integer (0 <= n < 1,000,000,000) into English words in the Indian numbering system (thousand, lakh, crore — never million or billion). Rules: all lowercase; numbers in 21-99 that are not multiples of ten are written with a hyphen (\"forty-two\"); no \"and\"; a single space between words; 0 -> \"zero\".\nExample: 12345678 -> \"one crore twenty-three lakh forty-five thousand six hundred seventy-eight\".\nRaise a ValueError if n is negative or >= 1,000,000,000.",
+  "diff": "NONE"
+ },
+ "ta:9": {
+  "back_translation": "Write a function that converts a non-negative integer (0 <= n < 1,000,000,000) into Devanagari Hindi words in the Indian system.\nSplit n like this: crore part (n // 10^7), lakh part (two digits), thousand part (two digits), hundreds digit,\nlast two digits. Write each non-zero part with its number word followed by the unit word:\nकरोड़, लाख, हज़ार, सौ (no unit for the last two digits). Join with single spaces; skip zero parts; 0 -> \"शून्य\".\nUse exactly these number words: 1 एक, 2 दो, 3 तीन, 4 चार, 5 पाँच, 6 छह, 7 सात, 8 आठ, 9 नौ, 10 दस, 20 बीस, 30 तीस,\n40 चालीस, 50 पचास, 60 साठ, 70 सत्तर, 80 अस्सी, 90 नब्बे. In inputs, each two-digit part will be one of these values only.\nExample: 30405060 -> \"तीन करोड़ चार लाख पाँच हज़ार साठ\".",
+  "diff": "NONE"
+ },
+ "ta:10": {
+  "back_translation": "The Indian financial year is from April 1 to March 31. Write a function that returns the financial year label and the quarter for a given date. Label format: \"FY\" + start year + \"-\" + last two digits of the end year, e.g., \"FY2024-25\".\nQuarters: Q1 = April-June, Q2 = July-September, Q3 = October-December, Q4 = January-March.\nExample: datetime.date(2025, 2, 10) -> (\"FY2024-25\", \"Q4\").",
+  "diff": "NONE"
+ },
+ "ta:11": {
+  "back_translation": "Write a function that calculates GST on taxable value (in paise). supplier_state, place_of_supply are 2-digit GST state codes like \"27\" or \"07\". If both are equal, the supply is intra-state: levy both CGST and SGST at half the rate each. Otherwise, it is inter-state: levy IGST at the full rate.\nRound each tax amount to the nearest paisa; if exactly half, round upwards (round half up — do not use Python's round()).\nIn intra-state, calculate CGST and SGST separately (each = taxable * rate/2 / 100, rounded); they are always equal.\nReturn a dict {\"cgst\": int, \"sgst\": int, \"igst\": int} in paise; 0 for taxes that do not apply.\nrate_pct can also be a fraction, e.g., 0.25 or 1.5.",
+  "diff": "NONE"
+ },
+ "ta:12": {
+  "back_translation": "Write a function that calculates the annual income tax for a salaried individual according to these rules (Rupees, integer inputs):\n1. Taxable income = gross_salary - 75,000 standard deduction (should not be less than 0).\n2. Slab tax on Taxable income: Nil up to 4,00,000; 5% for 4,00,001-8,00,000; 10% for 8,00,001-12,00,000;\n   15% for 12,00,001-16,00,000; 20% for 16,00,001-20,00,000; 25% for 20,00,001-24,00,000; 30% above 24,00,000.\n   Each rate applies only to the portion of income within that band.\n3. Rebate: If taxable income is 12,00,000 or less, tax is 0. (Ignore marginal relief, surcharge.)\n4. Add 4% health and education cess on top of the tax.\n5. Round the final amount to the nearest rupee, upward if exactly half. Return int.",
+  "diff": "NONE"
+ },
+ "ta:13": {
+  "back_translation": "Write a function that calculates the monthly EMI for a loan (reducing-balance method of Indian banks).\nr = annual_rate_pct / 12 / 100. EMI = P * r * (1 + r)^n / ((1 + r)^n - 1); where P is the principal in rupees, n is the number of months.\nIf the rate is 0, EMI = P / n. Round the result to 2 decimal places (paise) and return it as a float.\nIf months <= 0, principal < 0, or the rate is negative, raise a ValueError.",
+  "diff": "NONE"
+ },
+ "ta:14": {
+  "back_translation": "Write a function to validate a UPI ID (VPA) like \"ramesh.kumar@okaxis\". First strip leading and trailing whitespace.\nRules: Exactly one \"@\". The part before \"@\" is 2 to 64 characters, letters, digits, \".\", \"_\", \"-\" only;\nit must start and end with a letter or digit, and it cannot have two consecutive dots.\nThe part after \"@\" (handle) is 3 to 32 characters, letters, digits only, and must start with a letter.\nLetters can be both upper or lower case. Return True or False (never raise).",
+  "diff": "NONE"
+ },
+ "ta:15": {
+  "back_translation": "Write a function that converts every native digit of these Indic scripts into its equivalent ASCII digit 0-9:\nDevanagari, Bengali, Gurmukhi, Gujarati, Odia, Tamil, Telugu, Kannada, Malayalam. All other characters (letters, ASCII digits,\npunctuation, digits of non-Indic scripts like Arabic-Indic digits) must remain unchanged.\nExample: \"कुल ₹१,२५०\" -> \"कुल ₹1,250\", \"௨௦௨௪\" -> \"2024\".",
+  "diff": "NONE"
+ },
+ "ta:16": {
+  "back_translation": "Write a function that converts each ASCII digit 0-9 in text to the native digit of the given script. script is one of these (case-insensitive): \"devanagari\", \"bengali\", \"gurmukhi\", \"gujarati\", \"odia\", \"tamil\", \"telugu\", \"kannada\", \"malayalam\". All other characters remain unchanged. Raise a ValueError for any other script name. Example: ascii_to_indic_digits(\"₹1,250\", \"devanagari\") -> \"₹१,२५०\".",
+  "diff": "NONE"
+ },
+ "ta:17": {
+  "back_translation": "Write a function to find the state of an Indian PIN code using a given prefix table, e.g.,\n{\"11\": \"Delhi\", \"40\": \"Maharashtra\", \"403\": \"Goa\", \"56\": \"Karnataka\"}. First, remove spaces from the PIN.\nA valid PIN is exactly 6 ASCII digits, does not start with 0; for an invalid PIN return None.\nUse the longest key among all table keys with which the PIN starts. Return its state; if no key matches, None.",
+  "diff": "NONE"
+ },
+ "ta:18": {
+  "back_translation": "Write a function that parses the booking status string of an Indian Railways ticket. Ignore case and leading/trailing whitespace;\nparts may be separated by \"/\" or spaces (one or more). Supported formats:\n- Confirmed: \"CNF/B2/45\" or \"CNF/B2/45/LB\" -> {\"status\": \"CNF\", \"coach\": \"B2\", \"berth\": 45, \"berth_type\": \"LB\"}\n  (None if berth_type is not present; coach, berth_type are returned in uppercase; berth is an int).\n- RAC: \"RAC 12\" or \"RAC/12\" -> {\"status\": \"RAC\", \"number\": 12}\n- Waitlist: \"WL 34\", \"GNWL 34\", \"RLWL/5\", \"PQWL 2\", \"TQWL 9\" -> {\"status\": \"WL\", \"list\": \"GNWL\", \"number\": 34}\n  Here list is the written waitlist code, in uppercase (\"WL\", \"GNWL\", \"RLWL\", \"PQWL\" or \"TQWL\").\nReturn None for anything else (including non-numeric berth/number).",
+  "diff": "NONE"
+ },
+ "ta:19": {
+  "back_translation": "Write a function that converts an Indian format local time string in IST (UTC+05:30) to UTC.\nInput format: \"DD/MM/YYYY hh:mm AM\" or \"... PM\" (12-hour clock; AM/PM case-insensitive; day and month are always 2 digits,\nhour is 1 or 2 digits). 12:xx AM is shortly after midnight, 12:xx PM is shortly after noon.\nReturn the UTC in ISO format \"YYYY-MM-DDTHH:MM:00Z\". Raise a ValueError if the string or date/time is invalid.\nExample: \"01/04/2025 12:15 AM\" -> \"2025-03-31T18:45:00Z\".",
+  "diff": "NONE"
+ },
+ "ta:20": {
+  "back_translation": "Write a function that identifies the network of a payment card number and tests its Luhn checksum.\nFirst, remove spaces, hyphens. If the remainder is not 12-19 ASCII digits, return None.\nNetwork by prefix: if it starts with 34 or 37, \"Amex\"; if it starts with 4, \"Visa\"; if the first two digits are 51-55 or the first four digits are 2221-2720, \"Mastercard\"; if it starts with 60, 65, 81, 82, or 508, \"RuPay\"; otherwise, \"Unknown\".\nReturn (network, luhn_ok); luhn_ok is True if the number passes the Luhn test.",
+  "diff": "NONE"
+ },
+ "ta:21": {
+  "back_translation": "Write a function that normalises an Indian mobile number to the \"+91XXXXXXXXXX\" format.\nFirst, remove spaces, hyphens, dots, and parentheses. Then remove a country/trunk prefix: a leading \"+91\", or\na leading \"0091\", or a leading \"91\" if there are exactly 12 digits, or a leading \"0\" if there are exactly 11 digits.\nThe remainder must be exactly 10 ASCII digits starting with 6, 7, 8, or 9; then return \"+91\" + those 10 digits, otherwise None.",
+  "diff": "NONE"
+ },
+ "ta:22": {
+  "back_translation": "Write a function that parses an Indian vehicle registration number. First, convert it to uppercase and remove spaces and hyphens.\nTwo formats are valid:\n1. Regular: state code (2 letters), RTO code (1 or 2 digits), series (1 to 3 letters), number (1 to 4 digits).\n   State code must be one of these: AN AP AR AS BR CH CG DD DL GA GJ HP HR JH JK KA KL LA LD MH ML MN MP MZ NL OD PB PY RJ SK TN TR TS UK UP WB.\n   Return {\"type\": \"regular\", \"state\": \"MH\", \"rto\": \"02\", \"series\": \"AB\", \"number\": \"0042\"}; rto must be zero-padded to 2 digits and number must be zero-padded to 4 digits.\n2. Bharat series: 2-digit year, \"BH\", 4 digits, 1 or 2 letters, e.g. \"22 BH 1234 AA\".\n   Return {\"type\": \"BH\", \"year\": 2022, \"number\": \"1234\", \"series\": \"AA\"}.\nIf neither format matches, return None.",
+  "diff": "NONE"
+ },
+ "ta:23": {
+  "back_translation": "Write a function that calculates the total of a GST invoice. items is a list containing (quantity, unit_price_paise, gst_rate_pct).\n1. Taxable value = sum of quantity * unit_price of all items/lines (paise).\n2. Group the items/lines by GST rate. For each rate, tax is calculated on the total taxable value of that rate group:\n   intra-state: CGST = SGST = group_taxable * rate / 2 / 100 each; inter-state: IGST = group_taxable * rate / 100.\n   Round each tax amount (each rate group, each tax) to the nearest paisa, rounding up if exactly half.\n3. Total before rounding = taxable + all taxes. Grand total is rounded to the nearest whole rupee (100 paise),\n   rounding up if exactly half (50 paise). round_off = grand_total - total before rounding (can also be negative).\nReturn {\"taxable\", \"cgst\", \"sgst\", \"igst\", \"round_off\", \"grand_total\"} — all in int paise.",
+  "diff": "NONE"
+ },
+ "ta:24": {
+  "back_translation": "In compliance with Indian data protection rules, write a function that masks Aadhaar numbers within free text.\nA candidate is 12 digits: written consecutively or as three groups of 4 digits, with each separator between groups being\na space or a hyphen; it must not be immediately preceded or followed by another digit.\nMask only if the candidate is a valid Aadhaar-format number: the first digit is not 0 or 1, and all 12 digits\nmust pass the Verhoeff checksum. Replace each valid number with \"XXXX XXXX \" and its last 4 digits. Leave everything else unchanged.",
+  "diff": "NONE"
+ },
+ "ta:26": {
+  "back_translation": "Write a function that calculates the HRA (house rent allowance) exemption under Indian income tax rules. All inputs are annual rupee amounts (basic salary includes DA). The exemption is the least of these:\n(a) HRA actually received; (b) rent paid minus 10% of basic (not less than 0); (c) 50% of basic if the city is metro, otherwise 40% of basic. Round the result to the nearest rupee (round up if exactly half) and return an int.",
+  "diff": "NONE"
+ },
+ "ta:27": {
+  "back_translation": "Write a function that calculates the gratuity payable according to these rules (Payment of Gratuity Act style).\nmonthly_salary is the last drawn basic + DA, in rupees; tenure is given as completed years and additional months (0-11).\n1. If completed years < 5, gratuity is 0.\n2. Otherwise, counted years = years, plus an additional 1 if additional months are greater than 6 (exactly 6 months does not count).\n3. Gratuity = 15 * monthly_salary * counted_years / 26, round to the nearest rupee (if exactly half, round upwards).\n4. The amount is capped at 20,00,000. Return an int.",
+  "diff": "NONE"
+ },
+ "ta:28": {
+  "back_translation": "Write a function that calculates the monthly Employees' Provident Fund contributions for a monthly basic + DA (in rupees) in India.\n- Employee contribution = 12% of basic_da.\n- Employer's pension (EPS) share = 8.33% of wage; where the wage is capped at 15,000 (use min(basic_da, 15000)).\n- Employer's EPF share = (12% of basic_da) - EPS share, using the already rounded values.\nRound each percentage amount to the nearest rupee, rounding up if exactly half.\nReturn {\"employee\": int, \"employer_eps\": int, \"employer_epf\": int}.",
+  "diff": "NONE"
+ },
+ "ta:29": {
+  "back_translation": "Write a function that calculates the maturity amount of an Indian bank fixed deposit with quarterly compounding.\nMaturity = principal * (1 + annual_rate_pct / 400) ** (months / 3). months must be a positive multiple of 3, otherwise raise a ValueError. Round the result to 2 decimal places and return it as a float.",
+  "diff": "NONE"
+ },
+ "ta:30": {
+  "back_translation": "Indian shops often quote prices inclusive of GST. Write a function that splits a GST-inclusive amount (in paise) into the taxable value and the GST amount. taxable = inclusive * 100 / (100 + rate_pct), round to the nearest paisa, if exactly half, upwards; gst = inclusive - taxable (so that both always add up to match exactly). Return (taxable, gst) as ints.",
+  "diff": "NONE"
+ },
+ "ta:31": {
+  "back_translation": "Write a function that parses a date written in Indian day-first style and returns a datetime.date.\nThe order is always day, month, year. Separators can be \"/\", \"-\", \".\" or spaces. The month can be a number (1 or 2 digits),\na 3-letter English abbreviation (\"Aug\") or the full English month name (\"August\"), case-insensitive. The year is 4 digits,\nor 2 digits meaning 2000-2099. The day is 1 or 2 digits. If the format or date is invalid, raise a ValueError.\nExamples: \"15/08/2024\", \"15-Aug-2024\", \"5.9.24\", \"1 January 2025\".",
+  "diff": "NONE"
+ },
+ "ta:32": {
+  "back_translation": "Write a function that validates and parses an Indian Corporate Identification Number (CIN). First strip and make it uppercase.\nCIN is 21 characters: 1 character \"L\" (listed) or \"U\" (unlisted); 5 digit industry code; 2 letters state code;\n4 digits of the year of incorporation (must be within 1850-2100); 3 letters for company type, must be one of these:\nPLC, PTC, GOI, SGC, FLC, GAP, NPL, ULL, ULT, OPC; 6 digit registration number.\nReturn {\"listed\": bool, \"industry\": \"72200\", \"state\": \"MH\", \"year\": 2010, \"type\": \"PTC\", \"reg_no\": \"123456\"}\n(year is an int, others are strings), if invalid return None.",
+  "diff": "NONE"
+ },
+ "ta:33": {
+  "back_translation": "Write a function that generates a UPI deep link used for QR-code payments in India:\n\"upi://pay?pa=<vpa>&pn=<name>&am=<amount>&cu=INR\", and at the end \"&tn=<note>\" only when note is provided and not empty.\nAmount in rupees with exactly 2 decimal places (amount_paise 12345 -> \"123.45\").\nPercent-encode each value (pa, pn, am, tn) just as Python's urllib.parse.quote(value, safe=\"@\") does\n(that is, spaces become %20, \"@\" remains as is). If amount_paise <= 0, raise a ValueError.",
+  "diff": "NONE"
+ },
+ "ta:34": {
+  "back_translation": "Indian banks are closed on all Sundays, and on the 2nd and 4th Saturdays of every month (1st, 3rd, 5th Saturdays are working days). Write a function that counts bank working days from start to end (both inclusive); exclude each date given in holidays. If start is after end, return 0.",
+  "diff": "NONE"
+ },
+ "ta:35": {
+  "back_translation": "Write a function that writes an amount (given in paise) in words in the Indian numbering system (Thousand, Lakh, Crore) for an Indian cheque.\nThe rupee part must be n < 1,000,000,000. Format:\nIf the paise part is 0, \"Rupees <rupee words> Only\", otherwise \"Rupees <rupee words> and <paise words> Paise Only\".\nWord rules: Each word begins with a capital letter; numbers in 21-99 that are not multiples of ten are hyphenated, with both parts capitalized (\"Forty-Two\"); no \"and\" within numbers; 0 is \"Zero\".\nExample: 123456789 -> \"Rupees Twelve Lakh Thirty-Four Thousand Five Hundred Sixty-Seven and Eighty-Nine Paise Only\".",
+  "diff": "NONE"
+ },
+ "ta:36": {
+  "back_translation": "Write a function that calculates the domestic electricity bill using the telescopic slab tariff method (each rate applies only to the units within its slab):\nFor units 1-100, ₹3.00 per unit; for 101-200, ₹4.50; for 201-500, ₹6.00; above 500, ₹7.50.\nFixed charge: ₹50 for every kW of sanctioned load; load is rounded upwards to the nearest full kW (minimum 1 kW).\nElectricity duty: 5% of energy charge only (not on fixed charge).\nTotal = energy charge + fixed charge + duty, round to 2 decimal places (round half up). Return a float.",
+  "diff": "NONE"
+ },
+ "ta:37": {
+  "back_translation": "Write a function that compactly formats a rupee amount like Indian news and dashboards do.\n- If abs(amount) >= 1,00,00,000: value in crores, round to 2 decimal places (half upwards), trailing zeros and trailing \".\" stripped, followed by \" Cr\" (12500000 -> \"1.25 Cr\", 10000000 -> \"1 Cr\").\n- Else if abs(amount) >= 1,00,000: similarly in lakhs, with \" L\" (150000 -> \"1.5 L\", 1234567 -> \"12.35 L\").\n- Otherwise: integer with Indian digit grouping (99999 -> \"99,999\", 500 -> \"500\").\nThe unit is determined by the value before rounding (9999999 -> \"100 L\"). Negative amounts will have \"-\" in front.",
+  "diff": "NONE"
+ },
+ "ta:38": {
+  "back_translation": "GST invoice numbers must be sequential within a financial year (April 1 - March 31). Write a function that returns the next invoice number in the \"INV/<FY>/<seq>\" format; where FY is like \"2024-25\" (start year, \"-\", last 2 digits of the end year), seq is zero-padded to at least 4 digits (\"0001\"; after \"9999\", \"10000\"). prev is the previous invoice number in the same format, or None. If prev is None or its FY is different from the FY of date d, start from 0001; otherwise, increment prev's sequence by one.\nExample: next_invoice_number(\"INV/2024-25/0041\", date(2025, 3, 31)) -> \"INV/2024-25/0042\".",
+  "diff": "NONE"
+ },
+ "ta:39": {
+  "back_translation": "Write a function that classifies an Indian enterprise under these MSME limits (both values are in crore rupees; limit means \"up to and including that\"):\nMicro: investment <= 2.5 and turnover <= 10. Small: investment <= 25 and turnover <= 100.\nMedium: investment <= 125 and turnover <= 500. Both conditions must be met for a category; test upwards from Micro and return the first one that matches: \"Micro\", \"Small\", \"Medium\", otherwise \"Not MSME\". If any value is negative, raise a ValueError.",
+  "diff": "NONE"
+ },
+ "ta:40": {
+  "back_translation": "Write a function that returns how much cumulative advance tax should have been paid within a given date in India.\ntotal_tax is the estimated tax for the financial year (April 1 - March 31) in which on_date falls.\nIf total_tax is less than 10,000, nothing needs to be paid (return 0). Otherwise, the total amount payable:\nBefore June 15: 0; From June 15: 15%; From September 15: 45%; From December 15: 75%; From March 15: 100%\n(The installment date is also included, e.g., 15% must be paid on June 15). Round to the nearest rupee, if exactly half, upwards. Return an int.",
+  "diff": "NONE"
+ },
+ "hinglish:1": {
+  "back_translation": "Write a function that checks whether a string is a valid Aadhaar-format number or not.\nRules: first remove all spaces. What remains must be exactly 12 ASCII digits. The first digit must not be 0 or 1.\nThe last digit is a Verhoeff checksum digit: the entire 12-digit number must pass the standard Verhoeff check.\nReturn True if all rules are satisfied, otherwise False (never raise an exception).",
+  "diff": "NONE"
+ },
+ "hinglish:2": {
+  "back_translation": "Write a function that takes a string of ASCII digits (length >= 1) and returns the Verhoeff check digit (int from 0-9) that, when appended to the end, makes the entire number pass the Verhoeff checksum. The 12th digit of an Aadhaar-format number is formed in this way from the first 11 digits. If the input is empty or contains anything other than digits, raise a ValueError.",
+  "diff": "NONE"
+ },
+ "hinglish:3": {
+  "back_translation": "Write a function that validates an Indian PAN (Permanent Account Number) and returns the holder type.\nFirst strip leading and trailing whitespace and convert to uppercase. A valid PAN is 10 characters long: 5 letters, 4 digits, 1 letter.\nThe 4th character indicates the holder type: P = \"Individual\", C = \"Company\", H = \"HUF\", F = \"Firm\", A = \"AOP\",\nT = \"Trust\", B = \"BOI\", L = \"Local Authority\", J = \"Artificial Juridical Person\", G = \"Government\".\nReturn the holder type exactly as the strings written above. If the format is invalid or the 4th character is none of these, return None.",
+  "diff": "NONE"
+ },
+ "hinglish:4": {
+  "back_translation": "A GSTIN is 15 characters long; the 15th character is a check character derived from the first 14 characters.\nWrite a function that returns this check character. Algorithm: take the alphabet \"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\nthe value of each character is its index (0-35). In the 14 characters, for each character at position i (0-based), multiply its value by 1 if i is even and by 2 if i is odd; add (product // 36) + (product % 36) to the running sum.\nCheck value = (36 - sum % 36) % 36, and the result is the character at that index in the alphabet.\nIf the input is not exactly 14 characters long or the characters are not from this alphabet (uppercase only), raise a ValueError.",
+  "diff": "NONE"
+ },
+ "hinglish:5": {
+  "back_translation": "Write a function that validates and parses a GSTIN. First strip whitespace and convert to uppercase. A valid GSTIN is 15 chars:\n2-digit state code (01 to 38, or 97), then a 10-character PAN (5 letters, 4 digits, 1 letter), then an entity number\n(one character, 1-9 or A-Z), then the letter \"Z\", then a check character.\nThe check character is derived from the first 14 characters: alphabet \"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ\", value = index;\nat 0-based position i, multiply value by 1 if i is even, by 2 if odd; add (product // 36) + (product % 36) to sum;\ncheck = alphabet[(36 - sum % 36) % 36].\nFor a valid GSTIN return {\"state_code\": \"27\", \"pan\": \"AAPFU0939F\", \"entity_number\": \"1\"}, otherwise None.",
+  "diff": "NONE"
+ },
+ "hinglish:6": {
+  "back_translation": "Write a function that validates and splits an Indian bank IFSC code. First strip whitespace and convert to uppercase.\nA valid IFSC is exactly 11 characters: 4 letters (bank code), then the digit 0, then 6 letters or digits (branch code).\nReturn a tuple (bank_code, branch_code), like \"SBIN0001234\" -> (\"SBIN\", \"001234\"). If invalid, return None.",
+  "diff": "NONE"
+ },
+ "hinglish:7": {
+  "back_translation": "Write a function that formats an amount given in paise (integer, 100 paise = 1 rupee) into a rupee string with Indian digit grouping: the last 3 digits of the rupee part as one group, and every 2 digits before that as one group.\nAlways show exactly 2 decimal places and prepend the rupee sign \"₹\". In negative amounts, \"-\" will come before \"₹\".\nExamples: 123456789 -> \"₹12,34,567.89\", 100000 -> \"₹1,000.00\", -5050 -> \"-₹50.50\", 0 -> \"₹0.00\".",
+  "diff": "NONE"
+ },
+ "hinglish:8": {
+  "back_translation": "Write a function that converts a non-negative integer (0 <= n < 1,000,000,000) into English words in the Indian numbering system (thousand, lakh, crore — never million or billion). Rules: all lowercase; numbers from 21-99 that are not multiples of ten are written with a hyphen (\"forty-two\"); no \"and\"; single space between words; 0 -> \"zero\".\nExample: 12345678 -> \"one crore twenty-three lakh forty-five thousand six hundred seventy-eight\".\nIf n is negative or >= 1,000,000,000, raise a ValueError.",
+  "diff": "NONE"
+ },
+ "hinglish:9": {
+  "back_translation": "Write a function that converts a non-negative integer (0 <= n < 1,000,000,000) into Devanagari Hindi words in the Indian system. Break n into these parts: crore part (n // 10^7), lakh part (two digits), thousand part (two digits), hundreds digit, and the last two digits. Write each non-zero part with its number word followed by its unit word: करोड़, लाख, हज़ार, सौ (the last two digits have no unit). Join with single spaces; skip zero parts; 0 -> \"शून्य\". Use exactly these number words: 1 एक, 2 दो, 3 तीन, 4 चार, 5 पाँच, 6 छह, 7 सात, 8 आठ, 9 नौ, 10 दस, 20 बीस, 30 तीस, 40 चालीस, 50 पचास, 60 साठ, 70 सत्तर, 80 अस्सी, 90 नब्बे. In the inputs, every two-digit part will be one of these values. Example: 30405060 -> \"तीन करोड़ चार लाख पाँच हज़ार साठ\".",
+  "diff": "NONE"
+ },
+ "hinglish:10": {
+  "back_translation": "The Indian financial year runs from 1 April to 31 March. Write a function that returns the financial year label and quarter for any given date. Label format: \"FY\" + start year + \"-\" + last two digits of the end year, like \"FY2024-25\".\nQuarters: Q1 = April-June, Q2 = July-September, Q3 = October-December, Q4 = January-March.\nExample: datetime.date(2025, 2, 10) -> (\"FY2024-25\", \"Q4\").",
+  "diff": "NONE"
+ },
+ "hinglish:11": {
+  "back_translation": "Write a function that calculates GST on taxable value (in paise). supplier_state and place_of_supply are 2-digit GST state codes such as \"27\" or \"07\". If both are the same, the supply is intra-state: apply CGST and SGST, both at half rate. Otherwise, it is inter-state: apply IGST at full rate.\nRound each tax amount to the nearest paisa, if exact half then up (round half up — do not use Python's round()).\nIn intra-state, calculate CGST and SGST separately (each = taxable * rate/2 / 100, rounded); both are always equal.\nReturn a dict in paise {\"cgst\": int, \"sgst\": int, \"igst\": int}, with 0 for the tax that does not apply.\nrate_pct can also be fractional, such as 0.25 or 1.5.",
+  "diff": "NONE"
+ },
+ "hinglish:12": {
+  "back_translation": "Write a function that calculates the annual income tax of a salaried individual using these rules (rupees, integers input):\n1. Taxable income = gross_salary - 75,000 standard deduction (not less than 0).\n2. Slab tax on taxable income: up to 4,00,000 nil; 5% on 4,00,001-8,00,000; 10% on 8,00,001-12,00,000;\n   15% on 12,00,001-16,00,000; 20% on 16,00,001-20,00,000; 25% on 20,00,001-24,00,000; 30% above 24,00,000.\n   Each rate applies only to the income within that band.\n3. Rebate: if taxable income is 12,00,000 or less, then tax is 0. (Ignore marginal relief and surcharge.)\n4. Add 4% health and education cess on tax.\n5. Round the final amount to the nearest rupee, exact half up. Return int.",
+  "diff": "NONE"
+ },
+ "hinglish:13": {
+  "back_translation": "Write a function that calculates the monthly EMI of a loan (Indian bank reducing-balance method).\nr = annual_rate_pct / 12 / 100. EMI = P * r * (1 + r)^n / ((1 + r)^n - 1), where P is principal in rupees and n is number of months. If rate is 0 then EMI = P / n. Round the result to 2 decimal places (paise) and return as a float.\nIf months <= 0, or principal < 0, or rate is negative, raise a ValueError.",
+  "diff": "NONE"
+ },
+ "hinglish:14": {
+  "back_translation": "Write a function that validates a UPI ID (VPA), such as \"ramesh.kumar@okaxis\". First strip leading and trailing whitespace.\nRules: exactly one \"@\". The part before \"@\" should be 2 to 64 characters, only letters, digits, \".\", \"_\", and \"-\";\nit must start and end with a letter or digit, and it must not have two consecutive dots.\nThe part after \"@\" (handle) should be 3 to 32 characters, only letters and digits, and start with a letter.\nLetters can be both upper or lower case. Return True or False (never raise).",
+  "diff": "NONE"
+ },
+ "hinglish:15": {
+  "back_translation": "Write a function that replaces every native digit of these Indian scripts with the matching ASCII digit 0-9:\nDevanagari, Bengali, Gurmukhi, Gujarati, Odia, Tamil, Telugu, Kannada, Malayalam. Every other character (letters, ASCII digits,\npunctuation, digits of non-Indian scripts like Arabic-Indic digits) should remain as is.\nExample: \"कुल ₹१,२५०\" -> \"कुल ₹1,250\", \"௨௦௨௪\" -> \"2024\".",
+  "diff": "NONE"
+ },
+ "hinglish:16": {
+  "back_translation": "Write a function that replaces every ASCII digit 0-9 in the text with the native digit of the given script. script is one of these\n(case-insensitive): \"devanagari\", \"bengali\", \"gurmukhi\", \"gujarati\", \"odia\", \"tamil\", \"telugu\", \"kannada\", \"malayalam\".\nAll other characters should remain as they are. Raise a ValueError for any other script name.\nExample: ascii_to_indic_digits(\"₹1,250\", \"devanagari\") -> \"₹१,२५०\".",
+  "diff": "NONE"
+ },
+ "hinglish:17": {
+  "back_translation": "Write a function that finds the state of an Indian PIN code from a given prefix table, like\n{\"11\": \"Delhi\", \"40\": \"Maharashtra\", \"403\": \"Goa\", \"56\": \"Karnataka\"}. First remove spaces from the PIN.\nA valid PIN is exactly 6 ASCII digits and does not start with 0; return None for an invalid PIN.\nOut of the keys in the table that the PIN starts with, use the longest key. Return its state, or None if no key matches.",
+  "diff": "NONE"
+ },
+ "hinglish:18": {
+  "back_translation": "Write a function that parses an Indian Railways ticket booking status string. Ignore case and leading/trailing whitespace; parts can be separated by \"/\" or spaces (one or more). Supported forms:\n- Confirmed: \"CNF/B2/45\" or \"CNF/B2/45/LB\" -> {\"status\": \"CNF\", \"coach\": \"B2\", \"berth\": 45, \"berth_type\": \"LB\"}\n  (if there is no berth_type, then None; return coach and berth_type in uppercase; berth is int).\n- RAC: \"RAC 12\" or \"RAC/12\" -> {\"status\": \"RAC\", \"number\": 12}\n- Waitlist: \"WL 34\", \"GNWL 34\", \"RLWL/5\", \"PQWL 2\", \"TQWL 9\" -> {\"status\": \"WL\", \"list\": \"GNWL\", \"number\": 34}\n  where list is the same waitlist code that is written, in uppercase (\"WL\", \"GNWL\", \"RLWL\", \"PQWL\", or \"TQWL\").\nReturn None for anything else (including non-numeric berth/number).",
+  "diff": "NONE"
+ },
+ "hinglish:19": {
+  "back_translation": "Write a function that converts an Indian-format local time string in IST (UTC+05:30) to UTC.\nInput format: \"DD/MM/YYYY hh:mm AM\" or \"... PM\" (12-hour clock; AM/PM case-insensitive; day and month are always 2 digits,\nhour is 1 or 2 digits). 12:xx AM is just after midnight, 12:xx PM is just after noon.\nReturn UTC in ISO format \"YYYY-MM-DDTHH:MM:00Z\". If the string or date/time is invalid, raise a ValueError.\nExample: \"01/04/2025 12:15 AM\" -> \"2025-03-31T18:45:00Z\".",
+  "diff": "NONE"
+ },
+ "hinglish:20": {
+  "back_translation": "Write a function that identifies the network of a payment card number and checks the Luhn checksum.\nFirst, remove spaces and hyphens. If what remains is not 12-19 ASCII digits, return None.\nNetwork from prefix: if it starts with 34 or 37 then \"Amex\"; if it starts with 4 then \"Visa\"; if the first two digits are 51-55 or the first four digits are 2221-2720 then \"Mastercard\"; if it starts with 60, 65, 81, 82, or 508 then \"RuPay\"; otherwise \"Unknown\".\nReturn (network, luhn_ok) where luhn_ok is True if the number passes the Luhn check.",
+  "diff": "NONE"
+ },
+ "hinglish:21": {
+  "back_translation": "Write a function that normalises an Indian mobile number into the \"+91XXXXXXXXXX\" form.\nFirst remove spaces, hyphens, dots, and brackets (parentheses). Then remove a country/trunk prefix: a leading \"+91\", or a leading \"0091\", or a leading \"91\" if exactly 12 digits remain, or a leading \"0\" if exactly 11 digits remain.\nWhat remains must be exactly 10 ASCII digits starting with 6, 7, 8, or 9; then return \"+91\" + those 10 digits, otherwise None.",
+  "diff": "NONE"
+ },
+ "hinglish:22": {
+  "back_translation": "Write a function that parses an Indian vehicle registration number. First uppercase and remove spaces and hyphens.\nTwo formats are valid:\n1. Regular: state code (2 letters), RTO code (1 or 2 digits), series (1 to 3 letters), number (1 to 4 digits).\n   State code must be one of these: AN AP AR AS BR CH CG DD DL GA GJ HP HR JH JK KA KL LA LD MH ML MN MP MZ NL OD PB PY RJ SK TN TR TS UK UP WB.\n   Return {\"type\": \"regular\", \"state\": \"MH\", \"rto\": \"02\", \"series\": \"AB\", \"number\": \"0042\"}, zero-padding rto to 2 digits\n   and number to 4 digits.\n2. Bharat series: 2-digit year, \"BH\", 4 digits, 1 or 2 letters, like \"22 BH 1234 AA\".\n   Return {\"type\": \"BH\", \"year\": 2022, \"number\": \"1234\", \"series\": \"AA\"}.\nIf neither format matches, return None.",
+  "diff": "NONE"
+ },
+ "hinglish:23": {
+  "back_translation": "Write a function that calculates the total of a GST invoice. items is a list of (quantity, unit_price_paise, gst_rate_pct).\n1. Taxable value = sum of quantity * unit_price of all lines (paise).\n2. Group the lines by GST rate. For each rate, tax will be applied on the total taxable value of that rate group:\n   intra-state: CGST = SGST = group_taxable * rate / 2 / 100 each; inter-state: IGST = group_taxable * rate / 100.\n   Round each tax amount (each rate group, each tax) to the nearest paisa, exact half up.\n3. Total before rounding = taxable + all taxes. Round the grand total to the nearest whole rupee (100 paise),\n   exact half (50 paise) up. round_off = grand_total - total before rounding (can also be negative).\nReturn {\"taxable\", \"cgst\", \"sgst\", \"igst\", \"round_off\", \"grand_total\"} — all in int paise.",
+  "diff": "NONE"
+ },
+ "hinglish:24": {
+  "back_translation": "To follow Indian data-protection rules, write a function that masks Aadhaar numbers within free text.\nA candidate consists of 12 digits, written either continuously or in three groups of 4 digits, where each gap between the groups is a single space or a single hyphen; immediately before or immediately after it, there should not be any other digit.\nMask the candidate only when it is a valid Aadhaar-format number: the first digit is not 0 or 1, and the 12 digits pass the Verhoeff checksum. Replace every valid number with \"XXXX XXXX \" followed by its last 4 digits. Leave everything else as is.",
+  "diff": "NONE"
+ },
+ "hinglish:25": {
+  "back_translation": "Write a function that parses an amount written in the style used by Indians and returns whole rupees (int).\nSteps: strip whitespace; if there is a currency marker at the beginning, remove it (\"₹\", \"Rs.\", \"Rs\", \"INR\", case-insensitive);\nremove commas and spaces. The remainder is a number (integer or decimal) which may be followed by an optional unit (case-insensitive):\n\"crore\", \"crores\" or \"cr\" = 1,00,00,000; \"lakh\", \"lakhs\", \"lac\", \"lacs\" or \"l\" = 1,00,000; \"k\" or \"thousand\" = 1,000.\nMultiply, then round to the nearest rupee (exact half upwards). If the text cannot be parsed, raise ValueError.\nExamples: \"1.5 crore\" -> 15000000, \"₹2,50,000\" -> 250000, \"Rs. 12.5k\" -> 12500, \"3.25L\" -> 325000.",
+  "diff": "NONE"
+ },
+ "hinglish:26": {
+  "back_translation": "Write a function that calculates the HRA (house rent allowance) exemption under Indian income-tax rules. All inputs are annual rupee amounts (DA is included in the basic salary). The exemption is the minimum of these:\n(a) actual HRA received; (b) rent paid minus 10% of basic (not less than 0); (c) 50% of basic if the city is a metro, otherwise 40% of basic. Round the result to the nearest rupee (exact half up) and return an int.",
+  "diff": "NONE"
+ },
+ "hinglish:27": {
+  "back_translation": "Write a function that calculates the payable gratuity based on these rules (Payment of Gratuity Act style).\nmonthly_salary is the last drawn basic + DA in rupees; service is given in completed years plus extra months (0-11).\n1. If completed years < 5, then gratuity is 0.\n2. Otherwise, counted years = years, plus 1 if extra months are greater than 6 (exactly 6 months do not count).\n3. Gratuity = 15 * monthly_salary * counted_years / 26, round to the nearest rupee (exact half up).\n4. The amount is capped at 20,00,000. Return an int.",
+  "diff": "NONE"
+ },
+ "hinglish:28": {
+  "back_translation": "Write a function that calculates monthly Employees' Provident Fund contributions for monthly basic + DA (rupees) in India.\n- Employee contribution = 12% of basic_da.\n- Employer's pension (EPS) share = 8.33% of wage, where wage is capped at 15,000 (use min(basic_da, 15000)).\n- Employer's EPF share = (12% of basic_da) - EPS share, using already-rounded values.\nRound every percentage amount to the nearest rupee, exact half up.\nReturn {\"employee\": int, \"employer_eps\": int, \"employer_epf\": int}.",
+  "diff": "NONE"
+ },
+ "hinglish:29": {
+  "back_translation": "Write a function that calculates the maturity value of an Indian bank fixed deposit with quarterly compounding.\nMaturity = principal * (1 + annual_rate_pct / 400) ** (months / 3). months must be a positive multiple of 3, otherwise raise a ValueError. Return the result as a float rounded to 2 decimal places.",
+  "diff": "NONE"
+ },
+ "hinglish:30": {
+  "back_translation": "In India, shops often state GST-inclusive prices. Write a function that splits a GST-inclusive amount (in paise) into taxable value and GST amount. taxable = inclusive * 100 / (100 + rate_pct), round to the nearest paisa, exact half up; gst = inclusive - taxable (so that the total of both always matches exactly). Return (taxable, gst) as ints.",
+  "diff": "NONE"
+ },
+ "hinglish:31": {
+  "back_translation": "Write a function that parses a date written in Indian day-first style and returns datetime.date.\nThe order is always day, month, year. Separators can be \"/\", \"-\", \".\" or spaces. Month can be a number (1 or 2 digits),\na 3-letter English abbreviation (\"Aug\") or a full English month name (\"August\"), case-insensitive. Year is of 4 digits,\nor 2 digits which means 2000-2099. Day is of 1 or 2 digits. If the format or date is invalid, raise a ValueError.\nExamples: \"15/08/2024\", \"15-Aug-2024\", \"5.9.24\", \"1 January 2025\".",
+  "diff": "NONE"
+ },
+ "hinglish:32": {
+  "back_translation": "Write a function that validates and parses an Indian Corporate Identification Number (CIN). First, strip and uppercase.\nThe CIN consists of 21 characters: 1 letter \"L\" (listed) or \"U\" (unlisted); 5 digits industry code; 2 letters state code;\n4 digits of incorporation year (must be between 1850-2100); 3 letters of company type, which must be one of these:\nPLC, PTC, GOI, SGC, FLC, GAP, NPL, ULL, ULT, OPC; 6 digits registration number.\nReturn {\"listed\": bool, \"industry\": \"72200\", \"state\": \"MH\", \"year\": 2010, \"type\": \"PTC\", \"reg_no\": \"123456\"}\n(year int, rest strings), or None if invalid.",
+  "diff": "NONE"
+ },
+ "hinglish:33": {
+  "back_translation": "Write a function that creates a UPI deep link used for QR-code payments in India:\n\"upi://pay?pa=<vpa>&pn=<name>&am=<amount>&cu=INR\" and, only when a note is provided and is not empty, \"&tn=<note>\" at the end.\nAmount in rupees with exactly 2 decimals (amount_paise 12345 -> \"123.45\").\nPercent-encode each value (pa, pn, am, tn) exactly the way Python's urllib.parse.quote(value, safe=\"@\") does\n(meaning spaces become %20 and \"@\" remains as is). If amount_paise <= 0, raise a ValueError.",
+  "diff": "NONE"
+ },
+ "hinglish:34": {
+  "back_translation": "Indian banks remain closed on all Sundays and the 2nd and 4th Saturday of every month (1st, 3rd, and 5th Saturdays are working days). Write a function that counts bank working days from start to end (both inclusive), and also excludes every date given in holidays. If start is after end, return 0.",
+  "diff": "NONE"
+ },
+ "hinglish:35": {
+  "back_translation": "Write a function that writes an amount (in paise) in words for an Indian cheque, in the Indian system (Thousand, Lakh, Crore). The Rupees part should be n < 1,000,000,000. Format: if the paise part is 0 then \"Rupees <rupee words> Only\", otherwise \"Rupees <rupee words> and <paise words> Paise Only\". Words rules: every word should start with a capital letter; non-multiples of ten from 21-99 should be written with a hyphen and both parts should be capital (\"Forty-Two\"); no \"and\" inside the number; 0 is \"Zero\". Example: 123456789 -> \"Rupees Twelve Lakh Thirty-Four Thousand Five Hundred Sixty-Seven and Eighty-Nine Paise Only\".",
+  "diff": "NONE"
+ },
+ "hinglish:36": {
+  "back_translation": "Write a function that calculates a domestic electricity bill using a telescopic slab tariff (each rate applies only to the units within its slab):\nunits 1-100 at ₹3.00 per unit, 101-200 at ₹4.50, 201-500 at ₹6.00, above 500 at ₹7.50.\nFixed charge: ₹50 per kW of sanctioned load, rounding the load UP to the nearest whole kW (minimum 1 kW).\nElectricity duty: 5% of energy charge only (not on fixed charge).\nTotal = energy charge + fixed charge + duty, round to 2 decimals (exact half up). Return a float.",
+  "diff": "NONE"
+ },
+ "hinglish:37": {
+  "back_translation": "Write a function that writes a rupee amount in compact format, like Indian news and dashboards do.\n- If abs(amount) >= 1,00,00,000: value in crores, round to 2 decimals (half up), removing trailing zeros and trailing\n  \".\", then \" Cr\" (12500000 -> \"1.25 Cr\", 10000000 -> \"1 Cr\").\n- Else if abs(amount) >= 1,00,000: same in lakhs, with \" L\" (150000 -> \"1.5 L\", 1234567 -> \"12.35 L\").\n- Else: integer with Indian digit grouping (99999 -> \"99,999\", 500 -> \"500\").\nThe unit is decided by the value before rounding (9999999 -> \"100 L\"). Negative amounts will have \"-\" in front.",
+  "diff": "NONE"
+ },
+ "hinglish:38": {
+  "back_translation": "GST invoice numbers must be sequential within a financial year (1 April - 31 March). Write a function that returns the next invoice number in \"INV/<FY>/<seq>\" format, where FY is like \"2024-25\" (start year, \"-\", last 2 digits of the end year) and seq is zero-padded to at least 4 digits (\"0001\"; \"10000\" comes after \"9999\"). prev is the previous invoice number in this format, or None. If prev is None or its FY is different from the FY of date d, start from 0001; otherwise, increment the sequence of prev by one.\nExample: next_invoice_number(\"INV/2024-25/0041\", date(2025, 3, 31)) -> \"INV/2024-25/0042\".",
+  "diff": "NONE"
+ },
+ "hinglish:39": {
+  "back_translation": "Write a function that classifies an Indian enterprise under these MSME limits (both values in crore rupees; limit means \"up to that, including\"):\nMicro: investment <= 2.5 and turnover <= 10. Small: investment <= 25 and turnover <= 100.\nMedium: investment <= 125 and turnover <= 500. For any category, both conditions must be true; check from Micro upwards and return the first one that fits: \"Micro\", \"Small\", \"Medium\", otherwise \"Not MSME\". If any value is negative, raise a ValueError.",
+  "diff": "NONE"
+ },
+ "hinglish:40": {
+  "back_translation": "Write a function that tells how much cumulative advance tax should have been paid in India by a given date.\ntotal_tax is the estimated tax for the financial year (1 April - 31 March) in which on_date falls.\nIf total_tax is less than 10,000, then nothing is due (return 0). Otherwise the cumulative due amount:\nBefore 15 June: 0; from 15 June: 15%; from 15 September: 45%; from 15 December: 75%; from 15 March: 100%\n(the installment date itself is also counted, such as on 15 June, 15% is due). Round to the nearest rupee, exact half up. Return an int.",
+  "diff": "NONE"
+ },
+ "hi:5": {
+  "back_translation": "Write a function that validates and parses a GSTIN. First remove leading and trailing whitespace and convert to uppercase. A valid GSTIN consists of 15 characters:\na 2-digit state code (from 01 to 38, or 97), then a 10-character PAN (5 letters, 4 digits, 1 letter), then an entity number\n(one character, 1-9 or A-Z), then the letter \"Z\", then a check character.\nThe check character is derived from the first 14 characters: alphabet \"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ\", value = index;\nat 0-indexed position i, multiply the value by 1 if i is even, and by 2 if i is odd; add (product // 36) + (product % 36) to sum;\ncheck = alphabet[(36 - sum % 36) % 36].\nFor a valid GSTIN return {\"state_code\": \"27\", \"pan\": \"AAPFU0939F\", \"entity_number\": \"1\"}, otherwise None.",
+  "diff": "NONE"
+ },
+ "hi:6": {
+  "back_translation": "Write a function that validates an Indian bank's IFSC code and splits it into two parts. First, strip leading and trailing whitespace and convert to uppercase.\nA valid IFSC is exactly 11 characters: 4 letters (bank code), followed by the digit 0, then 6 letters or digits (branch code).\nReturn a tuple (bank_code, branch_code), for example \"SBIN0001234\" -> (\"SBIN\", \"001234\"). If invalid, return None.",
+  "diff": "NONE"
+ },
+ "hi:25": {
+  "back_translation": "Write a function that parses an amount written in the Indian style and returns whole rupees (int).\nSteps: Strip leading and trailing whitespace; if there is a currency marker at the beginning, remove it (\"₹\", \"Rs.\", \"Rs\", \"INR\", case-insensitive);\nremove commas and spaces. The remainder is a number (integer or decimal) followed by an optional unit (case-insensitive):\n\"crore\", \"crores\" or \"cr\" = 1,00,00,000; \"lakh\", \"lakhs\", \"lac\", \"lacs\" or \"l\" = 1,00,000; \"k\" or \"thousand\" = 1,000.\nMultiply, then round to the nearest rupee (exact half upward). If the text cannot be parsed, raise a ValueError.\nExamples: \"1.5 crore\" -> 15000000, \"₹2,50,000\" -> 250000, \"Rs. 12.5k\" -> 12500, \"3.25L\" -> 325000.",
+  "diff": "NONE"
+ },
+ "ta:5": {
+  "back_translation": "Write a function that validates and parses a GSTIN. First, strip leading and trailing whitespace and convert to uppercase. A valid GSTIN is 15 characters:\n2-digit state code (from 01 to 38, or 97), then a 10-character PAN (5 letters, 4 digits, 1 letter), then an entity number\n(one character, 1-9 or A-Z), then the character \"Z\", then a check character.\nThe check character is calculated from the first 14 characters: alphabet \"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ\", value = index;\nat 0-indexed position i, multiply the value by 1 if i is even, and by 2 if odd; add (product // 36) + (product % 36) to sum;\ncheck = alphabet[(36 - sum % 36) % 36].\nFor a valid GSTIN return {\"state_code\": \"27\", \"pan\": \"AAPFU0939F\", \"entity_number\": \"1\"}, otherwise None.",
+  "diff": "NONE"
+ },
+ "ta:6": {
+  "back_translation": "Write a function that validates an Indian bank's IFSC code and splits it into two. First, strip leading and trailing whitespace and convert to uppercase.\nA valid IFSC is exactly 11 characters: 4 letters (bank code), then the digit 0, then 6 letters or digits (branch code).\nReturn a tuple as (bank_code, branch_code), e.g. \"SBIN0001234\" -> (\"SBIN\", \"001234\"). If it is invalid, return None.",
+  "diff": "NONE"
+ },
+ "ta:25": {
+  "back_translation": "Write a function that parses an amount in the format written by Indians and returns whole rupees (int).\nSteps: Strip leading and trailing whitespace; if there is a currency marker at the beginning, remove it (\"₹\", \"Rs.\", \"Rs\", \"INR\", case-insensitive);\nremove commas, spaces. What remains is a number (integer or decimal), followed optionally by an optional unit (case-insensitive):\n\"crore\", \"crores\" or \"cr\" = 1,00,00,000; \"lakh\", \"lakhs\", \"lac\", \"lacs\" or \"l\" = 1,00,000; \"k\" or \"thousand\" = 1,000.\nMultiply, then round to the nearest rupee (if exactly half, round upwards). Raise ValueError if the text cannot be parsed.\nExamples: \"1.5 crore\" -> 15000000, \"₹2,50,000\" -> 250000, \"Rs. 12.5k\" -> 12500, \"3.25L\" -> 325000.",
+  "diff": "NONE"
+ }
+}

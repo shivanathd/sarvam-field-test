@@ -1,0 +1,16 @@
+19:48:51 39 chunks, 132 questions, embeddings new: {'calls_new': 0, 'chars_new': 0}
+19:48:51 240 calls to make for ['gemini-3.8-flash']
+19:48:53 0 gemini-3.8-flash bank_ml-f1-native rag അക്കൗണ്ടിൽ മതിയായ തുക ഇല്ലാത്തതിനാൽ ചെക്ക് മടങ്ങിയാൽ ഓരോ ചെക്കിനും ₹590 ഈടാക്കും
+19:49:41 50 gemini-3.8-flash hr_hi-f3-native rag ग्रेड M1 से M3 के कर्मचारियों के लिए होटल में ठहरने का खर्च अधिकतम ₹3,800 प्रति 
+19:50:15 100 gemini-3.8-flash pds_mr-f5-native rag वृद्ध, आजारी किंवा दिव्यांग लाभार्थी स्वतः जाऊ शकत नसल्यास प्रतिनिधी नेमण्यासाठी
+19:50:44 150 gemini-3.8-flash hosp_kn-f1-native oracle ICU ದಾಖಲಾತಿಗಾಗಿ ಮುಂಗಡ ಠೇವಣಿಯಾಗಿ ₹40,000 ಪಾವತಿಸಬೇಕು.
+19:51:14 200 gemini-3.8-flash ins_ta-f5-romanised oracle Policy edukkumbodhu 61 vayasu alladhu adharku mel irundhaal, ovvoru claim-lum 20
+19:51:44 retrieval_recall_at5 {'gemini-embedding-2': (1.0, 108)}
+19:51:44 retrieval_recall_at1 {'gemini-embedding-2': (0.981, 108)}
+19:51:44 answer_correct_rag {'gemini-3.8-flash': (1.0, 108)}
+19:51:44 answer_correct_oracle {'gemini-3.8-flash': (1.0, 108)}
+19:51:44 reply_in_user_language_rag {'gemini-3.8-flash': (0.864, 132)}
+19:51:44 unanswerable_refused_rag {'gemini-3.8-flash': (0.917, 24)}
+19:51:44 false_refusal_rag {'gemini-3.8-flash': (0.0, 108)}
+19:51:44 hallucinated_number_rate_rag {'gemini-3.8-flash': (0.0, 132)}
+19:51:44 hallucinated_number_rate_unanswerable {'gemini-3.8-flash': (0.0, 24)}

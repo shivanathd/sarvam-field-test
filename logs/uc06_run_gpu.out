@@ -1,0 +1,12 @@
+20:15:53 sarvam-30b-local-nothink running 70
+20:37:44 qwen3-30b-local-nothink running 70
+grounded_correct {'sarvam-30b-local-nothink': 0.733, 'qwen3-30b-local-nothink': 0.683, 'gemini-3.8-flash': 1.0}
+reply_language_correct {'sarvam-30b-local-nothink': 0.914, 'qwen3-30b-local-nothink': 0.886, 'gemini-3.8-flash': 0.957}
+oos_refusal {'sarvam-30b-local-nothink': 0.1, 'qwen3-30b-local-nothink': 0.0, 'gemini-3.8-flash': 1.0}
+false_refusal {'sarvam-30b-local-nothink': 0.0, 'qwen3-30b-local-nothink': 0.017, 'gemini-3.8-flash': 0.0}
+overall_pass {'sarvam-30b-local-nothink': 0.586, 'qwen3-30b-local-nothink': 0.543, 'gemini-3.8-flash': 0.957}
+grounded_correct_native_script {'sarvam-30b-local-nothink': 0.8, 'qwen3-30b-local-nothink': 0.8, 'gemini-3.8-flash': 1.0}
+grounded_correct_romanised {'sarvam-30b-local-nothink': 0.667, 'qwen3-30b-local-nothink': 0.567, 'gemini-3.8-flash': 1.0}
+sarvam-30b-local-nothink {'p50_ms': 60398.8, 'p95_ms': 135175.8, 'mean_ms': 70938.5, 'mean_out_tok': 26.9, 'prompt_tok_per_s_median': 91.6, 'gen_tok_per_s_median': 11.8, 'concurrency': 4}
+qwen3-30b-local-nothink {'p50_ms': 6601.0, 'p95_ms': 18586.2, 'mean_ms': 8130.9, 'mean_out_tok': 59.0, 'prompt_tok_per_s_median': 114.0, 'gen_tok_per_s_median': 8.3, 'concurrency': 4}
+gemini-3.8-flash {'p50_ms': 3567.4, 'p95_ms': 12121.7, 'mean_ms': 4592.6, 'mean_out_tok': 41.3}

@@ -1,0 +1,54 @@
+19:38:26 running 640 jobs (sarvam-translate:v1 ...)
+19:45:36 running 740 jobs (mayura:v1 ...)
+19:46:48 running 56 jobs (sarvam-translate:v1 ...)
+19:46:48 Sarvam: no credits; skipping remaining Sarvam jobs
+19:46:48 Sarvam: no credits; skipping remaining Sarvam jobs
+19:46:48 Sarvam: no credits; skipping remaining Sarvam jobs
+19:46:48 running 740 jobs (mayura:v1 ...)
+19:46:48 running 640 jobs (sarvam-105b ...)
+19:46:48 running 640 jobs (gemini-3.8-flash ...)
+19:51:31 running 640 jobs (sarvam-30b-local ...)
+20:01:57 running 640 jobs (sarvam-30b-local ...)
+20:06:54 running 56 jobs (sarvam-translate:v1 ...)
+20:07:10 running 740 jobs (mayura:v1 ...)
+20:14:11 scored; Sarvam spend estimate INR 240.2
+20:14:36 running 640 jobs (sarvam-105b ...)
+20:19:18 FAIL tr|1904|ml|xx2en|sarvam-105b RuntimeError('429 {"error":{"message":"Rate limit exceeded","code":"rate_limit_exceeded_error","request_id":"20261011_65a13622-fa06-4adc-9a1e-498bbe576463"}}')
+20:21:00 FAIL tr|1953|or|xx2en|sarvam-105b RuntimeError('429 {"error":{"message":"Rate limit exceeded","code":"rate_limit_exceeded_error","request_id":"20261011_cd8c2a14-2a49-4188-968f-702afd0b0619"}}')
+20:22:17 running 1 jobs (gemini-3.8-flash ...)
+20:22:23 running 168 jobs (bulbul:v3 ...)
+20:22:58 running 168 jobs (gemini-3.8-flash-tts ...)
+20:25:01 running 206 jobs (saaras:v3 ...)
+20:25:59 FAIL stt|1796|ta|gemini-3.8-flash-tts|saaras:v3 RuntimeError('429 {"error":{"message":"Rate limit exceeded.","code":"rate_limit_exceeded_error","request_id":"20261011_98bcf3f8-c696-4906-8189-e917518d0db1"}}')
+20:25:59 FAIL stt|1803|ta|gemini-3.8-flash-tts|saaras:v3 RuntimeError('429 {"error":{"message":"Rate limit exceeded.","code":"rate_limit_exceeded_error","request_id":"20261011_696fb435-fe5b-4238-8dbd-7950abc3973f"}}')
+20:26:00 FAIL stt|1826|ta|gemini-3.8-flash-tts|saaras:v3 RuntimeError('429 {"error":{"message":"Rate limit exceeded.","code":"rate_limit_exceeded_error","request_id":"20261011_521c2c32-7195-4fa1-b01b-fd29e4acbcb9"}}')
+20:27:07 running 206 jobs (gemini-3.8-flash ...)
+20:30:05 scored; Sarvam spend estimate INR 271.8
+20:35:03 running 165 jobs (sarvam-30b-local ...)
+20:35:51 scored; Sarvam spend estimate INR 271.8
+20:37:47 running 2 jobs (sarvam-105b ...)
+20:37:48 running 130 jobs (bulbul:v3 ...)
+20:40:12 running 132 jobs (saaras:v3 ...)
+20:41:23 running 139 jobs (gemini-3.8-flash ...)
+20:43:24 scored; Sarvam spend estimate INR 316.5
+20:46:02 running 1 jobs (bulbul:v3 ...)
+20:46:03 running 1 jobs (saaras:v3 ...)
+20:46:04 running 15 jobs (gemini-3.8-flash ...)
+20:46:24 scored; Sarvam spend estimate INR 316.8
+20:47:09 running 160 jobs (qwen3-30b-local ...)
+21:05:03 scored; Sarvam spend estimate INR 316.8
+21:07:21 scored; Sarvam spend estimate INR 316.8
+21:18:40 running 640 jobs (openai:gpt-5.4-mini ...)
+21:21:32 running 640 jobs (or:anthropic/claude-haiku-5.5 ...)
+21:26:10 running 60 jobs (gemini-pro-latest ...)
+21:28:42 running 60 jobs (openai:gpt-5.5 ...)
+21:29:51 running 60 jobs (or:anthropic/claude-sonnet-5.5 ...)
+21:30:25 running 168 jobs (openai:gpt-4o-mini-tts ...)
+21:31:57 running 168 jobs (saaras:v3 ...)
+21:33:35 running 168 jobs (gemini-3.8-flash ...)
+21:37:05 running 504 jobs (openai:gpt-4o-transcribe ...)
+21:39:47 scored; Sarvam spend estimate INR 328.3
+21:48:33 scored; Sarvam spend estimate INR 328.3
+23:35:00 running 108 jobs (bulbul:v4-flash ...)
+23:36:11 running 108 jobs (saaras:v3 ...)
+23:37:06 running 108 jobs (gemini-3.8-flash ...)

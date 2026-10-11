@@ -1,0 +1,550 @@
+19:42:23 == step synth
+19:42:25 synth hi01 {'voice': 'say:Lekha', 'audio_s': 6.48}
+19:42:32 == step synth
+19:43:47 == step synth
+19:43:56 synth hi02 {'voice': 'gemini:Puck', 'audio_s': 17.76, 'in_tok': 52, 'out_tok': 445}
+19:43:56 synth hi03 {'voice': 'say:Lekha', 'audio_s': 6.81}
+19:43:56 synth hi04 {'voice': 'gemini:Aoede', 'audio_s': 12.6, 'in_tok': 42, 'out_tok': 315}
+19:43:56 synth hi05 {'voice': 'say:Lekha', 'audio_s': 7.94}
+19:43:56 synth hi06 {'voice': 'gemini:Leda', 'audio_s': 11.84, 'in_tok': 42, 'out_tok': 296}
+19:43:56 synth hi07 {'voice': 'say:Lekha', 'audio_s': 6.61}
+19:43:56 synth hi08 {'voice': 'gemini:Puck', 'audio_s': 10.84, 'in_tok': 43, 'out_tok': 271}
+19:43:56 synth hi09 {'voice': 'say:Lekha', 'audio_s': 6.11}
+19:44:01 synth hi10 {'voice': 'gemini:Aoede', 'audio_s': 9.96, 'in_tok': 36, 'out_tok': 250}
+19:44:01 synth hi11 {'voice': 'say:Lekha', 'audio_s': 5.23}
+19:44:03 synth hi12 {'voice': 'gemini:Leda', 'audio_s': 15.48, 'in_tok': 48, 'out_tok': 387}
+19:44:03 synth hi13 {'voice': 'say:Lekha', 'audio_s': 6.97}
+19:44:03 synth hi14 {'voice': 'gemini:Puck', 'audio_s': 12.28, 'in_tok': 46, 'out_tok': 307}
+19:44:03 synth hi15 {'voice': 'say:Lekha', 'audio_s': 7.12}
+19:44:03 synth hi16 {'voice': 'gemini:Aoede', 'audio_s': 10.12, 'in_tok': 38, 'out_tok': 253}
+19:44:03 synth ta01 {'voice': 'say:Vani', 'audio_s': 6.51}
+19:44:09 synth ta02 {'voice': 'gemini:Puck', 'audio_s': 14.84, 'in_tok': 50, 'out_tok': 371}
+19:44:09 synth ta03 {'voice': 'say:Vani', 'audio_s': 5.76}
+19:44:10 synth ta04 {'voice': 'gemini:Aoede', 'audio_s': 11.8, 'in_tok': 46, 'out_tok': 295}
+19:44:10 synth ta05 {'voice': 'say:Vani', 'audio_s': 8.41}
+19:44:11 synth ta06 {'voice': 'gemini:Leda', 'audio_s': 13.4, 'in_tok': 47, 'out_tok': 335}
+19:44:11 synth ta07 {'voice': 'say:Vani', 'audio_s': 6.41}
+19:44:11 synth ta08 {'voice': 'gemini:Puck', 'audio_s': 10.16, 'in_tok': 43, 'out_tok': 254}
+19:44:11 synth ta09 {'voice': 'say:Vani', 'audio_s': 6.0}
+19:44:16 synth ta10 {'voice': 'gemini:Aoede', 'audio_s': 12.12, 'in_tok': 41, 'out_tok': 303}
+19:44:16 synth ta11 {'voice': 'say:Vani', 'audio_s': 4.92}
+19:44:17 synth ta12 {'voice': 'gemini:Leda', 'audio_s': 12.76, 'in_tok': 47, 'out_tok': 319}
+19:44:17 synth ta13 {'voice': 'say:Vani', 'audio_s': 6.73}
+19:44:18 synth ta14 {'voice': 'gemini:Puck', 'audio_s': 11.68, 'in_tok': 45, 'out_tok': 292}
+19:44:18 synth ta15 {'voice': 'say:Vani', 'audio_s': 8.65}
+19:44:20 synth ta16 {'voice': 'gemini:Aoede', 'audio_s': 10.64, 'in_tok': 38, 'out_tok': 266}
+19:44:24 synth ml01 {'voice': 'gemini:Kore', 'audio_s': 12.6, 'in_tok': 46, 'out_tok': 315}
+19:44:24 synth ml02 {'voice': 'gemini:Puck', 'audio_s': 14.0, 'in_tok': 52, 'out_tok': 350}
+19:44:24 synth ml03 {'voice': 'gemini:Charon', 'audio_s': 11.84, 'in_tok': 44, 'out_tok': 296}
+19:44:26 synth ml04 {'voice': 'gemini:Aoede', 'audio_s': 11.12, 'in_tok': 45, 'out_tok': 278}
+19:44:29 synth ml05 {'voice': 'gemini:Fenrir', 'audio_s': 15.04, 'in_tok': 48, 'out_tok': 376}
+19:44:39 synth ml06 {'voice': 'gemini:Leda', 'audio_s': 13.72, 'in_tok': 45, 'out_tok': 343}
+19:44:39 synth ml07 {'voice': 'gemini:Kore', 'audio_s': 12.2, 'in_tok': 44, 'out_tok': 305}
+19:44:39 synth ml08 {'voice': 'gemini:Puck', 'audio_s': 10.92, 'in_tok': 39, 'out_tok': 273}
+19:44:41 synth ml09 {'voice': 'gemini:Charon', 'audio_s': 12.36, 'in_tok': 44, 'out_tok': 309}
+19:44:41 synth ml10 {'voice': 'gemini:Aoede', 'audio_s': 10.64, 'in_tok': 41, 'out_tok': 266}
+19:44:41 synth ml11 {'voice': 'gemini:Fenrir', 'audio_s': 11.48, 'in_tok': 38, 'out_tok': 287}
+19:44:45 synth ml12 {'voice': 'gemini:Leda', 'audio_s': 13.84, 'in_tok': 46, 'out_tok': 346}
+19:45:00 synth ml13 {'voice': 'gemini:Kore', 'audio_s': 12.76, 'in_tok': 45, 'out_tok': 319}
+19:45:00 synth ml14 {'voice': 'gemini:Puck', 'audio_s': 12.16, 'in_tok': 44, 'out_tok': 304}
+19:45:06 synth ml15 {'voice': 'gemini:Charon', 'audio_s': 11.8, 'in_tok': 48, 'out_tok': 295}
+19:45:06 synth ml16 {'voice': 'gemini:Aoede', 'audio_s': 11.24, 'in_tok': 37, 'out_tok': 281}
+19:45:06 synth bn01 {'voice': 'say:Piya', 'audio_s': 6.02}
+19:45:14 synth bn02 {'voice': 'gemini:Puck', 'audio_s': 12.88, 'in_tok': 49, 'out_tok': 322}
+19:45:14 synth bn03 {'voice': 'say:Piya', 'audio_s': 5.99}
+19:45:14 synth bn04 {'voice': 'gemini:Aoede', 'audio_s': 10.68, 'in_tok': 41, 'out_tok': 267}
+19:45:14 synth bn05 {'voice': 'say:Piya', 'audio_s': 8.23}
+19:45:14 synth bn06 {'voice': 'gemini:Leda', 'audio_s': 14.2, 'in_tok': 47, 'out_tok': 355}
+19:45:14 synth bn07 {'voice': 'say:Piya', 'audio_s': 5.38}
+19:45:22 synth bn08 {'voice': 'gemini:Puck', 'audio_s': 10.92, 'in_tok': 40, 'out_tok': 273}
+19:45:22 synth bn09 {'voice': 'say:Piya', 'audio_s': 6.05}
+19:45:22 synth bn10 {'voice': 'gemini:Aoede', 'audio_s': 11.08, 'in_tok': 37, 'out_tok': 277}
+19:45:22 synth bn11 {'voice': 'say:Piya', 'audio_s': 5.98}
+19:45:22 synth bn12 {'voice': 'gemini:Leda', 'audio_s': 14.8, 'in_tok': 43, 'out_tok': 370}
+19:45:22 synth bn13 {'voice': 'say:Piya', 'audio_s': 5.75}
+19:45:23 synth bn14 {'voice': 'gemini:Puck', 'audio_s': 12.0, 'in_tok': 44, 'out_tok': 300}
+19:45:24 synth bn15 {'voice': 'say:Piya', 'audio_s': 7.57}
+19:45:28 synth bn16 {'voice': 'gemini:Aoede', 'audio_s': 9.44, 'in_tok': 36, 'out_tok': 236}
+19:45:28 synth kn01 {'voice': 'say:Soumya', 'audio_s': 7.11}
+19:45:30 synth kn02 {'voice': 'gemini:Puck', 'audio_s': 14.2, 'in_tok': 50, 'out_tok': 355}
+19:45:30 synth kn03 {'voice': 'say:Soumya', 'audio_s': 6.29}
+19:45:31 synth kn04 {'voice': 'gemini:Aoede', 'audio_s': 12.56, 'in_tok': 47, 'out_tok': 314}
+19:45:31 synth kn05 {'voice': 'say:Soumya', 'audio_s': 9.62}
+19:45:34 synth kn06 {'voice': 'gemini:Leda', 'audio_s': 13.36, 'in_tok': 47, 'out_tok': 334}
+19:45:34 synth kn07 {'voice': 'say:Soumya', 'audio_s': 6.34}
+19:45:40 synth kn08 {'voice': 'gemini:Puck', 'audio_s': 12.64, 'in_tok': 44, 'out_tok': 316}
+19:45:40 synth kn09 {'voice': 'say:Soumya', 'audio_s': 6.98}
+19:45:40 synth kn10 {'voice': 'gemini:Aoede', 'audio_s': 10.88, 'in_tok': 40, 'out_tok': 272}
+19:45:40 synth kn11 {'voice': 'say:Soumya', 'audio_s': 6.19}
+19:45:42 synth kn12 {'voice': 'gemini:Leda', 'audio_s': 14.12, 'in_tok': 44, 'out_tok': 353}
+19:45:42 synth kn13 {'voice': 'say:Soumya', 'audio_s': 6.99}
+19:45:42 synth kn14 {'voice': 'gemini:Puck', 'audio_s': 13.32, 'in_tok': 44, 'out_tok': 333}
+19:45:42 synth kn15 {'voice': 'say:Soumya', 'audio_s': 8.23}
+19:45:47 synth kn16 {'voice': 'gemini:Aoede', 'audio_s': 12.24, 'in_tok': 36, 'out_tok': 306}
+19:46:02 == step stt
+19:46:02 stt: 320 saaras + 160 gemini jobs
+19:47:05 == step whisper
+19:47:43 whisper hi01 clean 923  मेरा debit card खो गया है, प्लीज उसे अभी block कर दीजे, los
+19:47:46 whisper hi01 phone 2905  मेरा debit card हो गया है, प्लीज उसे अभी block कर दीजे, los
+19:47:57 whisper hi02 clean 11278  Read aloud exactly as a caller speaking Hindi mixed with En
+19:47:59 whisper hi02 phone 1713  Read aloud exactly as a caller speaking Hindi mixed with En
+19:48:01 whisper hi03 clean 2105  आतम में मेरा कॉर्ड हस गया, कॉर्ड नमबर की lost digits 5519 ह
+19:48:04 whisper hi03 phone 2266  आतम में मेरा कॉर्ड हच गया, कॉर्ड नमबर की लॉस्ट डिजित 5519 ह
+19:48:06 whisper hi04 clean 2396  read aloud exactly as a caller speaking Hindi mixed with En
+19:48:09 whisper hi04 phone 2842  read aloud exactly as a caller speaking hindi mixed with en
+19:48:11 whisper hi05 clean 2330  यूपी ट्रैंजाक्शन फेल हो गया पर अकाउंट से 840 रुपे डेबित हो 
+19:48:13 whisper hi05 phone 2298  यूपी ट्रांडाक्शन फेल हो गया पर अकाउंट से 840 रूपए डेबिट हो 
+19:48:16 whisper hi06 clean 2422  Read aloud exactly as a caller speaking Hindi mixed with En
+19:48:18 whisper hi06 phone 2630  Read aloud exactly as a caller speaking Hindi mixed with En
+19:48:20 whisper hi07 clean 1828  सर, मेरी एमी 8,750 रुपए की है, मैं 15 नोवेंबर तक पूरा पे कर
+19:48:22 whisper hi07 phone 1743  और मेरी एमी 8,750 रूपे की है मैं 15 नोवेंबर तक पूरा पिक कर 
+19:48:24 whisper hi08 clean 1956  Read aloud exactly, as a caller speaking Hindi mixed with E
+19:48:27 whisper hi08 phone 2645  read aloud exactly, as a caller speaking Hindi mixed with E
+19:48:29 whisper hi09 clean 2106  इस महीने सैलरी लेप आई है, क्या मैं 22,000 रुपे का दू अमाउंट
+19:48:30 whisper hi09 phone 1567  इस महीने salary लेप आई है, क्या मैं 22,000 रुपए का due amou
+19:48:33 whisper hi10 clean 2753  read aloud exactly as a caller speaking Hindi mixed with En
+19:48:35 whisper hi10 phone 2232  read aloud exactly as a caller speaking Hindi mixed with En
+19:48:37 whisper hi11 clean 1398  मैंने 299 वाला plan recharge किया पर data अभी तक activate न
+19:48:38 whisper hi11 phone 1683  मैंने 99 वाला प्लान रिचार्ज किया पर देट अभी तक अक्टिवेट नही
+19:48:41 whisper hi12 clean 2424  read aloud exactly as a caller speaking Hindi mixed with En
+19:48:43 whisper hi12 phone 1979  read aloud exactly as a caller speaking Hindi mixed with En
+19:48:45 whisper hi13 clean 2450  मेरे पोस्ट पेड बिल में 1180 रुपए एक्स्ट्र आये हैं, इंटरनाशन
+19:48:50 whisper hi13 phone 4492  मेरे पोस्ट पेज बिल में 1180 रुपए एक्स्ट्र आये हैं, इंटरनाशन
+19:48:52 whisper hi14 clean 2569  मेरा हेल्थ इंशरेंस क्लेम नंबर 660318 है अभी तक सेटल कियु नह
+19:48:54 whisper hi14 phone 1756  मेरा हेल्थ इंसूरंस क्लेम नंबर 660318 है अभी तक चर्टल क्यों 
+19:48:57 whisper hi15 clean 2684  कार एक्सिदन्ट का क्लेम किया था, सर्वेयर ने 45,000 रुपए अप्र
+19:49:00 whisper hi15 phone 3230  कार एक्सिदन्स का फ्लेम किया था सर्वेयर ने 45,000 रूपए अप्रू
+19:49:01 whisper hi16 clean 1230  Read aloud exactly, as a caller speaking Hindi mixed with E
+19:49:03 whisper hi16 phone 2097  पॉलिसी का प्रीम अचाला दिसंबर को दू है आटो डेबित बंद करना है
+19:49:05 whisper ta01 clean 1186  என் தைபிக்காத் தொலையின்யு போச்சு, உடனே வலோக் பண்ணுங்க, last
+19:49:07 whisper ta01 phone 1948  என் தைபிக்காஸ் தொலையின் யு போச்சு உடனே வலோப் பண்ணுங்க லாஸ் 
+19:49:07 whisper ta02 clean 741  read aloud exactly as a caller speaking Tamil mixed with En
+19:49:16 whisper ta02 phone 8842  read aloud exactly as a caller-speaking Tamil mixed with En
+19:49:18 whisper ta03 clean 2186  அர்த்தி ஐம்ல கேஷ் பரலா, ஆனா அக்கான் காயில் இருந்து நானகு ஆய
+19:49:21 whisper ta03 phone 2303  ஐத்தி ஐன்ல கேஷ் பரல்ல ஆனாக அக்கான் டைல் இருந்து நானகு ஆயிரம
+19:49:21 whisper ta04 clean 778  read aloud exactly as a caller speaking Tamil mixed with En
+19:49:22 whisper ta04 phone 631  read aloud exactly as a caller-speaking Tamil mixed with En
+19:49:25 whisper ta05 clean 2812  यूपी पेमंट्स फेल आच्छु, आना 680 रूबाय कात् आयडुच्छु, रैफ्रे
+19:49:27 whisper ta05 phone 2155  யூபி பேமன்ஸ் பேல் ஆச்சு, ஆனா 680 ரூபாயிக்காத் ஆயிடுச்சு, ரை
+19:49:28 whisper ta06 clean 879  Read aloud exactly as a caller speaking Tamil mixed with En
+19:49:30 whisper ta06 phone 1769  read aloud exactly as a caller speaking Tamil mixed with En
+19:49:33 whisper ta07 clean 3085  என் ஈமி ஆரு ஆயிரம் நானகு நூறு ரூபாய் 20 நோவைம்பர் காகார் யா
+19:49:35 whisper ta07 phone 2029  என் இன்னி ஆரு ஆயிரம் நானது நூறு ரூபாய் 20 நோதைம்பர் காகாத்த
+19:49:37 whisper ta08 clean 1947  read aloud exactly, as a caller speaking Tamil mixed with E
+19:49:38 whisper ta08 phone 1607  read aloud exactly as a caller speaking Tamil mixed with En
+19:49:40 whisper ta09 clean 2104  இந்த மாசம் கோஞ்சம் கஷ்டம் பதினாயிந்து ஆயிரம் ரூபாய்து ஹரண்ட
+19:49:42 whisper ta09 phone 2034  இந்த மாசம் கோஞ்சம் கஷ்டம் பதினாயிந்து ஆயிரம் ரூபாய்து அரண்ட
+19:49:44 whisper ta10 clean 1690  read aloud exactly as a caller speaking Tamil mixed with En
+19:49:45 whisper ta10 phone 886  RAID allowed exactly as a caller speaking Tamil mixed with 
+19:49:46 whisper ta11 clean 1435  முன்று நூறு நாறபத்து ஓன்பது பலான் ரிசார்வி பண்ணேன் ஆனா தேட்
+19:49:49 whisper ta11 phone 2143  முன்று நூறு நாற பத்து ஓன்பது பலான் ரிசாகி பண்ணின் ஆனா தேச இ
+19:49:50 whisper ta12 clean 1588  Read aloud exactly as a caller speaking Tamil mixed with En
+19:49:52 whisper ta12 phone 1346  read aloud exactly as a caller speaking Tamil mixed with En
+19:49:54 whisper ta13 clean 2093  போஸ்த் பேட் பில் ஐயில் இருந்து ஆயிரம் முன்ற நூறு ஆருபது ரூப
+19:49:56 whisper ta13 phone 2104  போஸ்பிட் பில் ஐயில் இருந்து ஆயிரம் முன்ற நூறு ஆருபது ரூபாய்
+19:49:57 whisper ta14 clean 1050  read aloud exactly as a caller speaking Tamil mixed with En
+19:49:58 whisper ta14 phone 1044  read aloud exactly as a caller speaking Tamil mixed with En
+19:50:02 whisper ta15 clean 3931  बाइक अक्सिदेन्ट क्लेम्पक इरूबत्तु एटु आइरं आइंदु नूरू रूबाय
+19:50:03 whisper ta15 phone 1026  Bike Accident Claims 28,550 रूबाय अप्रूल आच्छु, आना Hospita
+19:50:04 whisper ta16 clean 1350  read aloud exactly as a caller speaking Tamil mixed with En
+19:50:11 whisper ta16 phone 6892  read aloud exactly as the caller speaking Tamil mixed with 
+19:50:19 whisper ml01 clean 8318  Read aloud exactly, as a caller speaking Malayalam mixed wi
+19:50:20 whisper ml01 phone 583  read aloud exactly as a caller speaking Malayalam mixed wit
+19:50:29 whisper ml02 clean 8885  Read aloud exactly as a caller speaking Malayala mixed with
+19:50:30 whisper ml02 phone 1258  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:50:31 whisper ml03 clean 1151  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:50:39 whisper ml03 phone 7469  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:50:46 whisper ml04 clean 7628  Read aloud exactly, as a caller speaking Malayalam mixed wi
+19:50:48 whisper ml04 phone 1175  read aloud exactly, as a caller speaking Malayalam mixed wi
+19:50:49 whisper ml05 clean 1295  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:50:50 whisper ml05 phone 1161  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:50:51 whisper ml06 clean 1114  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:50:52 whisper ml06 phone 1006  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:51:00 whisper ml07 clean 7438  Read aloud exactly as a caller speaking Malayala mixed with
+19:51:07 whisper ml07 phone 7843  Read aloud exactly as a caller speaking Malayala mixed with
+19:51:10 whisper ml08 clean 2527  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:51:11 whisper ml08 phone 1422  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:51:21 whisper ml09 clean 9802  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:51:22 whisper ml09 phone 1222  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:51:24 whisper ml10 clean 1191  read aloud exactly as a caller speaking Malayalam mixed wit
+19:51:25 whisper ml10 phone 1132  read aloud exactly as a caller speaking Malayalam mixed wit
+19:51:27 whisper ml11 clean 2398  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:51:49 whisper ml11 phone 21302  Read aloud, exactly as a caller speaking Malayalam mixed wi
+19:51:54 whisper ml12 clean 5797  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:52:00 whisper ml12 phone 5503  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:52:06 whisper ml13 clean 6047  Read aloud exactly, as a caller speaking Malayalam mixed wi
+19:53:02 whisper ml13 phone 55977  Read aloud exactly, as a caller speaking Malayalam mixed wi
+19:53:47 whisper ml14 clean 44850  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:53:51 whisper ml14 phone 4014  Read aloud exactly, as a caller speaking Malayalam mixed wi
+19:54:26 whisper ml15 clean 35600  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:55:09 whisper ml15 phone 42225  read aloud exactly as a caller speaking Malayalam mixed wit
+19:55:12 whisper ml16 clean 3458  Read aloud exactly as a caller speaking Malayalam mixed wit
+19:55:17 whisper ml16 phone 5132  read aloud exactly as a caller-speaking Malayalam mixed wit
+19:55:38 whisper bn01 clean 20482 অমার ডেবিট কাদ হারি জে গেছে, এখোই বলক কো রেদিন, লাস্ট ফ্লোর 
+19:55:48 whisper bn01 phone 10729 আমার দেভিস কাদ হারি জে গেছে এখোই বলাপ কো রেবিন পলাস রোর বিজি
+19:55:59 whisper bn02 clean 10108  read aloud exactly as a caller speaking Bengali mixed with 
+19:56:16 whisper bn02 phone 17336  read aloud exactly as a caller speaking Bengali mixed with 
+19:56:20 whisper bn03 clean 3727  थो অনুশার থেকে তাকা বেরো জনি কিন্তু অকেন থেকে পাঁচ হাজার তা
+19:56:24 whisper bn03 phone 4697  12 নুশ্র থেকে তাকা বেরো জনি কিন্তু অকেন থেকে 5000 তাকা কেতে
+19:56:29 whisper bn04 clean 4807  read aloud exactly as a caller speaking Bengali mixed with 
+19:56:46 whisper bn04 phone 16732  Read aloud exactly as a caller speaking Bengali mixed with 
+19:57:16 whisper bn05 clean 30052  यো পি পেমন ফেইল হোলো কিন্তু শাত শো পুচিষ্টা কা দেবিত হজেক জ
+19:57:50 whisper bn05 phone 33785  एউপি পেমন ইকেইল হোলো কিন্তু সাছো পূচিষ্টা কা দেভিত হজে গ্যা
+19:58:10 whisper bn06 clean 19977  Read aloud exactly as a caller speaking Bengali mixed with 
+19:59:24 whisper bn06 phone 74125  Read aloud exactly as a caller-seeking Bengali mix with Eng
+19:59:52 whisper bn07 clean 27478 আমার ইমি শাত থাজার তিন শোটাকা দশনো গ্রেম বোর এর মোধে দিজে দে
+20:00:20 whisper bn07 phone 28450 আমার ইমি শাদ থাজার তিন শোতাকা দশ নো গেম্বার এল মোযে দিজে দেব
+20:00:44 whisper bn08 clean 23668  read aloud exactly as a caller speaking Bengali mixed with 
+20:01:07 whisper bn08 phone 23380  read aloud exactly as a caller speaking Bengali mixed with 
+20:01:31 whisper bn09 clean 24042 এ মাশে সাউলারি দেরিতে এশেছে কুডি হাজার তাকার দুদুতো ইন্সতাউল
+20:01:59 whisper bn09 phone 27800 এ মাশে সাউলারি দেরিতে এশেছে কুরি হাজার তাকার দুদুতো ইন্সটাউল
+20:02:09 whisper bn10 clean 9570  Read aloud exactly as a caller speaking Bengali mixed with 
+20:02:17 whisper bn10 phone 7398  Read aloud exactly as a caller speaking Bengali mixed with 
+20:02:37 whisper bn11 clean 20084  200 উনো চোল্লি স্টাকার প্লাউন রিচার্জ করেছি কিন্তু দেতা এখো
+20:02:55 whisper bn11 phone 17941  20-14 চাকার পলাউন রিচাজ করেছি কিন্তু দেতা এখনো চালু হজনি।
+20:03:58 whisper bn12 clean 63021  Read aloud exactly as a caller speaking Bengali mixed with 
+20:04:49 == step synth
+20:04:57 synth hi02 {'voice': 'gemini:Puck', 'audio_s': 8.16, 'in_tok': 33, 'out_tok': 204}
+20:04:57 synth hi04 {'voice': 'gemini:Aoede', 'audio_s': 4.96, 'in_tok': 23, 'out_tok': 124}
+20:04:57 synth hi06 {'voice': 'gemini:Leda', 'audio_s': 5.52, 'in_tok': 23, 'out_tok': 138}
+20:04:57 synth hi08 {'voice': 'gemini:Puck', 'audio_s': 5.28, 'in_tok': 24, 'out_tok': 132}
+20:05:02 synth hi10 {'voice': 'gemini:Aoede', 'audio_s': 4.2, 'in_tok': 17, 'out_tok': 105}
+20:05:03 synth hi12 {'voice': 'gemini:Leda', 'audio_s': 8.96, 'in_tok': 29, 'out_tok': 225}
+20:05:03 synth hi14 {'voice': 'gemini:Puck', 'audio_s': 6.08, 'in_tok': 27, 'out_tok': 152}
+20:05:03 synth hi16 {'voice': 'gemini:Aoede', 'audio_s': 4.88, 'in_tok': 19, 'out_tok': 122}
+20:05:06 synth ta02 {'voice': 'gemini:Puck', 'audio_s': 8.32, 'in_tok': 31, 'out_tok': 208}
+20:05:07 synth ta04 {'voice': 'gemini:Aoede', 'audio_s': 5.84, 'in_tok': 27, 'out_tok': 146}
+20:05:08 synth ta06 {'voice': 'gemini:Leda', 'audio_s': 8.68, 'in_tok': 28, 'out_tok': 217}
+20:05:08 synth ta08 {'voice': 'gemini:Puck', 'audio_s': 4.96, 'in_tok': 24, 'out_tok': 124}
+20:05:11 synth ta10 {'voice': 'gemini:Aoede', 'audio_s': 5.44, 'in_tok': 22, 'out_tok': 136}
+20:05:11 synth ta12 {'voice': 'gemini:Leda', 'audio_s': 7.36, 'in_tok': 28, 'out_tok': 184}
+20:05:11 synth ta14 {'voice': 'gemini:Puck', 'audio_s': 5.12, 'in_tok': 26, 'out_tok': 128}
+20:05:12 synth ta16 {'voice': 'gemini:Aoede', 'audio_s': 5.52, 'in_tok': 19, 'out_tok': 138}
+20:05:16 synth ml01 {'voice': 'gemini:Kore', 'audio_s': 6.32, 'in_tok': 28, 'out_tok': 158}
+20:05:16 synth ml02 {'voice': 'gemini:Puck', 'audio_s': 7.16, 'in_tok': 33, 'out_tok': 179}
+20:05:16 synth ml03 {'voice': 'gemini:Charon', 'audio_s': 4.16, 'in_tok': 25, 'out_tok': 104}
+20:05:16 synth ml04 {'voice': 'gemini:Aoede', 'audio_s': 4.64, 'in_tok': 26, 'out_tok': 116}
+20:05:21 synth ml05 {'voice': 'gemini:Fenrir', 'audio_s': 7.36, 'in_tok': 29, 'out_tok': 184}
+20:05:22 synth ml06 {'voice': 'gemini:Leda', 'audio_s': 8.24, 'in_tok': 26, 'out_tok': 206}
+20:05:22 synth ml07 {'voice': 'gemini:Kore', 'audio_s': 5.04, 'in_tok': 26, 'out_tok': 126}
+20:05:22 synth ml08 {'voice': 'gemini:Puck', 'audio_s': 4.64, 'in_tok': 20, 'out_tok': 116}
+20:05:24 synth ml09 {'voice': 'gemini:Charon', 'audio_s': 5.08, 'in_tok': 25, 'out_tok': 127}
+20:05:24 synth ml10 {'voice': 'gemini:Aoede', 'audio_s': 5.24, 'in_tok': 22, 'out_tok': 131}
+20:05:25 synth ml11 {'voice': 'gemini:Fenrir', 'audio_s': 5.08, 'in_tok': 18, 'out_tok': 127}
+20:05:27 synth ml12 {'voice': 'gemini:Leda', 'audio_s': 8.68, 'in_tok': 28, 'out_tok': 217}
+20:05:29 synth ml13 {'voice': 'gemini:Kore', 'audio_s': 6.56, 'in_tok': 26, 'out_tok': 164}
+20:05:29 synth ml14 {'voice': 'gemini:Puck', 'audio_s': 5.92, 'in_tok': 26, 'out_tok': 148}
+20:05:30 synth ml15 {'voice': 'gemini:Charon', 'audio_s': 6.24, 'in_tok': 29, 'out_tok': 156}
+20:05:31 synth ml16 {'voice': 'gemini:Aoede', 'audio_s': 4.32, 'in_tok': 18, 'out_tok': 108}
+20:05:34 synth bn02 {'voice': 'gemini:Puck', 'audio_s': 6.68, 'in_tok': 30, 'out_tok': 167}
+20:05:34 synth bn04 {'voice': 'gemini:Aoede', 'audio_s': 5.28, 'in_tok': 22, 'out_tok': 132}
+20:05:35 synth bn06 {'voice': 'gemini:Leda', 'audio_s': 8.88, 'in_tok': 28, 'out_tok': 223}
+20:05:35 synth bn08 {'voice': 'gemini:Puck', 'audio_s': 4.12, 'in_tok': 21, 'out_tok': 103}
+20:05:36 synth bn10 {'voice': 'gemini:Aoede', 'audio_s': 4.32, 'in_tok': 18, 'out_tok': 108}
+20:05:38 synth bn12 {'voice': 'gemini:Leda', 'audio_s': 7.36, 'in_tok': 24, 'out_tok': 184}
+20:05:39 synth bn14 {'voice': 'gemini:Puck', 'audio_s': 5.28, 'in_tok': 25, 'out_tok': 132}
+20:05:39 synth bn16 {'voice': 'gemini:Aoede', 'audio_s': 4.12, 'in_tok': 17, 'out_tok': 103}
+20:05:40 synth kn02 {'voice': 'gemini:Puck', 'audio_s': 7.52, 'in_tok': 31, 'out_tok': 188}
+20:05:43 synth kn04 {'voice': 'gemini:Aoede', 'audio_s': 5.04, 'in_tok': 28, 'out_tok': 126}
+20:05:44 synth kn06 {'voice': 'gemini:Leda', 'audio_s': 7.76, 'in_tok': 28, 'out_tok': 194}
+20:05:44 synth kn08 {'voice': 'gemini:Puck', 'audio_s': 5.48, 'in_tok': 25, 'out_tok': 137}
+20:05:44 synth kn10 {'voice': 'gemini:Aoede', 'audio_s': 4.84, 'in_tok': 21, 'out_tok': 121}
+20:05:48 synth kn12 {'voice': 'gemini:Leda', 'audio_s': 9.24, 'in_tok': 26, 'out_tok': 231}
+20:05:49 synth kn14 {'voice': 'gemini:Puck', 'audio_s': 7.24, 'in_tok': 26, 'out_tok': 181}
+20:05:49 synth kn16 {'voice': 'gemini:Aoede', 'audio_s': 4.24, 'in_tok': 17, 'out_tok': 106}
+20:07:26 == step stt
+20:07:26 stt: 320 saaras + 96 gemini jobs
+20:07:29 == step whisper
+20:09:11 whisper hi02 clean 21564  क्रेडिट कार्ड से बारा हजार चारसो निन्यानवे रुपई का एक ट्रंज
+20:09:28 whisper hi02 phone 16858  क्रेडिट कार्ड से 12,499 रुपई का एक ट्रंजाक्शन वह जो मैंने क
+20:09:42 whisper hi04 clean 13525  मैंने फोन पे से धाई हजार रुपए भेजे, पैसा कड़ गया लेकिन रिसी
+20:09:53 whisper hi04 phone 11372  मैंने फोन पे से धाई हजार रुपए भेजे, पैसा कट गया लेकिन रिसीव
+20:10:03 whisper hi06 clean 9878  मेरा UPI पिन तीन बार गलट डाल दिया अब 24 घंटे के लिए ब्लॉक ह
+20:10:12 whisper hi06 phone 9392  मेरा UPI पिन तीन बार गलट डाल दिया अग 24 घंटे के लिए ब्लॉक ह
+20:10:19 whisper hi08 clean 6765  मैंने लोन की EMI अल्रेडी 5 अक्टोबर को पे कर दी थी फिर भी रि
+20:10:24 whisper hi08 phone 4405  मैंने लून की EMI already 5 October को पे कर दी थी फिर भी re
+20:10:29 whisper hi10 clean 4969  बाउंस चार्ज 590 रुपे क्यों लगाया? मेरे अकाउंट में बैलेंस था
+20:10:34 whisper hi10 phone 5972  बाउंस चार्ज 590 रुपय क्यों लगाया मेरे अकाउंट में बैलेंस था
+20:10:41 whisper hi12 clean 6282  मुझे अपना नंबर 984-5012-367 एटल से जियो में पोर्ट करना है। 
+20:10:49 whisper hi12 phone 8436  मुझे अपना नंबर 984-5012-367 एटल से वियो में पोर्ट करना है। 
+20:10:56 whisper hi14 clean 6769  मेरा हेल्थ इंशॉरंस क्लेम नंबर 660318 है, अभी तक सेटल क्यों 
+20:11:04 whisper hi14 phone 8371  मेरा हेल्थ इंशॉरेंस क्लेम नंबर 660318 है अभी तक सैटल क्यों 
+20:11:12 whisper hi16 clean 7166  पॉलिसी का प्रीमियम 18 दिसेंबर को ड्यू है, आटो डेबिट बंद करन
+20:11:21 whisper hi16 phone 9072  पॉलिसी का प्रीमियम 18 दिसंबर को ड्यू है आटो डेबिट बंद करना 
+20:11:29 whisper ta02 clean 8184  நான் பண்ணாத ஒரு ட்ரான்சாக்சின் 99,3,9 ஊம்போதுருவா கிரிட்ட் 
+20:12:22 whisper ta02 phone 53496  நான் பண்ணாதம் ஒரு ட்ரான்சாக்சின் உம்பதாயிர்த்தி தொலாயிர்த்த
+20:12:33 whisper ta04 clean 11152  ஜீப்பேல் ஆயிரத்தி அர்ணூற்றம்பதிருபா அணுப்பின் பெண்டிங்னுக் 
+20:12:45 whisper ta04 phone 11896  ஜீப்பேல் அயிரத்தி அர்ந்திரம்பதிருப்பா அணுப்பின் பெண்டையின் 
+20:12:53 whisper ta06 clean 7914  புதோப் போன் வாங்கினை UPI அப்பில் இயன் நம்பர் 99630 48173 லி
+20:12:59 whisper ta06 phone 5311  பொது போன் வாங்கினை UPI அப்ப்பல இயன் நம்பர் 99630 48173 லிங்
+20:13:09 whisper ta08 clean 10135  லோன் இயமை ஏற்கனுவே மூன் அக்டோபர அண்ணிக்கே பேப் பணிட்டேன் ஏன
+20:13:15 whisper ta08 phone 6314  லோன் இயமை ஏற்கனுவே மூன் அக்டவர் அண்ணிக்கே பேப் பணிட்டேன் ஏன
+20:13:24 whisper ta10 clean 9132  செக்ப்பான்ஸ் சார்ஜ் நானுத்தியழுத்திரென்றுவா ஏன் போட்டீங்க? 
+20:13:31 whisper ta10 phone 6570  செக்கப்பான்ச் சார்ஜ் 442 ருபா ஏன் போத்தீங்க? அக்கோன்டில் பா
+20:13:38 whisper ta12 clean 6762  ஏன் நம்பர் 94444037215 வியாயிலந்து அட்டெலக்கு போட்ப் பண்ணனோ
+20:13:45 whisper ta12 phone 7398  ஏன் நம்பர் 94444037215 வியாயிலந்து அட்டலுக்கு போட்ப்பனனோ
+20:13:53 whisper ta14 clean 8431  ஏன் Health Insurance Claim Number 712450 Status என்ன சொல்லு
+20:14:01 whisper ta14 phone 7125  ஏன் HEALTH INSURANCE CLAIM NUMBER 712450. தேடர்த்தன் என்ன ச
+20:14:03 whisper ta16 clean 2584  Policy Premium 25 December ले due. Auto Debit cancel पणड़नू
+20:14:06 whisper ta16 phone 3388  POLICY PREMIUM 25 DECEMBER LE DUE AUTO DEBIT CANCEL PANANU
+20:14:15 whisper ml01 clean 8390  एन्टे डेबिट काड काणानि इल्ला, उडने ब्लोक्चेनम्, लास्ट फोर ड
+20:14:53 whisper ml01 phone 38254  एन्दे डेबिट कार्ड काणानि इल्ला, उडने ब्लॉक्चेनम्, लास्ट पॉर
+20:15:01 whisper ml02 clean 7648  ग्रडिट्ट काडिल 780 रूबेडेवर ट्रान्सक्षन वन्दू, अदु जान्चेत 
+20:15:32 whisper ml02 phone 30934  Credit Card കടില് ഏടായരതി എന്നു ടമ്റതി രുവിട്യവിയവുരു ടാന്ച
+20:15:45 whisper ml03 clean 12842  ETM ലന്ന്ന്ന് കാശ കിട്ടേലാ, പക്ഷി അകാന്ട്ന് ന്ന്ന് മുവായിരി
+20:16:20 whisper ml03 phone 35565  A-T-E-M-E-L-E-L-E-L-E-L-E-L-E-L-E-L-E-L-E-L-E-L-E-L-E-L-E-L
+20:16:33 whisper ml04 clean 13060  Google പേ വളീ ആയൃ തേനോ രോബേ ആയുചു പായൻ പക്ഷേ ആവര്ക കിടീല്
+20:16:41 == step score
+20:16:43 whisper ml04 phone 9377  Google പേ വളീ ആയൃ തേനോ രോബേ ആയുചു പായു സവോയ പക്ഷേ ആവരക കിടി
+20:17:01 whisper ml05 clean 18588  UPI payment fail ആ അഞ്ഞ്യുട്ടി അരവതി രൂപ ഡെബിട്ടായ രഫ്രന്സ 
+20:17:52 whisper ml05 phone 50867  UPI payment fail അഞ്യുട്ട്ട്യുട്ട്യുട്ട്യുട്യുട്യുട്യുട്യുട
+20:18:39 whisper ml06 clean 47197  UPI PIN Reset ജയാന ഓ ടിപി വരിനിലാ എന്ടിപി വരിനില്ലാ എന്ടിനമ
+20:18:45 == step stt
+20:18:45 stt: 87 saaras + 0 gemini jobs
+20:18:45 whisper ml06 phone 5803  योपियाई पिन रीसेट जेयान ओटीपी वेरिनिल्ला, एन्टे नम्बर 97450
+20:19:30 whisper ml07 clean 45014 െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ 
+20:20:08 whisper ml07 phone 37884 െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ 
+20:20:26 whisper ml08 clean 17654 ലോണി യമായി ഞാന ഏര അക്ടോബര്നതന്നി ആടച്ചു എന്നുടും രികവരി കോളു
+20:20:35 whisper ml08 phone 9252  लोनी यम्माई जान एग्टोबरन दन्या आडच्चु, एन्नित्तम् रिक्कवरी 
+20:20:39 == step agent
+20:20:40 whisper ml09 clean 5462  इमासम् सैलरी वैगी, 15-12 डूबा ड्यू, 2 इंस्टाल्मन्टाई अड़क्य
+20:20:46 whisper ml09 phone 5889  इमासम् स्यालरी वैगी, 1820 ड्यूबा ड्यू, 2 इंस्टाल्मंटाई अड़क
+20:20:54 whisper ml10 clean 7699  बाउन्स चार्जु मुन्नूर्टाम् बत्नाली रूब एन्दिनाण�ेडाख्यदु एक
+20:21:03 whisper ml10 phone 8750  बाउन्स चार्जु मुन्मूर्टम् बत्नाल रूपै इन्दिनान इड़ाक्याद, ए
+20:21:11 whisper ml11 clean 8195  350 പ്ലാന് രീചാര്ജേദു, പക്ഷൈ ഡേട്ടാ ഇതുവിരകിടില്
+20:21:20 whisper ml11 phone 9249  390 പ്ലാന് രീചാപ്ചാപ്ചിദു പ്ക്ഷി ഡേട്ട് ഇദുവിരകിടിലാ
+20:21:26 == step agent
+20:21:38 agent-sarvam hi01 stt 592 llm 511 tts_ttfb 332 जी, मैं समझ सकता हूँ कि आपका debit card खो गया है। मैं अभी आपके 4821 व
+20:21:45 agent-sarvam hi05 stt 642 llm 2842 tts_ttfb 403 UP ट्रांजैक्शन फेल होने पर ₹840 कट गए हैं, और आपका रेफरेंस नंबर 417209
+20:21:48 agent-sarvam hi07 stt 630 llm 484 tts_ttfb 405 Sir, मैंने आपकी ₹8750 की EMI और 15th November की date note कर ली है, क
+20:21:51 agent-sarvam hi14 stt 728 llm 523 tts_ttfb 346 Sir, आपका claim number 660318 अभी तक settle नहीं हुआ है, मैं इसे अभी c
+20:21:56 agent-sarvam ta01 stt 540 llm 2193 tts_ttfb 500 உங்க debit card தொலைஞ்சு போனதால உடனே block பண்றேன். நீங்க சொன்ன last f
+20:22:01 agent-sarvam ta05 stt 1374 llm 519 tts_ttfb 436 UP payment fail ஆனதுக்கு ரொம்ப sorry. ₹680 cut ஆகியிருக்கு, reference 
+20:22:04 agent-sarvam ta07 stt 651 llm 469 tts_ttfb 471 காக்கா ராஜ், உங்க இமி 6400 ரூபாய், 20th November அன்னைக்கு கண்டிப்பா க
+20:22:04 whisper ml12 clean 43851 െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ 
+20:22:08 agent-sarvam ta14 stt 525 llm 662 tts_ttfb 354 வணக்கம், உங்க health insurance claim number 712450-ஓட status-ஐ check ப
+20:22:15 agent-sarvam ml01 stt 504 llm 4937 tts_ttfb 361 മനസ്സിലായി Sir, debit card നഷ്ടപ്പെട്ടത് കാരണം ഉടനെ block ചെയ്യണം. Las
+20:22:19 agent-sarvam ml05 stt 597 llm 454 tts_ttfb 411 UPI payment fail ആയി ₹560 debit ആയ കാര്യം ഞാൻ note ചെയ്തു, reference n
+20:22:22 agent-sarvam ml07 stt 498 llm 517 tts_ttfb 415 ശരി Sir, നിങ്ങളുടെ EMI 9200 രൂപയാണല്ലോ, 12th November-ന് മുമ്പ് അടയ്ക്
+20:22:25 agent-sarvam ml14 stt 588 llm 464 tts_ttfb 364 Sir, നിങ്ങളുടെ health insurance claim number 548812-ൻ്റെ status ഞാൻ ch
+20:22:30 agent-sarvam bn01 stt 620 llm 727 tts_ttfb 348 আপনার debit card-টি হারিয়ে গেছে বলে আমি বুঝতে পারছি, আমি এখনই এটি bloc
+20:22:34 agent-sarvam bn05 stt 621 llm 496 tts_ttfb 377 UP payment fail হলে কিন্তু account থেকে ₹725 debit হওয়াটা চিন্তার বিষয়
+20:22:38 agent-sarvam bn07 stt 508 llm 498 tts_ttfb 396 ঠিক আছে স্যার, আমি আপনার ₹7300 amount-টা 10th November-এর জন্য note কর
+20:22:42 agent-sarvam bn14 stt 661 llm 442 tts_ttfb 429 হ্যাঁ, আপনার claim number ৯০২৭৩৪, তাই তো? আমি status টা check করে আপনা
+20:22:45 agent-sarvam kn01 stt 598 llm 627 tts_ttfb 464 ಖಂಡಿತ, ನಿಮ್ಮ debit card block ಮಾಡೋಕೆ ನಾನು help ಮಾಡ್ತೀನಿ. ದಯವಿಟ್ಟು ನಿಮ್
+20:22:47 agent-sarvam kn05 stt 674 llm 490 tts_ttfb -1 Sir, ನಿಮ್ಮ OOT payment fail ಆಗಿದ್ದರೂ ₹915 ಕಟ್ ಆಗಿದೆ, ಸರಿನಾ? ನಿಮ್ಮ refe
+20:22:48 whisper ml12 phone 43752 െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ 
+20:22:48 agent-sarvam kn07 stt 546 llm 484 tts_ttfb -1 ಸರಿ ಸರ್, ನಿಮ್ಮ ಈಮಿ ₹5800 17th November ಒಳಗೆ ಕಟ್ಟುತ್ತೀರಾ, ಅಲ್ವಾ?
+20:22:50 agent-sarvam kn14 stt 628 llm 570 tts_ttfb -1 ಖಂಡಿತ sir, ನಿಮ್ಮ health insurance claim number 385061 status check ಮಾಡ
+20:23:00 whisper ml13 clean 12016  पोस्पेट बिल्लेल आयरत्ती नानूटी 75 रूबा एक्स्ट्राय वन्नतोंड,
+20:23:07 agent-gemini hi01 stt 4209 llm 2805 tts_ttfb 841 Ji bilkul, main aapka debit card jiske last four digits 4 8 2 1 hain, 
+20:23:11 whisper ml13 phone 10884  पोस्पेट बिल्लेल आयरती नानूटी 75 रूबा एक्स्ट्रा ये वन्नतोंड़
+20:23:21 agent-gemini hi05 stt 4033 llm 4273 tts_ttfb 1051 चिंता मत कीजिए, मैं चेक कर देता हूँ कि आपका 840 रुपये का अमाउंट डेबिट 
+20:23:32 agent-gemini hi07 stt 2904 llm 3325 tts_ttfb 1187 Ji sir, note kar liya hai ki aapki ₹8,750 ki EMI aap 15 November tak p
+20:23:41 agent-gemini hi14 stt 2706 llm 4263 tts_ttfb 884 आपका health insurance claim number 6 6 
+20:23:49 whisper ml14 clean 38412 െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ െ 
+20:23:54 agent-gemini ta01 stt 3956 llm 4535 tts_ttfb 832 கண்டிப்பா சார், கடைசி நான்கு எண்கள் 6 2 4 8 உள்ள உங்க debit card-ஐ உடன
+20:23:56 whisper ml14 phone 6484  एंदे health insurance claim number 5 नाले एट्टे एट्ट एट्ट 1
+20:24:09 agent-gemini ta05 stt 4116 llm 4993 tts_ttfb 1108 Kavalapadatheenga, unga account-la irundhu cut aana 680 rupees and ref
+20:24:20 agent-gemini ta07 stt 4496 llm 2147 tts_ttfb 1099 ரொம்ப நன்றிங்க, உங்க EMI amount 6,400 ரூபாயை 20 நவம்பர்க்குள்ள கட்டிரு
+20:24:30 agent-gemini ta14 stt 2882 llm 2557 tts_ttfb 1315 கண்டிப்பா, உங்க ஹெல்த் இன்சூரன்ஸ் கிளைம் நம்பர் 7 1 2 4 5 0-க்கான ஸ்டே
+20:24:31 whisper ml15 clean 35002  Car accident ക്ലേമിന മുപത്ത്ത്ത്ത്ത്ത്ത്ത്ത്ത്ത്ത്ത്ത്ത്ത്ത
+20:24:40 whisper ml15 phone 9727  गार अक्सिडेन्ट क्लेमिन 33 आयरे लुब आप्रोवेदु, पक्षे वर्क्षो
+20:24:43 agent-gemini ml01 stt 4427 llm 3656 tts_ttfb 1177 അയ്യോ, ഒട്ടും ടെൻഷൻ ആവേണ്ട, ലാസ്റ്റ് ഫോർ ഡിജിറ്റ്സ് 3 9 1 7 ഉള്ള നിങ്ങ
+20:24:49 whisper ml16 clean 8141  पोलिसी प्रीमियम 30 डिसम्बर ने ड्यूवान, ओटो डेबिट्टि निरुत्त
+20:24:56 agent-gemini ml05 stt 3451 llm 3330 tts_ttfb 932 അയ്യോ വിഷമിക്കേണ്ട, റഫറൻസ് നമ്പർ 8 2 0 4 6 3 വഴി ഡെബിറ്റ് ആയ ₹560 സാധാ
+20:24:59 whisper ml16 phone 10616  पोलिसी प्रीमियम 30 डिसम्बर ने डियू वान, ओटो डेविट्टि निर्थन
+20:25:08 agent-gemini ml07 stt 3651 llm 4522 tts_ttfb 1165 തീർച്ചയായും സാർ, 9200 രൂപയുടെ ഇഎംഐ നവംബർ 12-ന് മുൻപായി അടയ്ക്കാമെന്ന് 
+20:25:20 whisper bn02 clean 20549  क्रेडिट কার্থেকে এগার হজা দুশ্যটা কারক্টে ট্রান্যাক্ষন হোযছ
+20:25:21 agent-gemini ml14 stt 3611 llm 3881 tts_ttfb 1279 തീർച്ചയായും, താങ്കൾ പറഞ്ഞ health insurance ക്ലെയിം നമ്പർ 5 4 8 8 1 2 ഞ
+20:25:33 agent-gemini bn01 stt 4064 llm 5272 tts_ttfb 1239 একদম চিন্তা করবেন না, আপনার debit card যার
+20:25:40 whisper bn02 phone 20053  Credit card থেকে এগারো হজা দুস্রটা কারক্টা ট্রান্যাক্শন হয়
+20:25:47 agent-gemini bn05 stt 4935 llm 3573 tts_ttfb 918 Sir, apnar 725 taka debit hoye geche aar reference number 3 6 1 8 0 7,
+20:25:49 whisper bn04 clean 9426 ফোন পেদিয়ে এখাজা ছসোটাকা পাঠিয়েছি টাকা কেটেছে কিন্দ ও পাইন
+20:25:57 agent-gemini bn07 stt 2574 llm 3631 tts_ttfb 885 ধন্যবাদ স্যার, আমি নোট করে নিয়েছি যে আপনি 7300 টাকার EMI 10 নভেম্বরের 
+20:25:58 whisper bn04 phone 9002 ফোন পে দিয়ে এখাজা ছসোটাকা পাঠিয়েছি তাকা কেটেছে ইন্দ ও পাইন
+20:26:09 agent-gemini bn14 stt 4193 llm 4879 tts_ttfb 867 নিশ্চয়ই, আপনার হেলথ ইন
+20:26:11 whisper bn06 clean 13112  9 তুন সেম নিয়ে ছে, যুপিআই আপে আমার নম্বর 9830054126 লিংখ হ
+20:26:19 agent-gemini kn01 stt 3269 llm 3350 tts_ttfb 1157 ಖಂಡಿತ, ನಿಮ್ಮ ಕೊನೆಯ ನಾಲ್ಕು ಅಂಕಿ 2 7 0 4 ಇರುವ debit card ಅನ್ನು ನಾನು ತಕ್ಷ
+20:26:21 whisper bn06 phone 9838  9 তুন সেম নিয়েছে UPI আপে আমার নম্র 9830054126 লিন্ক হোছে ন
+20:26:32 agent-gemini kn05 stt 3901 llm 3912 tts_ttfb 1189 ಚಿಂತೆ ಮಾಡಬೇಡಿ, ರೆಫರೆನ್ಸ್ ನಂಬರ್ 602948 ಗೆ ಕಟ್ ಆಗಿರುವ 915 ರೂಪಾಯಿ ನಿಮ್ಮ ಅ
+20:26:34 whisper bn08 clean 12297  लोনে রিয়ে মাই আমি চার অক্টবরে ই দিয়ে দিয়ে ছি তাও রিকাবরি
+20:26:44 agent-gemini kn07 stt 3573 llm 3843 tts_ttfb 1454 ಖಂಡಿತ ಸರ್, ನಿಮ್ಮ 5800 ರೂಪಾಯಿ EMI ಅನ್ನು ನವೆಂಬರ್ 17 ರೊಳಗೆ ಪಾವತಿ ಮಾಡುತ್ತೀ
+20:26:45 whisper bn08 phone 11857 লোনের য়ামাই আমি তার আক্টবরে ই দিয়ে দিয়েছি তাও রিকাবরি দেক
+20:26:54 whisper bn10 clean 8491  Bounce Charge চাষো তেরোটাকা কেনো কাটলেন অকাউন্টে বালন্স ছিল
+20:26:56 agent-gemini kn14 stt 3618 llm 2847 tts_ttfb 1407 ಖಂಡಿತ ಸರ್, ನಿಮ್ಮ ಕ್ಲೇಮ್ ನಂಬರ್ 3 8 5 0 6 1 ಅನ್ನು ನಾನು ಚೆಕ್ ಮಾಡ್ತಾ ಇದ್ದೇ
+20:27:02 whisper bn10 phone 8270  Bound charge চাষো তেরটাকা কেনো কাটলেন? অকাউন্টে বালন্স ছিলো
+20:27:12 whisper bn12 clean 9940 আমার নমব্র নমব্র 9007081245 জিয়তেকে এটিলে পর্ট করতে ছাই
+20:27:40 == step agent
+20:27:45 agent-sarvam hi01 stt 905 llm 563 tts_ttfb 388 जी sir, मैं समझ सकता हूँ कि आपका debit card खो गया है। मैं अभी इसे blo
+20:27:51 agent-sarvam hi05 stt 670 llm 2214 tts_ttfb 388 Sir, UP का transaction fail हो गया है और आपके account से ₹840 debit हो
+20:27:55 agent-sarvam hi07 stt 1282 llm 460 tts_ttfb 389 जी सर, आपकी EMI ₹8750 है और आप 15th November तक पूरा pay कर देंगे, rig
+20:27:58 agent-sarvam hi14 stt 649 llm 462 tts_ttfb 372 Sir, आपका claim number 660318 अभी तक settle नहीं हुआ है, मैं check कर 
+20:27:59 whisper bn12 phone 46410 আমার নম্র নম্র নম্র নাইন ড্র দ্র সেন সেন সেন সেন সেন সেন সেন
+20:28:01 agent-sarvam ta01 stt 514 llm 457 tts_ttfb 338 உங்க debit card தொலைந்து போனதுக்கு ரொம்ப வருத்தப்படுறேன், உடனே block ப
+20:28:09 whisper bn13 clean 10450 পোস্ত্পেড বিলি এক হাজার নিরান অবোই তাকা বেশি এশেছে আমি কোনো 
+20:28:14 whisper bn13 phone 5295  1719 তাকা বেশি এশেছে আমি কোনো আও জন্মিনি
+20:28:24 agent-sarvam ta05 stt 518 llm 19463 tts_ttfb 470 UP payment fail ஆனாலும் 680 rupees cut ஆனதுக்கு ரொம்ப sorry. உங்களோட r
+20:28:27 whisper bn14 clean 12669 আমার হিল্থ ইন্শরিন্স কলেম নমব্র নাই সুন্নো দুইশাত তিন চার সে
+20:28:31 agent-sarvam ta07 stt 644 llm 4847 tts_ttfb 345 சரிங்க, உங்க இமி 6400 ரூபாய், 20th November அன்னைக்கு கண்டிப்பா கட்டிட
+20:28:33 whisper bn14 phone 5930  Amar health insurance claim number 902734. চেটা স্টা স্টারে
+20:28:35 agent-sarvam ta14 stt 451 llm 428 tts_ttfb 511 உங்க health insurance claim number 712450-ஓட current status-அ check பண
+20:28:39 agent-sarvam ml01 stt 570 llm 1808 tts_ttfb 385 തീർച്ചയായും sir, നിങ്ങളുടെ debit card ഉടനെ തന്നെ block ചെയ്യാം. ഈ card
+20:28:43 agent-sarvam ml05 stt 567 llm 454 tts_ttfb 375 UPI payment fail ആയതിൽ ക്ഷമിക്കണം, ₹560 debit ആയത് confirm ചെയ്യാൻ ref
+20:28:46 agent-sarvam ml07 stt 535 llm 532 tts_ttfb 452 Okay Sir, your EMI is ₹9200 and you will pay it before 12th November, 
+20:28:46 whisper bn15 clean 13079 আউপ্সিদন কলেইমে একতিরিশ হাজার তাকা অপ্রুজ হোয়েছে কিন্তু হস্
+20:28:48 agent-sarvam ml14 stt 518 llm 414 tts_ttfb 363 നിങ്ങളുടെ health insurance claim number 548812-ന്റെ status ഞാൻ check ച
+20:28:51 agent-sarvam bn01 stt 582 llm 434 tts_ttfb 338 আপনার debit card হারিয়ে গেছে, আমি এখনই এটা block করে দিচ্ছি। লাস্ট ফোর
+20:28:56 agent-sarvam bn05 stt 567 llm 500 tts_ttfb 362 UP payment fail হলেও আপনার account থেকে ₹725 debit হয়েছে, আর reference
+20:28:59 agent-sarvam bn07 stt 561 llm 445 tts_ttfb 335 হ্যাঁ স্যার, আমি note করে নিয়েছি, আপনি 10th November-এর মধ্যে 7300 টাক
+20:29:01 whisper bn15 phone 14340 আউক্তিদন স্লেইমে এক্তিরিশ হাজার তাকা অপ্রুচ হোয়েছে কিন্তু হ
+20:29:02 agent-sarvam bn14 stt 508 llm 436 tts_ttfb 516 হ্যাঁ, আমি আপনার হেলথ ইন্স্যুরেন্স ক্লেইম নাম্বার ৯০২৭৩৪-এর স্ট্যাটাসট
+20:29:07 agent-sarvam kn01 stt 578 llm 650 tts_ttfb 453 Sir, ನಿಮ್ಮ debit card ಕಳೆದು ಹೋಗಿರೋದ್ರಿಂದ ನಾನು ಈಗಲೇ ಅದನ್ನ block ಮಾಡ್ತೀನ
+20:29:08 whisper bn16 clean 7879  पॉलीसीर प्रीमियम आठाश डिसेंबर ड्यू, ओटो रेबिट बॉंधु कुर्ते 
+20:29:10 agent-sarvam kn05 stt 576 llm 548 tts_ttfb 435 Sir, ನಿಮ್ಮ ₹915 payment fail ಆಗಿದೆ ಅಂತ ಅರ್ಥ ಆಯ್ತು. ದಯವಿಟ್ಟು ಆ referenc
+20:29:13 agent-sarvam kn07 stt 534 llm 449 tts_ttfb 398 ಹೌದು ಸರ್, ನೀವು ಹೇಳಿದ್ದು ನನಗೆ ಕೇಳಿಸ್ತಿದೆ. ನಿಮ್ಮ EMI ₹5800, 17th Novembe
+20:29:15 whisper bn16 phone 6772  पॉलीसीर प्रीमियम 8-8-9-10 डिसेंबर ड्यू, ओटो रेविट बॉन्धू कु
+20:29:16 agent-sarvam kn14 stt 547 llm 451 tts_ttfb 345 ನಿಮ್ಮ health insurance claim number 385061 ಬಗ್ಗೆ ನಾನು check ಮಾಡ್ತೀನಿ. 
+20:29:24 whisper kn01 clean 9211  ನನ್ನದ ಇಬಿಟ್ ಕಾಗ್ ಕಳೆದು ಹೋಗಿದೆ, ತಕ್ಷಣ ಬ್ಲೋಕ್ ಮಾಡಿ, ಲಾಸ್ಟ್ ಪೋ
+20:29:30 agent-gemini hi01 stt 3645 llm 2096 tts_ttfb 1527 Main aapka debit card jiske last four digits 4 8 2 1 hain, use turant 
+20:29:34 whisper kn01 phone 9495  ನನ್ನದಯವಿತ್ ಕಾಗ್ ಕಳೆದು ಹೋಗಿದೆ, ಸಕ್ಷಣ ಬ್ಲೋಕ್ ಮಾಡಿ, ಲಾಸ್ ಪೋರ್ 
+20:29:40 agent-gemini hi05 stt 2586 llm 2352 tts_ttfb 937 Aapka 840 rupees ka amount debit hua hai aur reference number 417209 h
+20:29:46 whisper kn02 clean 11692  ಕ್ರಿಡಿಟ್ ಕಾಡಲ್ಲಿ ಎಂಸಾವರ್ದ ಆರ್ನೂರ ಆಯವತ್ ರುಪಾಯ್ ಟ್ರಾಂಜಾಕ್ಷಣಾಗ
+20:29:49 agent-gemini hi07 stt 2794 llm 2035 tts_ttfb 1151 Ji sir, main note kar leta hoon ki aap ₹8,750 ki EMI 15th November tak
+20:29:55 whisper kn02 phone 9118  ಕ್ರಿಡಿಟ್ ಕಾಡಲ್ಲಿ ಎಂಸಾವರ್ದ ಆರ್ನೂರ ಆಯಿವತ ರುಪಾಯ್ ಟ್ರಾಂಜಾಕ್ಷಣ ಆ
+20:29:58 agent-gemini hi14 stt 2483 llm 2077 tts_ttfb 857 Aapka claim number 6 6 0 3 1 8 maine note kar liya hai, main abhi chec
+20:30:01 whisper kn03 clean 6632  ಅಥಾಯಮ್ ಅಲ್ಲಿ ಕಾಶ್ ಬರಲಿಲ್ಲ ಆದರೆ ಅಕಾಂಟ್ ಇಂದ ಎರೆಡು ಸಾವಿರದಾ ರೂಪ
+20:30:07 whisper kn03 phone 5637  ಪಸ್ವೆ ಮಲ್ಲಿ ಕಾಶ್ ಬರಲಿಲ್ಲ ಆದರೆ ಅಕಾಂಸ್ ಇಂದ ಎರೆಡು ಸಾವಿರದ ರೂಪಾಯ
+20:30:10 agent-gemini ta01 stt 3209 llm 3884 tts_ttfb 1141 கவலைப்படாதீங்க, உங்க லாஸ்ட் 4 டிஜிட்ஸ் 6 2 4 8 கார்டை நான் இப்போவே உடன
+20:30:13 whisper kn04 clean 5804  ಫೋನ್ಪೆ ಇಂದ ಸಾವರ್ದ ಮುನ್ನೂರ ಅವತ ರುಪಾಯಿ ಕಳಸ್ತೆ ದುಡ್ಳೋಯತು ಅದರ್ಯ
+20:30:19 whisper kn04 phone 5910  ಪೋನ್ಪೆ ಇಂದ ಸಾವರ್ದ ಮುನ್ನುರಾವತ ರುಪಾಯ ಕಳಸ್ತೆ ಡುಡ್ಳೋಯತು ಅದರ್ಯಾವ
+20:30:22 agent-gemini ta05 stt 3134 llm 2377 tts_ttfb 1272 கவலைப்படாதீங்க சார், உங்க Reference நம்பர் 539021 மற்றும் கட் ஆன தொகை 
+20:30:27 whisper kn05 clean 8603  ಒಯೂಪಿ ಪೇಮಂತ್ ಫೇಲ್ ಆಯತ್ತು, ಆದರೆ ಒಂಬತ್ತು ನುರ ಹಾದಿ ನೈದು ರೂಪಾಯಿ
+20:30:35 agent-gemini ta07 stt 2889 llm 6661 tts_ttfb 896 சரிங்க சார், உங்க EMI தொகை 6400 ரூபாய்-ஐ வர 20 நவம்பர் அன்னைக்கு pay ப
+20:30:36 whisper kn05 phone 8914  ಒಯೂಪಿ ಸೇಮಂಸ್ ಸೇಲ್ ಆಯಿಟು ಆದರೆ ಒಂಬತ್ತು ನುರ ಹಾದಿ ನೈದು ರೂಪಾಯಿ ಕ
+20:30:38 whisper kn06 clean 1669  UPI PIN RESET MADO KE OTP BARTILA NA NUMBER 999-860-14572
+20:30:40 whisper kn06 phone 1760  UPI PIN RESET MADO KE OTP BARTILA NA NUMBER 999-860-14572
+20:30:46 agent-gemini ta14 stt 3438 llm 3035 tts_ttfb 1085 கண்டிப்பா, உங்க கிளைம் நம்பர் 7 1 2 4 5 0-க்கான ஸ்டேட்டஸை இப்போவே செக்
+20:30:46 whisper kn07 clean 6122  ನನ್ನ ಇಮಿ ಆಯದು ಸಾವಿರದ ಎಂಟು ನುರು ರೂಪಾಯೆ ಹಾದಿನೆಳು ನುವೆಂಬ್ರ ಒಳಗ
+20:30:52 whisper kn07 phone 6130  ನನ್ನ ಇಮಿ ಆಯದು ಸಾವಿರದ ಎಂತು ನುರು ರೂಪಾಯೆ ಹಾದಿನೆಳು ನುವೆಂಬ್ರು ಒಳ
+20:30:55 agent-gemini ml01 stt 2354 llm 2321 tts_ttfb 871 അയ്യോ, ഒട്ടും പേടിക്കണ്ട, അവസാന നാല് അക്കങ്ങൾ 3917 ആയ കാർഡ് ഞാൻ ഇപ്പോൾ
+20:30:57 whisper kn08 clean 5409  ಲೋನ್ ಇಮಾಯಿ ನಾನು ಆರು ಅಕ್ಟೋಬರಂದೆ ಪೇಮಾಡಿದಿನಿ. ಆದ್ರು ರಿಕವರಿ ಕೋಲ
+20:31:03 whisper kn08 phone 5691  ಲೋನ್ ಇಯಮಾಯಿ ನಾನು ಆರು ಅಕ್ಟೋಬರಂದೆ ಪೇಮಾಡಿದಿನಿ. ಆದ್ರು ರಿಕವರಿ ಕೋ
+20:31:10 whisper kn09 clean 6611  ಇತಿಂಗಳು ಸಾಲರಿ ಲೇತ್ ಆಗಿದೆ ಹಾದಿನಾರು ಸಾವಿರದಾ ರೂಪಾಯದು ಎರಡು ಇನ್ಸ
+20:31:12 agent-gemini ml05 stt 5183 llm 6027 tts_ttfb 1127 ശരി സാർ, റെഫറൻസ് നമ്പർ 8 2 0 4 6 3-ൽ ₹560 ഡെബിറ്റ് ആയത് ഞാൻ ചെക്ക് ചെയ
+20:31:16 whisper kn09 phone 6573  ಇತಿಂಗಳು ಸಾಲವಿ ಲೇಸ್ ಆಗಿದೆ ಹಾದಿನಾರು ಸಾವಿರದಾ ರೂಪಾಯಿದು ಎರಡು ಇಂಸ
+20:31:22 whisper kn10 clean 5418  ಬಾಂಸ್ ಚಾರ್ಜ ಆಯಿನೋರ ಮೋಯತ್ತನ್ರುಪಾಯಿ ಯಾಖ ಹಾಕಿದ್ರಿ. ಎಕಾಂಟಲ್ ಬೇಲ
+20:31:23 agent-gemini ml07 stt 3014 llm 3699 tts_ttfb 1222 ശരി സാർ, നിങ്ങളുടെ EMI എമൗണ്ട് ₹9,200 നവംബർ 12-ന് മുൻപായി അടയ്ക്കാമെന്
+20:31:27 whisper kn10 phone 5065  ಬಾಂಜ್ ಚಾರ್ಜ ಆಇನುರ ಮೋರ್ತನ್ ರುಪಾಯ ಯಾಕ ಹಾಕಿದರಿ. ಏಕಾಂಟಲ್ ಬಾಲನ್ಸ
+20:31:34 whisper kn11 clean 6943  ನಾಲ್ಕು ನುರಾ ನಲ್ವತ್ತುಂಬತ್ತು ಪ್ಲಾನ್ ರಿಚಾರ್ಜ್ ಮಾಡಿದೆ, ಆದರೆ ದೇತ
+20:31:34 agent-gemini ml14 stt 2534 llm 2995 tts_ttfb 891 തീർച്ചയായും സർ, താങ്കൾ പറഞ്ഞ health insurance ക്ലെയിം നമ്പർ 5 4 8 8 1 
+20:31:40 whisper kn11 phone 6352  ನಾಲ್ಪು ನುರ್ರ ನಲ್ವತ್ತೋಂಬತ್ತು ಪ್ಲಾನ್ ವಿಶಾರ್ಸ್ ಮಾಡಿದೆ ಆದರೆ ದೇತ
+20:31:42 agent-gemini bn01 stt 2341 llm 1817 tts_ttfb 855 চিন্তা করবেন না, লাস্ট ফোর ডিজিট 7153 ওয়ালা আপনার ডেবিট কার্ডটি আমি এখ
+20:31:48 whisper kn12 clean 7504  ನನ್ನ ನಂಬರ್ ಒಂಬತು ಎಳು ನಾಲ್ಕು ಒಂದು ಎರಡು ಮೂರು ಸೊನ್ನೆ ಅಯಿದು ಎಂಟ
+20:31:57 whisper kn12 phone 8940  ನನ್ನ ನಂಬರ್ ಒಂಬತು ಎಳು ನಾಲ್ಕು ವಂದು ಎರಳು ಮೂರು ಸೊನ್ನೆ ಅಯಿದು ಎಂಟ
+20:32:05 whisper kn13 clean 8135  ಪೂಸ್ಟ್ ಪೇದ್ ಬಿಲ್ ಅಲ್ಲಿ ಒಂದು ಸಾವಿರದ ಮೂರು ನೂರ ಇಪತ್ತು ರೂಪಾಯಿ ಒ
+20:32:11 agent-gemini bn05 stt 19784 llm 2159 tts_ttfb 1120 চিন্তা করবেন না, আমি চেক করে দিচ্ছি, আপনি কি কনফার্ম করতে পারেন অ্যামা
+20:32:12 whisper kn13 phone 7437  ಪೂಸ್ತಿಜ್ ಬಿಲ್ ಅಲ್ಲಿ ಒಂದು ಸಾವಿರದ ಮೂರು ನೂರ ಇಪತ್ತು ರೂಪಾಯಿ ಒಯುಸ
+20:32:18 whisper kn14 clean 5933  ನನ್ನ ಹೆಲ್ತ ಇಂಶರಂಸ್ ಕ್ಲೇಮ್ ನಂಬರ್ ಮೂರು ಎಂಟು ಐದು ಸೊನ್ನೆ ಆರು ವಂ
+20:32:20 agent-gemini bn07 stt 2749 llm 2522 tts_ttfb 906 ধন্যবাদ স্যার, আমি নোট করে নিয়েছি যে আপনি আপনার 7300 টাকার EMI 10 নভেম
+20:32:24 whisper kn14 phone 5955  ನನ್ನ ಹೆಲ್ತ ಇಂಶರಂಸ್ ಕ್ಲೇಮ್ ನಂಬರ್ ಮೂರು ಎಂಟು ಐದು ಸೊನ್ನೆ ಆರು ವಂ
+20:32:30 agent-gemini bn14 stt 2185 llm 2397 tts_ttfb 1154 নিশ্চয়ই, আপনার হেলথ ইন্সুরেন্স ক্লেম নাম্বার 902734 এর স্ট্যাটাস আমি 
+20:32:33 whisper kn15 clean 8793  ಕಾರ ಅಕ್ಸಿದಂಟ್ ಕಲೇಂಗೆ ನಲ್ವತ್ತು ಸಾವಿರದಾ ರೂಪಾಯಿ ಅಪ್ರೂವ ಆಗಿದೆ, 
+20:32:41 agent-gemini kn01 stt 4059 llm 2174 tts_ttfb 1148 ಖಂಡಿತ, ನಿಮ್ಮ 2 7 0 4 ಕೊನೆಯ ಸಂಖ್ಯೆಯಿರುವ debit card ಅನ್ನು ತಕ್ಷಣವೇ block 
+20:32:42 whisper kn15 phone 9394  ಕಾಗ ಆಕ್ಸಿಜನ್ಸ್ ಲೇಂಗೆ ನಲ್ವತ್ತು ಸಾವಿರದಾ ರೂಪಾಯಿ ಅಕ್ರೂಜ್ ಆಗಿದೆ,
+20:32:48 whisper kn16 clean 5241  ಪಾಲಿಸಿ ಪ್ರಿಮ್ಯಮ ಟ್ವನಿಟು ಡಿಸಂಬಗೆ ಡುವಿದೆ, ಅಟು ಡೇಬಿಟ್ ಸ್ಟಾಪ್ ಮ
+20:32:49 whisper kn16 phone 1218  Policy premium 22 December ge due idai. Auto debit stock ma
+20:32:55 agent-gemini kn05 stt 2864 llm 5429 tts_ttfb 1472 ಖಂಡಿತ ಸರ್, reference number 602948 ಗೆ ಕಟ್ ಆಗಿರೋ 915 ರೂಪಾಯಿ status ಅನ್ನ
+20:33:04 agent-gemini kn07 stt 2689 llm 1965 tts_ttfb 863 ಖಂಡಿತ ಸರ್, ನಿಮ್ಮ 5,800 ರೂಪಾಯಿ EMI ಅನ್ನು 17 ನವೆಂಬರ್ ಒಳಗೆ ಪಾವತಿ ಮಾಡುತ್ತೀ
+20:33:14 agent-gemini kn14 stt 2488 llm 2526 tts_ttfb 1181 ಖಂಡಿತ, ನಿಮ್ಮ ಹೆಲ್ತ್ ಇನ್ಶೂರೆನ್ಸ್ ಕ್ಲೈಮ್ ನಂಬರ್ 3 8 5 0 6 1 ಅನ್ನು ನಾನು ಚೆ
+20:33:37 == step score
+20:34:06 == step score
+20:34:43 == step score
+21:35:32 == step score
+21:38:06 == step stt
+21:38:06 stt: 0 saaras + 0 gemini + 320 openai jobs
+21:39:05 == step agent
+21:39:10 agent-openai hi01 stt 1154 llm 1086 tts_ttfb 808 जी, मैं आपका डेबिट कार्ड तुरंत block करने में मदद कर रहा हूँ, last fou
+21:39:15 agent-openai hi05 stt 1231 llm 1182 tts_ttfb 603 Samajh gaya, aapka ₹840 debit ho gaya hai aur reference number 417209 
+21:39:19 agent-openai hi07 stt 1108 llm 1195 tts_ttfb 683 Ji sir, aapki EMI 8,750 rupaye hai aur aap 15 November tak full paymen
+21:39:25 agent-openai hi14 stt 1059 llm 1223 tts_ttfb 956 Sir, आपका हेल्थ इंश्योरेंस claim number 660318 अभी pending हो सकता है 
+21:39:32 agent-openai ta01 stt 1391 llm 1133 tts_ttfb 861 சரி, உங்கள் டெபிட் கார்டை உடனே block பண்ணுகிறேன்; கடைசி 4 digits 6 2 4
+21:39:38 agent-openai ta05 stt 1352 llm 1206 tts_ttfb 761 Sorry for the trouble, sir/madam. UPI payment failed but 680 rupay deb
+21:39:42 agent-openai ta07 stt 1063 llm 1205 tts_ttfb 640 சரி சார், நீங்கள் 20 நவம்பர் க்குள் ரூ.6,400 கடனை கண்டிப்பாக கட்டுவீர்
+21:39:47 agent-openai ta14 stt 961 llm 1181 tts_ttfb 681 உங்கள் health insurance claim number 712450 check பண்ணுறேன். One momen
+21:39:52 agent-openai ml01 stt 1366 llm 1212 tts_ttfb 886 ശരി, ഞാൻ ഉടനെ നിങ്ങളുടെ ഡെബിറ്റ് കാർഡ് ബ്ലോക്ക് ചെയ്യാൻ സഹായിക്കും. അവ
+21:39:57 agent-openai ml05 stt 1103 llm 1192 tts_ttfb 718 UPI payment fail aayi, 560 രൂപ debit aayi, reference number 820463 aan
+21:40:02 agent-openai ml07 stt 1080 llm 1145 tts_ttfb 943 ശരി, sir. EAMI amount ₹9,200 ആണ്, and you want to pay before 12 Novemb
+21:40:07 agent-openai ml14 stt 1243 llm 1136 tts_ttfb 646 നമസ്കാരം, നിങ്ങളുടെ health insurance claim number 548812 ആണല്ലോ, ഞാൻ s
+21:40:13 agent-openai bn01 stt 1194 llm 1195 tts_ttfb 931 অবশ্যই, আমি আপনার ডেবিট কার্ড ব্লক করার জন্য রিকোয়েস্ট নিচ্ছি—লাস্ট ফো
+21:40:20 agent-openai bn05 stt 1227 llm 1373 tts_ttfb 1103 ঠিক আছে, ৭২৫ টাকা ডেবিট হয়েছে আর রেফারেন্স নাম্বার ৩৬১০৭, আমি নোট করছি
+21:40:25 agent-openai bn07 stt 1110 llm 1044 tts_ttfb 862 ঠিক আছে স্যার, আমি note করছি যে আপনি ১,৩০০ টাকা ১০ নভেম্বরের মধ্যে দেব
+21:40:30 agent-openai bn14 stt 1075 llm 1128 tts_ttfb 674 জি, আপনার হেল্থ ইন্স্যুরেন্স ক্লেম নাম্বার ৯০২৭৩৪-এর স্টেটাস আমি চেক ক
+21:40:35 agent-openai kn01 stt 1270 llm 1049 tts_ttfb 889 ಸರಿ, ನಿಮ್ಮ ಡೆಬಿಟ್ ಕಾರ್ಡ್ ending 2704 ಅನ್ನು ತಕ್ಷಣ block ಮಾಡುತ್ತೇನೆ. Kin
+21:40:41 agent-openai kn05 stt 1298 llm 1369 tts_ttfb 793 ಅರ್ಥ ಆಯ್ತು sir/ma’am, ನಿಮ್ಮ 945 ರೂಪಾಯಿ deduction ಆಗಿದೆ ಮತ್ತು reference
+21:40:47 agent-openai kn07 stt 1145 llm 1034 tts_ttfb 1069 Okay ಸರ್, ನೀವು ₹5,800 ಅನ್ನು 17 ನವೆಂಬರ್ ಒಳಗೆ pay ಮಾಡ್ತೀನಿ ಅಂತ ಹೇಳಿದ್ರಿ,
+21:40:52 agent-openai kn14 stt 1199 llm 1042 tts_ttfb 787 ನಿಮ್ಮ ಹೆಲ್ತ್ ಇನ್ಶುರನ್ಸ್ ಕ್ಲೇಯ್ಮ್ ನಂಬರ್ 385061 ಗೆ ಸ್ಟೇಟಸ್ ಚೆಕ್ ಮಾಡ್ತೀನಿ
+21:40:57 agent-sarvam-speech+gpt-5.4-mini hi01 stt 511 llm 1097 tts_ttfb 356 जी, मैं अभी आपका debit card block करने में मदद कर रहा/रही हूँ। आपने ca
+21:41:02 agent-sarvam-speech+gpt-5.4-mini hi05 stt 609 llm 1270 tts_ttfb 388 जी सर/मैडम, आपका UPI transaction failed दिख रहा है लेकिन ₹840 debit हु
+21:41:06 agent-sarvam-speech+gpt-5.4-mini hi07 stt 623 llm 1178 tts_ttfb 385 जी सर, आपकी EMI ₹8750 है और आप 15th November तक पूरा payment कर देंगे,
+21:41:11 agent-sarvam-speech+gpt-5.4-mini hi14 stt 512 llm 1262 tts_ttfb 343 जी, आपका हेल्थ इंश्योरेंस क्लेम नंबर 660318 मैंने नोट कर लिया है। अभी 
+21:41:14 agent-sarvam-speech+gpt-5.4-mini ta01 stt 487 llm 970 tts_ttfb 316 உங்கள் debit card உடனே block செய்யறேன். Last 4 digits 6488ன்னு confirm
+21:41:19 agent-sarvam-speech+gpt-5.4-mini ta05 stt 558 llm 1025 tts_ttfb 335 சரி sir, ₹680 cut ஆயிடுச்சு and payment fail ஆனது note பண்ணிட்டேன்; re
+21:41:23 agent-sarvam-speech+gpt-5.4-mini ta07 stt 522 llm 1106 tts_ttfb 369 சரி சார், உங்கள் EMI ₹6400, 20th Novemberக்குள் நீங்கள் கட்டிடுவீர்கள்
+21:41:26 agent-sarvam-speech+gpt-5.4-mini ta14 stt 467 llm 1142 tts_ttfb 406 உங்கள் health insurance claim number 712450 status check பண்ணறேன். ஒரு
+21:41:30 agent-sarvam-speech+gpt-5.4-mini ml01 stt 486 llm 1076 tts_ttfb 347 ശരി sir, ഞാൻ നിങ്ങളുടെ debit card ഉടനെ block ചെയ്യാൻ help ചെയ്യും; las
+21:41:35 agent-sarvam-speech+gpt-5.4-mini ml05 stt 560 llm 1118 tts_ttfb 346 Sorry for the परेशानी, sir/madam. Aapka ₹560 debit ho gaya aur referen
+21:41:38 agent-sarvam-speech+gpt-5.4-mini ml07 stt 477 llm 1063 tts_ttfb 361 Understood sir, your EMI is ₹9200 and you want to pay it before 12th N
+21:41:42 agent-sarvam-speech+gpt-5.4-mini ml14 stt 486 llm 1145 tts_ttfb 331 Sure sir/madam, aapka health insurance claim number 548812 ka status c
+21:41:46 agent-sarvam-speech+gpt-5.4-mini bn01 stt 551 llm 1158 tts_ttfb 339 জি, আমি আপনার ডেবিট কার্ড ব্লক করার জন্য এগোচ্ছি। লাস্ট ফোর ডিজিট 7153
+21:41:52 agent-sarvam-speech+gpt-5.4-mini bn05 stt 515 llm 1345 tts_ttfb 402 Aapka UPI payment fail hua hai, lekin ₹725 debit ho gaya hai, aur refe
+21:41:56 agent-sarvam-speech+gpt-5.4-mini bn07 stt 549 llm 1358 tts_ttfb 313 ঠিক আছে স্যার, আপনি বলছেন ₹7300 10th November-এর মধ্যে দেবেন, আমি note
+21:42:00 agent-sarvam-speech+gpt-5.4-mini bn14 stt 544 llm 1014 tts_ttfb 594 অবশ্যই, আপনার হেলথ ইন্স্যুরেন্স ক্লেইম নাম্বার ৯০২৭৩৪-এর স্ট্যাটাস চেক
+21:42:04 agent-sarvam-speech+gpt-5.4-mini kn01 stt 532 llm 1101 tts_ttfb 331 ನಿಮ್ಮ debit card block ಮಾಡ್ತೀನಿ sir/madam. Last 4 digits 2704 confirm 
+21:42:08 agent-sarvam-speech+gpt-5.4-mini kn05 stt 549 llm 1134 tts_ttfb 330 Sorry for the inconvenience. Aapne bataya OOT payment fail hua hai, bu
+21:42:13 agent-sarvam-speech+gpt-5.4-mini kn07 stt 541 llm 1044 tts_ttfb 384 ಸರಿ ಸರ್, ನೀವು ₹5800 ಅನ್ನು 17th November ಒಳಗೆ ಪಾವತಿಸುವುದಾಗಿ ಹೇಳಿದ್ದೀರಿ.
+21:42:16 agent-sarvam-speech+gpt-5.4-mini kn14 stt 525 llm 910 tts_ttfb 349 ನಿಮ್ಮ health insurance claim number 385061 status ನಾನು check ಮಾಡ್ತೀನಿ.
+21:42:22 agent-sarvam-speech+claude-haiku-5.5 hi01 stt 547 llm 1938 tts_ttfb 448 आपका debit card जो आखिरी चार digits 4821 वाला है, वो खो गया है, मैं उस
+21:42:28 agent-sarvam-speech+claude-haiku-5.5 hi05 stt 674 llm 2187 tts_ttfb 369 आपका UPI ट्रांजैक्शन फेल हो गया लेकिन अकाउंट से ₹840 कट गए, रेफरेंस नं
+21:42:34 agent-sarvam-speech+claude-haiku-5.5 hi07 stt 513 llm 1846 tts_ttfb 482 ठीक है, आपकी EMI ₹8,750 है और आप 15 November तक पूरा payment करने वाले
+21:42:39 agent-sarvam-speech+claude-haiku-5.5 hi14 stt 575 llm 2513 tts_ttfb 417 Aap ka health insurance claim number 6 6 0 3 1 8 hai, na? Main abhi is
+21:42:45 agent-sarvam-speech+claude-haiku-5.5 ta01 stt 506 llm 2253 tts_ttfb 337 உங்கள் debit card-ஐ உடனே block செய்கிறேன், கவலைப்பட வேண்டாம். நீங்கள் 
+21:42:53 agent-sarvam-speech+claude-haiku-5.5 ta05 stt 546 llm 2877 tts_ttfb 377 நீங்க சொன்னது சரியா புரிஞ்சுக்கிறேன், UPI payment fail ஆனதுக்கு அப்புற
+21:43:06 agent-sarvam-speech+claude-haiku-5.5 ta07 stt 581 llm 2402 tts_ttfb 327 சரி சார், நீங்க சொன்னது ₹6400 EMI, 20th November-க்கு கட்டுவீங்கனு குற
+21:43:12 agent-sarvam-speech+claude-haiku-5.5 ta14 stt 446 llm 2549 tts_ttfb 355 நீங்க 712450 ங்கற claim number சொன்னீங்க, அது சரியா? அந்த claim-ஓட sta
+21:43:18 agent-sarvam-speech+claude-haiku-5.5 ml01 stt 484 llm 2432 tts_ttfb 357 ഡെബിറ്റ് കാർഡ് നഷ്ടപ്പെട്ടതിൽ വിഷമമുണ്ടാകും, ഞാൻ ഉടനെ സഹായിക്കാം. കാർഡ
+21:43:25 agent-sarvam-speech+claude-haiku-5.5 ml05 stt 527 llm 2107 tts_ttfb 360 Samajh gaya, aapka UPI payment fail hua aur ₹560 debit ho gaya, refere
+21:43:30 agent-sarvam-speech+claude-haiku-5.5 ml07 stt 512 llm 2085 tts_ttfb 375 ശരി Madam, നിങ്ങളുടെ EMI ₹9,200 ആണെന്നും 12th November-ന് മുമ്പ് അടയ്ക
+21:43:37 agent-sarvam-speech+claude-haiku-5.5 ml14 stt 562 llm 2905 tts_ttfb 359 ഞാൻ claim number 548812 പരിശോധിക്കാം, ഒരു നിമിഷം. ഈ claim നമ്പറിൻ്റെ c
+21:43:44 agent-sarvam-speech+claude-haiku-5.5 bn01 stt 532 llm 2129 tts_ttfb 376 আপনার ডেবিট কার্ড হারিয়ে গেছে, শেষের চার সংখ্যা সাত-এক-পাঁচ-তিন, এটা 
+21:43:51 agent-sarvam-speech+claude-haiku-5.5 bn05 stt 867 llm 2024 tts_ttfb 362 আপনার UPI payment fail হয়ে ₹725 কেটে গেছে, reference number 361807 — 
+21:43:56 agent-sarvam-speech+claude-haiku-5.5 bn07 stt 452 llm 2370 tts_ttfb 464 ঠিক আছে, আপনি ₹7300 10th November-এর মধ্যে জমা দেবেন, এটা নোট করে রাখল
+21:44:02 agent-sarvam-speech+claude-haiku-5.5 bn14 stt 572 llm 2370 tts_ttfb 447 আপনার হেলথ ইন্স্যুরেন্স ক্লেইম নাম্বার নয়-শূন্য-দুই-সাত-তিন-চার, এটা 
+21:44:10 agent-sarvam-speech+claude-haiku-5.5 kn01 stt 503 llm 3559 tts_ttfb 358 ನಿಮ್ಮ debit card ಕಳೆದು ಹೋಗಿದೆ ಅಂತ ತಿಳಿಸಿದ್ದಕ್ಕೆ ಧನ್ಯವಾದ, last 4 digits
+21:44:18 agent-sarvam-speech+claude-haiku-5.5 kn05 stt 583 llm 2999 tts_ttfb 338 ನಿಮ್ಮ ₹915 ಪೇಮೆಂಟ್ ಫೇಲ್ ಆದರೂ ಹಣ ಕಟ್ ಆಗಿದೆ ಅಂತ ಅರ್ಥ ಮಾಡಿಕೊಂಡೆ, ರೆಫರೆನ್ಸ
+21:44:25 agent-sarvam-speech+claude-haiku-5.5 kn07 stt 533 llm 2765 tts_ttfb 342 ಸರಿ ಸರ್, ನೀವು ₹5800 ಇಎಂಐ ಅನ್ನು 17ನೇ ನವೆಂಬರ್ ಒಳಗೆ ಕಟ್ಟುತ್ತೀರಿ ಅಂತ ನೋಟ್ 
+21:44:32 agent-sarvam-speech+claude-haiku-5.5 kn14 stt 523 llm 2676 tts_ttfb 427 ನೀವು ಕೊಟ್ಟ claim number 385061 ಅಲ್ಲವೇ? ಈ ಕ್ಷಣದಲ್ಲಿ ನನ್ನ ಬಳಿ claim ನ ನಿ
+21:50:05 == step score
+21:50:59 == step score
+21:52:46 == step score
+21:53:47 == step score
+23:34:50 == step stt
+23:34:50 stt: 320 saaras + 0 gemini + 0 openai jobs
+23:37:41 == step agent
+23:37:43 agent-sarvam-v4 hi01 stt 452 llm 374 tts_ttfb 312 जी sir, आपका debit card block कर दिया गया है, और जो last four digits 4
+23:37:47 agent-sarvam-v4 hi05 stt 480 llm 448 tts_ttfb 302 UP transaction fail होने और account से ₹840 debit होने की जानकारी मिल 
+23:37:49 agent-sarvam-v4 hi07 stt 424 llm 334 tts_ttfb 319 Sir आपकी EMI ₹8750 है और आप 15 November तक pay कर देंगे, right?
+23:37:51 agent-sarvam-v4 hi14 stt 421 llm 380 tts_ttfb 306 Sir, आपका claim number 660318 अभी तक settle नहीं हुआ है। मैं check करक
+23:37:53 agent-sarvam-v4 ta01 stt 443 llm 327 tts_ttfb 308 கண்டிப்பா madam, நான் உடனே block பண்றேன். last four digits six two fou
+23:37:56 agent-sarvam-v4 ta05 stt 498 llm 386 tts_ttfb 301 UP payment fail ஆனதுக்கு sorry, உங்க 680 rupees account-ல இருந்து கட் 
+23:37:59 agent-sarvam-v4 ta07 stt 431 llm 375 tts_ttfb 304 Sir, உங்க 6400 ரூபாய் EMI 20 November அன்னைக்கு கண்டிப்பா கட்டிடுவீங்க
+23:38:01 agent-sarvam-v4 ta14 stt 410 llm 362 tts_ttfb 340 உங்க health insurance claim number 712450 status check பண்றேன், ஒரு நி
+23:38:04 agent-sarvam-v4 ml01 stt 440 llm 504 tts_ttfb 312 നിങ്ങളുടെ debit card നഷ്ടപ്പെട്ട കാര്യം മനസ്സിലായി, ഞാൻ ഉടനെ അത് block
+23:38:08 agent-sarvam-v4 ml05 stt 473 llm 494 tts_ttfb 304 Sir, 560 രൂപ debit ആയി എന്ന് മനസ്സിലായി, reference number 820463. ഞാൻ 
+23:38:10 agent-sarvam-v4 ml07 stt 434 llm 415 tts_ttfb 308 ശരി sir, നിങ്ങളുടെ ഒൻപതിനായിരത്തി ഇരുന്നൂറ് രൂപയുടെ EMI പന്ത്രണ്ട് Nov
+23:38:13 agent-sarvam-v4 ml14 stt 443 llm 300 tts_ttfb 302 നിങ്ങളുടെ health insurance claim number 548812 ഞാൻ check ചെയ്യാം. ഒന്ന
+23:38:15 agent-sarvam-v4 bn01 stt 427 llm 373 tts_ttfb 305 আপনার debit card-টা block করে দিচ্ছি, last four digits হলো seven one f
+23:38:18 agent-sarvam-v4 bn05 stt 475 llm 354 tts_ttfb 302 UP payment fail হলেও আপনার account থেকে 725 টাকা debit হয়েছে, তাই না? 
+23:38:20 agent-sarvam-v4 bn07 stt 416 llm 342 tts_ttfb 317 ঠিক আছে sir, আপনি বলছেন যে রিমি সাত হাজার তিনশো টাকা দশ নভেম্বরের মধ্য
+23:38:23 agent-sarvam-v4 bn14 stt 436 llm 305 tts_ttfb 313 আপনার health insurance claim number 902734-এর status আমি এখনই check কর
+23:38:26 agent-sarvam-v4 kn01 stt 813 llm 404 tts_ttfb 338 ಖಂಡಿತ, ನಿಮ್ಮ debit card block ಮಾಡಲು ನಾನು ಸಹಾಯ ಮಾಡುತ್ತೇನೆ. ನಿಮ್ಮ card ನ

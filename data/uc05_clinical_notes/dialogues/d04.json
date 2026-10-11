@@ -1,0 +1,146 @@
+{
+ "id": "d04",
+ "pair": "hi-en",
+ "lang": "Hindi",
+ "style": "native",
+ "topic": "hypertension",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "आइए गुप्ता जी, कैसे हैं?"
+  },
+  {
+   "speaker": "patient",
+   "text": "डॉक्टर साहब, एक हफ्ते से सिर में दर्द रहता है, सुबह उठते ही चक्कर भी आता है।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "BP की दवा ले रहे हैं न? कौन सी?"
+  },
+  {
+   "speaker": "patient",
+   "text": "Amlodipine 5 mg रोज़ सुबह। और पड़ोसी ने कहा Atenolol अच्छी है, तो उनकी दो-तीन गोलियाँ भी खा लीं।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "दूसरों की दवा ऐसे मत खाइए। Atenolol बिल्कुल बंद। अभी BP 162 by 98 है, pulse चौरासी है, वज़न 81 kilo।"
+  },
+  {
+   "speaker": "patient",
+   "text": "इतना ज़्यादा? पहले तो 140 के आसपास रहता था।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "नमक ज़्यादा तो नहीं खा रहे? अचार, पापड़?"
+  },
+  {
+   "speaker": "patient",
+   "text": "हाँ, अचार रोज़ खाता हूँ।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "वो कम कीजिए। किसी दवा से allergy है?"
+  },
+  {
+   "speaker": "patient",
+   "text": "हाँ, sulpha वाली दवाओं से मुझे reaction हुआ था।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "अच्छा, तो Telmisartan-H नहीं दूँगा, उसमें Hydrochlorothiazide है जो sulpha group से जुड़ी है। आपको uncontrolled hypertension है। Amlodipine 5 mg सुबह एक बार चालू रखिए, और साथ में Telmisartan 40 mg रोज़ एक बार, रात को। दोनों regular चलेंगी।"
+  },
+  {
+   "speaker": "patient",
+   "text": "ठीक है डॉक्टर।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "अगर सीने में दर्द हो, शरीर के एक तरफ कमज़ोरी आए या बोलने में लड़खड़ाहट हो, या बहुत तेज़ सिरदर्द के साथ उल्टी हो, तो तुरंत emergency में जाइए।"
+  },
+  {
+   "speaker": "patient",
+   "text": "जी। अगली बार कब आऊँ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "दो हफ्ते बाद, घर पर रोज़ BP नापकर लिखिए, और kidney function test की report लेकर आइए।"
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "headache",
+   "giddiness",
+   "dizziness"
+  ],
+  "duration": {
+   "value": 1,
+   "unit": "weeks"
+  },
+  "vitals": {
+   "bp": "162/98",
+   "pulse": 84,
+   "weight_kg": 81
+  },
+  "diagnosis": [
+   "uncontrolled hypertension",
+   "hypertension",
+   "high blood pressure"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "amlodipine",
+     "amlong"
+    ],
+    "dose": "5 mg",
+    "frequency": "OD",
+    "duration_days": null
+   },
+   {
+    "drug": [
+     "telmisartan",
+     "telma"
+    ],
+    "dose": "40 mg",
+    "frequency": "OD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [
+   [
+    "sulpha",
+    "sulfa",
+    "sulphonamide",
+    "sulfonamide"
+   ]
+  ],
+  "red_flags": [
+   [
+    "chest pain"
+   ],
+   [
+    "one-sided weakness",
+    "weakness on one side",
+    "slurred speech",
+    "stroke"
+   ],
+   [
+    "severe headache with vomiting",
+    "severe headache"
+   ]
+  ],
+  "follow_up": [
+   "2 weeks",
+   "two weeks",
+   "after 2 weeks"
+  ],
+  "not_prescribed": [
+   "atenolol",
+   "hydrochlorothiazide",
+   "telmisartan-h"
+  ]
+ },
+ "trap": "Patient took neighbour's Atenolol (stopped); sulpha allergy rules out Telmisartan-H."
+}

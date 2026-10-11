@@ -1,0 +1,129 @@
+{
+ "id": "d10",
+ "pair": "ml-en",
+ "lang": "Malayalam",
+ "style": "native",
+ "topic": "hypertension",
+ "audio_subset": true,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "ലീലാമ്മേ, വരൂ. എന്തുണ്ട് വിശേഷം?"
+  },
+  {
+   "speaker": "patient",
+   "text": "ഡോക്ടറേ, പത്തു ദിവസമായി രാവിലെ എഴുന്നേൽക്കുമ്പോൾ തലവേദനയാണ്. ചിലപ്പോൾ നെഞ്ചിടിപ്പ് പതുക്കെയാണെന്ന് തോന്നും."
+  },
+  {
+   "speaker": "doctor",
+   "text": "ഇപ്പോൾ ഏതൊക്കെ ഗുളികയാണ് കഴിക്കുന്നത്?"
+  },
+  {
+   "speaker": "patient",
+   "text": "Amlodipine 5 mg രാവിലെ ഒന്ന്. പിന്നെ Atenolol 50 mg രാത്രി."
+  },
+  {
+   "speaker": "doctor",
+   "text": "നോക്കട്ടെ. BP 158 by 94 ആണ്. Pulse 56 മാത്രമേ ഉള്ളൂ, അത് കുറവാണ്. Weight അറുപത്തിയാറ് കിലോ."
+  },
+  {
+   "speaker": "patient",
+   "text": "അതു പ്രശ്നമാണോ ഡോക്ടറേ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Pulse കുറയാൻ കാരണം Atenolol ആവാം. അതുകൊണ്ട് Atenolol ഇന്നു മുതൽ നിർത്തണം. ഏതെങ്കിലും മരുന്നിനോട് അലർജി ഉണ്ടോ?"
+  },
+  {
+   "speaker": "patient",
+   "text": "ഇല്ല ഡോക്ടറേ, ഒന്നിനോടും ഇല്ല."
+  },
+  {
+   "speaker": "doctor",
+   "text": "ശരി. BP ഇപ്പോഴും control-ൽ അല്ല, ഇത് uncontrolled hypertension ആണ്. Amlodipine 5 mg രാവിലെ ഒരു നേരം തുടരുക. കൂടെ Telmisartan 40 mg, ദിവസം ഒരു നേരം, രാത്രി. രണ്ടും സ്ഥിരമായി കഴിക്കണം."
+  },
+  {
+   "speaker": "patient",
+   "text": "ഉപ്പ് കുറയ്ക്കണോ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "തീർച്ചയായും. അച്ചാറും പപ്പടവും കുറയ്ക്കണം. നെഞ്ചുവേദന വന്നാലോ, ഒരു വശം തളർന്നാലോ, സംസാരം കുഴഞ്ഞാലോ, തലകറങ്ങി വീണാലോ ഉടനെ ആശുപത്രിയിൽ വരണം."
+  },
+  {
+   "speaker": "patient",
+   "text": "ശരി. അടുത്തത് എപ്പോഴാണ്?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "രണ്ടാഴ്ച കഴിഞ്ഞ് വരൂ. വീട്ടിൽ BP നോക്കി എഴുതി കൊണ്ടുവരണം."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "headache",
+   "morning headache"
+  ],
+  "duration": {
+   "value": 10,
+   "unit": "days"
+  },
+  "vitals": {
+   "bp": "158/94",
+   "pulse": 56,
+   "weight_kg": 66
+  },
+  "diagnosis": [
+   "uncontrolled hypertension",
+   "hypertension",
+   "high blood pressure"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "amlodipine",
+     "amlong"
+    ],
+    "dose": "5 mg",
+    "frequency": "OD",
+    "duration_days": null
+   },
+   {
+    "drug": [
+     "telmisartan",
+     "telma"
+    ],
+    "dose": "40 mg",
+    "frequency": "OD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "chest pain"
+   ],
+   [
+    "one-sided weakness",
+    "weakness on one side",
+    "slurred speech",
+    "stroke"
+   ],
+   [
+    "fainting",
+    "syncope",
+    "falling"
+   ]
+  ],
+  "follow_up": [
+   "2 weeks",
+   "two weeks",
+   "after 2 weeks"
+  ],
+  "not_prescribed": [
+   "atenolol"
+  ]
+ },
+ "trap": "Atenolol stopped because of low pulse; weight said in Malayalam words."
+}

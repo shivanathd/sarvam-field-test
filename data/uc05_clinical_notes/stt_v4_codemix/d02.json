@@ -1,0 +1,144 @@
+{
+ "request_id": "20261011_4d50fd5a-7a86-40c5-adbd-86036a995d38",
+ "transcript": "आइए सुनीता जी बैठिए sugar की report लाई हैं। हाँ doctor ये रही। दो हफ्ते से बहुत थकान है और बार-बार पेशाब जाना पड़ता है रात को भी। report में fasting sugar 186 है। यह काफी ज्यादा है। अभी कौन सी दवा ले रही हैं? Metformin पाँच सौ सुबह शाम ले रही हूँ पिछले एक साल से। ठीक है। वजन चौहत्तर kilo है और BP 132 by 84 है। खाने पीने में परहेज हो रहा है। सच बताऊँ तो मिठाई थोड़ी खा लेती हूँ। त्यौहार था। किसी दवा से allergy? हाँ penicillin से मुझे एक बार पूरे शरीर पर दाने हो गए थे। ठीक है note कर लिया आपकी type 2 diabetes अभी control में नहीं है Metformin बढ़ा रहे हैं। अब Metformin 1000 mg सुबह शाम खाने के बाद यह regular चलेगी। साथ में Glimepiride 2 mg नहीं आप पहली बार ले रही हैं तो Glimepiride 1 mg ही सुबह नाश्ते से पहले एक बार ये भी regular। इससे sugar ज्यादा कम तो नहीं हो जाएगी? हो सकती है इसलिए ध्यान रखिए अगर पसीना आए हाथ कांपें चक्कर आए या sugar सत्तर से नीचे जाए तो तुरंत चीनी या glucose लीजिए और हमें दिखाइए। पैर में कोई घाव हो जो भर ना रहा हो तो भी तुरंत आइए। जी और कब दिखाना है? एक महीने बाद HbA1c की report लेकर आइए। ठीक है doctor धन्यवाद।",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "आइए सुनीता जी बैठिए sugar की report लाई हैं।",
+    "start_time_seconds": 0.23,
+    "end_time_seconds": 5.03,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "हाँ doctor ये रही।",
+    "start_time_seconds": 5.85,
+    "end_time_seconds": 7.51,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "दो हफ्ते से बहुत थकान है और बार-बार पेशाब जाना पड़ता है रात को भी।",
+    "start_time_seconds": 8.63,
+    "end_time_seconds": 16.65,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "report में fasting sugar 186 है। यह काफी ज्यादा है। अभी कौन सी दवा ले रही हैं?",
+    "start_time_seconds": 17.27,
+    "end_time_seconds": 26.73,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Metformin पाँच सौ सुबह शाम ले रही हूँ पिछले एक साल से।",
+    "start_time_seconds": 27.51,
+    "end_time_seconds": 32.89,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ठीक है।",
+    "start_time_seconds": 33.63,
+    "end_time_seconds": 34.51,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "वजन चौहत्तर kilo है और BP 132 by 84 है।",
+    "start_time_seconds": 35.55,
+    "end_time_seconds": 41.99,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "खाने पीने में परहेज हो रहा है।",
+    "start_time_seconds": 43.23,
+    "end_time_seconds": 45.07,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "सच बताऊँ तो मिठाई थोड़ी खा लेती हूँ। त्यौहार था।",
+    "start_time_seconds": 45.77,
+    "end_time_seconds": 51.85,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "किसी दवा से allergy?",
+    "start_time_seconds": 52.77,
+    "end_time_seconds": 54.25,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "हाँ penicillin से मुझे एक बार पूरे शरीर पर दाने हो गए थे।",
+    "start_time_seconds": 55.11,
+    "end_time_seconds": 60.73,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "ठीक है note कर लिया आपकी type 2 diabetes अभी control में नहीं है Metformin बढ़ा रहे हैं।",
+    "start_time_seconds": 61.59,
+    "end_time_seconds": 69.67,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "अब Metformin 1000 mg सुबह शाम खाने के बाद यह regular चलेगी।",
+    "start_time_seconds": 70.85,
+    "end_time_seconds": 77.21,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "साथ में Glimepiride 2 mg नहीं आप पहली बार ले रही हैं तो Glimepiride 1 mg ही सुबह नाश्ते से पहले एक बार ये भी regular।",
+    "start_time_seconds": 78.13,
+    "end_time_seconds": 91.75,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "इससे sugar ज्यादा कम तो नहीं हो जाएगी?",
+    "start_time_seconds": 91.75,
+    "end_time_seconds": 94.87,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "हो सकती है इसलिए ध्यान रखिए अगर पसीना आए हाथ कांपें चक्कर आए या sugar सत्तर से नीचे जाए तो तुरंत चीनी या glucose लीजिए और हमें दिखाइए।",
+    "start_time_seconds": 95.55,
+    "end_time_seconds": 110.79,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "पैर में कोई घाव हो जो भर ना रहा हो तो भी तुरंत आइए।",
+    "start_time_seconds": 111.15,
+    "end_time_seconds": 116.33,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "जी और कब दिखाना है?",
+    "start_time_seconds": 116.93,
+    "end_time_seconds": 119.57,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "एक महीने बाद HbA1c की report लेकर आइए।",
+    "start_time_seconds": 120.75,
+    "end_time_seconds": 124.47,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "ठीक है doctor धन्यवाद।",
+    "start_time_seconds": 125.25,
+    "end_time_seconds": 127.11,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "hi-IN",
+ "language_probability": null,
+ "audio_hash": "cbfe6942b2feb2b4d409a9947208e65c",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_4d514db7-38a1-49ad-bc52-10cf0f9dd842",
+  "elapsed_s": 10.87118411064148,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "codemix",
+   "language_code": "hi-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

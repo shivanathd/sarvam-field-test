@@ -1,0 +1,17 @@
+19:41:35 sarvam-30b-local not up; skipping GGUF tokenizer cross-check
+19:41:36 wrote results; avg tax {'sarvam': 1.55, 'qwen3': 5.89, 'gemma4': 1.89, 'gemini': 1.89}
+19:44:08 sarvam-30b-local not up; skipping GGUF tokenizer cross-check
+19:44:11 wrote results; avg tax {'sarvam': 1.55, 'qwen3': 5.89, 'gemma4': 1.89, 'gemini': 1.89}
+20:11:59 wrote results; avg tax {'sarvam': 1.55, 'qwen3': 5.89, 'gemma4': 1.89, 'gemini': 1.89}
+20:13:20 wrote results; avg tax {'sarvam': 1.55, 'qwen3': 5.89, 'gemma4': 1.89, 'gemini': 1.89}
+22:41:48 claude error None
+22:43:02 claude error None
+22:45:33 claude error None
+22:47:30 claude error None
+22:49:02 claude error None
+22:49:02 claude error None
+22:49:02 claude error None
+22:49:02 claude error None
+22:49:58 wrote results; avg tax {'sarvam': 1.55, 'qwen3': 5.89, 'gemma4': 1.89, 'gemini': 1.89, 'openai': 2.1, 'claude': 3.44}
+22:50:34 wrote results; avg tax {'sarvam': 1.55, 'qwen3': 5.89, 'gemma4': 1.89, 'gemini': 1.89, 'openai': 2.1, 'claude': 3.44}
+22:51:06 wrote results; avg tax {'sarvam': 1.55, 'qwen3': 5.89, 'gemma4': 1.89, 'gemini': 1.89, 'openai': 2.1, 'claude': 3.44}

@@ -1,0 +1,119 @@
+{
+ "id": "d38",
+ "pair": "mr-en",
+ "lang": "Marathi",
+ "style": "native",
+ "topic": "hypertension",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "नमस्कार मावशी, बसा. काय होतंय?"
+  },
+  {
+   "speaker": "patient",
+   "text": "डॉक्टर, 4 दिवसांपासून चक्कर येते, डोकं जड वाटतं."
+  },
+  {
+   "speaker": "doctor",
+   "text": "BP तपासतो... 170/104 आहे, खूप जास्त. Pulse अठ्ठ्याहत्तर. Weight 68 kg. सध्या कोणतं औषध घेता?"
+  },
+  {
+   "speaker": "patient",
+   "text": "Amlodipine 5 mg रोज सकाळी."
+  },
+  {
+   "speaker": "doctor",
+   "text": "5 mg ने BP control होत नाहीये. हे uncontrolled hypertension आहे. Amlodipine 10 mg करतो, रोज सकाळी एक."
+  },
+  {
+   "speaker": "patient",
+   "text": "एवढंच?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "नाही, सोबत telmisartan 40 mg पण रोज सकाळी एक. दोन्ही औषधं नियमित, बंद करायची नाहीत. कोणत्या औषधाची allergy आहे का?"
+  },
+  {
+   "speaker": "patient",
+   "text": "नाही, allergy नाही."
+  },
+  {
+   "speaker": "doctor",
+   "text": "मीठ कमी करा. छातीत दुखलं, एका बाजूला हात-पाय कमजोर वाटले, किंवा डोकं असह्य दुखलं तर लगेच emergency मध्ये जा."
+  },
+  {
+   "speaker": "patient",
+   "text": "परत कधी यायचं?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "1 आठवड्यानंतर BP तपासायला या."
+  },
+  {
+   "speaker": "patient",
+   "text": "ठीक आहे."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "giddiness",
+   "dizziness",
+   "heaviness of head"
+  ],
+  "duration": {
+   "value": 4,
+   "unit": "days"
+  },
+  "vitals": {
+   "bp": "170/104",
+   "pulse": 78,
+   "weight_kg": 68
+  },
+  "diagnosis": [
+   "uncontrolled hypertension",
+   "hypertension",
+   "high blood pressure"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "amlodipine"
+    ],
+    "dose": "10 mg",
+    "frequency": "OD",
+    "duration_days": null
+   },
+   {
+    "drug": [
+     "telmisartan"
+    ],
+    "dose": "40 mg",
+    "frequency": "OD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "chest pain"
+   ],
+   [
+    "one-sided weakness",
+    "weakness on one side",
+    "paralysis"
+   ],
+   [
+    "severe headache"
+   ]
+  ],
+  "follow_up": [
+   "1 week",
+   "one week",
+   "7 days"
+  ],
+  "not_prescribed": []
+ },
+ "trap": "Amlodipine increased from current 5 mg to 10 mg (gold is 10 mg); pulse spoken in words."
+}

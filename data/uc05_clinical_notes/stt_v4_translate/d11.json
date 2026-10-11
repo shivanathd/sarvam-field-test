@@ -1,0 +1,132 @@
+{
+ "request_id": "20261011_e014a732-47e2-4b61-b3d3-088c90157044",
+ "transcript": "Fatima, come. Now. Mother of the train. It's been thirty-two weeks, doctor. For three days, I have had a slight headache and swelling in my leg. Do you know the baby's movements well? Yes. It is moving well. It is P 142 by 92. It is a little more. Pulsar 88. 68 kilos. This is gestational hypertension. The BP that comes during pregnancy. Doctor, before the wedding, I was given Telmisartan for my BP. It is at home. Shall I take it? No. Never needed. Telmisartan is harmful to the baby during pregnancy. Instead, Labetalol 100 mg twice a day, morning and night. This should be taken regularly. Okay. I am not allergic to any medicine. Good. Continue taking 500 mg of calcium twice a day. Should I pay attention to anything else? Severe headache, blurred vision, reduced fetal movement, bleeding. If any of these occur, you should immediately come to the labor room. Okay doctor. When next? Come after a week and do a urine protein test.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Fatima, come.",
+    "start_time_seconds": 0.25,
+    "end_time_seconds": 2.01,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Now.",
+    "start_time_seconds": 2.89,
+    "end_time_seconds": 3.73,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Mother of the train.",
+    "start_time_seconds": 3.73,
+    "end_time_seconds": 4.71,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "It's been thirty-two weeks, doctor. For three days, I have had a slight headache and swelling in my leg.",
+    "start_time_seconds": 5.97,
+    "end_time_seconds": 13.95,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Do you know the baby's movements well?",
+    "start_time_seconds": 14.85,
+    "end_time_seconds": 17.85,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Yes. It is moving well.",
+    "start_time_seconds": 18.95,
+    "end_time_seconds": 21.31,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "It is P 142 by 92. It is a little more.",
+    "start_time_seconds": 22.59,
+    "end_time_seconds": 27.83,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Pulsar 88.",
+    "start_time_seconds": 28.95,
+    "end_time_seconds": 30.47,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "68 kilos.",
+    "start_time_seconds": 32.49,
+    "end_time_seconds": 33.47,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "This is gestational hypertension. The BP that comes during pregnancy.",
+    "start_time_seconds": 34.73,
+    "end_time_seconds": 39.71,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor, before the wedding, I was given Telmisartan for my BP. It is at home. Shall I take it?",
+    "start_time_seconds": 40.33,
+    "end_time_seconds": 49.21,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "No. Never needed. Telmisartan is harmful to the baby during pregnancy. Instead, Labetalol 100 mg twice a day, morning and night. This should be taken regularly.",
+    "start_time_seconds": 50.33,
+    "end_time_seconds": 66.71,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Okay. I am not allergic to any medicine.",
+    "start_time_seconds": 67.55,
+    "end_time_seconds": 71.77,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Good. Continue taking 500 mg of calcium twice a day.",
+    "start_time_seconds": 72.67,
+    "end_time_seconds": 78.21,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Should I pay attention to anything else?",
+    "start_time_seconds": 78.91,
+    "end_time_seconds": 81.07,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Severe headache, blurred vision, reduced fetal movement, bleeding. If any of these occur, you should immediately come to the labor room.",
+    "start_time_seconds": 81.59,
+    "end_time_seconds": 92.77,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Okay doctor. When next?",
+    "start_time_seconds": 93.97,
+    "end_time_seconds": 96.77,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Come after a week and do a urine protein test.",
+    "start_time_seconds": 97.63,
+    "end_time_seconds": 101.13,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "ml-IN",
+ "language_probability": null,
+ "audio_hash": "f08e6d8dff94564ec6c33b812fe0b01e",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_d445fe91-d246-4d54-b735-379077281e85",
+  "elapsed_s": 11.030517101287842,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "translate",
+   "language_code": "ml-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

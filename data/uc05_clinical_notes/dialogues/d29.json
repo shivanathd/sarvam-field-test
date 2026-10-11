@@ -1,0 +1,131 @@
+{
+ "id": "d29",
+ "pair": "bn-en",
+ "lang": "Bengali",
+ "style": "native",
+ "topic": "diabetes",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "আসুন। Sugar-এর report এনেছেন?"
+  },
+  {
+   "speaker": "patient",
+   "text": "হ্যাঁ ডাক্তারবাবু। খাওয়ার 2 ঘণ্টা পরে sugar এসেছে 312। গত 3 সপ্তাহ ধরে খুব ক্লান্ত লাগছে।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "আপনি এখন কী কী ওষুধ খাচ্ছেন?"
+  },
+  {
+   "speaker": "patient",
+   "text": "Metformin 1000 mg সকাল-রাত, আর glimepiride 2 mg সকালে।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "BP 140/88, weight 70 kg। আপনার diabetes control-এ নেই, uncontrolled type 2 diabetes। এবার insulin শুরু করতে হবে।"
+  },
+  {
+   "speaker": "patient",
+   "text": "Insulin? সুঁচ ফোটাতে হবে?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "হ্যাঁ, ভয় পাবেন না, pen দিয়ে খুব সহজ। Insulin glargine 10 units রাতে শোয়ার আগে, পেটের চামড়ার নিচে। এটা regular চলবে।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Metformin 1000 mg সকাল-রাত যেমন চলছে চলবে। কিন্তু glimepiride আজ থেকে বন্ধ, ওটা আর খাবেন না।"
+  },
+  {
+   "speaker": "patient",
+   "text": "আমার কোনো ওষুধে allergy নেই। আর কী সাবধানতা নেব?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Sugar 70-এর নিচে নামলে ঘাম হবে, হাত কাঁপবে, মাথা গুলিয়ে যেতে পারে। তখনই চিনি জলে গুলে খাবেন। অজ্ঞান ভাব হলে সঙ্গে সঙ্গে hospital।"
+  },
+  {
+   "speaker": "patient",
+   "text": "আবার কবে আসব?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "2 সপ্তাহ পরে, রোজকার sugar chart লিখে নিয়ে আসবেন।"
+  },
+  {
+   "speaker": "patient",
+   "text": "আচ্ছা, তাই করব।"
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "tiredness",
+   "fatigue",
+   "high sugar",
+   "high blood sugar"
+  ],
+  "duration": {
+   "value": 3,
+   "unit": "weeks"
+  },
+  "vitals": {
+   "blood_sugar": 312,
+   "bp": "140/88",
+   "weight_kg": 70
+  },
+  "diagnosis": [
+   "uncontrolled type 2 diabetes",
+   "type 2 diabetes",
+   "uncontrolled diabetes",
+   "diabetes mellitus"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "insulin glargine",
+     "glargine"
+    ],
+    "dose": "10 units",
+    "frequency": "HS",
+    "duration_days": null
+   },
+   {
+    "drug": [
+     "metformin"
+    ],
+    "dose": "1000 mg",
+    "frequency": "BD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "dizziness",
+    "sweating",
+    "shaking",
+    "low sugar",
+    "hypoglycaemia",
+    "hypoglycemia",
+    "sugar below 70"
+   ],
+   [
+    "confusion",
+    "fainting",
+    "unconscious",
+    "drowsiness"
+   ]
+  ],
+  "follow_up": [
+   "2 weeks",
+   "two weeks"
+  ],
+  "not_prescribed": [
+   "glimepiride"
+  ]
+ },
+ "trap": "Glimepiride 2 mg is stopped; must not appear as prescribed."
+}

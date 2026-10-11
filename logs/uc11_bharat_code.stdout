@@ -1,0 +1,35 @@
+22:41:52 code: 23 items on pool sarvam
+22:45:32 sarvam-105b-think-t0 35:hinglish solved_at 3
+22:45:44 sarvam-105b-think-t0 36:en solved_at 1
+22:45:47 sarvam-105b-think-t0 35:ta solved_at 3
+22:45:55 sarvam-105b-think-t0 35:hi solved_at None
+22:46:08 sarvam-105b-think-t0 36:ta solved_at 1
+22:46:23 sarvam-105b-think-t0 36:hi solved_at 1
+22:46:24 sarvam-105b-think-t0 36:hinglish solved_at 1
+22:46:53 sarvam-105b-think-t0 37:hi solved_at 1
+22:47:06 sarvam-105b-think-t0 37:ta solved_at 1
+22:47:24 sarvam-105b-think-t0 37:hinglish solved_at 1
+22:47:32 sarvam-105b-think-t0 38:en solved_at 2
+22:47:48 sarvam-105b-think-t0 38:ta solved_at 1
+22:47:49 sarvam-105b-think-t0 38:hi solved_at 1
+22:48:00 sarvam-105b-think-t0 39:en solved_at 1
+22:48:01 sarvam-105b-think-t0 37:en solved_at 2
+22:48:03 sarvam-105b-think-t0 38:hinglish solved_at 1
+22:48:06 sarvam-105b-think-t0 39:ta solved_at 1
+22:48:06 sarvam-105b-think-t0 39:hi solved_at 1
+22:48:10 sarvam-105b-think-t0 39:hinglish solved_at 1
+22:50:59 sarvam-105b-think-t0 40:ta solved_at 3
+22:51:01 sarvam-105b-think-t0 40:en solved_at None
+22:51:59 sarvam-105b-think-t0 40:hi solved_at None
+22:54:10 sarvam-105b-think-t0 40:hinglish solved_at 3
+Traceback (most recent call last):
+  File "~/sarvam-bench/suites/uc11_bharat_code/run.py", line 152, in <module>
+    main()
+    ~~~~^^
+  File "~/sarvam-bench/suites/uc11_bharat_code/run.py", line 148, in main
+    report.build()
+    ~~~~~~~~~~~~^^
+  File "~/sarvam-bench/suites/uc11_bharat_code/report.py", line 119, in build
+    import narrative  # hand-written interpretation; numbers are computed from raw, not typed in
+                       ~~~~~^~~~~
+AttributeError: module 'narrative' has no attribute 'FINDINGS'

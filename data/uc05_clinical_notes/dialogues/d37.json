@@ -1,0 +1,126 @@
+{
+ "id": "d37",
+ "pair": "mr-en",
+ "lang": "Marathi",
+ "style": "native",
+ "topic": "diabetes",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "या काका, बसा. काय होतंय?"
+  },
+  {
+   "speaker": "patient",
+   "text": "डॉक्टर, 2 महिन्यांपासून पायाला मुंग्या येतात, तळपाय बधिर वाटतात. रात्री जळजळ होते."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Random sugar 245 आली आहे, BP 138/86, weight 76 kg. Metformin चालू आहे ना?"
+  },
+  {
+   "speaker": "patient",
+   "text": "हो, metformin 1000 mg सकाळ-संध्याकाळ घेतो. आणि पाय दुखतात म्हणून diclofenac ची गोळी घेतो कधी कधी."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Diclofenac बंद करा, किडनीसाठी चांगलं नाही. तुम्हाला diabetes मुळे नसांवर परिणाम झालाय, diabetic peripheral neuropathy."
+  },
+  {
+   "speaker": "patient",
+   "text": "मला कोणत्या औषधाची allergy नाही."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Metformin 1000 mg सकाळ-रात्र जसं चालू आहे तसं continue. Pregabalin 75 mg रात्री झोपताना एक, 1 महिना. आणि methylcobalamin 1500 mcg रोज सकाळी एक, 1 महिना."
+  },
+  {
+   "speaker": "patient",
+   "text": "पायाची काळजी कशी घ्यायची?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "रोज पाय तपासा, अनवाणी चालू नका. पायाला जखम झाली, फोड आला तर लगेच दाखवा. Pregabalin मुळे चक्कर आली तरी सांगा."
+  },
+  {
+   "speaker": "patient",
+   "text": "पुढची visit कधी?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "1 महिन्याने या, fasting sugar आणि HbA1c घेऊन."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "tingling",
+   "numbness",
+   "burning feet",
+   "tingling in feet"
+  ],
+  "duration": {
+   "value": 2,
+   "unit": "months"
+  },
+  "vitals": {
+   "blood_sugar": 245,
+   "bp": "138/86",
+   "weight_kg": 76
+  },
+  "diagnosis": [
+   "diabetic peripheral neuropathy",
+   "diabetic neuropathy",
+   "peripheral neuropathy"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "metformin"
+    ],
+    "dose": "1000 mg",
+    "frequency": "BD",
+    "duration_days": null
+   },
+   {
+    "drug": [
+     "pregabalin"
+    ],
+    "dose": "75 mg",
+    "frequency": "HS",
+    "duration_days": 30
+   },
+   {
+    "drug": [
+     "methylcobalamin",
+     "mecobalamin",
+     "vitamin b12"
+    ],
+    "dose": "1500 mcg",
+    "frequency": "OD",
+    "duration_days": 30
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "foot wound",
+    "foot ulcer",
+    "blister",
+    "wound"
+   ],
+   [
+    "dizziness",
+    "giddiness"
+   ]
+  ],
+  "follow_up": [
+   "1 month",
+   "one month"
+  ],
+  "not_prescribed": [
+   "diclofenac"
+  ]
+ },
+ "trap": "Self-taken diclofenac is stopped, not prescribed."
+}

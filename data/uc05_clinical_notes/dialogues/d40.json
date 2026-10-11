@@ -1,0 +1,126 @@
+{
+ "id": "d40",
+ "pair": "mr-en",
+ "lang": "Marathi",
+ "style": "native",
+ "topic": "paediatrics",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "attendant",
+   "text": "डॉक्टर, माझा मुलगा 3 वर्षांचा आहे. 3 दिवसांपासून खोकला आहे आणि छातीतून घरघर आवाज येतो."
+  },
+  {
+   "speaker": "doctor",
+   "text": "ताप आहे का?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "नाही, ताप नाही."
+  },
+  {
+   "speaker": "doctor",
+   "text": "SpO2 95 आहे, pulse 118, weight 14 kg. छातीत wheeze ऐकू येतंय. हे viral wheeze आहे, म्हणजे श्वासनलिका आकुंचन पावली आहे."
+  },
+  {
+   "speaker": "attendant",
+   "text": "डॉक्टर, शेजारच्यांनी codeine असलेलं cough syrup द्यायला सांगितलं होतं, देऊ का?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "नाही, लहान मुलांना codeine अजिबात द्यायचं नाही. ते धोकादायक आहे."
+  },
+  {
+   "speaker": "attendant",
+   "text": "त्याला कोणत्याही औषधाची allergy नाही."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Levolin syrup, म्हणजे levosalbutamol, 2.5 ml दिवसातून तीन वेळा, 5 दिवस. आणि budesonide nebulisation 0.5 mg, सकाळी आणि रात्री, 5 दिवस."
+  },
+  {
+   "speaker": "attendant",
+   "text": "Nebulizer घरी आहे आमच्याकडे."
+  },
+  {
+   "speaker": "doctor",
+   "text": "छान. पण श्वास खूप जलद झाला, बरगड्या आत ओढल्या जात असतील, ओठ निळे पडले किंवा तो काही खात-पीत नसेल तर लगेच hospital ला या."
+  },
+  {
+   "speaker": "attendant",
+   "text": "पुन्हा कधी आणायचं?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "3 दिवसांनी परत दाखवा."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "cough",
+   "wheezing",
+   "wheeze"
+  ],
+  "duration": {
+   "value": 3,
+   "unit": "days"
+  },
+  "vitals": {
+   "spo2": 95,
+   "pulse": 118,
+   "weight_kg": 14
+  },
+  "diagnosis": [
+   "viral wheeze",
+   "wheezing",
+   "bronchospasm",
+   "wheeze associated lower respiratory infection"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "levosalbutamol",
+     "levolin"
+    ],
+    "dose": "2.5 ml",
+    "frequency": "TDS",
+    "duration_days": 5
+   },
+   {
+    "drug": [
+     "budesonide"
+    ],
+    "dose": "0.5 mg",
+    "frequency": "BD",
+    "duration_days": 5
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "fast breathing",
+    "rapid breathing",
+    "chest indrawing"
+   ],
+   [
+    "blue lips",
+    "bluish lips",
+    "cyanosis"
+   ],
+   [
+    "not feeding",
+    "not eating",
+    "poor feeding"
+   ]
+  ],
+  "follow_up": [
+   "3 days",
+   "after 3 days"
+  ],
+  "not_prescribed": [
+   "codeine"
+  ]
+ },
+ "trap": "Neighbour suggests codeine cough syrup; doctor refuses."
+}

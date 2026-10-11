@@ -1,0 +1,141 @@
+{
+ "id": "d02",
+ "pair": "hi-en",
+ "lang": "Hindi",
+ "style": "native",
+ "topic": "diabetes",
+ "audio_subset": true,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "आइए सुनीता जी, बैठिए। Sugar की report लाई हैं?"
+  },
+  {
+   "speaker": "patient",
+   "text": "हाँ डॉक्टर, ये रही। दो हफ्ते से बहुत थकान है और बार-बार पेशाब जाना पड़ता है, रात को भी।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Report में fasting sugar एक सौ छियासी है, यह काफी ज़्यादा है। अभी कौन सी दवा ले रही हैं?"
+  },
+  {
+   "speaker": "patient",
+   "text": "Metformin 500 सुबह-शाम ले रही हूँ, पिछले एक साल से।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ठीक है। वज़न 74 kilo है और BP 132 by 84 है। खाने-पीने में परहेज़ हो रहा है?"
+  },
+  {
+   "speaker": "patient",
+   "text": "सच बताऊँ तो मिठाई थोड़ी खा लेती हूँ, त्योहार था।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "किसी दवा से allergy?"
+  },
+  {
+   "speaker": "patient",
+   "text": "हाँ, Penicillin से मुझे एक बार पूरे शरीर पर दाने हो गए थे।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ठीक है, नोट कर लिया। आपकी type 2 diabetes अभी control में नहीं है। Metformin बढ़ा रहे हैं, अब Metformin 1000 mg सुबह-शाम खाने के बाद, यह regular चलेगी।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "साथ में Glimepiride 2 mg... नहीं, आप पहली बार ले रही हैं, तो Glimepiride 1 mg ही, सुबह नाश्ते से पहले एक बार, यह भी regular।"
+  },
+  {
+   "speaker": "patient",
+   "text": "इससे sugar ज़्यादा कम तो नहीं हो जाएगी?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "हो सकती है, इसलिए ध्यान रखिए। अगर पसीना आए, हाथ काँपें, चक्कर आए या sugar सत्तर से नीचे जाए, तो तुरंत चीनी या glucose लीजिए और हमें दिखाइए। पैर में कोई घाव हो जो भर न रहा हो, तो भी तुरंत आइए।"
+  },
+  {
+   "speaker": "patient",
+   "text": "जी। और कब दिखाना है?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "एक महीने बाद HbA1c की report लेकर आइए।"
+  },
+  {
+   "speaker": "patient",
+   "text": "ठीक है डॉक्टर, धन्यवाद।"
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "high blood sugar",
+   "frequent urination",
+   "fatigue",
+   "tiredness",
+   "uncontrolled sugar"
+  ],
+  "duration": {
+   "value": 2,
+   "unit": "weeks"
+  },
+  "vitals": {
+   "blood_sugar": 186,
+   "weight_kg": 74,
+   "bp": "132/84"
+  },
+  "diagnosis": [
+   "type 2 diabetes",
+   "uncontrolled diabetes",
+   "diabetes mellitus",
+   "t2dm"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "metformin",
+     "glycomet"
+    ],
+    "dose": "1000 mg",
+    "frequency": "BD",
+    "duration_days": null
+   },
+   {
+    "drug": [
+     "glimepiride",
+     "amaryl"
+    ],
+    "dose": "1 mg",
+    "frequency": "OD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [
+   [
+    "penicillin"
+   ]
+  ],
+  "red_flags": [
+   [
+    "low sugar",
+    "hypoglycemia",
+    "hypoglycaemia",
+    "sweating",
+    "shaking"
+   ],
+   [
+    "foot wound",
+    "non-healing wound",
+    "foot ulcer"
+   ]
+  ],
+  "follow_up": [
+   "1 month",
+   "one month",
+   "4 weeks"
+  ],
+  "not_prescribed": []
+ },
+ "trap": "Glimepiride first said 2 mg then corrected to 1 mg; old Metformin 500 increased to 1000."
+}

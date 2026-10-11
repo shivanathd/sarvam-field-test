@@ -1,0 +1,144 @@
+{
+ "request_id": "20261011_c29ba415-9eeb-43ef-8e83-be9843cbdda7",
+ "transcript": "Come Sunita ji, please sit. Have you brought the sugar report? Yes doctor, here it is. I have been very tired for two weeks and I have to urinate frequently, even at night. The report shows fasting sugar is one hundred eighty-six. This is quite high. Which medicine are you taking right now? I have been taking Metformin 500 in the morning and evening for the past one year. Okay. The weight is 74 kg and the BP is 132 by 84. Are you having any restrictions on eating and drinking? To tell you the truth, I eat a little bit of sweets. It was a festival. Allergy to any medicine? Yes, I once got rashes all over my body from penicillin. Okay. I have noted it down. Your type 2 diabetes is not under control right now. We are increasing the Metformin. Now Metformin 1000 mg in the morning and evening after meals. This will continue regularly. Along with that, not Glimepiride 2mg. If you are taking it for the first time, then Glimepiride 1mg only. Once in the morning before breakfast. This also regularly. Will this not lower the sugar too much? It can happen. So keep in mind, if you sweat, your hands tremble, you feel dizzy, or your sugar goes below 70, then immediately take sugar or glucose and show it to us. If there is any wound in the leg that is not healing, then come immediately. Yes, and when do I have to show it? Bring the HbA1c report after one month. Okay doctor, thank you.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Come Sunita ji, please sit. Have you brought the sugar report?",
+    "start_time_seconds": 0.23,
+    "end_time_seconds": 5.03,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Yes doctor, here it is.",
+    "start_time_seconds": 5.85,
+    "end_time_seconds": 7.51,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "I have been very tired for two weeks and I have to urinate frequently, even at night.",
+    "start_time_seconds": 8.63,
+    "end_time_seconds": 16.65,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "The report shows fasting sugar is one hundred eighty-six. This is quite high. Which medicine are you taking right now?",
+    "start_time_seconds": 17.27,
+    "end_time_seconds": 26.73,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "I have been taking Metformin 500 in the morning and evening for the past one year.",
+    "start_time_seconds": 27.51,
+    "end_time_seconds": 32.89,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Okay.",
+    "start_time_seconds": 33.63,
+    "end_time_seconds": 34.51,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "The weight is 74 kg and the BP is 132 by 84.",
+    "start_time_seconds": 35.55,
+    "end_time_seconds": 41.99,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Are you having any restrictions on eating and drinking?",
+    "start_time_seconds": 43.23,
+    "end_time_seconds": 45.07,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "To tell you the truth, I eat a little bit of sweets. It was a festival.",
+    "start_time_seconds": 45.77,
+    "end_time_seconds": 51.85,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Allergy to any medicine?",
+    "start_time_seconds": 52.77,
+    "end_time_seconds": 54.25,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Yes, I once got rashes all over my body from penicillin.",
+    "start_time_seconds": 55.11,
+    "end_time_seconds": 60.73,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Okay. I have noted it down. Your type 2 diabetes is not under control right now. We are increasing the Metformin.",
+    "start_time_seconds": 61.59,
+    "end_time_seconds": 69.67,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Now Metformin 1000 mg in the morning and evening after meals. This will continue regularly.",
+    "start_time_seconds": 70.85,
+    "end_time_seconds": 77.21,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Along with that, not Glimepiride 2mg. If you are taking it for the first time, then Glimepiride 1mg only. Once in the morning before breakfast. This also regularly.",
+    "start_time_seconds": 78.13,
+    "end_time_seconds": 91.75,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Will this not lower the sugar too much?",
+    "start_time_seconds": 91.75,
+    "end_time_seconds": 94.87,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "It can happen. So keep in mind, if you sweat, your hands tremble, you feel dizzy, or your sugar goes below 70, then immediately take sugar or glucose and show it to us.",
+    "start_time_seconds": 95.55,
+    "end_time_seconds": 110.79,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "If there is any wound in the leg that is not healing, then come immediately.",
+    "start_time_seconds": 111.15,
+    "end_time_seconds": 116.33,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Yes, and when do I have to show it?",
+    "start_time_seconds": 116.93,
+    "end_time_seconds": 119.57,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Bring the HbA1c report after one month.",
+    "start_time_seconds": 120.75,
+    "end_time_seconds": 124.47,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay doctor, thank you.",
+    "start_time_seconds": 125.25,
+    "end_time_seconds": 127.11,
+    "speaker_id": "1"
+   }
+  ]
+ },
+ "language_code": "hi-IN",
+ "language_probability": null,
+ "audio_hash": "cbfe6942b2feb2b4d409a9947208e65c",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_6acc3b5f-a69e-476b-8fe5-4a2eeb35c280",
+  "elapsed_s": 10.91251802444458,
+  "params": {
+   "model": "saaras:v4",
+   "mode": "translate",
+   "language_code": "hi-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

@@ -1,0 +1,120 @@
+{
+ "request_id": "20261011_bb8b4221-07da-40e3-8e7e-c66468dc095a",
+ "transcript": "Yes, sit. What is the problem? Doctor, I have been having to go to the toilet frequently for a month. I also wake up three or four times at night. Is the sugar checked? Yes, my sugar level is 168 on an empty stomach. Fasting sugar is 168, which means it's high. Your weight is seventy-two kilos, BP is one hundred twenty-eight by eighty-two. You have type 2 diabetes. I give Metformin 500 mg. One each in the morning and at night after meals, and I also start Glymepiride along with it. Doctor, I forgot to mention one thing, I have an allergy to sulfa medicines. I had rashes on my body. Okay, you said it. Then don't give lipolytes. Just keep Metformin 500 milligram morning and night. This medicine should be taken regularly, don't stop it. What else to do? Eat half a serving of rice every day. Eat less jaggery. If you feel dizzy and sweat a lot, then your sugar level must have decreased. Eat sugar immediately. If there is a wound on your foot and it is not healing, then show it immediately. When to come again? Get the fasting sugar and HbA1c report after one month. Okay, Doctor.",
+ "timestamps": null,
+ "diarized_transcript": {
+  "entries": [
+   {
+    "transcript": "Yes, sit.",
+    "start_time_seconds": 0.25,
+    "end_time_seconds": 1.47,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "What is the problem?",
+    "start_time_seconds": 2.51,
+    "end_time_seconds": 3.41,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor, I have been having to go to the toilet frequently for a month. I also wake up three or four times at night.",
+    "start_time_seconds": 4.39,
+    "end_time_seconds": 13.49,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Is the sugar checked?",
+    "start_time_seconds": 14.23,
+    "end_time_seconds": 15.53,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Yes, my sugar level is 168 on an empty stomach.",
+    "start_time_seconds": 16.19,
+    "end_time_seconds": 21.01,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Fasting sugar is 168, which means it's high.",
+    "start_time_seconds": 22.11,
+    "end_time_seconds": 25.65,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Your weight is seventy-two kilos, BP is one hundred twenty-eight by eighty-two.",
+    "start_time_seconds": 26.89,
+    "end_time_seconds": 32.03,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "You have type 2 diabetes.",
+    "start_time_seconds": 33.73,
+    "end_time_seconds": 36.19,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "I give Metformin 500 mg. One each in the morning and at night after meals, and I also start Glymepiride along with it.",
+    "start_time_seconds": 37.27,
+    "end_time_seconds": 46.43,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Doctor, I forgot to mention one thing, I have an allergy to sulfa medicines. I had rashes on my body.",
+    "start_time_seconds": 47.01,
+    "end_time_seconds": 55.85,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Okay, you said it. Then don't give lipolytes. Just keep Metformin 500 milligram morning and night. This medicine should be taken regularly, don't stop it.",
+    "start_time_seconds": 57.11,
+    "end_time_seconds": 69.79,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "What else to do?",
+    "start_time_seconds": 70.51,
+    "end_time_seconds": 71.89,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Eat half a serving of rice every day. Eat less jaggery. If you feel dizzy and sweat a lot, then your sugar level must have decreased. Eat sugar immediately. If there is a wound on your foot and it is not healing, then show it immediately.",
+    "start_time_seconds": 72.93,
+    "end_time_seconds": 87.61,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "When to come again?",
+    "start_time_seconds": 88.53,
+    "end_time_seconds": 89.89,
+    "speaker_id": "0"
+   },
+   {
+    "transcript": "Get the fasting sugar and HbA1c report after one month.",
+    "start_time_seconds": 90.31,
+    "end_time_seconds": 95.87,
+    "speaker_id": "1"
+   },
+   {
+    "transcript": "Okay, Doctor.",
+    "start_time_seconds": 96.75,
+    "end_time_seconds": 97.87,
+    "speaker_id": "0"
+   }
+  ]
+ },
+ "language_code": "mr-IN",
+ "language_probability": null,
+ "audio_hash": "65e49787eb10cd2e9ffe110db227b54f",
+ "audio_mime": "audio/wav",
+ "_job": {
+  "job_id": "20261011_65017e2b-6d35-4c9d-912b-c4434de62436",
+  "elapsed_s": 11.199741125106812,
+  "params": {
+   "model": "saaras:v3",
+   "mode": "translate",
+   "language_code": "mr-IN",
+   "with_diarization": true,
+   "num_speakers": 2
+  }
+ }
+}

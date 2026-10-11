@@ -1,0 +1,140 @@
+{
+ "id": "d26",
+ "pair": "bn-en",
+ "lang": "Bengali",
+ "style": "native",
+ "topic": "diabetes",
+ "audio_subset": true,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "আসুন, বসুন। আপনার নাম আর বয়স?"
+  },
+  {
+   "speaker": "patient",
+   "text": "আমার নাম সুবীর মণ্ডল, বয়স 52।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "বলুন, কী অসুবিধা?"
+  },
+  {
+   "speaker": "patient",
+   "text": "গত 2 মাস ধরে খুব জল তেষ্টা পায়, রাতে বারবার বাথরুমে যেতে হয়। শরীরও দুর্বল লাগে।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Sugar test করিয়েছেন?"
+  },
+  {
+   "speaker": "patient",
+   "text": "হ্যাঁ, এই যে report। খালি পেটে sugar এসেছে 186।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "হুঁ, fasting sugar 186, এটা বেশ বেশি। আপনার weight 78 kg, BP 134/84। বাড়িতে কারও diabetes আছে?"
+  },
+  {
+   "speaker": "patient",
+   "text": "হ্যাঁ, মায়ের ছিল। আর কোনো ওষুধে আমার allergy নেই।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "আপনার type 2 diabetes হয়েছে। Metformin 500 mg দিচ্ছি, সকাল-রাত... না দাঁড়ান, sugar যেহেতু বেশি, metformin 1000 mg করেই দিই, সকালে আর রাতে খাবারের পরে একটা করে। এটা regular চলবে।"
+  },
+  {
+   "speaker": "patient",
+   "text": "শুধু এটাই?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "আর glimepiride 1 mg, সকালে breakfast-এর আগে একটা, এটাও continue করবেন।"
+  },
+  {
+   "speaker": "patient",
+   "text": "ওষুধ খেয়ে কোনো সমস্যা হলে?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "যদি হঠাৎ মাথা ঘোরে, খুব ঘাম হয়, হাত-পা কাঁপে, তাহলে বুঝবেন sugar কমে গেছে, সঙ্গে সঙ্গে চিনি খাবেন আর আমাকে জানাবেন। আর পায়ে কোনো ঘা হলে ফেলে রাখবেন না।"
+  },
+  {
+   "speaker": "patient",
+   "text": "আচ্ছা। আবার কবে দেখাব?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "1 মাস পরে আসবেন, HbA1c আর fasting sugar test করিয়ে।"
+  },
+  {
+   "speaker": "patient",
+   "text": "ঠিক আছে ডাক্তারবাবু।"
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "excessive thirst",
+   "increased thirst",
+   "frequent urination",
+   "polyuria",
+   "polydipsia"
+  ],
+  "duration": {
+   "value": 2,
+   "unit": "months"
+  },
+  "vitals": {
+   "bp": "134/84",
+   "weight_kg": 78,
+   "blood_sugar": 186
+  },
+  "diagnosis": [
+   "type 2 diabetes",
+   "type 2 diabetes mellitus",
+   "t2dm",
+   "diabetes mellitus"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "metformin"
+    ],
+    "dose": "1000 mg",
+    "frequency": "BD",
+    "duration_days": null
+   },
+   {
+    "drug": [
+     "glimepiride"
+    ],
+    "dose": "1 mg",
+    "frequency": "OD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "dizziness",
+    "sweating",
+    "shaking",
+    "low sugar",
+    "hypoglycaemia",
+    "hypoglycemia"
+   ],
+   [
+    "foot wound",
+    "wound on foot",
+    "foot ulcer"
+   ]
+  ],
+  "follow_up": [
+   "1 month",
+   "one month",
+   "4 weeks"
+  ],
+  "not_prescribed": []
+ },
+ "trap": "Metformin dose corrected mid-sentence from 500 mg to 1000 mg."
+}

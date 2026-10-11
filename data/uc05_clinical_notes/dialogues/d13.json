@@ -1,0 +1,137 @@
+{
+ "id": "d13",
+ "pair": "ml-en",
+ "lang": "Malayalam",
+ "style": "native",
+ "topic": "paediatrics",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "മോളുടെ പേരെന്താ? എന്തു പറ്റി?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "അമ്മു, ആറു വയസ്സ്. രണ്ടു ദിവസമായി ചെവിവേദനയും പനിയും. രാത്രി ഉറങ്ങുന്നില്ല, കരയുകയാണ്."
+  },
+  {
+   "speaker": "doctor",
+   "text": "ചെവിയിൽ നിന്ന് എന്തെങ്കിലും ഒലിക്കുന്നുണ്ടോ?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "ഇല്ല ഡോക്ടറേ."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Temperature 101 ആണ്, pulse 110, weight 20 kilo. വലതു ചെവിയുടെ ear drum ചുവന്നു വീർത്തിരിക്കുന്നു. ഇത് acute otitis media ആണ്, നടുക്കാതിലെ infection."
+  },
+  {
+   "speaker": "attendant",
+   "text": "Medical shop-ൽ Ciplox ear drops കിട്ടും എന്ന് പറഞ്ഞു. അത് ഒഴിക്കട്ടെ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "വേണ്ട, ഇതിന് ear drops ആവശ്യമില്ല. ചെവിയിൽ എണ്ണയും ഒഴിക്കരുത്. മോൾക്ക് ഏതെങ്കിലും മരുന്നിനോട് അലർജി ഉണ്ടോ?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "ഇല്ല, ഇതുവരെ ഒന്നും ഇല്ല."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Amoxicillin syrup, 250 mg per 5 ml ഉള്ളത്, 7.5 ml, ദിവസം മൂന്നു നേരം, ഏഴു ദിവസം. Course മുഴുവൻ കൊടുക്കണം."
+  },
+  {
+   "speaker": "doctor",
+   "text": "പനിക്കും വേദനയ്ക്കും Paracetamol syrup 6 ml, ആവശ്യമുള്ളപ്പോൾ മാത്രം, ദിവസം നാലു തവണയിൽ കൂടരുത്, മൂന്നു ദിവസം."
+  },
+  {
+   "speaker": "attendant",
+   "text": "കുളിപ്പിക്കാമോ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "കുളിപ്പിക്കാം, ചെവിയിൽ വെള്ളം കയറാതെ നോക്കണം. ചെവിയിൽ നിന്ന് പഴുപ്പ് ഒലിച്ചാലോ, ചെവിയുടെ പിന്നിൽ നീര് വന്നാലോ, കഴുത്ത് വളയ്ക്കാൻ പറ്റാതായാലോ ഉടനെ കൊണ്ടുവരണം."
+  },
+  {
+   "speaker": "attendant",
+   "text": "ശരി. പിന്നെ എപ്പോൾ കാണിക്കണം?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ഒരാഴ്ച കഴിഞ്ഞ് കാണിക്കണം."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "ear pain",
+   "earache",
+   "fever"
+  ],
+  "duration": {
+   "value": 2,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 101,
+   "pulse": 110,
+   "weight_kg": 20
+  },
+  "diagnosis": [
+   "acute otitis media",
+   "otitis media",
+   "middle ear infection",
+   "aom"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "amoxicillin",
+     "mox"
+    ],
+    "dose": "7.5 ml",
+    "frequency": "TDS",
+    "duration_days": 7
+   },
+   {
+    "drug": [
+     "paracetamol",
+     "calpol"
+    ],
+    "dose": "6 ml",
+    "frequency": "SOS",
+    "duration_days": 3
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "ear discharge",
+    "pus from ear",
+    "discharge"
+   ],
+   [
+    "swelling behind ear",
+    "swelling behind the ear"
+   ],
+   [
+    "neck stiffness",
+    "stiff neck"
+   ]
+  ],
+  "follow_up": [
+   "1 week",
+   "one week",
+   "after 1 week",
+   "7 days"
+  ],
+  "not_prescribed": [
+   "ciprofloxacin ear drops",
+   "ciplox",
+   "ciprofloxacin"
+  ]
+ },
+ "trap": "Parent asks for Ciplox ear drops; refused."
+}

@@ -1,0 +1,130 @@
+{
+ "id": "d25",
+ "pair": "bn-en",
+ "lang": "Bengali",
+ "style": "native",
+ "topic": "fever",
+ "audio_subset": true,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "নমস্কার, বসুন। কী সমস্যা হচ্ছে বলুন?"
+  },
+  {
+   "speaker": "patient",
+   "text": "ডাক্তারবাবু, তিন দিন ধরে খুব জ্বর। সারা গায়ে ব্যথা, মাথাও ধরে আছে।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "জ্বর কত উঠছে? Thermometer-এ মেপেছেন?"
+  },
+  {
+   "speaker": "patient",
+   "text": "কাল রাতে 102 পর্যন্ত উঠেছিল। এখনও কোনো ওষুধ খাইনি।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ঠিক আছে। এখন আপনার temperature দেখছি 101.4, pulse 96, BP 118/76। কাশি, বমি বা পাতলা পায়খানা আছে?"
+  },
+  {
+   "speaker": "patient",
+   "text": "না, শুধু জ্বর আর গা-হাত-পা ব্যথা। একটু গলা খুসখুস করছে।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "কোনো ওষুধে allergy আছে?"
+  },
+  {
+   "speaker": "patient",
+   "text": "না, কোনো allergy নেই। ডাক্তারবাবু, একটা antibiotic দিয়ে দিন না, azithromycin খেলে তাড়াতাড়ি সেরে যাবে শুনেছি।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "না, এটা viral fever মনে হচ্ছে। এতে antibiotic লাগে না, azithromycin খেলে কোনো লাভ হবে না, উল্টে ক্ষতি হতে পারে।"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Paracetamol 650 mg দিচ্ছি, Dolo 650, দিনে তিনবার খাবার পরে, 3 দিন। আর গলার জন্য cetirizine 10 mg রাতে শোয়ার আগে একটা, 5 দিন।"
+  },
+  {
+   "speaker": "patient",
+   "text": "ঠিক আছে। আর কিছু খেয়াল রাখতে হবে?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "প্রচুর জল খাবেন। যদি শ্বাসকষ্ট হয়, বা মাড়ি থেকে রক্ত পড়ে, বা গায়ে লাল লাল rash বেরোয়, সঙ্গে সঙ্গে চলে আসবেন।"
+  },
+  {
+   "speaker": "patient",
+   "text": "আবার কবে আসব?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "3 দিন পরে আসবেন, CBC test-এর report নিয়ে।"
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "fever",
+   "body ache"
+  ],
+  "duration": {
+   "value": 3,
+   "unit": "days"
+  },
+  "vitals": {
+   "bp": "118/76",
+   "pulse": 96,
+   "temp_f": 101.4
+  },
+  "diagnosis": [
+   "viral fever",
+   "viral pyrexia"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "paracetamol",
+     "dolo 650",
+     "dolo"
+    ],
+    "dose": "650 mg",
+    "frequency": "TDS",
+    "duration_days": 3
+   },
+   {
+    "drug": [
+     "cetirizine"
+    ],
+    "dose": "10 mg",
+    "frequency": "HS",
+    "duration_days": 5
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "breathlessness",
+    "difficulty breathing",
+    "shortness of breath"
+   ],
+   [
+    "bleeding gums",
+    "gum bleeding",
+    "bleeding"
+   ],
+   [
+    "rash"
+   ]
+  ],
+  "follow_up": [
+   "3 days",
+   "after 3 days"
+  ],
+  "not_prescribed": [
+   "azithromycin"
+  ]
+ },
+ "trap": "Patient asks for azithromycin; doctor refuses."
+}

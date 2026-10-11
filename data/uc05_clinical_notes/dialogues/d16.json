@@ -1,0 +1,125 @@
+{
+ "id": "d16",
+ "pair": "ml-en",
+ "lang": "Malayalam",
+ "style": "native",
+ "topic": "paediatrics",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "വരൂ, കുഞ്ഞിന് എന്തു പറ്റി?"
+  },
+  {
+   "speaker": "attendant",
+   "text": "ആദി, മൂന്നു വയസ്സ്. മൂന്നു ദിവസമായി പനിയും തൊണ്ടവേദനയും. ഒന്നും കഴിക്കുന്നില്ല."
+  },
+  {
+   "speaker": "doctor",
+   "text": "വായ തുറക്ക് മോനേ... Tonsils നന്നായി വീർത്തിട്ടുണ്ട്, വെള്ള പാടുകളും ഉണ്ട്. Temperature 101.6, pulse 124, weight 14 kilo. ഇത് acute tonsillitis ആണ്."
+  },
+  {
+   "speaker": "attendant",
+   "text": "മരുന്നിനോട് അലർജി ഒന്നും ഇല്ല ഡോക്ടറേ."
+  },
+  {
+   "speaker": "doctor",
+   "text": "ശരി. Amoxicillin syrup, 250 mg per 5 ml ഉള്ളത്, 5 ml, ദിവസം മൂന്നു നേരം, പത്തു ദിവസം. പനി മാറിയാലും പത്തു ദിവസം മുഴുവൻ കൊടുക്കണം."
+  },
+  {
+   "speaker": "doctor",
+   "text": "പനിക്ക് Paracetamol syrup 5 ml... അല്ല, ആദിക്ക് 14 kilo അല്ലേ, 4 ml മതി. ആവശ്യമുള്ളപ്പോൾ മാത്രം, മൂന്നു ദിവസം."
+  },
+  {
+   "speaker": "attendant",
+   "text": "ഐസ്ക്രീം കൊടുക്കാമോ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "തണുത്തത് വേണ്ട, ചെറുചൂടുള്ള കഞ്ഞിവെള്ളം, പാൽ ഒക്കെ കൊടുക്കാം."
+  },
+  {
+   "speaker": "attendant",
+   "text": "ശരി."
+  },
+  {
+   "speaker": "doctor",
+   "text": "തുപ്പൽ പോലും ഇറക്കാൻ പറ്റാതായാലോ, ശ്വാസം മുട്ടൽ വന്നാലോ, എട്ടു മണിക്കൂറിൽ കൂടുതൽ മൂത്രം ഒഴിക്കാതിരുന്നാലോ ഉടനെ കൊണ്ടുവരണം."
+  },
+  {
+   "speaker": "attendant",
+   "text": "മനസ്സിലായി. വീണ്ടും എപ്പോൾ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "മൂന്നു ദിവസം കഴിഞ്ഞ് കാണിക്കണം."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "fever",
+   "sore throat",
+   "throat pain",
+   "not eating"
+  ],
+  "duration": {
+   "value": 3,
+   "unit": "days"
+  },
+  "vitals": {
+   "temp_f": 101.6,
+   "pulse": 124,
+   "weight_kg": 14
+  },
+  "diagnosis": [
+   "acute tonsillitis",
+   "tonsillitis",
+   "tonsillopharyngitis"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "amoxicillin",
+     "mox"
+    ],
+    "dose": "5 ml",
+    "frequency": "TDS",
+    "duration_days": 10
+   },
+   {
+    "drug": [
+     "paracetamol",
+     "calpol"
+    ],
+    "dose": "4 ml",
+    "frequency": "SOS",
+    "duration_days": 3
+   }
+  ],
+  "allergies": [],
+  "red_flags": [
+   [
+    "unable to swallow saliva",
+    "difficulty swallowing",
+    "drooling"
+   ],
+   [
+    "breathing difficulty",
+    "breathlessness"
+   ],
+   [
+    "no urine",
+    "not passing urine",
+    "reduced urine"
+   ]
+  ],
+  "follow_up": [
+   "3 days",
+   "three days",
+   "after 3 days"
+  ],
+  "not_prescribed": []
+ },
+ "trap": "Paracetamol first said 5 ml, corrected to 4 ml for weight."
+}

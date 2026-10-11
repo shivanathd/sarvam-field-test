@@ -1,0 +1,79 @@
+20:09:47 sarvam-30b-local-nothink running 150 items
+20:16:21 sarvam-30b-local-think running 150 items
+overall_all_correct {'sarvam-105b': 0.94, 'sarvam-105b-think': 0.8, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.627, 'sarvam-30b-local-think': 0.607, 'qwen3-30b-local-nothink': 0.84, 'qwen3-30b-local-think': 0.913}
+triage_all_correct {'sarvam-105b': 0.833, 'sarvam-105b-think': 0.833, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.167, 'sarvam-30b-local-think': 0.2, 'qwen3-30b-local-nothink': 0.667, 'qwen3-30b-local-think': 0.767}
+triage_intent {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.967, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 1.0, 'sarvam-30b-local-think': 0.933, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0}
+triage_urgency {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.967, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.8, 'sarvam-30b-local-think': 0.633, 'qwen3-30b-local-nothink': 0.933, 'qwen3-30b-local-think': 1.0}
+triage_language {'sarvam-105b': 0.833, 'sarvam-105b-think': 0.833, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.2, 'sarvam-30b-local-think': 0.3, 'qwen3-30b-local-nothink': 0.667, 'qwen3-30b-local-think': 0.767}
+crm_all_correct {'sarvam-105b': 0.967, 'sarvam-105b-think': 0.767, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.233, 'sarvam-30b-local-think': 0.167, 'qwen3-30b-local-nothink': 0.7, 'qwen3-30b-local-think': 0.967}
+crm_order_id {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.967, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 1.0, 'sarvam-30b-local-think': 0.9, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0}
+crm_amount {'sarvam-105b': 1.0, 'sarvam-105b-think': 1.0, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 1.0, 'sarvam-30b-local-think': 0.933, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0}
+crm_date {'sarvam-105b': 0.967, 'sarvam-105b-think': 1.0, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.233, 'sarvam-30b-local-think': 0.5, 'qwen3-30b-local-nothink': 0.7, 'qwen3-30b-local-think': 0.967}
+crm_issue {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.767, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.6, 'sarvam-30b-local-think': 0.267, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0}
+crm_english {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.767, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.7, 'sarvam-30b-local-think': 0.2, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0}
+reply_all_correct {'sarvam-105b': 0.9, 'sarvam-105b-think': 0.9, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.8, 'sarvam-30b-local-think': 0.667, 'qwen3-30b-local-nothink': 0.833, 'qwen3-30b-local-think': 0.867}
+reply_language {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.9, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.933, 'sarvam-30b-local-think': 0.733, 'qwen3-30b-local-nothink': 0.867, 'qwen3-30b-local-think': 0.867}
+reply_window_stated {'sarvam-105b': 1.0, 'sarvam-105b-think': 1.0, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 1.0, 'sarvam-30b-local-think': 0.9, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0}
+reply_no_forbidden {'sarvam-105b': 0.9, 'sarvam-105b-think': 1.0, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.833, 'sarvam-30b-local-think': 0.833, 'qwen3-30b-local-nothink': 0.967, 'qwen3-30b-local-think': 1.0}
+escalate_all_correct {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.567, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.967, 'sarvam-30b-local-think': 1.0, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0}
+escalate_sentiment {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.567, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 1.0, 'sarvam-30b-local-think': 1.0, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0}
+escalate_escalate {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.567, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.967, 'sarvam-30b-local-think': 1.0, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0}
+extract_all_correct {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.933, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.967, 'sarvam-30b-local-think': 1.0, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 0.967}
+extract_invoice_no {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.933, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 1.0, 'sarvam-30b-local-think': 1.0, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0}
+extract_gstin {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.933, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 1.0, 'sarvam-30b-local-think': 1.0, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 0.967}
+extract_total_inr {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.933, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 0.967, 'sarvam-30b-local-think': 1.0, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0}
+extract_due_date {'sarvam-105b': 1.0, 'sarvam-105b-think': 0.933, 'gemini-3.8-flash': 1.0, 'sarvam-30b-local-nothink': 1.0, 'sarvam-30b-local-think': 1.0, 'qwen3-30b-local-nothink': 1.0, 'qwen3-30b-local-think': 1.0}
+{
+"sarvam-105b": {
+"in_tok": 27488,
+"out_tok": 7590,
+"reasoning_tok": 0,
+"calls": 150,
+"errors": 0,
+"inr_list_price": 0.87
+},
+"sarvam-105b-think": {
+"in_tok": 26888,
+"out_tok": 150474,
+"reasoning_tok": 143394,
+"calls": 150,
+"errors": 0,
+"inr_list_price": 9.43
+},
+"gemini-3.8-flash": {
+"in_tok": 25065,
+"out_tok": 7235,
+"reasoning_tok": 34461,
+"calls": 150,
+"errors": 0
+},
+"sarvam-30b-local-nothink": {
+"in_tok": 27763,
+"out_tok": 9940,
+"reasoning_tok": 0,
+"calls": 150,
+"errors": 0
+},
+"sarvam-30b-local-think": {
+"in_tok": 26863,
+"out_tok": 241562,
+"reasoning_tok": 0,
+"calls": 150,
+"errors": 0
+},
+"qwen3-30b-local-nothink": {
+"in_tok": 37711,
+"out_tok": 8742,
+"reasoning_tok": 0,
+"calls": 150,
+"errors": 0
+},
+"qwen3-30b-local-think": {
+"in_tok": 36511,
+"out_tok": 57918,
+"reasoning_tok": 0,
+"calls": 150,
+"errors": 0
+}
+}
+{'sarvam-105b': {'p50_ms': 622.9081153869629, 'p95_ms': 4472.3639488220215}, 'sarvam-105b-think': {'p50_ms': 4594.670057296753, 'p95_ms': 14013.551950454712}, 'gemini-3.8-flash': {'p50_ms': 3324.403762817383, 'p95_ms': 8991.499900817871}, 'sarvam-30b-local-nothink': {'p50_ms': 8593.398094177246, 'p95_ms': 17490.70429801941}, 'sarvam-30b-local-think': {'p50_ms': 149668.79892349243, 'p95_ms': 391352.8199195862}, 'qwen3-30b-local-nothink': {'p50_ms': 8249.335050582886, 'p95_ms': 26611.708879470825}, 'qwen3-30b-local-think': {'p50_ms': 34176.761865615845, 'p95_ms': 89257.60006904602}}

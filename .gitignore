@@ -1,0 +1,15 @@
+.env
+.venv
+gguf/
+__pycache__/
+cache/
+data/raw/
+*.wav
+*.mp3
+*.aiff
+*.lock
+*.metadata
+data/uc12_token_tax/tokenizers/
+.archify/*/visual-check*/
+.archify/*/review-*/
+report/diagram-*.webp

@@ -1,0 +1,103 @@
+20:38:06 audio ready: 15 files
+20:38:20 saaras job hi-en Completed  10s
+20:38:34 saaras job ml-en Completed  10s
+20:38:49 saaras job ta-en Completed  10s
+20:39:03 saaras job bn-en Completed  10s
+20:39:19 saaras job mr-en Completed  11s
+20:39:20 80 notes to make
+20:39:21 0 sarvam-105b d01 parsed 
+20:39:21 1 sarvam-105b d02 parsed 
+20:39:21 2 sarvam-105b d03 parsed 
+20:39:23 3 sarvam-105b d04 parsed 
+20:39:25 4 sarvam-105b d05 parsed 
+20:39:27 5 sarvam-105b d06 parsed 
+20:39:33 6 sarvam-105b d07 parsed 
+20:39:33 7 sarvam-105b d08 parsed 
+20:39:33 8 sarvam-105b d09 parsed 
+20:39:33 9 sarvam-105b d10 parsed 
+20:39:33 10 sarvam-105b d11 parsed 
+20:39:33 11 sarvam-105b d12 parsed 
+20:39:33 12 sarvam-105b d13 parsed 
+20:39:34 13 sarvam-105b d14 parsed 
+20:39:34 14 sarvam-105b d15 parsed 
+20:39:34 15 sarvam-105b d16 parsed 
+20:39:34 16 sarvam-105b d17 parsed 
+20:39:34 17 sarvam-105b d18 parsed 
+20:39:34 18 sarvam-105b d19 parsed 
+20:39:34 19 sarvam-105b d20 parsed 
+20:39:34 20 sarvam-105b d21 parsed 
+20:39:34 21 sarvam-105b d22 parsed 
+20:39:34 22 sarvam-105b d23 parsed 
+20:39:34 23 sarvam-105b d24 parsed 
+20:39:35 24 sarvam-105b d25 parsed 
+20:39:39 25 sarvam-105b d26 parsed 
+20:39:39 26 sarvam-105b d27 parsed 
+20:39:39 27 sarvam-105b d28 parsed 
+20:39:39 28 sarvam-105b d29 parsed 
+20:39:39 29 sarvam-105b d30 parsed 
+20:39:39 30 sarvam-105b d31 parsed 
+20:39:39 31 sarvam-105b d32 parsed 
+20:39:39 32 sarvam-105b d33 parsed 
+20:39:41 33 sarvam-105b d34 parsed 
+20:39:41 34 sarvam-105b d35 parsed 
+20:40:02 35 sarvam-105b d36 parsed 
+20:40:29 36 sarvam-105b d37 parsed 
+20:40:29 37 sarvam-105b d38 parsed 
+20:40:29 38 sarvam-105b d39 parsed 
+20:40:29 39 sarvam-105b d40 parsed 
+20:40:29 40 sarvam-105b-think d01 parsed 
+20:40:29 41 sarvam-105b-think d02 parsed 
+20:40:29 42 sarvam-105b-think d03 parsed 
+20:40:30 43 sarvam-105b-think d04 parsed 
+20:41:17 44 sarvam-105b-think d05 parsed 
+20:41:17 45 sarvam-105b-think d06 parsed 
+20:41:17 46 sarvam-105b-think d07 parsed 
+20:41:17 47 sarvam-105b-think d08 parsed 
+20:41:49 48 sarvam-105b-think d09 parsed 
+20:41:49 49 sarvam-105b-think d10 parsed 
+20:41:49 50 sarvam-105b-think d11 parsed 
+20:42:13 51 sarvam-105b-think d12 parsed 
+20:44:51 52 sarvam-105b-think d13 parsed 
+20:44:51 53 sarvam-105b-think d14 parsed 
+20:44:51 54 sarvam-105b-think d15 parsed 
+20:44:51 55 sarvam-105b-think d16 parsed 
+20:44:51 56 sarvam-105b-think d17 parsed 
+20:44:51 57 sarvam-105b-think d18 parsed 
+20:44:51 58 sarvam-105b-think d19 parsed 
+20:44:51 59 sarvam-105b-think d20 parsed 
+20:44:51 60 sarvam-105b-think d21 parsed 
+20:44:51 61 sarvam-105b-think d22 parsed 
+20:44:51 62 sarvam-105b-think d23 parsed 
+20:46:01 63 sarvam-105b-think d24 parsed 
+20:46:01 64 sarvam-105b-think d25 parsed 
+20:46:01 65 sarvam-105b-think d26 parsed 
+20:46:01 66 sarvam-105b-think d27 parsed 
+20:46:01 67 sarvam-105b-think d28 parsed 
+20:46:01 68 sarvam-105b-think d29 parsed 
+20:46:01 69 sarvam-105b-think d30 parsed 
+20:46:01 70 sarvam-105b-think d31 parsed 
+20:46:01 71 sarvam-105b-think d32 parsed 
+20:46:01 72 sarvam-105b-think d33 parsed 
+20:46:01 73 sarvam-105b-think d34 parsed 
+20:46:14 74 sarvam-105b-think d35 parsed 
+20:46:14 75 sarvam-105b-think d36 parsed 
+20:46:14 76 sarvam-105b-think d37 NO-JSON 
+20:46:14 77 sarvam-105b-think d38 parsed 
+20:46:14 78 sarvam-105b-think d39 parsed 
+20:46:14 79 sarvam-105b-think d40 parsed 
+20:46:16 fact_recall_overall {'sarvam-105b': (0.965, 40), 'sarvam-105b-think': (0.982, 39), 'gemini-3.8-flash': (0.995, 40), 'gemini-3.8-flash-think': (0.993, 40), 'audio:gemini-3.8-flash': (0.997, 15)}
+20:46:16 recall_chief_complaint {'sarvam-105b': (0.975, 40), 'sarvam-105b-think': (0.95, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'audio:gemini-3.8-flash': (1.0, 15)}
+20:46:16 recall_duration {'sarvam-105b': (0.975, 40), 'sarvam-105b-think': (0.975, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'audio:gemini-3.8-flash': (1.0, 15)}
+20:46:16 recall_diagnosis {'sarvam-105b': (1.0, 40), 'sarvam-105b-think': (0.975, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'audio:gemini-3.8-flash': (1.0, 15)}
+20:46:16 recall_follow_up {'sarvam-105b': (0.975, 40), 'sarvam-105b-think': (0.975, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'audio:gemini-3.8-flash': (1.0, 15)}
+20:46:16 recall_vitals {'sarvam-105b': (1.0, 40), 'sarvam-105b-think': (0.975, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'audio:gemini-3.8-flash': (1.0, 15)}
+20:46:16 recall_red_flags {'sarvam-105b': (0.829, 40), 'sarvam-105b-think': (0.892, 40), 'gemini-3.8-flash': (0.967, 40), 'gemini-3.8-flash-think': (0.954, 40), 'audio:gemini-3.8-flash': (0.978, 15)}
+20:46:16 recall_med_found {'sarvam-105b': (1.0, 40), 'sarvam-105b-think': (0.963, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'audio:gemini-3.8-flash': (1.0, 15)}
+20:46:16 medication_exact_drug_dose_freq {'sarvam-105b': (0.912, 40), 'sarvam-105b-think': (0.912, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'audio:gemini-3.8-flash': (1.0, 15)}
+20:46:16 medication_exact_incl_duration {'sarvam-105b': (0.887, 40), 'sarvam-105b-think': (0.912, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'audio:gemini-3.8-flash': (1.0, 15)}
+20:46:16 hallucinated_meds_or_doses_per_note {'sarvam-105b': (0.0, 40), 'sarvam-105b-think': (0.0, 39), 'gemini-3.8-flash': (0.0, 40), 'gemini-3.8-flash-think': (0.0, 40), 'audio:gemini-3.8-flash': (0.0, 15)}
+20:46:16 notes_with_any_hallucinated_med_or_dose {'sarvam-105b': (0.0, 40), 'sarvam-105b-think': (0.0, 39), 'gemini-3.8-flash': (0.0, 40), 'gemini-3.8-flash-think': (0.0, 40), 'audio:gemini-3.8-flash': (0.0, 15)}
+20:46:16 trap_drug_listed_as_prescribed {'sarvam-105b': (0.0, 40), 'sarvam-105b-think': (0.0, 39), 'gemini-3.8-flash': (0.0, 40), 'gemini-3.8-flash-think': (0.0, 40), 'audio:gemini-3.8-flash': (0.0, 15)}
+20:46:16 allergy_capture_rate {'sarvam-105b': (1.0, 13), 'sarvam-105b-think': (1.0, 13), 'gemini-3.8-flash': (1.0, 13), 'gemini-3.8-flash-think': (1.0, 13), 'audio:gemini-3.8-flash': (1.0, 5)}
+20:46:16 false_allergy_rate {'sarvam-105b': (0.0, 27), 'sarvam-105b-think': (0.0, 26), 'gemini-3.8-flash': (0.0, 27), 'gemini-3.8-flash-think': (0.0, 27), 'audio:gemini-3.8-flash': (0.0, 10)}
+20:46:16 json_parse_ok {'sarvam-105b': (1.0, 40), 'sarvam-105b-think': (0.975, 40), 'gemini-3.8-flash': (1.0, 40), 'gemini-3.8-flash-think': (1.0, 40), 'audio:gemini-3.8-flash': (1.0, 15)}

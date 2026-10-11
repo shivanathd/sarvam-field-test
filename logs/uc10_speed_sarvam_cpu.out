@@ -1,0 +1,38 @@
+{
+ "target": "sarvam-cpu",
+ "port": 8111,
+ "server_cmd": "~/embed-bench/llamacpp/llama-b11541/llama-server -m gguf/sarvam-30b-Q4_K_M.gguf-00001-of-00006.gguf --jinja -ngl 0 -dev none --no-op-offload -c 32768 -np 4 --port 8111",
+ "measured_at": "2026-10-11 21:18:18",
+ "machine": "Apple M5 Max, 128 GB unified memory (shared Mac; other jobs running)",
+ "prompt_tokens": 1014,
+ "gen_tokens": 64,
+ "thinking": "disabled",
+ "c1": {
+  "prompt_tok_per_s": 12.437515284712756,
+  "gen_tok_per_s": 3.008707342320454,
+  "ttft_ms": 91641.38078689575,
+  "wall_ms": 160096.77481651306,
+  "runs": 2
+ },
+ "c4": {
+  "per_request_gen_tok_per_s": 1.3455799333109226,
+  "per_request_prompt_tok_per_s": 6.876098411884534,
+  "aggregate_gen_tok_per_s": 0.8359702909957937,
+  "ttft_ms": 260017.37117767334,
+  "batch_wall_ms": 306230.97825050354,
+  "rounds": 1
+ },
+ "peak_rss_gb": 35.48,
+ "phys_footprint_mb_after": 19000.0,
+ "load_avg_before": [
+  14.6,
+  44.7,
+  82.4
+ ],
+ "load_avg_after": [
+  57.6,
+  59.2,
+  72.7
+ ],
+ "other_clients_busy_slots_at_start": 0
+}

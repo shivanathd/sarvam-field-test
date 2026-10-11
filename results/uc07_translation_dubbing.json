@@ -1,0 +1,1768 @@
+{
+ "uc": "uc07_translation_dubbing",
+ "title": "Translation and dubbing of training content / product copy",
+ "business_question": "Localising training content and product copy into Indian languages, then dubbing it: which translation system and which TTS should an Indian business use?",
+ "dataset": {
+  "name": "FLEURS test transcriptions (= FLORES-101 sentences) aligned by id",
+  "source": "google/fleurs on Hugging Face, data/<lang>/test.tsv",
+  "license": "CC-BY 4.0",
+  "n": 32,
+  "languages": [
+   "en",
+   "hi",
+   "bn",
+   "ta",
+   "te",
+   "kn",
+   "ml",
+   "mr",
+   "gu",
+   "pa",
+   "or"
+  ],
+  "synthetic": false,
+  "how_made": "32 sentence ids present in all 11 languages with 50-110 English chars, seeded shuffle (seed 7). Translation: 32 x 10 langs x 2 directions = 640 items per system. Dubbing: 26 digit-free sentences x 6 langs per TTS, plus a 3-sentence coverage probe in ['ml', 'gu', 'pa', 'or']. References are human FLEURS transcriptions (native-speaker translations of English FLORES)."
+ },
+ "systems": [
+  "sarvam-translate:v1",
+  "mayura:v1",
+  "sarvam-105b",
+  "gemini-3.8-flash",
+  "openai:gpt-5.4-mini",
+  "or:anthropic/claude-haiku-5.5",
+  "gemini-pro-latest",
+  "openai:gpt-5.5",
+  "or:anthropic/claude-sonnet-5.5",
+  "sarvam-30b-local",
+  "qwen3-30b-local",
+  "mayura:v1-colloquial",
+  "bulbul:v3",
+  "gemini-3.8-flash-tts",
+  "openai:gpt-4o-mini-tts",
+  "openai:gpt-4o-transcribe"
+ ],
+ "metrics": [
+  {
+   "name": "chrF++ English->Indic",
+   "higher_is_better": true,
+   "unit": "chrF++ (0-100)",
+   "values": {
+    "sarvam-translate:v1": {
+     "mean": 51.79829494858302,
+     "lo": 50.10547487789274,
+     "hi": 53.48485907171441,
+     "n": 320
+    },
+    "mayura:v1": {
+     "mean": 49.80661924446784,
+     "lo": 48.21991945383148,
+     "hi": 51.4663246653036,
+     "n": 320
+    },
+    "sarvam-105b": {
+     "mean": 45.605916611244325,
+     "lo": 43.96018139349055,
+     "hi": 47.17827007482105,
+     "n": 320
+    },
+    "gemini-3.8-flash": {
+     "mean": 49.71791998581781,
+     "lo": 48.072087634008184,
+     "hi": 51.35032184049741,
+     "n": 320
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 46.58105922282561,
+     "lo": 45.07541871603847,
+     "hi": 48.215524968726996,
+     "n": 320
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 47.75354389628225,
+     "lo": 46.294224748205025,
+     "hi": 49.27115862296041,
+     "n": 320
+    },
+    "gemini-pro-latest": {
+     "mean": 51.90588705241031,
+     "lo": 46.96822491873723,
+     "hi": 56.975667966060854,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 51.01908108600732,
+     "lo": 45.683131007483475,
+     "hi": 56.39468218932848,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 51.0142191905153,
+     "lo": 46.15417099182364,
+     "hi": 55.589305770996425,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 38.0317867707752,
+     "lo": 34.18934874414399,
+     "hi": 41.82613674661068,
+     "n": 81
+    },
+    "qwen3-30b-local": {
+     "mean": 36.018565812548744,
+     "lo": 33.678889545652694,
+     "hi": 38.592624540371546,
+     "n": 80
+    }
+   }
+  },
+  {
+   "name": "chrF++ Indic->English",
+   "higher_is_better": true,
+   "unit": "chrF++ (0-100)",
+   "values": {
+    "sarvam-translate:v1": {
+     "mean": 52.47175427644068,
+     "lo": 50.38841372932006,
+     "hi": 54.378518289038496,
+     "n": 320
+    },
+    "mayura:v1": {
+     "mean": 54.59115342460801,
+     "lo": 52.83456643035422,
+     "hi": 56.234420739977885,
+     "n": 320
+    },
+    "sarvam-105b": {
+     "mean": 57.80434978359242,
+     "lo": 56.109097649477306,
+     "hi": 59.58844343051648,
+     "n": 320
+    },
+    "gemini-3.8-flash": {
+     "mean": 64.34565558393851,
+     "lo": 62.46601709181535,
+     "hi": 66.243500646904,
+     "n": 320
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 60.36686142500439,
+     "lo": 58.5533823057717,
+     "hi": 62.15187221835173,
+     "n": 320
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 62.085880272069936,
+     "lo": 60.21263167365195,
+     "hi": 63.86711531212281,
+     "n": 320
+    },
+    "gemini-pro-latest": {
+     "mean": 62.29529233924742,
+     "lo": 56.065148737200694,
+     "hi": 68.17568706514118,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 62.554508462653146,
+     "lo": 56.98709615667143,
+     "hi": 67.85879228898615,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 65.85697613356507,
+     "lo": 60.04111095551744,
+     "hi": 71.13859467130598,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 55.197459612582485,
+     "lo": 51.13686403762341,
+     "hi": 59.44999737636242,
+     "n": 80
+    },
+    "qwen3-30b-local": {
+     "mean": 53.37288038338323,
+     "lo": 49.57254005285117,
+     "hi": 57.381312232583966,
+     "n": 80
+    }
+   }
+  },
+  {
+   "name": "chrF++ English->Indic, 8-sentence subset (all systems)",
+   "higher_is_better": true,
+   "unit": "chrF++ (0-100)",
+   "values": {
+    "sarvam-translate:v1": {
+     "mean": 50.0996668636889,
+     "lo": 46.73958803285209,
+     "hi": 53.441195009342366,
+     "n": 80
+    },
+    "mayura:v1": {
+     "mean": 49.73547743995506,
+     "lo": 46.614820782710055,
+     "hi": 52.64929367417075,
+     "n": 80
+    },
+    "sarvam-105b": {
+     "mean": 45.023651530694465,
+     "lo": 41.988571095392004,
+     "hi": 48.08567383629288,
+     "n": 80
+    },
+    "gemini-3.8-flash": {
+     "mean": 49.024370246331976,
+     "lo": 46.222059584861505,
+     "hi": 52.07451883932846,
+     "n": 80
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 45.28430770627538,
+     "lo": 42.447605464594055,
+     "hi": 48.38298869844023,
+     "n": 80
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 45.98925279720729,
+     "lo": 43.36961306682596,
+     "hi": 48.63678090054557,
+     "n": 80
+    },
+    "gemini-pro-latest": {
+     "mean": 51.90588705241031,
+     "lo": 46.96822491873723,
+     "hi": 56.975667966060854,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 51.01908108600732,
+     "lo": 45.683131007483475,
+     "hi": 56.39468218932848,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 51.0142191905153,
+     "lo": 46.15417099182364,
+     "hi": 55.589305770996425,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 37.788479530362615,
+     "lo": 34.036515614291616,
+     "hi": 41.540115616775196,
+     "n": 80
+    },
+    "qwen3-30b-local": {
+     "mean": 36.018565812548744,
+     "lo": 33.678889545652694,
+     "hi": 38.592624540371546,
+     "n": 80
+    }
+   }
+  },
+  {
+   "name": "chrF++ Indic->English, 8-sentence subset (all systems)",
+   "higher_is_better": true,
+   "unit": "chrF++ (0-100)",
+   "values": {
+    "sarvam-translate:v1": {
+     "mean": 52.743514011949095,
+     "lo": 48.77876998139122,
+     "hi": 57.05065947101669,
+     "n": 80
+    },
+    "mayura:v1": {
+     "mean": 55.65947583039188,
+     "lo": 51.63413119318735,
+     "hi": 59.787338148968274,
+     "n": 80
+    },
+    "sarvam-105b": {
+     "mean": 59.74221017369175,
+     "lo": 56.05951179074572,
+     "hi": 63.54910483316773,
+     "n": 80
+    },
+    "gemini-3.8-flash": {
+     "mean": 64.36448766344999,
+     "lo": 60.29739134693797,
+     "hi": 68.59797596938989,
+     "n": 80
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 60.691384866452644,
+     "lo": 56.60121254279865,
+     "hi": 65.10109441038256,
+     "n": 80
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 62.88786383329665,
+     "lo": 58.66903741405952,
+     "hi": 67.20812977249406,
+     "n": 80
+    },
+    "gemini-pro-latest": {
+     "mean": 62.29529233924742,
+     "lo": 56.065148737200694,
+     "hi": 68.17568706514118,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 62.554508462653146,
+     "lo": 56.98709615667143,
+     "hi": 67.85879228898615,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 65.85697613356507,
+     "lo": 60.04111095551744,
+     "hi": 71.13859467130598,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 55.197459612582485,
+     "lo": 51.13686403762341,
+     "hi": 59.44999737636242,
+     "n": 80
+    },
+    "qwen3-30b-local": {
+     "mean": 53.37288038338323,
+     "lo": 49.57254005285117,
+     "hi": 57.381312232583966,
+     "n": 80
+    }
+   }
+  },
+  {
+   "name": "chrF++ English->Indic, frontier subset: 30 sentence-language pairs (all systems)",
+   "higher_is_better": true,
+   "unit": "chrF++ (0-100)",
+   "values": {
+    "sarvam-translate:v1": {
+     "mean": 53.46487403494651,
+     "lo": 47.51829665697187,
+     "hi": 59.17710834053357,
+     "n": 30
+    },
+    "mayura:v1": {
+     "mean": 49.82881312894127,
+     "lo": 44.562423042761125,
+     "hi": 55.30720311518257,
+     "n": 30
+    },
+    "sarvam-105b": {
+     "mean": 47.06474407383621,
+     "lo": 40.827441814095074,
+     "hi": 53.349206722132735,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 51.87322493510034,
+     "lo": 46.571277969013664,
+     "hi": 57.01050138314583,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 47.1709864396259,
+     "lo": 41.90692879924713,
+     "hi": 52.52841518162647,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 48.20701096387689,
+     "lo": 43.21958164915968,
+     "hi": 53.41384440449099,
+     "n": 30
+    },
+    "gemini-pro-latest": {
+     "mean": 51.90588705241031,
+     "lo": 46.96822491873723,
+     "hi": 56.975667966060854,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 51.01908108600732,
+     "lo": 45.683131007483475,
+     "hi": 56.39468218932848,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 51.0142191905153,
+     "lo": 46.15417099182364,
+     "hi": 55.589305770996425,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 42.69557509549213,
+     "lo": 37.2817691834912,
+     "hi": 47.77095853095327,
+     "n": 30
+    },
+    "qwen3-30b-local": {
+     "mean": 38.96884631181179,
+     "lo": 34.86924379751406,
+     "hi": 43.29609224656663,
+     "n": 30
+    }
+   }
+  },
+  {
+   "name": "chrF++ Indic->English, frontier subset: 30 sentence-language pairs (all systems)",
+   "higher_is_better": true,
+   "unit": "chrF++ (0-100)",
+   "values": {
+    "sarvam-translate:v1": {
+     "mean": 55.319850542651466,
+     "lo": 47.745064393923094,
+     "hi": 62.51816051004373,
+     "n": 30
+    },
+    "mayura:v1": {
+     "mean": 56.78447736012881,
+     "lo": 49.706465027625754,
+     "hi": 63.356576774465864,
+     "n": 30
+    },
+    "sarvam-105b": {
+     "mean": 59.68901890920223,
+     "lo": 53.45464583645955,
+     "hi": 65.46138761528184,
+     "n": 30
+    },
+    "gemini-3.8-flash": {
+     "mean": 62.833378469926885,
+     "lo": 56.80926255034972,
+     "hi": 68.3212838579461,
+     "n": 30
+    },
+    "openai:gpt-5.4-mini": {
+     "mean": 62.01165334181796,
+     "lo": 55.924149199398684,
+     "hi": 67.48307636449319,
+     "n": 30
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "mean": 62.92468626301056,
+     "lo": 56.32327107956135,
+     "hi": 69.13815885876926,
+     "n": 30
+    },
+    "gemini-pro-latest": {
+     "mean": 62.29529233924742,
+     "lo": 56.065148737200694,
+     "hi": 68.17568706514118,
+     "n": 30
+    },
+    "openai:gpt-5.5": {
+     "mean": 62.554508462653146,
+     "lo": 56.98709615667143,
+     "hi": 67.85879228898615,
+     "n": 30
+    },
+    "or:anthropic/claude-sonnet-5.5": {
+     "mean": 65.85697613356507,
+     "lo": 60.04111095551744,
+     "hi": 71.13859467130598,
+     "n": 30
+    },
+    "sarvam-30b-local": {
+     "mean": 52.209697269284014,
+     "lo": 47.681160696676066,
+     "hi": 56.56065239347742,
+     "n": 30
+    },
+    "qwen3-30b-local": {
+     "mean": 52.23664707040643,
+     "lo": 47.099628612074596,
+     "hi": 57.1267590102027,
+     "n": 30
+    }
+   }
+  },
+  {
+   "name": "Mayura formal vs modern-colloquial: chrF++ vs formal reference (en->xx subset)",
+   "higher_is_better": true,
+   "unit": "chrF++",
+   "values": {
+    "mayura:v1": {
+     "mean": 49.03641125611823,
+     "lo": 46.389576525438116,
+     "hi": 51.541865222654906,
+     "n": 100
+    },
+    "mayura:v1-colloquial": {
+     "mean": 16.260734913214854,
+     "lo": 14.804180239611258,
+     "hi": 17.862460821495745,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "Mayura formal vs modern-colloquial: share of Latin letters in output",
+   "higher_is_better": null,
+   "unit": "fraction",
+   "values": {
+    "mayura:v1": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 100
+    },
+    "mayura:v1-colloquial": {
+     "mean": 0.6133018225389514,
+     "lo": 0.587080541373115,
+     "hi": 0.6406024983580203,
+     "n": 100
+    }
+   }
+  },
+  {
+   "name": "Dubbing intelligibility: round-trip CER, judge=saaras:v3",
+   "higher_is_better": false,
+   "unit": "CER (0-1+)",
+   "values": {
+    "bulbul:v3": {
+     "mean": 0.018131616854040328,
+     "lo": 0.013950718116728468,
+     "hi": 0.023615662529314328,
+     "n": 156
+    },
+    "gemini-3.8-flash-tts": {
+     "mean": 0.01854564217830524,
+     "lo": 0.01452240374275755,
+     "hi": 0.023482471422714986,
+     "n": 156
+    },
+    "openai:gpt-4o-mini-tts": {
+     "mean": 0.02394932152984009,
+     "lo": 0.01897013371424767,
+     "hi": 0.029774082418035343,
+     "n": 156
+    }
+   }
+  },
+  {
+   "name": "Dubbing intelligibility: round-trip CER, judge=gemini-3.8-flash",
+   "higher_is_better": false,
+   "unit": "CER (0-1+)",
+   "values": {
+    "bulbul:v3": {
+     "mean": 0.07285248063154388,
+     "lo": 0.04138311129989265,
+     "hi": 0.11185089265008716,
+     "n": 156
+    },
+    "gemini-3.8-flash-tts": {
+     "mean": 0.059025924960514904,
+     "lo": 0.03284726061956874,
+     "hi": 0.09094713811252254,
+     "n": 156
+    },
+    "openai:gpt-4o-mini-tts": {
+     "mean": 0.06672407753168628,
+     "lo": 0.03762251020339851,
+     "hi": 0.09930733142947043,
+     "n": 156
+    }
+   }
+  },
+  {
+   "name": "Dubbing intelligibility: round-trip CER, judge=openai:gpt-4o-transcribe",
+   "higher_is_better": false,
+   "unit": "CER (0-1+)",
+   "values": {
+    "bulbul:v3": {
+     "mean": 0.04305806853583176,
+     "lo": 0.03179945750561208,
+     "hi": 0.05842372317586254,
+     "n": 156
+    },
+    "gemini-3.8-flash-tts": {
+     "mean": 0.03482647384826866,
+     "lo": 0.029071221517144936,
+     "hi": 0.04164640254078786,
+     "n": 156
+    },
+    "openai:gpt-4o-mini-tts": {
+     "mean": 0.04950814989325986,
+     "lo": 0.03795684135489824,
+     "hi": 0.06556811598265769,
+     "n": 156
+    }
+   }
+  },
+  {
+   "name": "TTS time to first audio byte",
+   "higher_is_better": false,
+   "unit": "ms",
+   "values": {
+    "bulbul:v3": {
+     "mean": 429.8669909819578,
+     "lo": 379.13235945579333,
+     "hi": 519.7540414639009,
+     "n": 156
+    },
+    "gemini-3.8-flash-tts": {
+     "mean": 1136.2518087411538,
+     "lo": 1106.639163616376,
+     "hi": 1165.592937897413,
+     "n": 156
+    },
+    "openai:gpt-4o-mini-tts": {
+     "mean": 1040.4473084669846,
+     "lo": 1007.1205878869081,
+     "hi": 1076.7531853455764,
+     "n": 156
+    }
+   }
+  },
+  {
+   "name": "TTS time to full audio",
+   "higher_is_better": false,
+   "unit": "ms",
+   "values": {
+    "bulbul:v3": {
+     "mean": 1736.0707017091604,
+     "lo": 1660.6481075286865,
+     "hi": 1837.40252103561,
+     "n": 156
+    },
+    "gemini-3.8-flash-tts": {
+     "mean": 2857.037528967246,
+     "lo": 2792.2258973121643,
+     "hi": 2922.761220198411,
+     "n": 156
+    },
+    "openai:gpt-4o-mini-tts": {
+     "mean": 2106.439083050459,
+     "lo": 2045.8890535892585,
+     "hi": 2172.938420222356,
+     "n": 156
+    }
+   }
+  },
+  {
+   "name": "TTS audio duration per sentence",
+   "higher_is_better": null,
+   "unit": "s",
+   "values": {
+    "bulbul:v3": {
+     "mean": 7.523600209314495,
+     "lo": 7.268403976975406,
+     "hi": 7.791690214547357,
+     "n": 156
+    },
+    "gemini-3.8-flash-tts": {
+     "mean": 7.027435897435898,
+     "lo": 6.8071794871794875,
+     "hi": 7.24948717948718,
+     "n": 156
+    },
+    "openai:gpt-4o-mini-tts": {
+     "mean": 8.114461538461539,
+     "lo": 7.843692307692308,
+     "hi": 8.410307692307693,
+     "n": 156
+    }
+   }
+  }
+ ],
+ "per_language": {
+  "chrF++ English->Indic": {
+   "hi": {
+    "sarvam-translate:v1": 54.9,
+    "mayura:v1": 53.5,
+    "sarvam-105b": 47.0,
+    "gemini-3.8-flash": 53.0,
+    "openai:gpt-5.4-mini": 50.6,
+    "or:anthropic/claude-haiku-5.5": 47.7,
+    "gemini-pro-latest": 52.0,
+    "openai:gpt-5.5": 54.8,
+    "or:anthropic/claude-sonnet-5.5": 52.6,
+    "sarvam-30b-local": 45.5,
+    "qwen3-30b-local": 43.3
+   },
+   "bn": {
+    "sarvam-translate:v1": 50.2,
+    "mayura:v1": 48.4,
+    "sarvam-105b": 42.6,
+    "gemini-3.8-flash": 48.6,
+    "openai:gpt-5.4-mini": 48.0,
+    "or:anthropic/claude-haiku-5.5": 45.0,
+    "gemini-pro-latest": 63.9,
+    "openai:gpt-5.5": 55.0,
+    "or:anthropic/claude-sonnet-5.5": 55.5,
+    "sarvam-30b-local": 27.8,
+    "qwen3-30b-local": 38.8
+   },
+   "ta": {
+    "sarvam-translate:v1": 54.4,
+    "mayura:v1": 52.2,
+    "sarvam-105b": 41.6,
+    "gemini-3.8-flash": 50.8,
+    "openai:gpt-5.4-mini": 49.6,
+    "or:anthropic/claude-haiku-5.5": 49.8,
+    "gemini-pro-latest": 49.4,
+    "openai:gpt-5.5": 44.9,
+    "or:anthropic/claude-sonnet-5.5": 45.6,
+    "sarvam-30b-local": 36.9,
+    "qwen3-30b-local": 37.1
+   },
+   "te": {
+    "sarvam-translate:v1": 53.0,
+    "mayura:v1": 52.3,
+    "sarvam-105b": 45.6,
+    "gemini-3.8-flash": 49.0,
+    "openai:gpt-5.4-mini": 45.2,
+    "or:anthropic/claude-haiku-5.5": 50.3,
+    "gemini-pro-latest": 44.0,
+    "openai:gpt-5.5": 55.2,
+    "or:anthropic/claude-sonnet-5.5": 44.3,
+    "sarvam-30b-local": 44.4,
+    "qwen3-30b-local": 35.8
+   },
+   "kn": {
+    "sarvam-translate:v1": 48.9,
+    "mayura:v1": 47.2,
+    "sarvam-105b": 45.3,
+    "gemini-3.8-flash": 50.2,
+    "openai:gpt-5.4-mini": 44.8,
+    "or:anthropic/claude-haiku-5.5": 46.4,
+    "gemini-pro-latest": 46.7,
+    "openai:gpt-5.5": 48.3,
+    "or:anthropic/claude-sonnet-5.5": 47.1,
+    "sarvam-30b-local": 38.1,
+    "qwen3-30b-local": 40.8
+   },
+   "ml": {
+    "sarvam-translate:v1": 49.9,
+    "mayura:v1": 50.7,
+    "sarvam-105b": 47.5,
+    "gemini-3.8-flash": 47.8,
+    "openai:gpt-5.4-mini": 49.7,
+    "or:anthropic/claude-haiku-5.5": 51.1,
+    "gemini-pro-latest": 60.8,
+    "openai:gpt-5.5": 52.5,
+    "or:anthropic/claude-sonnet-5.5": 52.4,
+    "sarvam-30b-local": 40.2,
+    "qwen3-30b-local": 33.7
+   },
+   "mr": {
+    "sarvam-translate:v1": 49.3,
+    "mayura:v1": 48.6,
+    "sarvam-105b": 47.5,
+    "gemini-3.8-flash": 48.7,
+    "openai:gpt-5.4-mini": 48.3,
+    "or:anthropic/claude-haiku-5.5": 47.0,
+    "gemini-pro-latest": 44.6,
+    "openai:gpt-5.5": 44.9,
+    "or:anthropic/claude-sonnet-5.5": 50.7,
+    "sarvam-30b-local": 39.9,
+    "qwen3-30b-local": 28.8
+   },
+   "gu": {
+    "sarvam-translate:v1": 52.3,
+    "mayura:v1": 48.4,
+    "sarvam-105b": 46.6,
+    "gemini-3.8-flash": 48.1,
+    "openai:gpt-5.4-mini": 44.6,
+    "or:anthropic/claude-haiku-5.5": 47.4,
+    "gemini-pro-latest": 41.4,
+    "openai:gpt-5.5": 44.7,
+    "or:anthropic/claude-sonnet-5.5": 45.2,
+    "sarvam-30b-local": 38.1,
+    "qwen3-30b-local": 37.0
+   },
+   "pa": {
+    "sarvam-translate:v1": 51.2,
+    "mayura:v1": 48.8,
+    "sarvam-105b": 46.9,
+    "gemini-3.8-flash": 48.7,
+    "openai:gpt-5.4-mini": 44.2,
+    "or:anthropic/claude-haiku-5.5": 46.6,
+    "gemini-pro-latest": 61.5,
+    "openai:gpt-5.5": 55.8,
+    "or:anthropic/claude-sonnet-5.5": 62.4,
+    "sarvam-30b-local": 33.7,
+    "qwen3-30b-local": 36.5
+   },
+   "or": {
+    "sarvam-translate:v1": 53.8,
+    "mayura:v1": 47.8,
+    "sarvam-105b": 45.6,
+    "gemini-3.8-flash": 52.3,
+    "openai:gpt-5.4-mini": 40.9,
+    "or:anthropic/claude-haiku-5.5": 46.2,
+    "gemini-pro-latest": 54.8,
+    "openai:gpt-5.5": 54.1,
+    "or:anthropic/claude-sonnet-5.5": 54.4,
+    "sarvam-30b-local": 34.7,
+    "qwen3-30b-local": 28.3
+   }
+  },
+  "chrF++ Indic->English": {
+   "hi": {
+    "sarvam-translate:v1": 54.8,
+    "mayura:v1": 57.4,
+    "sarvam-105b": 60.5,
+    "gemini-3.8-flash": 64.4,
+    "openai:gpt-5.4-mini": 60.6,
+    "or:anthropic/claude-haiku-5.5": 62.2,
+    "gemini-pro-latest": 62.6,
+    "openai:gpt-5.5": 59.1,
+    "or:anthropic/claude-sonnet-5.5": 64.4,
+    "sarvam-30b-local": 64.1,
+    "qwen3-30b-local": 59.9
+   },
+   "bn": {
+    "sarvam-translate:v1": 51.0,
+    "mayura:v1": 55.7,
+    "sarvam-105b": 59.0,
+    "gemini-3.8-flash": 64.9,
+    "openai:gpt-5.4-mini": 60.1,
+    "or:anthropic/claude-haiku-5.5": 63.6,
+    "gemini-pro-latest": 60.3,
+    "openai:gpt-5.5": 61.9,
+    "or:anthropic/claude-sonnet-5.5": 64.0,
+    "sarvam-30b-local": 61.0,
+    "qwen3-30b-local": 56.1
+   },
+   "ta": {
+    "sarvam-translate:v1": 50.4,
+    "mayura:v1": 50.4,
+    "sarvam-105b": 56.2,
+    "gemini-3.8-flash": 61.7,
+    "openai:gpt-5.4-mini": 57.9,
+    "or:anthropic/claude-haiku-5.5": 60.6,
+    "gemini-pro-latest": 60.5,
+    "openai:gpt-5.5": 66.2,
+    "or:anthropic/claude-sonnet-5.5": 66.6,
+    "sarvam-30b-local": 44.9,
+    "qwen3-30b-local": 45.0
+   },
+   "te": {
+    "sarvam-translate:v1": 50.6,
+    "mayura:v1": 52.6,
+    "sarvam-105b": 57.7,
+    "gemini-3.8-flash": 67.0,
+    "openai:gpt-5.4-mini": 62.3,
+    "or:anthropic/claude-haiku-5.5": 64.1,
+    "gemini-pro-latest": 54.5,
+    "openai:gpt-5.5": 64.0,
+    "or:anthropic/claude-sonnet-5.5": 65.2,
+    "sarvam-30b-local": 49.9,
+    "qwen3-30b-local": 51.0
+   },
+   "kn": {
+    "sarvam-translate:v1": 50.2,
+    "mayura:v1": 51.0,
+    "sarvam-105b": 56.3,
+    "gemini-3.8-flash": 60.5,
+    "openai:gpt-5.4-mini": 57.4,
+    "or:anthropic/claude-haiku-5.5": 58.8,
+    "gemini-pro-latest": 56.8,
+    "openai:gpt-5.5": 56.1,
+    "or:anthropic/claude-sonnet-5.5": 57.7,
+    "sarvam-30b-local": 44.8,
+    "qwen3-30b-local": 42.8
+   },
+   "ml": {
+    "sarvam-translate:v1": 54.3,
+    "mayura:v1": 55.0,
+    "sarvam-105b": 60.0,
+    "gemini-3.8-flash": 65.2,
+    "openai:gpt-5.4-mini": 60.3,
+    "or:anthropic/claude-haiku-5.5": 61.5,
+    "gemini-pro-latest": 70.8,
+    "openai:gpt-5.5": 70.5,
+    "or:anthropic/claude-sonnet-5.5": 70.7,
+    "sarvam-30b-local": 54.9,
+    "qwen3-30b-local": 51.2
+   },
+   "mr": {
+    "sarvam-translate:v1": 53.9,
+    "mayura:v1": 55.3,
+    "sarvam-105b": 56.7,
+    "gemini-3.8-flash": 64.3,
+    "openai:gpt-5.4-mini": 61.2,
+    "or:anthropic/claude-haiku-5.5": 64.8,
+    "gemini-pro-latest": 59.4,
+    "openai:gpt-5.5": 58.1,
+    "or:anthropic/claude-sonnet-5.5": 59.8,
+    "sarvam-30b-local": 55.1,
+    "qwen3-30b-local": 58.5
+   },
+   "gu": {
+    "sarvam-translate:v1": 52.0,
+    "mayura:v1": 57.4,
+    "sarvam-105b": 55.1,
+    "gemini-3.8-flash": 63.9,
+    "openai:gpt-5.4-mini": 60.5,
+    "or:anthropic/claude-haiku-5.5": 59.6,
+    "gemini-pro-latest": 69.2,
+    "openai:gpt-5.5": 67.4,
+    "or:anthropic/claude-sonnet-5.5": 79.0,
+    "sarvam-30b-local": 52.8,
+    "qwen3-30b-local": 55.5
+   },
+   "pa": {
+    "sarvam-translate:v1": 53.7,
+    "mayura:v1": 56.4,
+    "sarvam-105b": 59.4,
+    "gemini-3.8-flash": 67.4,
+    "openai:gpt-5.4-mini": 62.3,
+    "or:anthropic/claude-haiku-5.5": 63.8,
+    "gemini-pro-latest": 67.1,
+    "openai:gpt-5.5": 60.2,
+    "or:anthropic/claude-sonnet-5.5": 67.5,
+    "sarvam-30b-local": 59.5,
+    "qwen3-30b-local": 54.2
+   },
+   "or": {
+    "sarvam-translate:v1": 53.8,
+    "mayura:v1": 54.6,
+    "sarvam-105b": 57.1,
+    "gemini-3.8-flash": 64.2,
+    "openai:gpt-5.4-mini": 61.0,
+    "or:anthropic/claude-haiku-5.5": 61.8,
+    "gemini-pro-latest": 61.7,
+    "openai:gpt-5.5": 62.0,
+    "or:anthropic/claude-sonnet-5.5": 63.6,
+    "sarvam-30b-local": 65.0,
+    "qwen3-30b-local": 59.7
+   }
+  },
+  "Dubbing CER judge=saaras:v3": {
+   "hi": {
+    "bulbul:v3": 0.011,
+    "gemini-3.8-flash-tts": 0.012,
+    "openai:gpt-4o-mini-tts": 0.011
+   },
+   "bn": {
+    "bulbul:v3": 0.024,
+    "gemini-3.8-flash-tts": 0.019,
+    "openai:gpt-4o-mini-tts": 0.023
+   },
+   "ta": {
+    "bulbul:v3": 0.017,
+    "gemini-3.8-flash-tts": 0.017,
+    "openai:gpt-4o-mini-tts": 0.031
+   },
+   "te": {
+    "bulbul:v3": 0.02,
+    "gemini-3.8-flash-tts": 0.021,
+    "openai:gpt-4o-mini-tts": 0.025
+   },
+   "mr": {
+    "bulbul:v3": 0.014,
+    "gemini-3.8-flash-tts": 0.018,
+    "openai:gpt-4o-mini-tts": 0.021
+   },
+   "kn": {
+    "bulbul:v3": 0.023,
+    "gemini-3.8-flash-tts": 0.024,
+    "openai:gpt-4o-mini-tts": 0.032
+   },
+   "ml": {
+    "bulbul:v3": 0.024,
+    "gemini-3.8-flash-tts": 0.041,
+    "openai:gpt-4o-mini-tts": 0.054
+   },
+   "gu": {
+    "bulbul:v3": 0.0,
+    "gemini-3.8-flash-tts": 0.013,
+    "openai:gpt-4o-mini-tts": 0.004
+   },
+   "pa": {
+    "bulbul:v3": 0.012,
+    "gemini-3.8-flash-tts": 0.0,
+    "openai:gpt-4o-mini-tts": 0.013
+   },
+   "or": {
+    "bulbul:v3": 0.025,
+    "gemini-3.8-flash-tts": 0.011,
+    "openai:gpt-4o-mini-tts": 0.015
+   }
+  },
+  "Dubbing CER judge=gemini-3.8-flash": {
+   "hi": {
+    "bulbul:v3": 0.057,
+    "gemini-3.8-flash-tts": 0.044,
+    "openai:gpt-4o-mini-tts": 0.012
+   },
+   "bn": {
+    "bulbul:v3": 0.107,
+    "gemini-3.8-flash-tts": 0.063,
+    "openai:gpt-4o-mini-tts": 0.037
+   },
+   "ta": {
+    "bulbul:v3": 0.139,
+    "gemini-3.8-flash-tts": 0.065,
+    "openai:gpt-4o-mini-tts": 0.141
+   },
+   "te": {
+    "bulbul:v3": 0.02,
+    "gemini-3.8-flash-tts": 0.028,
+    "openai:gpt-4o-mini-tts": 0.06
+   },
+   "mr": {
+    "bulbul:v3": 0.054,
+    "gemini-3.8-flash-tts": 0.018,
+    "openai:gpt-4o-mini-tts": 0.05
+   },
+   "kn": {
+    "bulbul:v3": 0.06,
+    "gemini-3.8-flash-tts": 0.137,
+    "openai:gpt-4o-mini-tts": 0.099
+   },
+   "ml": {
+    "bulbul:v3": 0.047,
+    "gemini-3.8-flash-tts": 0.044,
+    "openai:gpt-4o-mini-tts": 0.021
+   },
+   "gu": {
+    "bulbul:v3": 0.009,
+    "gemini-3.8-flash-tts": 0.021,
+    "openai:gpt-4o-mini-tts": 0.012
+   },
+   "pa": {
+    "bulbul:v3": 0.016,
+    "gemini-3.8-flash-tts": 0.016,
+    "openai:gpt-4o-mini-tts": 0.012
+   },
+   "or": {
+    "bulbul:v3": 0.037,
+    "gemini-3.8-flash-tts": 0.024,
+    "openai:gpt-4o-mini-tts": 0.016
+   }
+  },
+  "Dubbing CER judge=openai:gpt-4o-transcribe": {
+   "hi": {
+    "bulbul:v3": 0.053,
+    "gemini-3.8-flash-tts": 0.019,
+    "openai:gpt-4o-mini-tts": 0.049
+   },
+   "bn": {
+    "bulbul:v3": 0.041,
+    "gemini-3.8-flash-tts": 0.035,
+    "openai:gpt-4o-mini-tts": 0.04
+   },
+   "ta": {
+    "bulbul:v3": 0.045,
+    "gemini-3.8-flash-tts": 0.033,
+    "openai:gpt-4o-mini-tts": 0.05
+   },
+   "te": {
+    "bulbul:v3": 0.041,
+    "gemini-3.8-flash-tts": 0.043,
+    "openai:gpt-4o-mini-tts": 0.05
+   },
+   "mr": {
+    "bulbul:v3": 0.031,
+    "gemini-3.8-flash-tts": 0.033,
+    "openai:gpt-4o-mini-tts": 0.048
+   },
+   "kn": {
+    "bulbul:v3": 0.047,
+    "gemini-3.8-flash-tts": 0.046,
+    "openai:gpt-4o-mini-tts": 0.06
+   },
+   "ml": {
+    "bulbul:v3": 0.084,
+    "gemini-3.8-flash-tts": 0.119,
+    "openai:gpt-4o-mini-tts": 0.067
+   },
+   "gu": {
+    "bulbul:v3": 0.027,
+    "gemini-3.8-flash-tts": 0.045,
+    "openai:gpt-4o-mini-tts": 0.062
+   },
+   "pa": {
+    "bulbul:v3": 0.028,
+    "gemini-3.8-flash-tts": 0.035,
+    "openai:gpt-4o-mini-tts": 0.043
+   },
+   "or": {
+    "bulbul:v3": 0.058,
+    "gemini-3.8-flash-tts": 0.038,
+    "openai:gpt-4o-mini-tts": 0.09
+   }
+  }
+ },
+ "speed": {
+  "sarvam-translate:v1": {
+   "p50_ms": 1144.1998481750488,
+   "p95_ms": 4846.609830856323
+  },
+  "mayura:v1": {
+   "p50_ms": 951.2951374053955,
+   "p95_ms": 4935.909271240234
+  },
+  "sarvam-105b": {
+   "p50_ms": 593.585729598999,
+   "p95_ms": 5654.4060707092285
+  },
+  "gemini-3.8-flash": {
+   "p50_ms": 2617.0907020568848,
+   "p95_ms": 5234.166860580444
+  },
+  "openai:gpt-5.4-mini": {
+   "p50_ms": 1017.2932147979736,
+   "p95_ms": 1443.2098865509033
+  },
+  "or:anthropic/claude-haiku-5.5": {
+   "p50_ms": 1672.7221012115479,
+   "p95_ms": 2281.6829681396484
+  },
+  "gemini-pro-latest": {
+   "p50_ms": 9331.135034561157,
+   "p95_ms": 14508.034944534302
+  },
+  "openai:gpt-5.5": {
+   "p50_ms": 4087.6801013946533,
+   "p95_ms": 9119.295120239258
+  },
+  "or:anthropic/claude-sonnet-5.5": {
+   "p50_ms": 2086.4288806915283,
+   "p95_ms": 3360.9721660614014
+  },
+  "sarvam-30b-local": {
+   "p50_ms": 4456.161975860596,
+   "p95_ms": 99375.68092346191
+  },
+  "qwen3-30b-local": {
+   "p50_ms": 5378.719806671143,
+   "p95_ms": 22239.9959564209
+  },
+  "mayura:v1-colloquial": {
+   "p50_ms": 984.7476482391357,
+   "p95_ms": 5406.643867492676
+  },
+  "bulbul:v3": {
+   "p50_ms": 1688.1868839263916,
+   "p95_ms": 2335.9737396240234,
+   "ttfb_p50_ms": 358.5197925567627,
+   "ttfb_p95_ms": 538.1669998168945
+  },
+  "gemini-3.8-flash-tts": {
+   "p50_ms": 2885.849952697754,
+   "p95_ms": 3593.83487701416,
+   "ttfb_p50_ms": 1154.3457508087158,
+   "ttfb_p95_ms": 1469.0730571746826
+  },
+  "openai:gpt-4o-mini-tts": {
+   "p50_ms": 2060.5268478393555,
+   "p95_ms": 3008.571147918701,
+   "ttfb_p50_ms": 991.1282062530518,
+   "ttfb_p95_ms": 1428.9484024047852
+  }
+ },
+ "usage": {
+  "sarvam-translate:v1": {
+   "calls": 640,
+   "chars": 57799,
+   "in_tok": 0,
+   "out_tok": 0,
+   "reasoning_tok": 0,
+   "cost_usd": 0,
+   "verbose_replies": 0,
+   "errors": 0
+  },
+  "mayura:v1": {
+   "calls": 640,
+   "chars": 57799,
+   "in_tok": 0,
+   "out_tok": 0,
+   "reasoning_tok": 0,
+   "cost_usd": 0,
+   "verbose_replies": 0,
+   "errors": 0
+  },
+  "sarvam-105b": {
+   "calls": 640,
+   "chars": 0,
+   "in_tok": 34542,
+   "out_tok": 15250,
+   "reasoning_tok": 0,
+   "cost_usd": 0,
+   "verbose_replies": 0,
+   "errors": 0
+  },
+  "gemini-3.8-flash": {
+   "calls": 640,
+   "chars": 0,
+   "in_tok": 28757,
+   "out_tok": 17515,
+   "reasoning_tok": 0,
+   "cost_usd": 0,
+   "verbose_replies": 0,
+   "errors": 0
+  },
+  "openai:gpt-5.4-mini": {
+   "calls": 640,
+   "chars": 0,
+   "in_tok": 33075,
+   "out_tok": 20816,
+   "reasoning_tok": 0,
+   "cost_usd": 0,
+   "verbose_replies": 0,
+   "errors": 0
+  },
+  "or:anthropic/claude-haiku-5.5": {
+   "calls": 640,
+   "chars": 0,
+   "in_tok": 63563,
+   "out_tok": 44506,
+   "reasoning_tok": 0,
+   "cost_usd": 0.0286,
+   "verbose_replies": 0,
+   "errors": 0
+  },
+  "gemini-pro-latest": {
+   "calls": 60,
+   "chars": 0,
+   "in_tok": 2981,
+   "out_tok": 1892,
+   "reasoning_tok": 59242,
+   "cost_usd": 0,
+   "verbose_replies": 0,
+   "errors": 0
+  },
+  "openai:gpt-5.5": {
+   "calls": 60,
+   "chars": 0,
+   "in_tok": 3412,
+   "out_tok": 8479,
+   "reasoning_tok": 5846,
+   "cost_usd": 0,
+   "verbose_replies": 0,
+   "errors": 0
+  },
+  "or:anthropic/claude-sonnet-5.5": {
+   "calls": 60,
+   "chars": 0,
+   "in_tok": 6838,
+   "out_tok": 4913,
+   "reasoning_tok": 0,
+   "cost_usd": 0.0628,
+   "verbose_replies": 0,
+   "errors": 0
+  },
+  "sarvam-30b-local": {
+   "calls": 161,
+   "chars": 0,
+   "in_tok": 8656,
+   "out_tok": 4177,
+   "reasoning_tok": 0,
+   "cost_usd": 0,
+   "verbose_replies": 1,
+   "errors": 0
+  },
+  "qwen3-30b-local": {
+   "calls": 160,
+   "chars": 0,
+   "in_tok": 16642,
+   "out_tok": 12836,
+   "reasoning_tok": 0,
+   "cost_usd": 0,
+   "verbose_replies": 0,
+   "errors": 0
+  },
+  "mayura:v1-colloquial": {
+   "calls": 100,
+   "chars": 8850,
+   "in_tok": 0,
+   "out_tok": 0,
+   "reasoning_tok": 0,
+   "cost_usd": 0,
+   "verbose_replies": 0,
+   "errors": 0
+  },
+  "bulbul:v3": {
+   "calls": 168,
+   "chars": 15312,
+   "audio_s": 1274.9,
+   "in_tok": 0,
+   "out_tok": 0,
+   "errors": 0,
+   "cost_inr": 45.94,
+   "cost_per_10k_chars": "INR 30 (Sarvam list price, bulbul:v3)"
+  },
+  "gemini-3.8-flash-tts": {
+   "calls": 168,
+   "chars": 15312,
+   "audio_s": 1187.2,
+   "in_tok": 5056,
+   "out_tok": 29688,
+   "errors": 0,
+   "audio_tokens_per_10k_chars": 19389
+  },
+  "openai:gpt-4o-mini-tts": {
+   "calls": 168,
+   "chars": 15312,
+   "audio_s": 1377.7,
+   "in_tok": 0,
+   "out_tok": 0,
+   "errors": 0,
+   "cost_usd_approx": 0.344,
+   "cost_note": "approx. US$0.015 per audio minute (OpenAI list estimate for gpt-4o-mini-tts)",
+   "cost_usd_per_10k_chars_approx": 0.225
+  },
+  "judge:saaras:v3": {
+   "calls": 504,
+   "audio_s": 3839.8,
+   "in_tok": 0,
+   "out_tok": 0
+  },
+  "judge:gemini-3.8-flash": {
+   "calls": 504,
+   "audio_s": 0,
+   "in_tok": 104221,
+   "out_tok": 13335
+  },
+  "judge:openai:gpt-4o-transcribe": {
+   "calls": 504,
+   "audio_s": 3839.8,
+   "in_tok": 0,
+   "out_tok": 0,
+   "cost_usd_approx": 0.384
+  }
+ },
+ "extra": {
+  "tts_language_coverage": {
+   "hi": {
+    "bulbul:v3": {
+     "ok": 26,
+     "refused": 0,
+     "documented": true
+    },
+    "gemini-3.8-flash-tts": {
+     "ok": 26,
+     "refused": 0,
+     "documented": null
+    },
+    "openai:gpt-4o-mini-tts": {
+     "ok": 26,
+     "refused": 0,
+     "documented": null
+    }
+   },
+   "bn": {
+    "bulbul:v3": {
+     "ok": 26,
+     "refused": 0,
+     "documented": true
+    },
+    "gemini-3.8-flash-tts": {
+     "ok": 26,
+     "refused": 0,
+     "documented": null
+    },
+    "openai:gpt-4o-mini-tts": {
+     "ok": 26,
+     "refused": 0,
+     "documented": null
+    }
+   },
+   "ta": {
+    "bulbul:v3": {
+     "ok": 26,
+     "refused": 0,
+     "documented": true
+    },
+    "gemini-3.8-flash-tts": {
+     "ok": 26,
+     "refused": 0,
+     "documented": null
+    },
+    "openai:gpt-4o-mini-tts": {
+     "ok": 26,
+     "refused": 0,
+     "documented": null
+    }
+   },
+   "te": {
+    "bulbul:v3": {
+     "ok": 26,
+     "refused": 0,
+     "documented": true
+    },
+    "gemini-3.8-flash-tts": {
+     "ok": 26,
+     "refused": 0,
+     "documented": null
+    },
+    "openai:gpt-4o-mini-tts": {
+     "ok": 26,
+     "refused": 0,
+     "documented": null
+    }
+   },
+   "mr": {
+    "bulbul:v3": {
+     "ok": 26,
+     "refused": 0,
+     "documented": true
+    },
+    "gemini-3.8-flash-tts": {
+     "ok": 26,
+     "refused": 0,
+     "documented": null
+    },
+    "openai:gpt-4o-mini-tts": {
+     "ok": 26,
+     "refused": 0,
+     "documented": null
+    }
+   },
+   "kn": {
+    "bulbul:v3": {
+     "ok": 26,
+     "refused": 0,
+     "documented": true
+    },
+    "gemini-3.8-flash-tts": {
+     "ok": 26,
+     "refused": 0,
+     "documented": null
+    },
+    "openai:gpt-4o-mini-tts": {
+     "ok": 26,
+     "refused": 0,
+     "documented": null
+    }
+   },
+   "ml": {
+    "bulbul:v3": {
+     "ok": 3,
+     "refused": 0,
+     "documented": true
+    },
+    "gemini-3.8-flash-tts": {
+     "ok": 3,
+     "refused": 0,
+     "documented": null
+    },
+    "openai:gpt-4o-mini-tts": {
+     "ok": 3,
+     "refused": 0,
+     "documented": null
+    }
+   },
+   "gu": {
+    "bulbul:v3": {
+     "ok": 3,
+     "refused": 0,
+     "documented": true
+    },
+    "gemini-3.8-flash-tts": {
+     "ok": 3,
+     "refused": 0,
+     "documented": null
+    },
+    "openai:gpt-4o-mini-tts": {
+     "ok": 3,
+     "refused": 0,
+     "documented": null
+    }
+   },
+   "pa": {
+    "bulbul:v3": {
+     "ok": 3,
+     "refused": 0,
+     "documented": true
+    },
+    "gemini-3.8-flash-tts": {
+     "ok": 3,
+     "refused": 0,
+     "documented": null
+    },
+    "openai:gpt-4o-mini-tts": {
+     "ok": 3,
+     "refused": 0,
+     "documented": null
+    }
+   },
+   "or": {
+    "bulbul:v3": {
+     "ok": 3,
+     "refused": 0,
+     "documented": true
+    },
+    "gemini-3.8-flash-tts": {
+     "ok": 3,
+     "refused": 0,
+     "documented": null
+    },
+    "openai:gpt-4o-mini-tts": {
+     "ok": 3,
+     "refused": 0,
+     "documented": null
+    }
+   }
+  },
+  "voices": {
+   "bulbul:v3": {
+    "hi": "priya",
+    "bn": "ishita",
+    "ta": "kavitha",
+    "te": "shruti",
+    "mr": "rupali",
+    "kn": "roopa",
+    "ml": "ritu",
+    "gu": "neha",
+    "pa": "simran",
+    "or": "pooja"
+   },
+   "gemini-3.8-flash-tts": "Kore",
+   "openai:gpt-4o-mini-tts": "alloy"
+  },
+  "frontier_subset": "first 3 sentence ids x 10 langs, both directions, think on: 1669, 1672, 1701",
+  "openai_judge_no_language_hint": 18,
+  "en2xx_wrong_script_outputs": {
+   "sarvam-translate:v1": 0,
+   "mayura:v1": 0,
+   "sarvam-105b": 0,
+   "gemini-3.8-flash": 0,
+   "openai:gpt-5.4-mini": 0,
+   "or:anthropic/claude-haiku-5.5": 0,
+   "gemini-pro-latest": 0,
+   "openai:gpt-5.5": 0,
+   "or:anthropic/claude-sonnet-5.5": 0,
+   "sarvam-30b-local": 9,
+   "qwen3-30b-local": 0
+  },
+  "gemini_judge_blocked_calls": 20,
+  "sarvam_spend_inr_estimate": 328.3
+ },
+ "examples": [
+  {
+   "task": "translation en->xx",
+   "lang": "ta",
+   "input": "Lions are the most social cats, living in large groups called prides.",
+   "gold": "சிங்கங்களில் சமூக பூனைகள், பிரைடுகள் என்றழைக்கப்படும் பெரிய குழுக்களில் வாழ்கின்றன.",
+   "outputs": {
+    "sarvam-translate:v1": {
+     "text": "சிங்கங்கள் மிகவும் சமூகப் பூனைகள், அவை பெருந்தொகுப்பு எனப்படும் பெரிய குழுக்களாக வாழ்கின்றன.",
+     "chrF++": 48.8
+    },
+    "mayura:v1": {
+     "text": "சிங்கங்கள் மிகவும் சமூகமான பூனைகள், அவை பிரைட்ஸ் எனப்படும் பெரிய குழுக்களாக வாழ்கின்றன.",
+     "chrF++": 50.4
+    },
+    "gemini-3.8-flash": {
+     "text": "சிங்கங்கள் மிகவும் சமூகமாக வாழும் பூனை இன விலங்குகளாகும், அவை 'பிரைட்' (pride) என்று அழைக்கப்படும் பெரிய குழுக்களாக வாழ்கின்றன.",
+     "chrF++": 47.7
+    },
+    "sarvam-30b-local": {
+     "text": "Lions are the most social cats, living in large groups called prides.",
+     "chrF++": 0.3
+    },
+    "mayura:v1-colloquial": {
+     "text": "Lions-ங்கறது ரொம்ப social cats. Prides-ன்னு சொல்லப்படற பெரிய groups-ல தான் வாழும்.",
+     "chrF++": 13.2
+    },
+    "sarvam-105b": {
+     "text": "சிங்கங்கள் சமூகப் பூனைகளில் மிகவும் பழகுபவை; அவை prides எனப்படும் பெரிய குழுக்களாக வாழ்கின்றன.",
+     "chrF++": 46.9
+    },
+    "qwen3-30b-local": {
+     "text": "இலவன்கள் மிகவும் சமூக வாழ்வு கொண்ட பாதுகாப்பு மிருகங்கள், பெரிய குழுக்களாக வாழ்கின்றன.",
+     "chrF++": 36.7
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "சிங்கங்கள் மிகவும் சமூக இயல்புடைய பூனைகள்; அவை பெரிய குழுக்களாக, பிரைட்ஸ் என்று அழைக்கப்படும் கூட்டங்களாக வாழ்கின்றன.",
+     "chrF++": 51.0
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "சிங்கங்கள் மிகவும் சமூகத்தன்மை கொண்ட பூனை இனங்கள் ஆகும்; அவை பிரைட்ஸ் எனப்படும் பெரிய குழுக்களாக வாழ்கின்றன.",
+     "chrF++": 44.6
+    }
+   }
+  },
+  {
+   "task": "translation en->xx",
+   "lang": "hi",
+   "input": "This seems sensible, because the Earth doesn't feel as if it's moving, does it?",
+   "gold": "यह तर्कसंगत लग रहा है, क्योंकि ऐसा महसूस नहीं होता है कि पृथ्वी चल रही है, है कि नहीं?",
+   "outputs": {
+    "sarvam-translate:v1": {
+     "text": "यह समझ में आता है, क्योंकि पृथ्वी को ऐसा नहीं लगता कि वह चल रही है, है ना?",
+     "chrF++": 42.7
+    },
+    "gemini-3.8-flash": {
+     "text": "यह समझदारी भरा लगता है, क्योंकि ऐसा बिल्कुल महसूस नहीं होता कि पृथ्वी घूम रही है, है ना?",
+     "chrF++": 54.0
+    },
+    "mayura:v1": {
+     "text": "यह समझदारी भरा प्रतीत होता है, क्योंकि पृथ्वी को ऐसा महसूस नहीं होता है कि वह चल रही है, है ना?",
+     "chrF++": 60.9
+    },
+    "mayura:v1-colloquial": {
+     "text": "यह sensible लगता है, क्योंकि Earth को ऐसा feel नहीं होता कि वह move कर रही है, है ना?",
+     "chrF++": 36.4
+    },
+    "sarvam-105b": {
+     "text": "यह बात सही लगती है, क्योंकि धरती हमें चलती हुई महसूस नहीं होती, है ना?",
+     "chrF++": 32.4
+    },
+    "sarvam-30b-local": {
+     "text": "यह तर्कसंगत प्रतीत होता है, क्योंकि पृथ्वी को ऐसा महसूस नहीं होता कि वह गतिमान है, है न?",
+     "chrF++": 57.5
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "यह समझदारी भरा लगता है, क्योंकि पृथ्वी ऐसी नहीं लगती जैसे वह चल रही हो, है न?",
+     "chrF++": 35.5
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "यह समझदारी भरा लगता है, क्योंकि पृथ्वी को ऐसा तो महसूस नहीं होता कि वह घूम रही है, है ना?",
+     "chrF++": 49.8
+    }
+   }
+  },
+  {
+   "task": "translation en->xx",
+   "lang": "bn",
+   "input": "The Great Pyramid at Giza is the only one of the seven wonders that is still standing today.",
+   "gold": "গিজার মস্ত পিরামিড সেই মাত্র ৭টি বিস্ময়ের মধ্যে একটি যা আজও দাঁড়িয়ে আছে।",
+   "outputs": {
+    "sarvam-translate:v1": {
+     "text": "গিজার গ্রেট পিরামিড হল সপ্তাশ্চর্যের মধ্যে একমাত্র যা আজও দাঁড়িয়ে আছে।",
+     "chrF++": 50.7
+    },
+    "gemini-3.8-flash": {
+     "text": "গিজার মহা পিরামিডই সপ্তাশ্চর্যের মধ্যে একমাত্র নিদর্শন যা আজও টিকে রয়েছে।",
+     "chrF++": 34.0
+    },
+    "mayura:v1": {
+     "text": "গিজার গ্রেট পিরামিড হল সাতটি বিস্ময়ের মধ্যে একমাত্র যা আজও দাঁড়িয়ে আছে।",
+     "chrF++": 63.0
+    },
+    "sarvam-105b": {
+     "text": "গিজার গ্রেট পিরামিড হলো সপ্তাশ্চর্যের মধ্যে একমাত্র বিস্ময় যা আজও টিকে আছে।",
+     "chrF++": 37.7
+    },
+    "openai:gpt-5.4-mini": {
+     "text": "গিজার মহান পিরামিডই সাত আশ্চর্যের মধ্যে একমাত্রটি, যা আজও দাঁড়িয়ে আছে।",
+     "chrF++": 39.0
+    },
+    "or:anthropic/claude-haiku-5.5": {
+     "text": "গিজার গ্রেট পিরামিড হল প্রাচীন সপ্তাশ্চর্যের মধ্যে একমাত্র যেটি আজও টিকে আছে।",
+     "chrF++": 31.7
+    }
+   }
+  },
+  {
+   "task": "dubbing round trip",
+   "lang": "ta",
+   "input": "காவல்துறை மேற்பார்வையாளர் சந்திர ஷேகர சோலங்கி குற்றம் சாட்டப்பட்டவர்கள் நீதிமன்றத்தில் முகத்தை மூடியவாறு தோன்றினர்.",
+   "outputs": {
+    "gemini-3.8-flash-tts -> saaras:v3": {
+     "transcript": "காவல்துறை மேற்பார்வையாளர் சந்திரசேகர சோலங்கி குற்றம் சாட்டப்பட்டவர்கள் நீதிமன்றத்தில் முகத்தை மூடியவாறு தோன்றினர்",
+     "cer": 0.01
+    },
+    "gemini-3.8-flash-tts -> gemini-3.8-flash": {
+     "transcript": "காவல்துறை கண்காணிப்பாளர் சந்திரசேகர சோலங்கி குற்றம்சாட்டப்பட்டவர்கள் நீதிமன்றத்தில் முகத்தை மூடியவாறு தோன்றினர்",
+     "cer": 0.096
+    },
+    "bulbul:v3 -> saaras:v3": {
+     "transcript": "காவல்துறை மேற்பார்வையாளர் சந்திரசேகர சோலங்கி குற்றம் சாட்டப்பட்டவர்கள் நீதிமன்றத்தில் முகத்தை மூடியவாறு தோன்றினர்",
+     "cer": 0.01
+    },
+    "bulbul:v3 -> gemini-3.8-flash": {
+     "transcript": "காவல்துறை கண்காணிப்பாளர் சந்திரசேகர சோலங்கி குற்றம் சாட்டப்பட்டவர்கள் நீதிமன்றத்தில் முகத்தை மூடியவாறு தோன்றினர்",
+     "cer": 0.096
+    },
+    "openai:gpt-4o-mini-tts -> saaras:v3": {
+     "transcript": "காவல்துறை மேற்பார்வையாளர் சந்திரசேகர சோளங்கி குற்றம் சாட்டப்பட்டவர்கள் நீதிமன்றத்தில் முகத்தை மூடியவாறு தோன்றினர்",
+     "cer": 0.019
+    },
+    "openai:gpt-4o-mini-tts -> gemini-3.8-flash": {
+     "transcript": "காவல்துறை கண்காணிப்பாளர் சந்திரசேகர் சோலங்கி குற்றம் சாட்டப்பட்டவர்கள் நீதிமன்றத்தில் முகத்தை மூடியவாறு தோன்றினர்",
+     "cer": 0.106
+    },
+    "gemini-3.8-flash-tts -> openai:gpt-4o-transcribe": {
+     "transcript": "காவல் துறை மேற்பார்வையாளர் சந்திரசேகர சோலங்கி, குற்றம் சாட்டப்பட்டவர்கள் நீதிமன்றத்தில் முகத்தை மூடியவாறு தோன்றினார்.",
+     "cer": 0.019
+    },
+    "bulbul:v3 -> openai:gpt-4o-transcribe": {
+     "transcript": "காவல் துறை மேற்பார்வையாளர் சந்திரஷேகர சோலங்கி குற்றம் சாட்டப்பட்டவர்கள் நீதிமன்றத்தில் முகத்தை மூடியவர் தோன்றினார்.",
+     "cer": 0.038
+    },
+    "openai:gpt-4o-mini-tts -> openai:gpt-4o-transcribe": {
+     "transcript": "காவல் துறை மேற்பார்வையாளர் சந்திரசேகர சோளங்கி குற்றம் சாட்டப்பட்டவர்கள் நீதிமன்றத்தில் முகத்தை மூடியவர் தோன்றினார்.",
+     "cer": 0.058
+    }
+   }
+  },
+  {
+   "task": "dubbing round trip",
+   "lang": "bn",
+   "input": "সাবধান হন, কাপড় যাতে খুব গরম না হয়ে যায় (এতে সঙ্কোচন হতে পারে বা ক্ষেত্রবিশেষে জ্বলেও যেতে পারে)।",
+   "outputs": {
+    "bulbul:v3 -> saaras:v3": {
+     "transcript": "সাবধান হন, কাপড় যাতে খুব গরম না হয়ে যায়, এতে সংকোচন হতে পারে বা ক্ষেত্র বিশেষ জলেও যেতে পারে।",
+     "cer": 0.063
+    },
+    "gemini-3.8-flash-tts -> saaras:v3": {
+     "transcript": "সাবধান হোন, কাপড় যাতে খুব গরম না হয়ে যায়। এতে সংকুচন হতে পারে বা ক্ষেত্রবিশেষে জ্বলেও যেতে পারে।",
+     "cer": 0.051
+    },
+    "bulbul:v3 -> gemini-3.8-flash": {
+     "transcript": "সাবধান হন কাপড় যাতে খুব গরম না হয়ে যায়। এতে সংকোচন হতে পারে বা ক্ষেত্র বিশেষে জলেও যেতে পারে।",
+     "cer": 0.051
+    },
+    "gemini-3.8-flash-tts -> gemini-3.8-flash": {
+     "transcript": "সাবধান হন কাপড় যাতে খুব গরম না হয়ে যায়। এতে সংকোচন হতে পারে বা ক্ষেত্রবিশেষে জ্বলে ও যেতে পারে।",
+     "cer": 0.025
+    },
+    "openai:gpt-4o-mini-tts -> saaras:v3": {
+     "transcript": "সাবধান হন কাপড় যাতে খুব গরম না হয়ে যায় এতে সংকোচন হতে পারে বা ক্ষেত্র বিশেষে ঝুয়েলও যেতে পারে।",
+     "cer": 0.089
+    },
+    "openai:gpt-4o-mini-tts -> gemini-3.8-flash": {
+     "transcript": "সাবধান হন কাপড় যাতে খুব গরম না হয়ে যায় এতে সংকোচন হতে পারে বা ক্ষেত্রবিশেষে ঝুলেও যেতে পারে",
+     "cer": 0.063
+    },
+    "bulbul:v3 -> openai:gpt-4o-transcribe": {
+     "transcript": "সাবধান হন, কাপড় যাতে খুব গরম না হয়ে যায়, এতে সংকোচন হতে পারে বা ক্ষেত্রবিশেষে জলে ও যেতে পারে।",
+     "cer": 0.051
+    },
+    "gemini-3.8-flash-tts -> openai:gpt-4o-transcribe": {
+     "transcript": "সাবধান হন, কাপড় যাতে খুব গরম না হয়ে যায়। এতে সংকুচিত হতে পারে বা ক্ষেত্রবিশেষে জলেও যেতে পারে।",
+     "cer": 0.089
+    },
+    "openai:gpt-4o-mini-tts -> openai:gpt-4o-transcribe": {
+     "transcript": "সাবধান হন, কাপড় যাতে খুব গরম না হয়ে যায়। এতে সংকোচন হতে পারে বা ক্ষেত্রে বিশেষে জ্বলে যেতে পারে।",
+     "cer": 0.051
+    }
+   }
+  }
+ ],
+ "findings": [
+  "English->Indic, full set (320 items per system): sarvam-translate:v1 has the highest chrF++, 51.8 [50.1-53.5]. Next are mayura:v1 49.8, gemini-3.8-flash 49.7, claude-haiku-5.5 47.8, gpt-5.4-mini 46.6 and sarvam-105b 45.6. sarvam-translate is best of these systems in 8 of 10 languages (Gemini wins Kannada, Haiku wins Malayalam).",
+  "Frontier models do not beat sarvam-translate into Indian languages. On the 30 sentence-language pairs where every system ran, sarvam-translate scores 53.5 against gemini-pro-latest 51.9, gemini-3.8-flash 51.9, gpt-5.5 51.0 and claude-sonnet-5.5 51.0, all with thinking on. The CIs (about +/-5 points at n=30) overlap, so the honest reading is 'no better', not 'worse'.",
+  "Indic->English ranks the other way round: gemini-3.8-flash 64.3 [62.5-66.2], claude-haiku-5.5 62.1, gpt-5.4-mini 60.4, sarvam-105b 57.8, mayura 54.6, sarvam-translate:v1 52.5. On the 30-pair frontier subset, claude-sonnet-5.5 scores 65.9, about level with gemini-3.8-flash at 62.8. sarvam-translate's errors into English change the meaning. Hindi 'fabric ... shrinkage, or scorch' became 'clothing ... could lead to hypothermia or even burns', and Tamil 'appeared in court with covered faces' became 'was present in the court in the dock'.",
+  "Cost differs by about 80x for similar volume. sarvam-105b translated all 640 items for about INR 1.4 in tokens (34.5k in, 15.3k out). sarvam-translate and mayura each cost about INR 115 at INR 20 per 10k input chars (57.8k chars). claude-haiku-5.5 cost US$0.029 for the same 640 items, as reported by OpenRouter.",
+  "mayura:v1 modern-colloquial mode produces Hinglish/Tanglish copy: 61% of output letters are Latin, e.g. 'Fabric ரொம்ப hot ஆகாம பாத்துக்கோங்க'. Against the formal reference it scores chrF++ 16 vs 49 for formal mode. That is a deliberate change of register, not an error, and suits chat or marketing copy rather than formal training material.",
+  "Dubbing intelligibility (26 sentences x 6 languages per TTS, three STT judges): bulbul:v3 and gemini-3.8-flash-tts are statistically tied, and gpt-4o-mini-tts is slightly behind. CER with saaras:v3 as judge: bulbul 1.8%, Gemini 1.9%, OpenAI 2.4%. With the vendor-neutral gpt-4o-transcribe as judge: Gemini 3.5%, bulbul 4.3%, OpenAI 5.0%, CIs overlapping. With Gemini as judge, counting its refusals as failures: Gemini 5.9%, OpenAI 6.7%, bulbul 7.3%. Without the refusals those three are 2.8%, 2.3% and 2.3%.",
+  "Judge bias is small and not consistent. The neutral OpenAI judge slightly favours Gemini TTS. Saaras slightly favours bulbul. The Gemini judge refused bulbul audio most often (8 refusals vs 5 for its own TTS), and once refusals are excluded it scores bulbul and OpenAI best. Every TTS stays under about 5% CER with every judge.",
+  "Bulbul is fastest to first audio. Streaming TTFB p50 is 357 ms for bulbul, 991 ms for gpt-4o-mini-tts and 1154 ms for Gemini TTS. The full clip arrives at p50 1.69 s, 2.06 s and 2.89 s respectively. In a 2-call spot check, Bulbul's non-streaming REST endpoint took 5.8-7.6 s for the same text, so use the stream endpoint.",
+  "TTS cost per 10k characters: bulbul:v3 INR 30 (list price). gpt-4o-mini-tts about US$0.23, estimated from audio minutes at about $0.015/min. Gemini TTS used about 19.4k audio output tokens; no Gemini price is assumed. All three TTS produced audio in all 10 languages tested.",
+  "The local 30B models trail the APIs on the 8-sentence subset. Into Indian languages, sarvam-30b-local scores 37.8 and qwen3-30b-local 36.0, against about 45-50 for the cloud systems. Into English they score 55.2 and 53.4, close to mayura. sarvam-30b-local returned the English source untranslated in 9 of 80 English->Indic items (e.g. 'Lions are the most social cats...' in bn, ta, kn, pa), and added an unrequested extra paragraph once. Qwen3 always produced the target script."
+ ],
+ "caveats": [
+  "chrF++ uses a single human reference per sentence. A correct paraphrase loses points, so differences under about 2 points on the full set, or about 5 points on 30-item subsets, are noise (see CIs).",
+  "FLEURS/FLORES sentences are general prose (news, travel, science), not real product copy or training modules. Brand names, UI strings and domain glossaries were not tested.",
+  "Test-set sizes are small. Price-matched systems ran 32 sentences x 10 languages x 2 directions (320 items per direction); the size was capped by the Sarvam translate price. Frontier models (thinking on) ran only sentence ids 1669, 1672 and 1701 x 10 languages x 2 directions (30 pairs per direction). Local models ran the first 8 sentences, because the shared llama-server was saturated (p95 latency up to 99 s). Compare systems only within the subset metrics.",
+  "LLM systems got a plain one-line translation prompt with no glossary. Before scoring, every system's output is cut to its first paragraph, so an unrequested 'Explanation' section does not count against chrF; this mattered for one sarvam-30b-local reply. Sarvam-30B runs with thinking off by prefilling an empty think block.",
+  "Dubbing measures intelligibility only, not naturalness, prosody, voice/gender fit or pronunciation of English loanwords. Sentences containing digits were excluded (26 remained). Voices: bulbul one named voice per language, Gemini Kore, OpenAI alloy plus a one-line 'read in <language>' instruction.",
+  "Gemini-judge refusals count as failures (CER 1.0): 20 of 504 benign transcription requests were blocked with BlockedReason.OTHER (bulbul 8, OpenAI 7, Gemini 5). This inflates the Gemini-judge CERs, and the finding also gives the numbers without refusals. gpt-4o-transcribe rejected the language hints 'pa' and 'or' (HTTP 400), so those 18 clips were transcribed without a hint.",
+  "During the run, Sarvam credits ran out once and many calls hit the shared 429 rate limit. Failed calls were retried and none are scored.",
+  "Spend for this suite: Sarvam about INR 328 (translate 231, bulbul 46, saaras about 32, 105b 1.4). OpenAI tokens and audio are recorded in usage; the TTS and transcribe estimates come to about US$0.73, and the chat models used a few cents. OpenRouter cost about US$0.09 as reported."
+ ],
+ "verdict": "For localising formal English content into Indian languages, use sarvam-translate:v1. It was the most accurate system into Indian languages in 8 of 10 languages, and on a small subset no frontier model (gemini-pro, gpt-5.5, claude-sonnet-5.5) did better. Its lead over mayura:v1 and gemini-3.8-flash is only about 2 chrF, and it costs about 80x more per item than prompting sarvam-105b, so high-volume, lower-stakes copy can go through 105b or a price-matched model. For Indian languages into English (customer feedback, regional documents), use gemini-3.8-flash or claude-haiku-5.5. They lead sarvam-translate by 10-12 chrF, and sarvam-translate makes meaning-changing errors in that direction. Use mayura's colloquial mode only when you want code-mixed copy. For dubbing, bulbul:v3, gemini-3.8-flash-tts and gpt-4o-mini-tts are all intelligible in all 10 languages, with bulbul and Gemini slightly ahead. Bulbul starts playback about 3x sooner (357 ms) and has a simple per-character rupee price, so it is the best default for interactive voice and a fine choice for batch voice-overs. The self-hosted 30B models are not ready for production translation into Indian languages.",
+ "updated": "2026-10-11 21:48:33"
+}

@@ -1,0 +1,126 @@
+{
+ "id": "d20",
+ "pair": "ta-en",
+ "lang": "Tamil",
+ "style": "native",
+ "topic": "hypertension",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "சாந்தி அம்மா, வாங்க. என்ன விஷயம்?"
+  },
+  {
+   "speaker": "patient",
+   "text": "டாக்டர், கோவில் பக்கத்துல free camp-ல BP பாத்தாங்க, அதிகமா இருக்குன்னு சொன்னாங்க. ரெண்டு வாரமா தலைவலி இருக்கு."
+  },
+  {
+   "speaker": "doctor",
+   "text": "தலைவலிக்கு என்ன சாப்பிடுறீங்க?"
+  },
+  {
+   "speaker": "patient",
+   "text": "தினமும் ஒரு Combiflam போடுவேன்."
+  },
+  {
+   "speaker": "doctor",
+   "text": "அதை நிறுத்துங்க. அந்த மாதிரி வலி மாத்திரை BP-யை இன்னும் ஏத்தும். இப்போ BP 156 by 100, pulse 82, weight 72 kilo. இது புதுசா கண்டுபிடிச்ச hypertension, stage 2."
+  },
+  {
+   "speaker": "patient",
+   "text": "அய்யோ, இனி தினமும் மாத்திரையா?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ஆமா. ஏதாவது மருந்துக்கு allergy இருக்கா?"
+  },
+  {
+   "speaker": "patient",
+   "text": "Penicillin ஊசி போட்டப்போ ஒரு தடவை மூச்சு திணறல் வந்துச்சு."
+  },
+  {
+   "speaker": "doctor",
+   "text": "சரி, எழுதிக்கிறேன். Amlodipine 5 mg, காலையில ஒரு தடவை, தினமும் தொடர்ந்து சாப்பிடணும். உப்பு, ஊறுகாய், அப்பளம் குறைங்க."
+  },
+  {
+   "speaker": "patient",
+   "text": "சரி டாக்டர்."
+  },
+  {
+   "speaker": "doctor",
+   "text": "நெஞ்சு வலி வந்தா, வாந்தியோட கடுமையான தலைவலி வந்தா, ஒரு பக்கம் கை கால் தளர்ந்தா உடனே hospital வாங்க."
+  },
+  {
+   "speaker": "patient",
+   "text": "அடுத்து எப்போ வரணும்?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ரெண்டு வாரம் கழிச்சு creatinine, cholesterol blood test எடுத்துட்டு வாங்க."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "headache",
+   "high blood pressure",
+   "raised bp"
+  ],
+  "duration": {
+   "value": 2,
+   "unit": "weeks"
+  },
+  "vitals": {
+   "bp": "156/100",
+   "pulse": 82,
+   "weight_kg": 72
+  },
+  "diagnosis": [
+   "hypertension",
+   "newly diagnosed hypertension",
+   "stage 2 hypertension",
+   "high blood pressure"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "amlodipine",
+     "amlong",
+     "amlopress"
+    ],
+    "dose": "5 mg",
+    "frequency": "OD",
+    "duration_days": null
+   }
+  ],
+  "allergies": [
+   [
+    "penicillin"
+   ]
+  ],
+  "red_flags": [
+   [
+    "chest pain"
+   ],
+   [
+    "severe headache with vomiting",
+    "severe headache"
+   ],
+   [
+    "one-sided weakness",
+    "weakness on one side",
+    "stroke"
+   ]
+  ],
+  "follow_up": [
+   "2 weeks",
+   "two weeks",
+   "after 2 weeks"
+  ],
+  "not_prescribed": [
+   "combiflam",
+   "ibuprofen"
+  ]
+ },
+ "trap": "Patient takes daily Combiflam; doctor stops it."
+}

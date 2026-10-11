@@ -1,0 +1,132 @@
+{
+ "id": "d12",
+ "pair": "ml-en",
+ "lang": "Malayalam",
+ "style": "native",
+ "topic": "diabetes",
+ "audio_subset": false,
+ "synthetic": true,
+ "turns": [
+  {
+   "speaker": "doctor",
+   "text": "ജോസഫ് ചേട്ടാ, ഇരിക്കൂ. എന്താ വിഷയം?"
+  },
+  {
+   "speaker": "patient",
+   "text": "ഡോക്ടറേ, ഒരു മാസമായി ഭയങ്കര ദാഹമാണ്, ഇടയ്ക്കിടെ മൂത്രമൊഴിക്കണം. ഭാരവും കുറഞ്ഞു."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Random sugar 268 ആണ്. Weight 70 kilo, BP 128 by 82. ഇത് type 2 diabetes ആണ്, പുതുതായി കണ്ടുപിടിച്ചതാണ്."
+  },
+  {
+   "speaker": "patient",
+   "text": "അയ്യോ, ഇനി ജീവിതകാലം മുഴുവൻ ഗുളിക വേണോ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "Diet-ഉം നടത്തവും ശരിയാക്കിയാൽ നന്നായി control ചെയ്യാം. ഏതെങ്കിലും മരുന്നിനോട് അലർജി ഉണ്ടോ?"
+  },
+  {
+   "speaker": "patient",
+   "text": "Sulpha ഗുളിക കഴിച്ചപ്പോൾ ഒരിക്കൽ ദേഹം മുഴുവൻ തടിച്ചു."
+  },
+  {
+   "speaker": "doctor",
+   "text": "ശരി, എഴുതിയിട്ടുണ്ട്. Metformin 1000 mg... അല്ല, ആദ്യം ചെറിയ dose-ൽ തുടങ്ങാം. Metformin 500 mg, ദിവസം രണ്ടു നേരം, ഭക്ഷണത്തിനു ശേഷം. ഇത് സ്ഥിരമായി കഴിക്കണം."
+  },
+  {
+   "speaker": "doctor",
+   "text": "Cholesterol-ഉം കൂടുതലാണ്. Atorvastatin 10 mg രാത്രി ഉറങ്ങുന്നതിനു മുമ്പ് ഒന്ന്, അതും സ്ഥിരം."
+  },
+  {
+   "speaker": "patient",
+   "text": "ചോറ് കഴിക്കാമോ?"
+  },
+  {
+   "speaker": "doctor",
+   "text": "ചോറ് പകുതിയാക്കി പച്ചക്കറി കൂട്ടുക. ദിവസം അര മണിക്കൂർ നടക്കണം. കഠിനമായ വയറുവേദനയോ നിർത്താതെ ഛർദ്ദിയോ വന്നാൽ, അല്ലെങ്കിൽ കാലിൽ ഉണങ്ങാത്ത മുറിവ് കണ്ടാൽ ഉടനെ വരണം."
+  },
+  {
+   "speaker": "patient",
+   "text": "ശരി ഡോക്ടറേ."
+  },
+  {
+   "speaker": "doctor",
+   "text": "രണ്ടാഴ്ച കഴിഞ്ഞ് fasting sugar-ഉം HbA1c-ഉം നോക്കിയിട്ട് വരൂ."
+  }
+ ],
+ "gold": {
+  "chief_complaint": [
+   "excessive thirst",
+   "increased thirst",
+   "frequent urination",
+   "weight loss"
+  ],
+  "duration": {
+   "value": 1,
+   "unit": "months"
+  },
+  "vitals": {
+   "blood_sugar": 268,
+   "weight_kg": 70,
+   "bp": "128/82"
+  },
+  "diagnosis": [
+   "type 2 diabetes",
+   "new onset diabetes",
+   "diabetes mellitus",
+   "t2dm"
+  ],
+  "medications": [
+   {
+    "drug": [
+     "metformin",
+     "glycomet"
+    ],
+    "dose": "500 mg",
+    "frequency": "BD",
+    "duration_days": null
+   },
+   {
+    "drug": [
+     "atorvastatin",
+     "atorva"
+    ],
+    "dose": "10 mg",
+    "frequency": "HS",
+    "duration_days": null
+   }
+  ],
+  "allergies": [
+   [
+    "sulpha",
+    "sulfa",
+    "sulphonamide",
+    "sulfonamide"
+   ]
+  ],
+  "red_flags": [
+   [
+    "severe abdominal pain",
+    "abdominal pain"
+   ],
+   [
+    "persistent vomiting",
+    "vomiting"
+   ],
+   [
+    "foot wound",
+    "non-healing wound",
+    "foot ulcer"
+   ]
+  ],
+  "follow_up": [
+   "2 weeks",
+   "two weeks",
+   "after 2 weeks"
+  ],
+  "not_prescribed": []
+ },
+ "trap": "Metformin first said 1000 mg, corrected to 500 mg."
+}
