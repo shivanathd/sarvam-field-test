@@ -2,7 +2,7 @@
 
 <p align="center">
 An open, reproducible benchmark of <b>Sarvam AI</b> against <b>Google Gemini</b>, <b>OpenAI</b>, <b>Anthropic Claude</b> and
-<b>self-hosted open weights</b> on twelve jobs Indian businesses and developers actually do.<br>
+<b>self-hosted open weights</b> on fifteen jobs Indian businesses and developers actually do, three of them with spoken input.<br>
 Every test has known answers, so scoring is automatic and no model grades another.
 </p>
 
@@ -15,8 +15,8 @@ Every test has known answers, so scoring is automatic and no model grades anothe
 <a href="#reproduce">Reproduce</a>
 </p>
 
-Run on 11 October 2026 on one Apple M5 Max (128 GB) in Kochi, India. Across **15** like-for-like head-to-heads,
-Sarvam **leads 1**, is **level on 7** and is **behind on 7**.
+Run on 11 October 2026 on one Apple M5 Max (128 GB) in Kochi, India. Across **18** like-for-like head-to-heads,
+Sarvam **leads 2**, is **level on 9** and is **behind on 7**.
 
 > **In one line:** use Sarvam for Indian-language speech, voice bots and translating *into* Indian languages; for reasoning over
 > text, documents and code, a price-matched Gemini, OpenAI or Claude model was more accurate in every test we ran.
@@ -35,7 +35,7 @@ on fixed 30-item subsets and are reported inside each suite rather than here.
 | Test | Best Sarvam | Best rival | Result |
 |---|---|---|---|
 | [Hinglish support calls: numbers captured](#uc01-voice-support) | Saaras v3 codemix mode **81%** | Gemini 3.8 Flash **94%** | ▼ Sarvam behind |
-| [Helpline speech in 13 languages: word error rate](#uc02-helpline-stt) | saaras:v4 transcribe mode **0.21** | Gemini 3.8 Flash **0.21** | = Level |
+| [Helpline speech in 13 languages: word error rate](#uc02-helpline-stt) | saaras:v4 transcribe mode **0.15** | Gemini 3.8 Flash **0.21** | ▲ Sarvam leads |
 | [Documents from bad phone photos: fields right](#uc03-documents) | Sarvam Vision+Sarvam-105B **92%** | Claude Sonnet 5.5 **96%** | = Level |
 | [Q&A over Indian-language policies: correct](#uc04-indic-rag) | Sarvam-105B · thinking **96%** | Gemini 3.8 Flash **100%** | ▼ Sarvam behind |
 | [Clinical notes: drug + dose + frequency exact](#uc05-clinical-notes) | Sarvam-105B **92%** | Gemini 3.8 Flash **100%** | ▼ Sarvam behind |
@@ -49,6 +49,9 @@ on fixed 30-item subsets and are reported inside each suite rather than here.
 | [Business text tasks: fully correct](#uc10-selfhost-business) | Sarvam-105B **94%** | Gemini 3.8 Flash **100%** | ▼ Sarvam behind |
 | [Coding Indian business logic: first try](#uc11-bharat-code) | Sarvam-105B · thinking-t0 **69%** | Gemini 3.8 Flash **100%** | ▼ Sarvam behind |
 | [Voice-assistant tool calls: exact](#uc11-bharat-code) | Sarvam-105B **100%** | Gemini 3.8 Flash **100%** | = Level |
+| [Spoken farmer questions: answered right (speech front end)](#uc06v-offline-agri-voice) | saaras:v4 -> Gemini 3.8 Flash [phone] **99%** | audio -> Gemini 3.8 Flash [phone] **100%** | = Level |
+| [WhatsApp voice notes: order exactly right (speech front end)](#uc08v-voice-orders) | phone: saaras-v4 codemix mode-kt **92%** | phone: gemini-direct-audio **94%** | = Level |
+| [Spoken payment commands: exact (speech front end)](#uc11v-voice-tools) | Saaras v3 -> Gemini 3.8 Flash **98%** | Gemini 3.8 Flash audio-direct **98%** | = Level |
 
 ## What to use for which job
 
@@ -66,11 +69,12 @@ flowchart TD
     Q -->|Data cannot leave your servers| S8[Qwen3-30B for accuracy<br/>Sarvam-30B for speed and token cost]
 ```
 
-- **Speech recognition in Indian languages:** Saaras had the lowest word error rate in 12 of 13 languages and ran about 4x faster than Gemini. For calls where amounts and account digits matter, Gemini 3.8 Flash captured them exactly more often, because Saaras often writes numbers as words.
-- **Real-time voice bot:** the all-Sarvam stack reached first audio in about 1.5 s, replied in the caller's language 19 of 20 times and cost ₹1.56 per conversation-minute. The all-Gemini stack read numbers back more accurately but took about 6.8 s.
-- **Text-to-speech:** Bulbul was as intelligible as Gemini and OpenAI voices across 10 languages and the fastest to start.
+- **Speech recognition in Indian languages:** Saaras v4 had the lowest average word error rate over 13 languages (0.149, against 0.21 for Gemini and 0.27 for OpenAI) and was the most accurate transcriber of spoken farmer questions. It often writes numbers as words, so for amounts and account digits on phone calls Gemini 3.8 Flash (94%) and Saaras v3 (81%) beat Saaras v4 with keyterms (56%). Add a number-words-to-digits step.
+- **Spoken input in front of an app:** with the same Gemini model behind it, a Saaras front end matched Gemini's own audio input on spoken farm questions, voice-note orders and spoken payment commands, and beat OpenAI's transcriber in all three.
+- **Real-time voice bot:** the all-Sarvam stack (Saaras v4, Sarvam-105B, Bulbul v4-flash) reached first audio in about 1.1 s, replied in the caller's language 18 of 20 times and cost about ₹1.42 per conversation-minute. The all-Gemini stack read numbers back more accurately but took about 6.8 s.
+- **Text-to-speech:** Bulbul v3 was as intelligible as Gemini and OpenAI voices across 10 languages; Bulbul v4-flash starts about 50 ms sooner but was slightly less clear.
 - **Translation:** Sarvam-Translate was best into Indian languages (8 of 10). Mayura garbled every decimal crore amount. Into English, Gemini, Claude and OpenAI were 6–12 chrF++ points ahead.
-- **Documents:** clean scans were a tie (~99.5%). On bad phone photos Sarvam Vision invented text that was not on the page; OpenAI models misread Indian-script names.
+- **Documents:** clean scans were a tie (~99.5%). On bad phone photos Sarvam's legacy Vision pipeline invented text that was not on the page; the newer Document AI Extract invents less but was no more accurate; OpenAI models misread Indian-script names.
 - **Chat, Q&A, clinical notes, code:** price-matched cloud models were more accurate. Sarvam-105B closes part of the gap with thinking on, at 5–46 s per answer, and sometimes returns nothing.
 - **Self-hosting:** Qwen3-30B was more accurate than Sarvam-30B (84% vs 63% on business tasks); Sarvam-30B was faster and much cheaper to feed Indian text.
 - **Token cost of Indian text:** Sarvam's tokenizer is cheapest (1.55x the English count), then Gemini (1.89x), OpenAI (2.10x), Claude (3.44x), Qwen3 (5.89x).
@@ -116,14 +120,14 @@ bought the last 9 points for about 4x the cost. Gemini 3.8 Flash prices are prom
 | Krishi advisory helpline | Agritech, FPOs | Cloud model that refuses out-of-scope questions; offline only with thinking on | [6](#uc06-offline-agri) |
 | Course and training localisation | Edtech, L&D | Sarvam-Translate into Indian languages + Bulbul voice-over | [7](#uc07-translation-dubbing) |
 | Product catalogue translation | E-commerce | Sarvam-Translate into Indian languages; Gemini into English | [7](#uc07-translation-dubbing) |
-| WhatsApp orders and voice notes | Quick commerce, kirana | Gemini 3.8 Flash for order extraction | [8](#uc08-quick-commerce) |
+| WhatsApp orders and voice notes | Quick commerce, kirana | Gemini 3.8 Flash for order extraction; Saaras v4 + keyterms or Gemini audio for voice notes | [8](#uc08v-voice-orders) |
 | Name and address transliteration | Logistics | Gemini 3.8 Flash; Sarvam's transliterate API is weak on Tamil | [8](#uc08-quick-commerce) |
 | Judgment and order translation | Courts, legal-tech | Sarvam-105B or GPT-5.4 mini; never Mayura for amounts | [9](#uc09-legal) |
 | Plain-language summaries for litigants | Legal aid | Gemini 3.8 Flash or GPT-5.4 mini | [9](#uc09-legal) |
 | Ticket triage and CRM notes | SaaS support | GPT-5.4 mini or Claude Haiku 5.5 | [10](#uc10-selfhost-business) |
 | On-premise processing of regulated data | Banks, hospitals | Qwen3-30B self-hosted; Sarvam-30B if speed and token cost matter more | [10](#uc10-selfhost-business) |
 | Coding copilot for Indian business logic | Fintech, ERP vendors | Gemini 3.8 Flash or Claude Haiku 5.5 | [11](#uc11-bharat-code) |
-| Voice-assistant actions (recharge, bill pay) | Wallets, telecom | Sarvam-105B or Gemini tool calling; validate amounts before paying | [11](#uc11-bharat-code) |
+| Voice-assistant actions (recharge, bill pay) | Wallets, telecom | Saaras or Gemini audio in front of Gemini tool calling; confirm payee and amount before paying | [11](#uc11v-voice-tools) |
 | Budgeting Indian-text-heavy workloads | Any | Sarvam's tokenizer is cheapest; Claude uses 3.4× the English token count | [12](#uc12-token-tax) |
 
 ---
@@ -134,7 +138,7 @@ bought the last 9 points for about 4x the cost. Gemini 3.8 Flash prices are prom
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/pipeline-dark.webp">
-  <img alt="Pipeline: authored and public test data feed 12 suites run by 6 agents under a shared brief; identical prompts go to the Sarvam API, cloud rivals and self-hosted models; known-answer scoring with bootstrap confidence intervals writes raw outputs and result files, which build the report." src="docs/pipeline-light.webp">
+  <img alt="Pipeline: authored and public test data feed 15 suites run by 6 agents under a shared brief; identical prompts go to the Sarvam API, cloud rivals and self-hosted models; known-answer scoring with bootstrap confidence intervals writes raw outputs and result files, which build the report." src="docs/pipeline-light.webp">
 </picture>
 
 Six parallel agents built and ran the suites, all sharing one library ([`common/bench.py`](common/bench.py)) for API clients,
@@ -186,11 +190,14 @@ Price-matched tier (Sarvam-105B, Gemini 3.8 Flash, GPT-5.4 mini, Claude Haiku 5.
 | [Q&A over company documents in Indian languages (RAG)](#uc04-indic-rag) | 132 | Authored for this benchmark | CC-BY-4.0 (this repo) |
 | [Mixed-language doctor-patient consultation -> English clinical note](#uc05-clinical-notes) | 40 | Authored for this benchmark | CC-BY-4.0 (this repo) |
 | [Offline crop advisory](#uc06-offline-agri) | 70 | Authored for this benchmark | CC-BY-4.0 (this repo) |
+| [Spoken farmer questions (voice-in crop advisory)](#uc06v-offline-agri-voice) | 70 | Authored for this benchmark | CC-BY-4.0 (this repo) |
 | [Translation and dubbing of training content / product copy](#uc07-translation-dubbing) | 32 | Public | CC-BY 4.0 |
 | [Code-mixed quick-commerce orders and product/place-name transliteration](#uc08-quick-commerce) | 200 | Authored for this benchmark | CC-BY 4.0 |
+| [WhatsApp voice-note orders: speech recognition in front of order extraction](#uc08v-voice-orders) | 86 | Authored for this benchmark | CC-BY 4.0 |
 | [Courts and legal: translating and summarising judgments without losing facts](#uc09-legal) | 40 | Authored for this benchmark | CC0 (synthetic) |
 | [Self-hosting Sarvam-30B for business text](#uc10-selfhost-business) | 150 | Authored for this benchmark | CC-BY-4.0 (this repo) |
 | [Bharat Code: coding agents for Indian business logic, prompted in Indian languages](#uc11-bharat-code) | 160 | Authored for this benchmark | CC-BY-4.0 (authored here) |
+| [Voice-in tool calling: spoken Indian-language payment commands](#uc11v-voice-tools) | 50 | Authored for this benchmark | CC-BY-4.0 |
 | [The Indic token tax](#uc12-token-tax) | 100 | Public | CC-BY-4.0 |
 
 Authored sets use fake people and IDs marked SAMPLE (valid checksum formats where a test needs them). Public data is FLEURS /
@@ -260,7 +267,7 @@ Every `results/<suite>.json` holds `metrics` (per-system `mean`, `lo`, `hi`, `n`
 
 > A bank, telecom or insurer handling Hinglish/Tanglish/Manglish/Benglish/Kanglish calls: which speech-to-text gets the caller's card digits, amounts, dates and phone numbers right, and which voice-agent stack answers fastest?
 
-**Verdict.** For capturing what a collections or card-services call actually needs — the digits — use gemini-3.8-flash as the transcriber or add a number-normalisation step after Sarvam: Gemini got 94% of amounts, card digits, dates and phone numbers exactly; saaras:v3 codemix 74-81%; the newer saaras:v4 codemix only 39-46% because it spells numbers out as words (v4 transcribe 60-64%); gpt-4o-transcribe ~60%; hosted whisper-1 ~50%. If you adopt saaras:v4 for its cleaner code-mix text (lower WER, consistent Latin for English words), budget an inverse-text-normalisation step — without it, v4 is a regression for numeric data. For the full voice loop, Sarvam's stack is the fastest available: the v4 stack (saaras:v4 + sarvam-105b + bulbul:v4-flash) starts speaking in ~1.1 s p50 (v3 stack 1.5 s, OpenAI 3.2 s, Gemini 6.8 s), and sarvam-105b is the fastest reply LLM and the most reliable at answering in the caller's language. Do not use Whisper (local or hosted) for code-mixed Indian calls.
+**Verdict.** For capturing what a collections or card-services call actually needs — the digits — use gemini-3.8-flash as the transcriber or add a number-normalisation step after Sarvam: Gemini got 94% of amounts, card digits, dates and phone numbers exactly; saaras:v3 codemix 74-81%; the newer saaras:v4 codemix only 39-46% because it spells numbers out as words (v4 transcribe 60-64%); gpt-4o-transcribe ~60%; hosted whisper-1 ~50%. If you adopt saaras:v4 for its cleaner code-mix text (lower WER, consistent Latin for English words), configure a keyterm list (it lifted phone-line entity accuracy from 0.39 to 0.56 and gave the lowest phone CER of any system) and still budget an inverse-text-normalisation step — without it, v4 is a regression for numeric data versus v3. For the full voice loop, Sarvam's stack is the fastest available: the v4 stack (saaras:v4 + sarvam-105b + bulbul:v4-flash) starts speaking in ~1.1 s p50 (v3 stack 1.5 s, OpenAI 3.2 s, Gemini 6.8 s), and sarvam-105b is the fastest reply LLM and the most reliable at answering in the caller's language. Do not use Whisper (local or hosted) for code-mixed Indian calls.
 
 <details><summary>Findings, caveats and files</summary>
 
@@ -268,10 +275,10 @@ Every `results/<suite>.json` holds `metrics` (per-system `mean`, `lo`, `hi`, `n`
 
 - Entity accuracy (what a bank needs: card last-4, amounts, dates, phone and claim numbers, 100 entities): gemini-3.8-flash 0.94 [0.89-0.98] on both clean and phone-line audio; saaras:v3 codemix 0.74 [0.65-0.83] clean / 0.81 [0.73-0.88] phone; gpt-4o-transcribe 0.61 / 0.57; whisper-1 (hosted Whisper) 0.50 / 0.51; saaras:v3 transcribe 0.43 / 0.46; local whisper-large-v3-turbo 0.24 / 0.26.
 - saaras:v4 (released 25 Sep 2026) vs v3 on the same clips. Codemix mode: v4 follows the code-mix script convention almost always (1/160 outputs without Latin vs 48/160 for v3) and has lower WER on clean audio (0.27 [0.22-0.33] vs 0.38; phone tie 0.30), but it writes numbers as words far more often, so entity accuracy FALLS: 0.46 clean / 0.39 phone vs v3's 0.74 / 0.81. Numbers-as-words misses per 100 entities: v4 codemix 50 clean / 57 phone vs v3 15 / 11 (e.g. ml: '₹18,000' -> 'പതിനെണ്ണായിരം രൂപ'). Transcribe mode improves: v4 entity accuracy 0.60 / 0.64 vs v3 0.43 / 0.46, numbers-as-words 35 / 31 vs 51 / 52. Best-of-two-references WER: v4 transcribe 0.24 / 0.28 vs v3 0.39 / 0.43. Neither v4 mode reaches gemini-3.8-flash on digits (0.94).
+- Keyterm prompting (saaras:v4 only; v3 rejects it with HTTP 400) with ONE fixed 50-term list a bank/telecom would configure once — UPI, EMI, KYC, IFSC, NEFT, OTP, PhonePe, Airtel, Jio, postpaid, recharge, claim number, premium… and no per-clip numbers — helps v4 codemix: entity accuracy 0.50 [0.41-0.60] clean / 0.56 [0.47-0.66] phone vs 0.46 / 0.39 without; numbers-as-words misses 45 / 39 vs 50 / 57; WER 0.25 / 0.23 vs 0.27 / 0.30 (phone CER 0.19, the best of any system); occurrences of 14 listed brand/product terms (UPI, EMI, OTP, Airtel, Jio, PhonePe…) written correctly in Latin: 93/106 vs 83/106. A repeat of plain v4 codemix on the phone audio scored 0.38, so the phone gain is not run-to-run noise; the clean gain is within noise. Even with keyterms, v4 codemix stays below v3 codemix (0.74 / 0.81) on digits. Gains are uneven by language: Manglish and Kanglish phone 0.45 -> 0.80 and 0.35 -> 0.70, Benglish unchanged (0.20 -> 0.15). Keyterm calls were slower: p50 1.78 s / p95 6.0 s.
+- Inverse text normalisation (number words -> digits) was NOT implemented: a parser covering Hindi's 100 irregular number words plus agglutinated Tamil/Malayalam/Kannada/Bengali forms ('நானூற்றி எழுபத்தி ரெண்டு', 'പതിനെണ്ണായിരം') does not fit in ~60 lines. Upper bound instead, same rule for every system (count every miss whose output has no digits at all as recoverable, i.e. assume the spoken-out number is right): phone-line ceiling saaras:v4 codemix 0.96, v4+keyterms 0.95, v4 transcribe 0.95, v3 transcribe 0.98, v3 codemix 0.92, Gemini 0.94, gpt-4o-transcribe 0.71, whisper-1 0.85. So with perfect ITN the Sarvam v4 gap to Gemini could close, but that is a ceiling, not a measured result.
 - saaras:v4 latency per utterance: p50 0.49-0.51 s (v3 0.61-0.65 s) but a heavier tail, p95 2.8-5.3 s vs ~0.9 s for v3, measured while other agents were rate-limiting the shared account.
 - Most saaras misses are formatting, not hearing: in codemix mode 15 of 26 clean misses (11 of 19 phone) had no digits at all — the number came back as words (e.g. hi02 'बारह हज़ार चार सौ निन्यानवे', 'सेवन थ्री ज़ीरो सिक्स'). Codemix mode is not applied consistently: 48/160 codemix outputs contain no Latin letters at all, i.e. it fell back to transcribe-style output. Transcribe mode writes numbers as words almost always (51 of 57 misses). Add inverse text normalisation before using saaras output for account data.
-- Gemini never wrote a number as words (0 such misses); its 6 misses were genuinely wrong digits. It does not follow the script convention reliably either: 59/160 Gemini outputs had no Latin letters (English loanwords written in native script).
-- Word error rate is convention-bound. Against the code-mix reference, saaras codemix and Gemini tie on clean audio (0.38 vs 0.36) and saaras codemix is better on phone audio (0.30 [0.24-0.36] vs 0.35 [0.31-0.39]); CER on phone audio 0.24 vs 0.37. Scoring each output against whichever reference convention suits it better (code-mix or all-native script, no transliteration), Gemini is lower: 0.17-0.18 vs saaras codemix 0.25.
 
 **Caveats**
 
@@ -440,9 +447,39 @@ Every `results/<suite>.json` holds `metrics` (per-system `mean`, `lo`, `hi`, `n`
 
 </details>
 
+### uc06v-offline-agri-voice
+
+#### 7. Spoken farmer questions (voice-in crop advisory)
+
+> When farmers ask by voice (clean or over a phone line), how much does speech recognition cost the crop-advisory answer, and which STT front-end should a voice advisory line use?
+
+**Verdict.** For a voice crop-advisory line in these six languages, put Sarvam's STT in front: saaras:v4 (or v3) transcribes 3-5x more accurately than gemini-3.8-flash or gpt-4o-transcribe, holds up on phone audio, and keeps downstream answers at 97-100%. If the answering model is Gemini anyway, sending it the audio directly is as good on these clips (100%) and saves the STT hop. Avoid gpt-4o-transcribe on phone audio for Punjabi, Kannada and Tamil: it garbles crop names, which turns into refusals or advice for the wrong crop. An all-Sarvam stack (saaras:v4 -> sarvam-105b) works (97-98% grounded, never invents answers) but needs a code check, because it often skips the machine-readable refusal code.
+
+<details><summary>Findings, caveats and files</summary>
+
+**Findings**
+
+- Character error rate vs the spoken question (140 clips each, clean / phone line): saaras:v4 1.3% / 1.5%, saaras:v3 1.6% / 2.3%, gpt-4o-transcribe 4.7% / 8.5%, gemini-3.8-flash 5.2% / 6.8%. Sarvam's STT is 3-5x more accurate on these six languages, and the phone line barely hurts it. gpt-4o-transcribe degrades most on the phone line (Punjabi 12.4%, Kannada 10.6%), and Gemini on Tamil (10.3% / 18.9%).
+- With the answering model held fixed (gemini-3.8-flash, thinking off), STT quality shows up in the advice. Overall pass on 70 questions: text oracle 100%; saaras:v3 100% / 97%; saaras:v4 99% / 99%; gemini STT 97% / 94%; gpt-4o-transcribe 99% / 90% (clean / phone). The damaging errors are crop names. Over the phone, gpt-4o-transcribe heard ਕਣਕ (wheat) as ਗੰਢ, பருத்தி (cotton) as பரிசி and ಹತ್ತಿ (cotton) as ಹಸಿಗೆ, and dropped soybean. The answering model then refused or answered for the wrong crop. Gemini still refused every out-of-scope question with every STT.
+- Gemini answering straight from the audio, with no separate STT step, scored 100% / 100%. On these clips that is better than any transcript-based Gemini pipeline, and it saves a hop.
+- All-Sarvam pipeline (saaras:v4 -> sarvam-105b): 97% / 98% grounded and 100% correct reply language. Strictly scored it passes 93% overall, because sarvam-105b often declines out-of-scope questions without the NOT_IN_SHEET code: 7/10 clean and 6/10 phone use the code, but 10/10 redirect to the KVK helpline (lenient). It never invents an answer.
+- Spend: Sarvam ₹12.45 at list price (saaras v4 + v3 at ₹4.55 each for 9.1 min of audio; sarvam-105b answering ₹3.35). Gemini: 1.13M input / 31k output tokens for answering, mostly the advisory sheet repeated in the prompt. OpenAI: 140 gpt-4o-transcribe calls on 9.1 min of audio.
+
+**Caveats**
+
+- The speech is synthetic: macOS voices (Lekha hi, Soumya kn, Geeta te, Vani ta) and gemini-3.8-flash-tts voices reading clean text. Real farmers bring dialects, code-mixing, hesitations and field noise, so every CER here is optimistic, and the gap between STT systems on real calls could be larger or smaller.
+- Gemini TTS produced the gemini-voiced clips, so Gemini STT and audio-in may have a home advantage on them. Even so, Gemini STT was the worst on the macOS-voiced clips (10.8% CER) and better on its own voices (3.5%), while saaras:v4 was 1.7% and 1.3%.
+- A spoken question has no script, so the reply is expected in native script for every item, romanised ones included. Romanised items are spoken from their native-script twin by a different (gemini) voice. The 4 out-of-scope questions that existed only romanised were given hand-written native versions.
+- The language code is passed to every STT system (as a voice line routed by IVR language menu would). Auto-detect was not tested.
+
+- Data: uc06 questions, synthesised speech (n=70; authored for this benchmark; licence CC-BY-4.0 (this repo))
+- Code: [`suites/uc06v_offline_agri_voice/`](suites/uc06v_offline_agri_voice/) · results: [`results/uc06v_offline_agri_voice.json`](results/uc06v_offline_agri_voice.json) · every output: [`results/raw/uc06v_offline_agri_voice.jsonl`](results/raw/uc06v_offline_agri_voice.jsonl)
+
+</details>
+
 ### uc07-translation-dubbing
 
-#### 7. Translation and dubbing of training content / product copy
+#### 8. Translation and dubbing of training content / product copy
 
 > Localising training content and product copy into Indian languages, then dubbing it: which translation system and which TTS should an Indian business use?
 
@@ -473,7 +510,7 @@ Every `results/<suite>.json` holds `metrics` (per-system `mean`, `lo`, `hi`, `n`
 
 ### uc08-quick-commerce
 
-#### 8. Code-mixed quick-commerce orders and product/place-name transliteration
+#### 9. Code-mixed quick-commerce orders and product/place-name transliteration
 
 > Can a model turn code-mixed WhatsApp/quick-commerce order and search messages into a correct structured order, and write Indian names in native script correctly?
 
@@ -502,9 +539,40 @@ Every `results/<suite>.json` holds `metrics` (per-system `mean`, `lo`, `hi`, `n`
 
 </details>
 
+### uc08v-voice-orders
+
+#### 10. WhatsApp voice-note orders: speech recognition in front of order extraction
+
+> Many quick-commerce orders arrive as WhatsApp voice notes. Which speech-to-text should sit in front of the order extractor, and does a phone line break it?
+
+**Verdict.** For WhatsApp voice-note orders, the simplest strong option is to send the audio straight to gemini-3.8-flash with the order prompt (94% exact, unaffected by phone-quality audio). If you want a separate speech-recognition step, for example to keep a transcript or to keep audio with an Indian provider, use saaras:v4 codemix with a fixed store keyterm list in front of a strong extractor (92% exact on phone audio). Avoid saaras:v3 and gpt-4o-transcribe for this job: they lose pincodes and corrections (71-79%). Keep the extractor strong: putting sarvam-105b behind saaras:v4 lost 7 points compared with Gemini on the same transcripts, and added 8-30 s of latency. Read back pincodes to the customer for confirmation, because even the best pipelines miss about 5% of them.
+
+<details><summary>Findings, caveats and files</summary>
+
+**Findings**
+
+- Voice costs about 3-9 points of whole-order accuracy compared with typing. With the same extractor (gemini-3.8-flash, thinking off), typed text scores 97.7% exact on these 86 orders. The best voice pipelines score 94.2% (gemini-direct-audio: audio plus order prompt in one call, clean and phone alike) and 91.9% (saaras:v4 codemix with keyterms, phone line).
+- With the extractor held fixed, phone-line exact accuracy by speech recognizer is: saaras:v4 codemix + keyterms 91.9% [86-98], gemini-3.8-flash 90.7%, saaras:v4 codemix 89.5%, saaras:v3 codemix 76.7%, gpt-4o-transcribe 70.9%. On clean audio: saaras:v4 codemix 91.9%, gemini-3.8-flash 90.7%, gpt-4o-transcribe 79.1%. saaras:v4 is clearly better than saaras:v3, which gets 84% of pincodes right vs 94% for v4 (e.g. Bengali 'সাত শূন্য শূন্য শূন্য ছয় চার' came out as '7000064').
+- The phone line (8 kHz, 300-3400 Hz band, 15 dB SNR noise) barely hurts Gemini (90.7% -> 90.7% as recognizer, 94.2% -> 94.2% direct) and saaras:v4 (91.9% -> 89.5%). It hurts gpt-4o-transcribe most (79.1% -> 70.9%): its errors drop content, e.g. it omitted the correction 'nahi 250gm adrak' and the pincode in one Hindi order, and it often renders Hindi numbers as words.
+- The fixed 50-word keyterm list (brands, units, payment words) moved saaras:v4 from 89.5% to 91.9% exact and strict item F1 from 0.988 to 1.000 on the phone line. It costs latency: p50 0.49 s -> 2.0 s, p95 5.2 s -> 10.1 s. The API caps keyterms at 50 and needs them as a JSON array.
+- The all-Sarvam pipeline (saaras:v4 codemix -> sarvam-105b thinking on) reaches 82.6% exact on the phone line, against 89.5% for the same transcripts fed to gemini-3.8-flash and 90.7% for sarvam-105b-think on typed text. Speech recognition is not its bottleneck. It adds p50 8.2 s / p95 31.6 s of extraction latency and about 2,250 reasoning tokens per order (about INR 13 for 86 orders).
+- Item identification survives voice well. Catalog-name F1 is 0.97-1.00 for every pipeline, and strict item F1 is 0.95-1.00 for everything except gpt-4o-transcribe (0.91-0.96). Most lost orders come from pincodes. Gemini TTS itself misread 4 of the 86 pincodes (400050 spoken as '40050', 122001 as '112201', 411001 as '41 00 1', 122018 as '121018'). Those are wrong for every pipeline equally, which caps exact accuracy at about 95%.
+
+**Caveats**
+
+- Speech is synthetic: gemini-3.8-flash-tts reading the written message, with two voices. Real voice notes have background noise, hesitations, restarts and wider accent variation, so absolute numbers are optimistic. The Gemini recognizer and direct-audio Gemini may also have an advantage on Gemini-generated speech. No Sarvam TTS was used, so Sarvam ASR had no such advantage.
+- The phone condition is a simple simulation (resampling, band-pass, white noise), not a real GSM/AMR codec or a real call.
+- Budget plan for Sarvam: saaras:v4 + keyterms, saaras:v3 and the all-Sarvam pipeline ran on the phone condition only. Actual Sarvam spend was about INR 34 against the INR 30 asked: 42 min of saaras audio is about INR 21, and 105b thinking about INR 13. The overrun came from 105b reasoning tokens.
+- 86 orders per row, so 95% CIs are about +/-6-8 points. Differences under about 5 points between pipelines are not significant. The 4 TTS-misread pincodes are left in, because they affect every pipeline identically.
+
+- Data: UC08 order messages (86), spoken by gemini-3.8-flash-tts (n=86; authored for this benchmark; licence CC-BY 4.0)
+- Code: [`suites/uc08v_voice_orders/`](suites/uc08v_voice_orders/) · results: [`results/uc08v_voice_orders.json`](results/uc08v_voice_orders.json) · every output: [`results/raw/uc08v_voice_orders.jsonl`](results/raw/uc08v_voice_orders.jsonl)
+
+</details>
+
 ### uc09-legal
 
-#### 9. Courts and legal: translating and summarising judgments without losing facts
+#### 11. Courts and legal: translating and summarising judgments without losing facts
 
 > If I translate or summarise English court orders, RTI replies and tribunal awards into Hindi, Tamil, Marathi or Bengali for litigants, which system keeps every amount, date, section, case number and party name intact?
 
@@ -535,7 +603,7 @@ Every `results/<suite>.json` holds `metrics` (per-system `mean`, `lo`, `hi`, `n`
 
 ### uc10-selfhost-business
 
-#### 10. Self-hosting Sarvam-30B for business text
+#### 12. Self-hosting Sarvam-30B for business text
 
 > Can an Indian business run Sarvam-30B on its own hardware instead of a cloud API, and what does it give up in accuracy and speed?
 
@@ -566,7 +634,7 @@ Every `results/<suite>.json` holds `metrics` (per-system `mean`, `lo`, `hi`, `n`
 
 ### uc11-bharat-code
 
-#### 11. Bharat Code: coding agents for Indian business logic, prompted in Indian languages
+#### 13. Bharat Code: coding agents for Indian business logic, prompted in Indian languages
 
 > Can these models act as coding agents for Indian business logic when the developer writes the task in their own language (Hindi, Tamil, Hinglish) instead of English? And can they drive a payments-app tool schema from Indian-language voice commands?
 
@@ -595,9 +663,40 @@ Every `results/<suite>.json` holds `metrics` (per-system `mean`, `lo`, `hi`, `n`
 
 </details>
 
+### uc11v-voice-tools
+
+#### 14. Voice-in tool calling: spoken Indian-language payment commands
+
+> When a user SPEAKS 'mera 299 wala recharge kar do' (or the Tamil/Bengali equivalent) into a payments app, which speech stack gets the right action with the right arguments?
+
+**Verdict.** For a voice payments assistant in Hindi, Hinglish, Tamil or Bengali, ears matter more than the LLM, and the cheapest strong stack is Saaras (v3 here, v4 close behind) feeding a capable tool-calling LLM: it keeps spoken fractions like 'paune do hazaar' as words and survives phone-line audio. Gemini-3.8-flash taking the audio directly with function calling is equally accurate and simplest to build. Avoid gpt-4o-transcribe for Indian-language phone audio. The all-Sarvam stack (saaras:v4 -> sarvam-105b) is the fastest but loses ~6 points to UPI-ID and fraction mistakes in the LLM step. Whatever you pick, confirm payees against contacts, and re-prompt on empty transcripts instead of letting the LLM guess.
+
+<details><summary>Findings, caveats and files</summary>
+
+**Findings**
+
+- Same tool model (gemini-3.8-flash, think off), different ears. Exact tool+args on clean / phone-line audio: saaras:v3 98% / 98%; saaras:v4 96% / 94%; gemini-3.8-flash-audio 94% / 94%; gpt-4o-transcribe 90% / 78%. Typed-text ceiling is 100%. Saaras v3 lost only 1 command in 50 on either condition, and that miss was a name-spelling ambiguity; gpt-4o-transcribe degraded most on the phone line (-12 points).
+- Spoken fractional amounts (dhai, paune, saadhe, dedh, sava; 10 commands), clean / phone: saaras:v3 90% / 90%; saaras:v4 90% / 90%; gemini-3.8-flash-audio 80% / 80%; gpt-4o-transcribe 70% / 50%. Saaras keeps 'पौने दो हज़ार' as words, so the LLM resolves it correctly. Gemini's transcript 'helpfully' normalises numbers and turned 'पौने दो हज़ार' (1750) into '₹2,000'. Its other normalisations ('paune 300', 'dedh hazaar' -> '1500') survived. gpt-4o-transcribe's misses on these commands were mostly the phone number or UPI ID in the same sentence. On the phone line it once transcribed Hinglish into Urdu script and dropped the number entirely.
+- Gemini with audio in and function calling directly (no transcript step) tied for the best stack: 100% clean, 98% phone, 100% on fractional amounts. It is one call, at a p50 of 3.1 s.
+- The all-Sarvam stack (saaras:v4 -> sarvam-105b) scored 90% clean / 88% phone, vs 96% / 94% when the same saaras:v4 transcripts go to Gemini. So the gap is the LLM, not the ears. Sarvam-105b dropped the name from UPI IDs that Saaras writes as 'शॉपकीपर @YBL' or 'রিনা @ybl' (calling payee '@YBL' / 'ybl'), and got 60% of the fractional-amount commands exactly right on clean audio. Most of those misses were the UPI name; one was the amount itself ('साढ़े चार हज़ार' -> 4000). Its strength is speed: p50 0.34 s for the tool call, vs ~2.3 s for gemini-3.8-flash.
+- Spoken UPI IDs are inherently ambiguous. Every ASR wrote 'dipak' as 'deepak' and 'rina' as 'reena', and no stack can know the spelling from speech. With vowel-spelling tolerance on the name part, exact scores rise by 2-6 points. A real app must confirm the payee against the contact list or a VPA lookup before paying.
+- Empty transcripts turn into invented actions. gemini-3.8-flash returned an empty transcript for 2 of 100 clips. The tool model, told to always call a tool, then invented one (pay electricity bill, check bank balance) instead of asking the user to repeat. Voice apps need an 'empty or low-confidence -> re-prompt' guard before the LLM.
+
+**Caveats**
+
+- The speech is synthetic (macOS say Lekha/Vani/Piya and gemini-3.8-flash-tts voices; never Sarvam TTS), read once per command. Real callers bring accents, hesitations and background speech that TTS lacks, so absolute scores are optimistic.
+- A transcript audit found 5 clips where the TTS itself was wrong: a `say` voice reordered or dropped phone digits, or could not say an English UPI ID. All four ASR systems agreed on the wrong words. Those clips were reworded or re-voiced and re-run (SPOKEN_OVERRIDE / VOICE_OVERRIDE in run.py). In t7, the Vani voice reads 199 as 'ஒன்று நூறு தொண்ணூற்று ஒன்பது'. That is unidiomatic but intelligible, so it was kept: saaras:v4 hears 1199 there.
+- The phone condition is simulated (8 kHz band-limit, ~20 dB SNR white noise, mu-law), as in uc01. It is not a real telephony capture.
+- n=50 commands per condition (10 with fractional amounts), so differences of a few commands are within noise. Read the pipeline ranking as tiers, not exact positions.
+
+- Data: uc11 tool-calling commands, spoken (n=50; authored for this benchmark; licence CC-BY-4.0)
+- Code: [`suites/uc11v_voice_tools/`](suites/uc11v_voice_tools/) · results: [`results/uc11v_voice_tools.json`](results/uc11v_voice_tools.json) · every output: [`results/raw/uc11v_voice_tools.jsonl`](results/raw/uc11v_voice_tools.jsonl)
+
+</details>
+
 ### uc12-token-tax
 
-#### 12. The Indic token tax
+#### 15. The Indic token tax
 
 > What does each model's tokenizer charge you, in tokens (and so in money, latency and context window), for the same sentence written in each Indian language?
 
@@ -638,7 +737,11 @@ Every `results/<suite>.json` holds `metrics` (per-system `mean`, `lo`, `hi`, `n`
 - Sarvam Vision accepts only PDF or ZIP uploads (wrap an image in a one-file ZIP) and returns a ZIP with markdown whose tables are HTML.
 - Saaras batch names output files `0.json`, `1.json`… by upload order, so two jobs downloaded into one folder overwrite each other. Map outputs through the job status instead.
 - The Saaras batch endpoint is documented two ways; `/speech-to-text/job/v1` with a `job_parameters` body works.
-- Saaras codemix mode returned no Latin letters at all in 30% of outputs, and wrote numbers as words ("बारह हज़ार").
+- Saaras v3 codemix returned no Latin letters at all in 30% of outputs; v4 fixed that (1 in 160) but writes far more numbers as words ("बारह हज़ार").
+- Saaras v4 takes `keyterms` as a JSON array of at most 50 strings, each at most 64 characters; a comma-separated string returns HTTP 400, and v3 rejects keyterms entirely.
+- `saaras:v4-multispk` is listed but rejected as deprecated; plain `saaras:v4` accepts `with_diarization=true`.
+- Bulbul v4-flash rejects the v3 voices (e.g. `shubh`) and offers only language-tied voices such as `ritu_hi_edtech`; there is no Malayalam or Odia voice, and Assamese needs beta access. The voice list is only in the API's error message.
+- Document AI Extract (`/doc-ai/v1/job/extract`) takes PNG/JPEG directly; the older digitisation API needs a PDF or ZIP. Its `model` parameter rejects every Vision version name, so you cannot choose Vision 2.1 through the API.
 - Saaras writes Sindhi in Devanagari only; FLEURS and most Sindhi users expect Perso-Arabic script.
 - Bulbul's REST response holds audio in an `audios` list; its streaming endpoint delivered complete audio about 3× faster than REST.
 - Odia's language code is `od-IN`. Mayura accepts at most 1,000 characters per request.

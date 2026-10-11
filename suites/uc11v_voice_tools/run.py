@@ -293,6 +293,17 @@ def score():
         if r["kind"] == "stt":
             st[(r["id"], r["system"], r["cond"])] = r
     st = list(st.values())
+    def lenient(r):
+        """exact, except a UPI handle's name part may differ only in vowel spelling (dipak/deepak, rina/reena):
+        that spelling is not recoverable from speech, a real app would confirm it against the contact list."""
+        if r["exact"] or not r["call"] or r["call"]["name"] != r["gold"]["name"] or "payee" not in r["gold"]["args"]:
+            return r["exact"]
+        g, c = dict(r["gold"]["args"]), dict(r["call"].get("args") or {})
+        f = lambda v: re.sub(r"ee|i", "i", re.sub(r"oo|u", "u", re.sub(r"aa", "a", str(v).lower())))
+        return c.pop("payee", None) is not None and f(r["call"]["args"]["payee"]) == f(g.pop("payee")) and \
+            T.norm_args(r["gold"]["name"], c) == T.norm_args(r["gold"]["name"], g)
+    for r in tl:
+        r["lenient"] = lenient(r)
     pipes = sorted({r["pipeline"] for r in tl}, key=lambda p: (p.startswith("typed"), p))
     ex = lambda rs: bootstrap_ci([1.0 if r["exact"] else 0.0 for r in rs])
     metrics, per_lang = [], {}
@@ -305,6 +316,11 @@ def score():
             if vals:
                 metrics.append({"name": f"tool call {name}, {cond} audio" if cond != "text" else f"tool call {name}, typed text",
                                 "higher_is_better": True, "unit": "fraction", "values": vals})
+    for cond in ("clean", "phone"):
+        vals = {p: bootstrap_ci([1.0 if r["lenient"] else 0.0 for r in tl if r["pipeline"] == p and r["cond"] == cond]) for p in pipes}
+        metrics.append({"name": f"tool call exact, payee vowel-spelling tolerant (all 50), {cond} audio", "higher_is_better": True,
+                        "unit": "fraction", "values": {p: v for p, v in vals.items() if v["n"]}})
+    empty = {s: sum(1 for r in st if r["system"] == s and not r["hyp"].strip()) for s in STT}
     for cond in CONDS:
         for lang in LANG:
             per_lang.setdefault(f"exact ({cond})", {})[lang] = {
@@ -335,9 +351,9 @@ def score():
                                  "'@' as 'at the rate'; audio from macOS say (Lekha/Vani/Piya) and gemini-3.8-flash-tts voices "
                                  "(never Sarvam TTS); phone condition = 8 kHz band-limited + ~20 dB noise + mu-law (uc01 recipe)",
                        "license": "CC-BY-4.0", "audio_s_total": round(sum(v["audio_s"] for v in meta.values()), 1)},
-           "systems": pipes, "metrics": metrics, "per_language": per_lang, "speed": speed, "usage": usage, "examples": examples}
+           "systems": pipes, "metrics": metrics, "empty_transcripts_of_100": empty, "per_language": per_lang, "speed": speed, "usage": usage, "examples": examples}
     try:
-        import narrative
+        import voice_narrative as narrative
         res.update(narrative.make(res, tl, st))
     except ImportError:
         pass

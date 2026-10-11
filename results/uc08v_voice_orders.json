@@ -1,0 +1,1332 @@
+{
+ "uc": "uc08v_voice_orders",
+ "title": "WhatsApp voice-note orders: speech recognition in front of order extraction",
+ "business_question": "Many quick-commerce orders arrive as WhatsApp voice notes. Which speech-to-text should sit in front of the order extractor, and does a phone line break it?",
+ "dataset": {
+  "name": "UC08 order messages (86), spoken by gemini-3.8-flash-tts",
+  "source": "suites/uc08_quick_commerce/build_data.py + this suite",
+  "license": "CC-BY 4.0",
+  "n": 86,
+  "languages": [
+   "bn-beng",
+   "bn-rom",
+   "en",
+   "en-mix",
+   "hi-deva",
+   "hi-rom",
+   "kn-knda",
+   "kn-rom",
+   "mr-deva",
+   "mr-rom",
+   "ta-rom",
+   "ta-tamil"
+  ],
+  "synthetic": true,
+  "how_made": "Each of the 86 hand-written order messages is read as written by gemini-3.8-flash-tts (voices Kore/Puck alternating; accent inferred from the text). The phone condition is resampled to 8 kHz, band-passed to 300-3400 Hz, with white noise at 15 dB SNR. Gold JSON is the UC08 gold. Synthetic voices are cleaner than real customers."
+ },
+ "systems": [
+  "clean: gemini-3.8-flash",
+  "clean: gemini-direct-audio",
+  "clean: gpt-4o-transcribe",
+  "clean: saaras-v4-codemix",
+  "phone: all-sarvam",
+  "phone: gemini-3.8-flash",
+  "phone: gemini-direct-audio",
+  "phone: gpt-4o-transcribe",
+  "phone: saaras-v3-codemix",
+  "phone: saaras-v4-codemix",
+  "phone: saaras-v4-codemix-kt",
+  "typed text: gemini-3.8-flash",
+  "typed text: sarvam-105b-think"
+ ],
+ "metrics": [
+  {
+   "name": "Exact whole-order accuracy",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "clean: gemini-3.8-flash": {
+     "mean": 0.9069767441860465,
+     "lo": 0.8372093023255814,
+     "hi": 0.9651162790697675,
+     "n": 86
+    },
+    "clean: gemini-direct-audio": {
+     "mean": 0.9418604651162791,
+     "lo": 0.8953488372093024,
+     "hi": 0.9883720930232558,
+     "n": 86
+    },
+    "clean: gpt-4o-transcribe": {
+     "mean": 0.7906976744186046,
+     "lo": 0.6976744186046512,
+     "hi": 0.872093023255814,
+     "n": 86
+    },
+    "clean: saaras-v4-codemix": {
+     "mean": 0.9186046511627907,
+     "lo": 0.8604651162790697,
+     "hi": 0.9767441860465116,
+     "n": 86
+    },
+    "phone: all-sarvam": {
+     "mean": 0.8255813953488372,
+     "lo": 0.7325581395348837,
+     "hi": 0.9069767441860465,
+     "n": 86
+    },
+    "phone: gemini-3.8-flash": {
+     "mean": 0.9069767441860465,
+     "lo": 0.8372093023255814,
+     "hi": 0.9651162790697675,
+     "n": 86
+    },
+    "phone: gemini-direct-audio": {
+     "mean": 0.9418604651162791,
+     "lo": 0.8953488372093024,
+     "hi": 0.9883720930232558,
+     "n": 86
+    },
+    "phone: gpt-4o-transcribe": {
+     "mean": 0.7093023255813954,
+     "lo": 0.6162790697674418,
+     "hi": 0.8023255813953488,
+     "n": 86
+    },
+    "phone: saaras-v3-codemix": {
+     "mean": 0.7674418604651163,
+     "lo": 0.6744186046511628,
+     "hi": 0.8488372093023255,
+     "n": 86
+    },
+    "phone: saaras-v4-codemix": {
+     "mean": 0.8953488372093024,
+     "lo": 0.8255813953488372,
+     "hi": 0.9534883720930233,
+     "n": 86
+    },
+    "phone: saaras-v4-codemix-kt": {
+     "mean": 0.9186046511627907,
+     "lo": 0.8604651162790697,
+     "hi": 0.9767441860465116,
+     "n": 86
+    },
+    "typed text: gemini-3.8-flash": {
+     "mean": 0.9767441860465116,
+     "lo": 0.9418604651162791,
+     "hi": 1.0,
+     "n": 86
+    },
+    "typed text: sarvam-105b-think": {
+     "mean": 0.9069767441860465,
+     "lo": 0.8372093023255814,
+     "hi": 0.9651162790697675,
+     "n": 86
+    }
+   }
+  },
+  {
+   "name": "Item F1 (name+qty/unit+brand)",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "clean: gemini-3.8-flash": {
+     "mean": 0.991860465116279,
+     "lo": 0.977906976744186,
+     "hi": 1.0,
+     "n": 86
+    },
+    "clean: gemini-direct-audio": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "clean: gpt-4o-transcribe": {
+     "mean": 0.9593023255813954,
+     "lo": 0.9166666666666666,
+     "hi": 0.9922480620155039,
+     "n": 86
+    },
+    "clean: saaras-v4-codemix": {
+     "mean": 0.996124031007752,
+     "lo": 0.9883720930232558,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: all-sarvam": {
+     "mean": 0.9476744186046512,
+     "lo": 0.9069767441860465,
+     "hi": 0.9825581395348837,
+     "n": 86
+    },
+    "phone: gemini-3.8-flash": {
+     "mean": 0.991860465116279,
+     "lo": 0.977906976744186,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: gemini-direct-audio": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: gpt-4o-transcribe": {
+     "mean": 0.9124031007751938,
+     "lo": 0.8610465116279069,
+     "hi": 0.9579457364341086,
+     "n": 86
+    },
+    "phone: saaras-v3-codemix": {
+     "mean": 0.984108527131783,
+     "lo": 0.9670542635658915,
+     "hi": 0.9976744186046511,
+     "n": 86
+    },
+    "phone: saaras-v4-codemix": {
+     "mean": 0.9883720930232558,
+     "lo": 0.9709302325581395,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: saaras-v4-codemix-kt": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "typed text: gemini-3.8-flash": {
+     "mean": 0.9844961240310078,
+     "lo": 0.9573643410852712,
+     "hi": 1.0,
+     "n": 86
+    },
+    "typed text: sarvam-105b-think": {
+     "mean": 0.9437984496124031,
+     "lo": 0.8953488372093024,
+     "hi": 0.9825581395348837,
+     "n": 86
+    }
+   }
+  },
+  {
+   "name": "Item F1 (catalog name only)",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "clean: gemini-3.8-flash": {
+     "mean": 0.9976744186046511,
+     "lo": 0.9930232558139536,
+     "hi": 1.0,
+     "n": 86
+    },
+    "clean: gemini-direct-audio": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "clean: gpt-4o-transcribe": {
+     "mean": 0.9941860465116279,
+     "lo": 0.9825581395348837,
+     "hi": 1.0,
+     "n": 86
+    },
+    "clean: saaras-v4-codemix": {
+     "mean": 0.996124031007752,
+     "lo": 0.9883720930232558,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: all-sarvam": {
+     "mean": 0.9883720930232558,
+     "lo": 0.9728682170542636,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: gemini-3.8-flash": {
+     "mean": 0.9976744186046511,
+     "lo": 0.9930232558139536,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: gemini-direct-audio": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: gpt-4o-transcribe": {
+     "mean": 0.9744186046511628,
+     "lo": 0.9531007751937984,
+     "hi": 0.9922480620155039,
+     "n": 86
+    },
+    "phone: saaras-v3-codemix": {
+     "mean": 0.9976744186046511,
+     "lo": 0.9930232558139536,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: saaras-v4-codemix": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: saaras-v4-codemix-kt": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "typed text: gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "typed text: sarvam-105b-think": {
+     "mean": 0.9728682170542636,
+     "lo": 0.937984496124031,
+     "hi": 1.0,
+     "n": 86
+    }
+   }
+  },
+  {
+   "name": "pincode accuracy",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "clean: gemini-3.8-flash": {
+     "mean": 0.9534883720930233,
+     "lo": 0.9069767441860465,
+     "hi": 0.9883720930232558,
+     "n": 86
+    },
+    "clean: gemini-direct-audio": {
+     "mean": 0.9651162790697675,
+     "lo": 0.9186046511627907,
+     "hi": 1.0,
+     "n": 86
+    },
+    "clean: gpt-4o-transcribe": {
+     "mean": 0.8953488372093024,
+     "lo": 0.8255813953488372,
+     "hi": 0.9534883720930233,
+     "n": 86
+    },
+    "clean: saaras-v4-codemix": {
+     "mean": 0.9534883720930233,
+     "lo": 0.9069767441860465,
+     "hi": 0.9883720930232558,
+     "n": 86
+    },
+    "phone: all-sarvam": {
+     "mean": 0.9418604651162791,
+     "lo": 0.8837209302325582,
+     "hi": 0.9883720930232558,
+     "n": 86
+    },
+    "phone: gemini-3.8-flash": {
+     "mean": 0.9534883720930233,
+     "lo": 0.9069767441860465,
+     "hi": 0.9883720930232558,
+     "n": 86
+    },
+    "phone: gemini-direct-audio": {
+     "mean": 0.9651162790697675,
+     "lo": 0.9186046511627907,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: gpt-4o-transcribe": {
+     "mean": 0.8837209302325582,
+     "lo": 0.813953488372093,
+     "hi": 0.9418604651162791,
+     "n": 86
+    },
+    "phone: saaras-v3-codemix": {
+     "mean": 0.8372093023255814,
+     "lo": 0.7558139534883721,
+     "hi": 0.9069767441860465,
+     "n": 86
+    },
+    "phone: saaras-v4-codemix": {
+     "mean": 0.9418604651162791,
+     "lo": 0.8837209302325582,
+     "hi": 0.9883720930232558,
+     "n": 86
+    },
+    "phone: saaras-v4-codemix-kt": {
+     "mean": 0.9418604651162791,
+     "lo": 0.8837209302325582,
+     "hi": 0.9883720930232558,
+     "n": 86
+    },
+    "typed text: gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "typed text: sarvam-105b-think": {
+     "mean": 0.9767441860465116,
+     "lo": 0.9418604651162791,
+     "hi": 1.0,
+     "n": 86
+    }
+   }
+  },
+  {
+   "name": "payment accuracy",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "clean: gemini-3.8-flash": {
+     "mean": 0.9651162790697675,
+     "lo": 0.9186046511627907,
+     "hi": 1.0,
+     "n": 86
+    },
+    "clean: gemini-direct-audio": {
+     "mean": 0.9767441860465116,
+     "lo": 0.9418604651162791,
+     "hi": 1.0,
+     "n": 86
+    },
+    "clean: gpt-4o-transcribe": {
+     "mean": 0.9651162790697675,
+     "lo": 0.9186046511627907,
+     "hi": 1.0,
+     "n": 86
+    },
+    "clean: saaras-v4-codemix": {
+     "mean": 0.9767441860465116,
+     "lo": 0.9418604651162791,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: all-sarvam": {
+     "mean": 0.9767441860465116,
+     "lo": 0.9418604651162791,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: gemini-3.8-flash": {
+     "mean": 0.9651162790697675,
+     "lo": 0.9186046511627907,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: gemini-direct-audio": {
+     "mean": 0.9767441860465116,
+     "lo": 0.9418604651162791,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: gpt-4o-transcribe": {
+     "mean": 0.9302325581395349,
+     "lo": 0.872093023255814,
+     "hi": 0.9767441860465116,
+     "n": 86
+    },
+    "phone: saaras-v3-codemix": {
+     "mean": 0.9767441860465116,
+     "lo": 0.9418604651162791,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: saaras-v4-codemix": {
+     "mean": 0.9767441860465116,
+     "lo": 0.9418604651162791,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: saaras-v4-codemix-kt": {
+     "mean": 0.9767441860465116,
+     "lo": 0.9418604651162791,
+     "hi": 1.0,
+     "n": 86
+    },
+    "typed text: gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "typed text: sarvam-105b-think": {
+     "mean": 0.9767441860465116,
+     "lo": 0.9418604651162791,
+     "hi": 1.0,
+     "n": 86
+    }
+   }
+  },
+  {
+   "name": "slot accuracy",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "clean: gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "clean: gemini-direct-audio": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "clean: gpt-4o-transcribe": {
+     "mean": 0.9883720930232558,
+     "lo": 0.9651162790697675,
+     "hi": 1.0,
+     "n": 86
+    },
+    "clean: saaras-v4-codemix": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: all-sarvam": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: gemini-direct-audio": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: gpt-4o-transcribe": {
+     "mean": 0.9883720930232558,
+     "lo": 0.9651162790697675,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: saaras-v3-codemix": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: saaras-v4-codemix": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: saaras-v4-codemix-kt": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "typed text: gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "typed text: sarvam-105b-think": {
+     "mean": 0.9651162790697675,
+     "lo": 0.9186046511627907,
+     "hi": 1.0,
+     "n": 86
+    }
+   }
+  },
+  {
+   "name": "JSON validity",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "clean: gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "clean: gemini-direct-audio": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "clean: gpt-4o-transcribe": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "clean: saaras-v4-codemix": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: all-sarvam": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: gemini-direct-audio": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: gpt-4o-transcribe": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: saaras-v3-codemix": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: saaras-v4-codemix": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "phone: saaras-v4-codemix-kt": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "typed text: gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 86
+    },
+    "typed text: sarvam-105b-think": {
+     "mean": 0.9767441860465116,
+     "lo": 0.9418604651162791,
+     "hi": 1.0,
+     "n": 86
+    }
+   }
+  }
+ ],
+ "per_language": {
+  "Exact order by message language": {
+   "bn-beng": {
+    "clean: gemini-3.8-flash": 1.0,
+    "clean: gemini-direct-audio": 1.0,
+    "clean: gpt-4o-transcribe": 1.0,
+    "clean: saaras-v4-codemix": 1.0,
+    "phone: all-sarvam": 1.0,
+    "phone: gemini-3.8-flash": 0.667,
+    "phone: gemini-direct-audio": 1.0,
+    "phone: gpt-4o-transcribe": 0.667,
+    "phone: saaras-v3-codemix": 0.667,
+    "phone: saaras-v4-codemix": 1.0,
+    "phone: saaras-v4-codemix-kt": 1.0,
+    "typed text: gemini-3.8-flash": 1.0,
+    "typed text: sarvam-105b-think": 1.0
+   },
+   "bn-rom": {
+    "clean: gemini-3.8-flash": 1.0,
+    "clean: gemini-direct-audio": 1.0,
+    "clean: gpt-4o-transcribe": 0.857,
+    "clean: saaras-v4-codemix": 1.0,
+    "phone: all-sarvam": 1.0,
+    "phone: gemini-3.8-flash": 1.0,
+    "phone: gemini-direct-audio": 1.0,
+    "phone: gpt-4o-transcribe": 1.0,
+    "phone: saaras-v3-codemix": 1.0,
+    "phone: saaras-v4-codemix": 1.0,
+    "phone: saaras-v4-codemix-kt": 1.0,
+    "typed text: gemini-3.8-flash": 1.0,
+    "typed text: sarvam-105b-think": 0.857
+   },
+   "en": {
+    "clean: gemini-3.8-flash": 0.5,
+    "clean: gemini-direct-audio": 0.5,
+    "clean: gpt-4o-transcribe": 0.5,
+    "clean: saaras-v4-codemix": 0.5,
+    "phone: all-sarvam": 0.5,
+    "phone: gemini-3.8-flash": 0.5,
+    "phone: gemini-direct-audio": 0.5,
+    "phone: gpt-4o-transcribe": 0.5,
+    "phone: saaras-v3-codemix": 0.25,
+    "phone: saaras-v4-codemix": 0.5,
+    "phone: saaras-v4-codemix-kt": 0.5,
+    "typed text: gemini-3.8-flash": 1.0,
+    "typed text: sarvam-105b-think": 1.0
+   },
+   "en-mix": {
+    "clean: gemini-3.8-flash": 1.0,
+    "clean: gemini-direct-audio": 1.0,
+    "clean: gpt-4o-transcribe": 1.0,
+    "clean: saaras-v4-codemix": 1.0,
+    "phone: all-sarvam": 0.75,
+    "phone: gemini-3.8-flash": 1.0,
+    "phone: gemini-direct-audio": 1.0,
+    "phone: gpt-4o-transcribe": 0.75,
+    "phone: saaras-v3-codemix": 1.0,
+    "phone: saaras-v4-codemix": 1.0,
+    "phone: saaras-v4-codemix-kt": 1.0,
+    "typed text: gemini-3.8-flash": 1.0,
+    "typed text: sarvam-105b-think": 0.75
+   },
+   "hi-deva": {
+    "clean: gemini-3.8-flash": 1.0,
+    "clean: gemini-direct-audio": 1.0,
+    "clean: gpt-4o-transcribe": 0.625,
+    "clean: saaras-v4-codemix": 1.0,
+    "phone: all-sarvam": 0.75,
+    "phone: gemini-3.8-flash": 1.0,
+    "phone: gemini-direct-audio": 1.0,
+    "phone: gpt-4o-transcribe": 0.75,
+    "phone: saaras-v3-codemix": 0.75,
+    "phone: saaras-v4-codemix": 0.875,
+    "phone: saaras-v4-codemix-kt": 1.0,
+    "typed text: gemini-3.8-flash": 0.75,
+    "typed text: sarvam-105b-think": 0.875
+   },
+   "hi-rom": {
+    "clean: gemini-3.8-flash": 0.889,
+    "clean: gemini-direct-audio": 0.926,
+    "clean: gpt-4o-transcribe": 0.778,
+    "clean: saaras-v4-codemix": 0.889,
+    "phone: all-sarvam": 0.778,
+    "phone: gemini-3.8-flash": 0.889,
+    "phone: gemini-direct-audio": 0.926,
+    "phone: gpt-4o-transcribe": 0.667,
+    "phone: saaras-v3-codemix": 0.778,
+    "phone: saaras-v4-codemix": 0.852,
+    "phone: saaras-v4-codemix-kt": 0.889,
+    "typed text: gemini-3.8-flash": 1.0,
+    "typed text: sarvam-105b-think": 0.889
+   },
+   "kn-knda": {
+    "clean: gemini-3.8-flash": 1.0,
+    "clean: gemini-direct-audio": 1.0,
+    "clean: gpt-4o-transcribe": 1.0,
+    "clean: saaras-v4-codemix": 1.0,
+    "phone: all-sarvam": 1.0,
+    "phone: gemini-3.8-flash": 1.0,
+    "phone: gemini-direct-audio": 1.0,
+    "phone: gpt-4o-transcribe": 0.667,
+    "phone: saaras-v3-codemix": 1.0,
+    "phone: saaras-v4-codemix": 1.0,
+    "phone: saaras-v4-codemix-kt": 1.0,
+    "typed text: gemini-3.8-flash": 1.0,
+    "typed text: sarvam-105b-think": 1.0
+   },
+   "kn-rom": {
+    "clean: gemini-3.8-flash": 0.714,
+    "clean: gemini-direct-audio": 1.0,
+    "clean: gpt-4o-transcribe": 0.714,
+    "clean: saaras-v4-codemix": 1.0,
+    "phone: all-sarvam": 1.0,
+    "phone: gemini-3.8-flash": 0.857,
+    "phone: gemini-direct-audio": 1.0,
+    "phone: gpt-4o-transcribe": 0.714,
+    "phone: saaras-v3-codemix": 1.0,
+    "phone: saaras-v4-codemix": 1.0,
+    "phone: saaras-v4-codemix-kt": 1.0,
+    "typed text: gemini-3.8-flash": 1.0,
+    "typed text: sarvam-105b-think": 1.0
+   },
+   "mr-deva": {
+    "clean: gemini-3.8-flash": 1.0,
+    "clean: gemini-direct-audio": 1.0,
+    "clean: gpt-4o-transcribe": 1.0,
+    "clean: saaras-v4-codemix": 1.0,
+    "phone: all-sarvam": 1.0,
+    "phone: gemini-3.8-flash": 1.0,
+    "phone: gemini-direct-audio": 1.0,
+    "phone: gpt-4o-transcribe": 1.0,
+    "phone: saaras-v3-codemix": 0.667,
+    "phone: saaras-v4-codemix": 1.0,
+    "phone: saaras-v4-codemix-kt": 1.0,
+    "typed text: gemini-3.8-flash": 1.0,
+    "typed text: sarvam-105b-think": 1.0
+   },
+   "mr-rom": {
+    "clean: gemini-3.8-flash": 0.857,
+    "clean: gemini-direct-audio": 0.857,
+    "clean: gpt-4o-transcribe": 0.571,
+    "clean: saaras-v4-codemix": 0.857,
+    "phone: all-sarvam": 0.857,
+    "phone: gemini-3.8-flash": 0.857,
+    "phone: gemini-direct-audio": 0.857,
+    "phone: gpt-4o-transcribe": 0.571,
+    "phone: saaras-v3-codemix": 0.714,
+    "phone: saaras-v4-codemix": 0.857,
+    "phone: saaras-v4-codemix-kt": 0.857,
+    "typed text: gemini-3.8-flash": 1.0,
+    "typed text: sarvam-105b-think": 1.0
+   },
+   "ta-rom": {
+    "clean: gemini-3.8-flash": 1.0,
+    "clean: gemini-direct-audio": 1.0,
+    "clean: gpt-4o-transcribe": 0.889,
+    "clean: saaras-v4-codemix": 0.889,
+    "phone: all-sarvam": 0.667,
+    "phone: gemini-3.8-flash": 1.0,
+    "phone: gemini-direct-audio": 1.0,
+    "phone: gpt-4o-transcribe": 0.778,
+    "phone: saaras-v3-codemix": 0.556,
+    "phone: saaras-v4-codemix": 0.889,
+    "phone: saaras-v4-codemix-kt": 0.889,
+    "typed text: gemini-3.8-flash": 1.0,
+    "typed text: sarvam-105b-think": 0.778
+   },
+   "ta-tamil": {
+    "clean: gemini-3.8-flash": 1.0,
+    "clean: gemini-direct-audio": 1.0,
+    "clean: gpt-4o-transcribe": 1.0,
+    "clean: saaras-v4-codemix": 1.0,
+    "phone: all-sarvam": 1.0,
+    "phone: gemini-3.8-flash": 1.0,
+    "phone: gemini-direct-audio": 1.0,
+    "phone: gpt-4o-transcribe": 0.5,
+    "phone: saaras-v3-codemix": 0.75,
+    "phone: saaras-v4-codemix": 1.0,
+    "phone: saaras-v4-codemix-kt": 1.0,
+    "typed text: gemini-3.8-flash": 1.0,
+    "typed text: sarvam-105b-think": 1.0
+   }
+  }
+ },
+ "speed": {
+  "asr:saaras-v4-codemix": {
+   "p50_ms": 490.3850555419922,
+   "p95_ms": 5201.316118240356
+  },
+  "asr:saaras-v4-codemix-kt": {
+   "p50_ms": 2036.527156829834,
+   "p95_ms": 10148.93889427185
+  },
+  "asr:saaras-v3-codemix": {
+   "p50_ms": 462.3441696166992,
+   "p95_ms": 550.13108253479
+  },
+  "asr:gemini-3.8-flash": {
+   "p50_ms": 2979.5236587524414,
+   "p95_ms": 4222.121000289917
+  },
+  "asr:gpt-4o-transcribe": {
+   "p50_ms": 1002.9919147491455,
+   "p95_ms": 1387.9201412200928
+  },
+  "extract:gpt-4o-transcribe": {
+   "p50_ms": 2439.276695251465,
+   "p95_ms": 4035.7189178466797
+  },
+  "extract:gemini-3.8-flash": {
+   "p50_ms": 2902.116298675537,
+   "p95_ms": 3822.9568004608154
+  },
+  "extract:all-sarvam": {
+   "p50_ms": 8190.207958221436,
+   "p95_ms": 31576.648950576782
+  },
+  "extract:saaras-v4-codemix-kt": {
+   "p50_ms": 2832.019329071045,
+   "p95_ms": 4214.823246002197
+  },
+  "extract:gemini-direct-audio": {
+   "p50_ms": 3743.6769008636475,
+   "p95_ms": 5841.212749481201
+  },
+  "extract:saaras-v4-codemix": {
+   "p50_ms": 2680.3441047668457,
+   "p95_ms": 3766.2320137023926
+  },
+  "extract:saaras-v3-codemix": {
+   "p50_ms": 2881.2777996063232,
+   "p95_ms": 4902.563095092773
+  }
+ },
+ "usage": {
+  "asr:saaras-v4-codemix": {
+   "calls": 172,
+   "audio_s": 1273.8,
+   "blocked": 0
+  },
+  "asr:saaras-v4-codemix-kt": {
+   "calls": 86,
+   "audio_s": 636.9,
+   "blocked": 0
+  },
+  "asr:saaras-v3-codemix": {
+   "calls": 86,
+   "audio_s": 636.9,
+   "blocked": 0
+  },
+  "asr:gemini-3.8-flash": {
+   "calls": 172,
+   "audio_s": 1273.8,
+   "blocked": 0
+  },
+  "asr:gpt-4o-transcribe": {
+   "calls": 172,
+   "audio_s": 1273.8,
+   "blocked": 0
+  },
+  "extract:gpt-4o-transcribe": {
+   "calls": 172,
+   "in_tok": 116584,
+   "out_tok": 14762,
+   "reasoning_tok": 617
+  },
+  "extract:gemini-3.8-flash": {
+   "calls": 172,
+   "in_tok": 116484,
+   "out_tok": 14942,
+   "reasoning_tok": 0
+  },
+  "extract:all-sarvam": {
+   "calls": 86,
+   "in_tok": 59105,
+   "out_tok": 201902,
+   "reasoning_tok": 193930
+  },
+  "extract:saaras-v4-codemix-kt": {
+   "calls": 86,
+   "in_tok": 58048,
+   "out_tok": 7450,
+   "reasoning_tok": 0
+  },
+  "extract:gemini-direct-audio": {
+   "calls": 172,
+   "in_tok": 145678,
+   "out_tok": 15445,
+   "reasoning_tok": 0
+  },
+  "extract:saaras-v4-codemix": {
+   "calls": 172,
+   "in_tok": 116084,
+   "out_tok": 14874,
+   "reasoning_tok": 0
+  },
+  "extract:saaras-v3-codemix": {
+   "calls": 86,
+   "in_tok": 58258,
+   "out_tok": 7345,
+   "reasoning_tok": 0
+  },
+  "tts:gemini-3.8-flash-tts": {
+   "calls": 86,
+   "audio_s": 636.9,
+   "out_tok": 15650
+  }
+ },
+ "extra": {
+  "plan": {
+   "clean": [
+    "saaras-v4-codemix",
+    "gemini-3.8-flash",
+    "gpt-4o-transcribe"
+   ],
+   "phone": [
+    "saaras-v4-codemix",
+    "saaras-v4-codemix-kt",
+    "saaras-v3-codemix",
+    "gemini-3.8-flash",
+    "gpt-4o-transcribe"
+   ]
+  },
+  "all_sarvam_conditions": [
+   "phone"
+  ],
+  "keyterms": [
+   "Amul",
+   "Aashirvaad",
+   "Fortune",
+   "Tata",
+   "Maggi",
+   "Britannia",
+   "Parle-G",
+   "Haldiram's",
+   "Surf Excel",
+   "Vim",
+   "Colgate",
+   "Dettol",
+   "Dove",
+   "Bisleri",
+   "Lays",
+   "Thums Up",
+   "Coca-Cola",
+   "Mother Dairy",
+   "Nandini",
+   "Aavin",
+   "Gokul",
+   "iD",
+   "MTR",
+   "MDH",
+   "Bru",
+   "Kissan",
+   "Whisper",
+   "Pampers",
+   "Saffola",
+   "Gold Winner",
+   "Idhayam",
+   "Red Label",
+   "Good Day",
+   "Patanjali",
+   "Nestle",
+   "Cadbury",
+   "Dabur",
+   "Everest",
+   "Kurkure",
+   "kg",
+   "gram",
+   "litre",
+   "ml",
+   "dozen",
+   "packet",
+   "COD",
+   "UPI",
+   "GPay",
+   "PhonePe",
+   "Paytm"
+  ],
+  "sarvam_spend_inr_estimate": 34.23
+ },
+ "examples": [
+  {
+   "input_text": "bhaiyaa 1kg tamater 1/2 kg adrak nahi 250gm adrak aur lehsun 250 gm, hari mirch 100gm. cod. 110059",
+   "gold": {
+    "items": [
+     {
+      "name": "tomato",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "ginger",
+      "brand": null,
+      "qty": 250,
+      "unit": "g"
+     },
+     {
+      "name": "garlic",
+      "brand": null,
+      "qty": 250,
+      "unit": "g"
+     },
+     {
+      "name": "green chilli",
+      "brand": null,
+      "qty": 100,
+      "unit": "g"
+     }
+    ],
+    "pincode": "110059",
+    "payment": "COD",
+    "slot": null
+   },
+   "transcripts": {
+    "saaras-v4-codemix": "भैया एक किलो टमाटर आधा किलो अदरक नहीं ढाई सौ ग्राम अदरक और लहसुन ढाई सौ ग्राम हरी मिर्च सौ ग्राम pin code है 110059.",
+    "saaras-v4-codemix-kt": "भैया एक किलो टमाटर आधा किलो अदरक नहीं ढाई सौ ग्राम अदरक और लहसुन ढाई सौ ग्राम हरी मिर्च सौ ग्राम pin code है 110059.",
+    "saaras-v3-codemix": "भैया 1 kg टमाटर, 0.5 kg अदरक, नहीं 250 gm अदरक और लहसुन 250 gm, हरी मिर्च 100 gm। PIN code है 110059।",
+    "gemini-3.8-flash": "भैया, 1 किलो टमाटर, 1/2 किलो अदरक नहीं अ 250 ग्राम अदरक और लहसुन 250 ग्राम, हरी मिर्च 100 ग्राम। पिन कोड है 110059।",
+    "gpt-4o-transcribe": "भैया एक किलो टमाटर, आधा किलो अदरक और लहसुन ढाई सौ ग्राम, हरी मिर्च सौ ग्राम."
+   },
+   "extractions": {
+    "phone: saaras-v4-codemix": {
+     "exact": 0,
+     "strict_tp": 4,
+     "n_gold": 4
+    },
+    "phone: saaras-v4-codemix-kt": {
+     "exact": 0,
+     "strict_tp": 4,
+     "n_gold": 4
+    },
+    "phone: saaras-v3-codemix": {
+     "exact": 0,
+     "strict_tp": 4,
+     "n_gold": 4
+    },
+    "phone: gemini-3.8-flash": {
+     "exact": 0,
+     "strict_tp": 4,
+     "n_gold": 4
+    },
+    "phone: gpt-4o-transcribe": {
+     "exact": 0,
+     "strict_tp": 3,
+     "n_gold": 4
+    },
+    "phone: gemini-direct-audio": {
+     "exact": 0,
+     "strict_tp": 4,
+     "n_gold": 4
+    },
+    "phone: all-sarvam": {
+     "exact": 0,
+     "strict_tp": 4,
+     "n_gold": 4
+    }
+   }
+  },
+  {
+   "input_text": "dada 2 kg aloo, 1 kg peyaj, 500 gram ada ar 250 gram rosun pathiye din. 700029. COD",
+   "gold": {
+    "items": [
+     {
+      "name": "potato",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "onion",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "ginger",
+      "brand": null,
+      "qty": 500,
+      "unit": "g"
+     },
+     {
+      "name": "garlic",
+      "brand": null,
+      "qty": 250,
+      "unit": "g"
+     }
+    ],
+    "pincode": "700029",
+    "payment": "COD",
+    "slot": null
+   },
+   "transcripts": {
+    "saaras-v4-codemix": "দাদা দু kilo আলু এক kilo পেঁয়াজ পাঁচশো gram আদা আর আড়াইশো gram রসুন পাঠিয়ে দিন 700029 COD।",
+    "saaras-v4-codemix-kt": "দাদা, 2 kg আলু, 1 kg পেঁয়াজ, 500 g আদা আর 250 g রসুন পাঠিয়ে দিন। 700029. COD.",
+    "saaras-v3-codemix": "দাদা 2 kg আলু 1 kg পেঁয়াজ 500 g আদা আর 250 g রসুন পাঠিয়ে দিন 700029 COD",
+    "gemini-3.8-flash": "দাদা 2 kg আলু, 1 kg পেঁয়াজ, 500 g আদা আর 250 g রসুন পাঠিয়ে দিন। 700029, COD।",
+    "gpt-4o-transcribe": "দাদা, দুই কিলো আলু, এক কিলো পেঁয়াজ, পাঁচশো গ্রাম আদা আর আড়াইশো গ্রাম রসুন পাঠিয়ে দিন। 700029, COD."
+   },
+   "extractions": {
+    "phone: saaras-v4-codemix": {
+     "exact": 1,
+     "strict_tp": 4,
+     "n_gold": 4
+    },
+    "phone: saaras-v4-codemix-kt": {
+     "exact": 1,
+     "strict_tp": 4,
+     "n_gold": 4
+    },
+    "phone: saaras-v3-codemix": {
+     "exact": 1,
+     "strict_tp": 4,
+     "n_gold": 4
+    },
+    "phone: gemini-3.8-flash": {
+     "exact": 1,
+     "strict_tp": 4,
+     "n_gold": 4
+    },
+    "phone: gpt-4o-transcribe": {
+     "exact": 1,
+     "strict_tp": 4,
+     "n_gold": 4
+    },
+    "phone: gemini-direct-audio": {
+     "exact": 1,
+     "strict_tp": 4,
+     "n_gold": 4
+    },
+    "phone: all-sarvam": {
+     "exact": 1,
+     "strict_tp": 4,
+     "n_gold": 4
+    }
+   }
+  },
+  {
+   "input_text": "೨ ಕೆಜಿ ಈರುಳ್ಳಿ, ೧ ಕೆಜಿ ಟೊಮೆಟೊ ಮತ್ತು ಒಂದು ಕಟ್ಟು ಕೊತ್ತಂಬರಿ ಸೊಪ್ಪು ಕಳುಹಿಸಿ. ಪಿನ್ ೫೬೦೦೧೧. ಕ್ಯಾಶ್ ಆನ್ ಡೆಲಿವರಿ",
+   "gold": {
+    "items": [
+     {
+      "name": "onion",
+      "brand": null,
+      "qty": 2,
+      "unit": "kg"
+     },
+     {
+      "name": "tomato",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "coriander leaves",
+      "brand": null,
+      "qty": 1,
+      "unit": "bunch"
+     }
+    ],
+    "pincode": "560011",
+    "payment": "COD",
+    "slot": null
+   },
+   "transcripts": {
+    "saaras-v4-codemix": "ಎರಡು kg ಈರುಳ್ಳಿ, ಒಂದು kg tomato ಮತ್ತು ಒಂದು ಕಟ್ಟು ಕೊತ್ತಂಬರಿ ಸೊಪ್ಪು ಕಳುಹಿಸಿ. PIN 560011. Cash on delivery.",
+    "saaras-v4-codemix-kt": "ಎರಡು kg ಈರುಳ್ಳಿ, ಒಂದು kg ಟೊಮ್ಯಾಟೊ ಮತ್ತು ಒಂದು ಕಟ್ಟು ಕೊತ್ತಂಬರಿ ಸೊಪ್ಪು ಕಳುಹಿಸಿ. PIN 560011. Cash on delivery.",
+    "saaras-v3-codemix": "2 kg ಈರುಳ್ಳಿ, 1 kg ಟೊಮೆಟೊ ಮತ್ತು 1 ಕಟ್ಟು ಕೊತ್ತಂಬರಿ ಸೊಪ್ಪು ಕಳುಹಿಸಿ. PIN 560011. Cash on Delivery.",
+    "gemini-3.8-flash": "2 kg ಈರುಳ್ಳಿ, 1 kg ಟೊಮೇಟೊ ಮತ್ತು ಒಂದು ಕಟ್ಟು ಕೊತ್ತಂಬರಿ ಸೊಪ್ಪು ಕಳುಹಿಸಿ. ಪಿನ್ 5 6 0 0 1 1. cash on delivery",
+    "gpt-4o-transcribe": "ಎರಡು ಕೆಜಿ ಈರುಳ್ಳಿ, ಒಂದು ಕೆಜಿ ಟೊಮ್ಯಾಟೋ ಮತ್ತು ಒಂದು ಕಟ್ಟು ಕೊತ್ತಂಬರಿ ಸೊಪ್ಪು ಕಳುವಿಸಿ. ನಂತರ ಐದು ಆರು ಸೊನ್ನೆ ಸೊನ್ನೆ ಒಂದು ಒಂದು. ಕ್ಯಾಶ್ ಆನ್ ಡೆಲಿವರಿ."
+   },
+   "extractions": {
+    "phone: saaras-v4-codemix": {
+     "exact": 1,
+     "strict_tp": 3,
+     "n_gold": 3
+    },
+    "phone: saaras-v4-codemix-kt": {
+     "exact": 1,
+     "strict_tp": 3,
+     "n_gold": 3
+    },
+    "phone: saaras-v3-codemix": {
+     "exact": 1,
+     "strict_tp": 3,
+     "n_gold": 3
+    },
+    "phone: gemini-3.8-flash": {
+     "exact": 1,
+     "strict_tp": 3,
+     "n_gold": 3
+    },
+    "phone: gpt-4o-transcribe": {
+     "exact": 1,
+     "strict_tp": 3,
+     "n_gold": 3
+    },
+    "phone: gemini-direct-audio": {
+     "exact": 1,
+     "strict_tp": 3,
+     "n_gold": 3
+    },
+    "phone: all-sarvam": {
+     "exact": 1,
+     "strict_tp": 3,
+     "n_gold": 3
+    }
+   }
+  },
+  {
+   "input_text": "2 kg bendekayi beda, 1 kg badanekayi saaku. 1 kg carrot. 560078",
+   "gold": {
+    "items": [
+     {
+      "name": "brinjal",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     },
+     {
+      "name": "carrot",
+      "brand": null,
+      "qty": 1,
+      "unit": "kg"
+     }
+    ],
+    "pincode": "560078",
+    "payment": null,
+    "slot": null
+   },
+   "transcripts": {
+    "saaras-v4-codemix": "ಎರಡು kg ಬೆಂಡೆಕಾಯಿ ಬೇಡ ಒಂದು kg ಬದನೇಕಾಯಿ ಸಾಕು ಒಂದು kg carrot 560078.",
+    "saaras-v4-codemix-kt": "ಎರಡು kg ಬೆಂಡೆಕಾಯಿ ಬೇಡ ಒಂದು kg ಬದನೇಕಾಯಿ ಸಾಕು ಒಂದು kg carrot 560078.",
+    "saaras-v3-codemix": "2 kg ಬೆಂಡಕಾಯಿ ಬೇಡ 1 kg ಬದನೆಕಾಯಿ ಸಾಕು. 1 kg ಕ್ಯಾರೆಟ್. 560078.",
+    "gemini-3.8-flash": "2 kg ಬೆಂಡೆಕಾಯಿ ಬೇಡ 1 kg ಬದನೆಕಾಯಿ ಸಾಕು 1 kg ಕ್ಯಾರಟ್ 560078",
+    "gpt-4o-transcribe": "ಎರಡು ಕೆಜಿ ಬೆಂಡಕಾಯಿ ಬೇಡ, ಒಂದು ಕೆಜಿ ಬದನೆಕಾಯಿ ಸಾಕು. ಒಂದು ಕೆಜಿ ಕ್ಯಾರೆಟ್. 560078."
+   },
+   "extractions": {
+    "phone: saaras-v4-codemix": {
+     "exact": 1,
+     "strict_tp": 2,
+     "n_gold": 2
+    },
+    "phone: saaras-v4-codemix-kt": {
+     "exact": 1,
+     "strict_tp": 2,
+     "n_gold": 2
+    },
+    "phone: saaras-v3-codemix": {
+     "exact": 1,
+     "strict_tp": 2,
+     "n_gold": 2
+    },
+    "phone: gemini-3.8-flash": {
+     "exact": 1,
+     "strict_tp": 2,
+     "n_gold": 2
+    },
+    "phone: gpt-4o-transcribe": {
+     "exact": 1,
+     "strict_tp": 2,
+     "n_gold": 2
+    },
+    "phone: gemini-direct-audio": {
+     "exact": 1,
+     "strict_tp": 2,
+     "n_gold": 2
+    },
+    "phone: all-sarvam": {
+     "exact": 1,
+     "strict_tp": 2,
+     "n_gold": 2
+    }
+   }
+  }
+ ],
+ "findings": [
+  "Voice costs about 3-9 points of whole-order accuracy compared with typing. With the same extractor (gemini-3.8-flash, thinking off), typed text scores 97.7% exact on these 86 orders. The best voice pipelines score 94.2% (gemini-direct-audio: audio plus order prompt in one call, clean and phone alike) and 91.9% (saaras:v4 codemix with keyterms, phone line).",
+  "With the extractor held fixed, phone-line exact accuracy by speech recognizer is: saaras:v4 codemix + keyterms 91.9% [86-98], gemini-3.8-flash 90.7%, saaras:v4 codemix 89.5%, saaras:v3 codemix 76.7%, gpt-4o-transcribe 70.9%. On clean audio: saaras:v4 codemix 91.9%, gemini-3.8-flash 90.7%, gpt-4o-transcribe 79.1%. saaras:v4 is clearly better than saaras:v3, which gets 84% of pincodes right vs 94% for v4 (e.g. Bengali 'সাত শূন্য শূন্য শূন্য ছয় চার' came out as '7000064').",
+  "The phone line (8 kHz, 300-3400 Hz band, 15 dB SNR noise) barely hurts Gemini (90.7% -> 90.7% as recognizer, 94.2% -> 94.2% direct) and saaras:v4 (91.9% -> 89.5%). It hurts gpt-4o-transcribe most (79.1% -> 70.9%): its errors drop content, e.g. it omitted the correction 'nahi 250gm adrak' and the pincode in one Hindi order, and it often renders Hindi numbers as words.",
+  "The fixed 50-word keyterm list (brands, units, payment words) moved saaras:v4 from 89.5% to 91.9% exact and strict item F1 from 0.988 to 1.000 on the phone line. It costs latency: p50 0.49 s -> 2.0 s, p95 5.2 s -> 10.1 s. The API caps keyterms at 50 and needs them as a JSON array.",
+  "The all-Sarvam pipeline (saaras:v4 codemix -> sarvam-105b thinking on) reaches 82.6% exact on the phone line, against 89.5% for the same transcripts fed to gemini-3.8-flash and 90.7% for sarvam-105b-think on typed text. Speech recognition is not its bottleneck. It adds p50 8.2 s / p95 31.6 s of extraction latency and about 2,250 reasoning tokens per order (about INR 13 for 86 orders).",
+  "Item identification survives voice well. Catalog-name F1 is 0.97-1.00 for every pipeline, and strict item F1 is 0.95-1.00 for everything except gpt-4o-transcribe (0.91-0.96). Most lost orders come from pincodes. Gemini TTS itself misread 4 of the 86 pincodes (400050 spoken as '40050', 122001 as '112201', 411001 as '41 00 1', 122018 as '121018'). Those are wrong for every pipeline equally, which caps exact accuracy at about 95%."
+ ],
+ "caveats": [
+  "Speech is synthetic: gemini-3.8-flash-tts reading the written message, with two voices. Real voice notes have background noise, hesitations, restarts and wider accent variation, so absolute numbers are optimistic. The Gemini recognizer and direct-audio Gemini may also have an advantage on Gemini-generated speech. No Sarvam TTS was used, so Sarvam ASR had no such advantage.",
+  "The phone condition is a simple simulation (resampling, band-pass, white noise), not a real GSM/AMR codec or a real call.",
+  "Budget plan for Sarvam: saaras:v4 + keyterms, saaras:v3 and the all-Sarvam pipeline ran on the phone condition only. Actual Sarvam spend was about INR 34 against the INR 30 asked: 42 min of saaras audio is about INR 21, and 105b thinking about INR 13. The overrun came from 105b reasoning tokens.",
+  "86 orders per row, so 95% CIs are about +/-6-8 points. Differences under about 5 points between pipelines are not significant. The 4 TTS-misread pincodes are left in, because they affect every pipeline identically.",
+  "The typed-text baselines are the UC08 runs on the same 86 messages and the same prompt."
+ ],
+ "verdict": "For WhatsApp voice-note orders, the simplest strong option is to send the audio straight to gemini-3.8-flash with the order prompt (94% exact, unaffected by phone-quality audio). If you want a separate speech-recognition step, for example to keep a transcript or to keep audio with an Indian provider, use saaras:v4 codemix with a fixed store keyterm list in front of a strong extractor (92% exact on phone audio). Avoid saaras:v3 and gpt-4o-transcribe for this job: they lose pincodes and corrections (71-79%). Keep the extractor strong: putting sarvam-105b behind saaras:v4 lost 7 points compared with Gemini on the same transcripts, and added 8-30 s of latency. Read back pincodes to the customer for confirmation, because even the best pipelines miss about 5% of them.",
+ "updated": "2026-10-12 00:12:28"
+}

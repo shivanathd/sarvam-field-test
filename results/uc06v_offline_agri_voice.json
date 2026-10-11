@@ -1,0 +1,1515 @@
+{
+ "uc": "uc06v_offline_agri_voice",
+ "title": "Spoken farmer questions (voice-in crop advisory)",
+ "business_question": "When farmers ask by voice (clean or over a phone line), how much does speech recognition cost the crop-advisory answer, and which STT front-end should a voice advisory line use?",
+ "dataset": {
+  "name": "uc06 questions, synthesised speech",
+  "source": "uc06 questions.json + advisory_sheet.md; audio from macOS say (Lekha hi, Soumya kn, Geeta te, Vani ta) and gemini-3.8-flash-tts voices; phone line = uc01's 8 kHz G.711 + 20 dB SNR noise",
+  "license": "CC-BY-4.0 (this repo)",
+  "n": 70,
+  "languages": [
+   "Hindi",
+   "Marathi",
+   "Kannada",
+   "Telugu",
+   "Tamil",
+   "Punjabi"
+  ],
+  "synthetic": true,
+  "how_made": "Each uc06 question spoken once per item: native-script items by the macOS voice where one exists, romanised items (spoken from their native-script twin) by a gemini TTS voice, so each fact is heard from two speakers. Marathi and Punjabi have no macOS voice, so both of their forms use gemini voices."
+ },
+ "systems": [
+  "text -> gemini-3.8-flash [text]",
+  "saaras:v4 -> gemini-3.8-flash [clean]",
+  "saaras:v4 -> gemini-3.8-flash [phone]",
+  "saaras:v3 -> gemini-3.8-flash [clean]",
+  "saaras:v3 -> gemini-3.8-flash [phone]",
+  "gemini-3.8-flash -> gemini-3.8-flash [clean]",
+  "gemini-3.8-flash -> gemini-3.8-flash [phone]",
+  "gpt-4o-transcribe -> gemini-3.8-flash [clean]",
+  "gpt-4o-transcribe -> gemini-3.8-flash [phone]",
+  "saaras:v4 -> sarvam-105b [clean]",
+  "saaras:v4 -> sarvam-105b [phone]",
+  "audio -> gemini-3.8-flash [clean]",
+  "audio -> gemini-3.8-flash [phone]"
+ ],
+ "metrics": [
+  {
+   "name": "grounded_correct",
+   "higher_is_better": true,
+   "unit": "share",
+   "values": {
+    "text -> gemini-3.8-flash [text]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 60
+    },
+    "saaras:v4 -> gemini-3.8-flash [clean]": {
+     "mean": 0.9833333333333333,
+     "lo": 0.95,
+     "hi": 1.0,
+     "n": 60
+    },
+    "saaras:v4 -> gemini-3.8-flash [phone]": {
+     "mean": 0.9833333333333333,
+     "lo": 0.95,
+     "hi": 1.0,
+     "n": 60
+    },
+    "saaras:v3 -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 60
+    },
+    "saaras:v3 -> gemini-3.8-flash [phone]": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9166666666666666,
+     "hi": 1.0,
+     "n": 60
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [clean]": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9166666666666666,
+     "hi": 1.0,
+     "n": 60
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [phone]": {
+     "mean": 0.9333333333333333,
+     "lo": 0.8666666666666667,
+     "hi": 0.9833333333333333,
+     "n": 60
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [clean]": {
+     "mean": 0.9833333333333333,
+     "lo": 0.95,
+     "hi": 1.0,
+     "n": 60
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [phone]": {
+     "mean": 0.8833333333333333,
+     "lo": 0.8,
+     "hi": 0.95,
+     "n": 60
+    },
+    "saaras:v4 -> sarvam-105b [clean]": {
+     "mean": 0.9666666666666667,
+     "lo": 0.9166666666666666,
+     "hi": 1.0,
+     "n": 60
+    },
+    "saaras:v4 -> sarvam-105b [phone]": {
+     "mean": 0.9833333333333333,
+     "lo": 0.95,
+     "hi": 1.0,
+     "n": 60
+    },
+    "audio -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 60
+    },
+    "audio -> gemini-3.8-flash [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 60
+    }
+   }
+  },
+  {
+   "name": "oos_refusal",
+   "higher_is_better": true,
+   "unit": "share",
+   "values": {
+    "text -> gemini-3.8-flash [text]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v4 -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v4 -> gemini-3.8-flash [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v3 -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v3 -> gemini-3.8-flash [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v4 -> sarvam-105b [clean]": {
+     "mean": 0.7,
+     "lo": 0.4,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v4 -> sarvam-105b [phone]": {
+     "mean": 0.6,
+     "lo": 0.3,
+     "hi": 0.9,
+     "n": 10
+    },
+    "audio -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "audio -> gemini-3.8-flash [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    }
+   }
+  },
+  {
+   "name": "oos_refusal_lenient",
+   "higher_is_better": true,
+   "unit": "share",
+   "values": {
+    "text -> gemini-3.8-flash [text]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v4 -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v4 -> gemini-3.8-flash [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v3 -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v3 -> gemini-3.8-flash [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v4 -> sarvam-105b [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v4 -> sarvam-105b [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "audio -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "audio -> gemini-3.8-flash [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    }
+   }
+  },
+  {
+   "name": "false_refusal",
+   "higher_is_better": false,
+   "unit": "share",
+   "values": {
+    "text -> gemini-3.8-flash [text]": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 60
+    },
+    "saaras:v4 -> gemini-3.8-flash [clean]": {
+     "mean": 0.016666666666666666,
+     "lo": 0.0,
+     "hi": 0.06666666666666667,
+     "n": 60
+    },
+    "saaras:v4 -> gemini-3.8-flash [phone]": {
+     "mean": 0.016666666666666666,
+     "lo": 0.0,
+     "hi": 0.06666666666666667,
+     "n": 60
+    },
+    "saaras:v3 -> gemini-3.8-flash [clean]": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 60
+    },
+    "saaras:v3 -> gemini-3.8-flash [phone]": {
+     "mean": 0.03333333333333333,
+     "lo": 0.0,
+     "hi": 0.08333333333333333,
+     "n": 60
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [clean]": {
+     "mean": 0.03333333333333333,
+     "lo": 0.0,
+     "hi": 0.08333333333333333,
+     "n": 60
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [phone]": {
+     "mean": 0.06666666666666667,
+     "lo": 0.016666666666666666,
+     "hi": 0.13333333333333333,
+     "n": 60
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [clean]": {
+     "mean": 0.016666666666666666,
+     "lo": 0.0,
+     "hi": 0.05,
+     "n": 60
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [phone]": {
+     "mean": 0.1,
+     "lo": 0.03333333333333333,
+     "hi": 0.18333333333333332,
+     "n": 60
+    },
+    "saaras:v4 -> sarvam-105b [clean]": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 60
+    },
+    "saaras:v4 -> sarvam-105b [phone]": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 60
+    },
+    "audio -> gemini-3.8-flash [clean]": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 60
+    },
+    "audio -> gemini-3.8-flash [phone]": {
+     "mean": 0.0,
+     "lo": 0.0,
+     "hi": 0.0,
+     "n": 60
+    }
+   }
+  },
+  {
+   "name": "reply_language_correct",
+   "higher_is_better": true,
+   "unit": "share",
+   "values": {
+    "text -> gemini-3.8-flash [text]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 70
+    },
+    "saaras:v4 -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 70
+    },
+    "saaras:v4 -> gemini-3.8-flash [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 70
+    },
+    "saaras:v3 -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 70
+    },
+    "saaras:v3 -> gemini-3.8-flash [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 70
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [clean]": {
+     "mean": 0.9714285714285714,
+     "lo": 0.9285714285714286,
+     "hi": 1.0,
+     "n": 70
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [phone]": {
+     "mean": 0.9571428571428572,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 70
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 70
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 70
+    },
+    "saaras:v4 -> sarvam-105b [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 70
+    },
+    "saaras:v4 -> sarvam-105b [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 70
+    },
+    "audio -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 70
+    },
+    "audio -> gemini-3.8-flash [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 70
+    }
+   }
+  },
+  {
+   "name": "overall_pass",
+   "higher_is_better": true,
+   "unit": "share",
+   "values": {
+    "text -> gemini-3.8-flash [text]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 70
+    },
+    "saaras:v4 -> gemini-3.8-flash [clean]": {
+     "mean": 0.9857142857142858,
+     "lo": 0.9571428571428572,
+     "hi": 1.0,
+     "n": 70
+    },
+    "saaras:v4 -> gemini-3.8-flash [phone]": {
+     "mean": 0.9857142857142858,
+     "lo": 0.9571428571428572,
+     "hi": 1.0,
+     "n": 70
+    },
+    "saaras:v3 -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 70
+    },
+    "saaras:v3 -> gemini-3.8-flash [phone]": {
+     "mean": 0.9714285714285714,
+     "lo": 0.9285714285714286,
+     "hi": 1.0,
+     "n": 70
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [clean]": {
+     "mean": 0.9714285714285714,
+     "lo": 0.9285714285714286,
+     "hi": 1.0,
+     "n": 70
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [phone]": {
+     "mean": 0.9428571428571428,
+     "lo": 0.8857142857142857,
+     "hi": 0.9857142857142858,
+     "n": 70
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [clean]": {
+     "mean": 0.9857142857142858,
+     "lo": 0.9571428571428572,
+     "hi": 1.0,
+     "n": 70
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [phone]": {
+     "mean": 0.9,
+     "lo": 0.8285714285714286,
+     "hi": 0.9714285714285714,
+     "n": 70
+    },
+    "saaras:v4 -> sarvam-105b [clean]": {
+     "mean": 0.9285714285714286,
+     "lo": 0.8571428571428571,
+     "hi": 0.9857142857142858,
+     "n": 70
+    },
+    "saaras:v4 -> sarvam-105b [phone]": {
+     "mean": 0.9285714285714286,
+     "lo": 0.8714285714285714,
+     "hi": 0.9857142857142858,
+     "n": 70
+    },
+    "audio -> gemini-3.8-flash [clean]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 70
+    },
+    "audio -> gemini-3.8-flash [phone]": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 70
+    }
+   }
+  },
+  {
+   "name": "cer_saaras:v4",
+   "higher_is_better": false,
+   "unit": "character error rate vs spoken question text",
+   "values": {
+    "clean": {
+     "mean": 0.012788796921951078,
+     "lo": 0.0074149363729069315,
+     "hi": 0.018903782905664867,
+     "n": 70
+    },
+    "phone": {
+     "mean": 0.015216995389787536,
+     "lo": 0.009010278197038452,
+     "hi": 0.022438807695343684,
+     "n": 70
+    }
+   }
+  },
+  {
+   "name": "cer_saaras:v3",
+   "higher_is_better": false,
+   "unit": "character error rate vs spoken question text",
+   "values": {
+    "clean": {
+     "mean": 0.01579565199151374,
+     "lo": 0.009432988547981195,
+     "hi": 0.022718467211782164,
+     "n": 70
+    },
+    "phone": {
+     "mean": 0.023289763167347606,
+     "lo": 0.015194948984268418,
+     "hi": 0.032078138783783725,
+     "n": 70
+    }
+   }
+  },
+  {
+   "name": "cer_gemini-3.8-flash",
+   "higher_is_better": false,
+   "unit": "character error rate vs spoken question text",
+   "values": {
+    "clean": {
+     "mean": 0.05198280534427282,
+     "lo": 0.020639089790528746,
+     "hi": 0.09655995689720505,
+     "n": 70
+    },
+    "phone": {
+     "mean": 0.06808218041436637,
+     "lo": 0.027808744129708088,
+     "hi": 0.1207059581530929,
+     "n": 70
+    }
+   }
+  },
+  {
+   "name": "cer_gpt-4o-transcribe",
+   "higher_is_better": false,
+   "unit": "character error rate vs spoken question text",
+   "values": {
+    "clean": {
+     "mean": 0.046972300184183365,
+     "lo": 0.03448273524696012,
+     "hi": 0.06072742940250705,
+     "n": 70
+    },
+    "phone": {
+     "mean": 0.08468506359027174,
+     "lo": 0.06605712803534816,
+     "hi": 0.10439613321854613,
+     "n": 70
+    }
+   }
+  }
+ ],
+ "per_language": {
+  "cer": {
+   "Hindi": {
+    "saaras:v4 [clean]": 0.01,
+    "saaras:v4 [phone]": 0.01,
+    "saaras:v3 [clean]": 0.017,
+    "saaras:v3 [phone]": 0.018,
+    "gemini-3.8-flash [clean]": 0.046,
+    "gemini-3.8-flash [phone]": 0.048,
+    "gpt-4o-transcribe [clean]": 0.012,
+    "gpt-4o-transcribe [phone]": 0.025
+   },
+   "Marathi": {
+    "saaras:v4 [clean]": 0.004,
+    "saaras:v4 [phone]": 0.011,
+    "saaras:v3 [clean]": 0.01,
+    "saaras:v3 [phone]": 0.011,
+    "gemini-3.8-flash [clean]": 0.011,
+    "gemini-3.8-flash [phone]": 0.089,
+    "gpt-4o-transcribe [clean]": 0.04,
+    "gpt-4o-transcribe [phone]": 0.082
+   },
+   "Kannada": {
+    "saaras:v4 [clean]": 0.013,
+    "saaras:v4 [phone]": 0.013,
+    "saaras:v3 [clean]": 0.02,
+    "saaras:v3 [phone]": 0.032,
+    "gemini-3.8-flash [clean]": 0.13,
+    "gemini-3.8-flash [phone]": 0.043,
+    "gpt-4o-transcribe [clean]": 0.073,
+    "gpt-4o-transcribe [phone]": 0.106
+   },
+   "Telugu": {
+    "saaras:v4 [clean]": 0.014,
+    "saaras:v4 [phone]": 0.015,
+    "saaras:v3 [clean]": 0.011,
+    "saaras:v3 [phone]": 0.027,
+    "gemini-3.8-flash [clean]": 0.003,
+    "gemini-3.8-flash [phone]": 0.02,
+    "gpt-4o-transcribe [clean]": 0.034,
+    "gpt-4o-transcribe [phone]": 0.094
+   },
+   "Tamil": {
+    "saaras:v4 [clean]": 0.018,
+    "saaras:v4 [phone]": 0.025,
+    "saaras:v3 [clean]": 0.02,
+    "saaras:v3 [phone]": 0.027,
+    "gemini-3.8-flash [clean]": 0.103,
+    "gemini-3.8-flash [phone]": 0.189,
+    "gpt-4o-transcribe [clean]": 0.034,
+    "gpt-4o-transcribe [phone]": 0.08
+   },
+   "Punjabi": {
+    "saaras:v4 [clean]": 0.019,
+    "saaras:v4 [phone]": 0.019,
+    "saaras:v3 [clean]": 0.019,
+    "saaras:v3 [phone]": 0.024,
+    "gemini-3.8-flash [clean]": 0.021,
+    "gemini-3.8-flash [phone]": 0.027,
+    "gpt-4o-transcribe [clean]": 0.091,
+    "gpt-4o-transcribe [phone]": 0.124
+   }
+  },
+  "overall_pass": {
+   "Hindi": {
+    "text -> gemini-3.8-flash [text]": 1.0,
+    "saaras:v4 -> gemini-3.8-flash [clean]": 1.0,
+    "saaras:v4 -> gemini-3.8-flash [phone]": 1.0,
+    "saaras:v3 -> gemini-3.8-flash [clean]": 1.0,
+    "saaras:v3 -> gemini-3.8-flash [phone]": 1.0,
+    "gemini-3.8-flash -> gemini-3.8-flash [clean]": 1.0,
+    "gemini-3.8-flash -> gemini-3.8-flash [phone]": 1.0,
+    "gpt-4o-transcribe -> gemini-3.8-flash [clean]": 1.0,
+    "gpt-4o-transcribe -> gemini-3.8-flash [phone]": 1.0,
+    "saaras:v4 -> sarvam-105b [clean]": 0.917,
+    "saaras:v4 -> sarvam-105b [phone]": 0.917,
+    "audio -> gemini-3.8-flash [clean]": 1.0,
+    "audio -> gemini-3.8-flash [phone]": 1.0
+   },
+   "Marathi": {
+    "text -> gemini-3.8-flash [text]": 1.0,
+    "saaras:v4 -> gemini-3.8-flash [clean]": 1.0,
+    "saaras:v4 -> gemini-3.8-flash [phone]": 1.0,
+    "saaras:v3 -> gemini-3.8-flash [clean]": 1.0,
+    "saaras:v3 -> gemini-3.8-flash [phone]": 1.0,
+    "gemini-3.8-flash -> gemini-3.8-flash [clean]": 1.0,
+    "gemini-3.8-flash -> gemini-3.8-flash [phone]": 0.917,
+    "gpt-4o-transcribe -> gemini-3.8-flash [clean]": 1.0,
+    "gpt-4o-transcribe -> gemini-3.8-flash [phone]": 0.917,
+    "saaras:v4 -> sarvam-105b [clean]": 1.0,
+    "saaras:v4 -> sarvam-105b [phone]": 1.0,
+    "audio -> gemini-3.8-flash [clean]": 1.0,
+    "audio -> gemini-3.8-flash [phone]": 1.0
+   },
+   "Kannada": {
+    "text -> gemini-3.8-flash [text]": 1.0,
+    "saaras:v4 -> gemini-3.8-flash [clean]": 1.0,
+    "saaras:v4 -> gemini-3.8-flash [phone]": 1.0,
+    "saaras:v3 -> gemini-3.8-flash [clean]": 1.0,
+    "saaras:v3 -> gemini-3.8-flash [phone]": 0.917,
+    "gemini-3.8-flash -> gemini-3.8-flash [clean]": 0.917,
+    "gemini-3.8-flash -> gemini-3.8-flash [phone]": 0.917,
+    "gpt-4o-transcribe -> gemini-3.8-flash [clean]": 1.0,
+    "gpt-4o-transcribe -> gemini-3.8-flash [phone]": 0.917,
+    "saaras:v4 -> sarvam-105b [clean]": 1.0,
+    "saaras:v4 -> sarvam-105b [phone]": 0.917,
+    "audio -> gemini-3.8-flash [clean]": 1.0,
+    "audio -> gemini-3.8-flash [phone]": 1.0
+   },
+   "Telugu": {
+    "text -> gemini-3.8-flash [text]": 1.0,
+    "saaras:v4 -> gemini-3.8-flash [clean]": 1.0,
+    "saaras:v4 -> gemini-3.8-flash [phone]": 1.0,
+    "saaras:v3 -> gemini-3.8-flash [clean]": 1.0,
+    "saaras:v3 -> gemini-3.8-flash [phone]": 0.917,
+    "gemini-3.8-flash -> gemini-3.8-flash [clean]": 1.0,
+    "gemini-3.8-flash -> gemini-3.8-flash [phone]": 1.0,
+    "gpt-4o-transcribe -> gemini-3.8-flash [clean]": 1.0,
+    "gpt-4o-transcribe -> gemini-3.8-flash [phone]": 1.0,
+    "saaras:v4 -> sarvam-105b [clean]": 0.833,
+    "saaras:v4 -> sarvam-105b [phone]": 0.917,
+    "audio -> gemini-3.8-flash [clean]": 1.0,
+    "audio -> gemini-3.8-flash [phone]": 1.0
+   },
+   "Tamil": {
+    "text -> gemini-3.8-flash [text]": 1.0,
+    "saaras:v4 -> gemini-3.8-flash [clean]": 0.909,
+    "saaras:v4 -> gemini-3.8-flash [phone]": 0.909,
+    "saaras:v3 -> gemini-3.8-flash [clean]": 1.0,
+    "saaras:v3 -> gemini-3.8-flash [phone]": 1.0,
+    "gemini-3.8-flash -> gemini-3.8-flash [clean]": 0.909,
+    "gemini-3.8-flash -> gemini-3.8-flash [phone]": 0.818,
+    "gpt-4o-transcribe -> gemini-3.8-flash [clean]": 1.0,
+    "gpt-4o-transcribe -> gemini-3.8-flash [phone]": 0.818,
+    "saaras:v4 -> sarvam-105b [clean]": 0.818,
+    "saaras:v4 -> sarvam-105b [phone]": 0.818,
+    "audio -> gemini-3.8-flash [clean]": 1.0,
+    "audio -> gemini-3.8-flash [phone]": 1.0
+   },
+   "Punjabi": {
+    "text -> gemini-3.8-flash [text]": 1.0,
+    "saaras:v4 -> gemini-3.8-flash [clean]": 1.0,
+    "saaras:v4 -> gemini-3.8-flash [phone]": 1.0,
+    "saaras:v3 -> gemini-3.8-flash [clean]": 1.0,
+    "saaras:v3 -> gemini-3.8-flash [phone]": 1.0,
+    "gemini-3.8-flash -> gemini-3.8-flash [clean]": 1.0,
+    "gemini-3.8-flash -> gemini-3.8-flash [phone]": 1.0,
+    "gpt-4o-transcribe -> gemini-3.8-flash [clean]": 0.909,
+    "gpt-4o-transcribe -> gemini-3.8-flash [phone]": 0.727,
+    "saaras:v4 -> sarvam-105b [clean]": 1.0,
+    "saaras:v4 -> sarvam-105b [phone]": 1.0,
+    "audio -> gemini-3.8-flash [clean]": 1.0,
+    "audio -> gemini-3.8-flash [phone]": 1.0
+   }
+  }
+ },
+ "speed": {
+  "stt saaras:v4 [clean]": {
+   "p50_ms": 1726.9220352172852,
+   "p95_ms": 19248.4188079834
+  },
+  "stt saaras:v4 [phone]": {
+   "p50_ms": 837.1710777282715,
+   "p95_ms": 18221.339225769043
+  },
+  "stt saaras:v3 [clean]": {
+   "p50_ms": 437.5481605529785,
+   "p95_ms": 2276.5560150146484
+  },
+  "stt saaras:v3 [phone]": {
+   "p50_ms": 435.2858066558838,
+   "p95_ms": 9713.123798370361
+  },
+  "stt gemini-3.8-flash [clean]": {
+   "p50_ms": 2704.1680812835693,
+   "p95_ms": 3922.4979877471924
+  },
+  "stt gemini-3.8-flash [phone]": {
+   "p50_ms": 2801.140069961548,
+   "p95_ms": 5360.788345336914
+  },
+  "stt gpt-4o-transcribe [clean]": {
+   "p50_ms": 1002.8159618377686,
+   "p95_ms": 1714.1780853271484
+  },
+  "stt gpt-4o-transcribe [phone]": {
+   "p50_ms": 999.9330043792725,
+   "p95_ms": 1679.0530681610107
+  },
+  "answer text -> gemini-3.8-flash [text]": {
+   "p50_ms": 1989.9919033050537,
+   "p95_ms": 2920.77374458313
+  },
+  "answer saaras:v4 -> gemini-3.8-flash [clean]": {
+   "p50_ms": 2065.556049346924,
+   "p95_ms": 3296.1437702178955
+  },
+  "answer saaras:v4 -> gemini-3.8-flash [phone]": {
+   "p50_ms": 2068.7918663024902,
+   "p95_ms": 3694.6511268615723
+  },
+  "answer saaras:v3 -> gemini-3.8-flash [clean]": {
+   "p50_ms": 2123.816967010498,
+   "p95_ms": 4346.583843231201
+  },
+  "answer saaras:v3 -> gemini-3.8-flash [phone]": {
+   "p50_ms": 2160.2070331573486,
+   "p95_ms": 3372.4968433380127
+  },
+  "answer gemini-3.8-flash -> gemini-3.8-flash [clean]": {
+   "p50_ms": 2095.4151153564453,
+   "p95_ms": 3510.4777812957764
+  },
+  "answer gemini-3.8-flash -> gemini-3.8-flash [phone]": {
+   "p50_ms": 2074.963092803955,
+   "p95_ms": 3154.6969413757324
+  },
+  "answer gpt-4o-transcribe -> gemini-3.8-flash [clean]": {
+   "p50_ms": 1994.8029518127441,
+   "p95_ms": 3390.575885772705
+  },
+  "answer gpt-4o-transcribe -> gemini-3.8-flash [phone]": {
+   "p50_ms": 2155.924081802368,
+   "p95_ms": 3644.2930698394775
+  },
+  "answer saaras:v4 -> sarvam-105b [clean]": {
+   "p50_ms": 362.8861904144287,
+   "p95_ms": 4544.875860214233
+  },
+  "answer saaras:v4 -> sarvam-105b [phone]": {
+   "p50_ms": 365.7069206237793,
+   "p95_ms": 2420.9091663360596
+  },
+  "answer audio -> gemini-3.8-flash [clean]": {
+   "p50_ms": 3404.416799545288,
+   "p95_ms": 4560.739040374756
+  },
+  "answer audio -> gemini-3.8-flash [phone]": {
+   "p50_ms": 3256.6728591918945,
+   "p95_ms": 4886.8889808654785
+  }
+ },
+ "usage": {
+  "saaras:v4": {
+   "audio_s": 545.7,
+   "calls": 140,
+   "inr_list_price": 4.55
+  },
+  "saaras:v3": {
+   "audio_s": 545.7,
+   "calls": 140,
+   "inr_list_price": 4.55
+  },
+  "gemini-3.8-flash": {
+   "audio_s": 545.7,
+   "calls": 140
+  },
+  "gpt-4o-transcribe": {
+   "audio_s": 545.7,
+   "calls": 140
+  },
+  "sarvam-105b (answering)": {
+   "in_tok": 206073,
+   "out_tok": 4365,
+   "calls": 140,
+   "inr_list_price": 3.35
+  },
+  "gemini-3.8-flash (answering)": {
+   "in_tok": 1134514,
+   "out_tok": 30597,
+   "calls": 770
+  }
+ },
+ "findings": [
+  "Character error rate vs the spoken question (140 clips each, clean / phone line): saaras:v4 1.3% / 1.5%, saaras:v3 1.6% / 2.3%, gpt-4o-transcribe 4.7% / 8.5%, gemini-3.8-flash 5.2% / 6.8%. Sarvam's STT is 3-5x more accurate on these six languages, and the phone line barely hurts it. gpt-4o-transcribe degrades most on the phone line (Punjabi 12.4%, Kannada 10.6%), and Gemini on Tamil (10.3% / 18.9%).",
+  "With the answering model held fixed (gemini-3.8-flash, thinking off), STT quality shows up in the advice. Overall pass on 70 questions: text oracle 100%; saaras:v3 100% / 97%; saaras:v4 99% / 99%; gemini STT 97% / 94%; gpt-4o-transcribe 99% / 90% (clean / phone). The damaging errors are crop names. Over the phone, gpt-4o-transcribe heard ਕਣਕ (wheat) as ਗੰਢ, பருத்தி (cotton) as பரிசி and ಹತ್ತಿ (cotton) as ಹಸಿಗೆ, and dropped soybean. The answering model then refused or answered for the wrong crop. Gemini still refused every out-of-scope question with every STT.",
+  "Gemini answering straight from the audio, with no separate STT step, scored 100% / 100%. On these clips that is better than any transcript-based Gemini pipeline, and it saves a hop.",
+  "All-Sarvam pipeline (saaras:v4 -> sarvam-105b): 97% / 98% grounded and 100% correct reply language. Strictly scored it passes 93% overall, because sarvam-105b often declines out-of-scope questions without the NOT_IN_SHEET code: 7/10 clean and 6/10 phone use the code, but 10/10 redirect to the KVK helpline (lenient). It never invents an answer.",
+  "Spend: Sarvam ₹12.45 at list price (saaras v4 + v3 at ₹4.55 each for 9.1 min of audio; sarvam-105b answering ₹3.35). Gemini: 1.13M input / 31k output tokens for answering, mostly the advisory sheet repeated in the prompt. OpenAI: 140 gpt-4o-transcribe calls on 9.1 min of audio."
+ ],
+ "caveats": [
+  "The speech is synthetic: macOS voices (Lekha hi, Soumya kn, Geeta te, Vani ta) and gemini-3.8-flash-tts voices reading clean text. Real farmers bring dialects, code-mixing, hesitations and field noise, so every CER here is optimistic, and the gap between STT systems on real calls could be larger or smaller.",
+  "Gemini TTS produced the gemini-voiced clips, so Gemini STT and audio-in may have a home advantage on them. Even so, Gemini STT was the worst on the macOS-voiced clips (10.8% CER) and better on its own voices (3.5%), while saaras:v4 was 1.7% and 1.3%.",
+  "A spoken question has no script, so the reply is expected in native script for every item, romanised ones included. Romanised items are spoken from their native-script twin by a different (gemini) voice. The 4 out-of-scope questions that existed only romanised were given hand-written native versions.",
+  "The language code is passed to every STT system (as a voice line routed by IVR language menu would). Auto-detect was not tested.",
+  "The phone line is simulated (8 kHz band-pass, G.711 mu-law, 20 dB SNR white noise, uc01's function), not a real telephony path.",
+  "70 questions per condition: one wrong answer moves a score 1.4 points. Differences under ~5 points are noise."
+ ],
+ "verdict": "For a voice crop-advisory line in these six languages, put Sarvam's STT in front: saaras:v4 (or v3) transcribes 3-5x more accurately than gemini-3.8-flash or gpt-4o-transcribe, holds up on phone audio, and keeps downstream answers at 97-100%. If the answering model is Gemini anyway, sending it the audio directly is as good on these clips (100%) and saves the STT hop. Avoid gpt-4o-transcribe on phone audio for Punjabi, Kannada and Tamil: it garbles crop names, which turns into refusals or advice for the wrong crop. An all-Sarvam stack (saaras:v4 -> sarvam-105b) works (97-98% grounded, never invents answers) but needs a code check, because it often skips the machine-readable refusal code.",
+ "examples": [
+  {
+   "id": "cotton_spacing-te-native",
+   "spoken": "పత్తి మొక్కల మధ్య, సాళ్ల మధ్య దూరం ఎంత ఉండాలి?",
+   "voice": "say:Geeta",
+   "gold_numbers": [
+    90,
+    60
+   ],
+   "transcripts": {
+    "saaras:v4 [clean]": "పత్తి మొక్కల మధ్య, సళ్ళ మధ్య దూరం ఎంత ఉండాలి?",
+    "saaras:v4 [phone]": "పత్తి మొక్కల మధ్య తాళ్ళ మధ్య దూరం ఎంత ఉండాలి?",
+    "saaras:v3 [clean]": "పత్తి మొక్కల మధ్య సాళ్ళ మధ్య దూరం ఎంత ఉండాలి?",
+    "saaras:v3 [phone]": "పత్తి మొక్కల మధ్య తాళ్ళ మధ్య దూరం ఎంత ఉండాలి?",
+    "gemini-3.8-flash [clean]": "పత్తి మొక్కల మధ్య సాళ్ల మధ్య దూరం ఎంత ఉండాలి?",
+    "gemini-3.8-flash [phone]": "పత్తి మొక్కల మధ్య సాళ్ళ మధ్య దూరం ఎంత ఉండాలి?",
+    "gpt-4o-transcribe [clean]": "ప్రతి మొక్కల మధ్య, సాల్ల మధ్య దూరం ఎంత ఉండాలి?",
+    "gpt-4o-transcribe [phone]": "పచ్చి మొక్కల మధ్య, తాళ్ల మధ్య దూరం ఎంత ఉండాలి?"
+   },
+   "answers": {
+    "text -> gemini-3.8-flash [text]": {
+     "text": "పత్తి పంటలో సాళ్ల మధ్య 90 cm మరియు మొక్కల మధ్య 60 cm దూరం ఉండాలి.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v4 -> gemini-3.8-flash [clean]": {
+     "text": "పత్తి సాగులో సళ్ళ మధ్య దూరం 90 cm మరియు మొక్కల మధ్య దూరం 60 cm ఉండాలి.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v4 -> gemini-3.8-flash [phone]": {
+     "text": "పత్తి సాగులో వరుసల మధ్య 90 cm మరియు మొక్కల మధ్య 60 cm దూరం ఉండాలి.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v3 -> gemini-3.8-flash [clean]": {
+     "text": "పత్తి సాళ్ళ మధ్య 90 cm మరియు మొక్కల మధ్య 60 cm దూరం ఉండాలి.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v3 -> gemini-3.8-flash [phone]": {
+     "text": "పత్తి పంటలో వరుసల (తాళ్ళ) మధ్య దూరం 90 cm మరియు మొక్కల మధ్య దూరం 60 cm ఉండాలి.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [clean]": {
+     "text": "పత్తి సాళ్ల మధ్య దూరం 90 cm మరియు మొక్కల మధ్య దూరం 60 cm ఉండాలి.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [phone]": {
+     "text": "పత్తి పంటలో సాళ్ళ మధ్య 90 cm మరియు మొక్కల మధ్య 60 cm దూరం ఉండాలి.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [clean]": {
+     "text": "పత్తి పంటలో సాల్ల మధ్య దూరం 90 cm మరియు మొక్కల మధ్య దూరం 60 cm ఉండాలి. వరిలో 20 cm x 15 cm దూరం పాటించాలి, సోయాబీన్‌లో సాల్ల మధ్య దూరం 45 cm ఉండాలి.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [phone]": {
+     "text": "వరి నాటు వేసేటప్పుడు మొక్కల మధ్య మరియు వరుసల మధ్య దూరం 20 cm x 15 cm ఉండాలి, అలాగే ప్రతి గుబురుకు 2 నుండి 3 మొక్కలు నాటాలి. పత్తి పంటలో అయితే వరుసల మధ్య 90 cm మరియు మొక్కల మధ్య 60 cm దూరం ఉండాలి.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v4 -> sarvam-105b [clean]": {
+     "text": "పంటల మధ్య, సళ్ళ మధ్య దూరం 20 cm x 15 cm ఉండాలి. ఒక గుంటకు 2 నుండి 3 మొక్కలు నాటాలి.",
+     "score": {
+      "oos": false,
+      "correct": false,
+      "false_refusal": false,
+      "language": true,
+      "pass": false
+     }
+    },
+    "saaras:v4 -> sarvam-105b [phone]": {
+     "text": "పత్తి మొక్కల మధ్య వరుసల మధ్య 90 cm మరియు మొక్కల మధ్య 60 cm దూరం ఉంచాలి.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "audio -> gemini-3.8-flash [clean]": {
+     "text": "పత్తి సాళ్ల మధ్య 90 సెం.మీ మరియు మొక్కల మధ్య 60 సెం.మీ దూరం ఉండాలి.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "audio -> gemini-3.8-flash [phone]": {
+     "text": "పత్తి సాళ్ళ మధ్య 90 సెం.మీ మరియు మొక్కల మధ్య 60 సెం.మీ దూరం ఉండాలి.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    }
+   }
+  },
+  {
+   "id": "aphid_threshold-pa-roman",
+   "spoken": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ ਕਿੰਨਾ ਤੇਲਾ ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰੀਏ?",
+   "voice": "gemini:Charon",
+   "gold_numbers": [
+    10
+   ],
+   "transcripts": {
+    "saaras:v4 [clean]": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਹਾ ਕਿੰਨਾ ਤੇਲਾ ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰੀਏ?",
+    "saaras:v4 [phone]": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ ਕਿੰਨਾ ਤੇਲਾ ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰੀਏ?",
+    "saaras:v3 [clean]": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਜਾ ਕਿੰਨਾ ਤੇਲਾ ਹੋਣ ਤੇ ਸਪਰੇਅ ਕਰੀਏ?",
+    "saaras:v3 [phone]": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਜਾ ਕਿੰਨਾ ਤੇਲਾ ਹੋਣ ਤੇ ਸਪਰੇਅ ਕਰੀਏ?",
+    "gemini-3.8-flash [clean]": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਟਾ ਕਿੰਨਾ ਤੇਲਾ ਹੋਣ ਤੇ ਸਪਰੇਅ ਕਰੀਏ",
+    "gemini-3.8-flash [phone]": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ ਕਿੰਨਾ ਤੇਲਾ ਹੋਣ ਤੇ ਸਪਰੇ ਕਰੀਏ",
+    "gpt-4o-transcribe [clean]": "ਕਣਕ ਵੇਚ ਪ੍ਰਤੀ ਬੂਝਾ ਕਿੰਨਾ ਤੇਲ੍ਹਾਂ ਹੋਣ 'ਤੇ ਸਪਰੇ ਕਰੀਏ?",
+    "gpt-4o-transcribe [phone]": "ਕਣਕੁ ਵੇਚ ਪ੍ਰਤੀ ਭੂਜਾ ਕਿੰਨਾ ਤੇਲਾ ਹੋਣ ਤੇ ਸਪਰੇ ਕਰੀਏ?"
+   },
+   "answers": {
+    "text -> gemini-3.8-flash [text]": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ (tiller) 10 ਤੇਲੇ ਹੋਣ 'ਤੇ ਇਮੀਡਾਕਲੋਪ੍ਰਿਡ 17.8 SL ਨੂੰ 40 ml ਪ੍ਰਤੀ ਏਕੜ ਦੇ ਹਿਸਾਬ ਨਾਲ ਸਪਰੇਅ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v4 -> gemini-3.8-flash [clean]": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਹਾ (tiller) 10 ਤੇਲੇ ਹੋਣ 'ਤੇ ਕਾਰਵਾਈ ਕਰੋ। ਇਸ ਲਈ ਇਮੀਡਾਕਲੋਪ੍ਰਿਡ 17.8 SL ਨੂੰ 40 ml ਪ੍ਰਤੀ ਏਕੜ ਦੇ ਹਿਸਾਬ ਨਾਲ ਸਪਰੇਅ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v4 -> gemini-3.8-flash [phone]": {
+     "text": "ਜਦੋਂ ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ (tiller) 10 ਤੇਲੇ ਹੋ ਜਾਣ, ਉਦੋਂ ਸਪਰੇਅ ਕਰੋ। ਇਸਦੇ ਲਈ ਪ੍ਰਤੀ ਏਕੜ 40 ml ਇਮੀਡਾਕਲੋਪ੍ਰਿਡ 17.8 SL ਦਾ ਛਿੜਕਾਅ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v3 -> gemini-3.8-flash [clean]": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਟਾ (ਟਿਲਰ) 10 ਤੇਲੇ ਹੋਣ 'ਤੇ ਇਮੀਡਾਕਲੋਪ੍ਰਿਡ 17.8 SL ਨੂੰ 40 ਮਿਲੀਲੀਟਰ ਪ੍ਰਤੀ ਏਕੜ ਦੇ ਹਿਸਾਬ ਨਾਲ ਸਪਰੇਅ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v3 -> gemini-3.8-flash [phone]": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਟਾ (tiller) 10 ਤੇਲੇ ਹੋਣ 'ਤੇ ਕਾਰਵਾਈ ਕਰੋ। ਇਸਦੇ ਲਈ ਇਮੀਡਾਕਲੋਪ੍ਰਿਡ 17.8 SL ਨੂੰ 40 ml ਪ੍ਰਤੀ ਏਕੜ ਦੇ ਹਿਸਾਬ ਨਾਲ ਸਪਰੇਅ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [clean]": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਸ਼ਾਖਾ (tiller) 10 ਤੇਲੇ ਹੋਣ 'ਤੇ ਕਾਰਵਾਈ ਕਰੋ। ਇਸਦੇ ਲਈ ਪ੍ਰਤੀ ਏਕੜ 40 ml ਇਮੀਡਾਕਲੋਪ੍ਰਿਡ 17.8 SL ਦਾ ਛਿੜਕਾਅ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [phone]": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ (ਟਿੱਲਰ) 10 ਤੇਲੇ ਹੋਣ 'ਤੇ ਕਾਰਵਾਈ ਕਰੋ। ਇਸਦੇ ਲਈ ਇਮੀਡਾਕਲੋਪ੍ਰਿਡ 17.8 SL ਨੂੰ 40 ml ਪ੍ਰਤੀ ਏਕੜ ਦੇ ਹਿਸਾਬ ਨਾਲ ਸਪਰੇ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [clean]": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ (ਟਿੱਲਰ) 10 ਤੇਲਿਆਂ (aphids) ਦਾ ਹਮਲਾ ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰੋ। ਇਸ ਲਈ ਇਮੀਡਾਕਲੋਪ੍ਰਿਡ 17.8 SL ਨੂੰ 40 ml ਪ੍ਰਤੀ ਏਕੜ ਦੇ ਹਿਸਾਬ ਨਾਲ ਛਿੜਕੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [phone]": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਸ਼ਾਖਾ (ਟਿੱਲਰ) 10 ਤੇਲੇ ਹੋਣ 'ਤੇ ਕਾਰਵਾਈ ਕਰੋ। ਇਸਦੇ ਲਈ ਇਮੀਡਾਕਲੋਪ੍ਰਿਡ 17.8 SL ਨੂੰ 40 ml ਪ੍ਰਤੀ ਏਕੜ ਦੇ ਹਿਸਾਬ ਨਾਲ ਸਪਰੇਅ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v4 -> sarvam-105b [clean]": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਹਾ 10 ਤੇਲੇ ਹੋਣ 'ਤੇ imidacloprid 17.8 SL ਦੀ ਸਪਰੇਅ 40 ml ਪ੍ਰਤੀ ਏਕੜ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v4 -> sarvam-105b [phone]": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ 10 ਤੇਲੇ ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰੋ। ਸਪਰੇਅ imidacloprid 17.8 SL 40 ml ਪ੍ਰਤੀ ਏਕੜ ਦੇ ਹਿਸਾਬ ਨਾਲ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "audio -> gemini-3.8-flash [clean]": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਬੂਝਾ 10 ਤੇਲੇ ਹੋਣ 'ਤੇ ਸਪਰੇਅ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ। ਇਸ ਲਈ ਇਮੀਡਾਕਲੋਪ੍ਰਿਡ 17.8 SL ਦਾ 40 ml ਪ੍ਰਤੀ ਏਕੜ ਛਿੜਕਾਅ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "audio -> gemini-3.8-flash [phone]": {
+     "text": "ਕਣਕ ਵਿੱਚ ਪ੍ਰਤੀ ਟਿੱਲਰ (ਬੂਝਾ) 10 ਤੇਲੇ ਹੋਣ 'ਤੇ ਇਮੀਡਾਕਲੋਪ੍ਰਿਡ 17.8 SL ਦੀ 40 ml ਪ੍ਰਤੀ ਏਕੜ ਦੇ ਹਿਸਾਬ ਨਾਲ ਸਪਰੇਅ ਕਰੋ। ਪ੍ਰਤੀ ਏਕੜ 200 ਲੀਟਰ ਪਾਣੀ ਦੀ ਵਰਤੋਂ ਕਰੋ।",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    }
+   }
+  },
+  {
+   "id": "oos4-ta-native",
+   "spoken": "தக்காளிக்கு ஏக்கருக்கு எவ்வளவு உரம் போட வேண்டும்?",
+   "voice": "say:Vani",
+   "gold_numbers": [],
+   "transcripts": {
+    "saaras:v4 [clean]": "தக்காளிக்கு ஏக்கருக்கு எவ்வளவு உரம் போட வேண்டும்?",
+    "saaras:v4 [phone]": "தக்காளிக்கு ஏக்கருக்கு எவ்வளவு உரம் போட வேண்டும்?",
+    "saaras:v3 [clean]": "தக்காளிக்கு ஏக்கருக்கு எவ்வளவு உரம் போட வேண்டும்?",
+    "saaras:v3 [phone]": "தக்காளிக்கு ஏக்கருக்கு எவ்வளவு உரம் போட வேண்டும்?",
+    "gemini-3.8-flash [clean]": "தக்காளிக்கு ஏக்கருக்கு எவ்வளவு உரம் போட வேண்டும்",
+    "gemini-3.8-flash [phone]": "தக்காளிக்கு ஏக்கருக்கு எவ்வளவு உரம் போட வேண்டும்",
+    "gpt-4o-transcribe [clean]": "தக்காளிக்கு ஏக்கருக்கு எவ்வளவு உரம் போட வேண்டும்?",
+    "gpt-4o-transcribe [phone]": "சர்க்காரிக்கு ஏக்கருக்கு எவ்வளவு உரம் போட வேண்டும்?"
+   },
+   "answers": {
+    "text -> gemini-3.8-flash [text]": {
+     "text": "NOT_IN_SHEET தக்காளி பற்றிய விவரங்களுக்கு கேவிகே (KVK) உதவி மையத்தை அழைக்கவும்.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v4 -> gemini-3.8-flash [clean]": {
+     "text": "NOT_IN_SHEET தக்காளி பயிருக்கான உர விவரங்கள் இதில் இல்லை, எனவே வேளாண் அறிவியல் மையத்தின் (KVK) உதவி எண்களைத் தொடர்பு கொள்ளவும்.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v4 -> gemini-3.8-flash [phone]": {
+     "text": "NOT_IN_SHEET தக்காளி பயிருக்கான உர விவரங்கள் இதில் இல்லை, எனவே கேவிகே (KVK) உதவி எண்களைத் தொடர்பு கொள்ளவும்.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v3 -> gemini-3.8-flash [clean]": {
+     "text": "NOT_IN_SHEET தக்காளி பயிருக்கான உர விவரங்கள் இதில் இல்லை, எனவே வேளாண் அறிவியல் மையத்தின் (KVK) உதவி எண்களைத் தொடர்பு கொள்ளவும்.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v3 -> gemini-3.8-flash [phone]": {
+     "text": "NOT_IN_SHEET தக்காளி பயிருக்கான உர விவரங்கள் இதில் இல்லை, எனவே வேளாண் அறிவியல் மையத்தின் (KVK) உதவி எண்களைத் தொடர்பு கொள்ளவும்.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [clean]": {
+     "text": "NOT_IN_SHEET தக்காளி பற்றிய தகவலுக்கு கேவிகே (KVK) உதவி மையத்தை அழைக்கவும்.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [phone]": {
+     "text": "NOT_IN_SHEET தக்காளி பயிருக்கான உர விவரங்கள் இதில் இல்லை, எனவே கேவிகே (KVK) உதவி எண்களைத் தொடர்பு கொள்ளவும்.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [clean]": {
+     "text": "NOT_IN_SHEET தக்காளி பயிருக்கான உர விவரங்கள் இதில் இல்லை, எனவே கேவிகே (KVK) உதவி எண்களைத் தொடர்பு கொள்ளவும்.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [phone]": {
+     "text": "NOT_IN_SHEET இந்த விவரம் வழிகாட்டியில் இல்லை, தயவுசெய்து கே.வி.கே (KVK) உதவி எண்களைத் தொடர்பு கொள்ளவும்.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v4 -> sarvam-105b [clean]": {
+     "text": "இந்த ஆலோசனைக் குறிப்பில் தக்காளிக்கான உரம் பற்றிய விவரங்கள் இல்லை. மேலும் உதவிக்கு KVK உதவி எண்ணிற்கு அழைக்கவும்.",
+     "score": {
+      "oos": true,
+      "refused": false,
+      "refused_lenient": true,
+      "language": true,
+      "pass": false
+     }
+    },
+    "saaras:v4 -> sarvam-105b [phone]": {
+     "text": "இந்த ஆலோசனைத் தாளில் தக்காளிக்கான உரம் பற்றிய விவரங்கள் இல்லை. மேலும் உதவிக்கு KVK உதவி எண்ணிற்கு அழைக்கவும்.",
+     "score": {
+      "oos": true,
+      "refused": false,
+      "refused_lenient": true,
+      "language": true,
+      "pass": false
+     }
+    },
+    "audio -> gemini-3.8-flash [clean]": {
+     "text": "NOT_IN_SHEET இந்தத் தகவல் கையேட்டில் இல்லை, எனவே தயவுசெய்து கே.வி.கே (KVK) உதவி எண்களைத் தொடர்பு கொள்ளவும்.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    },
+    "audio -> gemini-3.8-flash [phone]": {
+     "text": "NOT_IN_SHEET தக்காளி பயிருக்கான விவரங்கள் இதில் இல்லை, தயவுசெய்து கேவிகே (KVK) உதவி எண்களைத் தொடர்பு கொள்ளவும்.",
+     "score": {
+      "oos": true,
+      "refused": true,
+      "refused_lenient": true,
+      "language": true,
+      "pass": true
+     }
+    }
+   }
+  },
+  {
+   "id": "soy_rhizobium-kn-native",
+   "spoken": "ಸೋಯಾಬೀನ್ ಬೀಜಕ್ಕೆ ಒಂದು ಕೆಜಿಗೆ ರೈಜೋಬಿಯಂ ಎಷ್ಟು ಗ್ರಾಂ ಹಾಕಬೇಕು?",
+   "voice": "say:Soumya",
+   "gold_numbers": [
+    5
+   ],
+   "transcripts": {
+    "saaras:v4 [clean]": "ಸೋಯಾಬೀನ್ ಬೀಜಕ್ಕೆ ಒಂದು ಕೆಜಿಗೆ ರೈಜೋಬಿಯಂ ಎಷ್ಟು ಗ್ರಾಂ ಹಾಕಬೇಕು?",
+    "saaras:v4 [phone]": "ಸೋಯಾಬೀನ್ ಬೀಜಕ್ಕೆ ಒಂದು ಕೆಜಿಗೆ ರೈಜೋಬಿಯಂ ಎಷ್ಟು ಗ್ರಾಂ ಹಾಕಬೇಕು?",
+    "saaras:v3 [clean]": "ಸೋಯಾಬೀನ್ ಬೀಜಕ್ಕೆ ಒಂದು ಕೆಜಿಗೆ ರೈಜೋಬಿಯಂ ಎಷ್ಟು ಗ್ರಾಂ ಹಾಕಬೇಕು?",
+    "saaras:v3 [phone]": "ಸೋಯಾಬೀನ್ ಬೀಜಕ್ಕೆ 1 ಕೆಜಿಗೆ ರೈಜೋಬಿಯಂ ಎಷ್ಟು ಗ್ರಾಂ ಹಾಕಬೇಕು?",
+    "gemini-3.8-flash [clean]": "ಸೋಯಾಬೀನ್ ಬೀಜಕ್ಕೆ 1 kg ಗೆ ರೈಜೋಬಿಯಂ ಎಷ್ಟು ಗ್ರಾಂ ಹಾಕಬೇಕು?",
+    "gemini-3.8-flash [phone]": "ಸೋಯಾಬೀನ್ ಬೀಜಕ್ಕೆ 1 kg ಗೆ ರೈಜೋಬಿಯಂ ಎಷ್ಟು ಗ್ರಾಂ ಹಾಕಬೇಕು?",
+    "gpt-4o-transcribe [clean]": "ಸೊಯಾಬೀನ್ ಬೀಜಕ್ಕೆ ಒಂದು ಕೆಜಿಗೆ ರೈಜೋಬಿಯಂ ಎಷ್ಟು ಗ್ರಾಂ ಹಾಕಬೇಕು?",
+    "gpt-4o-transcribe [phone]": "ಸೋಯಾಬೀನ್ ಬೀಜಕ್ಕೆ 1 ಕೆಜಿಗೆ ಗೈಜೋಬಿಯಂ ಎಷ್ಟು ಗ್ರಾಂ ಹಾಕಬೇಕು?"
+   },
+   "answers": {
+    "text -> gemini-3.8-flash [text]": {
+     "text": "ಸೋಯಾಬೀನ್ ಬೀಜೋಪಚಾರಕ್ಕಾಗಿ ಪ್ರತಿ 1 ಕೆಜಿ ಬೀಜಕ್ಕೆ 5 ಗ್ರಾಂ ರೈಜೋಬಿಯಂ ಕಲ್ಚರ್ (Rhizobium culture) ಬಳಸಬೇಕು.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v4 -> gemini-3.8-flash [clean]": {
+     "text": "ಸೋಯಾಬೀನ್ ಬೀಜೋಪಚಾರಕ್ಕಾಗಿ 1 ಕೆಜಿ ಬೀಜಕ್ಕೆ 5 ಗ್ರಾಂ ರೈಜೋಬಿಯಂ (Rhizobium) ಕಲ್ಚರ್ ಬಳಸಬೇಕು.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v4 -> gemini-3.8-flash [phone]": {
+     "text": "ಸೋಯಾಬೀನ್ ಬೀಜೋಪಚಾರಕ್ಕಾಗಿ ಪ್ರತಿ 1 ಕೆಜಿ ಬೀಜಕ್ಕೆ 5 ಗ್ರಾಂ ರೈಜೋಬಿಯಂ ಕಲ್ಚರ್ (Rhizobium culture) ಬಳಸಬೇಕು.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v3 -> gemini-3.8-flash [clean]": {
+     "text": "ಸೋಯಾಬೀನ್ ಬೀಜೋಪಚಾರಕ್ಕಾಗಿ 1 ಕೆಜಿ ಬೀಜಕ್ಕೆ 5 ಗ್ರಾಂ ರೈಜೋಬಿಯಂ (Rhizobium) ಕಲ್ಚರ್ ಬಳಸಬೇಕು.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v3 -> gemini-3.8-flash [phone]": {
+     "text": "ಸೋಯಾಬೀನ್ ಬೀಜೋಪಚಾರಕ್ಕಾಗಿ 1 ಕೆಜಿ ಬೀಜಕ್ಕೆ 5 ಗ್ರಾಂ ರೈಜೋಬಿಯಂ (Rhizobium) ಕಲ್ಚರ್ ಬಳಸಬೇಕು.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [clean]": {
+     "text": "ಸೋಯಾಬೀನ್ ಬೀಜೋಪಚಾರಕ್ಕಾಗಿ 1 kg ಬೀಜಕ್ಕೆ 5 g ರೈಜೋಬಿಯಂ ಕಲ್ಚರ್ ಬಳಸಬೇಕು.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gemini-3.8-flash -> gemini-3.8-flash [phone]": {
+     "text": "ಸೋಯಾಬೀನ್ ಬೀಜೋಪಚಾರಕ್ಕಾಗಿ ಪ್ರತಿ 1 kg ಬೀಜಕ್ಕೆ 5 g ರೈಜೋಬಿಯಂ ಕಲ್ಚರ್ ಬಳಸಬೇಕು.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [clean]": {
+     "text": "ಸೋಯಾಬೀನ್ ಬೀಜೋಪಚಾರಕ್ಕಾಗಿ ಪ್ರತಿ 1 ಕೆಜಿ ಬೀಜಕ್ಕೆ 5 ಗ್ರಾಂ ರೈಜೋಬಿಯಂ ಕಲ್ಚರ್ (Rhizobium culture) ಬಳಸಬೇಕು.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash [phone]": {
+     "text": "ಸೋಯಾಬೀನ್ ಬೀಜೋಪಚಾರಕ್ಕೆ ಪ್ರತಿ 1 ಕೆಜಿ ಬೀಜಕ್ಕೆ 5 ಗ್ರಾಂ ರೈಜೋಬಿಯಂ (Rhizobium) ಕಲ್ಚರ್ ಬಳಸಬೇಕು.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v4 -> sarvam-105b [clean]": {
+     "text": "ಸೋಯಾಬೀನ್ ಬೀಜಕ್ಕೆ ಪ್ರತಿ ಕೆಜಿಗೆ 5 ಗ್ರಾಂ ರೈಜೋಬಿಯಂ ಹಾಕಬೇಕು.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "saaras:v4 -> sarvam-105b [phone]": {
+     "text": "ಸೋಯಾಬೀನ್ ಬೀಜಕ್ಕೆ ಪ್ರತಿ ಕೆಜಿಗೆ 5 ಗ್ರಾಂ ರೈಜೋಬಿಯಂ ಹಾಕಬೇಕು.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "audio -> gemini-3.8-flash [clean]": {
+     "text": "ಸೋಯಾಬೀನ್ ಬೀಜೋಪಚಾರಕ್ಕಾಗಿ ಪ್ರತಿ 1 ಕೆಜಿ ಬೀಜಕ್ಕೆ 5 ಗ್ರಾಂ ರೈಜೋಬಿಯಂ ಕಲ್ಚರ್ ಬಳಸಬೇಕು.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    },
+    "audio -> gemini-3.8-flash [phone]": {
+     "text": "ಸೋಯಾಬೀನ್ ಬೀಜೋಪಚಾರಕ್ಕಾಗಿ 1 ಕೆಜಿ ಬೀಜಕ್ಕೆ 5 ಗ್ರಾಂ ರೈಜೋಬಿಯಂ ಕಲ್ಚರ್ ಬಳಸಬೇಕು.",
+     "score": {
+      "oos": false,
+      "correct": true,
+      "false_refusal": false,
+      "language": true,
+      "pass": true
+     }
+    }
+   }
+  }
+ ],
+ "updated": "2026-10-11 23:51:38"
+}

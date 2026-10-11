@@ -22,6 +22,7 @@
   "saaras:v3-transcribe",
   "saaras:v4-codemix",
   "saaras:v4-transcribe",
+  "saaras:v4-codemix+keyterms",
   "gemini-3.8-flash",
   "whisper-large-v3-turbo",
   "whisper-1",
@@ -61,6 +62,12 @@
      "mean": 0.5659459821224527,
      "lo": 0.5285688280265486,
      "hi": 0.6043937843202549,
+     "n": 80
+    },
+    "saaras:v4-codemix+keyterms": {
+     "mean": 0.25361641116236705,
+     "lo": 0.1998785517995077,
+     "hi": 0.3127187497959557,
      "n": 80
     },
     "gemini-3.8-flash": {
@@ -118,6 +125,12 @@
      "hi": 0.6895622935863341,
      "n": 80
     },
+    "saaras:v4-codemix+keyterms": {
+     "mean": 0.23391138252004362,
+     "lo": 0.17549015377678692,
+     "hi": 0.2946261032252985,
+     "n": 80
+    },
     "gemini-3.8-flash": {
      "mean": 0.38249416427954097,
      "lo": 0.3347572318739998,
@@ -171,6 +184,12 @@
      "mean": 0.24323070822151704,
      "lo": 0.19316159126820892,
      "hi": 0.2954385891885892,
+     "n": 80
+    },
+    "saaras:v4-codemix+keyterms": {
+     "mean": 0.25361641116236705,
+     "lo": 0.1998785517995077,
+     "hi": 0.3127187497959557,
      "n": 80
     },
     "gemini-3.8-flash": {
@@ -228,6 +247,12 @@
      "hi": 0.7,
      "n": 100
     },
+    "saaras:v4-codemix+keyterms": {
+     "mean": 0.5,
+     "lo": 0.41,
+     "hi": 0.6,
+     "n": 100
+    },
     "gemini-3.8-flash": {
      "mean": 0.94,
      "lo": 0.89,
@@ -281,6 +306,12 @@
      "mean": 0.5625,
      "lo": 0.4625,
      "hi": 0.675,
+     "n": 80
+    },
+    "saaras:v4-codemix+keyterms": {
+     "mean": 0.4875,
+     "lo": 0.375,
+     "hi": 0.6,
      "n": 80
     },
     "gemini-3.8-flash": {
@@ -338,6 +369,12 @@
      "hi": 0.6281282953157954,
      "n": 80
     },
+    "saaras:v4-codemix+keyterms": {
+     "mean": 0.2314429698161316,
+     "lo": 0.18075903263403265,
+     "hi": 0.2877686498550469,
+     "n": 80
+    },
     "gemini-3.8-flash": {
      "mean": 0.3518122910586146,
      "lo": 0.31054463510345864,
@@ -391,6 +428,12 @@
      "mean": 0.6407342977303461,
      "lo": 0.5999096038217534,
      "hi": 0.6834774027039081,
+     "n": 80
+    },
+    "saaras:v4-codemix+keyterms": {
+     "mean": 0.1934233260606781,
+     "lo": 0.14281373347283913,
+     "hi": 0.24899455477804328,
      "n": 80
     },
     "gemini-3.8-flash": {
@@ -448,6 +491,12 @@
      "hi": 0.3365479659229659,
      "n": 80
     },
+    "saaras:v4-codemix+keyterms": {
+     "mean": 0.2314429698161316,
+     "lo": 0.18075903263403265,
+     "hi": 0.2877686498550469,
+     "n": 80
+    },
     "gemini-3.8-flash": {
      "mean": 0.16686716367782545,
      "lo": 0.13924689893439893,
@@ -501,6 +550,12 @@
      "mean": 0.64,
      "lo": 0.54,
      "hi": 0.73,
+     "n": 100
+    },
+    "saaras:v4-codemix+keyterms": {
+     "mean": 0.56,
+     "lo": 0.47,
+     "hi": 0.66,
      "n": 100
     },
     "gemini-3.8-flash": {
@@ -558,6 +613,12 @@
      "hi": 0.7,
      "n": 80
     },
+    "saaras:v4-codemix+keyterms": {
+     "mean": 0.55,
+     "lo": 0.45,
+     "hi": 0.65,
+     "n": 80
+    },
     "gemini-3.8-flash": {
      "mean": 0.9375,
      "lo": 0.875,
@@ -592,6 +653,7 @@
     "saaras:v3-transcribe": 0.4746,
     "saaras:v4-codemix": 0.1458,
     "saaras:v4-transcribe": 0.405,
+    "saaras:v4-codemix+keyterms": 0.0898,
     "gemini-3.8-flash": 0.2763,
     "whisper-large-v3-turbo": 0.4004,
     "whisper-1": 0.4072,
@@ -602,6 +664,7 @@
     "saaras:v3-transcribe": 0.7899,
     "saaras:v4-codemix": 0.2981,
     "saaras:v4-transcribe": 0.6466,
+    "saaras:v4-codemix+keyterms": 0.3284,
     "gemini-3.8-flash": 0.4184,
     "whisper-large-v3-turbo": 0.8062,
     "whisper-1": 0.7319,
@@ -612,6 +675,7 @@
     "saaras:v3-transcribe": 0.7779,
     "saaras:v4-codemix": 0.2443,
     "saaras:v4-transcribe": 0.5723,
+    "saaras:v4-codemix+keyterms": 0.2617,
     "gemini-3.8-flash": 0.4233,
     "whisper-large-v3-turbo": 0.9674,
     "whisper-1": 0.7296,
@@ -622,6 +686,7 @@
     "saaras:v3-transcribe": 0.5482,
     "saaras:v4-codemix": 0.3756,
     "saaras:v4-transcribe": 0.6404,
+    "saaras:v4-codemix+keyterms": 0.3414,
     "gemini-3.8-flash": 0.3547,
     "whisper-large-v3-turbo": 0.918,
     "whisper-1": 0.9044,
@@ -632,6 +697,7 @@
     "saaras:v3-transcribe": 0.725,
     "saaras:v4-codemix": 0.3033,
     "saaras:v4-transcribe": 0.5655,
+    "saaras:v4-codemix+keyterms": 0.2469,
     "gemini-3.8-flash": 0.3076,
     "whisper-large-v3-turbo": 0.9294,
     "whisper-1": 0.8433,
@@ -644,6 +710,7 @@
     "saaras:v3-transcribe": 0.55,
     "saaras:v4-codemix": 0.65,
     "saaras:v4-transcribe": 0.75,
+    "saaras:v4-codemix+keyterms": 0.85,
     "gemini-3.8-flash": 1.0,
     "whisper-large-v3-turbo": 0.8,
     "whisper-1": 0.65,
@@ -654,6 +721,7 @@
     "saaras:v3-transcribe": 0.3,
     "saaras:v4-codemix": 0.45,
     "saaras:v4-transcribe": 0.55,
+    "saaras:v4-codemix+keyterms": 0.4,
     "gemini-3.8-flash": 0.85,
     "whisper-large-v3-turbo": 0.2,
     "whisper-1": 0.45,
@@ -664,6 +732,7 @@
     "saaras:v3-transcribe": 0.05,
     "saaras:v4-codemix": 0.35,
     "saaras:v4-transcribe": 0.55,
+    "saaras:v4-codemix+keyterms": 0.35,
     "gemini-3.8-flash": 0.95,
     "whisper-large-v3-turbo": 0.1,
     "whisper-1": 0.7,
@@ -674,6 +743,7 @@
     "saaras:v3-transcribe": 0.8,
     "saaras:v4-codemix": 0.25,
     "saaras:v4-transcribe": 0.3,
+    "saaras:v4-codemix+keyterms": 0.2,
     "gemini-3.8-flash": 0.9,
     "whisper-large-v3-turbo": 0.1,
     "whisper-1": 0.35,
@@ -684,6 +754,7 @@
     "saaras:v3-transcribe": 0.45,
     "saaras:v4-codemix": 0.6,
     "saaras:v4-transcribe": 0.85,
+    "saaras:v4-codemix+keyterms": 0.7,
     "gemini-3.8-flash": 1.0,
     "whisper-large-v3-turbo": 0.0,
     "whisper-1": 0.35,
@@ -696,6 +767,7 @@
     "saaras:v3-transcribe": 0.4901,
     "saaras:v4-codemix": 0.1763,
     "saaras:v4-transcribe": 0.4363,
+    "saaras:v4-codemix+keyterms": 0.1284,
     "gemini-3.8-flash": 0.2784,
     "whisper-large-v3-turbo": 0.4005,
     "whisper-1": 0.3885,
@@ -706,6 +778,7 @@
     "saaras:v3-transcribe": 0.8647,
     "saaras:v4-codemix": 0.3615,
     "saaras:v4-transcribe": 0.6482,
+    "saaras:v4-codemix+keyterms": 0.2887,
     "gemini-3.8-flash": 0.3593,
     "whisper-large-v3-turbo": 0.821,
     "whisper-1": 0.7926,
@@ -716,6 +789,7 @@
     "saaras:v3-transcribe": 0.6673,
     "saaras:v4-codemix": 0.201,
     "saaras:v4-transcribe": 0.606,
+    "saaras:v4-codemix+keyterms": 0.1337,
     "gemini-3.8-flash": 0.4479,
     "whisper-large-v3-turbo": 0.9598,
     "whisper-1": 0.75,
@@ -726,6 +800,7 @@
     "saaras:v3-transcribe": 0.5841,
     "saaras:v4-codemix": 0.3753,
     "saaras:v4-transcribe": 0.6276,
+    "saaras:v4-codemix+keyterms": 0.396,
     "gemini-3.8-flash": 0.3303,
     "whisper-large-v3-turbo": 0.8703,
     "whisper-1": 0.9235,
@@ -736,6 +811,7 @@
     "saaras:v3-transcribe": 0.762,
     "saaras:v4-codemix": 0.3752,
     "saaras:v4-transcribe": 0.6295,
+    "saaras:v4-codemix+keyterms": 0.2105,
     "gemini-3.8-flash": 0.3431,
     "whisper-large-v3-turbo": 0.902,
     "whisper-1": 0.9014,
@@ -748,6 +824,7 @@
     "saaras:v3-transcribe": 0.6,
     "saaras:v4-codemix": 0.55,
     "saaras:v4-transcribe": 0.7,
+    "saaras:v4-codemix+keyterms": 0.7,
     "gemini-3.8-flash": 1.0,
     "whisper-large-v3-turbo": 0.9,
     "whisper-1": 0.7,
@@ -758,6 +835,7 @@
     "saaras:v3-transcribe": 0.1,
     "saaras:v4-codemix": 0.4,
     "saaras:v4-transcribe": 0.65,
+    "saaras:v4-codemix+keyterms": 0.45,
     "gemini-3.8-flash": 1.0,
     "whisper-large-v3-turbo": 0.15,
     "whisper-1": 0.4,
@@ -768,6 +846,7 @@
     "saaras:v3-transcribe": 0.6,
     "saaras:v4-codemix": 0.45,
     "saaras:v4-transcribe": 0.7,
+    "saaras:v4-codemix+keyterms": 0.8,
     "gemini-3.8-flash": 0.9,
     "whisper-large-v3-turbo": 0.05,
     "whisper-1": 0.7,
@@ -778,6 +857,7 @@
     "saaras:v3-transcribe": 0.7,
     "saaras:v4-codemix": 0.2,
     "saaras:v4-transcribe": 0.4,
+    "saaras:v4-codemix+keyterms": 0.15,
     "gemini-3.8-flash": 0.8,
     "whisper-large-v3-turbo": 0.15,
     "whisper-1": 0.4,
@@ -788,6 +868,7 @@
     "saaras:v3-transcribe": 0.3,
     "saaras:v4-codemix": 0.35,
     "saaras:v4-transcribe": 0.75,
+    "saaras:v4-codemix+keyterms": 0.7,
     "gemini-3.8-flash": 1.0,
     "whisper-large-v3-turbo": 0.05,
     "whisper-1": 0.35,
@@ -818,6 +899,12 @@
    "entities": 100,
    "missed": 40,
    "missed_no_digits_in_output": 35,
+   "missed_digits_wrong_or_partial": 5
+  },
+  "saaras:v4-codemix+keyterms [clean]": {
+   "entities": 100,
+   "missed": 50,
+   "missed_no_digits_in_output": 45,
    "missed_digits_wrong_or_partial": 5
   },
   "gemini-3.8-flash [clean]": {
@@ -868,6 +955,12 @@
    "missed_no_digits_in_output": 31,
    "missed_digits_wrong_or_partial": 5
   },
+  "saaras:v4-codemix+keyterms [phone]": {
+   "entities": 100,
+   "missed": 44,
+   "missed_no_digits_in_output": 39,
+   "missed_digits_wrong_or_partial": 5
+  },
   "gemini-3.8-flash [phone]": {
    "entities": 100,
    "missed": 6,
@@ -914,6 +1007,11 @@
    "wer": 0.606,
    "entity_accuracy": 0.5455
   },
+  "say-voiced audio | saaras:v4-codemix+keyterms": {
+   "n_clips": 64,
+   "wer": 0.3624,
+   "entity_accuracy": 0.3864
+  },
   "say-voiced audio | gemini-3.8-flash": {
    "n_clips": 64,
    "wer": 0.3201,
@@ -953,6 +1051,11 @@
    "n_clips": 64,
    "wer": 0.5437,
    "entity_accuracy": 0.7083
+  },
+  "gemini-voiced audio | saaras:v4-codemix+keyterms": {
+   "n_clips": 64,
+   "wer": 0.145,
+   "entity_accuracy": 0.6806
   },
   "gemini-voiced audio | gemini-3.8-flash": {
    "n_clips": 64,
@@ -995,6 +1098,11 @@
    "p50_ms": 506.78300857543945,
    "p95_ms": 2806.1811923980713,
    "real_time_factor": 0.222
+  },
+  "saaras:v4-codemix+keyterms": {
+   "p50_ms": 1778.3331871032715,
+   "p95_ms": 6000.996112823486,
+   "real_time_factor": 0.452
   },
   "gemini-3.8-flash": {
    "p50_ms": 3890.1920318603516,
@@ -1370,6 +1478,13 @@
    "in_tok": 0,
    "out_tok": 0
   },
+  "saaras:v4-codemix+keyterms": {
+   "calls": 160,
+   "failed_calls_retried": 0,
+   "audio_s": 1013.4,
+   "in_tok": 0,
+   "out_tok": 0
+  },
   "gemini-3.8-flash": {
    "calls": 160,
    "failed_calls_retried": 0,
@@ -1403,8 +1518,8 @@
    "inr_at_v3_list_price": 16.89
   },
   "saaras:v4 (all modes)": {
-   "audio_s": 2026.8,
-   "inr_at_v3_list_price": 16.89
+   "audio_s": 3040.2,
+   "inr_at_v3_list_price": 25.33
   },
   "gemini-tts (test-audio synthesis)": {
    "in_tok": 1192,
@@ -1534,6 +1649,14 @@
       false,
       true
      ]
+    },
+    "saaras:v4-codemix+keyterms": {
+     "hyp": "credit card से बारह हज़ार चार सौ निन्यानवे रुपये का एक transaction हुआ जो मैंने नहीं किया। card ending 7306 है।",
+     "wer": 0.312,
+     "entities_ok": [
+      false,
+      true
+     ]
     }
    }
   },
@@ -1601,6 +1724,13 @@
     "saaras:v4-transcribe": {
      "hyp": "புது ஃபோன் வாங்கினேன். யுபிஐ ஆப்ல என் நம்பர் 99620 48173 லிங்க் ஆகல.",
      "wer": 0.545,
+     "entities_ok": [
+      true
+     ]
+    },
+    "saaras:v4-codemix+keyterms": {
+     "hyp": "பொது phone வாங்கினேன். UPI app-ல என் number 9962048173 link ஆகல.",
+     "wer": 0.091,
      "entities_ok": [
       true
      ]
@@ -1687,6 +1817,14 @@
       false,
       false
      ]
+    },
+    "saaras:v4-codemix+keyterms": {
+     "hyp": "എൻ്റെ EMI ഒൻപതിനായിരത്തി ഇരുന്നൂറ് രൂപയാണ്. പന്ത്രണ്ട് നവംബറിന് മുമ്പ് അടയ്ക്കാം sir.",
+     "wer": 0.6,
+     "entities_ok": [
+      false,
+      false
+     ]
     }
    }
   },
@@ -1768,6 +1906,14 @@
      "entities_ok": [
       true,
       true
+     ]
+    },
+    "saaras:v4-codemix+keyterms": {
+     "hyp": "EMI-র claim একত্রিশ হাজার টাকা approve হয়েছে কিন্তু hospital bill সাতচল্লিশ হাজার আটশো টাকা।",
+     "wer": 0.7,
+     "entities_ok": [
+      false,
+      false
      ]
     }
    }
@@ -1851,6 +1997,14 @@
       true,
       true
      ]
+    },
+    "saaras:v4-codemix+keyterms": {
+     "hyp": "UPI payment fail ಆಯಿತು ಆದರೆ 915 ರೂಪಾಯಿ ಕಾಸು ಆಗಿದೆ reference number 602948.",
+     "wer": 0.182,
+     "entities_ok": [
+      true,
+      true
+     ]
     }
    }
   }
@@ -1858,6 +2012,8 @@
  "findings": [
   "Entity accuracy (what a bank needs: card last-4, amounts, dates, phone and claim numbers, 100 entities): gemini-3.8-flash 0.94 [0.89-0.98] on both clean and phone-line audio; saaras:v3 codemix 0.74 [0.65-0.83] clean / 0.81 [0.73-0.88] phone; gpt-4o-transcribe 0.61 / 0.57; whisper-1 (hosted Whisper) 0.50 / 0.51; saaras:v3 transcribe 0.43 / 0.46; local whisper-large-v3-turbo 0.24 / 0.26.",
   "saaras:v4 (released 25 Sep 2026) vs v3 on the same clips. Codemix mode: v4 follows the code-mix script convention almost always (1/160 outputs without Latin vs 48/160 for v3) and has lower WER on clean audio (0.27 [0.22-0.33] vs 0.38; phone tie 0.30), but it writes numbers as words far more often, so entity accuracy FALLS: 0.46 clean / 0.39 phone vs v3's 0.74 / 0.81. Numbers-as-words misses per 100 entities: v4 codemix 50 clean / 57 phone vs v3 15 / 11 (e.g. ml: '₹18,000' -> 'പതിനെണ്ണായിരം രൂപ'). Transcribe mode improves: v4 entity accuracy 0.60 / 0.64 vs v3 0.43 / 0.46, numbers-as-words 35 / 31 vs 51 / 52. Best-of-two-references WER: v4 transcribe 0.24 / 0.28 vs v3 0.39 / 0.43. Neither v4 mode reaches gemini-3.8-flash on digits (0.94).",
+  "Keyterm prompting (saaras:v4 only; v3 rejects it with HTTP 400) with ONE fixed 50-term list a bank/telecom would configure once — UPI, EMI, KYC, IFSC, NEFT, OTP, PhonePe, Airtel, Jio, postpaid, recharge, claim number, premium… and no per-clip numbers — helps v4 codemix: entity accuracy 0.50 [0.41-0.60] clean / 0.56 [0.47-0.66] phone vs 0.46 / 0.39 without; numbers-as-words misses 45 / 39 vs 50 / 57; WER 0.25 / 0.23 vs 0.27 / 0.30 (phone CER 0.19, the best of any system); occurrences of 14 listed brand/product terms (UPI, EMI, OTP, Airtel, Jio, PhonePe…) written correctly in Latin: 93/106 vs 83/106. A repeat of plain v4 codemix on the phone audio scored 0.38, so the phone gain is not run-to-run noise; the clean gain is within noise. Even with keyterms, v4 codemix stays below v3 codemix (0.74 / 0.81) on digits. Gains are uneven by language: Manglish and Kanglish phone 0.45 -> 0.80 and 0.35 -> 0.70, Benglish unchanged (0.20 -> 0.15). Keyterm calls were slower: p50 1.78 s / p95 6.0 s.",
+  "Inverse text normalisation (number words -> digits) was NOT implemented: a parser covering Hindi's 100 irregular number words plus agglutinated Tamil/Malayalam/Kannada/Bengali forms ('நானூற்றி எழுபத்தி ரெண்டு', 'പതിനെണ്ണായിരം') does not fit in ~60 lines. Upper bound instead, same rule for every system (count every miss whose output has no digits at all as recoverable, i.e. assume the spoken-out number is right): phone-line ceiling saaras:v4 codemix 0.96, v4+keyterms 0.95, v4 transcribe 0.95, v3 transcribe 0.98, v3 codemix 0.92, Gemini 0.94, gpt-4o-transcribe 0.71, whisper-1 0.85. So with perfect ITN the Sarvam v4 gap to Gemini could close, but that is a ceiling, not a measured result.",
   "saaras:v4 latency per utterance: p50 0.49-0.51 s (v3 0.61-0.65 s) but a heavier tail, p95 2.8-5.3 s vs ~0.9 s for v3, measured while other agents were rate-limiting the shared account.",
   "Most saaras misses are formatting, not hearing: in codemix mode 15 of 26 clean misses (11 of 19 phone) had no digits at all — the number came back as words (e.g. hi02 'बारह हज़ार चार सौ निन्यानवे', 'सेवन थ्री ज़ीरो सिक्स'). Codemix mode is not applied consistently: 48/160 codemix outputs contain no Latin letters at all, i.e. it fell back to transcribe-style output. Transcribe mode writes numbers as words almost always (51 of 57 misses). Add inverse text normalisation before using saaras output for account data.",
   "Gemini never wrote a number as words (0 such misses); its 6 misses were genuinely wrong digits. It does not follow the script convention reliably either: 59/160 Gemini outputs had no Latin letters (English loanwords written in native script).",
@@ -1882,6 +2038,6 @@
   "80 utterances, 100 entities per condition: CIs are roughly +/-0.05 to +/-0.09. Per-language numbers rest on 16 utterances each and are indicative only.",
   "Agent latency was measured from a Mac in India over the public internet on one afternoon, on a shared Sarvam account under load from other jobs; LLM replies were not streamed (full response time), TTS was streamed (time to first byte)."
  ],
- "verdict": "For capturing what a collections or card-services call actually needs — the digits — use gemini-3.8-flash as the transcriber or add a number-normalisation step after Sarvam: Gemini got 94% of amounts, card digits, dates and phone numbers exactly; saaras:v3 codemix 74-81%; the newer saaras:v4 codemix only 39-46% because it spells numbers out as words (v4 transcribe 60-64%); gpt-4o-transcribe ~60%; hosted whisper-1 ~50%. If you adopt saaras:v4 for its cleaner code-mix text (lower WER, consistent Latin for English words), budget an inverse-text-normalisation step — without it, v4 is a regression for numeric data. For the full voice loop, Sarvam's stack is the fastest available: the v4 stack (saaras:v4 + sarvam-105b + bulbul:v4-flash) starts speaking in ~1.1 s p50 (v3 stack 1.5 s, OpenAI 3.2 s, Gemini 6.8 s), and sarvam-105b is the fastest reply LLM and the most reliable at answering in the caller's language. Do not use Whisper (local or hosted) for code-mixed Indian calls.",
- "updated": "2026-10-11 23:46:00"
+ "verdict": "For capturing what a collections or card-services call actually needs — the digits — use gemini-3.8-flash as the transcriber or add a number-normalisation step after Sarvam: Gemini got 94% of amounts, card digits, dates and phone numbers exactly; saaras:v3 codemix 74-81%; the newer saaras:v4 codemix only 39-46% because it spells numbers out as words (v4 transcribe 60-64%); gpt-4o-transcribe ~60%; hosted whisper-1 ~50%. If you adopt saaras:v4 for its cleaner code-mix text (lower WER, consistent Latin for English words), configure a keyterm list (it lifted phone-line entity accuracy from 0.39 to 0.56 and gave the lowest phone CER of any system) and still budget an inverse-text-normalisation step — without it, v4 is a regression for numeric data versus v3. For the full voice loop, Sarvam's stack is the fastest available: the v4 stack (saaras:v4 + sarvam-105b + bulbul:v4-flash) starts speaking in ~1.1 s p50 (v3 stack 1.5 s, OpenAI 3.2 s, Gemini 6.8 s), and sarvam-105b is the fastest reply LLM and the most reliable at answering in the caller's language. Do not use Whisper (local or hosted) for code-mixed Indian calls.",
+ "updated": "2026-10-11 23:51:10"
 }

@@ -32,7 +32,8 @@ MIX = {"hi": "Hinglish", "ta": "Tanglish", "ml": "Manglish", "bn": "Benglish", "
 SAY_VOICE = {"hi": "Lekha", "ta": "Vani", "bn": "Piya", "kn": "Soumya"}  # no Malayalam voice ships with macOS
 GEM_VOICES = ["Kore", "Puck", "Charon", "Aoede", "Fenrir", "Leda"]
 CONDS = ("clean", "phone")
-STT_SYSTEMS = ("saaras:v3-codemix", "saaras:v3-transcribe", "saaras:v4-codemix", "saaras:v4-transcribe", GEMINI_CHAT, "whisper-large-v3-turbo", "whisper-1",
+STT_SYSTEMS = ("saaras:v3-codemix", "saaras:v3-transcribe", "saaras:v4-codemix", "saaras:v4-transcribe",
+               "saaras:v4-codemix+keyterms", GEMINI_CHAT, "whisper-large-v3-turbo", "whisper-1",
                "gpt-4o-transcribe")
 AGENT_IDS = [f"{l}{n}" for l in LANG for n in ("01", "05", "07", "14")]
 _lock = threading.Lock()
@@ -144,12 +145,23 @@ def synth():
 
 
 # ---------------- STT systems ----------------
-def stt_saaras(path, lang, mode, model="saaras:v3"):
+# One fixed list a bank/telecom/insurer would configure once (products, brands, plan words) - never per-clip gold values
+KEYTERMS = ["UPI", "UPI PIN", "EMI", "KYC", "IFSC", "NEFT", "RTGS", "IMPS", "OTP", "ATM", "debit card", "credit card",
+            "card ending", "last four digits", "reference number", "UTR", "transaction", "bounce charge", "cheque",
+            "auto debit", "due amount", "installment", "loan", "account", "balance", "salary", "PhonePe", "Google Pay",
+            "GPay", "Paytm", "Airtel", "Jio", "Vi", "BSNL", "postpaid", "prepaid", "recharge", "plan", "data", "port",
+            "UPC code", "international roaming", "add-on", "health insurance", "claim number", "premium", "policy",
+            "surveyor", "settle", "approve"]
+assert len(KEYTERMS) <= 50 and all(len(k) <= 64 for k in KEYTERMS)
+
+
+def stt_saaras(path, lang, mode, model="saaras:v3", keyterms=None):
     for attempt in range(4):  # bench.sarvam_post re-sends a spent file handle after a 429 -> 400 "Failed to read the file"; reopen + retry
         t = time.time()
         with open(path, "rb") as f:
             d = sarvam_post("/speech-to-text", files={"file": (path.name, f, "audio/wav")},
-                            data={"model": model, "mode": mode, "language_code": LANG[lang][2]})
+                            data={"model": model, "mode": mode, "language_code": LANG[lang][2],
+                                  **({"keyterms": json.dumps(keyterms)} if keyterms else {})})
         if "Failed to read the file" not in str(d.get("_body", "")):
             break
         time.sleep(3 * (attempt + 1))
@@ -229,6 +241,8 @@ def stt():
                 for mode in ("codemix", "transcribe"):
                     if (it["id"], f"saaras:{ver}-{mode}", cond) not in done:
                         jobs_s.append((it, cond, p, mode, ver))
+            if (it["id"], "saaras:v4-codemix+keyterms", cond) not in done:
+                jobs_s.append((it, cond, p, "codemix", "v4+keyterms"))
             if (it["id"], GEMINI_CHAT, cond) not in done:
                 jobs_g.append((it, cond, p))
             for m in OPENAI_STT:
@@ -239,8 +253,9 @@ def stt():
         it, cond, p, mode, ver = j
         if NO_CREDIT.is_set():
             return
-        r = stt_saaras(p, it["lang"], mode, f"saaras:{ver}")
-        save({"id": it["id"], "system": f"saaras:{ver}-{mode}", "cond": cond, "audio_s": duration(p), **r})
+        kt = KEYTERMS if ver.endswith("+keyterms") else None
+        r = stt_saaras(p, it["lang"], mode, "saaras:v4" if kt else f"saaras:{ver}", kt)
+        save({"id": it["id"], "system": f"saaras:v4-{mode}+keyterms" if kt else f"saaras:{ver}-{mode}", "cond": cond, "audio_s": duration(p), **r})
 
     def run_g(j):
         it, cond, p = j

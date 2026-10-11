@@ -163,7 +163,7 @@ pre { background: var(--card); border: 1px solid var(--rule); border-radius: 6px
     <li><a href="#uc05_clinical_notes">5 · Clinical notes</a></li><li><a href="#uc06_offline_agri">6 · Offline crop advice</a></li>
     <li><a href="#uc07_translation_dubbing">7 · Translation & dubbing</a></li><li><a href="#uc08_quick_commerce">8 · WhatsApp orders</a></li>
     <li><a href="#uc09_legal">9 · Legal</a></li><li><a href="#uc10_selfhost_business">10 · Self-hosting</a></li>
-    <li><a href="#uc11_bharat_code">11 · Bharat Code</a></li><li><a href="#uc12_token_tax">12 · Token tax</a></li>
+    <li><a href="#uc11_bharat_code">11 · Bharat Code</a></li><li><a href="#uc12_token_tax">12 · Token tax</a></li><li><a href="#uc06v_offline_agri_voice">13 · Spoken farm questions</a></li><li><a href="#uc08v_voice_orders">14 · Voice-note orders</a></li><li><a href="#uc11v_voice_tools">15 · Spoken commands</a></li>
   </ol>
   <p class="lbl">Reference</p>
   <ol><li><a href="#quirks">API quirks</a></li><li><a href="#cost">Cost &amp; intelligence</a></li><li><a href="#repro">Reproduce</a></li><li><a href="#files">Code & logs</a></li></ol>
@@ -173,7 +173,7 @@ pre { background: var(--card); border: 1px solid var(--rule); border-radius: 6px
 <header class="hero">
   <p class="eyebrow">Independent benchmark · October 2026 · <a href="https://github.com/shivanathd/sarvam-field-test">open source on GitHub</a></p>
   <h1>Sarvam <span>Field Test</span></h1>
-  <p class="lede">Sarvam AI's speech, translation, document and chat models against Google Gemini, OpenAI, Anthropic Claude and self-hosted open weights, on twelve jobs Indian businesses actually do. Every test has known answers, so scoring is automatic and no model grades another.</p>
+  <p class="lede">Sarvam AI's speech, translation, document and chat models against Google Gemini, OpenAI, Anthropic Claude and self-hosted open weights, on fifteen jobs Indian businesses actually do, including three where the input is spoken. Every test has known answers, so scoring is automatic and no model grades another.</p>
   <div class="tally" aria-label="Head-to-head tally">
     <div class="lead"><b>{{LEAD}}</b><span>Sarvam leads</span></div>
     <div><b>{{LEVEL}}</b><span>level</span></div>
@@ -183,7 +183,7 @@ pre { background: var(--card); border: 1px solid var(--rule); border-radius: 6px
   <div class="slips" aria-label="Real errors from the test runs">
     <div class="slip"><span class="why">Legal translation, Mayura</span><span class="in">₹25.5 crore</span><span class="out">5 करोड़</span><span class="why">Every decimal crore amount lost its whole part (10 of 10).</span></div>
     <div class="slip"><span class="why">Transliteration, Sarvam API</span><span class="in">Kavitha</span><span class="out">கவிதை</span><span class="why">A name became the Tamil word for "poem".</span></div>
-    <div class="slip"><span class="why">Clinic audio, Saaras translate</span><span class="in">100.8 °F</span><span class="out">108 °F</span><span class="why">A fever reading turned into a fatal temperature.</span></div>
+    <div class="slip"><span class="why">Clinic audio, Saaras translate</span><span class="in">100.8 °F</span><span class="out">108 °F</span><span class="why">A fever reading turned into a fatal temperature (Saaras v3; fixed in v4).</span></div>
     <div class="slip"><span class="why">Bad photo, GPT-5.5</span><span class="in">महालक्ष्मी एंटरप्राइजेज</span><span class="out">महाराष्ट्र इलेक्ट्रॉनिक्स</span><span class="why">Invented a plausible firm name instead of leaving the field empty.</span></div>
   </div>
 </header>
@@ -193,14 +193,15 @@ pre { background: var(--card); border: 1px solid var(--rule); border-radius: 6px
   <h2>What to use for which job</h2>
   <p style="margin-top:12px">Sarvam is the specialist pick for Indian speech and for translating <em>into</em> Indian languages. For reasoning over text, documents and code, a price-matched Gemini, OpenAI or Claude model was more accurate in every test.</p>
   <dl class="uses">
-    <div><dt>Speech recognition, Indian languages</dt><dd><b>Saaras v3.</b> Lowest word error rate in 12 of 13 languages and about 4× faster than Gemini. For calls where amounts and account digits matter, Gemini 3.8 Flash captured them exactly 94% of the time against Saaras's 81%, because Saaras often spells numbers out as words.</dd></div>
-    <div><dt>Real-time voice bot</dt><dd><b>All-Sarvam stack</b> (Saaras → Sarvam-105B → Bulbul): first audio in about 1.5 s, replies in the caller's language 19 of 20 times, ₹1.56 per conversation-minute. The all-Gemini stack read numbers back more accurately but took about 6.8 s.</dd></div>
-    <div><dt>Text-to-speech</dt><dd><b>Bulbul v3.</b> As intelligible as Gemini and OpenAI voices across 10 languages, with the fastest first audio.</dd></div>
+    <div><dt>Speech recognition, Indian languages</dt><dd><b>Saaras v4.</b> Average word error rate 0.149 over 13 languages against 0.21 for Gemini and 0.27 for OpenAI, lowest in 11 of them. It was also the most accurate transcriber of spoken farmer questions (1.5% character error on a phone line, against 6.8% for Gemini). Its weak spot is numbers: v4 often writes them out as words, so on phone calls it captured amounts and account digits exactly 56% of the time with a keyterm list, against 81% for v3 and 94% for Gemini. Add a number-words-to-digits step before using its output for account data.</dd></div>
+    <div><dt>Real-time voice bot</dt><dd><b>All-Sarvam stack</b> (Saaras v4 → Sarvam-105B → Bulbul v4-flash): first audio in about 1.1 s, replies in the caller's language 18 of 20 times, about ₹1.42 per conversation-minute. The all-Gemini stack read numbers back more accurately but took about 6.8 s.</dd></div>
+    <div><dt>Text-to-speech</dt><dd><b>Bulbul v3</b> for voice-overs: as intelligible as Gemini and OpenAI voices across 10 languages. <b>Bulbul v4-flash</b> starts about 50 ms sooner (310 ms) but was slightly less clear in this test.</dd></div>
     <div><dt>Translating into Indian languages</dt><dd><b>Sarvam-Translate</b> (best in 8 of 10 languages). Avoid <b>Mayura</b> for anything with numbers. Translating <em>into English</em>: Gemini 3.8 Flash, Claude Haiku or GPT-5.4 mini, all well ahead of Sarvam.</dd></div>
-    <div><dt>KYC, invoices, land records</dt><dd><b>Gemini 3.8 Flash</b> or <b>Claude Sonnet 5.5</b> on the image. Clean scans are a tie at about 99.5% for everyone; on bad phone photos Sarvam Vision invented fluent text that was not on the page, and OpenAI models misread Indian-script names.</dd></div>
+    <div><dt>KYC, invoices, land records</dt><dd><b>Gemini 3.8 Flash</b> or <b>Claude Sonnet 5.5</b> on the image. Clean scans are a tie at about 99.5% for everyone; on bad phone photos Sarvam's older Vision pipeline invented fluent text that was not on the page. Sarvam's newer Document AI Extract invents less and has a much steadier response time, but was no more accurate. OpenAI models misread Indian-script names.</dd></div>
     <div><dt>Chat, Q&amp;A, business text</dt><dd><b>Gemini 3.8 Flash</b> or <b>GPT-5.4 mini</b>. Sarvam-105B gets close only with thinking on, which costs 5–20 s per answer and sometimes returns nothing.</dd></div>
     <div><dt>Clinical notes</dt><dd><b>Gemini 3.8 Flash</b>, on the text or straight on the audio. No cloud model invented a medicine in 40 consultations.</dd></div>
     <div><dt>Coding agents</dt><dd><b>Gemini 3.8 Flash</b> passed all 160 task-language items first try, <b>Claude Haiku 5.5</b> 99% and <b>GPT-5.4 mini</b> 92–98%. Sarvam-105B passed 56–69%, and none of the Aadhaar-checksum tasks.</dd></div>
+    <div><dt>Spoken input in front of any app</dt><dd><b>Saaras</b> or <b>Gemini 3.8 Flash on the audio</b>. With the same Gemini model behind them, a Saaras front end matched Gemini's own audio input on spoken farm questions (99% vs 100%), voice-note orders (92% vs 94%) and spoken payment commands (98% vs 98%), and beat OpenAI's transcriber in all three. The all-Sarvam versions lose a few points to the Sarvam-105B step, not to speech recognition.</dd></div>
     <div><dt>Data must stay on your servers</dt><dd><b>Qwen3-30B</b> over Sarvam-30B for accuracy (84% vs 63% on business tasks). Sarvam-30B is faster per token and much cheaper to feed Indian text, but ignores format instructions. Neither refuses out-of-scope questions without thinking on.</dd></div>
   </dl>
 </section>
@@ -214,7 +215,7 @@ pre { background: var(--card); border: 1px solid var(--rule); border-radius: 6px
 </section>
 
 <section id="patterns" class="prose">
-  <p class="eyebrow">What cuts across the twelve tests</p>
+  <p class="eyebrow">What cuts across the fifteen tests</p>
   <h2>Five patterns</h2>
   <h3 style="margin-top:18px">1. Sarvam-105B's thinking mode is a gamble</h3>
   <p>With thinking off (<code>reasoning_effort: null</code>) Sarvam-105B answers in about 0.5–1.5 s. With thinking on it is more accurate on structured tasks, but answers take 5–46 s and the reasoning length is unpredictable: 29% of coding calls and 16 of 80 legal summaries came back empty because reasoning used the whole token budget, and you still pay for those tokens. Setting <code>"low"</code> did not reduce thinking. Leave at least 16k output tokens of headroom if you turn it on.</p>
@@ -239,13 +240,14 @@ pre { background: var(--card); border: 1px solid var(--rule); border-radius: 6px
   <p class="eyebrow">Method</p>
   <h2>How it was run</h2>
   <div class="prose" style="margin-top:12px">
-  <p>Six parallel agents built and ran the twelve suites on one Apple M5 Max (128 GB) between 19:30 and 23:30 IST on 11 October 2026, sharing one Python library for API clients, scoring and result files. Systems were called through their official APIs; Claude through OpenRouter; Sarvam-30B and Qwen3-30B through llama.cpp on the same Mac.</p>
+  <p>Six parallel agents built and ran the fifteen suites on one Apple M5 Max (128 GB) between 19:30 IST on 11 October and 00:30 IST on 12 October 2026, sharing one Python library for API clients, scoring and result files. Systems were called through their official APIs; Claude through OpenRouter; Sarvam-30B and Qwen3-30B through llama.cpp on the same Mac.</p>
   <ul>
     <li><b>Known answers only.</b> Every item has a gold answer (a number, code, label, fact list or reference text) and is scored by code. No model judges another's free text. Where speech or translation quality needed a reference, public datasets (FLEURS/FLORES, CC-BY 4.0) or round-trip transcription by two or three different vendors' transcribers were used.</li>
     <li><b>Mostly synthetic, realistic data.</b> Invoices, KYC forms, WhatsApp orders, policies, consultations and legal passages were written for this benchmark, with fake people and clearly marked sample IDs. None were reviewed by native speakers; treat absolute scores as indicative and the comparisons as the result.</li>
     <li><b>Same inputs, both modes.</b> Sarvam-105B ran with thinking off and on; Gemini Flash with thinking off (and on where it mattered). Frontier models (Gemini Pro, GPT-5.5, Claude Sonnet 5.5) ran on fixed 30-item subsets to show the ceiling.</li>
     <li><b>Uncertainty shown.</b> 95% bootstrap confidence intervals on every score; hover any bar for its interval and sample size.</li>
     <li><b>Sandboxed code.</b> Model-written code ran only inside a macOS sandbox with no network, no reads of the home folder and no writes outside a temporary folder.</li>
+    <li><b>Newest models, verified against the API.</b> Versions were checked by asking each Sarvam endpoint which model names it accepts, not from the docs. Tested: <code>sarvam-105b</code>, <code>sarvam-105b-conversations</code>, <code>saaras:v3</code> and <code>saaras:v4</code> (newest), <code>bulbul:v3</code> and <code>bulbul:v4-flash</code> (newest; full Bulbul V4 is not on the API yet), <code>sarvam-translate:v1</code>, <code>mayura:v1</code>, transliteration, the legacy Vision digitisation API and Document AI Extract (Sarvam's default Vision model; the API does not say which version). Sarvam-30B is no longer on the API and was self-hosted.</li>
     <li><b>Resumable and auditable.</b> Every model output is kept in <code>results/raw/*.jsonl</code>; reruns only call the API for missing items.</li>
   </ul>
   </div>
@@ -265,7 +267,11 @@ pre { background: var(--card); border: 1px solid var(--rule); border-radius: 6px
     <li>Sarvam Vision accepts only PDF or ZIP uploads (wrap an image in a one-file ZIP) and returns a ZIP with markdown whose tables are HTML.</li>
     <li>Saaras batch names output files <code>0.json</code>, <code>1.json</code>… by upload order, so two jobs downloaded into one folder overwrite each other. Map outputs through the job status instead.</li>
     <li>The Saaras batch endpoint is documented two ways; <code>/speech-to-text/job/v1</code> with a <code>job_parameters</code> body works.</li>
-    <li>Saaras codemix mode returned no Latin letters at all in 30% of outputs, and wrote numbers as words ("बारह हज़ार").</li>
+    <li>Saaras v3 codemix returned no Latin letters at all in 30% of outputs; v4 fixed that (1 in 160) but writes far more numbers as words ("बारह हज़ार").</li>
+    <li>Saaras v4 takes <code>keyterms</code> as a JSON array of at most 50 strings, each at most 64 characters; a comma-separated string returns HTTP 400, and v3 rejects keyterms entirely.</li>
+    <li><code>saaras:v4-multispk</code> is listed but rejected as deprecated; plain <code>saaras:v4</code> accepts <code>with_diarization=true</code>.</li>
+    <li>Bulbul v4-flash rejects the v3 voices (e.g. <code>shubh</code>) and offers only language-tied voices such as <code>ritu_hi_edtech</code>; there is no Malayalam or Odia voice, and Assamese needs beta access. The voice list is only in the API's error message.</li>
+    <li>Document AI Extract (<code>/doc-ai/v1/job/extract</code>) takes PNG/JPEG directly; the older digitisation API needs a PDF or ZIP. Its <code>model</code> parameter rejects every Vision version name, so you cannot choose Vision 2.1 through the API.</li>
     <li>Saaras writes Sindhi in Devanagari only; FLEURS and most Sindhi users expect Perso-Arabic script.</li>
     <li>Bulbul's REST response holds audio in an <code>audios</code> list; its streaming endpoint delivered complete audio about 3× faster than REST.</li>
     <li>Odia's language code is <code>od-IN</code>. Mayura accepts at most 1,000 characters per request.</li>

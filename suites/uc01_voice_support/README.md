@@ -31,6 +31,7 @@ phone and claim numbers right, and which voice-agent stack answers fast enough t
 | `saaras:v3-codemix` | Sarvam `/speech-to-text`, `mode=codemix`, `language_code` given |
 | `saaras:v3-transcribe` | same, `mode=transcribe` |
 | `saaras:v4-codemix`, `saaras:v4-transcribe` | same endpoint, `model=saaras:v4` (released 25 Sep 2026) |
+| `saaras:v4-codemix+keyterms` | v4 codemix plus `keyterms` = one fixed 50-term product/brand list (`KEYTERMS` in run.py); no per-clip gold values |
 | `gemini-3.8-flash` | audio inline, prompted for the same code-mix convention, thinking off |
 | `whisper-large-v3-turbo` | local, `transformers` pipeline on Apple MPS fp16, language forced |
 | `whisper-1` | OpenAI hosted Whisper, `language` given; the API rejects `bn` and `ml`, so those fall back to auto-detect |

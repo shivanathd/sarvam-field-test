@@ -15,6 +15,8 @@ E = html.escape
 # ---------- naming ----------
 def vendor(s):
     s = s.lower()
+    if "->" in s:  # voice-input pipelines (A -> B): attributed to the speech front end A, the part being compared
+        return vendor(s.split("->")[0])
     if "+" in s:  # mixed pipelines (e.g. Sarvam Vision + Gemini) belong to neither side
         parts = {vendor(x) for x in s.split("+")}
         return parts.pop() if len(parts) == 1 else "other"
@@ -167,6 +169,23 @@ def verdict_row(uc, name, kind, label, include=None):
     return {"uc": uc, "label": label, "metric": name, "kind": kind, "state": state,
             "s": sv, "r": rv}
 
+
+def _macro_excl_sindhi():
+    """13-language macro WER (Sindhi excluded: Saaras writes it in Devanagari, the reference is Arabic script).
+    CI: 2,000 bootstrap resamples over languages."""
+    import random
+    pl = R["uc02_helpline_stt"]["per_language"]["WER"]
+    langs = [l for l in pl if l != "Sindhi"]
+    rng, vals = random.Random(0), {}
+    for s in pl[langs[0]]:
+        xs = [pl[l][s] for l in langs if pl[l].get(s) is not None]
+        if len(xs) < len(langs): continue
+        boots = sorted(sum(rng.choice(xs) for _ in xs) / len(xs) for _ in range(2000))
+        vals[s] = {"mean": sum(xs) / len(xs), "lo": boots[50], "hi": boots[1949], "n": len(xs)}
+    R["uc02_helpline_stt"]["metrics"].append({"name": "WER, macro-average over 13 languages (Sindhi excluded)",
+                                             "higher_is_better": False, "unit": "fraction", "values": vals})
+_macro_excl_sindhi()
+
 SC = []  # filled in body()
 
 # ---------- page sections ----------
@@ -268,7 +287,7 @@ def body():
     global SC
     SC = [
         verdict_row("uc01_voice_support", "Entity accuracy (digits/amounts/dates exactly captured) [phone]", "pct", "Hinglish support calls: numbers captured"),
-        verdict_row("uc02_helpline_stt", "WER, macro-average over languages", "num2", "Helpline speech in 13 languages: word error rate"),
+        verdict_row("uc02_helpline_stt", "WER, macro-average over 13 languages (Sindhi excluded)", "num2", "Helpline speech in 13 languages: word error rate"),
         verdict_row("uc03_documents", "field exact-match accuracy (frontier subset: 16 harsh + 14 phone photos)", "pct", "Documents from bad phone photos: fields right"),
         verdict_row("uc04_indic_rag", "answer_correct_rag", "pct", "Q&A over Indian-language policies: correct"),
         verdict_row("uc05_clinical_notes", "medication_exact_drug_dose_freq", "pct", "Clinical notes: drug + dose + frequency exact"),
@@ -282,6 +301,11 @@ def body():
         verdict_row("uc10_selfhost_business", "overall_all_correct", "pct", "Business text tasks: fully correct"),
         verdict_row("uc11_bharat_code", "pass@1 (single shot)", "pct", "Coding Indian business logic: first try"),
         verdict_row("uc11_bharat_code", "tool calling: correct tool + exact args (all 50)", "pct", "Voice-assistant tool calls: exact"),
+        verdict_row("uc06v_offline_agri_voice", "overall_pass", "pct", "Spoken farmer questions: answered right (speech front end)",
+                    include=lambda s: s.endswith("[phone]")),
+        verdict_row("uc08v_voice_orders", "Exact whole-order accuracy", "pct", "WhatsApp voice notes: order exactly right (speech front end)",
+                    include=lambda s: s.startswith("phone:")),
+        verdict_row("uc11v_voice_tools", "tool call exact (all 50), phone audio", "pct", "Spoken payment commands: exact (speech front end)"),
     ]
     sc_rows = "".join(
         f'<tr><th><a href="#{x["uc"]}">{E(x["label"])}</a></th>'
@@ -298,7 +322,7 @@ def body():
         bar_chart("uc01_voice_support", "WER vs code-mix reference [phone]", "num2", "Phone-quality calls: word error rate vs code-mixed reference")],
         voice_agent_table()))
     U.append(section("uc02_helpline_stt", 2, [
-        bar_chart("uc02_helpline_stt", "WER, macro-average over languages", "num2", "Word error rate, average of 13 languages (Sindhi excluded)"),
+        bar_chart("uc02_helpline_stt", "WER, macro-average over 13 languages (Sindhi excluded)", "num2", "Word error rate, average of 13 languages (Sindhi excluded; interval = bootstrap over languages)"),
         heat_table(R["uc02_helpline_stt"]["per_language"]["WER"], "num2", hib=False, title="Word error rate by language")]))
     U.append(section("uc03_documents", 3, [
         bar_chart("uc03_documents", "field exact-match accuracy (frontier subset: 16 harsh + 14 phone photos)", "pct",
@@ -344,6 +368,19 @@ def body():
         bar_chart("uc11_bharat_code", "tool calling: correct tool + exact args (all 50)", "pct", "Voice-assistant commands: right tool, exact arguments"),
         heat_table(R["uc11_bharat_code"]["per_language"]["pass@1"], "pct", title="Passed first try, by prompt language")]))
     U.append(section("uc12_token_tax", 12, [token_tax_chart()]))
+    U.append(section("uc06v_offline_agri_voice", 13, [
+        bar_chart("uc06v_offline_agri_voice", "overall_pass", "pct", "70 spoken questions: passed (same Gemini answering model unless named)",
+                  note="Colour shows the speech front end. Clean and phone-line audio are separate bars."),
+        bar_chart("uc06v_offline_agri_voice", "cer_saaras:v4", "pct", "Saaras v4 transcription error (CER)"),
+        heat_table(R["uc06v_offline_agri_voice"]["per_language"]["cer"], "pct", hib=False, title="Transcription error (CER) by language")]))
+    U.append(section("uc08v_voice_orders", 14, [
+        bar_chart("uc08v_voice_orders", "Exact whole-order accuracy", "pct", "86 spoken orders: whole order exactly right",
+                  note="Colour shows the speech front end; all transcripts go to the same Gemini 3.8 Flash extractor unless named."),
+        bar_chart("uc08v_voice_orders", "pincode accuracy", "pct", "Pincode captured exactly")]))
+    U.append(section("uc11v_voice_tools", 15, [
+        bar_chart("uc11v_voice_tools", "tool call exact (all 50), phone audio", "pct", "50 spoken commands over a phone line: right tool, exact arguments",
+                  note="Colour shows the speech front end; transcripts go to the same Gemini 3.8 Flash tool model unless named."),
+        bar_chart("uc11v_voice_tools", "tool call exact: fractional spoken amounts (10), phone audio", "pct", "Spoken fractions (\"paune do hazaar\"): exact")]))
     return sc_rows, tally, "".join(U)
 
 
@@ -510,7 +547,7 @@ def cost_section():
              '<tr><th>Speech-to-text</th><td>Saaras ₹30 per audio hour (₹45 with speaker labels)</td><td>Gemini 3.8 Flash bills audio as input tokens at $0.75/1M</td></tr>'
              f'<tr><th>Text-to-speech</th><td>Bulbul ₹3 per 1,000 characters</td><td>Gemini Flash TTS $9 per 1M audio tokens; measured about 19,400 audio tokens per 10,000 characters ≈ ₹{19400 * 9 / 1e6 * USD_INR / 10:.1f} per 1,000 characters</td></tr>'
              '<tr><th>Documents</th><td>Document AI Extract ₹1 per page; Digitise ₹0.50 per page</td><td>Gemini / Claude bill the page image as input tokens</td></tr>'
-             '<tr><th>Translation</th><td>Sarvam-Translate / Mayura by character (about ₹2 per 1,000 characters billed in this run); Sarvam-105B by token, about 80× cheaper for the same legal text</td><td>LLM token prices above</td></tr>'
+             '<tr><th>Translation</th><td>Sarvam-Translate / Mayura by character: list price ₹5 per 1,000 characters (Sarvam pricing page, Oct 2026), about ₹2 per 1,000 as actually billed in this run; Sarvam-105B by token, 80–200× cheaper for the same legal text</td><td>LLM token prices above</td></tr>'
              '<tr><th>Voice bot, all-Sarvam</th><td>₹1.56 per conversation-minute (speech ₹0.23, model ₹0.015, voice ₹1.32)</td><td>–</td></tr>'
              '</tbody></table></div></figure>')
     return scatter + costtab + ptab + units
@@ -530,14 +567,14 @@ USEMAP = [  # (job, who, use, evidence suite, model whose measured cost to show)
     ("Krishi advisory helpline", "Agritech, FPOs", "Cloud model that refuses out-of-scope questions; offline only with thinking on", "uc06_offline_agri", "gemini-3.8-flash"),
     ("Course and training localisation", "Edtech, L&D", "Sarvam-Translate into Indian languages + Bulbul voice-over", "uc07_translation_dubbing", None),
     ("Product catalogue translation", "E-commerce", "Sarvam-Translate into Indian languages; Gemini into English", "uc07_translation_dubbing", None),
-    ("WhatsApp orders and voice notes", "Quick commerce, kirana", "Gemini 3.8 Flash for order extraction", "uc08_quick_commerce", "gemini-3.8-flash"),
+    ("WhatsApp orders and voice notes", "Quick commerce, kirana", "Gemini 3.8 Flash for order extraction; Saaras v4 + keyterms or Gemini audio for voice notes", "uc08v_voice_orders", "gemini-3.8-flash"),
     ("Name and address transliteration", "Logistics", "Gemini 3.8 Flash; Sarvam's transliterate API is weak on Tamil", "uc08_quick_commerce", None),
     ("Judgment and order translation", "Courts, legal-tech", "Sarvam-105B or GPT-5.4 mini; never Mayura for amounts", "uc09_legal", None),
     ("Plain-language summaries for litigants", "Legal aid", "Gemini 3.8 Flash or GPT-5.4 mini", "uc09_legal", "gemini-3.8-flash"),
     ("Ticket triage and CRM notes", "SaaS support", "GPT-5.4 mini or Claude Haiku 5.5", "uc10_selfhost_business", "claude-haiku-5.5"),
     ("On-premise processing of regulated data", "Banks, hospitals", "Qwen3-30B self-hosted; Sarvam-30B if speed and token cost matter more", "uc10_selfhost_business", None),
     ("Coding copilot for Indian business logic", "Fintech, ERP vendors", "Gemini 3.8 Flash or Claude Haiku 5.5", "uc11_bharat_code", "claude-haiku-5.5"),
-    ("Voice-assistant actions (recharge, bill pay)", "Wallets, telecom", "Sarvam-105B or Gemini tool calling; validate amounts before paying", "uc11_bharat_code", None),
+    ("Voice-assistant actions (recharge, bill pay)", "Wallets, telecom", "Saaras or Gemini audio in front of Gemini tool calling; confirm payee and amount before paying", "uc11v_voice_tools", None),
     ("Budgeting Indian-text-heavy workloads", "Any", "Sarvam's tokenizer is cheapest; Claude uses 3.4× the English token count", "uc12_token_tax", None),
 ]
 

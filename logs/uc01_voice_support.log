@@ -553,3 +553,9 @@
 23:38:40 agent-sarvam-v4 kn14 stt 456 llm 438 tts_ttfb 312 ಖಂಡಿತ, ನಿಮ್ಮ claim number 385061 ನ status check ಮಾಡ್ತೀನಿ. ಒಂದು ನಿಮಿಷ ಲ
 23:45:13 == step score
 23:45:59 == step score
+23:46:51 == step stt
+23:46:51 stt: 160 saaras + 0 gemini + 0 openai jobs
+23:49:37 == step score
+23:50:25 == step score
+23:50:33 == step score
+23:51:08 == step score

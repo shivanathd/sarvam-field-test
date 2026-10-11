@@ -656,3 +656,499 @@
 23:46:18 tool saaras:v4 -> sarvam-105b phone x4 exact
 23:46:19 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone x4 exact
 23:46:19 tool gpt-4o-transcribe -> gemini-3.8-flash phone x4 exact
+23:46:21 tool gemini-3.8-flash audio-direct phone x4 exact
+23:46:21 tool typed text (oracle) -> gemini-3.8-flash text x4 exact
+23:46:21 tool saaras:v4 -> gemini-3.8-flash clean x5 exact
+23:46:23 tool saaras:v3 -> gemini-3.8-flash clean x5 exact
+23:46:23 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean x5 exact
+23:46:23 tool saaras:v4 -> sarvam-105b clean x5 exact
+23:46:24 tool gpt-4o-transcribe -> gemini-3.8-flash clean x5 exact
+23:46:25 tool saaras:v4 -> gemini-3.8-flash phone x5 exact
+23:46:26 tool saaras:v3 -> gemini-3.8-flash phone x5 exact
+23:46:28 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone x5 exact
+23:46:28 tool saaras:v4 -> sarvam-105b phone x5 exact
+23:46:28 tool gpt-4o-transcribe -> gemini-3.8-flash phone x5 exact
+23:46:29 tool gemini-3.8-flash audio-direct clean x5 exact
+23:46:30 tool typed text (oracle) -> gemini-3.8-flash text x5 exact
+23:46:31 tool saaras:v4 -> gemini-3.8-flash clean x6 exact
+23:46:31 tool gemini-3.8-flash audio-direct phone x5 exact
+23:46:32 tool saaras:v3 -> gemini-3.8-flash clean x6 exact
+23:46:32 tool saaras:v4 -> sarvam-105b clean x6 exact
+23:46:33 tool gpt-4o-transcribe -> gemini-3.8-flash clean x6 exact
+23:46:33 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean x6 exact
+23:46:34 tool gemini-3.8-flash audio-direct clean x6 exact
+23:46:35 tool saaras:v4 -> gemini-3.8-flash phone x6 exact
+23:46:35 tool saaras:v3 -> gemini-3.8-flash phone x6 exact
+23:46:35 tool saaras:v4 -> sarvam-105b phone x6 exact
+23:46:36 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone x6 exact
+23:46:37 tool gpt-4o-transcribe -> gemini-3.8-flash phone x6 exact
+23:46:38 tool typed text (oracle) -> gemini-3.8-flash text x6 exact
+23:46:38 tool gemini-3.8-flash audio-direct phone x6 exact
+23:46:39 tool saaras:v4 -> gemini-3.8-flash clean x7 exact
+23:46:40 tool saaras:v3 -> gemini-3.8-flash clean x7 exact
+23:46:40 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean x7 exact
+23:46:40 tool saaras:v4 -> sarvam-105b clean x7 MISS {'name': 'transfer_upi', 'args': {'payee': '@YBL', 'amount': 125}, 'n_calls': 1} <- सवा सौ रुपये भेजो शॉपकीपर @YBL को।
+23:46:41 tool gpt-4o-transcribe -> gemini-3.8-flash clean x7 exact
+23:46:42 tool saaras:v4 -> gemini-3.8-flash phone x7 exact
+23:46:43 tool gemini-3.8-flash audio-direct clean x7 exact
+23:46:43 tool saaras:v3 -> gemini-3.8-flash phone x7 exact
+23:46:44 tool saaras:v4 -> sarvam-105b phone x7 MISS {'name': 'transfer_upi', 'args': {'payee': '@YBL', 'amount': 125}, 'n_calls': 1} <- सवा सौ रुपये भेजो शॉपकीपर @ YBL को।
+23:46:45 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone x7 exact
+23:46:46 tool gpt-4o-transcribe -> gemini-3.8-flash phone x7 exact
+23:46:47 tool typed text (oracle) -> gemini-3.8-flash text x7 exact
+23:46:47 tool gemini-3.8-flash audio-direct phone x7 exact
+23:46:47 tool saaras:v4 -> gemini-3.8-flash clean x8 exact
+23:46:49 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean x8 exact
+23:46:49 tool saaras:v4 -> sarvam-105b clean x8 exact
+23:46:49 tool saaras:v3 -> gemini-3.8-flash clean x8 exact
+23:46:49 tool gpt-4o-transcribe -> gemini-3.8-flash clean x8 exact
+23:46:52 tool saaras:v3 -> gemini-3.8-flash phone x8 exact
+23:46:52 tool saaras:v4 -> gemini-3.8-flash phone x8 exact
+23:46:52 tool gemini-3.8-flash audio-direct clean x8 exact
+23:46:53 tool saaras:v4 -> sarvam-105b phone x8 exact
+23:46:54 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone x8 exact
+23:46:54 tool gpt-4o-transcribe -> gemini-3.8-flash phone x8 exact
+23:46:55 tool gemini-3.8-flash audio-direct phone x8 exact
+23:46:55 tool typed text (oracle) -> gemini-3.8-flash text x8 exact
+23:46:56 tool saaras:v4 -> gemini-3.8-flash clean t1 exact
+23:46:57 tool saaras:v3 -> gemini-3.8-flash clean t1 exact
+23:46:57 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean t1 exact
+23:46:57 tool saaras:v4 -> sarvam-105b clean t1 exact
+23:46:59 tool gpt-4o-transcribe -> gemini-3.8-flash clean t1 exact
+23:46:59 tool saaras:v4 -> gemini-3.8-flash phone t1 exact
+23:47:00 tool gemini-3.8-flash audio-direct clean t1 exact
+23:47:01 tool saaras:v3 -> gemini-3.8-flash phone t1 exact
+23:47:01 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone t1 exact
+23:47:01 tool saaras:v4 -> sarvam-105b phone t1 exact
+23:47:03 tool gpt-4o-transcribe -> gemini-3.8-flash phone t1 exact
+23:47:04 tool typed text (oracle) -> gemini-3.8-flash text t1 exact
+23:47:04 tool gemini-3.8-flash audio-direct phone t1 exact
+23:47:04 tool saaras:v4 -> gemini-3.8-flash clean t2 exact
+23:47:06 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean t2 exact
+23:47:06 tool gpt-4o-transcribe -> gemini-3.8-flash clean t2 exact
+23:47:06 tool saaras:v3 -> gemini-3.8-flash clean t2 exact
+23:47:07 tool saaras:v4 -> sarvam-105b clean t2 exact
+23:47:08 tool saaras:v4 -> gemini-3.8-flash phone t2 exact
+23:47:09 tool saaras:v3 -> gemini-3.8-flash phone t2 exact
+23:47:09 tool gemini-3.8-flash audio-direct clean t2 exact
+23:47:09 tool saaras:v4 -> sarvam-105b phone t2 exact
+23:47:10 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone t2 exact
+23:47:11 tool gpt-4o-transcribe -> gemini-3.8-flash phone t2 exact
+23:47:12 tool gemini-3.8-flash audio-direct phone t2 exact
+23:47:12 tool typed text (oracle) -> gemini-3.8-flash text t2 exact
+23:47:13 tool saaras:v4 -> gemini-3.8-flash clean t3 exact
+23:47:15 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean t3 exact
+23:47:15 tool saaras:v4 -> sarvam-105b clean t3 exact
+23:47:16 tool gpt-4o-transcribe -> gemini-3.8-flash clean t3 exact
+23:47:16 tool saaras:v3 -> gemini-3.8-flash clean t3 exact
+23:47:19 tool gemini-3.8-flash audio-direct clean t3 exact
+23:47:19 tool saaras:v4 -> gemini-3.8-flash phone t3 exact
+23:47:21 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone t3 exact
+23:47:21 tool saaras:v4 -> sarvam-105b phone t3 exact
+23:47:23 tool saaras:v3 -> gemini-3.8-flash phone t3 exact
+23:47:24 tool gpt-4o-transcribe -> gemini-3.8-flash phone t3 MISS {'name': 'transfer_upi', 'args': {'payee': '9776501234', 'amount': 1000}, 'n_calls': 1} <- பொன்வது ஏழு ஏழு ஆறு ஐந்து புதியம் ஒன்று இரண்டு மூன்று நான்கு
+23:47:24 tool gemini-3.8-flash audio-direct phone t3 exact
+23:47:26 tool typed text (oracle) -> gemini-3.8-flash text t3 exact
+23:47:26 tool saaras:v3 -> gemini-3.8-flash clean t4 exact
+23:47:26 tool saaras:v4 -> gemini-3.8-flash clean t4 exact
+23:47:26 tool saaras:v4 -> sarvam-105b clean t4 exact
+23:47:27 tool gpt-4o-transcribe -> gemini-3.8-flash clean t4 exact
+23:47:28 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean t4 exact
+23:47:28 tool gemini-3.8-flash audio-direct clean t4 exact
+23:47:29 tool saaras:v4 -> gemini-3.8-flash phone t4 exact
+23:47:30 tool saaras:v3 -> gemini-3.8-flash phone t4 exact
+23:47:30 tool saaras:v4 -> sarvam-105b phone t4 exact
+23:47:30 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone t4 exact
+23:47:31 tool gpt-4o-transcribe -> gemini-3.8-flash phone t4 exact
+23:47:32 tool typed text (oracle) -> gemini-3.8-flash text t4 exact
+23:47:33 tool saaras:v4 -> gemini-3.8-flash clean t5 exact
+23:47:33 tool gemini-3.8-flash audio-direct phone t4 exact
+23:47:35 tool saaras:v3 -> gemini-3.8-flash clean t5 exact
+23:47:35 tool saaras:v4 -> sarvam-105b clean t5 exact
+23:47:35 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean t5 exact
+23:47:35 tool gpt-4o-transcribe -> gemini-3.8-flash clean t5 exact
+23:47:37 tool saaras:v4 -> gemini-3.8-flash phone t5 exact
+23:47:37 tool saaras:v3 -> gemini-3.8-flash phone t5 exact
+23:47:38 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone t5 exact
+23:47:39 tool saaras:v4 -> sarvam-105b phone t5 exact
+23:47:39 tool gemini-3.8-flash audio-direct clean t5 exact
+23:47:41 tool gpt-4o-transcribe -> gemini-3.8-flash phone t5 exact
+23:47:41 tool typed text (oracle) -> gemini-3.8-flash text t5 exact
+23:47:42 tool gemini-3.8-flash audio-direct phone t5 exact
+23:47:43 tool saaras:v4 -> gemini-3.8-flash clean t6 exact
+23:47:43 tool saaras:v3 -> gemini-3.8-flash clean t6 exact
+23:47:43 tool saaras:v4 -> sarvam-105b clean t6 exact
+23:47:44 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean t6 exact
+23:47:45 tool gpt-4o-transcribe -> gemini-3.8-flash clean t6 exact
+23:47:46 tool saaras:v4 -> gemini-3.8-flash phone t6 exact
+23:47:46 tool gemini-3.8-flash audio-direct clean t6 exact
+23:47:47 tool saaras:v3 -> gemini-3.8-flash phone t6 exact
+23:47:47 tool saaras:v4 -> sarvam-105b phone t6 exact
+23:47:48 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone t6 exact
+23:47:48 tool gpt-4o-transcribe -> gemini-3.8-flash phone t6 exact
+23:47:50 tool gemini-3.8-flash audio-direct phone t6 exact
+23:47:50 tool typed text (oracle) -> gemini-3.8-flash text t6 exact
+23:47:51 tool saaras:v4 -> gemini-3.8-flash clean t7 MISS {'name': 'recharge', 'args': {'amount': 1199, 'mobile': '9445566778'}, 'n_calls': 1} <- அம்மா நம்பர் 9445566778, அதுக்கு 1199 ரூபாய் ரீசார்ஜ் பண்ணு.
+23:47:53 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean t7 MISS {'name': 'pay_bill', 'args': {'biller': 'electricity'}, 'n_calls': 1} <- 
+23:47:53 tool gpt-4o-transcribe -> gemini-3.8-flash clean t7 MISS {'name': 'recharge', 'args': {'amount': 199, 'mobile': '9495567678'}, 'n_calls': 1} <- அம்மா நம்பர் 9495 567678 அதுக்கு ஒன்று 199 ரூபாய் ரிச்சார்ஜ்
+23:47:53 tool saaras:v4 -> sarvam-105b clean t7 MISS {'name': 'recharge', 'args': {'mobile': '9445566778', 'amount': 1199}, 'n_calls': 1} <- அம்மா நம்பர் 9445566778, அதுக்கு 1199 ரூபாய் ரீசார்ஜ் பண்ணு.
+23:47:54 tool saaras:v3 -> gemini-3.8-flash clean t7 exact
+23:47:55 tool saaras:v4 -> gemini-3.8-flash phone t7 MISS {'name': 'recharge', 'args': {'amount': 1199, 'mobile': '9445566778'}, 'n_calls': 1} <- அம்மா நம்பர் 9445566778 அதுக்கு 1199 ரூபாய் ரீசார்ஜ் பண்ணு.
+23:47:56 tool gemini-3.8-flash audio-direct clean t7 exact
+23:47:57 tool saaras:v3 -> gemini-3.8-flash phone t7 exact
+23:47:57 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone t7 exact
+23:47:57 tool saaras:v4 -> sarvam-105b phone t7 MISS {'name': 'recharge', 'args': {'mobile': '9445566778', 'amount': 1199}, 'n_calls': 1} <- அம்மா நம்பர் 9445566778 அதுக்கு 1199 ரூபாய் ரீசார்ஜ் பண்ணு.
+23:47:59 tool typed text (oracle) -> gemini-3.8-flash text t7 exact
+23:48:00 tool gpt-4o-transcribe -> gemini-3.8-flash phone t7 MISS {'name': 'recharge', 'args': {'mobile': '944556678', 'amount': 199}, 'n_calls': 1} <- அம்மா நம்பர் 944556678 அதுக்கு 199 ரூபாய் ரிசார்ஜ் பண்ணு.
+23:48:00 tool gemini-3.8-flash audio-direct phone t7 exact
+23:48:01 tool saaras:v4 -> gemini-3.8-flash clean b1 exact
+23:48:02 tool saaras:v3 -> gemini-3.8-flash clean b1 exact
+23:48:02 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean b1 exact
+23:48:02 tool saaras:v4 -> sarvam-105b clean b1 exact
+23:48:03 tool gpt-4o-transcribe -> gemini-3.8-flash clean b1 exact
+23:48:05 tool saaras:v4 -> gemini-3.8-flash phone b1 exact
+23:48:05 tool gemini-3.8-flash audio-direct clean b1 exact
+23:48:05 tool saaras:v3 -> gemini-3.8-flash phone b1 exact
+23:48:06 tool saaras:v4 -> sarvam-105b phone b1 exact
+23:48:07 tool gpt-4o-transcribe -> gemini-3.8-flash phone b1 exact
+23:48:08 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone b1 exact
+23:48:09 tool gemini-3.8-flash audio-direct phone b1 exact
+23:48:10 tool typed text (oracle) -> gemini-3.8-flash text b1 exact
+23:48:10 tool saaras:v4 -> gemini-3.8-flash clean b2 exact
+23:48:11 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean b2 exact
+23:48:11 tool saaras:v3 -> gemini-3.8-flash clean b2 exact
+23:48:11 tool saaras:v4 -> sarvam-105b clean b2 exact
+23:48:12 tool gpt-4o-transcribe -> gemini-3.8-flash clean b2 exact
+23:48:14 tool saaras:v4 -> gemini-3.8-flash phone b2 exact
+23:48:14 tool gemini-3.8-flash audio-direct clean b2 exact
+23:48:14 tool saaras:v3 -> gemini-3.8-flash phone b2 exact
+23:48:15 tool saaras:v4 -> sarvam-105b phone b2 exact
+23:48:16 tool gpt-4o-transcribe -> gemini-3.8-flash phone b2 exact
+23:48:16 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone b2 exact
+23:48:17 tool gemini-3.8-flash audio-direct phone b2 exact
+23:48:18 tool typed text (oracle) -> gemini-3.8-flash text b2 exact
+23:48:19 tool saaras:v4 -> gemini-3.8-flash clean b3 exact
+23:48:20 tool saaras:v3 -> gemini-3.8-flash clean b3 exact
+23:48:21 tool saaras:v4 -> sarvam-105b clean b3 exact
+23:48:21 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean b3 exact
+23:48:22 tool gpt-4o-transcribe -> gemini-3.8-flash clean b3 exact
+23:48:23 tool saaras:v4 -> gemini-3.8-flash phone b3 exact
+23:48:25 tool gemini-3.8-flash audio-direct clean b3 exact
+23:48:25 tool saaras:v3 -> gemini-3.8-flash phone b3 exact
+23:48:26 tool saaras:v4 -> sarvam-105b phone b3 exact
+23:48:26 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone b3 exact
+23:48:28 tool gpt-4o-transcribe -> gemini-3.8-flash phone b3 exact
+23:48:28 tool typed text (oracle) -> gemini-3.8-flash text b3 exact
+23:48:29 tool gemini-3.8-flash audio-direct phone b3 exact
+23:48:29 tool saaras:v4 -> gemini-3.8-flash clean b4 exact
+23:48:31 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean b4 exact
+23:48:31 tool saaras:v3 -> gemini-3.8-flash clean b4 exact
+23:48:31 tool saaras:v4 -> sarvam-105b clean b4 exact
+23:48:32 tool gpt-4o-transcribe -> gemini-3.8-flash clean b4 exact
+23:48:33 tool gemini-3.8-flash audio-direct clean b4 exact
+23:48:36 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone b4 MISS {'name': 'check_balance', 'args': {'account': 'bank'}, 'n_calls': 1} <- 
+23:48:38 tool gpt-4o-transcribe -> gemini-3.8-flash phone b4 exact
+23:48:39 tool saaras:v4 -> sarvam-105b phone b4 MISS None <- ইঞ্জিনিয়ার 200 শিলিং আর বুস্ট করো।
+23:48:40 tool saaras:v4 -> gemini-3.8-flash phone b4 MISS {'name': 'recharge', 'args': {'amount': 200}, 'n_calls': 1} <- ইঞ্জিনিয়ার 200 শিলিং আর বুস্ট করো।
+23:48:40 tool saaras:v3 -> gemini-3.8-flash phone b4 exact
+23:48:42 tool saaras:v4 -> gemini-3.8-flash clean b5 exact
+23:48:42 tool gemini-3.8-flash audio-direct phone b4 exact
+23:48:42 tool typed text (oracle) -> gemini-3.8-flash text b4 exact
+23:48:44 tool saaras:v3 -> gemini-3.8-flash clean b5 exact
+23:48:44 tool saaras:v4 -> sarvam-105b clean b5 exact
+23:48:44 tool gpt-4o-transcribe -> gemini-3.8-flash clean b5 exact
+23:48:45 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean b5 exact
+23:48:47 tool saaras:v4 -> gemini-3.8-flash phone b5 exact
+23:48:47 tool saaras:v3 -> gemini-3.8-flash phone b5 exact
+23:48:48 tool gemini-3.8-flash audio-direct clean b5 exact
+23:48:49 tool saaras:v4 -> sarvam-105b phone b5 exact
+23:48:49 tool gpt-4o-transcribe -> gemini-3.8-flash phone b5 exact
+23:48:49 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone b5 exact
+23:48:51 tool typed text (oracle) -> gemini-3.8-flash text b5 exact
+23:48:52 tool saaras:v4 -> gemini-3.8-flash clean b6 exact
+23:48:53 tool gemini-3.8-flash audio-direct phone b5 exact
+23:48:54 tool saaras:v3 -> gemini-3.8-flash clean b6 exact
+23:48:55 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean b6 exact
+23:48:55 tool saaras:v4 -> sarvam-105b clean b6 exact
+23:48:57 tool gpt-4o-transcribe -> gemini-3.8-flash clean b6 exact
+23:48:58 tool gemini-3.8-flash audio-direct clean b6 exact
+23:49:00 tool saaras:v3 -> gemini-3.8-flash phone b6 exact
+23:49:00 tool saaras:v4 -> gemini-3.8-flash phone b6 exact
+23:49:01 tool saaras:v4 -> sarvam-105b phone b6 MISS {'name': 'pay_bill', 'args': {'biller': 'dth', 'amount': 699}, 'n_calls': 1} <- জজ বেয়ার্ডের বিল ৬৯৯ টাকা, ডিজে দাওদ।
+23:49:03 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone b6 exact
+23:49:04 tool gemini-3.8-flash audio-direct phone b6 MISS {'name': 'pay_bill', 'args': {'biller': 'water', 'amount': 699}, 'n_calls': 1} <- None
+23:49:07 tool typed text (oracle) -> gemini-3.8-flash text b6 exact
+23:49:07 tool gpt-4o-transcribe -> gemini-3.8-flash phone b6 MISS {'name': 'transfer_upi', 'args': {'amount': 699, 'payee': 'John Dendel Bin'}, 'n_calls': 1} <- জন দেন্ডেল বিন ছয়শো নিরানব্বই টাকা বিজে দাও।
+23:49:08 tool saaras:v4 -> gemini-3.8-flash clean b7 MISS {'name': 'transfer_upi', 'args': {'amount': 1500, 'payee': 'deepak@paytm'}, 'n_calls': 1} <- দীপক @ পেটিএম-এ দেড় হাজার টাকা পাঠাও।
+23:49:11 tool saaras:v3 -> gemini-3.8-flash clean b7 MISS {'name': 'transfer_upi', 'args': {'amount': 1500, 'payee': 'deepak@paytm'}, 'n_calls': 1} <- দীপাক@পেটিএম এ ₹1500 পাঠাও।
+23:49:11 tool saaras:v4 -> sarvam-105b clean b7 MISS {'name': 'transfer_upi', 'args': {'payee': 'deepak@paytm', 'amount': 1500}, 'n_calls': 1} <- দীপক @ পেটিএম-এ দেড় হাজার টাকা পাঠাও।
+23:49:12 tool gpt-4o-transcribe -> gemini-3.8-flash clean b7 MISS {'name': 'transfer_upi', 'args': {'amount': 1500, 'payee': 'deepak@paytm'}, 'n_calls': 1} <- দীপক @Paytm এ দেড়হাজার টাকা পাঠাও।
+23:49:13 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean b7 MISS {'name': 'transfer_upi', 'args': {'amount': 1500, 'payee': 'দীপক@paytm'}, 'n_calls': 1} <- দীপক@paytm এ দেড় হাজার টাকা পাঠাও
+23:49:15 tool saaras:v4 -> gemini-3.8-flash phone b7 MISS {'name': 'transfer_upi', 'args': {'payee': 'deepak@paytm', 'amount': 1500}, 'n_calls': 1} <- দীপাক @ পেটিএম-এ দেড় হাজার টাকা পাঠাও।
+23:49:16 tool gemini-3.8-flash audio-direct clean b7 exact
+23:49:16 tool saaras:v3 -> gemini-3.8-flash phone b7 MISS {'name': 'transfer_upi', 'args': {'amount': 1500, 'payee': 'deepak@paytm'}, 'n_calls': 1} <- দীপক @ পেটিএম এ ₹1500 পাঠাও।
+23:49:16 tool saaras:v4 -> sarvam-105b phone b7 MISS {'name': 'transfer_upi', 'args': {'payee': 'deepak@paytm', 'amount': 1500}, 'n_calls': 1} <- দীপাক @ পেটিএম-এ দেড় হাজার টাকা পাঠাও।
+23:49:20 tool gemini-3.8-flash audio-direct phone b7 exact
+23:49:20 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone b7 MISS {'name': 'transfer_upi', 'args': {'amount': 1500, 'payee': 'deepak@paytm'}, 'n_calls': 1} <- দীপক @paytm এ 1500 টাকা পাঠাও
+23:49:21 tool gpt-4o-transcribe -> gemini-3.8-flash phone b7 MISS {'name': 'transfer_upi', 'args': {'amount': 1500, 'payee': 'deepak@paytm'}, 'n_calls': 1} <- দীপক @Paytm-এ দেড়হাজার টাকা পাঠাও।
+23:49:22 tool typed text (oracle) -> gemini-3.8-flash text b7 exact
+23:49:23 tool saaras:v4 -> gemini-3.8-flash clean h9 exact
+23:49:25 tool saaras:v3 -> gemini-3.8-flash clean h9 exact
+23:49:25 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean h9 MISS {'name': 'transfer_upi', 'args': {'payee': '9812345670', 'amount': 2000}, 'n_calls': 1} <- 9812345670 पर ₹2,000 ट्रांसफर करो
+23:49:25 tool saaras:v4 -> sarvam-105b clean h9 exact
+23:49:27 tool gpt-4o-transcribe -> gemini-3.8-flash clean h9 MISS {'name': 'transfer_upi', 'args': {'amount': 1750, 'payee': '1041234567'}, 'n_calls': 1} <- 1041234567 पर पौने दो हजार रुपये ट्रांसफर करो।
+23:49:28 tool saaras:v4 -> gemini-3.8-flash phone h9 exact
+23:49:29 tool gemini-3.8-flash audio-direct clean h9 exact
+23:49:30 tool saaras:v3 -> gemini-3.8-flash phone h9 exact
+23:49:30 tool saaras:v4 -> sarvam-105b phone h9 exact
+23:49:31 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone h9 exact
+23:49:33 tool gpt-4o-transcribe -> gemini-3.8-flash phone h9 MISS {'name': 'transfer_upi', 'args': {'payee': '10434567', 'amount': 1750}, 'n_calls': 1} <- 10434567 पर पौने दो हजार रुपए ट्रांसफर करो।
+23:49:34 tool gemini-3.8-flash audio-direct phone h9 exact
+23:49:34 tool typed text (oracle) -> gemini-3.8-flash text h9 exact
+23:49:36 tool saaras:v4 -> gemini-3.8-flash clean h10 exact
+23:49:38 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean h10 exact
+23:49:38 tool saaras:v3 -> gemini-3.8-flash clean h10 exact
+23:49:38 tool saaras:v4 -> sarvam-105b clean h10 exact
+23:49:39 tool gpt-4o-transcribe -> gemini-3.8-flash clean h10 exact
+23:49:42 tool saaras:v4 -> gemini-3.8-flash phone h10 exact
+23:49:42 tool gemini-3.8-flash audio-direct clean h10 exact
+23:49:42 tool saaras:v3 -> gemini-3.8-flash phone h10 exact
+23:49:42 tool saaras:v4 -> sarvam-105b phone h10 exact
+23:49:44 tool gpt-4o-transcribe -> gemini-3.8-flash phone h10 exact
+23:49:45 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone h10 exact
+23:49:46 tool typed text (oracle) -> gemini-3.8-flash text h10 exact
+23:49:47 tool gemini-3.8-flash audio-direct phone h10 exact
+23:49:47 tool saaras:v4 -> gemini-3.8-flash clean h11 exact
+23:49:49 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean h11 exact
+23:49:49 tool saaras:v4 -> sarvam-105b clean h11 exact
+23:49:49 tool saaras:v3 -> gemini-3.8-flash clean h11 exact
+23:49:50 tool gpt-4o-transcribe -> gemini-3.8-flash clean h11 exact
+23:49:53 tool saaras:v4 -> gemini-3.8-flash phone h11 exact
+23:49:53 tool gemini-3.8-flash audio-direct clean h11 exact
+23:49:53 tool saaras:v3 -> gemini-3.8-flash phone h11 exact
+23:49:54 tool saaras:v4 -> sarvam-105b phone h11 exact
+23:49:56 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone h11 exact
+23:49:57 tool gemini-3.8-flash audio-direct phone h11 exact
+23:49:59 tool typed text (oracle) -> gemini-3.8-flash text h11 exact
+23:50:01 tool saaras:v4 -> gemini-3.8-flash clean h12 exact
+23:50:03 tool saaras:v3 -> gemini-3.8-flash clean h12 exact
+23:50:03 tool gpt-4o-transcribe -> gemini-3.8-flash phone h11 MISS {'name': 'book_cylinder', 'args': {'quantity': 3, 'company': 'indane'}, 'n_calls': 1} <- हमें घर के तीन सिलेंडर चाहिए.
+23:50:04 tool saaras:v4 -> sarvam-105b clean h12 exact
+23:50:05 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean h12 exact
+23:50:06 tool gpt-4o-transcribe -> gemini-3.8-flash clean h12 exact
+23:50:07 tool gemini-3.8-flash audio-direct clean h12 exact
+23:50:08 tool saaras:v4 -> gemini-3.8-flash phone h12 exact
+23:50:08 tool saaras:v3 -> gemini-3.8-flash phone h12 exact
+23:50:09 tool saaras:v4 -> sarvam-105b phone h12 exact
+23:50:10 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone h12 exact
+23:50:12 tool gemini-3.8-flash audio-direct phone h12 exact
+23:50:14 tool typed text (oracle) -> gemini-3.8-flash text h12 exact
+23:50:14 tool gpt-4o-transcribe -> gemini-3.8-flash phone h12 exact
+23:50:14 tool saaras:v4 -> gemini-3.8-flash clean h13 exact
+23:50:16 tool saaras:v3 -> gemini-3.8-flash clean h13 exact
+23:50:17 tool saaras:v4 -> sarvam-105b clean h13 exact
+23:50:18 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean h13 exact
+23:50:20 tool gemini-3.8-flash audio-direct clean h13 exact
+23:50:20 tool saaras:v4 -> gemini-3.8-flash phone h13 exact
+23:50:23 tool saaras:v3 -> gemini-3.8-flash phone h13 exact
+23:50:24 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone h13 exact
+23:50:24 tool saaras:v4 -> sarvam-105b phone h13 exact
+23:50:24 tool gpt-4o-transcribe -> gemini-3.8-flash clean h13 MISS {'name': 'pay_bill', 'args': {'amount': 1250, 'biller': 'mobile_postpaid'}, 'n_calls': 1} <- ملکابل ایک ہزار دو سو پچاس روپے بھر دو.
+23:50:27 tool typed text (oracle) -> gemini-3.8-flash text h13 exact
+23:50:28 tool gemini-3.8-flash audio-direct phone h13 exact
+23:50:30 tool saaras:v4 -> gemini-3.8-flash clean x9 exact
+23:50:31 tool gpt-4o-transcribe -> gemini-3.8-flash phone h13 MISS {'name': 'pay_bill', 'args': {'amount': 1250, 'biller': 'electricity'}, 'n_calls': 1} <- बिल एक हजार दो सौ पचास रुपये भर दो.
+23:50:31 tool saaras:v3 -> gemini-3.8-flash clean x9 exact
+23:50:31 tool saaras:v4 -> sarvam-105b clean x9 exact
+23:50:33 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean x9 exact
+23:50:34 tool gpt-4o-transcribe -> gemini-3.8-flash clean x9 exact
+23:50:35 tool gemini-3.8-flash audio-direct clean x9 exact
+23:50:36 tool saaras:v4 -> gemini-3.8-flash phone x9 exact
+23:50:37 tool saaras:v3 -> gemini-3.8-flash phone x9 exact
+23:50:37 tool saaras:v4 -> sarvam-105b phone x9 exact
+23:50:38 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone x9 exact
+23:50:40 tool gemini-3.8-flash audio-direct phone x9 exact
+23:50:40 tool gpt-4o-transcribe -> gemini-3.8-flash phone x9 exact
+23:50:41 tool typed text (oracle) -> gemini-3.8-flash text x9 exact
+23:50:43 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean x10 exact
+23:50:44 tool saaras:v4 -> gemini-3.8-flash clean x10 exact
+23:50:44 tool saaras:v3 -> gemini-3.8-flash clean x10 exact
+23:50:44 tool saaras:v4 -> sarvam-105b clean x10 MISS {'name': 'transfer_upi', 'args': {'payee': 'priya.s@oksbi', 'amount': 4000}, 'n_calls': 1} <- साढ़े चार हज़ार भेज दो, प्रिया.एस@ओकेएसबीआई पे।
+23:50:46 tool saaras:v4 -> gemini-3.8-flash phone x10 exact
+23:50:47 tool gpt-4o-transcribe -> gemini-3.8-flash clean x10 exact
+23:50:47 tool gemini-3.8-flash audio-direct clean x10 exact
+23:50:48 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone x10 exact
+23:50:49 tool saaras:v4 -> sarvam-105b phone x10 exact
+23:50:49 tool saaras:v3 -> gemini-3.8-flash phone x10 exact
+23:50:50 tool gpt-4o-transcribe -> gemini-3.8-flash phone x10 MISS {'name': 'transfer_upi', 'args': {'amount': 4500, 'payee': 'priya.s@okhdfcpe'}, 'n_calls': 1} <- साढ़े चार हजार भेज दो priya.s@okhdfcpe.
+23:50:53 tool typed text (oracle) -> gemini-3.8-flash text x10 exact
+23:50:53 tool saaras:v4 -> gemini-3.8-flash clean x11 exact
+23:50:55 tool gemini-3.8-flash audio-direct phone x10 exact
+23:50:56 tool saaras:v3 -> gemini-3.8-flash clean x11 exact
+23:50:56 tool saaras:v4 -> sarvam-105b clean x11 exact
+23:50:57 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean x11 exact
+23:50:57 tool gpt-4o-transcribe -> gemini-3.8-flash clean x11 exact
+23:50:59 tool gemini-3.8-flash audio-direct clean x11 exact
+23:51:00 tool saaras:v4 -> gemini-3.8-flash phone x11 exact
+23:51:00 tool saaras:v3 -> gemini-3.8-flash phone x11 exact
+23:51:00 tool saaras:v4 -> sarvam-105b phone x11 exact
+23:51:03 tool gpt-4o-transcribe -> gemini-3.8-flash phone x11 exact
+23:51:03 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone x11 exact
+23:51:04 tool gemini-3.8-flash audio-direct phone x11 exact
+23:51:06 tool typed text (oracle) -> gemini-3.8-flash text x11 exact
+23:51:06 tool saaras:v3 -> gemini-3.8-flash clean x12 exact
+23:51:07 tool saaras:v4 -> gemini-3.8-flash clean x12 exact
+23:51:07 tool saaras:v4 -> sarvam-105b clean x12 exact
+23:51:08 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean x12 exact
+23:51:08 tool gpt-4o-transcribe -> gemini-3.8-flash clean x12 exact
+23:51:10 tool gemini-3.8-flash audio-direct clean x12 exact
+23:51:11 tool saaras:v3 -> gemini-3.8-flash phone x12 exact
+23:51:11 tool saaras:v4 -> gemini-3.8-flash phone x12 exact
+23:51:11 tool saaras:v4 -> sarvam-105b phone x12 exact
+23:51:14 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone x12 exact
+23:51:14 tool gemini-3.8-flash audio-direct phone x12 exact
+23:51:15 tool gpt-4o-transcribe -> gemini-3.8-flash phone x12 exact
+23:51:16 tool typed text (oracle) -> gemini-3.8-flash text x12 exact
+23:51:17 tool saaras:v4 -> gemini-3.8-flash clean x13 exact
+23:51:19 tool saaras:v3 -> gemini-3.8-flash clean x13 exact
+23:51:19 tool saaras:v4 -> sarvam-105b clean x13 exact
+23:51:20 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean x13 exact
+23:51:20 tool gpt-4o-transcribe -> gemini-3.8-flash clean x13 exact
+23:51:22 tool saaras:v4 -> gemini-3.8-flash phone x13 exact
+23:51:23 tool saaras:v3 -> gemini-3.8-flash phone x13 exact
+23:51:23 tool gemini-3.8-flash audio-direct clean x13 exact
+23:51:23 tool saaras:v4 -> sarvam-105b phone x13 exact
+23:51:26 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone x13 exact
+23:51:27 tool gemini-3.8-flash audio-direct phone x13 exact
+23:51:27 tool gpt-4o-transcribe -> gemini-3.8-flash phone x13 exact
+23:51:29 tool typed text (oracle) -> gemini-3.8-flash text x13 exact
+23:51:30 tool saaras:v4 -> gemini-3.8-flash clean t8 exact
+23:51:30 tool saaras:v3 -> gemini-3.8-flash clean t8 exact
+23:51:31 tool saaras:v4 -> sarvam-105b clean t8 exact
+23:51:33 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean t8 exact
+23:51:34 tool gemini-3.8-flash audio-direct clean t8 exact
+23:51:34 tool gpt-4o-transcribe -> gemini-3.8-flash clean t8 exact
+23:51:37 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone t8 exact
+23:51:37 tool saaras:v4 -> gemini-3.8-flash phone t8 exact
+23:51:37 tool saaras:v4 -> sarvam-105b phone t8 exact
+23:51:38 tool saaras:v3 -> gemini-3.8-flash phone t8 exact
+23:51:41 tool gemini-3.8-flash audio-direct phone t8 exact
+23:51:41 tool gpt-4o-transcribe -> gemini-3.8-flash phone t8 exact
+23:51:42 tool typed text (oracle) -> gemini-3.8-flash text t8 exact
+23:51:43 tool saaras:v4 -> gemini-3.8-flash clean t9 exact
+23:51:44 tool saaras:v3 -> gemini-3.8-flash clean t9 exact
+23:51:44 tool saaras:v4 -> sarvam-105b clean t9 exact
+23:51:45 tool gpt-4o-transcribe -> gemini-3.8-flash clean t9 exact
+23:51:45 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean t9 exact
+23:51:47 tool saaras:v4 -> gemini-3.8-flash phone t9 exact
+23:51:48 tool gemini-3.8-flash audio-direct clean t9 exact
+23:51:49 tool saaras:v3 -> gemini-3.8-flash phone t9 exact
+23:51:49 tool saaras:v4 -> sarvam-105b phone t9 exact
+23:51:50 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone t9 exact
+23:51:51 tool gpt-4o-transcribe -> gemini-3.8-flash phone t9 exact
+23:51:52 tool gemini-3.8-flash audio-direct phone t9 exact
+23:51:53 tool typed text (oracle) -> gemini-3.8-flash text t9 exact
+23:51:54 tool saaras:v4 -> gemini-3.8-flash clean t10 exact
+23:51:55 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean t10 exact
+23:51:55 tool saaras:v3 -> gemini-3.8-flash clean t10 exact
+23:51:55 tool saaras:v4 -> sarvam-105b clean t10 exact
+23:51:56 tool gpt-4o-transcribe -> gemini-3.8-flash clean t10 exact
+23:51:58 tool gemini-3.8-flash audio-direct clean t10 exact
+23:51:58 tool saaras:v4 -> gemini-3.8-flash phone t10 exact
+23:52:00 tool saaras:v3 -> gemini-3.8-flash phone t10 exact
+23:52:00 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone t10 exact
+23:52:00 tool saaras:v4 -> sarvam-105b phone t10 exact
+23:52:01 tool gpt-4o-transcribe -> gemini-3.8-flash phone t10 exact
+23:52:03 tool typed text (oracle) -> gemini-3.8-flash text t10 exact
+23:52:04 tool saaras:v4 -> gemini-3.8-flash clean t11 exact
+23:52:04 tool gemini-3.8-flash audio-direct phone t10 exact
+23:52:06 tool saaras:v3 -> gemini-3.8-flash clean t11 exact
+23:52:07 tool saaras:v4 -> sarvam-105b clean t11 exact
+23:52:07 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean t11 exact
+23:52:09 tool gemini-3.8-flash audio-direct clean t11 exact
+23:52:09 tool saaras:v4 -> gemini-3.8-flash phone t11 exact
+23:52:10 tool gpt-4o-transcribe -> gemini-3.8-flash clean t11 exact
+23:52:12 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone t11 exact
+23:52:12 tool saaras:v4 -> sarvam-105b phone t11 exact
+23:52:13 tool saaras:v3 -> gemini-3.8-flash phone t11 exact
+23:52:15 tool gpt-4o-transcribe -> gemini-3.8-flash phone t11 exact
+23:52:16 tool typed text (oracle) -> gemini-3.8-flash text t11 exact
+23:52:16 tool gemini-3.8-flash audio-direct phone t11 exact
+23:52:19 tool saaras:v4 -> gemini-3.8-flash clean t12 exact
+23:52:19 tool saaras:v3 -> gemini-3.8-flash clean t12 exact
+23:52:19 tool saaras:v4 -> sarvam-105b clean t12 exact
+23:52:20 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean t12 exact
+23:52:22 tool gpt-4o-transcribe -> gemini-3.8-flash clean t12 exact
+23:52:22 tool saaras:v4 -> gemini-3.8-flash phone t12 exact
+23:52:24 tool gemini-3.8-flash audio-direct clean t12 exact
+23:52:25 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone t12 exact
+23:52:25 tool saaras:v3 -> gemini-3.8-flash phone t12 exact
+23:52:25 tool saaras:v4 -> sarvam-105b phone t12 exact
+23:52:28 tool typed text (oracle) -> gemini-3.8-flash text t12 exact
+23:52:28 tool gemini-3.8-flash audio-direct phone t12 exact
+23:52:29 tool gpt-4o-transcribe -> gemini-3.8-flash phone t12 exact
+23:52:30 tool saaras:v4 -> gemini-3.8-flash clean b8 exact
+23:52:31 tool saaras:v3 -> gemini-3.8-flash clean b8 exact
+23:52:31 tool saaras:v4 -> sarvam-105b clean b8 exact
+23:52:31 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean b8 exact
+23:52:33 tool gpt-4o-transcribe -> gemini-3.8-flash clean b8 exact
+23:52:34 tool saaras:v4 -> gemini-3.8-flash phone b8 exact
+23:52:35 tool saaras:v3 -> gemini-3.8-flash phone b8 exact
+23:52:36 tool gemini-3.8-flash audio-direct clean b8 exact
+23:52:36 tool saaras:v4 -> sarvam-105b phone b8 exact
+23:52:36 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone b8 exact
+23:52:38 tool gpt-4o-transcribe -> gemini-3.8-flash phone b8 exact
+23:52:39 tool typed text (oracle) -> gemini-3.8-flash text b8 exact
+23:52:39 tool gemini-3.8-flash audio-direct phone b8 exact
+23:52:41 tool saaras:v4 -> gemini-3.8-flash clean b9 exact
+23:52:41 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean b9 exact
+23:52:42 tool saaras:v4 -> sarvam-105b clean b9 exact
+23:52:43 tool saaras:v3 -> gemini-3.8-flash clean b9 exact
+23:52:44 tool gpt-4o-transcribe -> gemini-3.8-flash clean b9 exact
+23:52:45 tool gemini-3.8-flash audio-direct clean b9 exact
+23:52:45 tool saaras:v4 -> gemini-3.8-flash phone b9 exact
+23:52:48 tool saaras:v3 -> gemini-3.8-flash phone b9 exact
+23:52:48 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone b9 exact
+23:52:48 tool saaras:v4 -> sarvam-105b phone b9 exact
+23:52:49 tool gpt-4o-transcribe -> gemini-3.8-flash phone b9 exact
+23:52:51 tool saaras:v4 -> gemini-3.8-flash clean b10 exact
+23:52:51 tool gemini-3.8-flash audio-direct phone b9 exact
+23:52:53 tool typed text (oracle) -> gemini-3.8-flash text b9 exact
+23:52:54 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean b10 exact
+23:52:54 tool saaras:v4 -> sarvam-105b clean b10 exact
+23:52:54 tool saaras:v3 -> gemini-3.8-flash clean b10 exact
+23:52:55 tool gpt-4o-transcribe -> gemini-3.8-flash clean b10 exact
+23:52:56 tool saaras:v4 -> gemini-3.8-flash phone b10 exact
+23:52:57 tool gemini-3.8-flash audio-direct clean b10 exact
+23:52:58 tool saaras:v3 -> gemini-3.8-flash phone b10 exact
+23:52:58 tool saaras:v4 -> sarvam-105b phone b10 exact
+23:52:59 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone b10 exact
+23:52:59 tool gpt-4o-transcribe -> gemini-3.8-flash phone b10 exact
+23:53:01 tool typed text (oracle) -> gemini-3.8-flash text b10 exact
+23:53:01 tool gemini-3.8-flash audio-direct phone b10 exact
+23:53:02 tool saaras:v4 -> gemini-3.8-flash clean b11 exact
+23:53:04 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean b11 exact
+23:53:04 tool saaras:v4 -> sarvam-105b clean b11 MISS {'name': 'transfer_upi', 'args': {'payee': 'ybl', 'amount': 2500}, 'n_calls': 1} <- আড়াই হাজার টাকা রিনা @ybl-এ পাঠাও।
+23:53:04 tool saaras:v3 -> gemini-3.8-flash clean b11 exact
+23:53:07 tool saaras:v4 -> gemini-3.8-flash phone b11 exact
+23:53:07 tool gemini-3.8-flash audio-direct clean b11 exact
+23:53:09 tool saaras:v3 -> gemini-3.8-flash phone b11 exact
+23:53:11 tool gpt-4o-transcribe -> gemini-3.8-flash clean b11 MISS {'name': 'transfer_upi', 'args': {'payee': 'reena@ybl', 'amount': 2500}, 'n_calls': 1} <- আড়াই হাজার টাকা রীনা@YBL-এ পাঠাও।
+23:53:11 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone b11 exact
+23:53:11 tool saaras:v4 -> sarvam-105b phone b11 MISS {'name': 'transfer_upi', 'args': {'payee': '@YBL', 'amount': 2500}, 'n_calls': 1} <- আড়াই হাজার টাকা রিনা @YBL-এ পাঠাও।
+23:53:14 tool typed text (oracle) -> gemini-3.8-flash text b11 exact
+23:53:14 tool gpt-4o-transcribe -> gemini-3.8-flash phone b11 MISS {'name': 'transfer_upi', 'args': {'payee': 'reena@ybl', 'amount': 2500}, 'n_calls': 1} <- আড়াই হাজার টাকা রীনা@ybl-এ পাঠাও।
+23:53:14 tool gemini-3.8-flash audio-direct phone b11 exact
+23:53:16 tool saaras:v4 -> gemini-3.8-flash clean b12 exact
+23:53:16 tool saaras:v3 -> gemini-3.8-flash clean b12 exact
+23:53:16 tool saaras:v4 -> sarvam-105b clean b12 exact
+23:53:16 tool gemini-3.8-flash-audio -> gemini-3.8-flash clean b12 exact
+23:53:19 tool gpt-4o-transcribe -> gemini-3.8-flash clean b12 exact
+23:53:19 tool saaras:v4 -> gemini-3.8-flash phone b12 exact
+23:53:20 tool gemini-3.8-flash audio-direct clean b12 exact
+23:53:21 tool gemini-3.8-flash-audio -> gemini-3.8-flash phone b12 exact
+23:53:21 tool saaras:v3 -> gemini-3.8-flash phone b12 exact
+23:53:21 tool saaras:v4 -> sarvam-105b phone b12 exact
+23:53:23 tool gpt-4o-transcribe -> gemini-3.8-flash phone b12 exact
+23:53:24 tool gemini-3.8-flash audio-direct phone b12 exact
+23:53:25 tool typed text (oracle) -> gemini-3.8-flash text b12 exact

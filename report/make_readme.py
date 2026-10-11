@@ -80,7 +80,7 @@ readme = f"""<h1 align="center">Sarvam Field Test</h1>
 
 <p align="center">
 An open, reproducible benchmark of <b>Sarvam AI</b> against <b>Google Gemini</b>, <b>OpenAI</b>, <b>Anthropic Claude</b> and
-<b>self-hosted open weights</b> on twelve jobs Indian businesses and developers actually do.<br>
+<b>self-hosted open weights</b> on fifteen jobs Indian businesses and developers actually do, three of them with spoken input.<br>
 Every test has known answers, so scoring is automatic and no model grades another.
 </p>
 
@@ -130,11 +130,12 @@ flowchart TD
     Q -->|Data cannot leave your servers| S8[Qwen3-30B for accuracy<br/>Sarvam-30B for speed and token cost]
 ```
 
-- **Speech recognition in Indian languages:** Saaras had the lowest word error rate in 12 of 13 languages and ran about 4x faster than Gemini. For calls where amounts and account digits matter, Gemini 3.8 Flash captured them exactly more often, because Saaras often writes numbers as words.
-- **Real-time voice bot:** the all-Sarvam stack reached first audio in about 1.5 s, replied in the caller's language 19 of 20 times and cost ₹1.56 per conversation-minute. The all-Gemini stack read numbers back more accurately but took about 6.8 s.
-- **Text-to-speech:** Bulbul was as intelligible as Gemini and OpenAI voices across 10 languages and the fastest to start.
+- **Speech recognition in Indian languages:** Saaras v4 had the lowest average word error rate over 13 languages (0.149, against 0.21 for Gemini and 0.27 for OpenAI) and was the most accurate transcriber of spoken farmer questions. It often writes numbers as words, so for amounts and account digits on phone calls Gemini 3.8 Flash (94%) and Saaras v3 (81%) beat Saaras v4 with keyterms (56%). Add a number-words-to-digits step.
+- **Spoken input in front of an app:** with the same Gemini model behind it, a Saaras front end matched Gemini's own audio input on spoken farm questions, voice-note orders and spoken payment commands, and beat OpenAI's transcriber in all three.
+- **Real-time voice bot:** the all-Sarvam stack (Saaras v4, Sarvam-105B, Bulbul v4-flash) reached first audio in about 1.1 s, replied in the caller's language 18 of 20 times and cost about ₹1.42 per conversation-minute. The all-Gemini stack read numbers back more accurately but took about 6.8 s.
+- **Text-to-speech:** Bulbul v3 was as intelligible as Gemini and OpenAI voices across 10 languages; Bulbul v4-flash starts about 50 ms sooner but was slightly less clear.
 - **Translation:** Sarvam-Translate was best into Indian languages (8 of 10). Mayura garbled every decimal crore amount. Into English, Gemini, Claude and OpenAI were 6–12 chrF++ points ahead.
-- **Documents:** clean scans were a tie (~99.5%). On bad phone photos Sarvam Vision invented text that was not on the page; OpenAI models misread Indian-script names.
+- **Documents:** clean scans were a tie (~99.5%). On bad phone photos Sarvam's legacy Vision pipeline invented text that was not on the page; the newer Document AI Extract invents less but was no more accurate; OpenAI models misread Indian-script names.
 - **Chat, Q&A, clinical notes, code:** price-matched cloud models were more accurate. Sarvam-105B closes part of the gap with thinking on, at 5–46 s per answer, and sometimes returns nothing.
 - **Self-hosting:** Qwen3-30B was more accurate than Sarvam-30B (84% vs 63% on business tasks); Sarvam-30B was faster and much cheaper to feed Indian text.
 - **Token cost of Indian text:** Sarvam's tokenizer is cheapest (1.55x the English count), then Gemini (1.89x), OpenAI (2.10x), Claude (3.44x), Qwen3 (5.89x).
@@ -168,7 +169,7 @@ bought the last 9 points for about 4x the cost. Gemini 3.8 Flash prices are prom
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/pipeline-dark.webp">
-  <img alt="Pipeline: authored and public test data feed 12 suites run by 6 agents under a shared brief; identical prompts go to the Sarvam API, cloud rivals and self-hosted models; known-answer scoring with bootstrap confidence intervals writes raw outputs and result files, which build the report." src="docs/pipeline-light.webp">
+  <img alt="Pipeline: authored and public test data feed 15 suites run by 6 agents under a shared brief; identical prompts go to the Sarvam API, cloud rivals and self-hosted models; known-answer scoring with bootstrap confidence intervals writes raw outputs and result files, which build the report." src="docs/pipeline-light.webp">
 </picture>
 
 Six parallel agents built and ran the suites, all sharing one library ([`common/bench.py`](common/bench.py)) for API clients,

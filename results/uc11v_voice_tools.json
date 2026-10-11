@@ -1,0 +1,1084 @@
+{
+ "uc": "uc11v_voice_tools",
+ "title": "Voice-in tool calling: spoken Indian-language payment commands",
+ "business_question": "When a user SPEAKS 'mera 299 wala recharge kar do' (or the Tamil/Bengali equivalent) into a payments app, which speech stack gets the right action with the right arguments?",
+ "dataset": {
+  "name": "uc11 tool-calling commands, spoken",
+  "n": 50,
+  "languages": [
+   "hi",
+   "hinglish",
+   "ta",
+   "bn"
+  ],
+  "synthetic": true,
+  "source": "the 50 uc11 commands (30 base + 20 hard); spoken form reads phone numbers digit by digit and '@' as 'at the rate'; audio from macOS say (Lekha/Vani/Piya) and gemini-3.8-flash-tts voices (never Sarvam TTS); phone condition = 8 kHz band-limited + ~20 dB noise + mu-law (uc01 recipe)",
+  "license": "CC-BY-4.0",
+  "audio_s_total": 169.8
+ },
+ "systems": [
+  "gemini-3.8-flash audio-direct",
+  "gemini-3.8-flash-audio -> gemini-3.8-flash",
+  "gpt-4o-transcribe -> gemini-3.8-flash",
+  "saaras:v3 -> gemini-3.8-flash",
+  "saaras:v4 -> gemini-3.8-flash",
+  "saaras:v4 -> sarvam-105b",
+  "typed text (oracle) -> gemini-3.8-flash"
+ ],
+ "metrics": [
+  {
+   "name": "tool call exact (all 50), clean audio",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "gemini-3.8-flash audio-direct": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": {
+     "mean": 0.94,
+     "lo": 0.86,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash": {
+     "mean": 0.9,
+     "lo": 0.82,
+     "hi": 0.98,
+     "n": 50
+    },
+    "saaras:v3 -> gemini-3.8-flash": {
+     "mean": 0.98,
+     "lo": 0.94,
+     "hi": 1.0,
+     "n": 50
+    },
+    "saaras:v4 -> gemini-3.8-flash": {
+     "mean": 0.96,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 50
+    },
+    "saaras:v4 -> sarvam-105b": {
+     "mean": 0.9,
+     "lo": 0.82,
+     "hi": 0.98,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "tool call exact (all 50), phone audio",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "gemini-3.8-flash audio-direct": {
+     "mean": 0.98,
+     "lo": 0.92,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": {
+     "mean": 0.94,
+     "lo": 0.86,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash": {
+     "mean": 0.78,
+     "lo": 0.66,
+     "hi": 0.88,
+     "n": 50
+    },
+    "saaras:v3 -> gemini-3.8-flash": {
+     "mean": 0.98,
+     "lo": 0.94,
+     "hi": 1.0,
+     "n": 50
+    },
+    "saaras:v4 -> gemini-3.8-flash": {
+     "mean": 0.94,
+     "lo": 0.86,
+     "hi": 1.0,
+     "n": 50
+    },
+    "saaras:v4 -> sarvam-105b": {
+     "mean": 0.88,
+     "lo": 0.78,
+     "hi": 0.96,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "tool call exact (all 50), typed text",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "typed text (oracle) -> gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "tool call exact: fractional spoken amounts (10), clean audio",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "gemini-3.8-flash audio-direct": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": {
+     "mean": 0.8,
+     "lo": 0.5,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash": {
+     "mean": 0.7,
+     "lo": 0.4,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v3 -> gemini-3.8-flash": {
+     "mean": 0.9,
+     "lo": 0.7,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v4 -> gemini-3.8-flash": {
+     "mean": 0.9,
+     "lo": 0.7,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v4 -> sarvam-105b": {
+     "mean": 0.6,
+     "lo": 0.3,
+     "hi": 0.9,
+     "n": 10
+    }
+   }
+  },
+  {
+   "name": "tool call exact: fractional spoken amounts (10), phone audio",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "gemini-3.8-flash audio-direct": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": {
+     "mean": 0.8,
+     "lo": 0.5,
+     "hi": 1.0,
+     "n": 10
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash": {
+     "mean": 0.5,
+     "lo": 0.2,
+     "hi": 0.8,
+     "n": 10
+    },
+    "saaras:v3 -> gemini-3.8-flash": {
+     "mean": 0.9,
+     "lo": 0.7,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v4 -> gemini-3.8-flash": {
+     "mean": 0.9,
+     "lo": 0.7,
+     "hi": 1.0,
+     "n": 10
+    },
+    "saaras:v4 -> sarvam-105b": {
+     "mean": 0.7,
+     "lo": 0.4,
+     "hi": 1.0,
+     "n": 10
+    }
+   }
+  },
+  {
+   "name": "tool call exact: fractional spoken amounts (10), typed text",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "typed text (oracle) -> gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 10
+    }
+   }
+  },
+  {
+   "name": "tool call exact: other commands (40), clean audio",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "gemini-3.8-flash audio-direct": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": {
+     "mean": 0.975,
+     "lo": 0.925,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash": {
+     "mean": 0.95,
+     "lo": 0.875,
+     "hi": 1.0,
+     "n": 40
+    },
+    "saaras:v3 -> gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "saaras:v4 -> gemini-3.8-flash": {
+     "mean": 0.975,
+     "lo": 0.925,
+     "hi": 1.0,
+     "n": 40
+    },
+    "saaras:v4 -> sarvam-105b": {
+     "mean": 0.975,
+     "lo": 0.925,
+     "hi": 1.0,
+     "n": 40
+    }
+   }
+  },
+  {
+   "name": "tool call exact: other commands (40), phone audio",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "gemini-3.8-flash audio-direct": {
+     "mean": 0.975,
+     "lo": 0.925,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": {
+     "mean": 0.975,
+     "lo": 0.925,
+     "hi": 1.0,
+     "n": 40
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash": {
+     "mean": 0.85,
+     "lo": 0.75,
+     "hi": 0.95,
+     "n": 40
+    },
+    "saaras:v3 -> gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    },
+    "saaras:v4 -> gemini-3.8-flash": {
+     "mean": 0.95,
+     "lo": 0.875,
+     "hi": 1.0,
+     "n": 40
+    },
+    "saaras:v4 -> sarvam-105b": {
+     "mean": 0.925,
+     "lo": 0.85,
+     "hi": 1.0,
+     "n": 40
+    }
+   }
+  },
+  {
+   "name": "tool call exact: other commands (40), typed text",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "typed text (oracle) -> gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 40
+    }
+   }
+  },
+  {
+   "name": "tool call exact: hard 20, clean audio",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "gemini-3.8-flash audio-direct": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": {
+     "mean": 0.95,
+     "lo": 0.85,
+     "hi": 1.0,
+     "n": 20
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash": {
+     "mean": 0.85,
+     "lo": 0.7,
+     "hi": 1.0,
+     "n": 20
+    },
+    "saaras:v3 -> gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "saaras:v4 -> gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "saaras:v4 -> sarvam-105b": {
+     "mean": 0.9,
+     "lo": 0.75,
+     "hi": 1.0,
+     "n": 20
+    }
+   }
+  },
+  {
+   "name": "tool call exact: hard 20, phone audio",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "gemini-3.8-flash audio-direct": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash": {
+     "mean": 0.75,
+     "lo": 0.55,
+     "hi": 0.9,
+     "n": 20
+    },
+    "saaras:v3 -> gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "saaras:v4 -> gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    },
+    "saaras:v4 -> sarvam-105b": {
+     "mean": 0.95,
+     "lo": 0.85,
+     "hi": 1.0,
+     "n": 20
+    }
+   }
+  },
+  {
+   "name": "tool call exact: hard 20, typed text",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "typed text (oracle) -> gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 20
+    }
+   }
+  },
+  {
+   "name": "tool call exact, payee vowel-spelling tolerant (all 50), clean audio",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "gemini-3.8-flash audio-direct": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": {
+     "mean": 0.94,
+     "lo": 0.86,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash": {
+     "mean": 0.94,
+     "lo": 0.86,
+     "hi": 1.0,
+     "n": 50
+    },
+    "saaras:v3 -> gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "saaras:v4 -> gemini-3.8-flash": {
+     "mean": 0.98,
+     "lo": 0.94,
+     "hi": 1.0,
+     "n": 50
+    },
+    "saaras:v4 -> sarvam-105b": {
+     "mean": 0.92,
+     "lo": 0.84,
+     "hi": 0.98,
+     "n": 50
+    }
+   }
+  },
+  {
+   "name": "tool call exact, payee vowel-spelling tolerant (all 50), phone audio",
+   "higher_is_better": true,
+   "unit": "fraction",
+   "values": {
+    "gemini-3.8-flash audio-direct": {
+     "mean": 0.98,
+     "lo": 0.92,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": {
+     "mean": 0.96,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 50
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash": {
+     "mean": 0.82,
+     "lo": 0.72,
+     "hi": 0.92,
+     "n": 50
+    },
+    "saaras:v3 -> gemini-3.8-flash": {
+     "mean": 1.0,
+     "lo": 1.0,
+     "hi": 1.0,
+     "n": 50
+    },
+    "saaras:v4 -> gemini-3.8-flash": {
+     "mean": 0.96,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 50
+    },
+    "saaras:v4 -> sarvam-105b": {
+     "mean": 0.9,
+     "lo": 0.8,
+     "hi": 0.98,
+     "n": 50
+    }
+   }
+  }
+ ],
+ "empty_transcripts_of_100": {
+  "saaras:v4": 0,
+  "saaras:v3": 0,
+  "gemini-3.8-flash-audio": 2,
+  "gpt-4o-transcribe": 0
+ },
+ "per_language": {
+  "exact (clean)": {
+   "hi": {
+    "gemini-3.8-flash audio-direct": 1.0,
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": 0.9230769230769231,
+    "gpt-4o-transcribe -> gemini-3.8-flash": 0.8461538461538461,
+    "saaras:v3 -> gemini-3.8-flash": 1.0,
+    "saaras:v4 -> gemini-3.8-flash": 1.0,
+    "saaras:v4 -> sarvam-105b": 1.0
+   },
+   "hinglish": {
+    "gemini-3.8-flash audio-direct": 1.0,
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": 1.0,
+    "gpt-4o-transcribe -> gemini-3.8-flash": 1.0,
+    "saaras:v3 -> gemini-3.8-flash": 1.0,
+    "saaras:v4 -> gemini-3.8-flash": 1.0,
+    "saaras:v4 -> sarvam-105b": 0.8461538461538461
+   },
+   "ta": {
+    "gemini-3.8-flash audio-direct": 1.0,
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": 0.9166666666666666,
+    "gpt-4o-transcribe -> gemini-3.8-flash": 0.9166666666666666,
+    "saaras:v3 -> gemini-3.8-flash": 1.0,
+    "saaras:v4 -> gemini-3.8-flash": 0.9166666666666666,
+    "saaras:v4 -> sarvam-105b": 0.9166666666666666
+   },
+   "bn": {
+    "gemini-3.8-flash audio-direct": 1.0,
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": 0.9166666666666666,
+    "gpt-4o-transcribe -> gemini-3.8-flash": 0.8333333333333334,
+    "saaras:v3 -> gemini-3.8-flash": 0.9166666666666666,
+    "saaras:v4 -> gemini-3.8-flash": 0.9166666666666666,
+    "saaras:v4 -> sarvam-105b": 0.8333333333333334
+   }
+  },
+  "exact (phone)": {
+   "hi": {
+    "gemini-3.8-flash audio-direct": 1.0,
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": 0.9230769230769231,
+    "gpt-4o-transcribe -> gemini-3.8-flash": 0.6923076923076923,
+    "saaras:v3 -> gemini-3.8-flash": 1.0,
+    "saaras:v4 -> gemini-3.8-flash": 1.0,
+    "saaras:v4 -> sarvam-105b": 1.0
+   },
+   "hinglish": {
+    "gemini-3.8-flash audio-direct": 1.0,
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": 1.0,
+    "gpt-4o-transcribe -> gemini-3.8-flash": 0.8461538461538461,
+    "saaras:v3 -> gemini-3.8-flash": 1.0,
+    "saaras:v4 -> gemini-3.8-flash": 1.0,
+    "saaras:v4 -> sarvam-105b": 0.9230769230769231
+   },
+   "ta": {
+    "gemini-3.8-flash audio-direct": 1.0,
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": 1.0,
+    "gpt-4o-transcribe -> gemini-3.8-flash": 0.8333333333333334,
+    "saaras:v3 -> gemini-3.8-flash": 1.0,
+    "saaras:v4 -> gemini-3.8-flash": 0.9166666666666666,
+    "saaras:v4 -> sarvam-105b": 0.9166666666666666
+   },
+   "bn": {
+    "gemini-3.8-flash audio-direct": 0.9166666666666666,
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": 0.8333333333333334,
+    "gpt-4o-transcribe -> gemini-3.8-flash": 0.75,
+    "saaras:v3 -> gemini-3.8-flash": 0.9166666666666666,
+    "saaras:v4 -> gemini-3.8-flash": 0.8333333333333334,
+    "saaras:v4 -> sarvam-105b": 0.6666666666666666
+   }
+  }
+ },
+ "speed": {
+  "saaras:v4": {
+   "p50_ms": 462.8560543060303,
+   "p95_ms": 17735.018014907837
+  },
+  "saaras:v3": {
+   "p50_ms": 422.88684844970703,
+   "p95_ms": 5192.646741867065
+  },
+  "gemini-3.8-flash-audio": {
+   "p50_ms": 2734.053134918213,
+   "p95_ms": 3660.45880317688
+  },
+  "gpt-4o-transcribe": {
+   "p50_ms": 869.4887161254883,
+   "p95_ms": 1296.0939407348633
+  },
+  "gemini-3.8-flash audio-direct": {
+   "p50_ms": 3135.6301307678223
+  },
+  "gemini-3.8-flash-audio -> gemini-3.8-flash": {
+   "p50_ms": 2381.3438415527344
+  },
+  "gpt-4o-transcribe -> gemini-3.8-flash": {
+   "p50_ms": 2535.5870723724365
+  },
+  "saaras:v3 -> gemini-3.8-flash": {
+   "p50_ms": 2468.947172164917
+  },
+  "saaras:v4 -> gemini-3.8-flash": {
+   "p50_ms": 2291.8219566345215
+  },
+  "saaras:v4 -> sarvam-105b": {
+   "p50_ms": 336.7149829864502
+  },
+  "typed text (oracle) -> gemini-3.8-flash": {
+   "p50_ms": 2337.100028991699
+  }
+ },
+ "usage": {
+  "saaras:v4": {
+   "audio_s": 339.7,
+   "calls": 100,
+   "est_cost_inr_list_price": 2.83
+  },
+  "saaras:v3": {
+   "audio_s": 339.7,
+   "calls": 100,
+   "est_cost_inr_list_price": 2.83
+  },
+  "gemini-3.8-flash-audio": {
+   "audio_s": 339.7,
+   "calls": 100
+  },
+  "gpt-4o-transcribe": {
+   "audio_s": 339.7,
+   "calls": 100
+  },
+  "sarvam-105b (tools)": {
+   "calls": 100
+  },
+  "gemini-3.8-flash-tts (test audio)": {
+   "clips": 32
+  }
+ },
+ "examples": [
+  {
+   "id": "h9",
+   "spoken_text": "9 8 1 2 3 4 5 6 7 0 पर पौने दो हज़ार रुपये ट्रांसफर करो",
+   "gold": {
+    "name": "transfer_upi",
+    "args": {
+     "payee": "9812345670",
+     "amount": 1750
+    }
+   },
+   "phone": {
+    "saaras:v4 -> gemini-3.8-flash": {
+     "transcript": "नौ आठ एक दो तीन चार पाँच छः सात शून्य पर पौने दो हज़ार रुपये ट्रांसफर करो।",
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "9812345670",
+       "amount": 1750
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "saaras:v3 -> gemini-3.8-flash": {
+     "transcript": "नौ आठ एक दो तीन चार पाँच छह सात शून्य पर पौने दो हज़ार रुपये ट्रांसफर करो।",
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "amount": 1750,
+       "payee": "9812345670"
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "saaras:v4 -> sarvam-105b": {
+     "transcript": "नौ आठ एक दो तीन चार पाँच छः सात शून्य पर पौने दो हज़ार रुपये ट्रांसफर करो।",
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "9812345670",
+       "amount": 1750
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": {
+     "transcript": "9812345670 पर पौने दो हजार रुपए ट्रांसफर करो",
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "amount": 1750,
+       "payee": "9812345670"
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash": {
+     "transcript": "10434567 पर पौने दो हजार रुपए ट्रांसफर करो।",
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "10434567",
+       "amount": 1750
+      },
+      "n_calls": 1
+     },
+     "exact": false
+    },
+    "gemini-3.8-flash audio-direct": {
+     "transcript": null,
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "9812345670",
+       "amount": 1750
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    }
+   }
+  },
+  {
+   "id": "x9",
+   "spoken_text": "paune teen sau ka recharge karo",
+   "gold": {
+    "name": "recharge",
+    "args": {
+     "amount": 275
+    }
+   },
+   "phone": {
+    "saaras:v4 -> gemini-3.8-flash": {
+     "transcript": "पौने तीन सौ का रिचार्ज करो।",
+     "call": {
+      "name": "recharge",
+      "args": {
+       "amount": 275
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "saaras:v3 -> gemini-3.8-flash": {
+     "transcript": "पौने तीन सौ का रिचार्ज करो।",
+     "call": {
+      "name": "recharge",
+      "args": {
+       "amount": 275
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "saaras:v4 -> sarvam-105b": {
+     "transcript": "पौने तीन सौ का रिचार्ज करो।",
+     "call": {
+      "name": "recharge",
+      "args": {
+       "amount": 275
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": {
+     "transcript": "paune 300 ka recharge karo",
+     "call": {
+      "name": "recharge",
+      "args": {
+       "amount": 275
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "gemini-3.8-flash audio-direct": {
+     "transcript": null,
+     "call": {
+      "name": "recharge",
+      "args": {
+       "amount": 275
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash": {
+     "transcript": "पौने तीन सौ का रीचार्ज करो।",
+     "call": {
+      "name": "recharge",
+      "args": {
+       "amount": 275
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    }
+   }
+  },
+  {
+   "id": "b8",
+   "spoken_text": "সাড়ে তিনশো টাকার রিচার্জ করো",
+   "gold": {
+    "name": "recharge",
+    "args": {
+     "amount": 350
+    }
+   },
+   "phone": {
+    "saaras:v4 -> gemini-3.8-flash": {
+     "transcript": "সাড়ে তিনশো টাকা রিচার্জ করো।",
+     "call": {
+      "name": "recharge",
+      "args": {
+       "amount": 350
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "saaras:v3 -> gemini-3.8-flash": {
+     "transcript": "সাড়ে তিনশো টাকা রিচার্জ করো।",
+     "call": {
+      "name": "recharge",
+      "args": {
+       "amount": 350
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "saaras:v4 -> sarvam-105b": {
+     "transcript": "সাড়ে তিনশো টাকা রিচার্জ করো।",
+     "call": {
+      "name": "recharge",
+      "args": {
+       "amount": 350
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": {
+     "transcript": "৩৫০ টাকা রিচার্জ কর",
+     "call": {
+      "name": "recharge",
+      "args": {
+       "amount": 350
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash": {
+     "transcript": "সাড়ে তিনশো টাকা রিচার্জ করো।",
+     "call": {
+      "name": "recharge",
+      "args": {
+       "amount": 350
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "gemini-3.8-flash audio-direct": {
+     "transcript": null,
+     "call": {
+      "name": "recharge",
+      "args": {
+       "amount": 350
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    }
+   }
+  },
+  {
+   "id": "x7",
+   "spoken_text": "sava sau rupaye bhejo shopkeeper at the rate ybl ko",
+   "gold": {
+    "name": "transfer_upi",
+    "args": {
+     "payee": "shopkeeper@ybl",
+     "amount": 125
+    }
+   },
+   "phone": {
+    "saaras:v4 -> gemini-3.8-flash": {
+     "transcript": "सवा सौ रुपये भेजो शॉपकीपर @ YBL को।",
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "amount": 125,
+       "payee": "shopkeeper@ybl"
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "saaras:v3 -> gemini-3.8-flash": {
+     "transcript": "₹125 भेजो शॉपकीपर @ वाईबीएल को।",
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "shopkeeper@ybl",
+       "amount": 125
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "saaras:v4 -> sarvam-105b": {
+     "transcript": "सवा सौ रुपये भेजो शॉपकीपर @ YBL को।",
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "@YBL",
+       "amount": 125
+      },
+      "n_calls": 1
+     },
+     "exact": false
+    },
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": {
+     "transcript": "Sawa sau rupaye bhejo shopkeeper@ybl ko",
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "shopkeeper@ybl",
+       "amount": 125
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash": {
+     "transcript": "सवा सौ रुपये भेजो shopkeeper@ybl को.",
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "amount": 125,
+       "payee": "shopkeeper@ybl"
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "gemini-3.8-flash audio-direct": {
+     "transcript": null,
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "amount": 125,
+       "payee": "shopkeeper@ybl"
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    }
+   }
+  },
+  {
+   "id": "b7",
+   "spoken_text": "dipak at the rate paytm-এ দেড় হাজার টাকা পাঠাও",
+   "gold": {
+    "name": "transfer_upi",
+    "args": {
+     "payee": "dipak@paytm",
+     "amount": 1500
+    }
+   },
+   "phone": {
+    "saaras:v4 -> gemini-3.8-flash": {
+     "transcript": "দীপাক @ পেটিএম-এ দেড় হাজার টাকা পাঠাও।",
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "deepak@paytm",
+       "amount": 1500
+      },
+      "n_calls": 1
+     },
+     "exact": false
+    },
+    "saaras:v3 -> gemini-3.8-flash": {
+     "transcript": "দীপক @ পেটিএম এ ₹1500 পাঠাও।",
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "amount": 1500,
+       "payee": "deepak@paytm"
+      },
+      "n_calls": 1
+     },
+     "exact": false
+    },
+    "saaras:v4 -> sarvam-105b": {
+     "transcript": "দীপাক @ পেটিএম-এ দেড় হাজার টাকা পাঠাও।",
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "payee": "deepak@paytm",
+       "amount": 1500
+      },
+      "n_calls": 1
+     },
+     "exact": false
+    },
+    "gemini-3.8-flash audio-direct": {
+     "transcript": null,
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "amount": 1500,
+       "payee": "dipak@paytm"
+      },
+      "n_calls": 1
+     },
+     "exact": true
+    },
+    "gemini-3.8-flash-audio -> gemini-3.8-flash": {
+     "transcript": "দীপক @paytm এ 1500 টাকা পাঠাও",
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "amount": 1500,
+       "payee": "deepak@paytm"
+      },
+      "n_calls": 1
+     },
+     "exact": false
+    },
+    "gpt-4o-transcribe -> gemini-3.8-flash": {
+     "transcript": "দীপক @Paytm-এ দেড়হাজার টাকা পাঠাও।",
+     "call": {
+      "name": "transfer_upi",
+      "args": {
+       "amount": 1500,
+       "payee": "deepak@paytm"
+      },
+      "n_calls": 1
+     },
+     "exact": false
+    }
+   }
+  }
+ ],
+ "findings": [
+  "Same tool model (gemini-3.8-flash, think off), different ears. Exact tool+args on clean / phone-line audio: saaras:v3 98% / 98%; saaras:v4 96% / 94%; gemini-3.8-flash-audio 94% / 94%; gpt-4o-transcribe 90% / 78%. Typed-text ceiling is 100%. Saaras v3 lost only 1 command in 50 on either condition, and that miss was a name-spelling ambiguity; gpt-4o-transcribe degraded most on the phone line (-12 points).",
+  "Spoken fractional amounts (dhai, paune, saadhe, dedh, sava; 10 commands), clean / phone: saaras:v3 90% / 90%; saaras:v4 90% / 90%; gemini-3.8-flash-audio 80% / 80%; gpt-4o-transcribe 70% / 50%. Saaras keeps 'पौने दो हज़ार' as words, so the LLM resolves it correctly. Gemini's transcript 'helpfully' normalises numbers and turned 'पौने दो हज़ार' (1750) into '₹2,000'. Its other normalisations ('paune 300', 'dedh hazaar' -> '1500') survived. gpt-4o-transcribe's misses on these commands were mostly the phone number or UPI ID in the same sentence. On the phone line it once transcribed Hinglish into Urdu script and dropped the number entirely.",
+  "Gemini with audio in and function calling directly (no transcript step) tied for the best stack: 100% clean, 98% phone, 100% on fractional amounts. It is one call, at a p50 of 3.1 s.",
+  "The all-Sarvam stack (saaras:v4 -> sarvam-105b) scored 90% clean / 88% phone, vs 96% / 94% when the same saaras:v4 transcripts go to Gemini. So the gap is the LLM, not the ears. Sarvam-105b dropped the name from UPI IDs that Saaras writes as 'शॉपकीपर @YBL' or 'রিনা @ybl' (calling payee '@YBL' / 'ybl'), and got 60% of the fractional-amount commands exactly right on clean audio. Most of those misses were the UPI name; one was the amount itself ('साढ़े चार हज़ार' -> 4000). Its strength is speed: p50 0.34 s for the tool call, vs ~2.3 s for gemini-3.8-flash.",
+  "Spoken UPI IDs are inherently ambiguous. Every ASR wrote 'dipak' as 'deepak' and 'rina' as 'reena', and no stack can know the spelling from speech. With vowel-spelling tolerance on the name part, exact scores rise by 2-6 points. A real app must confirm the payee against the contact list or a VPA lookup before paying.",
+  "Empty transcripts turn into invented actions. gemini-3.8-flash returned an empty transcript for 2 of 100 clips. The tool model, told to always call a tool, then invented one (pay electricity bill, check bank balance) instead of asking the user to repeat. Voice apps need an 'empty or low-confidence -> re-prompt' guard before the LLM.",
+  "Saaras latency: p50 463 ms (v4) / 423 ms (v3), but with a long tail (p95 17.7 s / 5.2 s). Gemini audio transcription p50 2.7 s, gpt-4o-transcribe 0.9 s."
+ ],
+ "caveats": [
+  "The speech is synthetic (macOS say Lekha/Vani/Piya and gemini-3.8-flash-tts voices; never Sarvam TTS), read once per command. Real callers bring accents, hesitations and background speech that TTS lacks, so absolute scores are optimistic.",
+  "A transcript audit found 5 clips where the TTS itself was wrong: a `say` voice reordered or dropped phone digits, or could not say an English UPI ID. All four ASR systems agreed on the wrong words. Those clips were reworded or re-voiced and re-run (SPOKEN_OVERRIDE / VOICE_OVERRIDE in run.py). In t7, the Vani voice reads 199 as 'ஒன்று நூறு தொண்ணூற்று ஒன்பது'. That is unidiomatic but intelligible, so it was kept: saaras:v4 hears 1199 there.",
+  "The phone condition is simulated (8 kHz band-limit, ~20 dB SNR white noise, mu-law), as in uc01. It is not a real telephony capture.",
+  "n=50 commands per condition (10 with fractional amounts), so differences of a few commands are within noise. Read the pipeline ranking as tiers, not exact positions.",
+  "The Gemini transcription prompt asks for a verbatim transcript in the spoken language and script. Saaras and gpt-4o-transcribe get only a language code. No system was told how to write numbers."
+ ],
+ "verdict": "For a voice payments assistant in Hindi, Hinglish, Tamil or Bengali, ears matter more than the LLM, and the cheapest strong stack is Saaras (v3 here, v4 close behind) feeding a capable tool-calling LLM: it keeps spoken fractions like 'paune do hazaar' as words and survives phone-line audio. Gemini-3.8-flash taking the audio directly with function calling is equally accurate and simplest to build. Avoid gpt-4o-transcribe for Indian-language phone audio. The all-Sarvam stack (saaras:v4 -> sarvam-105b) is the fastest but loses ~6 points to UPI-ID and fraction mistakes in the LLM step. Whatever you pick, confirm payees against contacts, and re-prompt on empty transcripts instead of letting the LLM guess.",
+ "updated": "2026-10-11 23:54:56"
+}

@@ -3,3 +3,8 @@
 23:39:00 stt job failed, rerun retries: 429 {"error":{"message":"Rate limit exceeded.","code":"rate_limit_exceeded_error","request_id":"20261011_58210890-2706-406b-8496-d64052981477"}}
 23:41:49 stt job failed, rerun retries: 429 {"error":{"message":"Rate limit exceeded.","code":"rate_limit_exceeded_error","request_id":"20261011_450718c4-3ae0-4390-8462-a69839bde22b"}}
 23:42:07 answer jobs 906
+23:47:29 answer job failed, rerun retries: 429 {"error":{"message":"Rate limit exceeded","code":"rate_limit_exceeded_error","request_id":"20261011_7b9c8e0d-6709-43a9-bb72-ade7d224688d"}}
+23:47:31 answer job failed, rerun retries: 429 {"error":{"message":"Rate limit exceeded","code":"rate_limit_exceeded_error","request_id":"20261011_b629b031-a1e1-4e3d-8db5-dec2c4fb23d1"}}
+23:47:36 answer job failed, rerun retries: 429 {"error":{"message":"Rate limit exceeded","code":"rate_limit_exceeded_error","request_id":"20261011_60935df5-36fa-4a66-8797-963750d26414"}}
+23:50:50 stt jobs 2
+23:50:51 answer jobs 7

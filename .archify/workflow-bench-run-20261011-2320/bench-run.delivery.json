@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "receiptId": "4e5d2d43-ae71-49e5-aa3d-4622c939aa3e",
+  "receiptId": "da00bdbe-84d9-4b6a-b8cc-19960ca6b0fc",
   "status": "current",
   "command": "deliver",
   "type": "workflow",
   "input": "~/sarvam-bench/.archify/workflow-bench-run-20261011-2320/candidate.json",
   "output": "~/sarvam-bench/.archify/workflow-bench-run-20261011-2320/bench-run.html",
   "specification": {
-    "sha256": "121587a9c578f6fc9f0e17418314472dcedaaf2dd9e3101ca54de0995d89e928",
+    "sha256": "341f41ec08767ae48cd6e2b8a0cb26774938b8367bf784fa5c07fc876728a938",
     "bytes": 4023
   },
   "artifact": {
-    "sha256": "75d29f375c68c396a6d717ccf31587bca28bd91d6c4d8d450f85f60425cf917b",
+    "sha256": "d2f022d87a8cf7a46e0e4ba35f8aa41e440e1eb058f0c21e525b4f7bb0b69a9a",
     "bytes": 760515
   }
 }
