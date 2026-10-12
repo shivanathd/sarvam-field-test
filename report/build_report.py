@@ -603,6 +603,7 @@ def cost_section():
         acc = (m6[k6]["mean"] + m8[k8]["mean"]) / 2; cost = (c6 + c8) / 2 * 1000
         vpts.append({"c": name, "idx": acc, "cost": cost, "local": False, "sub": False,
                      "tip": f'{pretty(name)}: {acc:.0%} average task accuracy on phone audio (farm questions {m6[k6]["mean"]:.0%}, voice-note orders {m8[k8]["mean"]:.0%}), ₹{cost:,.1f} per 1,000 spoken requests'})
+    cost_section.speech, cost_section.spoken = spts, vpts  # reused by make_readme.py
     vg, vW, vH = scatter_svg(vpts, "Cost per 1,000 spoken requests (₹, log scale: transcription + answering step)", 0.6)
     scatter += (f'<figure class="chart"><figcaption><b>Spoken tasks: accuracy against cost, end to end</b>'
                 f'<span class="dir">up and to the left is better</span></figcaption><div class="scroll"><svg viewBox="0 0 {vW} {vH}" role="img" '

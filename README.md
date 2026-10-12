@@ -103,6 +103,35 @@ October 2026 list prices at ₹96.61/US$.
 Claude Haiku 5.5 was the best value; Sarvam-105B cost about the same but was about 10 points less accurate; Gemini 3.8 Flash
 bought the last 9 points for about 4x the cost. Gemini 3.8 Flash prices are promotional until 31 Dec 2026 and double after.
 
+Speech models have no text-test score, so they get their own comparisons.
+
+**Speech recognition:** accuracy is 1 minus the word error rate over 13 Indian languages of real FLEURS speech (Sindhi left
+out); cost is list price per audio hour (Saaras v4 priced as v3; Gemini from its measured tokens).
+
+| Speech-to-text | Word accuracy | Cost per audio hour |
+|---|---|---|
+| Saaras v4 transcribe mode | 85% | ₹30 |
+| Saaras v3 transcribe mode | 83% | ₹30 |
+| Gemini 3.8 Flash | 79% | ₹12 |
+| GPT-4o transcribe | 73% | ₹35 |
+| Whisper large-v3-turbo (local) | 25% | self-hosted |
+| Whisper (OpenAI API) | 21% | ₹35 |
+
+**Spoken tasks, end to end:** accuracy is the average of two phone-audio tests (farmer questions answered right, WhatsApp
+voice notes turned into exactly the right order); cost adds transcription and the answering step, per 1,000 spoken requests.
+
+| Pipeline | Task accuracy | Cost per 1,000 spoken requests |
+|---|---|---|
+| Gemini 3.8 Flash, audio in | 97% | ₹114 |
+| Saaras v4 → Gemini 3.8 Flash | 94% | ₹148 |
+| Gemini 3.8 Flash transcript → Gemini 3.8 Flash | 92% | ₹119 |
+| all-Sarvam (Saaras v4 → Sarvam-105B) | 88% | ₹135 |
+| Saaras v3 → Gemini 3.8 Flash | 87% | ₹148 |
+| GPT-4o transcribe → Gemini 3.8 Flash | 80% | ₹155 |
+
+Saaras v4 is the most accurate standalone transcriber, but sending the audio straight to Gemini 3.8 Flash was slightly more
+accurate and cheaper end to end. All six pipelines cost ₹114–155 per 1,000 requests, so accuracy should decide.
+
 ## Use-case map
 
 | Job | Who needs it | Recommended | Evidence |

@@ -36,6 +36,11 @@ for uc, d in b.R.items():
                     f"{'Authored for this benchmark' if ds.get('synthetic') else 'Public'} | {ds.get('license', '')} |")
 
 sc_i, co_i = b.intelligence()
+b.cost_section()
+speech_md = "\n".join(f"| {b.pretty(p['c'])} | {p['idx']:.0%} | " + (f"₹{p['cost']:,.0f}" if p['cost'] else "self-hosted") + " |"
+                      for p in sorted(b.cost_section.speech, key=lambda p: -p['idx']))
+spoken_md = "\n".join(f"| {b.pretty(p['c'])} | {p['idx']:.0%} | ₹{p['cost']:,.0f} |"
+                       for p in sorted(b.cost_section.spoken, key=lambda p: -p['idx']))
 intel = []
 for c, sc in sorted(sc_i.items(), key=lambda kv: -sum(v for v, _, _ in kv[1].values()) / len(kv[1])):
     if len(sc) < 5: continue
@@ -154,6 +159,25 @@ October 2026 list prices at ₹{b.USD_INR}/US$.
 
 Claude Haiku 5.5 was the best value; Sarvam-105B cost about the same but was about 10 points less accurate; Gemini 3.8 Flash
 bought the last 9 points for about 4x the cost. Gemini 3.8 Flash prices are promotional until 31 Dec 2026 and double after.
+
+Speech models have no text-test score, so they get their own comparisons.
+
+**Speech recognition:** accuracy is 1 minus the word error rate over 13 Indian languages of real FLEURS speech (Sindhi left
+out); cost is list price per audio hour (Saaras v4 priced as v3; Gemini from its measured tokens).
+
+| Speech-to-text | Word accuracy | Cost per audio hour |
+|---|---|---|
+{speech_md}
+
+**Spoken tasks, end to end:** accuracy is the average of two phone-audio tests (farmer questions answered right, WhatsApp
+voice notes turned into exactly the right order); cost adds transcription and the answering step, per 1,000 spoken requests.
+
+| Pipeline | Task accuracy | Cost per 1,000 spoken requests |
+|---|---|---|
+{spoken_md}
+
+Saaras v4 is the most accurate standalone transcriber, but sending the audio straight to Gemini 3.8 Flash was slightly more
+accurate and cheaper end to end. All six pipelines cost ₹114–155 per 1,000 requests, so accuracy should decide.
 
 ## Use-case map
 
