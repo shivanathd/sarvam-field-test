@@ -472,9 +472,18 @@ def scatter_svg(pts, xlabel, ymin):
     Labels are placed greedily (right, left, above, below) to avoid dots and earlier labels."""
     W, H, L, T, B, R_ = 880, 440, 150, 24, 50, 170
     xs = [p["cost"] for p in pts if p["cost"]]
-    lo, hi = math.floor(math.log10(min(xs))), math.ceil(math.log10(max(xs)))
-    if hi == lo: hi += 1
-    X = lambda v: L + (math.log10(v) - lo) / (hi - lo) * (W - L - R_)
+    linear = max(xs) / min(xs) < 3  # narrow cost range: a zoomed linear axis spreads the points out
+    if linear:
+        span = nice_top((max(xs) - min(xs)) * 1.6) / 4
+        x0 = math.floor(min(xs) * 0.97 / span) * span; x1 = math.ceil(max(xs) * 1.03 / span) * span
+        X = lambda v: L + (v - x0) / (x1 - x0) * (W - L - R_)
+        xticks = [x0 + span * i for i in range(int(round((x1 - x0) / span)) + 1)]
+        xlabel = xlabel.replace("log scale", "linear scale")
+    else:
+        lo, hi = math.floor(math.log10(min(xs))), math.ceil(math.log10(max(xs)))
+        if hi == lo: hi += 1
+        X = lambda v: L + (math.log10(v) - lo) / (hi - lo) * (W - L - R_)
+        xticks = [10 ** e for e in range(lo, hi + 1)]
     Y = lambda v: T + (1 - (v - ymin) / (1 - ymin)) * (H - T - B)
     g = []
     step = 0.2 if ymin <= 0.4 else 0.1
@@ -482,8 +491,8 @@ def scatter_svg(pts, xlabel, ymin):
     while t_ <= 1.0001:
         g.append(f'<line x1="{L}" x2="{W - R_}" y1="{Y(t_):.1f}" y2="{Y(t_):.1f}" class="grid"/><text x="{L - 8}" y="{Y(t_) + 4:.1f}" class="tick" text-anchor="end">{t_:.0%}</text>')
         t_ += step
-    for e in range(lo, hi + 1):
-        g.append(f'<line x1="{X(10 ** e):.1f}" x2="{X(10 ** e):.1f}" y1="{T}" y2="{H - B}" class="grid"/><text x="{X(10 ** e):.1f}" y="{H - B + 18}" class="tick" text-anchor="middle">₹{10 ** e:,.0f}</text>')
+    for v in xticks:
+        g.append(f'<line x1="{X(v):.1f}" x2="{X(v):.1f}" y1="{T}" y2="{H - B}" class="grid"/><text x="{X(v):.1f}" y="{H - B + 18}" class="tick" text-anchor="middle">₹{v:,.0f}</text>')
     if any(not p["cost"] for p in pts):
         g.append(f'<rect x="10" y="{T}" width="{L - 70}" height="{H - T - B}" class="strip"/><text x="{(L - 60) / 2 + 10:.0f}" y="{H - B + 18}" class="tick" text-anchor="middle">own hardware</text>')
     g.append(f'<text x="{(L + W - R_) / 2:.0f}" y="{H - 8}" class="tick" text-anchor="middle">{E(xlabel)}</text>')
@@ -498,12 +507,14 @@ def scatter_svg(pts, xlabel, ymin):
     for p in sorted(pts, key=lambda p: -p["idx"]):
         lab = pretty(p["c"]); w = 7.2 * len(lab); x, y = p["x"], p["y"]
         cands = [(x + 11, y + 4, "start"), (x - 11, y + 4, "end"), (x - w / 2, y - 13, "start"), (x - w / 2, y + 21, "start"),
-                 (x + 11, y - 14, "start"), (x + 11, y + 22, "start"), (x - 11, y - 14, "end"), (x - 11, y + 22, "end")]
+                 (x + 11, y - 14, "start"), (x + 11, y + 22, "start"), (x - 11, y - 14, "end"), (x - 11, y + 22, "end"),
+                 (x + 11, y - 28, "start"), (x + 11, y + 36, "start"), (x - 11, y - 28, "end"), (x - 11, y + 36, "end")]
         def box(c):
             lx, ly, anc = c
             x0 = lx if anc == "start" else lx - w
             return (x0, ly - 11, x0 + w, ly + 3)
-        pick = next((c for c in cands if not hit(box(c)) and box(c)[2] < W - 4 and box(c)[0] > 2 and box(c)[1] > 2), cands[0])
+        left = (L + 2) if p["cost"] else 2  # priced points keep their labels inside the plot, clear of the y-axis ticks
+        pick = next((c for c in cands if not hit(box(c)) and box(c)[2] < W - 4 and box(c)[0] > left and box(c)[1] > 2), cands[0])
         placed.append(box(pick))
         g.append(f'<g class="row" data-tip="{E(p["tip"])}"><circle cx="{x:.1f}" cy="{y:.1f}" r="12" class="hit"/>'
                  f'<circle cx="{x:.1f}" cy="{y:.1f}" r="6.5" class="dot v-{vendor(p["c"])}{" local" if p["local"] else ""}{" sub" if p["sub"] else ""}"/>'
@@ -559,6 +570,48 @@ def cost_section():
                 '<p class="note">Accuracy is 1 − word error rate, averaged over 13 Indian languages of real FLEURS speech (Sindhi left out: Saaras writes it in another script). '
                 'Saaras at ₹30 per hour (v4 assumed to cost the same as v3; Sarvam lists no separate v4 price); OpenAI at $0.006 per minute; '
                 'Gemini from its measured audio and output tokens at list price. Speech models are not on the text chart above because they have no text-test score.</p></figure>')
+
+    # spoken tasks: end-to-end accuracy against cost per 1,000 spoken requests (phone audio)
+    stt_rate = {"saaras": 30, "gemini": per_hour["gemini-3.8-flash"], "gpt": per_hour["gpt-4o-transcribe"]}  # ₹ per audio hour
+    tok = lambda m, i, o: (i * PRICE[m][0] + o * PRICE[m][1]) / 1e6  # ₹
+    a6, a8 = R["uc06v_offline_agri_voice"], R["uc08v_voice_orders"]
+    u6, u8 = a6["usage"], a8["usage"]
+    sec6 = u6["saaras:v4"]["audio_s"] / u6["saaras:v4"]["calls"]          # audio seconds per question
+    sec8 = u8["asr:saaras-v4-codemix"]["audio_s"] / u8["asr:saaras-v4-codemix"]["calls"]
+    g6 = u6["gemini-3.8-flash (answering)"]; ans6_g = tok("gemini-3.8-flash", g6["in_tok"], g6["out_tok"]) / g6["calls"]
+    ans6_s = u6["sarvam-105b (answering)"]["inr_list_price"] / u6["sarvam-105b (answering)"]["calls"]
+    def ex8(k, m="gemini-3.8-flash"):
+        x = u8["extract:" + k]; return tok(m, x["in_tok"], x["out_tok"]) / x["calls"]
+    stt = lambda kind, sec: stt_rate[kind] * sec / 3600
+    pipes = [  # (name, uc06v key, uc08v key, ₹ per uc06v task, ₹ per uc08v task)
+        ("saaras:v4 -> gemini-3.8-flash", "saaras:v4 -> gemini-3.8-flash [phone]", "phone: saaras-v4-codemix",
+         stt("saaras", sec6) + ans6_g, stt("saaras", sec8) + ex8("saaras-v4-codemix")),
+        ("saaras:v3 -> gemini-3.8-flash", "saaras:v3 -> gemini-3.8-flash [phone]", "phone: saaras-v3-codemix",
+         stt("saaras", sec6) + ans6_g, stt("saaras", sec8) + ex8("saaras-v3-codemix")),
+        ("gemini-3.8-flash-audio -> gemini-3.8-flash", "gemini-3.8-flash -> gemini-3.8-flash [phone]", "phone: gemini-3.8-flash",
+         stt("gemini", sec6) + ans6_g, stt("gemini", sec8) + ex8("gemini-3.8-flash")),
+        ("gpt-4o-transcribe -> gemini-3.8-flash", "gpt-4o-transcribe -> gemini-3.8-flash [phone]", "phone: gpt-4o-transcribe",
+         stt("gpt", sec6) + ans6_g, stt("gpt", sec8) + ex8("gpt-4o-transcribe")),
+        ("gemini-3.8-flash audio-direct", "audio -> gemini-3.8-flash [phone]", "phone: gemini-direct-audio",
+         stt("gemini", sec6) + ans6_g, ex8("gemini-direct-audio")),
+        ("all-sarvam", "saaras:v4 -> sarvam-105b [phone]", "phone: all-sarvam",
+         stt("saaras", sec6) + ans6_s, stt("saaras", sec8) + ex8("all-sarvam", "sarvam-105b")),
+    ]
+    m6 = metric("uc06v_offline_agri_voice", "overall_pass")["values"]; m8 = metric("uc08v_voice_orders", "Exact whole-order accuracy")["values"]
+    vpts = []
+    for name, k6, k8, c6, c8 in pipes:
+        acc = (m6[k6]["mean"] + m8[k8]["mean"]) / 2; cost = (c6 + c8) / 2 * 1000
+        vpts.append({"c": name, "idx": acc, "cost": cost, "local": False, "sub": False,
+                     "tip": f'{pretty(name)}: {acc:.0%} average task accuracy on phone audio (farm questions {m6[k6]["mean"]:.0%}, voice-note orders {m8[k8]["mean"]:.0%}), ₹{cost:,.1f} per 1,000 spoken requests'})
+    vg, vW, vH = scatter_svg(vpts, "Cost per 1,000 spoken requests (₹, log scale: transcription + answering step)", 0.6)
+    scatter += (f'<figure class="chart"><figcaption><b>Spoken tasks: accuracy against cost, end to end</b>'
+                f'<span class="dir">up and to the left is better</span></figcaption><div class="scroll"><svg viewBox="0 0 {vW} {vH}" role="img" '
+                f'aria-label="Spoken-task accuracy against cost per 1,000 spoken requests">{vg}</svg></div>'
+                '<p class="note">Accuracy is the average of two spoken tests on phone-line audio: farmer questions answered correctly and WhatsApp voice notes turned into exactly the right order. '
+                'Cost adds transcription (per audio second, at the speech chart\'s rates) and the answering or extraction step (measured tokens at list price). '
+                'Colour shows the speech front end; all pipelines except all-Sarvam use Gemini 3.8 Flash after transcription. '
+                'The farm-question answering cost is an average over all of that test\'s Gemini answering calls (audio-in calls included), so it is approximate. '
+                'The spoken-commands test is left out because its tool-call step did not log tokens.</p></figure>')
 
     # cost per 1,000 tasks table
     systems = sorted({c for c in costs if len(costs[c]) >= 3}, key=lambda c: (vendor(c) != "sarvam", sum(costs[c].values()) / len(costs[c])))
