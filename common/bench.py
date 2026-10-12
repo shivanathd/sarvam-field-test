@@ -14,7 +14,10 @@ for d in (RESULTS, RAW, LOGS, DATA):
 
 
 def _load_env():
-    for line in (ROOT / ".env").read_text().splitlines():
+    env_path = ROOT / ".env"
+    if not env_path.exists():
+        return
+    for line in env_path.read_text().splitlines():
         k, _, v = line.partition("=")
         if k and v and not os.environ.get(k.strip()):  # empty shell vars must not mask .env
             os.environ[k.strip()] = v.strip()
