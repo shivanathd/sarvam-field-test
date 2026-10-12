@@ -12,7 +12,8 @@ Every test has known answers, so scoring is automatic and no model grades anothe
 <a href="#what-to-use-for-which-job">What to use</a> ·
 <a href="#methodology">Methodology</a> ·
 <a href="#biases-and-limitations">Biases</a> ·
-<a href="#reproduce">Reproduce</a>
+<a href="#reproduce">Reproduce</a> ·
+<a href="skills/README.md">Agent skills</a>
 </p>
 
 Run on 11 October 2026 on one Apple M5 Max (128 GB) in Kochi, India. Across **18** like-for-like head-to-heads,
@@ -817,6 +818,9 @@ LLAMA_SERVER=/path/to/llama-server scripts/serve_local.sh
 Each suite folder has its own README with exact steps. Audio, FLEURS recordings and tokenizer files are not committed; the
 suites regenerate or download them.
 
+Reusable agent skills that turn these results into workflows (Saaras + digits,
+voice bot, token cost, MCP tools) live in [`skills/`](skills/README.md).
+
 ## Repository layout
 
 ```
@@ -827,6 +831,7 @@ results/<suite>.json       scored results;  results/raw/<suite>.jsonl  every out
 report/                    build_report.py, template.html, index.html (the report), make_readme.py
 docs/                      README images
 logs/                      run logs
+skills/                    reusable agent skills (STT+digits, voice bot, tokens, MCP)
 scripts/serve_local.sh     starts self-hosted Sarvam-30B (:8101) and Qwen3-30B (:8102)
 scripts/export_public.sh   makes a publishable copy without secrets or local paths
 ```
