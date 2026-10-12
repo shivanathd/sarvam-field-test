@@ -41,10 +41,10 @@ PRETTY = [
     (r"gemini-3\.8-flash-tts", "Gemini 3.8 Flash TTS"), (r"gemini-3\.8-flash", "Gemini 3.8 Flash"),
     (r"gemini-pro-latest", "Gemini Pro"), (r"gemini-embedding-2", "Gemini Embedding 2"),
     (r"sarvam-105b-conversations", "Sarvam-105B conversations"), (r"sarvam-105b", "Sarvam-105B"),
-    (r"sarvam-30b-local", "Sarvam-30B (self-hosted)"), (r"qwen3-30b-local", "Qwen3-30B (self-hosted)"),
-    (r"sarvam-translate:v1", "Sarvam-Translate"), (r"mayura:v1", "Mayura"), (r"saaras:v3", "Saaras v3"),
-    (r"bulbul:v3", "Bulbul v3"), (r"sarvam-vision", "Sarvam Vision"), (r"sarvam-transliterate", "Sarvam Transliterate API"),
-    (r"-nothink\b", ""), (r"-think\b", " · thinking"), (r"-codemix", " codemix mode"), (r"-transcribe\b", " transcribe mode"),
+    (r"sarvam-30b-local", "Sarvam-30B (self-hosted)"), (r"sarvam-30b-cpu", "Sarvam-30B (self-hosted, CPU only)"), (r"qwen3-30b-local", "Qwen3-30B (self-hosted)"),
+    (r"sarvam-translate:v1", "Sarvam-Translate"), (r"mayura:v1", "Mayura"), (r"saaras[:-]v3", "Saaras v3"), (r"saaras[:-]v4", "Saaras v4"),
+    (r"bulbul:v3", "Bulbul v3"), (r"bulbul:v4-flash", "Bulbul v4-flash"), (r"sarvam-vision", "Sarvam Vision (legacy)"), (r"sarvam-docai-extract", "Sarvam Document AI Extract"), (r"gemini-direct-audio", "Gemini 3.8 Flash, audio in"), (r"all-sarvam", "all-Sarvam (Saaras v4 → Sarvam-105B)"), (r"sarvam-transliterate", "Sarvam Transliterate API"),
+    (r"-nothink\b", ""), (r"-think\b", " · thinking"), (r"-codemix-kt\b", " codemix + keyterms"), (r"-codemix", " codemix mode"), (r"-keyterms\b", " + keyterms"), (r"-transcribe\b", " transcribe mode"),
 ]
 
 def pretty(s):
@@ -286,7 +286,7 @@ no_frontier = lambda s: s not in FRONTIER
 def body():
     global SC
     SC = [
-        verdict_row("uc01_voice_support", "Entity accuracy (digits/amounts/dates exactly captured) [phone]", "pct", "Hinglish support calls: numbers captured"),
+        verdict_row("uc01_voice_support", "Entity accuracy (digits/amounts/dates exactly captured) [phone]", "pct", "Hinglish support calls: numbers captured (v3 beat v4, which writes numbers as words: 56% with keyterms)"),
         verdict_row("uc02_helpline_stt", "WER, macro-average over 13 languages (Sindhi excluded)", "num2", "Helpline speech in 13 languages: word error rate"),
         verdict_row("uc03_documents", "field exact-match accuracy (frontier subset: 16 harsh + 14 phone photos)", "pct", "Documents from bad phone photos: fields right"),
         verdict_row("uc04_indic_rag", "answer_correct_rag", "pct", "Q&A over Indian-language policies: correct"),

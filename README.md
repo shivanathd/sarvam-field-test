@@ -34,9 +34,9 @@ on fixed 30-item subsets and are reported inside each suite rather than here.
 
 | Test | Best Sarvam | Best rival | Result |
 |---|---|---|---|
-| [Hinglish support calls: numbers captured](#uc01-voice-support) | Saaras v3 codemix mode **81%** | Gemini 3.8 Flash **94%** | ▼ Sarvam behind |
-| [Helpline speech in 13 languages: word error rate](#uc02-helpline-stt) | saaras:v4 transcribe mode **0.15** | Gemini 3.8 Flash **0.21** | ▲ Sarvam leads |
-| [Documents from bad phone photos: fields right](#uc03-documents) | Sarvam Vision+Sarvam-105B **92%** | Claude Sonnet 5.5 **96%** | = Level |
+| [Hinglish support calls: numbers captured (v3 beat v4, which writes numbers as words: 56% with keyterms)](#uc01-voice-support) | Saaras v3 codemix mode **81%** | Gemini 3.8 Flash **94%** | ▼ Sarvam behind |
+| [Helpline speech in 13 languages: word error rate](#uc02-helpline-stt) | Saaras v4 transcribe mode **0.15** | Gemini 3.8 Flash **0.21** | ▲ Sarvam leads |
+| [Documents from bad phone photos: fields right](#uc03-documents) | Sarvam Vision (legacy)+Sarvam-105B **92%** | Claude Sonnet 5.5 **96%** | = Level |
 | [Q&A over Indian-language policies: correct](#uc04-indic-rag) | Sarvam-105B · thinking **96%** | Gemini 3.8 Flash **100%** | ▼ Sarvam behind |
 | [Clinical notes: drug + dose + frequency exact](#uc05-clinical-notes) | Sarvam-105B **92%** | Gemini 3.8 Flash **100%** | ▼ Sarvam behind |
 | [Crop advisory (incl. refusing out-of-scope)](#uc06-offline-agri) | Sarvam-105B **90%** | Gemini Pro · thinking **100%** | = Level |
@@ -49,8 +49,8 @@ on fixed 30-item subsets and are reported inside each suite rather than here.
 | [Business text tasks: fully correct](#uc10-selfhost-business) | Sarvam-105B **94%** | Gemini 3.8 Flash **100%** | ▼ Sarvam behind |
 | [Coding Indian business logic: first try](#uc11-bharat-code) | Sarvam-105B · thinking-t0 **69%** | Gemini 3.8 Flash **100%** | ▼ Sarvam behind |
 | [Voice-assistant tool calls: exact](#uc11-bharat-code) | Sarvam-105B **100%** | Gemini 3.8 Flash **100%** | = Level |
-| [Spoken farmer questions: answered right (speech front end)](#uc06v-offline-agri-voice) | saaras:v4 -> Gemini 3.8 Flash [phone] **99%** | audio -> Gemini 3.8 Flash [phone] **100%** | = Level |
-| [WhatsApp voice notes: order exactly right (speech front end)](#uc08v-voice-orders) | phone: saaras-v4 codemix mode-kt **92%** | phone: gemini-direct-audio **94%** | = Level |
+| [Spoken farmer questions: answered right (speech front end)](#uc06v-offline-agri-voice) | Saaras v4 -> Gemini 3.8 Flash [phone] **99%** | audio -> Gemini 3.8 Flash [phone] **100%** | = Level |
+| [WhatsApp voice notes: order exactly right (speech front end)](#uc08v-voice-orders) | phone: Saaras v4 codemix + keyterms **92%** | phone: Gemini 3.8 Flash, audio in **94%** | = Level |
 | [Spoken payment commands: exact (speech front end)](#uc11v-voice-tools) | Saaras v3 -> Gemini 3.8 Flash **98%** | Gemini 3.8 Flash audio-direct **98%** | = Level |
 
 ## What to use for which job
