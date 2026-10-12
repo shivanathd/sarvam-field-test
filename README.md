@@ -49,9 +49,9 @@ on fixed 30-item subsets and are reported inside each suite rather than here.
 | [Business text tasks: fully correct](#uc10-selfhost-business) | Sarvam-105B **94%** | Gemini 3.8 Flash **100%** | ▼ Sarvam behind |
 | [Coding Indian business logic: first try](#uc11-bharat-code) | Sarvam-105B · thinking-t0 **69%** | Gemini 3.8 Flash **100%** | ▼ Sarvam behind |
 | [Voice-assistant tool calls: exact](#uc11-bharat-code) | Sarvam-105B **100%** | Gemini 3.8 Flash **100%** | = Level |
-| [Spoken farmer questions: answered right (speech front end)](#uc06v-offline-agri-voice) | Saaras v4 -> Gemini 3.8 Flash [phone] **99%** | audio -> Gemini 3.8 Flash [phone] **100%** | = Level |
+| [Spoken farmer questions: answered right (speech front end)](#uc06v-offline-agri-voice) | Saaras v4 → Gemini 3.8 Flash [phone] **99%** | Gemini 3.8 Flash, audio in [phone] **100%** | = Level |
 | [WhatsApp voice notes: order exactly right (speech front end)](#uc08v-voice-orders) | phone: Saaras v4 codemix + keyterms **92%** | phone: Gemini 3.8 Flash, audio in **94%** | = Level |
-| [Spoken payment commands: exact (speech front end)](#uc11v-voice-tools) | Saaras v3 -> Gemini 3.8 Flash **98%** | Gemini 3.8 Flash audio-direct **98%** | = Level |
+| [Spoken payment commands: exact (speech front end)](#uc11v-voice-tools) | Saaras v3 → Gemini 3.8 Flash **98%** | Gemini 3.8 Flash, audio in **98%** | = Level |
 
 ## What to use for which job
 

@@ -38,13 +38,13 @@ PRETTY = [
     (r"gpt-5\.4-mini", "GPT-5.4 mini"), (r"gpt-5\.5", "GPT-5.5"), (r"gpt-4o-mini-tts", "GPT-4o mini TTS"),
     (r"gpt-4o-transcribe", "GPT-4o transcribe"), (r"whisper-1", "Whisper (OpenAI API)"),
     (r"whisper-large-v3-turbo", "Whisper large-v3-turbo (local)"),
-    (r"gemini-3\.8-flash-tts", "Gemini 3.8 Flash TTS"), (r"gemini-3\.8-flash", "Gemini 3.8 Flash"),
+    (r"gemini-3\.8-flash-audio\b", "Gemini 3.8 Flash transcript"), (r"gemini-3\.8-flash audio-direct", "Gemini 3.8 Flash, audio in"), (r"gemini-3\.8-flash-tts", "Gemini 3.8 Flash TTS"), (r"gemini-3\.8-flash", "Gemini 3.8 Flash"),
     (r"gemini-pro-latest", "Gemini Pro"), (r"gemini-embedding-2", "Gemini Embedding 2"),
     (r"sarvam-105b-conversations", "Sarvam-105B conversations"), (r"sarvam-105b", "Sarvam-105B"),
     (r"sarvam-30b-local", "Sarvam-30B (self-hosted)"), (r"sarvam-30b-cpu", "Sarvam-30B (self-hosted, CPU only)"), (r"qwen3-30b-local", "Qwen3-30B (self-hosted)"),
     (r"sarvam-translate:v1", "Sarvam-Translate"), (r"mayura:v1", "Mayura"), (r"saaras[:-]v3", "Saaras v3"), (r"saaras[:-]v4", "Saaras v4"),
     (r"bulbul:v3", "Bulbul v3"), (r"bulbul:v4-flash", "Bulbul v4-flash"), (r"sarvam-vision", "Sarvam Vision (legacy)"), (r"sarvam-docai-extract", "Sarvam Document AI Extract"), (r"gemini-direct-audio", "Gemini 3.8 Flash, audio in"), (r"all-sarvam", "all-Sarvam (Saaras v4 → Sarvam-105B)"), (r"sarvam-transliterate", "Sarvam Transliterate API"),
-    (r"-nothink\b", ""), (r"-think\b", " · thinking"), (r"-codemix-kt\b", " codemix + keyterms"), (r"-codemix", " codemix mode"), (r"-keyterms\b", " + keyterms"), (r"-transcribe\b", " transcribe mode"),
+    (r"\s*->\s*", " → "), (r"-nothink\b", ""), (r"-think\b", " · thinking"), (r"^audio → Gemini 3\.8 Flash", "Gemini 3.8 Flash, audio in"), (r"^text → ", "typed text → "), (r"-codemix-kt\b", " codemix + keyterms"), (r"-codemix", " codemix mode"), (r"-keyterms\b", " + keyterms"), (r"-transcribe\b", " transcribe mode"),
 ]
 
 def pretty(s):
@@ -71,6 +71,11 @@ def metric(uc, name):
     raise KeyError(f"{uc}: {name}")
 
 # ---------- charts ----------
+def nice_top(v):
+    """Smallest of 1, 1.2, 1.6, 2, 4, 6, 8 x 10^k at or above v, so the four axis ticks land on round numbers."""
+    k = 10 ** math.floor(math.log10(v))
+    return next(m * k for m in (1, 1.2, 1.6, 2, 4, 6, 8, 10) if m * k >= v - 1e-12)
+
 def bar_chart(uc, name, kind="pct", title=None, note=None, include=None):
     m = metric(uc, name)
     hib = m.get("higher_is_better", True)
@@ -80,7 +85,7 @@ def bar_chart(uc, name, kind="pct", title=None, note=None, include=None):
     maxn = max((v.get("n") or 0) for _, v in rows)
     sub = lambda v: bool(v.get("n")) and v["n"] < 0.8 * maxn
     vmax = max(max(v["mean"], v.get("hi") or v["mean"]) for _, v in rows)
-    top = 1.0 if kind == "pct" and vmax <= 1 else vmax * 1.08
+    top = 1.0 if kind == "pct" and vmax <= 1 else nice_top(vmax * 1.08)
     label_w, bar_w, row_h = 250, 420, 30
     h = row_h * len(rows) + 34
     g = []
@@ -227,7 +232,7 @@ def voice_agent_table():
             '<th>Stack (speech-to-text → model → voice)</th><th>First audio p50</th><th>p95</th><th>STT p50</th><th>Model p50</th>'
             '<th>Voice first byte</th><th>Reply in caller\'s script</th><th>Numbers read back right</th></tr></thead><tbody>'
             + "".join(rows) + "</tbody></table></div>"
-            '<p class="note">All-Sarvam stack costs ₹1.56 per conversation-minute at list prices (speech ₹0.23, model ₹0.015, voice ₹1.32).</p></figure>')
+            '<p class="note">All-Sarvam cost per conversation-minute at list prices: v3 stack ₹1.56 (speech ₹0.23, model ₹0.015, voice ₹1.32); v4 stack about ₹1.42 (v4 models priced as v3, since Sarvam lists no separate v4 prices).</p></figure>')
 
 
 def selfhost_table():
@@ -461,6 +466,50 @@ def intelligence():
     return scores, costs
 
 
+
+def scatter_svg(pts, xlabel, ymin):
+    """Accuracy (y) against log cost (x). pts: dicts with c, idx, cost (None = self-hosted), local, sub, tip.
+    Labels are placed greedily (right, left, above, below) to avoid dots and earlier labels."""
+    W, H, L, T, B, R_ = 880, 440, 150, 24, 50, 170
+    xs = [p["cost"] for p in pts if p["cost"]]
+    lo, hi = math.floor(math.log10(min(xs))), math.ceil(math.log10(max(xs)))
+    if hi == lo: hi += 1
+    X = lambda v: L + (math.log10(v) - lo) / (hi - lo) * (W - L - R_)
+    Y = lambda v: T + (1 - (v - ymin) / (1 - ymin)) * (H - T - B)
+    g = []
+    step = 0.2 if ymin <= 0.4 else 0.1
+    t_ = ymin
+    while t_ <= 1.0001:
+        g.append(f'<line x1="{L}" x2="{W - R_}" y1="{Y(t_):.1f}" y2="{Y(t_):.1f}" class="grid"/><text x="{L - 8}" y="{Y(t_) + 4:.1f}" class="tick" text-anchor="end">{t_:.0%}</text>')
+        t_ += step
+    for e in range(lo, hi + 1):
+        g.append(f'<line x1="{X(10 ** e):.1f}" x2="{X(10 ** e):.1f}" y1="{T}" y2="{H - B}" class="grid"/><text x="{X(10 ** e):.1f}" y="{H - B + 18}" class="tick" text-anchor="middle">₹{10 ** e:,.0f}</text>')
+    if any(not p["cost"] for p in pts):
+        g.append(f'<rect x="10" y="{T}" width="{L - 70}" height="{H - T - B}" class="strip"/><text x="{(L - 60) / 2 + 10:.0f}" y="{H - B + 18}" class="tick" text-anchor="middle">own hardware</text>')
+    g.append(f'<text x="{(L + W - R_) / 2:.0f}" y="{H - 8}" class="tick" text-anchor="middle">{E(xlabel)}</text>')
+    placed = []  # boxes (x0, y0, x1, y1) of dots and labels already drawn
+    li = 0
+    for p in pts:
+        if p["cost"]: p["x"] = X(p["cost"])
+        else: p["x"] = 30 + (li % 2) * 34; li += 1
+        p["y"] = Y(p["idx"])
+        placed.append((p["x"] - 8, p["y"] - 8, p["x"] + 8, p["y"] + 8))
+    hit = lambda b: any(not (b[2] < q[0] or b[0] > q[2] or b[3] < q[1] or b[1] > q[3]) for q in placed)
+    for p in sorted(pts, key=lambda p: -p["idx"]):
+        lab = pretty(p["c"]); w = 7.2 * len(lab); x, y = p["x"], p["y"]
+        cands = [(x + 11, y + 4, "start"), (x - 11, y + 4, "end"), (x - w / 2, y - 13, "start"), (x - w / 2, y + 21, "start"),
+                 (x + 11, y - 14, "start"), (x + 11, y + 22, "start"), (x - 11, y - 14, "end"), (x - 11, y + 22, "end")]
+        def box(c):
+            lx, ly, anc = c
+            x0 = lx if anc == "start" else lx - w
+            return (x0, ly - 11, x0 + w, ly + 3)
+        pick = next((c for c in cands if not hit(box(c)) and box(c)[2] < W - 4 and box(c)[0] > 2 and box(c)[1] > 2), cands[0])
+        placed.append(box(pick))
+        g.append(f'<g class="row" data-tip="{E(p["tip"])}"><circle cx="{x:.1f}" cy="{y:.1f}" r="12" class="hit"/>'
+                 f'<circle cx="{x:.1f}" cy="{y:.1f}" r="6.5" class="dot v-{vendor(p["c"])}{" local" if p["local"] else ""}{" sub" if p["sub"] else ""}"/>'
+                 f'<text x="{pick[0]:.1f}" y="{pick[1]:.1f}" text-anchor="{pick[2]}" class="lab small">{E(pretty(p["c"]))}</text></g>')
+    return "".join(g), W, H
+
 def cost_section():
     scores, costs = intelligence()
     pts = []
@@ -473,28 +522,10 @@ def cost_section():
         local = "local" in c or "cpu" in c
         pts.append({"c": c, "idx": idx, "cost": (sum(cs) / len(cs)) if cs and not local else None, "local": local,
                     "sub": sub, "k": len(sc)})
-    # scatter: log10 cost on x; self-hosted shown in a separate strip at the left
-    W, H, L, T, B = 760, 420, 150, 20, 50
-    xs = [p["cost"] for p in pts if p["cost"]]
-    lo, hi = math.floor(math.log10(min(xs))), math.ceil(math.log10(max(xs)))
-    X = lambda v: L + (math.log10(v) - lo) / (hi - lo) * (W - L - 30)
-    Y = lambda v: T + (1 - (v - 0.2) / 0.8) * (H - T - B)
-    g = []
-    for t in (0.2, 0.4, 0.6, 0.8, 1.0):
-        g.append(f'<line x1="{L}" x2="{W - 30}" y1="{Y(t):.1f}" y2="{Y(t):.1f}" class="grid"/><text x="{L - 8}" y="{Y(t) + 4:.1f}" class="tick" text-anchor="end">{t:.0%}</text>')
-    for e in range(lo, hi + 1):
-        g.append(f'<line x1="{X(10 ** e):.1f}" x2="{X(10 ** e):.1f}" y1="{T}" y2="{H - B}" class="grid"/><text x="{X(10 ** e):.1f}" y="{H - B + 18}" class="tick" text-anchor="middle">₹{10 ** e:,.0f}</text>'.replace("₹0", "₹0"))
-    g.append(f'<rect x="10" y="{T}" width="{L - 70}" height="{H - T - B}" class="strip"/><text x="{(L - 60) / 2 + 10:.0f}" y="{H - B + 18}" class="tick" text-anchor="middle">own hardware</text>')
-    g.append(f'<text x="{(L + W - 30) / 2:.0f}" y="{H - 8}" class="tick" text-anchor="middle">API cost per 1,000 tasks (₹, log scale, measured tokens × list price)</text>')
-    order = {id(p): j for j, p in enumerate(sorted([p for p in pts if p["cost"]], key=lambda p: p["cost"]))}
-    for i, p in enumerate(sorted(pts, key=lambda p: p["idx"])):
-        x = X(p["cost"]) if p["cost"] else 30 + (i % 2) * 34
-        y = Y(p["idx"])
-        dy = (-12 if order.get(id(p), i) % 2 else 16) if p["idx"] > 0.95 else 4  # stagger labels in the crowded top band
-        tip = f'{pretty(p["c"])}: {p["idx"]:.0%} average across {p["k"]} text tests' + (f', ₹{p["cost"]:,.1f} per 1,000 tasks' if p["cost"] else ", self-hosted") + (" (frontier: 30-item subsets)" if p["sub"] else "")
-        g.append(f'<g class="row" data-tip="{E(tip)}"><circle cx="{x:.1f}" cy="{y:.1f}" r="12" class="hit"/>'
-                 f'<circle cx="{x:.1f}" cy="{y:.1f}" r="6.5" class="dot v-{vendor(p["c"])}{" local" if p["local"] else ""}{" sub" if p["sub"] else ""}"/>'
-                 f'<text x="{x + 10:.1f}" y="{y + dy:.1f}" class="lab small">{E(pretty(p["c"]))}</text></g>')
+    for p in pts:
+        p["tip"] = (f'{pretty(p["c"])}: {p["idx"]:.0%} average across {p["k"]} text tests'
+                    + (f', ₹{p["cost"]:,.1f} per 1,000 tasks' if p["cost"] else ", self-hosted") + (" (frontier: 30-item subsets)" if p["sub"] else ""))
+    g, W, H = scatter_svg(pts, "API cost per 1,000 tasks (₹, log scale, measured tokens × list price)", 0.2)
     avg = {p["c"]: p for p in pts}
     def a(c): return avg[c]["idx"], avg[c]["cost"]
     hk, fl, sv = a("claude-haiku-5.5"), a("gemini-3.8-flash"), a("sarvam-105b")
@@ -504,10 +535,30 @@ def cost_section():
                f'₹{fl[1]:,.0f}, {fl[1] / hk[1]:.1f}× Haiku\'s cost. Frontier models matched Flash on accuracy at '
                f'{min(r):.0f}–{max(r):.0f}× its cost.</p>')
     scatter = summary + (f'<figure class="chart"><figcaption><b>Intelligence against cost: average accuracy on seven text tests</b>'
-               f'<span class="dir">up and to the left is better</span></figcaption><div class="scroll"><svg viewBox="0 0 {W + 120} {H}" role="img" '
-               f'aria-label="Accuracy against cost per 1,000 tasks">{"".join(g)}</svg></div>'
+               f'<span class="dir">up and to the left is better</span></figcaption><div class="scroll"><svg viewBox="0 0 {W} {H}" role="img" '
+               f'aria-label="Accuracy against cost per 1,000 tasks">{g}</svg></div>'
                '<p class="note">Tests: policy Q&amp;A, clinical medications, crop advice, WhatsApp orders, legal summaries, business text, coding. '
                'Frontier models (faded) ran on 30-item subsets of some tests. Self-hosted models have no per-call price; their cost is the hardware.</p></figure>')
+
+    # speech: word accuracy (1 - 13-language macro WER) against cost per audio hour
+    u = R["uc02_helpline_stt"]["usage"]
+    hrs = u["gemini-3.8-flash"]["audio_s"] / 3600
+    per_hour = {  # ₹ per audio hour at list price
+        "saaras:v3-transcribe": 30, "saaras:v4-transcribe": 30,  # Sarvam pricing page; v4 priced as v3 (no v4 price listed)
+        "gemini-3.8-flash": (u["gemini-3.8-flash"]["in_tok"] * 0.75 + u["gemini-3.8-flash"]["out_tok"] * 3.75) / 1e6 * USD_INR / hrs,
+        "gpt-4o-transcribe": 0.006 * 60 * USD_INR, "whisper-1": 0.006 * 60 * USD_INR,  # OpenAI $0.006/min
+        "whisper-large-v3-turbo": None}
+    wer = metric("uc02_helpline_stt", "WER, macro-average over 13 languages (Sindhi excluded)")["values"]
+    spts = [{"c": s, "idx": 1 - wer[s]["mean"], "cost": per_hour[s], "local": per_hour[s] is None, "sub": False,
+             "tip": f'{pretty(s)}: {1 - wer[s]["mean"]:.0%} word accuracy over 13 languages, '
+                    + (f'₹{per_hour[s]:,.0f} per audio hour' if per_hour[s] else "self-hosted")} for s in per_hour if s in wer]
+    sg, sW, sH = scatter_svg(spts, "Cost per audio hour (₹, log scale, list price)", 0.2)
+    scatter += (f'<figure class="chart"><figcaption><b>Speech recognition: accuracy against cost</b>'
+                f'<span class="dir">up and to the left is better</span></figcaption><div class="scroll"><svg viewBox="0 0 {sW} {sH}" role="img" '
+                f'aria-label="Speech word accuracy against cost per audio hour">{sg}</svg></div>'
+                '<p class="note">Accuracy is 1 − word error rate, averaged over 13 Indian languages of real FLEURS speech (Sindhi left out: Saaras writes it in another script). '
+                'Saaras at ₹30 per hour (v4 assumed to cost the same as v3; Sarvam lists no separate v4 price); OpenAI at $0.006 per minute; '
+                'Gemini from its measured audio and output tokens at list price. Speech models are not on the text chart above because they have no text-test score.</p></figure>')
 
     # cost per 1,000 tasks table
     systems = sorted({c for c in costs if len(costs[c]) >= 3}, key=lambda c: (vendor(c) != "sarvam", sum(costs[c].values()) / len(costs[c])))
@@ -548,7 +599,7 @@ def cost_section():
              f'<tr><th>Text-to-speech</th><td>Bulbul ₹3 per 1,000 characters</td><td>Gemini Flash TTS $9 per 1M audio tokens; measured about 19,400 audio tokens per 10,000 characters ≈ ₹{19400 * 9 / 1e6 * USD_INR / 10:.1f} per 1,000 characters</td></tr>'
              '<tr><th>Documents</th><td>Document AI Extract ₹1 per page; Digitise ₹0.50 per page</td><td>Gemini / Claude bill the page image as input tokens</td></tr>'
              '<tr><th>Translation</th><td>Sarvam-Translate / Mayura by character: list price ₹5 per 1,000 characters (Sarvam pricing page, Oct 2026), about ₹2 per 1,000 as actually billed in this run; Sarvam-105B by token, 80–200× cheaper for the same legal text</td><td>LLM token prices above</td></tr>'
-             '<tr><th>Voice bot, all-Sarvam</th><td>₹1.56 per conversation-minute (speech ₹0.23, model ₹0.015, voice ₹1.32)</td><td>–</td></tr>'
+             '<tr><th>Voice bot, all-Sarvam</th><td>v3 stack ₹1.56 per conversation-minute (speech ₹0.23, model ₹0.015, voice ₹1.32); v4 stack about ₹1.42</td><td>–</td></tr>'
              '</tbody></table></div></figure>')
     return scatter + costtab + ptab + units
 

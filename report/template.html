@@ -1,5 +1,6 @@
+<meta charset="utf-8">
 <title>Sarvam Field Test</title>
-<meta name="description" content="Sarvam AI against Google, OpenAI, Anthropic and self-hosted open weights on 12 real Indian business jobs.">
+<meta name="description" content="Sarvam AI against Google, OpenAI, Anthropic and self-hosted open weights on 15 real Indian business jobs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..800&family=Anek+Devanagari:wght@500;700&family=Anek+Tamil:wght@500;700&family=Hind:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -48,7 +49,9 @@ nav.idx ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px; c
 nav.idx a { color: var(--muted); text-decoration: none; display: block; padding: 3px 0 3px 10px; border-left: 2px solid var(--rule); }
 nav.idx a:hover { color: var(--ink); border-left-color: var(--accent); }
 nav.idx .lbl { font: 600 0.72rem/1 var(--display); letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); margin: 18px 0 8px; }
-main { min-width: 0; display: grid; gap: 64px; }
+main { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 64px; }
+main > *, .uc > *, .charts > *, figure.chart > * { min-width: 0; }
+.uc, .charts { grid-template-columns: minmax(0, 1fr); }
 .eyebrow { font: 600 0.75rem/1 var(--display); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: flex; gap: 10px; align-items: center; margin-bottom: 10px; }
 
 /* hero */
@@ -139,7 +142,8 @@ pre { background: var(--card); border: 1px solid var(--rule); border-radius: 6px
 .files select { width: 100%; font: inherit; padding: 6px; background: var(--card); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; }
 .files pre { max-height: 560px; margin: 0; }
 .files button { font: 600 0.8rem var(--display); background: var(--card); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; padding: 6px 10px; cursor: pointer; margin-top: 8px; }
-@media (max-width: 1020px) { .wrap { grid-template-columns: 1fr; } nav.idx { position: static; } nav.idx ol { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); } }
+.wrap > * { min-width: 0; }
+@media (max-width: 1020px) { .wrap { grid-template-columns: minmax(0, 1fr); } nav.idx { position: static; } nav.idx ol { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); } }
 @media (max-width: 720px) { .cols, .files, .uses > div { grid-template-columns: 1fr; } .uses > div { gap: 2px; } body { font-size: 16px; } }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 </style>
